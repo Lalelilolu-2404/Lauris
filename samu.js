@@ -1636,9 +1636,7 @@ _Estos comandos solo pueden ser utilizados en grupos, y solo los puede usar ${bo
 🔥 ${prefix}crashloc
 🔥 ${prefix}crashcom
 🔥 ${prefix}crashpc
-
-O bien puedes descargar desde el enlace...
-https://www.mediafire.com/file/3srfb3tledxwg87/Inmune_Crash_Bot%25E2%259C%258F%25EF%25B8%258F.apk/file
+`
 
 samu330.sendMessage(from, smww, image, {caption: `${menu9}`, quoted: { key: { 
 	fromMe: false, 
