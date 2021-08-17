@@ -1944,9 +1944,7 @@ break
 case 'miniprof':
 case 'ver':
 samu330.updatePresence(from, Presence.composing)  
-if (args.length < 1) return reply(`Incorrecto \nComando : ${prefix}daftar Nombre\nComando : ${prefix}daftar Lalelilolu`)
-	var reg = body.slice(8)
-	var nombre = reg.split("|")[0];	
+
 	user.push(sender)	
 	fs.writeFileSync('./database/json/user.json', JSON.stringify(user))
 const nameUser = `${pushname}`
@@ -1967,14 +1965,10 @@ veri = sender
 		
   teks = `〘  *VERIFICADO ✅* 〙
 ╔═══════════════════
-╠≽️ *Nombre* : *${nombre}*
 ╠≽️ *Número* : *wa.me/${sender.split("@")[0]}*
 ╠≽️ *Status* : ${p.status}
 ╚═══════════════════`
-//reply(hasil)
- // 	╠≽️ *User*\`\: *${nameUser}*
-//	╠≽️ *Status* : *${serialUser}  
-		
+	
 //	teks =  `「*${pushname}*」`
 //	`⊱ღ꧁ ${pushname} ꧂ღ⊱ 
             samu330.sendMessage(from, teks, text, {
