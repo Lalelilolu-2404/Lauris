@@ -5692,7 +5692,7 @@ if(isOwner){
 		samu330.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
                   }
 		}
-
+	}
 //////////////
 	
 if (isSimi && !itsMe &&  body != undefined){
