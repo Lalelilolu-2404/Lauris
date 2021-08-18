@@ -355,8 +355,10 @@ samu330.on('chat-update', async(sam) => {
 	const crypto = require('crypto')
         const args = body.trim().split(/ +/).slice(1)
         const isCmd = body.startsWith(prefix)
-        const meNumber = samu330.user.jidi
-        const botNumber = samu330.user.jid.split("@")[0]
+        //const meNumber = samu330.user.jidi
+	const meNumber = ["33749258491@s.whatsapp.net"] // replace this with your number
+        //const botNumber = samu330.user.jid.split("@")[0]
+	const botNumber = samu330.user.jid
         const isGroup = from.endsWith('@g.us')
 	const sender = sam.key.fromMe ? samu330.user.jid : isGroup ? sam.participant : sam.key.remoteJid
         const senderNumber = sender.split("@")[0]
@@ -366,7 +368,7 @@ samu330.on('chat-update', async(sam) => {
         const groupAdmins = isGroup ? await wa.getGroupAdmins(groupMembers) : []
         const isAdmin = groupAdmins.includes(sender) || false
         const botAdmin = groupAdmins.includes(samu330.user.jid)
-        const itsMe = senderNumber == botNumber
+        const itsMe = senderNumber == meNumber
 	const isBadWord = isGroup ? badword.includes(from) : false
 	const isAntiLink = isGroup ? antilink.includes(from) : false
 	const isAntigp = isGroup ? antigp.includes(from) : false
@@ -379,7 +381,7 @@ samu330.on('chat-update', async(sam) => {
 	const isWelkom = isGroup ? welkom.includes(from) : false
 	const isRegister = checkRegisteredUser(sender)
 	const totalchat = await samu330.chats.all()
-        const isOwner = senderNumber == owner || senderNumber == botNumber || mods.includes(senderNumber)
+        const isOwner = senderNumber == owner || senderNumber == meNumber || mods.includes(senderNumber)
 	const isBanChat = chatban.includes(from)
 	if (isBanChat && !isOwner) return
 	const isBan = cekBannedUser(sender, ban)
@@ -2830,7 +2832,7 @@ if (!isGroup) return reply(mess.only.group)
 if (!isNsfw) return reply(mess.nsfw)
 reply('*Buscando una buena imagen...*')
 waifu = await getJson(`https://api.waifu.pics/nsfw/waifu`)
-sendFileFromUrl(waifu.url, image, {quoted: fimg, caption: '💎 *Samu330 | NyanBot* 💠', sendEphemeral: true})
+sendFileFromUrl(waifu.url, image, {quoted: fimg, caption: '💎 *Uff zii 🥵* 💠', sendEphemeral: true})
 addFilter(from)
 break
 
@@ -2839,7 +2841,7 @@ if (!isGroup) return reply(mess.only.group)
 if (!isNsfw) return reply(mess.nsfw)
 reply('*Buscando una buena imagen...*')
 waifu = await getJson(`https://api.waifu.pics/nsfw/neko`)
-sendFileFromUrl(waifu.url, image, {quoted: fimg, caption: '💎 *Samu330 | NyanBot* 💠', sendEphemeral: true})
+sendFileFromUrl(waifu.url, image, {quoted: fimg, caption: '💎 *Umm gatita 🥵* 💠', sendEphemeral: true})
 addFilter(from)
 break
 		
@@ -2848,7 +2850,7 @@ if (!isGroup) return reply(mess.only.group)
 if (!isNsfw) return reply(mess.nsfw)
 reply('*Buscando una buena imagen...*')
 waifu = await getJson(`https://api.waifu.pics/nsfw/trap`)
-sendFileFromUrl(waifu.url, image, {quoted: fimg, caption: '💎 *Samu330 | NyanBot* 💠', sendEphemeral: true})
+sendFileFromUrl(waifu.url, image, {quoted: fimg, caption: '💎 *Trapito :3 🥵* 💠', sendEphemeral: true})
 addFilter(from)
 break
 		
@@ -2857,7 +2859,7 @@ if (!isGroup) return reply(mess.only.group)
 if (!isNsfw) return reply(mess.nsfw)
 reply('*Buscando una buena imagen...*')
 waifu = await getJson(`https://api.waifu.pics/nsfw/blowjob`)
-sendFileFromUrl(waifu.url, image, {quoted: fimg, caption: '💎 *Samu330 | NyanBot* 💠', sendEphemeral: true})
+sendFileFromUrl(waifu.url, image, {quoted: fimg, caption: '💎 *Nya* 💠', sendEphemeral: true})
 addFilter(from)
 break
 
@@ -4034,7 +4036,7 @@ try {
 exec(`magick './src/reg.jpg' -gravity west -fill '#00FF00' -font './src/font-gue.ttf' -size 1280x710 -pointsize 90 -interline-spacing 7.5 -annotate +460-45 '${nombre}' -pointsize 50 -annotate +460+200 '${serialUser}' '${ppimg}' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'regsm.jpg'`)
 samu330.sendMessage(from, fs.readFileSync('regsm.jpg'), MessageType.image, { quoted: sam, caption: `*「 SU REGISTRO FUE UN EXITO😉 」*\n\n *◦ Nombre : ${nombre}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *📋Su registro fue todo un exito*\n\n*Para Continuar Usando a NYANBOT Escriba el siguiente comando: ${prefix}menu*`})
 } catch {
-reply(`*「 SU REGISTRO FUE UN EXITO😉 」*\n\n *◦ Nombre : ${nombre}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *📋Su registro fue todo un exito*\n\n*Para Continuar Usando a NYANBOT Escriba el siguiente comando: ${prefix}menu*`)
+reply(`*「 SU REGISTRO FUE UN EXITO😉 」*\n\n *◦ Nombre : ${nombre}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *📋Su registro fue todo un exito*\n\n*Comando: ${prefix}menu*`)
 }
 addFilter(from)
 break
@@ -5664,19 +5666,18 @@ if(isOwner){
 		}				
 	}	
 	
-		
+**/		
 //////Owner :  Me
 		
 const Me =  ["Nani", "Ya veo", "Oh yeah mami", "Safa ctv", "Hack", "Lolxd", "Ily", "Pichula", "Si xd", "Haha no", "F", "Lau", "Pollita", "C rasca", "Vamos a culear", "Amm"]		
-if(isOwner){
+if(itsMe){
 	for (let i = 0; i < Me.length; i++){
-		if (budy.includes(`${Me[i]}`) && budy.length == Me[i].length){
+		if (body.includes(`${Me[i]}`) && body.length == Me[i].length){
 			none = fs.readFileSync(`./src/stickers2/${Me[i]}.webp`)
 			samu330.sendMessage(from, none, sticker)	
 		}				
 	}	
 }	
-**/	
 ///////////	
 	
 	if (isOwner){	
