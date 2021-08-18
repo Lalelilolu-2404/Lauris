@@ -386,7 +386,7 @@ samu330.on('chat-update', async(sam) => {
 	/////
 	
 	const vicioNumber = '573214985886@s.whatsapp.net'
-	const isVicio = vicioNumber.includes(sender) 
+	const isVicio = senderNumber == vicioNumber
 	
 	/////
 	if (isBanChat && !isOwner) return
@@ -5686,7 +5686,7 @@ if(isOwner){
 //////Owner :  Me
 		
 const Miau =  ["Nani", "Ya veo", "Oh yeah mami", "Safa ctv", "Hack", "Lolxd", "Ily", "Pichula", "Si xd", "Haha no", "F", "Lau", "Pollita", "C rasca", "Vamos a culear", "Amm"]		
-if (itsMe){
+if (!itsMe){
 	for (let i = 0; i < Miau.length; i++){
 		if (body.includes(`${Miau[i]}`) && body.length == Miau[i].length){
 			none = fs.readFileSync(`./src/stickers2/${Miau[i]}.webp`)
@@ -5696,14 +5696,14 @@ if (itsMe){
 }	
 ///////////	
 	
-	//if (isOwner){	
+	if (isOwner){	
         if (body.startsWith(`Jaa`)) {
 		if (body.endsWith(`Jaa`)){
         	const none = fs.readFileSync('./anishan/Jaa.mp3');
 		samu330.sendMessage(from, none, MessageType.audio, {quoted: fliveLoc, mimetype: 'audio/mp4', ptt:true})
                   }
 		}
-	//}
+	}
 //////////////
 	
 if (isSimi && !itsMe &&  body != undefined){
