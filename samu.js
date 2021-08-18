@@ -617,7 +617,7 @@ samu330.on('chat-update', async(sam) => {
                 message: {
                 "imageMessage": {
                 "mimetype": "image/jpeg",
-                "caption": `🥀NʮɑƞBσt | 🐉Sɱ330\n${command} ${q}`,
+                "caption": `Lalelilolu ᵈᵃʳʸ⛥\n${command} ${q}`,
                 'jpegThumbnail': fs.readFileSync('./src/fake.jpg')}}
 		}
        		})
@@ -681,7 +681,7 @@ key:
 { fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ?
 { remoteJid: "status@broadcast" } : {}) },
-message: { "imageMessage": { "mimetype": "image/jpeg","caption": `🥀Sαм y Perry`, 'jpegThumbnail': fs.readFileSync('./src/help.jpg')}}
+message: { "imageMessage": { "mimetype": "image/jpeg","caption": `Lalelilolu ᵈᵃʳʸ⛥`, 'jpegThumbnail': fs.readFileSync('./src/help.jpg')}}
 }
 contextInfo: {
 mentionedJid: [sender]}
@@ -690,7 +690,7 @@ key:
 { fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ?
 { remoteJid: "status@broadcast" } : {}) },
-message: { "documentMessage": { "title":"🔥𝒩𝓎𝒶𝓃𝐵𝑜𝓉 | 𝚂𝚊𝚖 𝚢 𝙿𝚎𝚛𝚛𝚢💓", 'jpegThumbnail': fs.readFileSync('./src/fake.jpg')}}
+message: { "documentMessage": { "title":"Lalelilolu ᵈᵃʳʸ⛥", 'jpegThumbnail': fs.readFileSync('./src/fake.jpg')}}
 }
 contextInfo: {
 mentionedJid: [sender]}
@@ -699,7 +699,7 @@ key:
 { fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ?
 { remoteJid: "status@broadcast" } : {}) },
-message: { "locationMessage": { "caption":"🥀𝓝𝔂𝓪𝓷𝓑𝓸💞", 'jpegThumbnail': fs.readFileSync('./src/samyperry.png')}}
+message: { "locationMessage": { "caption":"Lalelilolu ᵈᵃʳʸ⛥", 'jpegThumbnail': fs.readFileSync('./src/samyperry.png')}}
 }
 contextInfo: {
 mentionedJid: [sender]}
@@ -708,7 +708,7 @@ key:
 { fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ?
 { remoteJid: "status@broadcast" } : {}) },
-message: { "liveLocationMessage": { "caption":"🍒𝒮𝒶𝓂 𝓎 𝒫𝑒𝓇𝓇𝓎 | 𝙉𝙮𝙖𝙣𝘽𝙤𝙩🔥", 'jpegThumbnail': fs.readFileSync('./src/img.jpg')}}
+message: { "liveLocationMessage": { "caption":"Lalelilolu ᵈᵃʳʸ⛥", 'jpegThumbnail': fs.readFileSync('./src/img.jpg')}}
 }
 contextInfo: {
 mentionedJid: [sender]}
@@ -717,7 +717,7 @@ key:
 { fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ?
 { remoteJid: "status@broadcast" } : {}) },
-message: { "videoMessage": { "caption":"🌺Ｓａｍ ｙ Ｐｅｒｒｙ🌺", 'jpegThumbnail': fs.readFileSync('./src/help.jpg')}}
+message: { "videoMessage": { "caption":"Lalelilolu ᵈᵃʳʸ⛥", 'jpegThumbnail': fs.readFileSync('./src/help.jpg')}}
 }
 contextInfo: {
 mentionedJid: [sender]}
@@ -742,7 +742,7 @@ message: {
 "mimetype": "image/jpeg",
 "jpegThumbnail": fs.readFileSync(`./src/fake.jpg`)
 },
-"title": `🐉𝗦𝗮𝗺𝘂𝟯𝟯𝟬🔥 | 📌𝑵𝒚𝒂𝒏𝑩𝒐𝒕🌹 ${timeFt}`,
+"title": `Lalelilolu ᵈᵃʳʸ⛥' ${timeFt}`,
 "description": "",
 "currencyCode": "SYP",
 "priceAmount1000": "999999999999999999",
@@ -2266,13 +2266,13 @@ break
 
 //////
 case 'vicio':		
-if (!isVicio || !itsMe || !isOwner) return reply('haa ha')	
+if (isVicio || isOwner){
 	const vic = fs.readFileSync(`./src/stickers2/Vicio.webp`)
 	samu330.sendMessage(from, none, sticker)	
 
 	const none = fs.readFileSync('./anishan/Vicio.mp3')
 	samu330.sendMessage(from, none, MessageType.audio, {quoted: fliveLoc, mimetype: 'audio/mp4', ptt:true})	
-		
+}		
 break		
 //////		
 case 'gracias':
@@ -3469,7 +3469,7 @@ reply(`*Doxeo de ${mentionUser} echo por Samu330✅*
 
 =====================
 
-*FDx Bt 🔥𝘚𝘢𝘮𝘶𝟥𝟥𝟢🔥*
+*FDx Lalelilolu ᵈᵃʳʸ⛥'*
 `)
 break
 		
@@ -5049,7 +5049,7 @@ return samu330.sendMessage(from, 'Modo privado dice:v', MessageType.text)
 break
 
 case 'public':
-if (!isOwner || !itsMe) return await reply('Este comando solo puede ser usado por *Me :v* ⚙')
+if (!isOwner && !itsMe) return await reply('Este comando solo puede ser usado por *Me :v* ⚙')
 if (public) return await reply('*El modo publico Ya esta activado*')
 config["public"] = true
 public = true
@@ -5057,7 +5057,7 @@ fs.writeFileSync("./config.json", JSON.stringify(config, null, 4))
 await wa.sendFakeStatus(from, "*Se activo el modo publico*", "Public : true")
 break
 case 'self':
-if (!isOwner || !itsMe) return await reply('Este comando solo puede ser usado por *Me :v* ⚙')
+if (!isOwner && !itsMe) return await reply('Este comando solo puede ser usado por *Me :v* ⚙')
 if (!public) return await reply('El modo privado ya estaba activado')
 config["public"] = false
 public = false
@@ -5083,7 +5083,7 @@ reply('Anuncio dado')
 
 break
 case 'stats':
-if (!isOwner || !itsMe) return await reply('Este comando solo puede ser usado por *Me :v* ⚙')
+if (!isOwner && !itsMe) return await reply('Este comando solo puede ser usado por *Me :v* ⚙')
 texxt = await msg.stats(totalChat1)
 await wa.sendFakeStatus(from, texxt, "BOT STATS")
 break
@@ -5097,7 +5097,7 @@ quoted: fliveLoc
   })
   break
 case 'desbloquear':
-if (!isOwner || !itsMe) return await reply('Este comando solo puede ser usado por *Samu330* ⚙')
+if (!isOwner && !itsMe) return await reply('Este comando solo puede ser usado por *Samu330* ⚙')
 if (isGroup) {
 if (mentionUser.length == 0) return await reply("Tag targer!")
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
@@ -5106,7 +5106,7 @@ await samu330.blockUser (mentioned, "remove")
 break
 case 'salir':
 case 'leave':
-if (!isOwner || !itsMe) return await reply('Este comando solo puede ser usado por *Me :v* ⚙')
+if (!isOwner && !itsMe) return await reply('Este comando solo puede ser usado por *Me :v* ⚙')
 if (!isGroup) return await reply(mess.only.group)
 reply(`Saldre de este grupo: ${groupName} en 3 segundos`).then(async() => {
 await help.sleep(3000)
@@ -5141,13 +5141,13 @@ break
 
 case 'hidetag':
 //if (!isOwner && !itsMe) return await reply('Este comando solo puede ser usado por *Samu330* ⚙')
-if (!isAdmin || !isOwner || !itsMe) return await reply(mess.only.admin)
+if (!isAdmin && !isOwner && !itsMe) return await reply(mess.only.admin)
 await wa.hideTag(from, args.join(" "))
 break
 case 'imagetag':
 if (!isGroup) return await reply(mess.only.group)
-if (!isAdmin || !isOwner || !itsMe) return await reply(mess.only.admin)
-if (!isQuotedImage || !isImage) return await reply(`Lalala... *cancion feliz*\nY la imagen pedazo de nada? >:/`)
+if (!isAdmin && !isOwner && !itsMe) return await reply(mess.only.admin)
+if (!isQuotedImage && !isImage) return await reply(`Lalala... *cancion feliz*\nY la imagen pedazo de nada? >:/`)
 mediatag = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
 buffer = await samu330.downloadMediaMessage(mediatag)
 await wa.hideTagImage(from, buffer)
@@ -5683,7 +5683,7 @@ if(isOwner){
 //////Owner :  Me
 		
 const Miau =  ["Nani", "Ya veo", "Oh yeah mami", "Safa ctv", "Hack", "Lolxd", "Ily", "Pichula", "Si xd", "Haha no", "F", "Lau", "Pollita", "C rasca", "Vamos a culear", "Amm"]		
-if (!itsMe){
+if (!itsMe) return reply('Nel')
 	for (let i = 0; i < Miau.length; i++){
 		if (body.includes(`${Miau[i]}`) && body.length == Miau[i].length){
 			none = fs.readFileSync(`./src/stickers2/${Miau[i]}.webp`)
