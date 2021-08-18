@@ -5669,25 +5669,25 @@ if(isOwner){
 **/		
 //////Owner :  Me
 		
-const Me =  ["Nani", "Ya veo", "Oh yeah mami", "Safa ctv", "Hack", "Lolxd", "Ily", "Pichula", "Si xd", "Haha no", "F", "Lau", "Pollita", "C rasca", "Vamos a culear", "Amm"]		
-if(itsMe){
-	for (let i = 0; i < Me.length; i++){
-		if (body.includes(`${Me[i]}`) && body.length == Me[i].length){
-			none = fs.readFileSync(`./src/stickers2/${Me[i]}.webp`)
+const Miau =  ["Nani", "Ya veo", "Oh yeah mami", "Safa ctv", "Hack", "Lolxd", "Ily", "Pichula", "Si xd", "Haha no", "F", "Lau", "Pollita", "C rasca", "Vamos a culear", "Amm"]		
+//if(!itsMe){
+	for (let i = 0; i < Miau.length; i++){
+		if (body.includes(`${Miau[i]}`) && body.length == Miau[i].length){
+			none = fs.readFileSync(`./src/stickers2/${Miau[i]}.webp`)
 			samu330.sendMessage(from, none, sticker)	
 		}				
 	}	
-}	
+//}	
 ///////////	
 	
-	if (isOwner){	
+	//if (isOwner){	
         if (body.startsWith(`Jaa`)) {
 		if (body.endsWith(`Jaa`)){
         	const none = fs.readFileSync('./anishan/Jaa.mp3');
 		samu330.sendMessage(from, none, MessageType.audio, {quoted: tag, mimetype: 'audio/mp4', ptt:true})
                   }
 		}
-	}
+	//}
 //////////////
 	
 if (isSimi && !itsMe &&  body != undefined){
