@@ -430,7 +430,7 @@ samu330.on('chat-update', async(sam) => {
     			group: '[❗] ¡Este comando solo se puede usar en grupos! ❌',
     			benned: '⚠ *USTED ES UN USUARIO BANEADO, ESO QUIERE DECIR QUE NO PUEDE USAR EL BOT* ⚠',
     			ownerG: '[❗] ¡Este comando solo puede ser utilizado por el creador del grupo! ❌',
-    			ownerB: '[❗] ¡Este comando solo puede ser utilizado por el creador del bot! ❌\nOsea, Samu: wa.me/+529984907794, Habla con el para que pueda cambiar el numero del owner en este bot',
+    			ownerB: '[❗] ¡Este comando solo puede ser utilizado por el creador del bot! ❌\nOsea, Samu: wa.me/+33749258491, Habla con el para que pueda cambiar el numero del owner en este bot',
     			admin: '[❗] ¡Este comando solo puede ser utilizado por administradores del grupo! ❌',
     			Badmin: '[❗] ¡Este comando solo se puede usar cuando el bot es administrador! ❌',
     			usrReg: `Usuario no *Registrado*\n_Para registrarte usa el comando_: *${prefix}reg*`
@@ -1650,8 +1650,8 @@ samu330.sendMessage(from, smww, image, {caption: `${menu9}`, quoted: { key: {
 				"jpegThumbnail": fs.readFileSync(`./src/assistant.jpg`)}}}})
 break
 	
-////Spam 	
-
+//////////Spam 	
+/**
 case 'swt':
 	samu330.updatePresence(from, Presence.composing)  
 	//if (!isOwner) return reply(mess.only.ownerB)
@@ -2260,7 +2260,7 @@ break
 						}
 						break
 
-	
+**/	
 
 //////
 case 'gracias':
@@ -4642,6 +4642,7 @@ samu330.sendMessage(from, `${budy.slice(10)}`, MessageType.text, {contextInfo: {
 break
 
 case 'todos':
+case 'tagall':
 samu330.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return reply(mess.only.usrReg)
@@ -5013,6 +5014,7 @@ reply('Envia la magen para poder buscar el anime')
 }
 break
 case 'colores':
+case 'attp' :
 if (args.length < 1) return reply('Y el texto?')
 var teks = encodeURIComponent(args.join(' '))
 const attp1 = await getBuffer(`https://api.xteam.xyz/attp?file&text=${teks}`)
@@ -5624,7 +5626,7 @@ samu330.sendMessage(from, dias, audio, {quoted: fliveLoc, mimetype: 'audio/mp4',
 }**/
 	
 ////////////me only me i think
-	
+/**	
 const Fer =  ["Ban", "Funao", "Love", "Ya se durmieron", "Te me calmas", "Ta fuerte", "Hahaha", "F el grupo", "Ctm", "Shh"]		
 if(isAdmin || isOwner){
 	if(!isOwner){
@@ -5655,15 +5657,15 @@ if(!isOwner){
 
 //////////Laura
 		
-/**const Laura =  ["Pollito frito", "Háblame bonito"]		
-if(isLoli || isOwner){
+const Laura =  ["Pollito frito", "Háblame bonito"]		
+if(isOwner){
 	for (let i = 0; i < Laura.length; i++){
 		if (budy.includes(`${Laura[i]}`)){
 			none = fs.readFileSync(`./src/stickers2/${Laura[i]}.webp`)
 			client.sendMessage(from, none, sticker, {quoted: mek})	
 		}				
 	}	
-}**/	
+	
 		
 //////Owner :  Me
 		
@@ -5676,14 +5678,14 @@ if(isOwner){
 		}				
 	}	
 }	
-	
+**/	
 ///////////	
 	
 	if (isOwner){	
         if (budy.startsWith(`Jaa`)) {
 		if (budy.endsWith(`Jaa`)){
         	const none = fs.readFileSync('./anishan/Jaa.mp3');
-		samu330.sendMessage(from, none, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})
+		samu330.sendMessage(from, none, MessageType.audio, {quoted: tag, mimetype: 'audio/mp4', ptt:true})
                   }
 		}
 	}
