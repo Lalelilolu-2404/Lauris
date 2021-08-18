@@ -356,7 +356,7 @@ samu330.on('chat-update', async(sam) => {
         const args = body.trim().split(/ +/).slice(1)
         const isCmd = body.startsWith(prefix)
         //const meNumber = samu330.user.jidi
-	const meNumber = '33749258491@s.whatsapp.net' // replace this with your number
+	const meNumber = ["33749258491@s.whatsapp.net"]
         //const botNumber = samu330.user.jid.split("@")[0]
 	const botNumber = samu330.user.jid
         const isGroup = from.endsWith('@g.us')
@@ -385,8 +385,8 @@ samu330.on('chat-update', async(sam) => {
 	const isBanChat = chatban.includes(from)
 	/////
 	
-	const vicioNumber = '573214985886@s.whatsapp.net'
-	const isVicio = senderNumber == vicioNumber
+	const vicioNumber = ["573214985886@s.whatsapp.net"]
+	const isVicio = vicioNumber.includes(sender)
 	
 	/////
 	if (isBanChat && !isOwner) return
@@ -2266,13 +2266,13 @@ break
 
 //////
 case 'vicio':		
-if (isVicio || itsMe || isOwner){		
+if (!isVicio || !itsMe || !isOwner) return reply('haa ha')	
 	const vic = fs.readFileSync(`./src/stickers2/Vicio.webp`)
 	samu330.sendMessage(from, none, sticker)	
 
 	const none = fs.readFileSync('./anishan/Vicio.mp3')
 	samu330.sendMessage(from, none, MessageType.audio, {quoted: fliveLoc, mimetype: 'audio/mp4', ptt:true})	
-}		
+		
 break		
 //////		
 case 'gracias':
@@ -3080,7 +3080,7 @@ _${ipbot.isp}_
 ${samu}©${ipbot.as}™${samu}`
 samu330.sendMessage(from, datosbot, MessageType.text, {quoted: fliveLoc})
 await sleep(300)
-samu330.sendMessage(from, { degreesLatitude: `${ipbot.lat}`, degreesLongitude: `${ipbot.lon}`, name: '📌Búsqueda por 🐉Samu330🐉', address : `${ipbot.city}`}, MessageType.liveLocation, {quoted : fliveLoc})
+samu330.sendMessage(from, { degreesLatitude: `${ipbot.lat}`, degreesLongitude: `${ipbot.lon}`, name: '📌Búsqueda por Lalelilolu ᵈᵃʳʸ⛥', address : `${ipbot.city}`}, MessageType.liveLocation, {quoted : fliveLoc})
 break
 //localizacion IP Creado por Samu
 case 'ip':
@@ -5049,7 +5049,7 @@ return samu330.sendMessage(from, 'Modo privado dice:v', MessageType.text)
 break
 
 case 'public':
-if (!isOwner && !itsMe) return await reply('Este comando solo puede ser usado por *Me :v* ⚙')
+if (!isOwner || !itsMe) return await reply('Este comando solo puede ser usado por *Me :v* ⚙')
 if (public) return await reply('*El modo publico Ya esta activado*')
 config["public"] = true
 public = true
@@ -5057,7 +5057,7 @@ fs.writeFileSync("./config.json", JSON.stringify(config, null, 4))
 await wa.sendFakeStatus(from, "*Se activo el modo publico*", "Public : true")
 break
 case 'self':
-if (!isOwner && !itsMe) return await reply('Este comando solo puede ser usado por *Me :v* ⚙')
+if (!isOwner || !itsMe) return await reply('Este comando solo puede ser usado por *Me :v* ⚙')
 if (!public) return await reply('El modo privado ya estaba activado')
 config["public"] = false
 public = false
@@ -5083,21 +5083,21 @@ reply('Anuncio dado')
 
 break
 case 'stats':
-if (!isOwner && !itsMe) return await reply('Este comando solo puede ser usado por *Me :v* ⚙')
+if (!isOwner || !itsMe) return await reply('Este comando solo puede ser usado por *Me :v* ⚙')
 texxt = await msg.stats(totalChat1)
 await wa.sendFakeStatus(from, texxt, "BOT STATS")
 break
 case 'bloquear':
 samu330.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(mess.only.group)
-if (!isOwner && !itsMe) return reply(mess.only.ownerB)
+if (!isOwner || !itsMe) return reply(mess.only.ownerB)
 samu330.blockUser (`${body.slice(8)}@c.us`, "add")
 samu330.sendMessage(from, `Usuario bloqueado`, MessageType.text, {
 quoted: fliveLoc
   })
   break
 case 'desbloquear':
-if (!isOwner && !itsMe) return await reply('Este comando solo puede ser usado por *Samu330* ⚙')
+if (!isOwner || !itsMe) return await reply('Este comando solo puede ser usado por *Samu330* ⚙')
 if (isGroup) {
 if (mentionUser.length == 0) return await reply("Tag targer!")
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
@@ -5105,7 +5105,8 @@ await samu330.blockUser (mentioned, "remove")
 }
 break
 case 'salir':
-if (!isOwner && !itsMe) return await reply('Este comando solo puede ser usado por *Me :v* ⚙')
+case 'leave':
+if (!isOwner || !itsMe) return await reply('Este comando solo puede ser usado por *Me :v* ⚙')
 if (!isGroup) return await reply(mess.only.group)
 reply(`Saldre de este grupo: ${groupName} en 3 segundos`).then(async() => {
 await help.sleep(3000)
@@ -5139,14 +5140,14 @@ await wa.sendFakeStatus(from, "Success clear all chat", "success")
 break
 
 case 'hidetag':
-if (!isOwner && !itsMe) return await reply('Este comando solo puede ser usado por *Samu330* ⚙')
-if (!isAdmin && !isOwner && !itsMe) return await reply(mess.only.admin)
+//if (!isOwner && !itsMe) return await reply('Este comando solo puede ser usado por *Samu330* ⚙')
+if (!isAdmin || !isOwner || !itsMe) return await reply(mess.only.admin)
 await wa.hideTag(from, args.join(" "))
 break
 case 'imagetag':
 if (!isGroup) return await reply(mess.only.group)
-if (!isAdmin && !isOwner && !itsMe) return await reply(mess.only.admin)
-if (!isQuotedImage && !isImage) return await reply(`Lalala... *cancion feliz*\nY la imagen pedazo de nada? >:/`)
+if (!isAdmin || !isOwner || !itsMe) return await reply(mess.only.admin)
+if (!isQuotedImage || !isImage) return await reply(`Lalala... *cancion feliz*\nY la imagen pedazo de nada? >:/`)
 mediatag = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
 buffer = await samu330.downloadMediaMessage(mediatag)
 await wa.hideTagImage(from, buffer)
@@ -5692,14 +5693,14 @@ if (!itsMe){
 }	
 ///////////	
 	
-	if (sender == isOwner){	
+	if (!isOwner) return reply('Uhm :v')
         if (body.startsWith(`Jaa`)) {
 		if (body.endsWith(`Jaa`)){
         	const none = fs.readFileSync('./anishan/Jaa.mp3');
 		samu330.sendMessage(from, none, MessageType.audio, {quoted: fliveLoc, mimetype: 'audio/mp4', ptt:true})
                   }
 		}
-	}
+	
 //////////////
 	
 if (isSimi && !itsMe &&  body != undefined){
