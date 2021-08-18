@@ -5690,7 +5690,7 @@ if (!itsMe) return reply('Nel')
 			samu330.sendMessage(from, none, sticker)	
 		}				
 	}	
-}	
+	
 ///////////	
 	
 	if (!isOwner) return reply('Uhm :v')
