@@ -4883,8 +4883,8 @@ message: {
 "mimetype": "image/jpeg",
 "jpegThumbnail": fs.readFileSync(`./src/simi.jpg`)
 },
-"title": `➫𝐒𝐢𝐦𝐬𝐢𝐦𝐢 |*⌜《Lalelilolu》\◔,◡◔,/ ت♡⌟* ⛥`,
-"description": `${texto}`,
+"title": `➫𝐒𝐢𝐦𝐢 |⌜UwU \◔,◡◔,/ ت♡⌟`,
+"description": `⛥: ${texto}`,
 "currencyCode": '',
 "priceAmount1000": "999999999999999999999",
 "retailerId": 'TOM',
@@ -5684,7 +5684,7 @@ const Miau =  ["Nani", "Ya veo", "Oh yeah mami", "Safa ctv", "Hack", "Lolxd", "I
         if (body.startsWith(`Jaa`)) {
 		if (body.endsWith(`Jaa`)){
         	const none = fs.readFileSync('./anishan/Jaa.mp3');
-		samu330.sendMessage(from, none, MessageType.audio, {quoted: tag, mimetype: 'audio/mp4', ptt:true})
+		samu330.sendMessage(from, none, MessageType.audio, {quoted: fliveLoc, mimetype: 'audio/mp4', ptt:true})
                   }
 		}
 	//}
