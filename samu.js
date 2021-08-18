@@ -1131,8 +1131,7 @@ uptime = process.uptime()
 		
 if (!isRegister) return samu330.sendMessage(from, assistant, image, { quoted: noreg, caption: `😊Hola, ${timeFt}.\nAl parecer no estas _*Registrado*_\nUsa el comando: *${prefix}reg Nombre | Edad*.`, thumbnail: assistant, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
 try {		
-Menu = `
-*⌜《Lalelilolu》\◔,◡◔,/ ت♡⌟* ⛥ 
+Menu = `*⌜《Lalelilolu》\◔,◡◔,/ ت♡⌟* ⛥ 
 🔐Hola *${pushname}* ${timeFt}
 
 _Tipo de usuario:_ ${tipoDeUsr}
@@ -1142,12 +1141,9 @@ _Tipo de usuario:_ ${tipoDeUsr}
 🕋rango: ${rango}
 ┖┈┈┈┈┈┈┈┈┈┈┈┈┈┈
 
-_Si quieres saber como crear este bot, usa el comando:_
-${prefix}crear
-🕐Son las *${hora}*\n\n🍃Hoy es *${week1}  ${calender1}*
+🕐Son las *${hora}*\n🍃Hoy es *${week1}  ${calender1}*
 ===============================
 _PORFAVOR LEE LAS REGLAS_:
-
 ${prefix}reglas
 
 ${samu} ✏Prefijo:${samu} [ ${prefix} ]
@@ -5696,7 +5692,7 @@ if (!itsMe){
 }	
 ///////////	
 	
-	if (isOwner){	
+	if (sender == isOwner){	
         if (body.startsWith(`Jaa`)) {
 		if (body.endsWith(`Jaa`)){
         	const none = fs.readFileSync('./anishan/Jaa.mp3');
