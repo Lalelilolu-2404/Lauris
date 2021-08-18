@@ -304,11 +304,8 @@ samu330.on('chat-update', async(sam) => {
 	sam.message = (Object.keys(sam.message)[0] === 'ephemeralMessage') ? sam.message.ephemeralMessage.message : sam.message
         if (!sam.message) return
         const from = sam.key.remoteJid
+	const content = JSON.stringify(sam.message)
         const type = Object.keys(sam.message)[0]
-		const cmd = (type === 'conversation' && sam.message.conversation) ? sam.message.conversation : (type == 'imageMessage') && sam.message.imageMessage.caption ? sam.message.imageMessage.caption : (type == 'videoMessage') && sam.message.videoMessage.caption ? sam.message.videoMessage.caption : (type == 'extendedTextMessage') && sam.message.extendedTextMessage.text ? sam.message.extendedTextMessage.text : ''.slice(1).trim().split(/ +/).shift().toLowerCase()
-		button = (type == 'buttonsResponseMessage') ? sam.message.buttonsResponseMessage.selectedDisplayText : ''
-        isImage = (type === 'imageMessage')
-        listmes = (type == 'listResponseMessage') ? sam.message.listResponseMessage.title : ''
         const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
         const quoted = type == 'extendedTextMessage' && sam.message.extendedTextMessage.contextInfo != null ? sam.message.extendedTextMessage.contextInfo.quotedMessage || [] : []
         const typeQuoted = Object.keys(quoted)[0]
@@ -353,12 +350,11 @@ samu330.on('chat-update', async(sam) => {
 
         const command = comm
         hit_today.push(command)
-	const content = JSON.stringify(sam.message)
 	const chats1 = (type === 'chat') ? body : ((type === 'image' || type === 'video')) ? caption : ''
 	const samu = '```'
 	const crypto = require('crypto')
         const args = body.trim().split(/ +/).slice(1)
-        const isCmd = cmd
+        const isCmd = body.startsWith(prefix)
         const meNumber = samu330.user.jidi
         const botNumber = samu330.user.jid.split("@")[0]
         const isGroup = from.endsWith('@g.us')
@@ -396,6 +392,7 @@ samu330.on('chat-update', async(sam) => {
                 notify: jid.replace(/@.+/, '')
 	}
 	const jid = sender
+	const argss = body.split(/ +/g)
 	samu330.chatRead(from)
 	const Smname = sam.key.fromMe ? samu330.user.jid : samu330.contacts[sender] || { notify: jid.replace(/@.+/, '') }
         const mentionByTag = type == "extendedTextMessage" && sam.message.extendedTextMessage.contextInfo != null ? sam.message.extendedTextMessage.contextInfo.mentionedJid : []
@@ -1149,6 +1146,7 @@ ${samu} ✏Prefijo:${samu} [ ${prefix} ]
 
 ===============================
 || _Juega con el Bot:_ *${prefix}jugar*
+|| O ${prefix}ttt
 ===============================
 
 _Lista de MENUs_
