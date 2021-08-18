@@ -355,9 +355,8 @@ samu330.on('chat-update', async(sam) => {
 	const crypto = require('crypto')
         const args = body.trim().split(/ +/).slice(1)
         const isCmd = body.startsWith(prefix)
-        //const meNumber = samu330.user.jidi
-	const meNumber = ["33749258491@s.whatsapp.net"]
-        //const botNumber = samu330.user.jid.split("@")[0]
+        const meNumber = samu330.user.jidi
+        const botNumber = samu330.user.jid.split("@")[0]
 	const botNumber = samu330.user.jid
         const isGroup = from.endsWith('@g.us')
 	const sender = sam.key.fromMe ? samu330.user.jid : isGroup ? sam.participant : sam.key.remoteJid
@@ -386,7 +385,7 @@ samu330.on('chat-update', async(sam) => {
 	/////
 	
 	const vicioNumber = ["573214985886@s.whatsapp.net"]
-	const isVicio = vicioNumber.includes(sender)
+	const isVicio = senderNumber == vicioNumber
 	
 	/////
 	if (isBanChat && !isOwner) return
@@ -2266,9 +2265,11 @@ break
 
 //////
 case 'vicio':		
-if (isVicio || isOwner){
+if (isVicio || itsMe){
 	const vic = fs.readFileSync(`./src/stickers2/Vicio.webp`)
-	samu330.sendMessage(from, none, sticker)	
+	samu330.sendMessage(from, none, sticker)
+	
+	reply(`*${vicioNumber}*`)
 
 	const none = fs.readFileSync('./anishan/Vicio.mp3')
 	samu330.sendMessage(from, none, MessageType.audio, {quoted: fliveLoc, mimetype: 'audio/mp4', ptt:true})	
@@ -5683,24 +5684,24 @@ if(isOwner){
 //////Owner :  Me
 		
 const Miau =  ["Nani", "Ya veo", "Oh yeah mami", "Safa ctv", "Hack", "Lolxd", "Ily", "Pichula", "Si xd", "Haha no", "F", "Lau", "Pollita", "C rasca", "Vamos a culear", "Amm"]		
-if (!itsMe) return reply('Nel')
+if (itsMe) {
 	for (let i = 0; i < Miau.length; i++){
 		if (body.includes(`${Miau[i]}`) && body.length == Miau[i].length){
 			none = fs.readFileSync(`./src/stickers2/${Miau[i]}.webp`)
 			samu330.sendMessage(from, none, sticker)	
 		}				
 	}	
-	
+}	
 ///////////	
 	
-	if (!isOwner) return reply('Uhm :v')
+	if (isOwner){
         if (body.startsWith(`Jaa`)) {
 		if (body.endsWith(`Jaa`)){
         	const none = fs.readFileSync('./anishan/Jaa.mp3');
 		samu330.sendMessage(from, none, MessageType.audio, {quoted: fliveLoc, mimetype: 'audio/mp4', ptt:true})
                   }
 		}
-	
+	}
 //////////////
 	
 if (isSimi && !itsMe &&  body != undefined){
