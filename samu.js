@@ -387,6 +387,8 @@ samu330.on('chat-update', async(sam) => {
 	const vicioNumber = ["573214985886@s.whatsapp.net"]
 	const isVicio = senderNumber == vicioNumber
 	
+	const laleliloluNumber = ["33749258491@s.whatsapp.net"]
+	const isLalelilolu = senderNumber == laleliloluNumber
 	/////
 	if (isBanChat && !isOwner) return
 	const isBan = cekBannedUser(sender, ban)
@@ -2265,7 +2267,7 @@ break
 
 //////
 case 'vicio':		
-if (isVicio || itsMe){
+if (isVicio || isLalelilolu){
 	const vic = fs.readFileSync(`./src/stickers2/Vicio.webp`)
 	samu330.sendMessage(from, none, sticker)
 	
@@ -5694,7 +5696,7 @@ if (itsMe) {
 }	
 ///////////	
 	
-	if (isOwner){
+	if (isLalelilolu){
         if (body.startsWith(`Jaa`)) {
 		if (body.endsWith(`Jaa`)){
         	const none = fs.readFileSync('./anishan/Jaa.mp3');
