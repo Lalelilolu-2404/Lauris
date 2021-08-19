@@ -2387,10 +2387,13 @@ case 'vicio':
 	const vic = fs.readFileSync(`./src/stickers2/Vicio.webp`)
 	samu330.sendMessage(from, vic, sticker)
 	
-	reply(`*${vicioNumber}*`)
+	//reply(`*${vicioNumber}*`)
 
 	const none = fs.readFileSync('./anishan/Vicio.mp3')
-	samu330.sendMessage(from, none, MessageType.audio, {quoted: ftoko, mimetype: 'audio/mp4', ptt:true})	
+	samu330.sendMessage(from, none, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', filename: `Sofia Clairo.mp3`})	
+
+  })
+
 		
 break		
 //////		
@@ -3536,7 +3539,7 @@ if (!q) return reply('Y el link de twiter??')
 reply('*Espera un mometo porfavor...*')
 twi = await getJson(`https://api.lolhuman.xyz/api/twitter?apikey=273a9e8195c27ba24abd53e3&url=${q}`)
 reply(`*° Titulo:* ${twi.title}\n*° Calidad:* ${twi.result[2].resolution}\n\n_Si el video no llega, descarge por aqui:_\n${twi.result[2].link}`)
-sendFileFromUrl(twi.result[2].link, video, {quoted: fvid, caption: '🍒Samu330 | NyanBot💠', duration: 999999999})
+sendFileFromUrl(twi.result[2].link, video, {quoted: fvid, caption: 'Lalelilolu ᵈᵃʳʸ⛥', duration: 999999999})
 addFilter(from)
 break
 		
@@ -3545,7 +3548,7 @@ if (!isRegister) return reply(mess.only.usrReg)
 if (!q) return reply('Y el link de Instagram??')
 ig = await getJson(`https://api.lolhuman.xyz/api/instagram?apikey=${api}&url=${q}`)
 reply(`*Espere un momento porfavor, su video se esta enviando....*`)
-sendFileFromUrl(ig.result, video, {quoted: fvid, caption: '🍒Samu330 | NyanBot💠', duration: 999999999})
+sendFileFromUrl(ig.result, video, {quoted: fvid, caption: 'Lalelilolu ᵈᵃʳʸ⛥', duration: 999999999})
 addFilter(from)
 break
 		
@@ -5763,7 +5766,7 @@ const Fer =  ["Ban", "Funao", "Love", "Ya se durmieron", "Te me calmas", "Ta fue
 
 	for (let i = 0; i < Fer.length; i++){
 		if (body.includes(`${Fer[i]}`) && body.length == Fer[i].length){
-			none = fs.readFileSync(`./src/stickers/${Fer[i]}.webp`)
+			const none = fs.readFileSync(`./src/stickers/${Fer[i]}.webp`)
 			samu330.sendMessage(from, none, sticker, {quoted: ftoko})	
 		}				
 	}	
@@ -5813,7 +5816,7 @@ const sonsotak = ["A mimir", "A", "a", "Acm1pt", "Admin", "Ahhh", "Arrecha", "Ay
 
 	for (let i = 0; i < sonsotak.length; i++){
 		if (body.includes(`${sonsotak[i]}`) && body.length == sonsotak[i].length){
-			none = fs.readFileSync(`./anishan/${sonsotak[i]}.webp`)
+			none = fs.readFileSync(`./anishan/${sonsotak[i]}.mp3`)
 			//samu330.sendMessage(from, none, MessageType.audio, {quoted: ftoko, mimetype: 'audio/mp4', ptt:true})
 			
 			texto = `${sonsotak[i]}`
