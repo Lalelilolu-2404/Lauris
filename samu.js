@@ -2270,7 +2270,7 @@ break
 case 'vicio':		
 if (isOwner){
 	const vic = fs.readFileSync(`./src/stickers2/Vicio.webp`)
-	samu330.sendMessage(from, none, sticker)
+	samu330.sendMessage(from, vic, sticker)
 	
 	reply(`*${vicioNumber}*`)
 
