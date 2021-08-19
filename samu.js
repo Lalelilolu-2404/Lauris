@@ -1864,11 +1864,11 @@ break
 	**/
 			case 'die':
 				samu330.updatePresence(from, Presence.composing)  
-				if (args.length < 1) return reply('.......')
+				if (arg1.length < 1) return reply('.......')
 				if (!isOwner) return reply('No eres mi dueño UnU')
 		
 				if (isQuotedSticker){
-				argz = arg.split("|")
+				argz = arg1.split("|")
 				   if (isNaN(argz[0])) return reply(`# de veces?`)
 					spamer = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					pegat = await samu330.downloadMediaMessage(spamer)
