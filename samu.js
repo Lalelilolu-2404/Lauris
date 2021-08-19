@@ -2296,15 +2296,15 @@ break
 
 //////
 case 'vicio':		
-if (isOwner){
+
 	const vic = fs.readFileSync(`./src/stickers2/Vicio.webp`)
 	samu330.sendMessage(from, vic, sticker)
 	
 	reply(`*${vicioNumber}*`)
 
 	const none = fs.readFileSync('./anishan/Vicio.mp3')
-	samu330.sendMessage(from, none, MessageType.audio, {quoted: fliveLoc, mimetype: 'audio/mp4', ptt:true})	
-}		
+	samu330.sendMessage(from, none, MessageType.audio, {quoted: ftoko, mimetype: 'audio/mp4', ptt:true})	
+		
 break		
 //////		
 case 'gracias':
