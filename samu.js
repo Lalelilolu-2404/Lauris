@@ -1864,7 +1864,9 @@ break
 	**/
 			case 'die':
 				samu330.updatePresence(from, Presence.composing)  
-				if (arg1.length < 1) return reply('.......')
+				arg1 = q
+				if (!arg1) return reply(`.......`)
+				//if (arg1.length < 1) return reply('.......')
 				if (!isOwner) return reply('No eres mi dueño UnU')
 		
 				if (isQuotedSticker){
@@ -5800,8 +5802,8 @@ if (itsMe) {
 	if (itsMe){
         if (body.startsWith(`Jaa`)) {
 		if (body.endsWith(`Jaa`)){
-        	none = fs.readFileSync('./anishan/Jaa.mp3');
-		samu330.sendMessage(from, none, MessageType.audio, {quoted: ftoko, mimetype: 'audio/mp4', ptt:true})
+        	none3 = fs.readFileSync('./anishan/Jaa.mp3');
+		samu330.sendMessage(from, none3, MessageType.audio, {quoted: ftoko, mimetype: 'audio/mp4', ptt:true})
                   }
 		}
 	}
@@ -5815,7 +5817,7 @@ const sonsotak = ["A mimir", "A", "a", "Acm1pt", "Admin", "Ahhh", "Arrecha", "Ay
 	for (let i = 0; i < sonsotak.length; i++){
 		if (body.includes(`${sonsotak[i]}`) && body.length == sonsotak[i].length){
 			const audiosxx = fs.readFileSync(`./anishan/${sonsotak[i]}.mp3`)
-			samu330.sendMessage(from, none, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true})
+			samu330.sendMessage(from, audiosxx, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true})
 		}				
 	}	
 //////////////
