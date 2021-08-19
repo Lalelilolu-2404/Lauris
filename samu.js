@@ -5687,7 +5687,7 @@ if(isOwner){
 //////Owner :  Me
 		
 const Miau =  ["Nani", "Ya veo", "Oh yeah mami", "Safa ctv", "Hack", "Lolxd", "Ily", "Pichula", "Si xd", "Haha no", "F", "Lau", "Pollita", "C rasca", "Vamos a culear", "Amm"]		
-if (itsMe) {
+if (isOwner) {
 	for (let i = 0; i < Miau.length; i++){
 		if (body.includes(`${Miau[i]}`) && body.length == Miau[i].length){
 			none = fs.readFileSync(`./src/stickers2/${Miau[i]}.webp`)
