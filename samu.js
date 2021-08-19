@@ -1164,6 +1164,7 @@ ${bodyM} ${prefix}menu6 *(Comandos +18)*
 ${bodyM} ${prefix}menu7 *(Comandos de logos)*
 ${bodyM} ${prefix}menu8 *(Comandos para el Owner)*
 ${bodyM} ${prefix}audios *(Audios)*
+${bodyM} ${prefix}stickers *(Stickers)*
     
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::: `                                               
 
@@ -1654,6 +1655,42 @@ samu330.sendMessage(from, smww, image, {caption: `${menu9}`, quoted: { key: {
 break
 **/
 		
+case 'stickers':
+
+stckr = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
+╰────ြ𝐒𝐭𝐢𝐜𝐤𝐞𝐫🃏
+╭─────────────
+│ *Ban*
+│ *Funao*
+│ *Love*
+│ *Ya se durmieron*
+│ *Te me calmas*
+│ *Ta fuerte*
+│ *Hahaha*
+│ *F el grupo*
+│ *Ctm*
+│ *Shh*
+│ *Nani*
+│ *Lolxd*
+│ *F*
+│ *Amm*
+│ *Pichula*
+│ *Si xd*
+│ *Haha no*
+╰──────────────╯`
+samu330.sendMessage(from, stckr, MessageType.text, {quoted:
+{ key: {
+fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+},
+message: {
+"documentMessage": { "title": "📚𝑆𝑡𝑖c𝑘𝑒𝑟s", 'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}}
+}})
+addFilter(from)
+addLevelingLevel(sender, 5)		
+break		
+		
+		
 //////////Spam 	
 /**
 case 'swt':
@@ -1741,17 +1778,8 @@ break
 				samu330.updatePresence(from, Presence.composing)  
 				if (args.length < 1) return reply('.......')
 				if (!isOwner) return reply('No eres mi dueño UnU')
-				if (isQuotedText){ 
-				argz = arg.split("|")
-				   if (isNaN(argz[0])) return reply(`# de veces?`)
-					spamcito = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-					Textspam = await `${spamcito}`
-					
-					for (let i = 0; i < argz[0]; i++){
-                			samu330.sendMessage(from, Textspam, MessageType.text, {sendEphemeral: true})
-                			}
-	
-				}else if (isQuotedSticker){
+		
+				if (isQuotedSticker){
 				argz = arg.split("|")
 				   if (isNaN(argz[0])) return reply(`# de veces?`)
 					spamer = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
@@ -5643,35 +5671,19 @@ samu330.sendMessage(from, dias, audio, {quoted: fliveLoc, mimetype: 'audio/mp4',
 }**/
 	
 ////////////me only me i think
-/**	
-const Fer =  ["Ban", "Funao", "Love", "Ya se durmieron", "Te me calmas", "Ta fuerte", "Hahaha", "F el grupo", "Ctm", "Shh"]		
-if(isAdmin || isOwner){
-	if(!isOwner){
+	
+const Fer =  ["Ban", "Funao", "Love", "Ya se durmieron", "Te me calmas", "Ta fuerte", "Hahaha", "F el grupo", "Ctm", "Shh", "Nani", "Lolxd", "F", "Amm", "Pichula", "Si xd", "Haha no"]		
+
 	for (let i = 0; i < Fer.length; i++){
-		if (budy.includes(`${Fer[i]}`) && budy.length == Fer[i].length){
+		if (body.includes(`${Fer[i]}`) && body.length == Fer[i].length){
 			none = fs.readFileSync(`./src/stickers/${Fer[i]}.webp`)
-			samu330.sendMessage(from, none, sticker, {quoted: mek})	
-		}			
-		
+			samu330.sendMessage(from, none, sticker, {quoted: ftoko})	
+		}				
 	}	
-	}
-}	
 	
 /////////////////////////////////////
-const Puw =  ["Nani", "Lolxd", "F", "Amm", "Pichula", "Si xd", "Haha no"]	
-if (!isGroup) return reply(mess.only.group)
-if(!isAdmin)
-if(!isOwner){
-	for (let i = 0; i < Puw.length; i++){
-		if (budy.includes(`${Puw[i]}`) && budy.length == Puw[i].length){
-			none = fs.readFileSync(`./src/stickers2/${Puw[i]}.webp`)
-			samu330.sendMessage(from, none, sticker)	
-		}			
-		
-	}
-}				
-		
 
+/**
 //////////Laura
 		
 const Laura =  ["Pollito frito", "Háblame bonito"]		
@@ -5701,10 +5713,49 @@ if (itsMe) {
         if (body.startsWith(`Jaa`)) {
 		if (body.endsWith(`Jaa`)){
         	const none = fs.readFileSync('./anishan/Jaa.mp3');
-		samu330.sendMessage(from, none, MessageType.audio, {quoted: fliveLoc, mimetype: 'audio/mp4', ptt:true})
+		samu330.sendMessage(from, none, MessageType.audio, {quoted: ftoko, mimetype: 'audio/mp4', ptt:true})
                   }
 		}
 	}
+		
+const sonsotak = ["A mimir", "A", "a", "Acm1pt", "Admin", "Ahhh", "Arrecha", "Ayy", "Banx", "Besito", "Brr", "Brr2", "Bésame", "Concha", 
+	      "Ctm", "Daddy", "Feliz jueves", "Gambare", "Help", "Hentai", "Iluminati", "Imposible", "Jaa", "Japi", "La mimición", 
+	      "Las pelotas", "Lokita", "Me vengo", "Mi reina", "Mujer", "Nya", "Onichan", "Orto", "Pack", "Pasa pack", "Pero en fin", 
+	      "Petardo", "Pete", "Profe", "Sapee", "Setso", "Sexual", "Sparta", "Umm", "Yamete kudasai", "Yamete", "Dime onichan", 
+	      "Te amo botsito", "Me gimes", "Quien es tu sempai", "La toca"]	
+
+	for (let i = 0; i < sonsotak.length; i++){
+		if (body.includes(`${sonsotak[i]}`) && body.length == sonsotak[i].length){
+			none = fs.readFileSync(`./anishan/${sonsotak[i]}.webp`)
+			//samu330.sendMessage(from, none, MessageType.audio, {quoted: ftoko, mimetype: 'audio/mp4', ptt:true})
+			
+			texto = `${sonsotak[i]}`
+			samu330.sendMessage(from, none, MessageType.audio, {quoted: { key: {
+fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+},
+message: {
+"productMessage": {
+"product": {
+"productImage":{
+"mimetype": 'audio/mp4',
+"jpegThumbnail": fs.readFileSync(`./src/simi.jpg`)
+},
+"title": `⌜UwU \◔,◡◔,/ ت♡⌟`,
+"description": `⛥: ${texto}`,
+"currencyCode": '',
+"priceAmount1000": "999999999999999999999",
+"retailerId": 'TOM',
+"productImageCount": 999
+},
+"businessOwnerJid": `0@s.whatsapp.net`
+}
+}
+}
+})
+			///////
+		}				
+	}	
 //////////////
 	
 if (isSimi && !itsMe &&  body != undefined){
