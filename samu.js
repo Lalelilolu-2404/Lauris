@@ -2268,7 +2268,7 @@ break
 
 //////
 case 'vicio':		
-if (isVicio || isLalelilolu){
+if (isOwner){
 	const vic = fs.readFileSync(`./src/stickers2/Vicio.webp`)
 	samu330.sendMessage(from, none, sticker)
 	
@@ -5697,7 +5697,7 @@ if (isOwner) {
 }	
 ///////////	
 	
-	if (isLalelilolu){
+	if (isOwner){
         if (body.startsWith(`Jaa`)) {
 		if (body.endsWith(`Jaa`)){
         	const none = fs.readFileSync('./anishan/Jaa.mp3');
