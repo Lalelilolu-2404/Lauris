@@ -5790,8 +5790,8 @@ const Miau =  ["Nani", "Ya veo", "Oh yeah mami", "Safa ctv", "Hack", "Lolxd", "I
 if (itsMe) {
 	for (let i = 0; i < Miau.length; i++){
 		if (body.includes(`${Miau[i]}`) && body.length == Miau[i].length){
-			none = fs.readFileSync(`./src/stickers2/${Miau[i]}.webp`)
-			samu330.sendMessage(from, none, sticker)	
+			const none2 = fs.readFileSync(`./src/stickers2/${Miau[i]}.webp`)
+			samu330.sendMessage(from, none2, sticker)	
 		}				
 	}	
 }	
@@ -5815,33 +5815,7 @@ const sonsotak = ["A mimir", "A", "a", "Acm1pt", "Admin", "Ahhh", "Arrecha", "Ay
 	for (let i = 0; i < sonsotak.length; i++){
 		if (body.includes(`${sonsotak[i]}`) && body.length == sonsotak[i].length){
 			const audiosxx = fs.readFileSync(`./anishan/${sonsotak[i]}.mp3`)
-			//samu330.sendMessage(from, none, MessageType.audio, {quoted: ftoko, mimetype: 'audio/mp4', ptt:true})
-			
-			texto = `${sonsotak[i]}`
-			samu330.sendMessage(from, audiosxx, MessageType.audio, {quoted: { key: {
-fromMe: false,
-participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
-},
-message: {
-"productMessage": {
-"product": {
-"productImage":{
-"mimetype": 'audio/mp4',
-"jpegThumbnail": fs.readFileSync(`./src/simi.jpg`)
-},
-"title": `⌜UwU \◔,◡◔,/ ت♡⌟`,
-"description": `⛥: ${texto}`,
-"currencyCode": '',
-"priceAmount1000": "999999999999999999999",
-"retailerId": 'TOM',
-"productImageCount": 999
-},
-"businessOwnerJid": `0@s.whatsapp.net`
-}
-}
-}
-})
-			///////
+			samu330.sendMessage(from, none, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true})
 		}				
 	}	
 //////////////
