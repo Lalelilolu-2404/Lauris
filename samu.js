@@ -1164,6 +1164,8 @@ ${bodyM} ${prefix}menu6 *(Comandos +18)*
 ${bodyM} ${prefix}menu7 *(Comandos de logos)*
 ${bodyM} ${prefix}menu8 *(Comandos para el Owner)*
 ${bodyM} ${prefix}audios *(Audios)*
+${bodyM} ${prefix}otak *(Otak_audios)*
+${bodyM} ${prefix}bana *(Bananeraudios)*
 ${bodyM} ${prefix}stickers *(Stickers)*
     
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::: `                                               
@@ -1690,7 +1692,99 @@ addFilter(from)
 addLevelingLevel(sender, 5)		
 break		
 		
+///////Audios otak and bananeraudios			
+case 'otak':
+
+otakusaud = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
+╭─────────────
+│ *A mimir*
+│ *A*
+│ *a*
+│ *Banx*
+│ *Ctm*
+│ *Daddy*
+│ *Dime onichan*
+│ *Feliz jueves*
+│ *Gambare*
+│ *Help*
+│ *Hentai*
+│ *Iluminati*
+│ *Imposible*
+│ *Jaa*
+│ *La mimición*
+│ *La toca*
+│ *Me vengo*
+│ *Mi reina*
+│ *Mujer*
+│ *Nya*
+│ *Oh oh si*
+│ *Onichan*
+│ *Pack*
+│ *Pasa pack*
+│ *Pero en fin*
+│ *Setso*
+│ *Sexual*
+│ *Te amo botsito*
+│ *Me gimes*
+│ *Quien es tu sempai*
+│ *Umm*
+│ *Yamete kudasai*
+│ *Yamete*
+╰──────────────╯`
+samu330.sendMessage(from, otakusaud, MessageType.text, {quoted:
+{ key: {
+fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+},
+message: {
+"documentMessage": { "title": "📚Otak_audios", 'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}}
+}})
+addFilter(from)
+addLevelingLevel(sender, 5)		
+break	
+	
 		
+const sonsotak = ["A mimir", "A", "a", "Acm1pt", "Admin", "Ahhh", "Arrecha", "Ayy", "Banx", "Besito", "Brr", "Brr2", "Bésame", "Concha", 
+	      "Ctm", "Daddy", "Feliz jueves", "Gambare", "Help", "Hentai", "Iluminati", "Imposible", "Jaa", "Japi", "La mimición", 
+	      "Las pelotas", "Lokita", "Me vengo", "Mi reina", "Mujer", "Nya", "Oh oh si", "Onichan", "Orto", "Pack", "Pasa pack", "Pero en fin", 
+	      "Petardo", "Pete", "Profe", "Sapee", "Setso", "Sexual", "Sparta", "Umm", "Yamete kudasai", "Yamete", "Dime onichan", 
+	      "Te amo botsito", "Me gimes", "Quien es tu sempai", "La toca"]		
+
+case 'bana':
+
+banaud = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
+╭─────────────
+│ *Acm1pt*
+│ *Admin*
+│ *Ahhh*
+│ *Arrecha*
+│ *Ayy*
+│ *Besito*
+│ *Brr*
+│ *Brr2*
+│ *Bésame*
+│ *Concha*
+│ *Japi*
+│ *Las pelotas*
+│ *Lokita*
+│ *Orto*
+│ *Petardo*
+│ *Pete*
+│ *Profe*
+│ *Sapee*
+│ *Sparta*
+╰──────────────╯`
+samu330.sendMessage(from, banaud, MessageType.text, {quoted:
+{ key: {
+fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+},
+message: {
+"documentMessage": { "title": "♥Bananer_audios", 'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}}
+}})
+addFilter(from)
+addLevelingLevel(sender, 5)		
+break	
 //////////Spam 	
 /**
 case 'swt':
@@ -5720,7 +5814,7 @@ if (itsMe) {
 		
 const sonsotak = ["A mimir", "A", "a", "Acm1pt", "Admin", "Ahhh", "Arrecha", "Ayy", "Banx", "Besito", "Brr", "Brr2", "Bésame", "Concha", 
 	      "Ctm", "Daddy", "Feliz jueves", "Gambare", "Help", "Hentai", "Iluminati", "Imposible", "Jaa", "Japi", "La mimición", 
-	      "Las pelotas", "Lokita", "Me vengo", "Mi reina", "Mujer", "Nya", "Onichan", "Orto", "Pack", "Pasa pack", "Pero en fin", 
+	      "Las pelotas", "Lokita", "Me vengo", "Mi reina", "Mujer", "Nya", "Oh oh si", "Onichan", "Orto", "Pack", "Pasa pack", "Pero en fin", 
 	      "Petardo", "Pete", "Profe", "Sapee", "Setso", "Sexual", "Sparta", "Umm", "Yamete kudasai", "Yamete", "Dime onichan", 
 	      "Te amo botsito", "Me gimes", "Quien es tu sempai", "La toca"]	
 
