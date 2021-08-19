@@ -1766,6 +1766,7 @@ banaud = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 │ *Profe*
 │ *Sapee*
 │ *Sparta*
+│ *Lalelilolu ᵈᵃʳʸ*⛥
 ╰──────────────╯`
 samu330.sendMessage(from, banaud, MessageType.text, {quoted:
 { key: {
@@ -1773,7 +1774,7 @@ fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
 },
 message: {
-"documentMessage": { "title": "♥Bananer_audios", 'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}}
+"documentMessage": { "title": "♥Bananer_audios", 'jpegThumbnail': fs.readFileSync('./src/bana.jpg')}}
 }})
 addFilter(from)
 addLevelingLevel(sender, 5)		
@@ -5764,7 +5765,7 @@ const Fer =  ["Ban", "Funao", "Love", "Ya se durmieron", "Te me calmas", "Ta fue
 	for (let i = 0; i < Fer.length; i++){
 		if (body.includes(`${Fer[i]}`) && body.length == Fer[i].length){
 			const none = fs.readFileSync(`./src/stickers/${Fer[i]}.webp`)
-			samu330.sendMessage(from, none, sticker, {quoted: ftoko})	
+			samu330.sendMessage(from, none, sticker)	
 		}				
 	}	
 	
@@ -5799,7 +5800,7 @@ if (itsMe) {
 	if (itsMe){
         if (body.startsWith(`Jaa`)) {
 		if (body.endsWith(`Jaa`)){
-        	const none = fs.readFileSync('./anishan/Jaa.mp3');
+        	none = fs.readFileSync('./anishan/Jaa.mp3');
 		samu330.sendMessage(from, none, MessageType.audio, {quoted: ftoko, mimetype: 'audio/mp4', ptt:true})
                   }
 		}
@@ -5813,11 +5814,11 @@ const sonsotak = ["A mimir", "A", "a", "Acm1pt", "Admin", "Ahhh", "Arrecha", "Ay
 
 	for (let i = 0; i < sonsotak.length; i++){
 		if (body.includes(`${sonsotak[i]}`) && body.length == sonsotak[i].length){
-			none = fs.readFileSync(`./anishan/${sonsotak[i]}.mp3`)
+			const audiosxx = fs.readFileSync(`./anishan/${sonsotak[i]}.mp3`)
 			//samu330.sendMessage(from, none, MessageType.audio, {quoted: ftoko, mimetype: 'audio/mp4', ptt:true})
 			
 			texto = `${sonsotak[i]}`
-			samu330.sendMessage(from, none, MessageType.audio, {quoted: { key: {
+			samu330.sendMessage(from, audiosxx, MessageType.audio, {quoted: { key: {
 fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
 },
