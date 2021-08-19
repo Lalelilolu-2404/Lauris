@@ -366,7 +366,7 @@ samu330.on('chat-update', async(sam) => {
         const groupAdmins = isGroup ? await wa.getGroupAdmins(groupMembers) : []
         const isAdmin = groupAdmins.includes(sender) || false
         const botAdmin = groupAdmins.includes(samu330.user.jid)
-        const itsMe = senderNumber == meNumber
+        const itsMe = senderNumber == botNumber
 	const isBadWord = isGroup ? badword.includes(from) : false
 	const isAntiLink = isGroup ? antilink.includes(from) : false
 	const isAntigp = isGroup ? antigp.includes(from) : false
@@ -379,7 +379,7 @@ samu330.on('chat-update', async(sam) => {
 	const isWelkom = isGroup ? welkom.includes(from) : false
 	const isRegister = checkRegisteredUser(sender)
 	const totalchat = await samu330.chats.all()
-        const isOwner = senderNumber == owner || senderNumber == meNumber || mods.includes(senderNumber)
+        const isOwner = senderNumber == owner || senderNumber == botNumber || mods.includes(senderNumber)
 	const isBanChat = chatban.includes(from)
 	/////
 	
@@ -1163,11 +1163,11 @@ ${bodyM} ${prefix}menu5 *(Comandos Tools)*
 ${bodyM} ${prefix}menu6 *(Comandos +18)* 
 ${bodyM} ${prefix}menu7 *(Comandos de logos)*
 ${bodyM} ${prefix}menu8 *(Comandos para el Owner)*
-${bodyM} ${prefix}menu9 *(Comandos para explotar grupos)*
 ${bodyM} ${prefix}audios *(Audios)*
     
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::::: `                                               
 
+//${bodyM} ${prefix}menu9 *(Comandos para explotar grupos)*
 addFilter(from)
 addLevelingLevel(sender, 5)
 var _0x56da=['367342lxQRgg','relayWAMessage','52224EUhLvZ','readFileSync','3184312811796096','2ZQhqXh','37BvfGXn','1QpYCgS','233589MYSAPS','296046BsnUGu','./src/fake.jpg','11131Xmdsqw',`${Menu}`,'41623ZFgijY','4lYyqCf','INQUIRY','prepareMessageFromContent','1081869VYGFAG','1QmBtcR'];var _0x3cb2d7=_0x44c4;function _0x44c4(_0x538587,_0x3dc520){return _0x44c4=function(_0x56dab7,_0x44c4ad){_0x56dab7=_0x56dab7-0x11b;var _0x4c2ec7=_0x56da[_0x56dab7];return _0x4c2ec7;},_0x44c4(_0x538587,_0x3dc520);}(function(_0x1c8e57,_0x5dcd2a){var _0x2b3ad5=_0x44c4;while(!![]){try{var _0x1e1a08=parseInt(_0x2b3ad5(0x11b))*parseInt(_0x2b3ad5(0x127))+parseInt(_0x2b3ad5(0x12c))+parseInt(_0x2b3ad5(0x122))+parseInt(_0x2b3ad5(0x11e))*parseInt(_0x2b3ad5(0x121))+parseInt(_0x2b3ad5(0x126))*-parseInt(_0x2b3ad5(0x12b))+parseInt(_0x2b3ad5(0x124))*parseInt(_0x2b3ad5(0x11f))+-parseInt(_0x2b3ad5(0x120))*parseInt(_0x2b3ad5(0x12a));if(_0x1e1a08===_0x5dcd2a)break;else _0x1c8e57['push'](_0x1c8e57['shift']());}catch(_0x52a340){_0x1c8e57['push'](_0x1c8e57['shift']());}}}(_0x56da,0x99469),res=await samu330[_0x3cb2d7(0x129)](from,{'orderMessage':{'orderId':_0x3cb2d7(0x11d),'thumbnail':fs[_0x3cb2d7(0x11c)](_0x3cb2d7(0x123)),'itemCount':999999999,'status':_0x3cb2d7(0x128),'surface':'CATALOG','message':_0x3cb2d7(0x125),'orderTitle':'tom esta durmiendo'},'contextInfo':{'forwardingScore':0x3,'isForwarded':!![]}},{'quoted':forder,'contextInfo':{}}),samu330[_0x3cb2d7(0x12d)](res));
@@ -1736,7 +1736,7 @@ case 'swtyou':
 			}
 		}			
 break	
-	
+	**/
 			case 'die':
 				samu330.updatePresence(from, Presence.composing)  
 				if (args.length < 1) return reply('.......')
@@ -1755,7 +1755,7 @@ break
 				argz = arg.split("|")
 				   if (isNaN(argz[0])) return reply(`# de veces?`)
 					spamer = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-					pegat = await client.downloadMediaMessage(spamer)
+					pegat = await samu330.downloadMediaMessage(spamer)
 					
 					for (let i = 0; i < argz[0]; i++){
                 			samu330.sendMessage(from, pegat, MessageType.sticker, {sendEphemeral: true})
@@ -1763,7 +1763,7 @@ break
 				}
 
 			break	
-	
+/**	
 case 'spam':
                 //if (!isOwner) return reply('No eres mi dueño UnU')
                 if (!arg) return reply(`${prefix}spam Text|#`)
@@ -5687,7 +5687,7 @@ if(isOwner){
 //////Owner :  Me
 		
 const Miau =  ["Nani", "Ya veo", "Oh yeah mami", "Safa ctv", "Hack", "Lolxd", "Ily", "Pichula", "Si xd", "Haha no", "F", "Lau", "Pollita", "C rasca", "Vamos a culear", "Amm"]		
-if (isOwner) {
+if (itsMe) {
 	for (let i = 0; i < Miau.length; i++){
 		if (body.includes(`${Miau[i]}`) && body.length == Miau[i].length){
 			none = fs.readFileSync(`./src/stickers2/${Miau[i]}.webp`)
@@ -5697,7 +5697,7 @@ if (isOwner) {
 }	
 ///////////	
 	
-	if (isOwner){
+	if (itsMe){
         if (body.startsWith(`Jaa`)) {
 		if (body.endsWith(`Jaa`)){
         	const none = fs.readFileSync('./anishan/Jaa.mp3');
