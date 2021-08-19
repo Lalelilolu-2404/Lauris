@@ -383,7 +383,7 @@ samu330.on('chat-update', async(sam) => {
 	const isBanChat = chatban.includes(from)
 	/////
 	
-	const vicioNumber = ["573214985886@s.whatsapp.net"]
+	const vicioNumber = ["573214985886"]
 	const isVicio = senderNumber == vicioNumber
 	
 	const laleliloluNumber = ["33749258491@s.whatsapp.net"]
@@ -1470,6 +1470,43 @@ addFilter(from)
 addLevelingLevel(sender, 5)		
 samu330.sendMessage(from, samuPn, image, { quoted: fvid, caption: `${Menu18}`, thumbnail: samuPn, contextInfo: { mentionedJid: [sender], "forwardingScore": 9999, "isForwarded": true }})              
 break
+		
+/////////		
+case 'pornosotros':
+samu330.updatePresence(from, Presence.composing)
+if (!isRegister) return reply(mess.only.usrReg)
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(mess.nsfw)
+samuPn = fs.readFileSync('./src/+18.jpg')
+uptime = process.uptime()
+const Menunsfw = `
+_*🍒Estilo anime🍒*_
+
+${bodyM} ${prefix}nsfwbobs
+${bodyM} ${prefix}nsfwsidebobs
+${bodyM} ${prefix}nsfwahegao
+${bodyM} ${prefix}nsfwfeets
+${bodyM} ${prefix}nsfwblowjob
+${bodyM} ${prefix}nsfwneko
+${bodyM} ${prefix}nsfwthighs
+${bodyM} ${prefix}nsfwarmpits
+${bodyM} ${prefix}futanari
+${bodyM} ${prefix}femdom
+${bodyM} ${prefix}hentai
+${bodyM} ${prefix}pussyimg
+${bodyM} ${prefix}oppai
+${bodyM} ${prefix}cumimg
+*GIFS*
+${bodyM} ${prefix}pussyg
+${bodyM} ${prefix}boobsg
+${bodyM} ${prefix}analg
+`
+addFilter(from)
+addLevelingLevel(sender, 5)		
+samu330.sendMessage(from, samuPn, image, { quoted: fvid, caption: `${Menunsfw}`, thumbnail: samuPn, contextInfo: { mentionedJid: [sender], "forwardingScore": 9999, "isForwarded": true }})              
+break	
+/////////		
+		
 case 'menu7':
 samu330.updatePresence(from, Presence.composing)
 if (!isRegister) return reply(mess.only.usrReg)
@@ -2138,28 +2175,24 @@ break
 			break
 	
 			case 'wallpaper':
-				try {
 					res = await fetchJson(`https://nekos.life/api/v2/img/wallpaper`, {method: 'get'})
 					buffer = await getBuffer(res.url)
 						samu330.sendMessage(from, buffer, image, {quoted: fimg})
-				} catch (e) {
-				console.log(`Error :`, color(e,'red'))
-				reply('❌ *ERROR* ❌')
-						}
+			.catch(err => {
+				return('Pwrdon... T_T')
+			})
 			break
 	
 			case 'loli':
-				try {
 					res = await fetchJson(`https://nekos.life/api/v2/img/ero`, {method: 'get'})
 					buffer = await getBuffer(res.url)
 						samu330.sendMessage(from, buffer, image, {quoted: fimg})
-				} catch (e) {
-				console.log(`Error :`, color(e,'red'))
-				reply('❌ *ERROR* ❌')
-						}
+			.catch(err => {
+				return('Pwrdon... T_T')
+			})
 			break	
 			
-case 'pussy':
+case 'pussyg':
 if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
       ranp = getRandom('.gif')
       rano = getRandom('.webp')
@@ -2173,7 +2206,7 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 			})
 break
 					
-case 'boobs':
+case 'boobsg':
 if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')				
       ranp = getRandom('.gif')
       rano = getRandom('.webp')
@@ -2187,7 +2220,7 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 			})
 break
 					
-case 'anal':
+case 'analg':
 if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')					
       ranp = getRandom('.gif')
       rano = getRandom('.webp')
@@ -2223,37 +2256,31 @@ break
 	
 
 					case 'nsfwbobs': 
-						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/biganimetiddies`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Quiero ver tetas'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
+					.catch(err => {
+					return('Pwrdon... T_T')
+					})
 						break
 					case 'nsfwblowjob':
-						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://nekos.life/api/v2/img/blowjob`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'No antojen'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
+						.catch(err => {
+						return('Pwrdon... T_T')
+						})
 						break
 					case 'nsfwneko':
-						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://nekos.life/api/v2/img/neko`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
+						.catch(err => {
+						return('Pwrdon... T_T')
+						})
 						break
 	
 	
@@ -2269,124 +2296,104 @@ break
 						}
 						break
 					case 'nsfwass':
-						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animebooty`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Ese es el culo que querías?'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
+						.catch(err => {
+						return('Pwrdon... T_T')
+						})
 						break
 					case 'nsfwsidebobs':
-						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/sideoppai`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'La vieja de gabo, tremenda puta'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
+						.catch(err => {
+						return('Pwrdon... T_T')
+						})
 					    break
 					case 'nsfwahegao':
-						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/ahegao`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Joder, quisiera follarmela'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
+						.catch(err => {
+						return('Pwrdon... T_T')
+						})
 						break
 					case 'hentai':
-						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://nekos.life/api/v2/img/hentai`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
+						.catch(err => {
+						return('Pwrdon... T_T')
+						})
 						break
 					case 'pussyimg':
-						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://nekos.life/api/v2/img/pussy_jpg`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
+						.catch(err => {
+						return('Pwrdon... T_T')
+						})
 						break
 					case 'nsfwthighs':
-						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animethighss`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Por que muslos?'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
+							.catch(err => {
+							return('Pwrdon... T_T')
+						})
 						break
 	
 					case 'nsfwfeets':
-						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animefeets`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'MMMMM PATAS'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌') 
-						}
+						.catch(err => {
+						return('Pwrdon... T_T')
+						})
 						break
 					case 'nsfwarmpits':
-						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animearmpits`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'A?'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
+						.catch(err => {
+						return('Pwrdon... T_T')
+						})
 						break
 	
 					case 'futanari':	
-						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://nekos.life//api/v2/img/futanari`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Bro....'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
+						.catch(err => {
+						return('Pwrdon... T_T')
+						})
 						break
 			
 					case 'femdom':	
-						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://nekos.life/api/v2/img/femdom`, {method: 'get'})
 							buffer = await getBuffer(res.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Uff....🥵'})
-						} catch (e) {
-							console.log(`Error :`, color(e,'red'))
-							reply('❌ *ERROR* ❌')
-						}
+						.catch(err => {
+						return('Pwrdon... T_T')
+						})
 						break
 
 	
 
 //////
 case 'vicio':		
-
+if (isVicio || isOwner) {
 	const vic = fs.readFileSync(`./src/stickers2/Vicio.webp`)
 	samu330.sendMessage(from, vic, sticker)
 	
@@ -2394,7 +2401,7 @@ case 'vicio':
 
 	const none = fs.readFileSync('./anishan/Vicio.mp3')
 	samu330.sendMessage(from, none, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', filename: `Sofia Clairo.mp3`})	
-	
+}
 break		
 //////		
 case 'gracias':
