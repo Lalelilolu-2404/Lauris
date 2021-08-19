@@ -1132,6 +1132,11 @@ uptime = process.uptime()
 if (!isRegister) return samu330.sendMessage(from, assistant, image, { quoted: noreg, caption: `😊Hola, ${timeFt}.\nAl parecer no estas _*Registrado*_\nUsa el comando: *${prefix}reg Nombre | Edad*.`, thumbnail: assistant, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
 try {		
 Menu = `*⌜《Lalelilolu》\◔,◡◔,/ ت♡⌟* ⛥ 
+Nightcore  -  Rock mix  
+01:52 ━━━●───── 03:08
+     ⇆ㅤㅤ ◁ㅤ ❚❚ㅤ ▷ㅤ ㅤ↻﻿
+                  ılıılıılıılıılıılı
+⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 🔐Hola *${pushname}* ${timeFt}
 
 _Tipo de usuario:_ ${tipoDeUsr}
@@ -1143,17 +1148,16 @@ _Tipo de usuario:_ ${tipoDeUsr}
 
 🕐Son las *${hora}*\n🍃Hoy es *${week1}  ${calender1}*
 ===============================
-_PORFAVOR LEE LAS REGLAS_:
-${prefix}reglas
+_PORFAVOR LEE LAS REGLAS_: ${prefix}reglas
 
-${samu} ✏Prefijo:${samu} [ ${prefix} ]
+${samu} ✏*Prefijo*:${samu} [ *${prefix}* ]
 
-===============================
+==============================================================
 || _Juega con el Bot:_ *${prefix}jugar*
 || O ${prefix}ttt
-===============================
+==============================================================
 
-_Lista de MENUs_
+_*LISTA DE MENUS*_
 
 ${bodyM} ${prefix}menu1 *(Menu de Media*
 ${bodyM} ${prefix}menu2 *(Menu de Sticker)*
@@ -1168,7 +1172,7 @@ ${bodyM} ${prefix}otak *(Otak_audios)*
 ${bodyM} ${prefix}bana *(Bananeraudios)*
 ${bodyM} ${prefix}stickers *(Stickers)*
     
-:::::::::::::::::::::::::::::::::::::::::::::::::::::::::: `                                               
+::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: `                                               
 
 //${bodyM} ${prefix}menu9 *(Comandos para explotar grupos)*
 addFilter(from)
@@ -2177,7 +2181,7 @@ break
 			break
 	
 			case 'wallpaper':
-					const mha = await axios.get('https://nekos.life/api/v2/img/wallpaper')
+					mha = await axios.get('https://nekos.life/api/v2/img/wallpaper')
 					buffer = await getBuffer(mha.data.url)
 						samu330.sendMessage(from, buffer, image, {quoted: fimg})
 			.catch(err => {
@@ -5829,6 +5833,17 @@ const sonsotak = ["A mimir", "A", "a", "Acm1pt", "Admin", "Ahhh", "Arrecha", "Ay
 			samu330.sendMessage(from, audiosxx, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true})
 		}				
 	}	
+		
+const onlyme = ["69", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "Amistad", "Anna", "Amm", "Anni", "Así me gusta", "Asustado", "Ay caramba", "Ay me asusté", 
+		"Ban", "Besos", "Bien", "Bragas", "Buen culo", "Buenas noches", "Bye", "C rasca", "Cállate", "Cc", "Chelitas", "Chongo", "Colita", "Colitaxxx", "Contesta", "Contra el muro", 
+		"Ctm", "Cunni", "Dame", "Delito", "Doncon", "Duren", "En fin", "Encuérate", "Eres bonita", "F el grupo", "F en el chat", "F", "Facha", "Fallesí", "FBI", "Flap", 
+		"Funao", "Gansito", "Gomitas", "Háblame bonito", "Hack", "Haha no", "Hahaha", "Helado", "Hentai", "Ily", "Im dead", "Inflingir", "Jiji", "Jutsu", "Kuaker", "La ahorca", "La ata", "Las bragitas", "Lit", 
+		"Llegó papi", "Love", "Ly", "Me dormí", "Me encanta", "Me morí", "Me prometiste", "Me vengo", "Me voy", "Meyou", "Mimitos", "Muy bien", "Nel", 
+		"No antojes", "No me interesa", "No puede ser", "No sé", "No te excites", "Onichan", "Ouioui", "Pack", "Paja", "Pansito", "Pantsu", "Pérame", "Pero", 
+		"Preséntate", "Procede", "Purga", "Que weba", "Rico", "Rip", "Sad", "Santas escrituras", "Sapee", "Se encuera", "Se ofendió", "Se va xd", "I wanna fuck you", 
+		"Sex", "Shh", "Si mi amor", "Sit on me pls", "Slap", "Ta fuerte", "Te me calmas", "Toma tu galleta", "Triste", "Tu culito", "Turbio", "Tuyyo", "Ufff", "Uhm", "Umm", 
+		"Uwu", "Vas a llorar", "Volví", "Wow", "Wtf", "Xdxd", "Y mis nudes", "Ya antojaron", "Ya es hora", "Ya sabes", "Ya se durmieron", "Ya se enojó", 
+		"Yop", "Youme"]
 //////////////
 	
 if (isSimi && !itsMe &&  body != undefined){
