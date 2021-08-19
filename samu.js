@@ -2177,8 +2177,8 @@ break
 			break
 	
 			case 'wallpaper':
-					res = await axios.get('https://nekos.life/api/v2/img/wallpaper')
-					buffer = await getBuffer(res.data.url)
+					const mha = await axios.get('https://nekos.life/api/v2/img/wallpaper')
+					buffer = await getBuffer(mha.data.url)
 						samu330.sendMessage(from, buffer, image, {quoted: fimg})
 			.catch(err => {
 				return('Pwrdon... T_T')
@@ -2186,8 +2186,8 @@ break
 			break
 	
 			case 'loli':
-					res = await axios.get('https://nekos.life/api/v2/img/ero')
-					buffer = await getBuffer(res.data.url)
+					mha = await axios.get('https://nekos.life/api/v2/img/ero')
+					buffer = await getBuffer(mha.data.url)
 						samu330.sendMessage(from, buffer, image, {quoted: fimg})
 			.catch(err => {
 				return('Pwrdon... T_T')
@@ -2259,8 +2259,8 @@ break
 
 					case 'nsfwbobs': 
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await axios.get('https://meme-api.herokuapp.com/gimme/biganimetiddies')
-							buffer = await getBuffer(res.data.url)
+							mha = await axios.get('https://meme-api.herokuapp.com/gimme/biganimetiddies')
+							buffer = await getBuffer(mha.data.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Quiero ver tetas'})
 					.catch(err => {
 					return('Pwrdon... T_T')
@@ -2268,8 +2268,8 @@ break
 						break
 					case 'nsfwblowjob':
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await axios.get('https://nekos.life/api/v2/img/blowjob')
-							buffer = await getBuffer(res.data.url)
+							mha = await axios.get('https://nekos.life/api/v2/img/blowjob')
+							buffer = await getBuffer(mha.data.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'No antojen'})
 						.catch(err => {
 						return('Pwrdon... T_T')
@@ -2277,8 +2277,8 @@ break
 						break
 					case 'nsfwneko':
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await axios.get('https://nekos.life/api/v2/img/neko')
-							buffer = await getBuffer(res.data.url)
+							mha = await axios.get('https://nekos.life/api/v2/img/neko')
+							buffer = await getBuffer(mha.data.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg})
 						.catch(err => {
 						return('Pwrdon... T_T')
@@ -2289,8 +2289,8 @@ break
 					case 'nsfwpussy':
 						try {
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await axios.get('https://nekos.life/api/v2/img/pussy')
-							buffer = await getBuffer(res.data.url)
+							mha = await axios.get('https://nekos.life/api/v2/img/pussy')
+							buffer = await getBuffer(mha.data.url)
 							samu330.sendMessage(from, buffer, image.gif, {quoted: fimg})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
@@ -2299,8 +2299,8 @@ break
 						break
 					case 'nsfwass':
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await axios.get('https://meme-api.herokuapp.com/gimme/animebooty')
-							buffer = await getBuffer(res.data.url)
+							mha = await axios.get('https://meme-api.herokuapp.com/gimme/animebooty')
+							buffer = await getBuffer(mha.data.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Ese es el culo que querías?'})
 						.catch(err => {
 						return('Pwrdon... T_T')
@@ -2308,8 +2308,8 @@ break
 						break
 					case 'nsfwsidebobs':
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await axios.get('https://meme-api.herokuapp.com/gimme/sideoppai')
-							buffer = await getBuffer(res.data.url)
+							mha = await axios.get('https://meme-api.herokuapp.com/gimme/sideoppai')
+							buffer = await getBuffer(mha.data.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'La vieja de gabo, tremenda puta'})
 						.catch(err => {
 						return('Pwrdon... T_T')
@@ -2317,8 +2317,8 @@ break
 					    break
 					case 'nsfwahegao':
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await axios.get('https://meme-api.herokuapp.com/gimme/ahegao')
-							buffer = await getBuffer(res.data.url)
+							mha = await axios.get('https://meme-api.herokuapp.com/gimme/ahegao')
+							buffer = await getBuffer(mha.data.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Joder, quisiera follarmela'})
 						.catch(err => {
 						return('Pwrdon... T_T')
@@ -2326,8 +2326,8 @@ break
 						break
 					case 'hentai':
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await axios.get('https://nekos.life/api/v2/img/hentai')
-							buffer = await getBuffer(res.data.url)
+							mha = await axios.get('https://nekos.life/api/v2/img/hentai')
+							buffer = await getBuffer(mha.data.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg})
 						.catch(err => {
 						return('Pwrdon... T_T')
@@ -2335,8 +2335,8 @@ break
 						break
 					case 'pussyimg':
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await axios.get('https://nekos.life/api/v2/img/pussy_jpg')
-							buffer = await getBuffer(res.data.url)
+							mha = await axios.get('https://nekos.life/api/v2/img/pussy_jpg')
+							buffer = await getBuffer(mha.data.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg})
 						.catch(err => {
 						return('Pwrdon... T_T')
@@ -2344,8 +2344,8 @@ break
 						break
 					case 'nsfwthighs':
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await axios.get('https://meme-api.herokuapp.com/gimme/animethighss')
-							buffer = await getBuffer(res.data.url)
+							mha = await axios.get('https://meme-api.herokuapp.com/gimme/animethighss')
+							buffer = await getBuffer(mha.data.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Por que muslos?'})
 							.catch(err => {
 							return('Pwrdon... T_T')
@@ -2354,8 +2354,8 @@ break
 	
 					case 'nsfwfeets':
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await axios.get('https://meme-api.herokuapp.com/gimme/animefeets')
-							buffer = await getBuffer(res.data.url)
+							mha = await axios.get('https://meme-api.herokuapp.com/gimme/animefeets')
+							buffer = await getBuffer(mha.data.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'MMMMM PATAS'})
 						.catch(err => {
 						return('Pwrdon... T_T')
@@ -2363,8 +2363,8 @@ break
 						break
 					case 'nsfwarmpits':
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await axios.get('https://meme-api.herokuapp.com/gimme/animearmpits')
-							buffer = await getBuffer(res.data.url)
+							mha = await axios.get('https://meme-api.herokuapp.com/gimme/animearmpits')
+							buffer = await getBuffer(mha.data.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'A?'})
 						.catch(err => {
 						return('Pwrdon... T_T')
@@ -2373,8 +2373,8 @@ break
 	
 					case 'futanari':	
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await axios.get('https://nekos.life//api/v2/img/futanari')
-							buffer = await getBuffer(res.dataa.url)
+							mha = await axios.get('https://nekos.life//api/v2/img/futanari')
+							buffer = await getBuffer(mha.dataa.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Bro....'})
 						.catch(err => {
 						return('Pwrdon... T_T')
@@ -2383,8 +2383,8 @@ break
 			
 					case 'femdom':	
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							res = await axios.get('https://nekos.life/api/v2/img/femdom')
-							buffer = await getBuffer(res.data.url)
+							mha = await axios.get('https://nekos.life/api/v2/img/femdom')
+							buffer = await getBuffer(mha.data.url)
 							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Uff....🥵'})
 						.catch(err => {
 						return('Pwrdon... T_T')
