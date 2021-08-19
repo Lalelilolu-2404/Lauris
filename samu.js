@@ -2391,10 +2391,7 @@ case 'vicio':
 
 	const none = fs.readFileSync('./anishan/Vicio.mp3')
 	samu330.sendMessage(from, none, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', filename: `Sofia Clairo.mp3`})	
-
-  })
-
-		
+	
 break		
 //////		
 case 'gracias':
