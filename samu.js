@@ -1871,8 +1871,8 @@ break
 		
 				if (isQuotedSticker){
 				argz = arg1.split("|")
-				   if (isNaN(argz[0])) return reply(`# de veces?`)
-					spamer = JSON.parse(JSON.stringify(mek).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+				 if (isNaN(argz[0])) return reply(`# de veces?`)
+					spamer = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					pegat = await samu330.downloadMediaMessage(spamer)
 					
 					for (let i = 0; i < argz[0]; i++){
