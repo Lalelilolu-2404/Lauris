@@ -1737,7 +1737,7 @@ fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
 },
 message: {
-"documentMessage": { "title": "📚Otak_audios", 'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}}
+"documentMessage": { "title": "📚Otak_audios", 'jpegThumbnail': fs.readFileSync('./src/otak.jpg')}}
 }})
 addFilter(from)
 addLevelingLevel(sender, 5)		
