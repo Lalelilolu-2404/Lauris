@@ -2126,12 +2126,12 @@ veri = sender
             })		
 			
 break	
-	
+**/	
 			case 'waifu':
 			waifud = await axios.get('https://api.waifu.pics/nsfw/waifu')
 			//waifud = await axios.get('https://nekos.life/api/v2/img/waifu')
 			nyed = await getBuffer(waifud.data.url)
-			samu330.sendMessage(from, nyed, image, { caption: 'Nyaaa', quoted: mek })
+			samu330.sendMessage(from, nyed, image, { caption: 'Nyaaa', quoted: fimg })
 			.catch(err => {
 				return('Pwrdon... T_T')
 			})
@@ -2141,7 +2141,7 @@ break
 				try {
 					res = await fetchJson(`https://nekos.life/api/v2/img/wallpaper`, {method: 'get'})
 					buffer = await getBuffer(res.url)
-						samu330.sendMessage(from, buffer, image, {quoted: mek})
+						samu330.sendMessage(from, buffer, image, {quoted: fimg})
 				} catch (e) {
 				console.log(`Error :`, color(e,'red'))
 				reply('❌ *ERROR* ❌')
@@ -2152,7 +2152,7 @@ break
 				try {
 					res = await fetchJson(`https://nekos.life/api/v2/img/ero`, {method: 'get'})
 					buffer = await getBuffer(res.url)
-						samu330.sendMessage(from, buffer, image, {quoted: mek})
+						samu330.sendMessage(from, buffer, image, {quoted: fimg})
 				} catch (e) {
 				console.log(`Error :`, color(e,'red'))
 				reply('❌ *ERROR* ❌')
@@ -2168,7 +2168,7 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 			  fs.unlinkSync(ranp)
 				if (err) return reply('error')
 				buffer = fs.readFileSync(rano)
-				samu330.sendMessage(from, buffer, MessageType.sticker, {quoted: mek})
+				samu330.sendMessage(from, buffer, MessageType.sticker, {quoted: sam})
 				fs.unlinkSync(rano)
 			})
 break
@@ -2182,7 +2182,7 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 			  fs.unlinkSync(ranp)
 				if (err) return reply('error')
 				buffer = fs.readFileSync(rano)
-				samu330.sendMessage(from, buffer, MessageType.sticker, {quoted: mek})
+				samu330.sendMessage(from, buffer, MessageType.sticker, {quoted: sam})
 				fs.unlinkSync(rano)
 			})
 break
@@ -2196,7 +2196,7 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 			  fs.unlinkSync(ranp)
 				if (err) return reply('error')
 				buffer = fs.readFileSync(rano)
-				samu330.sendMessage(from, buffer, MessageType.sticker, {quoted: mek})
+				samu330.sendMessage(from, buffer, MessageType.sticker, {quoted: sam})
 				fs.unlinkSync(rano)
 			})
 break
@@ -2205,7 +2205,7 @@ case 'cumimg':
 if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 			cumjpg = await axios.get('https://nekos.life/api/v2/img/cum_jpg')
 			bupjpg = await getBuffer(cumjpg.data.url)
-			samu330.sendMessage(from, bupjpg, image, { quoted: mek })
+			samu330.sendMessage(from, bupjpg, image, { quoted: fimg })
 			.catch(err => {
 			return('Error 7-7..')
 			})
@@ -2215,7 +2215,7 @@ case 'oppai':
 if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 			opai = await axios.get('https://nekos.life/api/v2/img/tits')
 			opaiz = await getBuffer(opai.data.url)
-			samu330.sendMessage(from, opaiz, image, { quoted: mek })
+			samu330.sendMessage(from, opaiz, image, { quoted: fimg })
 			.catch(err => {
 			return('Error 7-7..')
 			})
@@ -2227,7 +2227,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/biganimetiddies`, {method: 'get'})
 							buffer = await getBuffer(res.url)
-							samu330.sendMessage(from, buffer, image, {quoted: mek, caption: 'Quiero ver tetas'})
+							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Quiero ver tetas'})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌')
@@ -2238,7 +2238,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://nekos.life/api/v2/img/blowjob`, {method: 'get'})
 							buffer = await getBuffer(res.url)
-							samu330.sendMessage(from, buffer, image, {quoted: mek, caption: 'No antojen'})
+							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'No antojen'})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌')
@@ -2249,7 +2249,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://nekos.life/api/v2/img/neko`, {method: 'get'})
 							buffer = await getBuffer(res.url)
-							samu330.sendMessage(from, buffer, image, {quoted: mek})
+							samu330.sendMessage(from, buffer, image, {quoted: fimg})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌')
@@ -2262,7 +2262,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://nekos.life/api/v2/img/pussy`, {method: 'get'})
 							buffer = await getBuffer(res.url)
-							samu330.sendMessage(from, buffer, image.gif, {quoted: mek})
+							samu330.sendMessage(from, buffer, image.gif, {quoted: fimg})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌')
@@ -2273,7 +2273,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animebooty`, {method: 'get'})
 							buffer = await getBuffer(res.url)
-							samu330.sendMessage(from, buffer, image, {quoted: mek, caption: 'Ese es el culo que querías?'})
+							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Ese es el culo que querías?'})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌')
@@ -2284,7 +2284,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/sideoppai`, {method: 'get'})
 							buffer = await getBuffer(res.url)
-							samu330.sendMessage(from, buffer, image, {quoted: mek, caption: 'La vieja de gabo, tremenda puta'})
+							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'La vieja de gabo, tremenda puta'})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌')
@@ -2295,7 +2295,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/ahegao`, {method: 'get'})
 							buffer = await getBuffer(res.url)
-							samu330.sendMessage(from, buffer, image, {quoted: mek, caption: 'Joder, quisiera follarmela'})
+							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Joder, quisiera follarmela'})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌')
@@ -2306,7 +2306,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://nekos.life/api/v2/img/hentai`, {method: 'get'})
 							buffer = await getBuffer(res.url)
-							samu330.sendMessage(from, buffer, image, {quoted: mek})
+							samu330.sendMessage(from, buffer, image, {quoted: fimg})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌')
@@ -2317,7 +2317,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://nekos.life/api/v2/img/pussy_jpg`, {method: 'get'})
 							buffer = await getBuffer(res.url)
-							samu330.sendMessage(from, buffer, image, {quoted: mek})
+							samu330.sendMessage(from, buffer, image, {quoted: fimg})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌')
@@ -2328,7 +2328,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animethighss`, {method: 'get'})
 							buffer = await getBuffer(res.url)
-							samu330.sendMessage(from, buffer, image, {quoted: mek, caption: 'Por que muslos?'})
+							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Por que muslos?'})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌')
@@ -2340,7 +2340,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animefeets`, {method: 'get'})
 							buffer = await getBuffer(res.url)
-							samu330.sendMessage(from, buffer, image, {quoted: mek, caption: 'MMMMM PATAS'})
+							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'MMMMM PATAS'})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌') 
@@ -2351,7 +2351,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://meme-api.herokuapp.com/gimme/animearmpits`, {method: 'get'})
 							buffer = await getBuffer(res.url)
-							samu330.sendMessage(from, buffer, image, {quoted: mek, caption: 'A?'})
+							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'A?'})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌')
@@ -2363,7 +2363,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://nekos.life//api/v2/img/futanari`, {method: 'get'})
 							buffer = await getBuffer(res.url)
-							samu330.sendMessage(from, buffer, image, {quoted: mek, caption: 'Bro....'})
+							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Bro....'})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌')
@@ -2375,14 +2375,14 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							res = await fetchJson(`https://nekos.life/api/v2/img/femdom`, {method: 'get'})
 							buffer = await getBuffer(res.url)
-							samu330.sendMessage(from, buffer, image, {quoted: mek, caption: 'Uff....🥵'})
+							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Uff....🥵'})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌')
 						}
 						break
 
-**/	
+	
 
 //////
 case 'vicio':		
@@ -3822,7 +3822,7 @@ sendFileFromUrl(logo, image, {quoted: fimg, caption: '*🔥 𝘓𝘰𝘨𝘰𝘴
 break
 		
 case 'spam':
-if (!itsMe) return reply('Este comando es solo para Lalelilolu :v')
+if (!isOwner) return reply('No eres mi dueño UnU') 
 arg1 = q
 if (!arg1) return reply(`Ejemplo ${prefix}spam texto|numero de mensajes`)
 argz = arg1.split("|")
