@@ -1743,13 +1743,6 @@ addFilter(from)
 addLevelingLevel(sender, 5)		
 break	
 	
-		
-const sonsotak = ["A mimir", "A", "a", "Acm1pt", "Admin", "Ahhh", "Arrecha", "Ayy", "Banx", "Besito", "Brr", "Brr2", "Bésame", "Concha", 
-	      "Ctm", "Daddy", "Feliz jueves", "Gambare", "Help", "Hentai", "Iluminati", "Imposible", "Jaa", "Japi", "La mimición", 
-	      "Las pelotas", "Lokita", "Me vengo", "Mi reina", "Mujer", "Nya", "Oh oh si", "Onichan", "Orto", "Pack", "Pasa pack", "Pero en fin", 
-	      "Petardo", "Pete", "Profe", "Sapee", "Setso", "Sexual", "Sparta", "Umm", "Yamete kudasai", "Yamete", "Dime onichan", 
-	      "Te amo botsito", "Me gimes", "Quien es tu sempai", "La toca"]		
-
 case 'bana':
 
 banaud = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
