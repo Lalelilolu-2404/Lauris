@@ -1999,10 +1999,9 @@ break
 				 if (isNaN(argz[0])) return reply(`# de veces?`)
 					spamer = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					pegat = await samu330.downloadMediaMessage(spamer)
-					const spst = "Haha no"
-					if (argz[0] > 10) {
-						Noperro = fs.readFileSync(`./src/stickers/${spst}.webp`)
-						client.sendMessage(from, Noperro, MessageType.sticker, {quoted: fimg})
+					spst = fs.readFileSync(`./src/stickers/Haha no.webp`)
+					if (argz[0] > 30) {
+						samu330.sendMessage(from, nk, sticker, {quoted: fimg, "forwardingScore": 9999, "isForwarded": true})
 						argz[0] = 5
 					}					
 					for (let i = 0; i < argz[0]; i++){
