@@ -1183,10 +1183,14 @@ ${bodyM} ${prefix}attp + ⌜Texto⌟
 ${bodyM} ${prefix}tts ⌜Code⌟ + ⌜Texto⌟
 ${bodyM} ${prefix}imagen ⌜Texto⌟
 ${bodyM} ${prefix}sticker ⌜Tag image⌟
+${bodyM} ${prefix}tagall
+${bodyM} ${prefix}adminlist
+${bodyM} ${prefix}waifu
+
 ===========================================
-|| _Juega con el Bot:_ *${prefix}jugar*
-|| _Casino:_ *${prefix}lucky*
-|| _Tictactoe:_ *${prefix}ttt*
+${bodyM} _Juega con el Bot:_ *${prefix}jugar*
+${bodyM} _Casino:_ *${prefix}lucky*
+${bodyM} _Tictactoe:_ *${prefix}ttt*
 ===========================================
 *⌜《Lalelilolu》\◔,◡◔,/ ت♡⌟* ⛥ `                                               
 
@@ -1865,7 +1869,7 @@ const onlyme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "
 		"Xdxd", "Y mis nudes", "Ya antojaron", "Ya es hora", "Ya sabes", "Ya se durmieron", "Ya se enojó", "Ya veo", "Yop", "Youme"]		
 	var textme = ''	
 	var abcd = ''
-	let n = 20
+	let n = 22
 	let aug = ''
 	for (let i = 0; i < onlyme.length; i++){
 		abcd = onlyme[i]
@@ -1887,6 +1891,7 @@ const stickmenu = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 ╭───────────────────
 ${textme}
 ╰────────────────────╯`
+if (isOwner) {
 samu330.sendMessage(from, stickmenu, MessageType.text, {quoted:
 { key: {
 fromMe: false,
@@ -1896,7 +1901,8 @@ message: {
 "documentMessage": { "title": "Lalelilolu ᵈᵃʳʸ⛥", 'jpegThumbnail': fs.readFileSync('./src/otak.jpg')}}
 }})
 addFilter(from)
-addLevelingLevel(sender, 5)		
+addLevelingLevel(sender, 5)
+}
 break	
 		
 //////////Spam 	
@@ -2515,27 +2521,33 @@ break
 
 case 'nuevo':
 nuevo = `🤔 *Que hay de nuevo?* 🤗
-- _Menu de Stickers:_
-sgay: Stickers con efecto Gay.
-srip: Stickers con efecto de tumba.
-scarcel: Stickers con efecto de carcel.
-- _Menu de media:_
-*Nuevos efectos de video y audio!!*
-🎞 Video:
-*vrapido*
-*vlento*
-*mirror*
-*vefecto*
-*sinsonido*
 
-🎧 Audio:
-*fantasma*
-*robot*
+- _*Menu de Stickers:*_
+*Efectos gay, tumba y cárcel!!*
 
-- Otros comandos:
-_grupos_
-_enlinea_
-_Adminlist_`
+${bodyM} *${prefix}sgay* ⌜Tag imagen⌟
+${bodyM} *${prefix}srip* ⌜Tag image⌟ 
+${bodyM} *${prefix}scarcel* ⌜Tag image⌟ 
+
+- _*Menu de Media:*_
+*Nuevos efectos de 🎞 Video y audio!!*
+
+${bodyM} *${prefix}vrapido* 
+${bodyM} *${prefix}vlento* 
+${bodyM} *${prefix}mirror* 
+${bodyM} *${prefix}vefecto* 
+${bodyM} *${prefix}sinsonido* 
+
+🎧 _*Audio:*_
+
+${bodyM} *${prefix}fantasma* 
+${bodyM} *${prefix}robot* 
+
+- _*Otros comandos:*_
+${bodyM} *${prefix}enlinea* 
+${bodyM} *${prefix}adminlist* 
+`
+//${bodyM} *${prefix}grupos* 
 reply(nuevo)
 break
 		
@@ -3448,6 +3460,7 @@ _*Recuerda siempre seguir las reglas_😉*_\n\n*${mdata.desc}*`)
 break
 	
 //Con este case se envia la aplicacion Tutorial
+/**
 case 'tutorial':
 case 'git':
 case 'crear':
@@ -3488,6 +3501,7 @@ Una vez que hayamos escaneado, ya seremos el Bot!!
 
 `)
 break
+**/		
 			
 case 'nuevogrupo':
 const nombregc = args.join(' ')
