@@ -1463,7 +1463,7 @@ if (!isGroup) return reply(mess.only.group)
 if (!isNsfw) return reply(mess.nsfw)
 samuPn = fs.readFileSync('./src/+18.jpg')
 uptime = process.uptime()
-const Menu18 = `
+const Menu18 = `================================
 ${bodyM} ${prefix}porno
 ${bodyM} ${prefix}lesbian 
 ${bodyM} ${prefix}tetas
@@ -2231,7 +2231,7 @@ var p = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)
                             "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="
                         }
                     },
-                    contextInfo: {mentionedJid: [mentioned[0] : true],
+                    contextInfo: {mentionedJid: true,
                       "forwardingScore": 999, "isForwarded": true
                     }
                 }
