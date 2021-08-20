@@ -1502,12 +1502,7 @@ addFilter(from)
 addLevelingLevel(sender, 5)		
 samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${Menu18}`, thumbnail: samuPn, contextInfo: { mentionedJid: [sender], "forwardingScore": 9999, "isForwarded": true }})              
 break
-		
-/////////		
-case 'pornosotros':	
-samu330.sendMessage(from, samuPn, image, contextInfo: mentionedJid: [sender])              
-break	
-/////////		
+/////////			
 		
 case 'menu7':
 samu330.updatePresence(from, Presence.composing)
@@ -2228,7 +2223,7 @@ var p = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)
                             "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="
                         }
                     },
-                    contextInfo: {
+                    contextInfo: {mentionedJid: [mentioned[0]],
                       "forwardingScore": 999, "isForwarded": true
                     }
                 }
