@@ -1843,7 +1843,7 @@ const onlyme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "
 	for (let i = 0; i < onlyme.length; i++){
 		abcd = onlyme[i]
 		if (abcd.length < n) {
-			aug = ""
+			aug = ''
 			for (let k = 0; k < n - abcd.length; k++){
 			aug = aug + '\b'
 			}
