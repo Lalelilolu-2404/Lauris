@@ -1147,6 +1147,7 @@ _Tipo de usuario:_ ${tipoDeUsr}
 🕐Son las *${hora}*\n🍃Hoy es *${week1}  ${calender1}*
 ===========================================
 _POR FAVOR LEE LAS REGLAS_: ${prefix}reglas
+${bodyM} *${prefix}rules* 
 ===========================================
 ${bodyM} *Prefijo :* [ *${prefix}* ]
 ===========================================
@@ -3361,8 +3362,17 @@ break
 		
 		
 case 'reglas':
-reply(`*Hola, estas son las reglas*\n\n1- _Manten una formalidad respetuosa_\n2- _Si vas a añadir el bot a algun grupo, verifica que el grupo cumpla con los requisitos que son tener minimo 5 personas_\n3- _❌NO AGAS SPAM DE COMANDOS❌_ *Esto es enserio, puedes hacer que el bot se apage*\n4- _📵NO AGAS LLAMADAS POR WHATSAPP AL PROPIETARIO DEL BOT📵_ *Seras bloqueado inmediatamente*\n5- _🕐Espera el tiempo nesesario cuando pidas alguna funcion, ya que algunas tardan en realizarse, no vuelvas a pedir el comando nuevamente hasta que te llege un mensaje de error_\n\nLee las reglas y cumplelas, no te quieras hacer el chistoso, por que no lo eres y ni te sale, asi que porfavor respeta las reglas.`)
+reply(`*Hola, estas son las reglas*\n\n1- _Manten una formalidad respetuosa_\n2- _Si vas a añadir el bot a algun grupo, verifica que el grupo cumpla con
+los requisitos que son tener minimo 5 personas_\n3- _❌NO HAGAS SPAM DE COMANDOS❌_ *Esto es enserio, puedes hacer que el bot se apage*\n4- _📵NO 
+HAGAS LLAMADAS POR WHATSAPP AL PROPIETARIO DEL BOT📵_ *Seras bloqueado inmediatamente*\n5- _🕐Espera el tiempo nesesario cuando pidas alguna funcion, 
+ya que algunas tardan en realizarse, no vuelvas a pedir el comando nuevamente hasta que te llege un mensaje de error_\n\nLee las reglas y cumplelas, 
+no te quieras hacer el chistoso, por que no lo eres y ni te sale, asi que porfavor respeta las reglas.`)
 break
+case 'rules':
+reply(`*😙Hola, @${pushname}*\n _*Bienvenido a ${mdata.subject}, esperamos que te la pases a gusto en este grupo✨*_\n\n
+_Recuerda siempre seguir las reglas_😉\n\nSon las *${jm}* del *${calender}*\n\n${mdata.desc}`)
+break
+	
 //Con este case se envia la aplicacion Tutorial
 case 'tutorial':
 case 'git':
