@@ -1838,7 +1838,7 @@ const onlyme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "
 		"Xdxd", "Y mis nudes", "Ya antojaron", "Ya es hora", "Ya sabes", "Ya se durmieron", "Ya se enojó", "Ya veo", "Yop", "Youme"]		
 	var textme = ""	
 	var abcd = ""
-	let n = 18
+	let n = 19
 	let aug = ""
 	for (let i = 0; i < onlyme.length; i++){
 		abcd = onlyme[i]
@@ -1850,9 +1850,9 @@ const onlyme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "
 		onlyme[i] = abcd + aug 
 		}
 	}	     
-	for (let i = 0; i <= onlyme.length; i = i + 2){
+	for (let i = 0; i < onlyme.length - 1; i = i + 2){
 		let j = i + 1
-	textme = textme + `${bodyM} ${onlyme[i]} \t *${onlyme[j]}\n`			
+	textme = textme + `${bodyM} ${onlyme[i]}*${onlyme[j]}\n`			
 	}
 	
 const stickmenu = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
