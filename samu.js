@@ -1155,7 +1155,7 @@ _Tipo de usuario:_ ${tipoDeUsr}
 ┖┈┈┈┈┈┈┈┈┈┈┈┈┈┈
 🕐Son las *${hora}*\n🍃Hoy es *${week1}  ${calender1}*
 ===========================================
-_POR FAVOR LEE LAS REGLAS_: ${prefix}reglas
+_POR FAVOR LEE LAS REGLAS_: *${prefix}reglas*
 ${bodyM} *${prefix}rules* 
 ===========================================
 ${bodyM} *Prefijo :* [ *${prefix}* ]
@@ -1174,7 +1174,14 @@ ${bodyM} ${prefix}audios *(Audios)*
 ${bodyM} ${prefix}otak *(Otak_audios)*
 ${bodyM} ${prefix}bana *(Bananeraudios)*
 ${bodyM} ${prefix}stickers *(Stickers)*
-    
+
+===========================================
+_*LISTA DE COMANDOS*_
+${bodyM} *${prefix}play ⌜Texto⌟*
+${bodyM} *${prefix}attp + ⌜Texto⌟*
+${bodyM} *${prefix}tts ⌜Code⌟ + ⌜Texto⌟*
+${bodyM} *${prefix}imagen ⌜Texto⌟*
+${bodyM} *${prefix}sticker ⌜tag image⌟*
 ===========================================
 || _Juega con el Bot:_ *${prefix}jugar*
 || _Casino:_ *${prefix}lucky*
@@ -1342,11 +1349,11 @@ ${bodyM} ${prefix}inspeccionar _(Requiere link de un grupo)_
 ${bodyM} ${prefix}nuevogrupo
 ${bodyM} ${prefix}grupo abrir/cerrar
 ${bodyM} ${prefix}getpic
-${bodyM} ${prefix}salir
+${bodyM} ${prefix}salir / leave
 ${bodyM} ${prefix}tagstick
 ${bodyM} ${prefix}imagetag
 ${bodyM} ${prefix}hidetag
-${bodyM} ${prefix}todos
+${bodyM} ${prefix}todos / tagall
 ${bodyM} ${prefix}setdesc
 ${bodyM} ${prefix}nombre
 ${bodyM} ${prefix}adminlist
@@ -1354,7 +1361,7 @@ ${bodyM} ${prefix}setpic
 ${bodyM} ${prefix}enlinea
 ${bodyM} ${prefix}promote
 ${bodyM} ${prefix}demote
-${bodyM} ${prefix}eliminar
+${bodyM} ${prefix}eliminar /kick
 ${bodyM} ${prefix}añadir *(Numero sin el +)*
 ${bodyM} ${prefix}notif
 ${bodyM} ${prefix}reply @miembro|frase|frase
@@ -1429,7 +1436,7 @@ ${bodyM} ${prefix}octalatext *(codigo octal a texto)*
 ${bodyM} ${prefix}ahex *(texto a codigo hex)*
 ${bodyM} ${prefix}hexatext *(codigo hex a texto)*
 ${bodyM} ${prefix}wa.me
-${bodyM} ${prefix}idioimas
+${bodyM} ${prefix}idiomas
 ${bodyM} ${prefix}reversa
 ${bodyM} ${prefix}meme
 ${bodyM} ${prefix}leermas _frase/frase_
@@ -2192,7 +2199,7 @@ var p = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)
 		
   teks = `〘 *Comunidad otaku ⛥2.0⛥* 〙
 ╔═══════════════════
-╠≽️ *Número* : ${mentioned[0].split('@')[0]}
+╠≽️ *Número* : @${mentioned[0].split('@')[0]}
 ╠≽️ *Status* : ${p.status}
 ╚═══════════════════`
 	
@@ -2224,7 +2231,7 @@ var p = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)
                             "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="
                         }
                     },
-                    contextInfo: {mentionedJid: [mentioned[0]],
+                    contextInfo: {mentionedJid: [mentioned[0] : true],
                       "forwardingScore": 999, "isForwarded": true
                     }
                 }
@@ -4251,7 +4258,7 @@ veri = sender
 addRegisteredUser(sender, nombre, edad, time, serialUser)
 try {
 exec(`magick './src/reg.jpg' -gravity west -fill '#00FF00' -font './src/font-gue.ttf' -size 1280x710 -pointsize 90 -interline-spacing 7.5 -annotate +460-45 '${nombre}' -pointsize 50 -annotate +460+200 '${serialUser}' '${ppimg}' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'regsm.jpg'`)
-samu330.sendMessage(from, fs.readFileSync('regsm.jpg'), MessageType.image, { quoted: sam, caption: `*「 SU REGISTRO FUE UN EXITO😉 」*\n\n *◦ Nombre : ${nombre}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *📋Su registro fue todo un exito*\n\n*Para Continuar Usando a NYANBOT Escriba el siguiente comando: ${prefix}menu*`})
+samu330.sendMessage(from, fs.readFileSync('regsm.jpg'), MessageType.image, { quoted: sam, caption: `*「 SU REGISTRO FUE UN EXITO😉 」*\n\n*◦ Nombre : ${nombre}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *📋Su registro fue todo un exito*\n\n*Comando: ${prefix}menu*`})
 } catch {
 reply(`*「 SU REGISTRO FUE UN EXITO😉 」*\n\n*◦ Nombre : ${nombre}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *📋Su registro fue todo un exito*\n\n*Comando: ${prefix}menu*`)
 }
