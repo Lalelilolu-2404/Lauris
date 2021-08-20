@@ -1148,15 +1148,10 @@ _Tipo de usuario:_ ${tipoDeUsr}
 
 🕐Son las *${hora}*\n🍃Hoy es *${week1}  ${calender1}*
 ===============================
-_PORFAVOR LEE LAS REGLAS_: ${prefix}reglas
-
-${samu} ✏*Prefijo*:${samu} [ *${prefix}* ]
-
+_POR FAVOR LEE LAS REGLAS_: ${prefix}reglas
 ==============================================================
-|| _Juega con el Bot:_ *${prefix}jugar*
-|| O ${prefix}ttt
+${bodyM} [ *${prefix}* ]
 ==============================================================
-
 _*LISTA DE MENUS*_
 
 ${bodyM} ${prefix}menu1 *(Menu de Media*
@@ -1172,7 +1167,10 @@ ${bodyM} ${prefix}otak *(Otak_audios)*
 ${bodyM} ${prefix}bana *(Bananeraudios)*
 ${bodyM} ${prefix}stickers *(Stickers)*
     
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: `                                               
+==============================================================
+|| _Juega con el Bot:_ *${prefix}jugar*
+|| O ${prefix}ttt
+============================================================== `                                               
 
 //${bodyM} ${prefix}menu9 *(Comandos para explotar grupos)*
 addFilter(from)
@@ -1736,7 +1734,7 @@ addLevelingLevel(sender, 5)
 break		
 		
 ///////Audios otak and bananeraudios			
-case 'otak':
+case 'stickers':
 
 otakusaud = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 ╭─────────────
@@ -1809,7 +1807,6 @@ banaud = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 │ *Profe*
 │ *Sapee*
 │ *Sparta*
-│ *Lalelilolu ᵈᵃʳʸ*⛥
 ╰──────────────╯`
 samu330.sendMessage(from, banaud, MessageType.text, {quoted:
 { key: {
@@ -1822,6 +1819,44 @@ message: {
 addFilter(from)
 addLevelingLevel(sender, 5)		
 break	
+		
+////////////Stickers me
+const onlyme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "Amistad", "Anna", "Amm", "Anni", "Así me gusta", "Asustado", "Ay caramba", "Ay me asusté", 
+		"Ban", "Besos", "Bien", "Bragas", "Buen culo", "Buenas noches", "Bye", "C rasca", "Cállate", "Cc", "Chelitas", "Chongo", "Colita", "Colitaxxx", 
+		"Contesta", "Contra el muro", "Ctm", "Cunni", "Dame", "Delito", "Doncon", "Duren", "En fin", "Encuérate", "Eres bonita", "F el grupo", "F en el chat", 
+		"F", "Facha", "Fallesí", "FBI", "Flap", "Funao", "Gansito", "Gomitas", "Háblame bonito", "Hack", "Haha no", "Hahaha", "Helado", "Hentai", 
+		"I wanna fuck you", "Ily", "Im dead", "Inflingir", "Jiji", "Jutsu", "Kuaker", "La ahorca", "La ata", "Las bragitas", "Lit", "Llegó papi", "Lolxd", 
+		"Love", "Ly", "Me dormí", "Me encanta", "Me morí", "Me prometiste", "Me vengo", "Meyou", "Mimitos", "Muy bien", "Nani", "Nel", "No antojes", 
+		"No me interesa", "No puede ser", "No sé", "No te excites", "Oh yeah mami", "Onichan", "Ouioui", "Pack", "Packsito pls", "Paja", "Pansito", "Pantsu", 
+		"Pérame", "Pero", "Pichula", "Pollita", "Pollito frito", "Preséntate", "Procede", "Purga", "Que weba", "Rico", "Rip", "Sad", "Safa ctv", "Santas escrituras", 
+		"Sapee", "Se encuera", "Se ofendió", "Se va xd", "Sex", "Sexo", "Shh", "Si mi amor", "Si xd", "Sit on me pls", "Slap", "Ta fuerte", "Te me calmas", 
+		"Toma tu galleta", "Triste", "Tu culito", "Turbio", "Tuyyo", "Ufff", "Uhm", "Umm", "Uwu", "Vamos a culear", "Vas a llorar", "Volví", "Wow", "Wtf", 
+		"Xdxd", "Y mis nudes", "Ya antojaron", "Ya es hora", "Ya sabes", "Ya se durmieron", "Ya se enojó", "Ya veo", "Yop", "Youme"]
+
+case 'forme':
+	textme = ""	
+	for (let i = 0; i <= onlyme.length; i = i + 2){
+		let j = i + 1
+	textme = texteme + `${bodyM} ${onlyme[i]} + \t + ${onlyme[j]} + \n`			
+	}
+	
+stickme = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
+│ *Lalelilolu ᵈᵃʳʸ*⛥
+╭─────────────
+${textme}
+╰──────────────╯`
+samu330.sendMessage(from, stickme, MessageType.text, {quoted:
+{ key: {
+fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+},
+message: {
+"documentMessage": { "title": "Lalelilolu ᵈᵃʳʸ⛥", 'jpegThumbnail': fs.readFileSync('./src/otak.jpg')}}
+}})
+addFilter(from)
+addLevelingLevel(sender, 5)		
+break	
+		
 //////////Spam 	
 /**
 case 'swt':
@@ -2188,7 +2223,7 @@ break
 				return('Pwrdon... T_T')
 			})
 			break
-	
+	const mha
 			case 'loli':
 					mha = await axios.get('https://nekos.life/api/v2/img/ero')
 					buffer = await getBuffer(mha.data.url)
@@ -5773,9 +5808,10 @@ dias = fs.readFileSync(`./temp/audio/wenas.mp3`)
 samu330.sendMessage(from, dias, audio, {quoted: fliveLoc, mimetype: 'audio/mp4', ptt:true, duration: -999999})
 }**/
 	
-////////////me only me i think
+////////////Stickers para todos
 	
-const Fer =  ["Ban", "Funao", "Love", "Ya se durmieron", "Te me calmas", "Ta fuerte", "Hahaha", "F el grupo", "Ctm", "Shh", "Nani", "Lolxd", "F", "Amm", "Pichula", "Si xd", "Haha no"]		
+const Fer =  ["Ban", "Funao", "Love", "Ya se durmieron", "Te me calmas", "Ta fuerte", "Hahaha", "F el grupo", "Ctm", "Shh", "Nani", "Lolxd", "F", "Amm", "Pichula", 
+	      "Si xd", "Haha no"]		
 
 	for (let i = 0; i < Fer.length; i++){
 		if (body.includes(`${Fer[i]}`) && body.length == Fer[i].length){
@@ -5785,32 +5821,6 @@ const Fer =  ["Ban", "Funao", "Love", "Ya se durmieron", "Te me calmas", "Ta fue
 	}	
 	
 /////////////////////////////////////
-
-/**
-//////////Laura
-		
-const Laura =  ["Pollito frito", "Háblame bonito"]		
-if(isOwner){
-	for (let i = 0; i < Laura.length; i++){
-		if (budy.includes(`${Laura[i]}`)){
-			none = fs.readFileSync(`./src/stickers2/${Laura[i]}.webp`)
-			client.sendMessage(from, none, sticker, {quoted: mek})	
-		}				
-	}	
-	
-**/		
-//////Owner :  Me
-		
-const Miau =  ["Nani", "Ya veo", "Oh yeah mami", "Safa ctv", "Hack", "Lolxd", "Ily", "Pichula", "Si xd", "Haha no", "F", "Lau", "Pollita", "C rasca", "Vamos a culear", "Amm"]		
-if (itsMe) {
-	for (let i = 0; i < Miau.length; i++){
-		if (body.includes(`${Miau[i]}`) && body.length == Miau[i].length){
-			const none2 = fs.readFileSync(`./src/stickers2/${Miau[i]}.webp`)
-			samu330.sendMessage(from, none2, sticker)	
-		}				
-	}	
-}	
-///////////	
 	
 	if (itsMe){
         if (body.startsWith(`Jaa`)) {
@@ -5833,17 +5843,17 @@ const sonsotak = ["A mimir", "A", "a", "Acm1pt", "Admin", "Ahhh", "Arrecha", "Ay
 			samu330.sendMessage(from, audiosxx, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true})
 		}				
 	}	
+
+///////Only me and mods
 		
-const onlyme = ["69", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "Amistad", "Anna", "Amm", "Anni", "Así me gusta", "Asustado", "Ay caramba", "Ay me asusté", 
-		"Ban", "Besos", "Bien", "Bragas", "Buen culo", "Buenas noches", "Bye", "C rasca", "Cállate", "Cc", "Chelitas", "Chongo", "Colita", "Colitaxxx", "Contesta", "Contra el muro", 
-		"Ctm", "Cunni", "Dame", "Delito", "Doncon", "Duren", "En fin", "Encuérate", "Eres bonita", "F el grupo", "F en el chat", "F", "Facha", "Fallesí", "FBI", "Flap", 
-		"Funao", "Gansito", "Gomitas", "Háblame bonito", "Hack", "Haha no", "Hahaha", "Helado", "Hentai", "Ily", "Im dead", "Inflingir", "Jiji", "Jutsu", "Kuaker", "La ahorca", "La ata", "Las bragitas", "Lit", 
-		"Llegó papi", "Love", "Ly", "Me dormí", "Me encanta", "Me morí", "Me prometiste", "Me vengo", "Me voy", "Meyou", "Mimitos", "Muy bien", "Nel", 
-		"No antojes", "No me interesa", "No puede ser", "No sé", "No te excites", "Onichan", "Ouioui", "Pack", "Paja", "Pansito", "Pantsu", "Pérame", "Pero", 
-		"Preséntate", "Procede", "Purga", "Que weba", "Rico", "Rip", "Sad", "Santas escrituras", "Sapee", "Se encuera", "Se ofendió", "Se va xd", "I wanna fuck you", 
-		"Sex", "Shh", "Si mi amor", "Sit on me pls", "Slap", "Ta fuerte", "Te me calmas", "Toma tu galleta", "Triste", "Tu culito", "Turbio", "Tuyyo", "Ufff", "Uhm", "Umm", 
-		"Uwu", "Vas a llorar", "Volví", "Wow", "Wtf", "Xdxd", "Y mis nudes", "Ya antojaron", "Ya es hora", "Ya sabes", "Ya se durmieron", "Ya se enojó", 
-		"Yop", "Youme"]
+if (isOwner){
+	for (let i = 0; i < onlyme.length; i++){
+		if (body.includes(`${onlyme[i]}`) && body.length == onlyme[i].length){
+			const none2 = fs.readFileSync(`./src/stickers/${onlyme[i]}.webp`)
+			samu330.sendMessage(from, none2, sticker)	
+		}				
+	}
+}
 //////////////
 	
 if (isSimi && !itsMe &&  body != undefined){
