@@ -2002,7 +2002,7 @@ break
 					const spst = "Haha no"
 					if (argz[0] > 10) {
 						Noperro = fs.readFileSync(`./src/stickers/${spst}.webp`)
-						client.sendMessage(from, Noperro, MessageType.sticker, {quoted: faud})
+						client.sendMessage(from, Noperro, MessageType.sticker, {quoted: fimg})
 						argz[0] = 5
 					}					
 					for (let i = 0; i < argz[0]; i++){
