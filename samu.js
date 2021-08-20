@@ -1844,12 +1844,12 @@ const onlyme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "
 	textme = textme + `${bodyM} ${onlyme[i]} + \t + ${onlyme[j]} + \n`			
 	}
 	
-const stickme = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
+const stickmenu = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 │ *Lalelilolu ᵈᵃʳʸ*⛥
 ╭─────────────
 ${textme}
 ╰──────────────╯`
-samu330.sendMessage(from, stickme, MessageType.text, {quoted:
+samu330.sendMessage(from, stickmenu, MessageType.text, {quoted:
 { key: {
 fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
