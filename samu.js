@@ -1831,7 +1831,7 @@ const onlyme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "
 		"F", "Facha", "Fallesí", "FBI", "Flap", "Funao", "Gansito", "Gomitas", "Háblame bonito", "Hack", "Haha no", "Hahaha", "Helado", "Hentai", 
 		"I wanna fuck you", "Ily", "Im dead", "Inflingir", "Jiji", "Jutsu", "Kuaker", "La ahorca", "La ata", "Las bragitas", "Lau", "Lit", "Llegó papi", "Lolxd", 
 		"Love", "Ly", "Me dormí", "Me encanta", "Me morí", "Me prometiste", "Me vengo", "Meyou", "Mimitos", "Muy bien", "Nani", "Nel", "No antojes", 
-		"No me interesa", "No puede ser", "No sé", "No te excites", "Oh yeah mami", "Onichan", "Ouioui", "Pack", "Packsito pls", "Paja", "Pansito", "Pantsu", 
+		"No me interesa", "No puede ser", "No sé", "No te excites", "Oh yeah mami", "Onichan", "Ouioui", "Pack", "Packsito pls", "Paja", "Paja2", "Pansito", "Pantsu", 
 		"Pérame", "Pero", "Pichula", "Pollita", "Pollito frito", "Preséntate", "Procede", "Purga", "Que weba", "Rico", "Rip", "Sad", "Safa ctv", "Santas escrituras", 
 		"Sapee", "Se encuera", "Se ofendió", "Se va xd", "Sex", "Sexo", "Shh", "Si mi amor", "Si xd", "Sit on me pls", "Slap", "Ta fuerte", "Te me calmas", 
 		"Toma tu galleta", "Triste", "Tu culito", "Turbio", "Tuyyo", "Ufff", "Uhm", "Umm", "Uwu", "Vamos a culear", "Vas a llorar", "Volví", "Wow", "Wtf", 
