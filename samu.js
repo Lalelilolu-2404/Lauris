@@ -699,7 +699,16 @@ key:
 { fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ?
 { remoteJid: "status@broadcast" } : {}) },
-message: { "locationMessage": { "caption":"Lalelilolu ᵈᵃʳʸ⛥", 'jpegThumbnail': fs.readFileSync('./src/samyperry.png')}}
+message: { "locationMessage": { "caption":"Lalelilolu ᵈᵃʳʸ⛥", 'jpegThumbnail': fs.readFileSync('./src/fake.jpg')}}
+}
+contextInfo: {
+mentionedJid: [sender]}
+const fnsfw = {
+key:
+{ fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ?
+{ remoteJid: "status@broadcast" } : {}) },
+message: { "locationMessage": { "caption":"Lalelilolu ᵈᵃʳʸ⛥", 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
 }
 contextInfo: {
 mentionedJid: [sender]}
@@ -1429,7 +1438,7 @@ ${bodyM} ${prefix}soyyo
 ${bodyM} ${prefix}blocklist
 ${bodyM} ${prefix}leerimagen
 
-***************************
+***************************************
 `,
 contextInfo: {
 mentionedJid: [sender], "forwardingScore": 9999, "isForwarded": true
@@ -1465,24 +1474,6 @@ ${bodyM} ${prefix}xwaifu
 ${bodyM} ${prefix}xneko
 ${bodyM} ${prefix}trap
 ${bodyM} ${prefix}blow
-
-`
-addFilter(from)
-addLevelingLevel(sender, 5)		
-samu330.sendMessage(from, samuPn, image, { quoted: fvid, caption: `${Menu18}`, thumbnail: samuPn, contextInfo: { mentionedJid: [sender], "forwardingScore": 9999, "isForwarded": true }})              
-break
-		
-/////////		
-case 'pornosotros':
-samu330.updatePresence(from, Presence.composing)
-if (!isRegister) return reply(mess.only.usrReg)
-if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(mess.nsfw)
-samuPn = fs.readFileSync('./src/+18.jpg')
-uptime = process.uptime()
-const Menunsfw = `
-_*🍒Estilo anime🍒*_
-
 ${bodyM} ${prefix}hentai
 ${bodyM} ${prefix}ahegao
 ${bodyM} ${prefix}xboobs
@@ -1505,10 +1496,16 @@ ${bodyM} ${prefix}cumimg
 ${bodyM} ${prefix}pussyg
 ${bodyM} ${prefix}boobsg
 ${bodyM} ${prefix}analg
+================================
 `
 addFilter(from)
 addLevelingLevel(sender, 5)		
-samu330.sendMessage(from, samuPn, image, { quoted: fvid, caption: `${Menunsfw}`, thumbnail: samuPn, contextInfo: { mentionedJid: [sender], "forwardingScore": 9999, "isForwarded": true }})              
+samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${Menu18}`, thumbnail: samuPn, contextInfo: { mentionedJid: [sender], "forwardingScore": 9999, "isForwarded": true }})              
+break
+		
+/////////		
+case 'pornosotros':	
+samu330.sendMessage(from, samuPn, image, contextInfo: mentionedJid: [sender])              
 break	
 /////////		
 		
@@ -1837,9 +1834,19 @@ const onlyme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "
 		"Toma tu galleta", "Triste", "Tu culito", "Turbio", "Tuyyo", "Ufff", "Uhm", "Umm", "Uwu", "Vamos a culear", "Vas a llorar", "Volví", "Wow", "Wtf", 
 		"Xdxd", "Y mis nudes", "Ya antojaron", "Ya es hora", "Ya sabes", "Ya se durmieron", "Ya se enojó", "Ya veo", "Yop", "Youme"]		
 	var textme = ""	
+	let n = 18
+	const onlyme2 = []
+	var aug = ""
+		if (onlyme[i].length < n) {
+			for (let k = 0; k < n - onlyme[i].length; i++){
+			aug = aug + ' '
+			}
+		onlyme2[i] = onlyme[i] + aug 
+		}
+			     
 	for (let i = 0; i <= onlyme.length; i = i + 2){
 		let j = i + 1
-	textme = textme + `${bodyM} ${onlyme[i].padEnd(18,'')} \t\t *${onlyme[j].padEnd(18,'')}\n`			
+	textme = textme + `${bodyM} ${onlyme2[i]} \t\t *${onlyme2[j]}\n`			
 	}
 	
 const stickmenu = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
@@ -5158,6 +5165,16 @@ if (!isQuotedImage) return reply(`Envia una imagen con el comando: *${prefix}set
 var media1 = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 var media2 = await samu330.downloadMediaMessage(media1)
 fs.writeFileSync('./src/fake.jpg', media2)  
+reply('*Hecho mi amo 7~7*')
+break
+		
+case 'setnsfw':
+if (!isOwner) return reply('Este comando solo puede ser usado por *Lalelilolu ᵈᵃʳʸ⛥*')
+samu330.updatePresence(from, Presence.composing)
+if (!isQuotedImage) return reply(`Envia una imagen con el comando: *${prefix}setnsfw*`)
+var media1 = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+var media2 = await samu330.downloadMediaMessage(media1)
+fs.writeFileSync('./src/nsfw.jpg', media2)  
 reply('*Hecho mi amo 7~7*')
 break
 
