@@ -1152,7 +1152,7 @@ ${bodyM} *Prefijo :* [ *${prefix}* ]
 ===========================================
 _*LISTA DE MENUS*_
 
-${bodyM} ${prefix}menu1 *(Menu de Media*
+${bodyM} ${prefix}menu1 *(Menu de Media)*
 ${bodyM} ${prefix}menu2 *(Menu de Sticker)*
 ${bodyM} ${prefix}menu3 *(Menu de Grupos)*
 ${bodyM} ${prefix}menu4 *(Menu de descargas)*
@@ -1167,7 +1167,8 @@ ${bodyM} ${prefix}stickers *(Stickers)*
     
 ===========================================
 || _Juega con el Bot:_ *${prefix}jugar*
-|| O ${prefix}ttt
+|| _Casino:_ *${prefix}lucky*
+|| _Tictactoe:_ *${prefix}ttt*
 ===========================================
 *⌜《Lalelilolu》\◔,◡◔,/ ت♡⌟* ⛥ `                                               
 
@@ -1842,7 +1843,7 @@ const onlyme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "
 	textme = textme + `${bodyM} ${onlyme[i]} + \t + ${onlyme[j]} + \n`			
 	}
 	
-stickme = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
+const stickme = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 │ *Lalelilolu ᵈᵃʳʸ*⛥
 ╭─────────────
 ${textme}
@@ -1955,6 +1956,12 @@ break
 					spamer = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					pegat = await samu330.downloadMediaMessage(spamer)
 					
+					if (argz[0] > 50) {
+						spst = "Haha no"
+						Noperro = fs.readFileSync(`./src/stickers/${spst}.webp`)
+						client.sendMessage(from, Noperro, MessageType.sticker, {quoted: faud})
+						argz[0] = 5
+					}					
 					for (let i = 0; i < argz[0]; i++){
                 			samu330.sendMessage(from, pegat, MessageType.sticker, {sendEphemeral: true})
                 			}
@@ -2167,30 +2174,25 @@ samu330.sendMessage(from, thumb, MessageType.image, {caption: '/omg'})
 addFilter(from)
 break
 ///	
+**/
 case 'miniprof':
 samu330.updatePresence(from, Presence.composing)  
-
-	user.push(sender)	
-	fs.writeFileSync('./database/json/user.json', JSON.stringify(user))
-const nameUser = `${pushname}`
-const umurUser = `${sender}`
-var p = await samu330.getStatus(`${sender}`, MessageType.text)
-
-veri = sender
-		
-	try {
-		ppimg = await client.getProfilePicture(`${sender.split('@')[0]}@c.us`)
-	}
-	catch {
-		ppimg = fs.readFileSync('./assets/Unkown.jpeg')
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+try {
+ppimg = await samu330.getProfilePicture(mentioned[0])
+} catch {
+ppimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
+}
+Mh = await getBuffer(ppimg)
 	
-	}
-		let Mh = await getBuffer(ppimg)
-				
+var p = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)
+
+	veri = sender				
 		
-  teks = `〘  *VERIFICADO ✅* 〙
+  teks = `〘 *Comunidad otaku ⛥2.0⛥* 〙
 ╔═══════════════════
-╠≽️ *Número* : *wa.me/${sender.split("@")[0]}*
+╠≽️ *Número* : ${mentioned[0]}
 ╠≽️ *Status* : ${p.status}
 ╚═══════════════════`
 	
@@ -2227,9 +2229,9 @@ veri = sender
                     }
                 }
             })		
-			
+addFilter(from)		
 break	
-**/	
+	
 			case 'waifu':
 			waifud = await axios.get('https://api.waifu.pics/nsfw/waifu')
 			//waifud = await axios.get('https://nekos.life/api/v2/img/waifu')
@@ -4028,7 +4030,7 @@ exec(`ffmpeg -i ${slo} -filter:a "atempo=0.7,asetrate=44100" ${ran}`, (err, stde
 fs.unlinkSync(slo)
 if (err) return reply('Error!')
 hah = fs.readFileSync(ran)
-samu330.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', duration :-999999999999999, ptt:true, quoted: fdoc})
+samu330.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: fdoc})
 fs.unlinkSync(ran)
 })
 addFilter(from)
@@ -4043,7 +4045,7 @@ exec(`ffmpeg -i ${tup} -filter:a "atempo=0.5,asetrate=65100" ${ran}`, (err, stde
 fs.unlinkSync(tup)
 if (err) return reply('Error!')
 hah = fs.readFileSync(ran)
-samu330.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', duration :-999999999999999, ptt:true, quoted: fdoc})
+samu330.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: fdoc})
 fs.unlinkSync(ran)
 })
 addFilter(from)
@@ -4057,7 +4059,7 @@ exec(`ffmpeg -i ${gem} -filter:a "atempo=1.6,asetrate=22100" ${ran}`, (err, stde
 fs.unlinkSync(gem)
 if (err) return reply('Error!')
 hah = fs.readFileSync(ran)
-samu330.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', duration :-999999999999999, ptt:true, quoted: fdoc})
+samu330.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: fdoc})
 fs.unlinkSync(ran)
 })
 addFilter(from)
@@ -4071,7 +4073,7 @@ exec(`ffmpeg -i ${bas} -af equalizer=f=94:width_type=o:width=2:g=30 ${ran}`, (er
 fs.unlinkSync(bas)
 if (err) return reply('Error!')
 hah = fs.readFileSync(ran)
-samu330.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', duration :-999999999999999, ptt:true, quoted: fdoc})
+samu330.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted: fdoc})
 fs.unlinkSync(ran)
 })
 addFilter(from)
@@ -4089,7 +4091,7 @@ fs.unlinkSync(medi1a)
 if (err) return reply('Error!')
 fast = fs.readFileSync(ran)
 samu330.sendMessage(from, fast, audio, {
-mimetype: 'audio/mp4', ptt: true, duration :-999999999999999, quoted: faud})
+mimetype: 'audio/mp4', ptt: true, duration :-9, quoted: faud})
 fs.unlinkSync(ran)
 })
 break
@@ -4243,7 +4245,7 @@ try {
 exec(`magick './src/reg.jpg' -gravity west -fill '#00FF00' -font './src/font-gue.ttf' -size 1280x710 -pointsize 90 -interline-spacing 7.5 -annotate +460-45 '${nombre}' -pointsize 50 -annotate +460+200 '${serialUser}' '${ppimg}' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'regsm.jpg'`)
 samu330.sendMessage(from, fs.readFileSync('regsm.jpg'), MessageType.image, { quoted: sam, caption: `*「 SU REGISTRO FUE UN EXITO😉 」*\n\n *◦ Nombre : ${nombre}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *📋Su registro fue todo un exito*\n\n*Para Continuar Usando a NYANBOT Escriba el siguiente comando: ${prefix}menu*`})
 } catch {
-reply(`*「 SU REGISTRO FUE UN EXITO😉 」*\n\n *◦ Nombre : ${nombre}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *📋Su registro fue todo un exito*\n\n*Comando: ${prefix}menu*`)
+reply(`*「 SU REGISTRO FUE UN EXITO😉 」*\n\n ◦ *Nombre : ${nombre}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *📋Su registro fue todo un exito*\n\n*Comando: ${prefix}menu*`)
 }
 addFilter(from)
 break
@@ -4535,7 +4537,7 @@ ${m}
 ╰─┨⃞🔮𝉃𝜄𝜐𝉃𝜍𝜅𝉃𝛾🔮⃞ ┠─╯`
 reply(`${u}`)
 break
-
+/**
 case 'purga': 
 if (!isGroup) return reply('Este comando solo se puede usar en grupos!')
 if (!botAdmin) return reply('Solo se puede usar cuando el bot es administrador!')
@@ -4549,8 +4551,7 @@ await samu330.removeParticipant(from, allMem[i].id)
 }
 reply('✍🏻')
 break
-
-		
+**/		
 case 'getbio':
 var yy = sam.message.extendedTextMessage.contextInfo.mentionedJid[0]
 var p = await samu330.getStatus(`${yy}`, MessageType.text)
@@ -4633,7 +4634,7 @@ addFilter(from)
 break
 
 case 'runtime':
-run = process.uptime()
+runt = process.uptime()
 let text = msg.runtime(run)
 samu330.sendMessage(from, '*Tiempo encendido*', MessageType.text, { quoted: { key: {
 fromMe: false,
@@ -4646,7 +4647,7 @@ message: {
 "description": "",
 "currencyCode": "SYP",
 "priceAmount1000": "999999999999999999",
-"retailerId": "𝒩𝓎𝒶𝓃ℬ𝑜𝓉🍃",
+"retailerId": "Lalelilolu ᵈᵃʳʸ⛥",
 "productImageCount": 10
 },
 "businessOwnerJid": `0@s.whatsapp.net`
@@ -4654,13 +4655,13 @@ message: {
 }}                                                                                                                                                                                                                                                                        })
 break
 case 'desfijar':
-if (!itsMe) return reply('Este comando solo puede ser usado por *Samu330* ⚙')
+if (!itsMe) return reply('Este comando solo puede ser usado por *Lalelilolu ⛥*)
 samu330.modifyChat(from, ChatModification.unpin)
 reply('*succes unpin this chat*')
 console.log('unpin chat = ' + from)
 break
 case 'fijar':
-if (!itsMe) return reply('Este comando solo puede ser usado por *Samu330* ⚙')
+if (!itsMe) return reply('Este comando solo puede ser usado por *Lalelilolu ⛥*')
 samu330.modifyChat(from, ChatModification.pin)
 reply('*Este chat se ah fijado*')
 console.log('Se fijo el chat = ' + from)
@@ -4671,7 +4672,7 @@ samu330.sendMessage(from, `Total de mensajes sin leer: ${unread.length}`, Messag
 
 break
 case 'desarchivar':
-if (!itsMe) return reply('Este comando solo puede ser usado por *Samu330* ⚙')
+if (!itsMe) return reply('Este comando solo puede ser usado por *Lalelilolu ⛥*')
 reply('*Todos los chats archivados fueron desarchivados*')
 console.log('succes unarchive chat = ' + from)
 anu = await samu330.chats.all()
@@ -4680,7 +4681,7 @@ samu330.modifyChat(_.jid, ChatModification.unarchive)
 }
 break
 case 'archivar':
-if (!itsMe) return reply('Este comando solo puede ser usado por *Samu330* ⚙')
+if (!itsMe) return reply('Este comando solo puede ser usado por *Lalelilolu ⛥*')
 reply('*Vale, espera..*')
 console.log('succes archive chat = ' + from)
 await sleep(3000)
@@ -4688,7 +4689,7 @@ samu330.modifyChat(from, ChatModification.archive)
 reply('*Yap*')
 break
 case 'vaciartodo':
-if (!itsMe) return reply('Este comando solo puede ser usado por *Samu330* ⚙')
+if (!itsMe) return reply('Este comando solo puede ser usado por *Lalelilolu ⛥*')
 reply('*Todos los chats han sido vaciados*')
 smyprry = await samu330.chats.all()
 for (let _ of smyprry) {
@@ -4697,20 +4698,20 @@ samu330.modifyChat(_.jid, ChatModification.delete)
 }
 break
 case 'vaciar':
-if (!itsMe) return reply('Este comando solo puede ser usado por *Samu330* ⚙')
+if (!itsMe) return reply('Este comando solo puede ser usado por *Lalelilolu ⛥*')
 reply('*Este chat a sido vaciado*')
 console.log('succes delete chat = ' + from)
 await sleep(4000)
 samu330.modifyChat(from, ChatModification.delete)
 break
 case 'silencio':
-if (!itsMe) return reply('Este comando solo puede ser usado por *Samu330* ⚙')
+if (!itsMe) return reply('Este comando solo puede ser usado por *Lalelilolu ⛥*')
 samu330.modifyChat(from, ChatModification.mute, 24*60*60*1000)
 reply('*Este chat a sido silenciado*')
 console.log('succes mute chat = ' + from)
 break
 case 'desilenciar':
-if (!itsMe) return reply('Este comando solo puede ser usado por *Samu330* ⚙')
+if (!itsMe) return reply('Este comando solo puede ser usado por *Lalelilolu ⛥*')
 samu330.modifyChat(from, ChatModification.unmute)
 reply('*Este chat a dejado de silenciarse*')
 console.log('succes unmute chat = ' + from)
@@ -5836,7 +5837,7 @@ samu330.sendMessage(from, dias, audio, {quoted: fliveLoc, mimetype: 'audio/mp4',
 ////////////Stickers para todos
 if (!isOwner){	
 const Fer =  ["Ban", "Funao", "Love", "Ya se durmieron", "Te me calmas", "Ta fuerte", "Hahaha", "F el grupo", "Ctm", "Shh", "Nani", "Lolxd", "F", "Amm", "Pichula", 
-	      "Si xd", "Haha no"]		
+	      "Si xd", "Haha no", "Paja2"]		
 
 	for (let i = 0; i < Fer.length; i++){
 		if (body.includes(`${Fer[i]}`) && body.length == Fer[i].length){
@@ -5876,7 +5877,7 @@ const stickme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", 
 		"F", "Facha", "Fallesí", "FBI", "Flap", "Funao", "Gansito", "Gomitas", "Háblame bonito", "Hack", "Haha no", "Hahaha", "Helado", "Hentai", 
 		"I wanna fuck you", "Ily", "Im dead", "Inflingir", "Jiji", "Jutsu", "Kuaker", "La ahorca", "La ata", "Las bragitas", "Lit", "Llegó papi", "Lolxd", 
 		"Love", "Ly", "Me dormí", "Me encanta", "Me morí", "Me prometiste", "Me vengo", "Meyou", "Mimitos", "Muy bien", "Nani", "Nel", "No antojes", 
-		"No me interesa", "No puede ser", "No sé", "No te excites", "Oh yeah mami", "Onichan", "Ouioui", "Pack", "Packsito pls", "Paja", "Pansito", "Pantsu", 
+		"No me interesa", "No puede ser", "No sé", "No te excites", "Oh yeah mami", "Onichan", "Ouioui", "Pack", "Packsito pls", "Paja", "Paja2", "Pansito", "Pantsu", 
 		"Pérame", "Pero", "Pichula", "Pollita", "Pollito frito", "Preséntate", "Procede", "Purga", "Que weba", "Rico", "Rip", "Sad", "Safa ctv", "Santas escrituras", 
 		"Sapee", "Se encuera", "Se ofendió", "Se va xd", "Sex", "Sexo", "Shh", "Si mi amor", "Si xd", "Sit on me pls", "Slap", "Ta fuerte", "Te me calmas", 
 		"Toma tu galleta", "Triste", "Tu culito", "Turbio", "Tuyyo", "Ufff", "Uhm", "Umm", "Uwu", "Vamos a culear", "Vas a llorar", "Volví", "Wow", "Wtf", 
