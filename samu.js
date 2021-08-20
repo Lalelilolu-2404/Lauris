@@ -2001,7 +2001,7 @@ break
 					pegat = await samu330.downloadMediaMessage(spamer)
 					spst = fs.readFileSync(`./src/stickers/Haha no.webp`)
 					if (argz[0] > 30) {
-						samu330.sendMessage(from, nk, sticker, {quoted: fimg, "forwardingScore": 9999, "isForwarded": true})
+						samu330.sendMessage(from, spst, sticker, {quoted: fimg, "forwardingScore": 9999, "isForwarded": true})
 						argz[0] = 5
 					}					
 					for (let i = 0; i < argz[0]; i++){
