@@ -1838,7 +1838,7 @@ const onlyme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "
 		"Xdxd", "Y mis nudes", "Ya antojaron", "Ya es hora", "Ya sabes", "Ya se durmieron", "Ya se enojó", "Ya veo", "Yop", "Youme"]		
 	var textme = ""	
 	let n = 18
-	const onlyme2(onlyme.length)
+	const onlyme2 = new Array(onlyme.length)
 	let aug = ""
 	for (let i = 0; i <= onlyme.length; i++){
 		if (onlyme[i].length < n) {
