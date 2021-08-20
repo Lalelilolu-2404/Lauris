@@ -708,7 +708,7 @@ key:
 { fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ?
 { remoteJid: "status@broadcast" } : {}) },
-message: { "locationMessage": { "caption":"Lalelilolu ᵈᵃʳʸ⛥", 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
+message: { "videoMessage": { "caption":"Lalelilolu ᵈᵃʳʸ⛥", 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
 }
 contextInfo: {
 mentionedJid: [sender]}
@@ -1832,13 +1832,14 @@ const onlyme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "
 	let n = 18
 	const onlyme2 = []
 	var aug = ""
+	for (let i = 0; i <= onlyme.length; i++){
 		if (onlyme[i].length < n) {
 			for (let k = 0; k < n - onlyme[i].length; i++){
 			aug = aug + ' '
 			}
 		onlyme2[i] = onlyme[i] + aug 
 		}
-			     
+	}	     
 	for (let i = 0; i <= onlyme.length; i = i + 2){
 		let j = i + 1
 	textme = textme + `${bodyM} ${onlyme2[i]} \t\t *${onlyme2[j]}\n`			
@@ -5170,6 +5171,16 @@ if (!isQuotedImage) return reply(`Envia una imagen con el comando: *${prefix}set
 var media1 = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 var media2 = await samu330.downloadMediaMessage(media1)
 fs.writeFileSync('./src/nsfw.jpg', media2)  
+reply('*Hecho mi amo 7~7*')
+break
+		
+case 'set+18':
+if (!isOwner) return reply('Este comando solo puede ser usado por *Lalelilolu ᵈᵃʳʸ⛥*')
+samu330.updatePresence(from, Presence.composing)
+if (!isQuotedImage) return reply(`Envia una imagen con el comando: *${prefix}setnsfw*`)
+var media1 = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+var media2 = await samu330.downloadMediaMessage(media1)
+fs.writeFileSync('./src/+18.jpg', media2)  
 reply('*Hecho mi amo 7~7*')
 break
 
