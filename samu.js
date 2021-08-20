@@ -1839,7 +1839,7 @@ const onlyme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "
 	var textme = ""	
 	for (let i = 0; i <= onlyme.length; i = i + 2){
 		let j = i + 1
-	textme = textme + `${bodyM} ${onlyme[i].padEnd(18," ")} \t\t *${onlyme[j].padEnd(18," ")}\n`			
+	textme = textme + `${bodyM} ${onlyme[i].padEnd(18,'')} \t\t *${onlyme[j].padEnd(18,'')}\n`			
 	}
 	
 const stickmenu = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
@@ -3364,8 +3364,8 @@ break
 case 'rules':
 samu330.updatePresence(from, Presence.composing)  		
 mdata = await samu330.groupMetadata(from)
-reply(`*😙Hola, @${pushname}*\n _*Bienvenido a ${mdata.subject}, esperamos que te la pases a gusto en este grupo✨*_\n\n
-_Recuerda siempre seguir las reglas_😉\n\n*\n\n${mdata.desc}`)
+reply(`*😙Hola, @${pushname}*\n _*Bienvenido a ${mdata.subject}*_\n\n_*Esperamos que te la pases a gusto en este grupo✨*_\n
+_*Recuerda siempre seguir las reglas_😉*_\n\n*${mdata.desc}*`)
 break
 	
 //Con este case se envia la aplicacion Tutorial
@@ -5144,10 +5144,20 @@ break
 case 'setprof':
 if (!isOwner) return reply('Este comando solo puede ser usado por *Lalelilolu ᵈᵃʳʸ⛥*')
 samu330.updatePresence(from, Presence.composing)
-if (!isQuotedImage) return reply(`Envia una imagen con el comando: *${prefix}setpp*`)
+if (!isQuotedImage) return reply(`Envia una imagen con el comando: *${prefix}setprof*`)
 var media1 = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 var media2 = await samu330.downloadMediaMessage(media1)
 fs.writeFileSync('./src/assistant.jpg', media2)  
+reply('*Hecho mi amo 7~7*')
+break
+		
+case 'setfake':
+if (!isOwner) return reply('Este comando solo puede ser usado por *Lalelilolu ᵈᵃʳʸ⛥*')
+samu330.updatePresence(from, Presence.composing)
+if (!isQuotedImage) return reply(`Envia una imagen con el comando: *${prefix}setfake*`)
+var media1 = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+var media2 = await samu330.downloadMediaMessage(media1)
+fs.writeFileSync('./src/fake.jpg', media2)  
 reply('*Hecho mi amo 7~7*')
 break
 
