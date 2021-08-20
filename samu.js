@@ -1218,6 +1218,15 @@ stc = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 │ *${prefix}takestick*
 │ _Nombre|Autor_
 ╰─────────────
+│ *${prefix}sgay*
+│ _Etiqueta una imagen_
+╰─────────────
+│ *${prefix}srip*
+│ _Etiqueta una imagen_
+╰─────────────
+│ *${prefix}scarcel*
+│ _Etiqueta una imagen_
+╰─────────────
 │ *${prefix}swm*
 │ _Nombre|Autor_
 ╰─────────────
@@ -1299,7 +1308,25 @@ mda = `
 ║ _Etiqueta un audio_
 ╠ *●${prefix}grave*
 ║ _Etiqueta un audio_
+╠ *●${prefix}fantasma*
+║ _Etiqueta un audio_
+╠ *●${prefix}robot*
+║ _Etiqueta un audio_
 ║
+╟╼╾┤🎞VIDEOS🎞├╼╾
+║
+╠ *●${prefix}reversa*
+║ _Etiqueta un video_
+╠ *●${prefix}vrapido*
+║ _Etiqueta un video_
+╠ *●${prefix}vlento*
+║ _Etiqueta un video_
+╠ *●${prefix}mirror*
+║ _Etiqueta un video_
+╠ *●${prefix}vefecto*
+║ _Etiqueta un video_
+╠ *●${prefix}sinsonido*
+║ _Etiqueta un video_
 ╩════════════════`
 samu330.sendMessage(from, mda, MessageType.text, {quoted:
 { key: {
@@ -2486,6 +2513,32 @@ case 'gracias':
 var _0x56da=['367342lxQRgg','relayWAMessage','52224EUhLvZ','readFileSync','3184312811796096','2ZQhqXh','37BvfGXn','1QpYCgS','233589MYSAPS','296046BsnUGu','./src/fake.jpg','11131Xmdsqw','🤭 *Tranqui, no es nada* 😉','41623ZFgijY','4lYyqCf','INQUIRY','prepareMessageFromContent','1081869VYGFAG','1QmBtcR'];var _0x3cb2d7=_0x44c4;function _0x44c4(_0x538587,_0x3dc520){return _0x44c4=function(_0x56dab7,_0x44c4ad){_0x56dab7=_0x56dab7-0x11b;var _0x4c2ec7=_0x56da[_0x56dab7];return _0x4c2ec7;},_0x44c4(_0x538587,_0x3dc520);}(function(_0x1c8e57,_0x5dcd2a){var _0x2b3ad5=_0x44c4;while(!![]){try{var _0x1e1a08=parseInt(_0x2b3ad5(0x11b))*parseInt(_0x2b3ad5(0x127))+parseInt(_0x2b3ad5(0x12c))+parseInt(_0x2b3ad5(0x122))+parseInt(_0x2b3ad5(0x11e))*parseInt(_0x2b3ad5(0x121))+parseInt(_0x2b3ad5(0x126))*-parseInt(_0x2b3ad5(0x12b))+parseInt(_0x2b3ad5(0x124))*parseInt(_0x2b3ad5(0x11f))+-parseInt(_0x2b3ad5(0x120))*parseInt(_0x2b3ad5(0x12a));if(_0x1e1a08===_0x5dcd2a)break;else _0x1c8e57['push'](_0x1c8e57['shift']());}catch(_0x52a340){_0x1c8e57['push'](_0x1c8e57['shift']());}}}(_0x56da,0x99469),res=await samu330[_0x3cb2d7(0x129)](from,{'orderMessage':{'orderId':_0x3cb2d7(0x11d),'thumbnail':fs[_0x3cb2d7(0x11c)](_0x3cb2d7(0x123)),'itemCount':999999999,'status':_0x3cb2d7(0x128),'surface':'CATALOG','message':_0x3cb2d7(0x125),'orderTitle':''},'contextInfo':{'forwardingScore':0x3,'isForwarded':!![]}},{'quoted':sam,'contextInfo':{}}),samu330[_0x3cb2d7(0x12d)](res));
 break
 
+case 'nuevo':
+nuevo = `🤔 *Que hay de nuevo?* 🤗
+- _Menu de Stickers:_
+sgay: Stickers con efecto Gay.
+srip: Stickers con efecto de tumba.
+scarcel: Stickers con efecto de carcel.
+- _Menu de media:_
+*Nuevos efectos de video y audio!!*
+🎞 Video:
+*vrapido*
+*vlento*
+*mirror*
+*vefecto*
+*sinsonido*
+
+🎧 Audio:
+*fantasma*
+*robot*
+
+- Otros comandos:
+_grupos_
+_enlinea_
+_Adminlist_`
+reply(nuevo)
+break
+		
 //audios 
 case 'confeti':
 addFilter(from)
@@ -3002,9 +3055,8 @@ if (stdout) reply(`*El bot se ah actualizado de forma satisfactoria*\n Informe d
 break
 		
 case 'grupos':
-samu330.updatePresence(from, Presence.composing)  
-let gruposT = samu330.chats.array.filter(v => v.jid.endsWith('g.us')).map(v =>`${samu330.groupMetadata(v.jid).subject}\n${v.jid} [${v.read_only ? ' ❌Salio ' : ' *✅Dentro* '}]`).join`\n\n`
-samu330.sendMessage(from, `*Lista de Grupos del Bot:*\n\n${gruposT}`, MessageType.text, {quoted: floc})
+samu330.updatePresence(from, Presence.composing)
+samu330.sendMessage(from, `*CHATS TOTALES* : ${totalchat.length} Chat`, MessageType.text, {quoted  : floc})
 break
 		
 case 'zalgo':
@@ -3097,6 +3149,20 @@ prep = await samu330.prepareMessageFromContent(from,{buttonsMessage},{quoted: sa
 	samu330.relayWAMessage(prep)
 	break
 
+case 'listadmins':
+case 'listadmin':
+case 'adminlist':
+case 'adminslist':
+		
+if (!isGroup) return reply(mess.only.group)
+adm = `*Este grupo* *${groupMetadata.subject}*\nTiene ${groupAdmins.length} Administradores.\n\n`
+no = 0
+for (let admon of groupAdmins) {
+no += 1
+adm += `[${no.toString()}] @${admon.split('@')[0]}\n`
+}
+mentions(adm, groupAdmins, true)
+break		
 
 case 'adm':
 members_id = []
@@ -4097,6 +4163,38 @@ fs.unlinkSync(ran)
 addFilter(from)
 break
 		
+case 'fantasma':
+if (!isQuotedAudio) return reply('Etiqueta un audio!')	
+reply(mess.wait)
+encmediaa1 = isQuotedAudio ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
+mediaa1 = await samu330.downloadAndSaveMediaMessage(encmediaa1)
+ran = getRandom('.mp3')
+exec(`ffmpeg -i ${mediaa1} -filter:a "atempo=1.6,asetrate=3486" ${ran}`, (err, stderr, stdout) => {
+fs.unlinkSync(mediaa1)
+if (err) return reply('Error!')
+hah = fs.readFileSync(ran)
+samu330.sendMessage(from, hah, audio, {mimetype: 'audio/mp4', ptt:true, quoted : fdoc})
+fs.unlinkSync(ran)
+})
+addFilter(from)
+break
+
+case 'robot':
+if (!isQuotedAudio) return reply('Etiqueta un audio!')
+reply(mess.wait)
+encmediar = isQuotedAudio ? JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo : sam
+mediar = await samu330.downloadAndSaveMediaMessage(encmediar)
+ran = getRandom('.mp3')
+exec(`ffmpeg -i ${mediar} -filter_complex "afftfilt=real='hypot(re,im)*sin(0)':imag='hypot(re,im)*cos(0)':win_size=512:overlap=0.75" ${ran}`, (err, stderr, stdout) => {
+fs.unlinkSync(mediar)
+if (err) return reply('Error!')
+resa = fs.readFileSync(ran)
+samu330.sendMessage(from, resa, audio, { mimetype: "audio/mp4", ptt: true, quoted: fdoc})
+fs.unlinkSync(ran)
+})
+addFilter(from)
+break
+		
 case 'rapido':
 addFilter(from)
 if (!isQuotedAudio) return reply('Etiqueta un audio!')
@@ -4125,6 +4223,93 @@ fs.unlinkSync(mediav)
 if (err) return reply(`Error: ${err}`)
 vre = fs.readFileSync(ran)
 samu330.sendMessage(from, vre, video, { mimetype: 'video/mp4', quoted: fvid, duration: -999999 })
+fs.unlinkSync(ran)
+})
+addFilter(from)
+break
+		
+case 'vrapido':
+		    
+if (!isQuotedVideo) return reply('*ETIQUETA UN VIDEO JUNTO CON EL COMANDO PORFAVOR!!*')
+reply(mess.wait)
+encmediav1 = JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
+mediav1 = await samu330.downloadAndSaveMediaMessage(encmediav1)
+ran = getRandom('.mp4')
+exec(`ffmpeg -i ${mediav1} -filter_complex "[0:v]setpts=0.5*PTS[v];[0:a]atempo=2[a]" -map "[v]" -map "[a]" ${ran}`, (err) => {
+fs.unlinkSync(mediav1)
+if (err) return reply(`Error: ${err}`)
+buffer4531 = fs.readFileSync(ran)
+samu330.sendMessage(from, buffer4531, video, { mimetype: 'video/mp4', quoted: fvid, caption: '*VIDEO EFFECT*', sendEphemeral: true })
+fs.unlinkSync(ran)
+})
+addFilter(from)
+break
+
+case 'vlento':
+		    
+if (!isQuotedVideo) return reply('*ETIQUETA UN VIDEO JUNTO CON EL COMANDO PORFAVOR!!*')
+reply(mess.wait)
+encmediav2 = JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
+mediav2 = await samu330.downloadAndSaveMediaMessage(encmediav2)
+ran = getRandom('.mp4')
+exec(`ffmpeg -i ${mediav2} -filter_complex "[0:v]setpts=2*PTS[v];[0:a]atempo=0.5[a]" -map "[v]" -map "[a]" ${ran}`, (err) => {
+fs.unlinkSync(mediav2)
+if (err) return reply(`Err: ${err}`)
+buffer4532 = fs.readFileSync(ran)
+samu330.sendMessage(from, buffer4532, video, { mimetype: 'video/mp4', quoted: fvid, caption: '*VIDEO EFFECT*', sendEphemeral: true })
+fs.unlinkSync(ran)
+})
+addFilter(from)
+break
+
+case 'mirror':
+
+if (!isQuotedVideo) return reply('*ETIQUETA UN VIDEO JUNTO CON EL COMANDO PORFAVOR!!*')
+reply(mess.wait)
+encmediav3 = JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
+mediav4 = await samu330.downloadAndSaveMediaMessage(encmediav3)
+ran = getRandom('.mp4')
+exec(`ffmpeg -i ${mediav4} -filter:v "split [main][tmp]; [tmp] crop=iw:ih/2:0:0, vflip [flip]; [main][flip] overlay=0:H/2" ${ran}`, (err) => {
+fs.unlinkSync(mediav4)
+if (err) return reply(`Err: ${err}`)
+buffer4533 = fs.readFileSync(ran)
+samu330.sendMessage(from, buffer4533, video, { mimetype: 'video/mp4', quoted: fvid, caption: '*VIDEO EFFECT*', sendEphemeral: true })
+fs.unlinkSync(ran)
+})
+addFilter(from)
+break
+
+
+case 'vefecto':
+
+if (!isQuotedVideo) return reply('*ETIQUETA UN VIDEO JUNTO CON EL COMANDO PORFAVOR!!*')
+reply(mess.wait)
+encmediav5 = JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
+mediav5 = await samu330.downloadAndSaveMediaMessage(encmediav5)
+ran = getRandom('.mp4')
+exec(`ffmpeg -y -i ${mediav5} -strict experimental -vf hue=s=0 -vcodec mpeg4 -b 2097152 -r 30 ${ran} `, (err) => {
+fs.unlinkSync(mediav5)
+if (err) return reply(`Err: ${err}`)
+buffer4534 = fs.readFileSync(ran)
+samu330.sendMessage(from, buffer4534, video, { mimetype: 'video/mp4', quoted: fvid, caption: '*VIDEO EFFECT*', sendEphemeral: true })
+fs.unlinkSync(ran)
+})
+addFilter(from)
+break
+
+case 'sinsonido':
+
+
+if (!isQuotedVideo) return reply('*ETIQUETA UN VIDEO JUNTO CON EL COMANDO PORFAVOR!!*')
+reply(mess.wait)
+encmediav6 = JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
+mediav6 = await samu330.downloadAndSaveMediaMessage(encmediav6)
+ran = getRandom('.mp4')
+exec(`ffmpeg -i ${mediav6} -vcodec copy -an ${ran}`, (err) => {
+fs.unlinkSync(mediav6)
+if (err) return reply(`Err: ${err}`)
+buffer4536 = fs.readFileSync(ran)
+samu330.sendMessage(from, buffer4536, video, { mimetype: 'video/mp4', quoted: fvid, caption: '*VIDEO EFFECT*', sendEphemeral: true })
 fs.unlinkSync(ran)
 })
 addFilter(from)
@@ -4921,15 +5106,18 @@ quoted: fimg
 })
 break
 		   
+case 'enlinea':
 case 'online':
-if (!isGroup) return reply(mess.only.group)
-let msg = `[ List Online ]\n`
-from.filter(chat.presence.chatstates, (n) => !!n?.type).forEach(item => {
-msg += `- @${item.id.replace(/@c\.us/g, '')}\n`
+										  
+if (!isGroup) return reply(`Solo para grupos`)
+let ido = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : from
+let online = [...Object.keys(samu330.chats.get(ido).presences), samu330.user.jid]
+samu330.sendMessage(from, '*Lista de usuarios en linea*:\n' + online.map(v => '- @' + v.replace(/@.+/, '')).join `\n`, MessageType.text, {
+quoted: ftoko,
+contextInfo: { mentionedJid: online }
 })
-msg += '[ UwU ]'
-await reply(msg)
 break
+		
 case 'soyyo':
 if (!isRegister) return reply(mess.only.usrReg)
 try {
@@ -5581,6 +5769,70 @@ samu330.sendMessage(from, fs.readFileSync('wasted.jpg'), MessageType.image)
 reply('Manda la foto!');
 }			
 break
+
+case 'sgay':
+addFilter(from)	
+if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
+gay = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam;
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
+owgig = await samu330.downloadMediaMessage(gay)
+await fs.writeFileSync(`./stickgay.jpeg`, owgig)
+var imgbb2 = require('imgbb-uploader')
+anug = await imgbb2("20a14861e4f7591f3dc52649cb07ae02", './stickgay.jpeg')
+txtg = `${anug.display_url}`
+sgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${txtg}`)
+const bas642 = `data:image/jpeg;base64,${sgay.toString('base64')}`
+var mantap2 = await convertSticker(bas642, `🌈同性恋世界！ = ${sender[0].split('@')[0]}`, `Lalelilolu ᵈᵃʳʸ⛥`)
+var imageBuffer2 = new Buffer.from(mantap2, 'base64');
+samu330.sendMessage(from, imageBuffer2, sticker, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickgay.jpeg')
+} else {
+reply('Se nesecita una foto para hacer su sticker!');
+}	
+break
+
+case 'srip':
+addFilter(from)	
+if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
+rip = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam;
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
+owgir = await samu330.downloadMediaMessage(rip)
+await fs.writeFileSync(`./stickrip.jpeg`, owgir)
+var imgbb2r = require('imgbb-uploader')
+anur = await imgbb2r("20a14861e4f7591f3dc52649cb07ae02", './stickrip.jpeg')
+txtr = `${anur.display_url}`
+srip = await getBuffer(`https://pecundang.herokuapp.com/api/rip?url=${txtr}`)
+const bas642r = `data:image/jpeg;base64,${srip.toString('base64')}`
+var mantap2r = await convertSticker(bas642r, `⚰ 安息吧！ = ${sender[0].split('@')[0]}`, `Lalelilolu ᵈᵃʳʸ⛥`)
+var imageBuffer2r = new Buffer.from(mantap2r, 'base64');
+samu330.sendMessage(from, imageBuffer2r, sticker, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickrip.jpeg')
+} else {
+reply('Se nesecita una foto para hacer su sticker!');
+}
+break
+
+case 'scarcel':
+addFilter(from)	
+if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
+rej = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam;
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
+owgir = await samu330.downloadMediaMessage(rej)
+await fs.writeFileSync(`./stickc.jpeg`, owgir)
+var imgbb2c = require('imgbb-uploader')
+anuc = await imgbb2c("20a14861e4f7591f3dc52649cb07ae02", './stickc.jpeg')
+txtc = `${anuc.display_url}`
+sc = await getBuffer(`https://pecundang.herokuapp.com/api/jail?url=${txtc}`)
+const bas642c = `data:image/jpeg;base64,${sc.toString('base64')}`
+var mantap2c = await convertSticker(bas642c, `⛓ 入狱！！ = ${sender[0].split('@')[0]}`, `Lalelilolu ᵈᵃʳʸ⛥`)
+var imageBuffer2c = new Buffer.from(mantap2c, 'base64');
+samu330.sendMessage(from, imageBuffer2c, sticker, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickc.jpeg')
+} else {
+reply('Se nesecita una foto para hacer su sticker!');
+}
+break		
+		
 case 'caras':
 var imgbb = require('imgbb-uploader')
 if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
