@@ -1837,7 +1837,7 @@ const onlyme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "
 		"Toma tu galleta", "Triste", "Tu culito", "Turbio", "Tuyyo", "Ufff", "Uhm", "Umm", "Uwu", "Vamos a culear", "Vas a llorar", "Volví", "Wow", "Wtf", 
 		"Xdxd", "Y mis nudes", "Ya antojaron", "Ya es hora", "Ya sabes", "Ya se durmieron", "Ya se enojó", "Ya veo", "Yop", "Youme"]		
 	var textme = ""	
-	const abcd = ""
+	var abcd = ""
 	let n = 18
 	let aug = ""
 	for (let i = 0; i < onlyme.length; i++){
@@ -4260,9 +4260,9 @@ veri = sender
 addRegisteredUser(sender, nombre, edad, time, serialUser)
 try {
 exec(`magick './src/reg.jpg' -gravity west -fill '#00FF00' -font './src/font-gue.ttf' -size 1280x710 -pointsize 90 -interline-spacing 7.5 -annotate +460-45 '${nombre}' -pointsize 50 -annotate +460+200 '${serialUser}' '${ppimg}' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'regsm.jpg'`)
-samu330.sendMessage(from, fs.readFileSync('regsm.jpg'), MessageType.image, { quoted: sam, caption: `*「 SU REGISTRO FUE UN EXITO😉 」*\n\n◦ *Nombre : ${nombre}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *📋Su registro fue todo un exito*\n\n*Comando: ${prefix}menu*`})
+samu330.sendMessage(from, fs.readFileSync('regsm.jpg'), MessageType.image, { quoted: sam, caption: `*「 SU REGISTRO FUE UN EXITO😉 」*\n\n*◦ Nombre : ${nombre.trim()}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *📋Su registro fue todo un exito*\n\n*Comando: ${prefix}menu*`})
 } catch {
-reply(`*「 SU REGISTRO FUE UN EXITO😉 」*\n\n◦ *Nombre : ${nombre}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *📋Su registro fue todo un exito*\n\n*Comando: ${prefix}menu*`)
+reply(`*「 SU REGISTRO FUE UN EXITO😉 」*\n\n*◦ Nombre : ${nombre.trim()}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *📋Su registro fue todo un exito*\n\n*Comando: ${prefix}menu*`)
 }
 addFilter(from)
 break
