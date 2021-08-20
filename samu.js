@@ -4665,7 +4665,7 @@ message: {
 }}                                                                                                                                                                                                                                                                        })
 break
 case 'desfijar':
-if (!itsMe) return reply('Este comando solo puede ser usado por *Lalelilolu ⛥*)
+if (!itsMe) return reply('Este comando solo puede ser usado por *Lalelilolu ⛥*')
 samu330.modifyChat(from, ChatModification.unpin)
 reply('*succes unpin this chat*')
 console.log('unpin chat = ' + from)
