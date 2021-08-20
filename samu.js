@@ -5146,6 +5146,16 @@ var media2 = await samu330.downloadAndSaveMediaMessage(media1)
 await samu330.updateProfilePicture(meNumber, media2)
 reply('*Yap*')
 break
+		
+case 'setprof':
+if (!itOwner) return reply('Este comando solo puede ser usado por *Lalelilolu ᵈᵃʳʸ⛥*')
+samu330.updatePresence(from, Presence.composing)
+if (!isQuotedImage) return reply(`Envia una imagen con el comando: *${prefix}setpp*`)
+var media1 = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+var media2 = await samu330.downloadAndSaveMediaMessage(media1)
+fs.writeFileSync('./src/assistant.jpg', media2)  
+reply('*Hecho mi amo 7~7'*')
+break
 
 case 'kick':
 case 'eliminar':
