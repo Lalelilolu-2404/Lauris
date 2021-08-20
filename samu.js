@@ -1263,8 +1263,6 @@ mda = `
 ╠ *●${prefix}queanime*
 ║ _Etiqueta una imagen de un Anime_
 ║ _Para saber que anime es_
-╠ *●${prefix}loli*
-╠ *●${prefix}neko*
 ║
 ╟╼╾┤🎧𝘈𝘶𝘥𝘪𝘰𝘴🎧├╼╾
 ║
@@ -1841,7 +1839,7 @@ const onlyme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "
 	var textme = ""	
 	for (let i = 0; i <= onlyme.length; i = i + 2){
 		let j = i + 1
-	textme = textme + `${bodyM} ${onlyme[i]} \t\t *${onlyme[j]}\n`			
+	textme = textme + `${bodyM} ${onlyme[i].padEnd(18," ")} \t\t *${onlyme[j].padEnd(18," ")}\n`			
 	}
 	
 const stickmenu = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
@@ -2191,7 +2189,7 @@ var p = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)
 		
   teks = `〘 *Comunidad otaku ⛥2.0⛥* 〙
 ╔═══════════════════
-╠≽️ *Número* : @${mentioned[0].split('@')[0]}
+╠≽️ *Número* : ${mentioned[0].split('@')[0]}
 ╠≽️ *Status* : ${p.status}
 ╚═══════════════════`
 	
@@ -3360,17 +3358,14 @@ break
 		
 		
 case 'reglas':
-reply(`*Hola, estas son las reglas*\n\n1- _Manten una formalidad respetuosa_\n2- _Si vas a añadir el bot a algun grupo, verifica que el grupo cumpla con
-los requisitos que son tener minimo 5 personas_\n3- _❌NO HAGAS SPAM DE COMANDOS❌_ *Esto es enserio, puedes hacer que el bot se apage*\n4- _📵NO 
-HAGAS LLAMADAS POR WHATSAPP AL PROPIETARIO DEL BOT📵_ *Seras bloqueado inmediatamente*\n5- _🕐Espera el tiempo nesesario cuando pidas alguna funcion, 
-ya que algunas tardan en realizarse, no vuelvas a pedir el comando nuevamente hasta que te llege un mensaje de error_\n\nLee las reglas y cumplelas, 
-no te quieras hacer el chistoso, por que no lo eres y ni te sale, asi que porfavor respeta las reglas.`)
+reply(`*Hola, estas son las reglas*\n\n1- _Manten una formalidad respetuosa_\n2- _Si vas a añadir el bot a algun grupo, verifica que el grupo cumpla con los requisitos que son tener minimo 5 personas_\n3- _❌NO HAGAS SPAM DE COMANDOS❌_ *Esto es enserio, puedes hacer que el bot se apage*\n4- _📵NO HAGAS LLAMADAS POR WHATSAPP AL PROPIETARIO DEL BOT📵_ *Seras bloqueado inmediatamente*\n5- _🕐Espera el tiempo nesesario cuando pidas alguna funcion, 
+ya que algunas tardan en realizarse, no vuelvas a pedir el comando nuevamente hasta que te llege un mensaje de error_\n\nLee las reglas y cumplelas, no te quieras hacer el chistoso, por que no lo eres y ni te sale, asi que porfavor respeta las reglas.`)
 break
 case 'rules':
 samu330.updatePresence(from, Presence.composing)  		
 mdata = await samu330.groupMetadata(from)
 reply(`*😙Hola, @${pushname}*\n _*Bienvenido a ${mdata.subject}, esperamos que te la pases a gusto en este grupo✨*_\n\n
-_Recuerda siempre seguir las reglas_😉\n\nSon las *${jm}* del *${calender}*\n\n${mdata.desc}`)
+_Recuerda siempre seguir las reglas_😉\n\n*\n\n${mdata.desc}`)
 break
 	
 //Con este case se envia la aplicacion Tutorial
@@ -5151,7 +5146,7 @@ if (!isOwner) return reply('Este comando solo puede ser usado por *Lalelilolu �
 samu330.updatePresence(from, Presence.composing)
 if (!isQuotedImage) return reply(`Envia una imagen con el comando: *${prefix}setpp*`)
 var media1 = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
-var media2 = await samu330.downloadAndSaveMediaMessage(media1)
+var media2 = await samu330.downloadMediaMessage(media1)
 fs.writeFileSync('./src/assistant.jpg', media2)  
 reply('*Hecho mi amo 7~7*')
 break
