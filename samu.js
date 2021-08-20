@@ -1838,17 +1838,17 @@ const onlyme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "
 		"Sapee", "Se encuera", "Se ofendió", "Se va xd", "Sex", "Sexo", "Shh", "Si mi amor", "Si xd", "Sit on me pls", "Slap", "Ta fuerte", "Te me calmas", 
 		"Toma tu galleta", "Triste", "Tu culito", "Turbio", "Tuyyo", "Ufff", "Uhm", "Umm", "Uwu", "Vamos a culear", "Vas a llorar", "Volví", "Wow", "Wtf", 
 		"Xdxd", "Y mis nudes", "Ya antojaron", "Ya es hora", "Ya sabes", "Ya se durmieron", "Ya se enojó", "Ya veo", "Yop", "Youme"]		
-	var textme = " "	
+	var textme = ""	
 	for (let i = 0; i <= onlyme.length; i = i + 2){
 		let j = i + 1
-	textme = textme + `${bodyM} ${onlyme[i]} + \t + ${onlyme[j]} + \n`			
+	textme = textme + `${bodyM} ${onlyme[i]}\b\t ♦${onlyme[j]}\n`			
 	}
 	
 const stickmenu = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 │ *Lalelilolu ᵈᵃʳʸ*⛥
-╭─────────────
+╭───────────────────
 ${textme}
-╰──────────────╯`
+╰────────────────────╯`
 samu330.sendMessage(from, stickmenu, MessageType.text, {quoted:
 { key: {
 fromMe: false,
@@ -2199,7 +2199,7 @@ var p = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)
 	
 //	teks =  `「*${pushname}*」`
 //	`⊱ღ꧁ ${pushname} ꧂ღ⊱ 
-            samu330.sendMessage(from, teks, text, {
+            samu330.sendMessage(from, teks, MessageType.text, {
                 quoted: {
                     key: {
                         fromMe: true,
@@ -3369,6 +3369,7 @@ ya que algunas tardan en realizarse, no vuelvas a pedir el comando nuevamente ha
 no te quieras hacer el chistoso, por que no lo eres y ni te sale, asi que porfavor respeta las reglas.`)
 break
 case 'rules':
+mdata = await samu330.groupMetadata(anu.jid)
 reply(`*😙Hola, @${pushname}*\n _*Bienvenido a ${mdata.subject}, esperamos que te la pases a gusto en este grupo✨*_\n\n
 _Recuerda siempre seguir las reglas_😉\n\nSon las *${jm}* del *${calender}*\n\n${mdata.desc}`)
 break
@@ -4255,7 +4256,7 @@ try {
 exec(`magick './src/reg.jpg' -gravity west -fill '#00FF00' -font './src/font-gue.ttf' -size 1280x710 -pointsize 90 -interline-spacing 7.5 -annotate +460-45 '${nombre}' -pointsize 50 -annotate +460+200 '${serialUser}' '${ppimg}' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'regsm.jpg'`)
 samu330.sendMessage(from, fs.readFileSync('regsm.jpg'), MessageType.image, { quoted: sam, caption: `*「 SU REGISTRO FUE UN EXITO😉 」*\n\n *◦ Nombre : ${nombre}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *📋Su registro fue todo un exito*\n\n*Para Continuar Usando a NYANBOT Escriba el siguiente comando: ${prefix}menu*`})
 } catch {
-reply(`*「 SU REGISTRO FUE UN EXITO😉 」*\n\n ◦ *Nombre : ${nombre}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *📋Su registro fue todo un exito*\n\n*Comando: ${prefix}menu*`)
+reply(`*「 SU REGISTRO FUE UN EXITO😉 」*\n\n*◦ Nombre : ${nombre}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *📋Su registro fue todo un exito*\n\n*Comando: ${prefix}menu*`)
 }
 addFilter(from)
 break
