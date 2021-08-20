@@ -2229,8 +2229,8 @@ var p = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)
                       "forwardingScore": 999, "isForwarded": true
                     }
                 }
-            })		
-addFilter(from)		
+            })	
+}
 break	
 	
 			case 'waifu':
