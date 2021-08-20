@@ -1992,17 +1992,15 @@ break
 				samu330.updatePresence(from, Presence.composing)  
 				arg1 = q
 				if (!arg1) return reply(`.......`)
-				//if (arg1.length < 1) return reply('.......')
 				if (!isOwner) return reply('No eres mi dueño UnU')
 		
-				if (isQuotedSticker){
+				if (!isQuotedSticker) return reply('Tag sticker :v')
 				argz = arg1.split("|")
 				 if (isNaN(argz[0])) return reply(`# de veces?`)
 					spamer = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					pegat = await samu330.downloadMediaMessage(spamer)
-					
-					if (argz[0] > 50) {
-						spst = "Haha no"
+					const spst = "Haha no"
+					if (argz[0] > 10) {
 						Noperro = fs.readFileSync(`./src/stickers/${spst}.webp`)
 						client.sendMessage(from, Noperro, MessageType.sticker, {quoted: faud})
 						argz[0] = 5
@@ -2010,8 +2008,7 @@ break
 					for (let i = 0; i < argz[0]; i++){
                 			samu330.sendMessage(from, pegat, MessageType.sticker, {sendEphemeral: true})
                 			}
-				}
-
+			
 			break	
 /**	
 case 'spam':
