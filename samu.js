@@ -1484,17 +1484,19 @@ uptime = process.uptime()
 const Menunsfw = `
 _*🍒Estilo anime🍒*_
 
-${bodyM} ${prefix}nsfwbobs
-${bodyM} ${prefix}nsfwsidebobs
-${bodyM} ${prefix}nsfwahegao
-${bodyM} ${prefix}nsfwfeets
-${bodyM} ${prefix}nsfwblowjob
-${bodyM} ${prefix}nsfwneko
-${bodyM} ${prefix}nsfwthighs
-${bodyM} ${prefix}nsfwarmpits
-${bodyM} ${prefix}futanari
-${bodyM} ${prefix}femdom
 ${bodyM} ${prefix}hentai
+${bodyM} ${prefix}ahegao
+${bodyM} ${prefix}xboobs
+${bodyM} ${prefix}xass
+${bodyM} ${prefix}xpussy
+${bodyM} ${prefix}neko
+${bodyM} ${prefix}muslos
+${bodyM} ${prefix}patas
+${bodyM} ${prefix}futa
+${bodyM} ${prefix}sidebobs
+${bodyM} ${prefix}blowjob
+${bodyM} ${prefix}armpits
+${bodyM} ${prefix}femdom
 ${bodyM} ${prefix}pussyimg
 ${bodyM} ${prefix}oppai
 ${bodyM} ${prefix}cumimg
@@ -2296,7 +2298,7 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 break
 	
 
-					case 'xbobs': 
+					case 'xboobs': 
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							mha = await axios.get('https://meme-api.herokuapp.com/gimme/biganimetiddies')
 							buffer = await getBuffer(mha.data.url)
