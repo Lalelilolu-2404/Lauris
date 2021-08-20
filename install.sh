@@ -10,7 +10,6 @@ echo -e '\e[1;32m
             _/ |                                            
            |__/                                             
       
-
                                                        
                                                        
 \e[0m\e[1;33m
@@ -32,7 +31,6 @@ echo -e '\e[1;32m
     \/_/  \/____/  \/_/   \/_/   `/___/> \    
                                     /\___/    
                                     \/__/\e[0m
-
                                               
 \e[4;32;41mAJUSTA LA PANTALLA PARA QUE LAS LETRAS DE ARRIBA SE PUEDAN VER. PELLIZCA PARA MIMINIZAR:v\e[0m'
 sleep 5.0
