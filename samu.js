@@ -1841,7 +1841,7 @@ const onlyme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "
 	var textme = ""	
 	for (let i = 0; i <= onlyme.length; i = i + 2){
 		let j = i + 1
-	textme = textme + `${bodyM} ${onlyme[i]}\b\t ♦${onlyme[j]}\n`			
+	textme = textme + `${bodyM} ${onlyme[i]} \t\t *${onlyme[j]}\n`			
 	}
 	
 const stickmenu = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
@@ -2187,13 +2187,11 @@ ppimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 }
 Mh = await getBuffer(ppimg)
 	
-var p = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)
-
-	veri = sender				
+var p = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)		
 		
   teks = `〘 *Comunidad otaku ⛥2.0⛥* 〙
 ╔═══════════════════
-╠≽️ *Número* : ${mentioned[0]}
+╠≽️ *Número* : @${mentioned[0].split('@')[0]}
 ╠≽️ *Status* : ${p.status}
 ╚═══════════════════`
 	
@@ -3369,7 +3367,8 @@ ya que algunas tardan en realizarse, no vuelvas a pedir el comando nuevamente ha
 no te quieras hacer el chistoso, por que no lo eres y ni te sale, asi que porfavor respeta las reglas.`)
 break
 case 'rules':
-mdata = await samu330.groupMetadata(anu.jid)
+samu330.updatePresence(from, Presence.composing)  		
+mdata = await samu330.groupMetadata(from)
 reply(`*😙Hola, @${pushname}*\n _*Bienvenido a ${mdata.subject}, esperamos que te la pases a gusto en este grupo✨*_\n\n
 _Recuerda siempre seguir las reglas_😉\n\nSon las *${jm}* del *${calender}*\n\n${mdata.desc}`)
 break
@@ -5148,7 +5147,7 @@ reply('*Yap*')
 break
 		
 case 'setprof':
-if (!itOwner) return reply('Este comando solo puede ser usado por *Lalelilolu ᵈᵃʳʸ⛥*')
+if (!isOwner) return reply('Este comando solo puede ser usado por *Lalelilolu ᵈᵃʳʸ⛥*')
 samu330.updatePresence(from, Presence.composing)
 if (!isQuotedImage) return reply(`Envia una imagen con el comando: *${prefix}setpp*`)
 var media1 = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
