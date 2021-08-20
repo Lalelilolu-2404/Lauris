@@ -2142,9 +2142,32 @@ samu330.updatePresence(from, Presence.composing)
 		hasil = `➥${random}% fan de lolis\n✪\n➥${lol}`
                 samu330.sendMessage(from, hasil, text)
 break
-	
+
+///
+case 'getbio':
+var yy = sam.message.extendedTextMessage.contextInfo.mentionedJid[0]
+var p = await samu330.getStatus(`${yy}`, MessageType.text)
+reply(p.status)
+if (p.status == 401) {
+reply("[ERROR 401] Status Profile Not Found")
+}
+addFilter(from)
+break
+case 'getpic':
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+try {
+pic = await samu330.getProfilePicture(mentioned[0])
+} catch {
+pic = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
+}
+thumb = await getBuffer(pic)
+samu330.sendMessage(from, thumb, MessageType.image, {caption: '/omg'})
+}
+addFilter(from)
+break
+///	
 case 'miniprof':
-case 'ver':
 samu330.updatePresence(from, Presence.composing)  
 
 	user.push(sender)	
@@ -4546,7 +4569,7 @@ pic = await samu330.getProfilePicture(mentioned[0])
 pic = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 }
 thumb = await getBuffer(pic)
-samu330.sendMessage(from, thumb, MessageType.image, {caption: 'Brr'})
+samu330.sendMessage(from, thumb, MessageType.image, {caption: '/omg'})
 }
 addFilter(from)
 break
