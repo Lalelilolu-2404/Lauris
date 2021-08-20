@@ -1838,14 +1838,14 @@ const onlyme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "
 		"Xdxd", "Y mis nudes", "Ya antojaron", "Ya es hora", "Ya sabes", "Ya se durmieron", "Ya se enojó", "Ya veo", "Yop", "Youme"]		
 	var textme = ""	
 	var abcd = ""
-	let n = 16
+	let n = 18
 	let aug = ""
 	for (let i = 0; i < onlyme.length; i++){
 		abcd = onlyme[i]
 		if (abcd.length < n) {
 			aug = ""
 			for (let k = 0; k < n - abcd.length; k++){
-			aug = aug + ' '
+			aug = aug + '\b'
 			}
 		onlyme[i] = abcd + aug 
 		}
