@@ -1842,7 +1842,7 @@ const onlyme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "
 	let aug = ""
 	for (let i = 0; i <= onlyme.length; i++){
 		if (onlyme[i].length < n) {
-			for (let k = 0; k < n - onlyme[i].length; i++){
+			for (let k = 0; k < n - onlyme[i].length; k++){
 			aug = aug + ' '
 			}
 		onlyme2[i] = onlyme[i] + aug 
