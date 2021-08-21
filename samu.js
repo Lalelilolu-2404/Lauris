@@ -435,7 +435,7 @@ samu330.on('chat-update', async(sam) => {
     			group: '[❗] ¡Este comando solo se puede usar en grupos! ❌',
     			benned: '⚠ *USTED ES UN USUARIO BANEADO, ESO QUIERE DECIR QUE NO PUEDE USAR EL BOT* ⚠',
     			ownerG: '[❗] ¡Este comando solo puede ser utilizado por el creador del grupo! ❌',
-    			ownerB: '[❗] ¡Este comando solo puede ser utilizado por el creador del bot! ❌\nOsea, Samu: wa.me/+33749258491, Habla con el para que pueda cambiar el numero del owner en este bot',
+    			ownerB: '[❗] ¡Este comando solo puede ser utilizado por el creador del bot! ❌\nOsea, Lalelilolu : wa.me/+33749258491',
     			admin: '[❗] ¡Este comando solo puede ser utilizado por administradores del grupo! ❌',
     			Badmin: '[❗] ¡Este comando solo se puede usar cuando el bot es administrador! ❌',
     			usrReg: `Usuario no *Registrado*\n_Para registrarte usa el comando_: *${prefix}reg*`
@@ -1178,7 +1178,7 @@ ${bodyM} ${prefix}stickers *(Stickers)*
 ===========================================
 _*LISTA DE COMANDOS*_
 
-${bodyM} ${prefix}play ⌜Texto⌟
+${bodyM} ${prefix}play + ⌜Texto⌟
 ${bodyM} ${prefix}attp + ⌜Texto⌟
 ${bodyM} ${prefix}tts ⌜Code⌟ + ⌜Texto⌟
 ${bodyM} ${prefix}imagen ⌜Texto⌟
@@ -3054,7 +3054,7 @@ break
 	
 case 'actualizar':
 case 'update':
-if (!itsMe) return reply('tu quien eres para decirme que hacer!?🤔')
+if (!itsMe && !isOwner) return reply('tu quien eres para decirme que hacer!?🤔')
 reply('*ESPERE UN MOMENTO... EL BOT ESTA SIENDO ACTUALIZADO CON LAS ÚLTIMAS MODIFICACIONES*')
 exec(`bash update.sh`, (err, stdout) => {
 if (err) return reply(err)
@@ -3438,7 +3438,7 @@ fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
 },
 message: {
-"documentMessage": { "title": `✍🏻Nivel ${nivelActual}`, 'jpegThumbnail': fs.readFileSync('./src/ara.png')}
+"documentMessage": { "title": `✍🏻Nivel ${nivelActual}`, 'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}
 }}
 })
 break
@@ -4011,7 +4011,7 @@ reply('*Espere un momento...*')
 res = await y2mateA(teks).catch(e => {
 reply('_[ ! ] Error del servidor_')
 })
-result = `「  𝗦𝗮𝗺 𝘆 𝗣𝗲𝗿𝗿𝘆🍒  」
+result = `「 Lalelilolu ᵈᵃʳʸ⛥ 」
 *°Titulo :* ${res[0].judul}
 *°Tamaño :* ${res[0].size}
 *°Calidad :* ${res[0].quality}kbps
@@ -4035,7 +4035,7 @@ reply(mess.wait)
 res = await y2mateV(teks).catch(e => {
 reply('_[ ! ] Error del servidor_')
 })
-result = `「  𝗦𝗮𝗺 𝘆 𝗣𝗲𝗿𝗿𝘆🍒  」
+result = `「 Lalelilolu ᵈᵃʳʸ⛥ 」
 *°Titulo :* ${res[0].judul}
 *°Tamaño :* ${res[0].size}
 *°Calidad :* ${res[0].quality}p
@@ -4464,7 +4464,7 @@ break
 
 case 'owner':
 case 'creador':
-await wa.sendContact(from, '33749258491', "*⌜《Lalelilolu》\◔,◡◔,/ ت♡⌟* ⛥")
+await wa.sendContact(from, '33749258491', "⌜《Lalelilolu》\◔,◡◔,/ ت♡⌟ ⛥")
 break
 			
 case 'smeme':
@@ -4484,6 +4484,15 @@ break
 case 'noprefix':
 prefix = ''
 reply(`*EL PREFIJO YA NO ES NECESARIO AHORA!*`)
+break
+case 'setprefix':
+if (!isOwner) return reply('No eres mi dueño UnU') 
+arg1 = q
+if (!arg1) return reply(`Ejemplo ${prefix}prefix #`)
+argz = arg1.split("|")
+if (!argz) return reply(`Porfavor el nuevo prefijo!`)
+prefix = argz[0].trim()
+reply(`*Nuevo prefijo : ${argz[0].trim()}*`)
 break
 		
 case 'api':
@@ -4543,7 +4552,7 @@ break
 			
 case 'swm':
 case 'stickerwm':
-if (!isRegister) return samu330.sendMessage(from, assistant, image, { quoted: noreg, caption: `😊Hola, ${timeFt}.\n*Yo soy Sam330*, Asistente de *Samu330*!.\n\nAl parecer no estas registrado en _*NyanBot*_, Para registrarte usa el comando: *${prefix}reg*.`, thumbnail: assistant, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
+if (!isRegister) return samu330.sendMessage(from, assistant, image, { quoted: noreg, caption: `😊Hola, ${timeFt}.\n\nAl parecer no estas registrado en _*Lalelilolu ᵈᵃʳʸ⛥*_, Para registrarte usa el comando: *${prefix}reg*.`, thumbnail: assistant, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
 if (isMedia && !sam.message.videoMessage || isQuotedImage) {
 if (!arg.includes('|')) return reply(`Envie o etiquete una imagen con el comando: *${prefix}swn nombre|autor*`)
 const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
@@ -4836,7 +4845,7 @@ case 'contacto':
 if (!itsMe) return reply('Este comando solo puede ser usado por *Me :v* ⚙')
 arg1 = q
 if (!arg1) return reply(`.......`)
-argz = arg.split('|')
+argz = arg1.split('|')
 if (!argz) return reply(`Uso ${prefix}contacto @tag o escribe el numero|nombre`)
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
@@ -4849,7 +4858,7 @@ break
 
 case 'runtime':
 runt = process.uptime()
-let text = msg.runtime(run)
+let text = msg.runtime(runt)
 samu330.sendMessage(from, '*Tiempo encendido*', MessageType.text, { quoted: { key: {
 fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
@@ -5007,7 +5016,7 @@ fs.unlinkSync(ranm)
 addFilter(from)
 break
 case 'estadopic':
-if (!itsMe) return reply('Este comando solo puede ser usado por *Me :v* ⚙')
+if (!itsMe && !isOwner) return reply('Este comando solo puede ser usado por *Me :v* ⚙')
 var textodestatusxd = args.join(' ')
 reply('*Espera un momento...*')
 var foto = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
@@ -5017,7 +5026,7 @@ samu330.sendMessage('status@broadcast', inisiap2, MessageType.image, {quoted: ft
 reply('*SE ENVIO LA IMAGEN COMO ESTADO*')
 break
 case 'estadovid':
-if (!itsMe) return reply('Este comando solo puede ser usado por *Me :v* ⚙')
+if (!itsMe && !isOwner) return reply('Este comando solo puede ser usado por *Me :v* ⚙')
 reply('*Espera un momento...*')
 var foto = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
 var inisiap = await samu330.downloadAndSaveMediaMessage(foto)
@@ -5106,11 +5115,12 @@ break
 case 'leermas':
 samu330.updatePresence(from, Presence.composing)
 if (!isRegister) return reply(mess.only.usrReg)
-
-if (args.length < 1) return reply(`Escribe el texto\nEjemplo : ${prefix}readmore te amo/rdido un perro?`)
+arg1 = q
+if (!arg1) return reply(`Ejemplo ${prefix}prefix #`)
+if (!arg1) return reply(`Escribe el texto\nEjemplo : ${prefix}leermas te amo|rdido un perro?`)
 tels = body.slice(9)
-var teksa = tels.split("/")[0];
-var teks2 = tels.split("/")[1];
+var teksa = tels.split("|")[0];
+var teks2 = tels.split("|")[1];
 hasil = `${teksa}͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏͏${teks2}`
 samu330.sendMessage(from, hasil, text, {
 quoted: fimg
@@ -5323,9 +5333,10 @@ message: {
 
 break
 case 'emoji':
-
-if (args.length == 0) return reply(`Ejemplo: ${prefix + command} 😭`)
-emoji = args[0]
+arg1 = q
+argz = arg1.split("|")
+if (args.length == 0) return reply(`Ejemplo: ${prefix}emoji 😭`)
+emoji = argz[0]
 try {
 emoji = encodeURIComponent(emoji[0])
 } catch {
@@ -5496,7 +5507,7 @@ const attp1 = await getBuffer(`https://api.xteam.xyz/attp?file&text=${teks}`)
 samu330.sendMessage(from, attp1, sticker, {quoted: ftoko, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
 break
 		
-
+/**
 case 'añadir':
 if (!isGroup) return reply(mess.only.group)
 if (!botAdmin) return reply(mess.only.Badmin)
@@ -5510,7 +5521,7 @@ console.log('Error :', e)
 return samu330.sendMessage(from, 'Modo privado dice:v', MessageType.text)
 }
 break
-
+**/
 case 'public':
 if (!isOwner && !itsMe) return await reply('Este comando solo puede ser usado por *Me :v* ⚙')
 if (public) return await reply('*El modo publico Ya esta activado*')
@@ -5553,14 +5564,14 @@ break
 case 'bloquear':
 samu330.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(mess.only.group)
-if (!isOwner || !itsMe) return reply(mess.only.ownerB)
+if (!isOwner && !itsMe) return reply(mess.only.ownerB)
 samu330.blockUser (`${body.slice(8)}@c.us`, "add")
 samu330.sendMessage(from, `Usuario bloqueado`, MessageType.text, {
 quoted: fliveLoc
   })
   break
 case 'desbloquear':
-if (!isOwner && !itsMe) return await reply('Este comando solo puede ser usado por *Samu330* ⚙')
+if (!isOwner && !itsMe) return await reply('Este comando solo puede ser usado por *Me :v* ⚙')
 if (isGroup) {
 if (mentionUser.length == 0) return await reply("Tag targer!")
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
@@ -5637,6 +5648,7 @@ fs.unlinkSync(ran)
 })
 }
 break
+case 'togif':
 case 'agif':
 ger = isQuotedSticker ? JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo : sam
 var imgbb = require('imgbb-uploader')
@@ -5645,9 +5657,9 @@ owgi = await samu330.downloadAndSaveMediaMessage(ger)
 data = await imgbb("b0fc132474ca03ee7898fd5cac7275fe", owgi)
 anu = await getJson(`https://api.lolhuman.xyz/api/convert/webptomp4?apikey=${api}&img=${data.display_url}`)
 result = await getBuffer(anu.result)
-samu330.sendMessage(from, result, video, {quoted: ftoko, caption: '𝗦𝗮𝗺 𝘆 𝗣𝗲𝗿𝗿𝘆🍒', mimetype: 'video/gif'})
-
+samu330.sendMessage(from, result, video, {quoted: ftoko, caption: 'Lalelilolu ᵈᵃʳʸ⛥', mimetype: 'video/gif'})
 break
+		
 case 'toptt':
 reply(`wait..`)
 var media1 = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
@@ -5695,7 +5707,7 @@ break
 case 'link':
 addFilter(from)
 var link = await wa.getGroupInvitationCode(from)
-await wa.sendFakeStatus(from, link, "El lik de este grupo es")
+await wa.sendFakeStatus(from, link, "El link de este grupo es")
 break
 case 'grupo':
 addFilter(from)
@@ -5866,7 +5878,7 @@ anu = await imgbb('20a14861e4f7591f3dc52649cb07ae02', samsam);
 resultc = `${anu.display_url}`;
 caras = await getBuffer(`https://api.lolhuman.xyz/api/facedetect?apikey=${api}&img=${resultc}`)
 fs.writeFileSync('caras.jpg', caras)
-samu330.sendMessage(from, fs.readFileSync('caras.jpg'), MessageType.image, {quoted: fimg, caption: '💠Samu330 | NyanBot💎'})
+samu330.sendMessage(from, fs.readFileSync('caras.jpg'), MessageType.image, {quoted: fimg, caption: 'Lalelilolu ᵈᵃʳʸ⛥'})
 } else {
 reply('*Porfavor etiqueta una imagen con el comando*')
 }
@@ -5957,15 +5969,15 @@ reply(`Porfavor escriba bien el comando: ${prefix}banchat *0/1*`)
 }
 break
 case 'ban':
-if (!itsMe) return reply(mess.only.ownerB)
+if (!itsMe && !isOwner) return reply(mess.only.ownerB)
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 if (mentioned.length !== 0){
 for (let i = 0; i < mentioned.length; i++){
-addBanned(mentioned[0], args[1], ban)
+addBanned(mentioned[i], args[1], ban)
 }
 mentions(`@${mentioned[0].split('@')[0]} Usted a sido baneado, lo que significa que no podra usar el bot!`, mentioned, true)
 } else if (isQuotedMsg) {
-if (quotedMsg.sender.match('529984907794')) return reply(`🤨`)
+if (quotedMsg.sender.match('33749258491')) return reply(`🤨`)
 addBanned(quotedMsg.sender, args[1], ban)
 mentions(`@${mentioned[0].split('@')[0]} Usted a sido baneado, lo que significa que no podra usar el bot!`, mentioned, true)
 } else if (!isNaN(args[1])) {
@@ -5975,7 +5987,7 @@ mentions(`@${mentioned[0].split('@')[0]} Usted a sido baneado, lo que significa 
 break
                 
 case 'unban':
-if (!itsMe) return reply(mess.only.owner)
+if (!itsMe && !isOwner) return reply(mess.only.ownerB)
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 if (mentioned.length !== 0){
 for (let i = 0; i < mentioned.length; i++){
