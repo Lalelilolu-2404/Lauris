@@ -2275,7 +2275,7 @@ break
 			waifud = await axios.get('https://api.waifu.pics/nsfw/waifu')
 			//waifud = await axios.get('https://nekos.life/api/v2/img/waifu')
 			nyed = await getBuffer(waifud.data.url)
-			samu330.sendMessage(from, nyed, image, { caption: 'Nyaaa', quoted: fimg })
+			samu330.sendMessage(from, nyed, image, { caption: '_*Nyaaa*_', quoted: fimg })
 			.catch(err => {
 				return('Pwrdon... T_T')
 			})
@@ -2293,7 +2293,7 @@ break
 			case 'loli':
 				lolix = await axios.get('https://nekos.life/api/v2/img/ero')
 					buffer = await getBuffer(lolix.data.url)
-						samu330.sendMessage(from, buffer, image, {quoted: fimg})
+						samu330.sendMessage(from, buffer, image, { caption : '_*Uff lolis*_', quoted: fimg})
 			.catch(err => {
 				return('Pwrdon... T_T')
 			})
@@ -2366,7 +2366,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							mha = await axios.get('https://meme-api.herokuapp.com/gimme/biganimetiddies')
 							buffer = await getBuffer(mha.data.url)
-							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Quiero ver tetas'})
+							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: '_*Quiero ver tetas*_'})
 					.catch(err => {
 					return('Pwrdon... T_T')
 					})
@@ -2375,7 +2375,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							blowj = await axios.get('https://nekos.life/api/v2/img/blowjob')
 							buffer = await getBuffer(blowj.data.url)
-							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'No antojen'})
+							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: '_*No antojen*_'})
 						.catch(err => {
 						return('Pwrdon... T_T')
 						})
@@ -2396,7 +2396,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							xpuss = await axios.get('https://nekos.life/api/v2/img/pussy')
 							buffer = await getBuffer(xpuss.data.url)
-							samu330.sendMessage(from, buffer, image.gif, {quoted: fimg})
+							samu330.sendMessage(from, buffer, video, {mimetype: Mimetype.gif, quoted: fimg})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌')
@@ -2406,7 +2406,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							xasx = await axios.get('https://meme-api.herokuapp.com/gimme/animebooty')
 							buffer = await getBuffer(xasx.data.url)
-							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Ese es el culo que querías?'})
+							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: '_*Ese es el culo que querías?*_'})
 						.catch(err => {
 						return('Pwrdon... T_T')
 						})
@@ -2415,7 +2415,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							sideb = await axios.get('https://meme-api.herokuapp.com/gimme/sideoppai')
 							buffer = await getBuffer(sideb.data.url)
-							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'La vieja de gabo, tremenda puta'})
+							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: '_*Uf más tetas!*_'})
 						.catch(err => {
 						return('Pwrdon... T_T')
 						})
@@ -2451,7 +2451,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							musl = await axios.get('https://meme-api.herokuapp.com/gimme/animethighss')
 							buffer = await getBuffer(musl.data.url)
-							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Por que muslos?'})
+							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: '_*Por que muslos?*_'})
 							.catch(err => {
 							return('Pwrdon... T_T')
 						})
@@ -2461,7 +2461,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							feets = await axios.get('https://meme-api.herokuapp.com/gimme/animefeets')
 							buffer = await getBuffer(feets.data.url)
-							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'MMMMM PATAS'})
+							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: '_*MMMMM PATAS*_'})
 						.catch(err => {
 						return('Pwrdon... T_T')
 						})
@@ -2470,7 +2470,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							armp = await axios.get('https://meme-api.herokuapp.com/gimme/animearmpits')
 							buffer = await getBuffer(armp.data.url)
-							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'A?'})
+							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: '_*A ? perro*_'})
 						.catch(err => {
 						return('Pwrdon... T_T')
 						})
@@ -2478,9 +2478,9 @@ break
 	
 					case 'futa':	
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							futa = await axios.get('https://nekos.life//api/v2/img/futanari')
-							buffer = await getBuffer(futa.dataa.url)
-							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Bro....'})
+							futan = await axios.get('https://nekos.life//api/v2/img/futanari')
+							buffer = await getBuffer(futan.data.url)
+							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: '_*Bro....*_'})
 						.catch(err => {
 						return('Pwrdon... T_T')
 						})
@@ -2490,7 +2490,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							femd = await axios.get('https://nekos.life/api/v2/img/femdom')
 							buffer = await getBuffer(femd.data.url)
-							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: 'Uff....🥵'})
+							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: '_*Uff....🥵*_'})
 						.catch(err => {
 						return('Pwrdon... T_T')
 						})
@@ -3031,11 +3031,12 @@ if (error){ return reply('_[ ! ] *Intentalo de nuevo*_')}
 else {
 var gugIm = result
 var random =  gugIm[Math.floor(Math.random() * gugIm.length)].url
-sendFileFromUrl(random, image, {quoted: sam, caption: `*🔍Busqueda de* _${ggimg}_\n*Realizada por Lalelilolu*`})
+sendFileFromUrl(random, image, {quoted: fimg, caption: `*🔍Busqueda de* _*「 ${ggimg} 」*_\n*Realizada por Lalelilolu ᵈᵃʳʸ⛥*`})
 }
 }
 addFilter(from)
 break
+		「 *PUBLICO OwO* 」
 case 'apagar':
 if (!isOwner) return reply('tu quien eres para decirme que hacer!?🤔')
 reply('Me apagare en 3 Segundos....')
@@ -5400,6 +5401,16 @@ if (!isQuotedImage) return reply(`Envia una imagen con el comando: *${prefix}set
 var media1 = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 var media2 = await samu330.downloadMediaMessage(media1)
 fs.writeFileSync('./src/+18.jpg', media2)  
+reply('*Hecho mi amo 7~7*')
+break
+
+case 'sethelp':
+if (!isOwner) return reply('Este comando solo puede ser usado por *Lalelilolu ᵈᵃʳʸ⛥*')
+samu330.updatePresence(from, Presence.composing)
+if (!isQuotedImage) return reply(`Envia una imagen con el comando: *${prefix}sethelp*`)
+var media1 = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+var media2 = await samu330.downloadMediaMessage(media1)
+fs.writeFileSync('./src/help.jpg', media2)  
 reply('*Hecho mi amo 7~7*')
 break
 		
