@@ -4482,6 +4482,7 @@ samu330.sendMessage(from, baleg, MessageType.image, {quoted: sam})
 }
 break
 case 'noprefix':
+if (!isOwner) return reply('No eres mi dueño UnU') 
 prefix = ''
 reply(`*EL PREFIJO YA NO ES NECESARIO AHORA!*`)
 break
@@ -4866,7 +4867,7 @@ participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : 
 message: {
 "productMessage": {
 "product": {
-"title": `Lalelilolu ᵈᵃʳʸ⛥}`,
+"title": `Lalelilolu ᵈᵃʳʸ⛥`,
 "description": "",
 "currencyCode": "SYP",
 "priceAmount1000": "999999999999999999",
@@ -5497,8 +5498,8 @@ reply(err)
 reply('Envia la magen para poder buscar el anime')
 }
 break
+case 'attp':
 case 'colores':
-case 'attp' :
 if (args.length < 1) return reply('Y el texto?')
 var teks = encodeURIComponent(args.join(' '))
 const attp1 = await getBuffer(`https://api.xteam.xyz/attp?file&text=${teks}`)
@@ -5526,7 +5527,7 @@ if (public) return await reply('*El modo publico Ya esta activado*')
 config["public"] = true
 public = true
 fs.writeFileSync("./config.json", JSON.stringify(config, null, 4))
-await wa.sendFakeStatus(from, "*Se activo el modo publico*", "Public : true")
+await wa.sendFakeStatus(from, "*Se activó el modo publico*", "Public : true")
 break
 case 'self':
 if (!isOwner && !itsMe) return await reply('Este comando solo puede ser usado por *Me :v* ⚙')
@@ -5537,7 +5538,7 @@ fs.writeFileSync("./config.json", JSON.stringify(config, null, 4))
 await wa.sendFakeStatus(from, "*Se a cambiado a modo PRIVADO*", "Self : true")
 break
 case 'bc':
-if (!isOwner) return reply('Solo *F* puede usar este comando')
+if (!isOwner) return reply('Solo *Me :v* puede usar este comando')
 if (args.length < 1) return reply('Y el anuncio?')
 anu = await samu330.chats.all()
 if (isMedia && !sam.message.videoMessage || isQuotedImage) {
@@ -5640,7 +5641,7 @@ reply(`error\n\n${err}`)
 fs.unlinkSync(ran)
 } else {
 buffer = fs.readFileSync(ran)
-samu330.sendMessage(from, buffer, MessageType.image, {quoted: sam, caption: '𝗦𝗮𝗺 𝘆 𝗣𝗲𝗿𝗿𝘆🍒'})
+samu330.sendMessage(from, buffer, MessageType.image, {quoted: fimg, caption: 'Lalelilolu ᵈᵃʳʸ⛥'})
 fs.unlinkSync(ran)
 }
 })
