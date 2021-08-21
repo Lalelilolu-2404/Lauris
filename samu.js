@@ -1369,7 +1369,7 @@ _Modo simsimi ilimitado_
 *${prefix}simsimi 1*
 
 *Para que el bot entre a tu grupo, usa el siguiente comando:*
-	${prefix}entrabot *(Link del grupo)*
+${prefix}entrabot *(Link del grupo)*
 	
 🚧 *El siguiente comando es para crashear los grupos!! este comando es muy peligroso :) solo administradores pueden usarlo.* 🚧
 *${prefix}buggp*
@@ -3451,8 +3451,7 @@ break
 case 'rules':
 samu330.updatePresence(from, Presence.composing)  		
 mdata = await samu330.groupMetadata(from)
-reply(`*😙Hola, @${pushname}*\n _*Bienvenido a ${mdata.subject}*_\n\n_*Esperamos que te la pases a gusto en este grupo✨*_\n
-_*Recuerda siempre seguir las reglas_😉*_\n\n*${mdata.desc}*`)
+reply(`_*|😙Hola, @${pushname}\nBienvenido a ${mdata.subject}\n\nEsperamos que te la pases a gusto en este grupo✨\nRecuerda siempre seguir las reglas😉\n\n${mdata.desc}|*_`)
 break
 	
 //Con este case se envia la aplicacion Tutorial
@@ -5000,7 +4999,7 @@ dtt.length > 300
 ? reply('Mira, si no sabes usar esto... mejor no lo agas 😤')
 : gtts.save(ranm, dtt, function() {
 samu330.updatePresence(from, Presence.recording)
-samu330.sendMessage(from, fs.readFileSync(ranm), audio, {quoted: fliveLoc, mimetype: 'audio/mp4', ptt:true, sendEphemeral: true, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
+samu330.sendMessage(from, fs.readFileSync(ranm), audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true, sendEphemeral: true, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
 fs.unlinkSync(ranm)
 })
 addFilter(from)
@@ -5385,10 +5384,20 @@ break
 case 'set+18':
 if (!isOwner) return reply('Este comando solo puede ser usado por *Lalelilolu ᵈᵃʳʸ⛥*')
 samu330.updatePresence(from, Presence.composing)
-if (!isQuotedImage) return reply(`Envia una imagen con el comando: *${prefix}setnsfw*`)
+if (!isQuotedImage) return reply(`Envia una imagen con el comando: *${prefix}set+18*`)
 var media1 = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 var media2 = await samu330.downloadMediaMessage(media1)
 fs.writeFileSync('./src/+18.jpg', media2)  
+reply('*Hecho mi amo 7~7*')
+break
+		
+case 'setsimi':
+if (!isOwner) return reply('Este comando solo puede ser usado por *Lalelilolu ᵈᵃʳʸ⛥*')
+samu330.updatePresence(from, Presence.composing)
+if (!isQuotedImage) return reply(`Envia una imagen con el comando: *${prefix}setsimi*`)
+var media1 = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+var media2 = await samu330.downloadMediaMessage(media1)
+fs.writeFileSync('./src/simi.jpg', media2)  
 reply('*Hecho mi amo 7~7*')
 break
 
@@ -5711,6 +5720,7 @@ var teks = encodeURIComponent(args.join(' '))
 const ttp = await getBuffer(`https://api.xteam.xyz/ttp?file&text=${teks}`)
 samu330.sendMessage(from, ttp, sticker, {quoted: ftoko, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
 break
+/**
 case 'añadir':
 addFilter(from)
 if (!isGroup) return reply(mess.only.group)
@@ -5725,6 +5735,7 @@ console.log('Error :', e)
 return samu330.sendMessage(from, 'Modo privado dice:v', MessageType.text)
 }
 break
+**/
 
 case 'antileg':
 if (!isGroup) return reply('Este comando es solo para grupos')
