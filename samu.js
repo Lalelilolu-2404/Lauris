@@ -246,7 +246,7 @@ message: {
 "mimetype": "image/jpeg",             
 "jpegThumbnail": fs.readFileSync(`./src/fake.jpg`)           
 },                                
-"title": `Bienvenido a ${mdata.subject}`,
+"title": `Bienvenido a *「 ${mdata.subject} 」*`,
 "description": "",                
 "currencyCode": "SYP",                  
 "priceAmount1000": "999999999999999999",
@@ -3451,7 +3451,7 @@ break
 case 'rules':
 samu330.updatePresence(from, Presence.composing)  		
 mdata = await samu330.groupMetadata(from)
-reply(`_*「 😙Hola, @${pushname} 」*_\n_*Bienvenido a ${mdata.subject}*_\n\n_*Esperamos que te la pases a gusto en este grupo✨*_\n_*Recuerda siempre seguir las reglas😉*_\n\n_*${mdata.desc.trim()}*_`)
+reply(`_*「 😙Hola, @${pushname} 」*_\n_*Bienvenido a 「 ${mdata.subject} 」*_\n\n_*Esperamos que te la pases a gusto en este grupo✨*_\n_*Recuerda siempre seguir las reglas😉*_\n\n_*「 ${mdata.desc} 」*_`)
 break
 	
 //Con este case se envia la aplicacion Tutorial
