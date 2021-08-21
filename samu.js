@@ -1869,7 +1869,7 @@ const onlyme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "
 		"Xdxd", "Y mis nudes", "Ya antojaron", "Ya es hora", "Ya sabes", "Ya se durmieron", "Ya se enojó", "Ya veo", "Yop", "Youme"]		
 	var textme = ''	
 	var abcd = ''
-	let n = 22
+	let n = 24
 	let aug = ''
 	for (let i = 0; i < onlyme.length; i++){
 		abcd = onlyme[i]
@@ -1883,7 +1883,7 @@ const onlyme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "
 	}	     
 	for (let i = 0; i <= onlyme.length; i = i + 2){
 		let j = i + 1
-	textme = textme + `${bodyM} ${onlyme[i]}\t* ${onlyme[j]}\n`			
+	textme = textme + `${bodyM} ${onlyme[i]} * ${onlyme[j]}\n`			
 	}
 	
 const stickmenu = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
@@ -3451,7 +3451,7 @@ break
 case 'rules':
 samu330.updatePresence(from, Presence.composing)  		
 mdata = await samu330.groupMetadata(from)
-reply(`_*「 😙Hola, @${pushname} 」*_\n_*Bienvenido a 「 ${mdata.subject} 」*_\n\n_*Esperamos que te la pases a gusto en este grupo✨*_\n_*Recuerda siempre seguir las reglas😉*_\n\n_*「 ${mdata.desc} 」*_`)
+reply(`_*「 😙Hola, @${pushname} 」*_\n_*Bienvenido a 「 ${mdata.subject} 」*_\n\n_*Esperamos que te la pases a gusto en este grupo✨*_\n_*Recuerda siempre seguir las reglas😉*_\n\n${mdata.desc}`)
 break
 	
 //Con este case se envia la aplicacion Tutorial
