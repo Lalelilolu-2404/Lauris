@@ -3036,7 +3036,7 @@ sendFileFromUrl(random, image, {quoted: fimg, caption: `*🔍Busqueda de* _*「 
 }
 addFilter(from)
 break
-		「 *PUBLICO OwO* 」
+		
 case 'apagar':
 if (!isOwner) return reply('tu quien eres para decirme que hacer!?🤔')
 reply('Me apagare en 3 Segundos....')
