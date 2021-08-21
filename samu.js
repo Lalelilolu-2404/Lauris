@@ -3058,7 +3058,7 @@ if (!itsMe && !isOwner) return reply('tu quien eres para decirme que hacer!?🤔
 reply('*ESPERE UN MOMENTO... EL BOT ESTA SIENDO ACTUALIZADO CON LAS ÚLTIMAS MODIFICACIONES*')
 exec(`bash update.sh`, (err, stdout) => {
 if (err) return reply(err)
-if (stdout) reply(`*El bot se ah actualizado de forma satisfactoria*\n Informe de la actualización:\n\n${stdout}\n\nLos cambios se mostraran despues de volver a iniciar el bot!.`)
+if (stdout) reply(`*El bot se ah actualizado de forma satisfactoria*\n Informe de la actualización:\n\n${stdout}\nLos cambios se mostraran despues de volver a iniciar el bot!.`)
 })
 break
 		
@@ -4859,14 +4859,14 @@ break
 case 'runtime':
 runt = process.uptime()
 let text = msg.runtime(runt)
-samu330.sendMessage(from, '*Tiempo encendido*', MessageType.text, { quoted: { key: {
+samu330.sendMessage(from, `*Tiempo encendido:*\n${text}`, MessageType.text, { quoted: { key: {
 fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
 },
 message: {
 "productMessage": {
 "product": {
-"title": `${text}`,
+"title": `Lalelilolu ᵈᵃʳʸ⛥}`,
 "description": "",
 "currencyCode": "SYP",
 "priceAmount1000": "999999999999999999",
@@ -5333,10 +5333,8 @@ message: {
 
 break
 case 'emoji':
-arg1 = q
-argz = arg1.split("|")
-if (args.length == 0) return reply(`Ejemplo: ${prefix}emoji 😭`)
-emoji = argz[0]
+if (args.length == 0) return reply(`Ejemplo: ${prefix + command} 😭`)
+emoji = args[0]
 try {
 emoji = encodeURIComponent(emoji[0])
 } catch {
@@ -5355,7 +5353,7 @@ samu330.sendMessage(nomor+'@s.whatsapp.net', org, MessageType.text)
 reply(`*El memsaje:* ${org} *Se envio a:* ${nomor}`)
 break
 case 'setpic':
-if (!itsMe) return reply('Este comando solo puede ser usado por *Me :v* ⚙')
+if (!itsMe && !isOwner) return reply('Este comando solo puede ser usado por *Me :v* ⚙')
 samu330.updatePresence(from, Presence.composing)
 if (!isQuotedImage) return reply(`Envia una imagen con el comando: *${prefix}setpp*`)
 var media1 = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
