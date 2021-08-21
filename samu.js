@@ -3451,7 +3451,7 @@ break
 case 'rules':
 samu330.updatePresence(from, Presence.composing)  		
 mdata = await samu330.groupMetadata(from)
-reply(`_*|😙Hola, @${pushname}\nBienvenido a ${mdata.subject}\n\nEsperamos que te la pases a gusto en este grupo✨\nRecuerda siempre seguir las reglas😉\n\n${mdata.desc}|*_`)
+reply(`_*「 😙Hola, @${pushname} 」*_\n_*Bienvenido a ${mdata.subject}*_\n\n_*Esperamos que te la pases a gusto en este grupo✨*_\n_*Recuerda siempre seguir las reglas😉*_\n\n_*${mdata.desc.trim()}*_`)
 break
 	
 //Con este case se envia la aplicacion Tutorial
@@ -4999,7 +4999,7 @@ dtt.length > 300
 ? reply('Mira, si no sabes usar esto... mejor no lo agas 😤')
 : gtts.save(ranm, dtt, function() {
 samu330.updatePresence(from, Presence.recording)
-samu330.sendMessage(from, fs.readFileSync(ranm), audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true, sendEphemeral: true, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
+samu330.sendMessage(from, fs.readFileSync(ranm), audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true, sendEphemeral: true})
 fs.unlinkSync(ranm)
 })
 addFilter(from)
