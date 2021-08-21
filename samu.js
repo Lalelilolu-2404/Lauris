@@ -6182,13 +6182,14 @@ samu330.sendMessage(from, dias, audio, {quoted: fliveLoc, mimetype: 'audio/mp4',
 if (!isOwner){	
 const Fer =  ["Ban", "Funao", "Love", "Ya se durmieron", "Te me calmas", "Ta fuerte", "Hahaha", "F el grupo", "Ctm", "Shh", "Nani", "Lolxd", "F", "Amm", "Pichula", 
 	      "Si xd", "Haha no", "Paja2"]		
-
+  if (!isBan){
 	for (let i = 0; i < Fer.length; i++){
 		if (body.includes(`${Fer[i]}`) && body.length == Fer[i].length){
 			const none = fs.readFileSync(`./src/stickers/${Fer[i]}.webp`)
 			samu330.sendMessage(from, none, sticker)	
 		}				
-	}	
+	}
+  }
 }	
 /////////////////////////////////////
 	
@@ -6206,14 +6207,14 @@ const sonsotak = ["A mimir", "A", "a", "Acm1pt", "Admin", "Ahhh", "Arrecha", "Ay
 	      "Las pelotas", "Lokita", "Me vengo", "Mi reina", "Mujer", "Nya", "Oh oh si", "Onichan", "Orto", "Pack", "Pasa pack", "Pero en fin", 
 	      "Petardo", "Pete", "Profe", "Sapee", "Setso", "Sexual", "Sparta", "Umm", "Yamete kudasai", "Yamete", "Dime onichan", 
 	      "Te amo botsito", "Me gimes", "Quien es tu sempai", "La toca"]	
-
+if (!isBan){
 	for (let i = 0; i < sonsotak.length; i++){
 		if (body.includes(`${sonsotak[i]}`) && body.length == sonsotak[i].length){
 			const audiosxx = fs.readFileSync(`./anishan/${sonsotak[i]}.mp3`)
 			samu330.sendMessage(from, audiosxx, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true})
 		}				
 	}	
-
+}
 ///////Only me and mods
 const stickme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "Amistad", "Anna", "Amm", "Anni", "Así me gusta", "Asustado", "Ay caramba", "Ay me asusté", 
 		"Ban", "Besos", "Bien", "Bragas", "Buen culo", "Buenas noches", "Bye", "C rasca", "Cállate", "Cc", "Chelitas", "Chongo", "Colita", "Colitaxxx", 
