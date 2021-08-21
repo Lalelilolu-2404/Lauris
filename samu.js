@@ -2396,7 +2396,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							xpuss = await axios.get('https://nekos.life/api/v2/img/pussy')
 							buffer = await getBuffer(xpuss.data.url)
-							samu330.sendMessage(from, buffer, video, {quoted: fimg, mimetype: 'video/gif'})
+							samu330.sendMessage(from, buffer, video, {quoted: fvid, mimetype: 'video/gif'})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌')
