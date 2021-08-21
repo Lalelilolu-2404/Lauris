@@ -4834,6 +4834,8 @@ if (stdout) reply(stdout)
 break
 case 'contacto':
 if (!itsMe) return reply('Este comando solo puede ser usado por *Me :v* ⚙')
+arg1 = q
+if (!arg1) return reply(`.......`)
 argz = arg.split('|')
 if (!argz) return reply(`Uso ${prefix}contacto @tag o escribe el numero|nombre`)
 if (sam.message.extendedTextMessage != undefined){
