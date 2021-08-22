@@ -2322,7 +2322,7 @@ break
 			break	
 		
 			case 'ecchi':
-					buffer = await getBuffer(`http://api.lolhuman.xyz/api/random/nsfw/ecchi?apikey=847de7716f17a51eeba4235c`)
+					buffer = await getBuffer('http://api.lolhuman.xyz/api/random/nsfw/ecchi?apikey=847de7716f17a51eeba4235c')
 					samu330.sendMessage(from, buffer, image, { caption : '💎 _*Wow 🥵*_ 💠', quoted: fimg})
 			.catch(err => {
 				return('Pwrdon... T_T')
@@ -3094,6 +3094,15 @@ if (stdout) reply(`*El bot se ah actualizado de forma satisfactoria*\n Informe d
 })
 break
 		
+case 'reiniciar':
+if (!itsMe || !isOwner) return reply('Tu quien eres para decirme que hacer!?🤔')
+reply('Reiniciando em algunos segundos...')       
+exec(`npm start`, (err, stdout) => {
+if(err) return reply(err)
+if (stdout) reply(`*Hecho Uwu*`)
+})
+break
+		
 case 'grupos':
 samu330.updatePresence(from, Presence.composing)
 samu330.sendMessage(from, `*CHATS TOTALES* : ${totalchat.length} Chat`, MessageType.text, {quoted  : floc})
@@ -3479,7 +3488,7 @@ dadosf =
    ‣ E-mail: ${anu.email}
    ‣ Senha: ${anu.password}
    ‣ CEP: ${anu.zip_code}`
-samu330.sendMessage(from, dadosf, text, {quoted: floc})
+samu330.sendMessage(from, dadosf, MessageType.text, {quoted: floc})
 break
 		
 case 'nivel':
@@ -5905,7 +5914,7 @@ if (args.length < 1) return reply(`Digite algum texto para isso`)
   owgi = await samu330.downloadAndSaveMediaMessage(ted)
   anu = await imgbb("0c419be2e8bfc27eff00147b0c763418", owgi)
   hehe = await getBuffer(`https://videfikri.com/api/textmaker/wanted/?urlgbr=${anu.display_url}&text1=${wtext}&text2=10000`)
-  samu330.sendMessage(from, hehe, image, {quoted:mek})
+  samu330.sendMessage(from, hehe, MessageType.image, {quoted: fimg})
 } else {
   reply('Precisa una uma imagem')
 }
