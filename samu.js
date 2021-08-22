@@ -1187,7 +1187,6 @@ ${bodyM} ${prefix}tagall
 ${bodyM} ${prefix}adminlist
 ${bodyM} ${prefix}waifu
 ${bodyM} ${prefix}nezuko
-${bodyM} ${prefix}ecchi
 ${bodyM} ${prefix}randomloli
 
 ===========================================
@@ -1397,7 +1396,7 @@ ${bodyM} ${prefix}setpic
 ${bodyM} ${prefix}enlinea
 ${bodyM} ${prefix}promote
 ${bodyM} ${prefix}demote
-${bodyM} ${prefix}eliminar /kick
+${bodyM} ${prefix}eliminar/kick
 ${bodyM} ${prefix}añadir *(Numero sin el +)*
 ${bodyM} ${prefix}notif
 ${bodyM} ${prefix}reply @miembro|frase|frase
@@ -5882,7 +5881,7 @@ break
 case 'wanted':
 var imgbb = require('imgbb-uploader')
 if ((isMedia && !mek.message.videoMessage || isQuotedImage)) {
-  ted = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo: mek
+  ted = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo: sam
 if (args.length < 1) return reply(`Digite algum texto para isso`)
   wtext = body.slice(7)
   reply('*Espera un momento...*')
