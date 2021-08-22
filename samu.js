@@ -3093,16 +3093,7 @@ if (err) return reply(err)
 if (stdout) reply(`*El bot se ah actualizado de forma satisfactoria*\n Informe de la actualización:\n\n${stdout}\nLos cambios se mostraran despues de volver a iniciar el bot!.`)
 })
 break
-		
-case 'reiniciar':
-if (!itsMe || !isOwner) return reply('Tu quien eres para decirme que hacer!?🤔')
-reply('Reiniciando em algunos segundos...')       
-exec(`npm start`, (err, stdout) => {
-if(err) return reply(err)
-if (stdout) reply(`*Hecho Uwu*`)
-})
-break
-		
+				
 case 'grupos':
 samu330.updatePresence(from, Presence.composing)
 samu330.sendMessage(from, `*CHATS TOTALES* : ${totalchat.length} Chat`, MessageType.text, {quoted  : floc})
@@ -3476,21 +3467,6 @@ case 'del':
 	samu330.deleteMessage(from, { id: sam.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from, fromMe: true })
 break
 		
-case 'ficha':
-anu = await fetch('https://docs-jojo.herokuapp.com/api/fake_identity')
-dadosf = 
-`    DADOS GERADOS
-   ‣ Nome: ${anu.nome}
-   ‣ Sexo: ${anu.gender}
-   ‣ Idade: ${anu.age}
-   ‣ Telefone: ${anu.phone}
-   ‣ Tipo sanguíneo: ${anu.blood_type}
-   ‣ E-mail: ${anu.email}
-   ‣ Senha: ${anu.password}
-   ‣ CEP: ${anu.zip_code}`
-samu330.sendMessage(from, dadosf, MessageType.text, {quoted: floc})
-break
-		
 case 'nivel':
 const getLevel1 = getLevelingLevel(sender)
 const lvup =  `✴ _*🧗🏻‍♂️Nivel Actual!͟*_ ✴
@@ -3794,7 +3770,7 @@ case 'doxing':
 if (!isRegister) return reply(mess.only.usrReg)
 if (!isGroup) return reply(mess.only.group)
 f = await getJson(`https://docs-jojo.herokuapp.com/api/fake_identity`)
-reply(`*Doxeo de ${mentionUser} echo por Samu330✅*
+reply(`*Doxeo de ${mentionUser} echo por Lalelilolu ᵈᵃʳʸ⛥*
 
 *Nombre:* _${f.name}_
 *Genero:* _${f.gender}_
@@ -3806,29 +3782,28 @@ reply(`*Doxeo de ${mentionUser} echo por Samu330✅*
 *Estado:* _${f.state}_
 *Pais:* _${f.country}_
 
-=====================
+===========================
 
 *E-Mail:* ${f.email}
 *Contraseña:* ${f.password}_
 *Telefono:* _${f.phone}_
 
-=====================
+===========================
 
 *No. Tarjeta de credito:* ${f.card}
 *CVV:* _${f.code}_
 *Fecha de vencimiento:* _${f.date}_
 *PIN:* _${f.pin_code}_
 
-=====================
+===========================
 
 *Peso:* _${f.weight}_
 *Estatura:* _${f.height}_
 *Tipo de sangre:* _${f.blood_type}_
 *Estado:* _${f.status}_
 
-=====================
-
-*FDx Lalelilolu ᵈᵃʳʸ⛥'*
+===========================
+_*FDx Lalelilolu ᵈᵃʳʸ⛥'*_
 `)
 break
 		
@@ -5913,33 +5888,11 @@ if (args.length < 1) return reply(`Digite algum texto para isso`)
   reply('*Espera un momento...*')
   owgi = await samu330.downloadAndSaveMediaMessage(ted)
   anu = await imgbb("0c419be2e8bfc27eff00147b0c763418", owgi)
-  hehe = await getBuffer(`https://videfikri.com/api/textmaker/wanted/?urlgbr=${anu.display_url}&text1=${wtext}&text2=10000`)
-  samu330.sendMessage(from, hehe, MessageType.image, {quoted: fimg})
+  anu1 = await getBuffer(`https://videfikri.com/api/textmaker/wanted/?urlgbr=${anu.display_url}&text1=${wtext}&text2=10000`)
+  fs.writeFileSync('wanted.jpg', anu1)	
+  samu330.sendMessage(from, fs.readFileSync('wanted.jpg'), MessageType.image, {quoted: fimg})
 } else {
   reply('Precisa una uma imagem')
-}
-break
-	
-case 'shitpost':
-case 'shit':
-addFilter(from)
-samu330.updatePresence(from, Presence.composing)
-uk = ["shitpost br"]
-nk = uk[Math.floor(Math.random() * uk.length)]
-try {
-data = await fetch(`https://api.fdci.se/sosmed/rep.php?gambar=${nk}`, {
-  method: 'get'
-})
-reply(wait)
-n = JSON.parse(JSON.stringify(data));
-nimek = n[Math.floor(Math.random() * n.length)];
-pok = await getBuffer(nimek)
-samu330.sendMessage(from, pok, image, {
-  quoted: mek, caption: `إذا قمت بترجمة هذا فأنت سارق🤣👆`
-})
-
-} catch {
-  reply(wait)
 }
 break
 
