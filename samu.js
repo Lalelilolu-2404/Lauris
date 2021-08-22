@@ -438,7 +438,7 @@ samu330.on('chat-update', async(sam) => {
     			ownerB: '[❗] ¡Este comando solo puede ser utilizado por el creador del bot! ❌\nOsea, Lalelilolu : wa.me/+33749258491',
     			admin: '[❗] ¡Este comando solo puede ser utilizado por administradores del grupo! ❌',
     			Badmin: '[❗] ¡Este comando solo se puede usar cuando el bot es administrador! ❌',
-    			usrReg: `Usuario no *Registrado*\n_Para registrarte usa el comando_: *${prefix}reg*`
+    			usrReg: `Usuario no *Registrado*\n_Para registrarte usa el comando_: *${prefix}reg Nombre | Edad*`
   			}
 			}
 	const momento1 = require('moment-timezone')
@@ -1192,11 +1192,10 @@ ${bodyM} ${prefix}randomloli
 ===========================================
 ${bodyM} _Juega con el Bot:_ *${prefix}jugar*
 ${bodyM} _Casino:_ *${prefix}lucky*
-${bodyM} _Tictactoe:_ *${prefix}ttt*
 ${bodyM} _Dados:_ *${prefix}dado*
 ===========================================
 *⌜《Lalelilolu》\◔,◡◔,/ ت♡⌟* ⛥ `                                               
-
+//${bodyM} _Tictactoe:_ *${prefix}ttt*
 //${bodyM} ${prefix}menu9 *(Comandos para explotar grupos)*
 addFilter(from)
 addLevelingLevel(sender, 5)
@@ -3673,7 +3672,7 @@ if(!isUrl(args[0]) && !args[0].includes('mediafire')) return reply('Link invalid
 reply('*Espera un momento...*')
 teks = args.join(' ')
 const resm = await sm330mfire(teks)
-result = `  「  𝗦𝗮𝗺 𝘆 𝗣𝗲𝗿𝗿𝘆🍒  」
+result = `  「  Lalelilolu ᵈᵃʳʸ⛥  」
 *Nombre :* ${resm[0].nombre}
 *Tamaño :* ${resm[0].size}
 *Link :* ${resm[0].link}
@@ -4585,13 +4584,13 @@ break
 case 'animevid':
 url = `https://lindow-api.herokuapp.com/api/randomaesthetic?apikey=${apikey}`
 estetik = await getBuffer(url)
-samu330.sendMessage(from, estetik, MessageType.video, {mimetype: 'video/mp4', duration : 999999999, filename: `estetod.mp4`, quoted: fvid, caption: '𝗦𝗮𝗺 𝘆 𝗣𝗲𝗿𝗿𝘆🍒'})
+samu330.sendMessage(from, estetik, MessageType.video, {mimetype: 'video/mp4', duration : 999999999, filename: `estetod.mp4`, quoted: fvid, caption: 'Lalelilolu ᵈᵃʳʸ⛥'})
 break
 			
 case 'asupan':
 url = `https://lindow-api.herokuapp.com/api/asupan?apikey=${apikey}`
 asupan = await getBuffer(url)
-samu330.sendMessage(from, asupan, MessageType.video, {mimetype: 'video/mp4', duration : 999999999,filename: `asupan.mp4`, quoted: fvid, caption: '𝗦𝗮𝗺 𝘆 𝗣𝗲𝗿𝗿𝘆🍒'})
+samu330.sendMessage(from, asupan, MessageType.video, {mimetype: 'video/mp4', duration : 999999999,filename: `asupan.mp4`, quoted: fvid, caption: 'Lalelilolu ᵈᵃʳʸ⛥'})
 break
 			
 case 'swm':
