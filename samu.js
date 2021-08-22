@@ -2305,9 +2305,8 @@ break
 			break	
 		
 			case 'randomloli':
-				rdlolix = await axios.get('https://docs-jojo.herokuapp.com/api/randomloli')
-					buffer = await getBuffer(rdlolix.data.url)
-						samu330.sendMessage(from, buffer, image, { caption : '_*Uff más lolis*_', quoted: fimg})
+					buffer = await getBuffer(`https://docs-jojo.herokuapp.com/api/randomloli`)
+					samu330.sendMessage(from, buffer, image, { caption : '💎 _*Uff más lolis*_ 💠', quoted: fimg})
 			.catch(err => {
 				return('Pwrdon... T_T')
 			})
@@ -2316,14 +2315,14 @@ break
 			case 'nezuko':
 				nezuk = await axios.get('https://kagchi-api.glitch.me//waifu/nezuko')
 					buffer = await getBuffer(nezuk.data.url)
-						samu330.sendMessage(from, buffer, image, { caption : '_*Nezuko chan :3*_', quoted: fimg})
+						samu330.sendMessage(from, buffer, image, { caption : '💎 _*Nezuko chan :3*_ 💠', quoted: fimg})
 			.catch(err => {
 				return('Pwrdon... T_T')
 			})
 			break	
 		
 			case 'ecchi':
-				ecchix = await axios.get('https://kagchi-api.glitch.me//waifu/nezuko')
+				ecchix = await axios.get('http://api.lolhuman.xyz/api/random/nsfw/ecchi?apikey=847de7716f17a51eeba4235c')
 					buffer = await getBuffer(ecchix.data.url)
 						samu330.sendMessage(from, buffer, image, { caption : '💎 _*Wow 🥵*_ 💠', quoted: fimg})
 			.catch(err => {
@@ -3459,7 +3458,7 @@ break
 case 'dado':
 const dadus = ["⚀","⚁","⚂","⚃","⚄","⚅"]
 dadu = dadus[Math.floor(Math.random() * dadus.length)]
-dador = fs.readFileSync('./temp/dados/${dadu}.webp')
+dador = fs.readFileSync(`./temp/dados/${dadu}.webp`)
 samu330.sendMessage(from, dador, sticker, {quoted: fnsfw, sendEphemeral: true})
 break	
 	
