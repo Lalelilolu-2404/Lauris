@@ -5880,8 +5880,8 @@ break
 
 case 'wanted':
 var imgbb = require('imgbb-uploader')
-if ((isMedia && !mek.message.videoMessage || isQuotedImage)) {
-  ted = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo: sam
+if ((isMedia && !sam.message.videoMessage || isQuotedImage)) {
+  ted = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo: sam
 if (args.length < 1) return reply(`Digite algum texto para isso`)
   wtext = body.slice(7)
   reply('*Espera un momento...*')
