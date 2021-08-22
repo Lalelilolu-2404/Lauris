@@ -4445,6 +4445,7 @@ reply(`Sesión eliminada con éxito en este grupo!`);
 } else {
 reply(`No hay sesión en curso.`);
 }
+break
 
 case 'wa.me':
 case 'wame':
@@ -5990,7 +5991,7 @@ exec(`wget ${anu1} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps
 fs.unlinkSync(ranp)
 if (err) return reply('*Uuuu, algo salio mal, intenta de nuevo*')
 nobg = fs.readFileSync(rano)
-samu330.sendMessage(from, nobg, sticker, {quoted: ftoko})
+samu330.sendMessage(from, nobg, sticker, {quoted: fimg})
 fs.unlinkSync(rano)
 })
                                     
