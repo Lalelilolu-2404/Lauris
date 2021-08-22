@@ -2322,9 +2322,8 @@ break
 			break	
 		
 			case 'ecchi':
-				ecchix = await axios.get('http://api.lolhuman.xyz/api/random/nsfw/ecchi?apikey=847de7716f17a51eeba4235c')
-					buffer = await getBuffer(ecchix.data.url)
-						samu330.sendMessage(from, buffer, image, { caption : '💎 _*Wow 🥵*_ 💠', quoted: fimg})
+					buffer = await getBuffer(`http://api.lolhuman.xyz/api/random/nsfw/ecchi?apikey=847de7716f17a51eeba4235c`)
+					samu330.sendMessage(from, buffer, image, { caption : '💎 _*Wow 🥵*_ 💠', quoted: fimg})
 			.catch(err => {
 				return('Pwrdon... T_T')
 			})
@@ -3469,7 +3468,7 @@ case 'del':
 break
 		
 case 'ficha':
-anu = await axios.get('https://docs-jojo.herokuapp.com/api/fake_identity')
+anu = await fetch('https://docs-jojo.herokuapp.com/api/fake_identity')
 dadosf = 
 `    DADOS GERADOS
    ‣ Nome: ${anu.nome}
@@ -5919,7 +5918,7 @@ samu330.updatePresence(from, Presence.composing)
 uk = ["shitpost br"]
 nk = uk[Math.floor(Math.random() * uk.length)]
 try {
-data = await fetchJson(`https://api.fdci.se/sosmed/rep.php?gambar=${nk}`, {
+data = await fetch(`https://api.fdci.se/sosmed/rep.php?gambar=${nk}`, {
   method: 'get'
 })
 reply(wait)
