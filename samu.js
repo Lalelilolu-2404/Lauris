@@ -4278,9 +4278,9 @@ const strChat = `*🎮 Iniciar el juego tictactoe 🎳*
 @${sender.replace(
 		 "@s.whatsapp.net",
 		 ""
-)} desafio a convertirte en un oponente del juego
+)} te desafió a convertirte en su oponente del juego
 
-_[ ${argss[1]} ] Escribe "S"o "N" para aceptar o rechazar el juego._ 
+_[ ${argss[1]} ] Escribe "S" o "N" para aceptar o rechazar el juego._ 
 `;
 samu330.sendMessage(from, strChat, MessageType.text, {
 quoted: ftoko,
