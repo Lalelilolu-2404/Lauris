@@ -189,7 +189,7 @@ var donde = chat.jid
 var group = await samu330.groupMetadata(donde)
 if (!chat.desc == '') {
 var tag = chat.descOwner.split('@')[0] + '@s.whatsapp.net'
-var mensajeDesc = `✍🏻 *La descripcion del grupo ${group.subject} fue modificada por: @${chat.descOwner.split('@')[0]}*\n✅Ahora la nueva descripcion es:\n\n${chat.desc}`
+var mensajeDesc = `✍🏻 *La descripción del grupo ${group.subject} fué modificada por: @${chat.descOwner.split('@')[0]}*\n✅Ahora la nueva descripción es:\n\n${chat.desc}`
 samu330.sendMessage(group.id, mensajeDesc, MessageType.text)
 console.log(chalk.greenBright("├"), chalk.keyword("yellow")("[ DESCRIPCION CAMBIADA ]"), chalk.keyword("cyan")('grupo'), chalk.keyword("green")(`${group.subject}`))
 }
@@ -2431,7 +2431,7 @@ ${bodyM} *${prefix}fantasma*
 ${bodyM} *${prefix}robot* 
 
 - _*Otros comandos:*_
-${bodyM} *${prefix}enlinea* 
+${bodyM} *${prefix}enlínea* 
 ${bodyM} *${prefix}adminlist* 
 `
 //${bodyM} *${prefix}grupos* 
@@ -3735,8 +3735,7 @@ reply(`*Doxeo de ${mentionUser} echo por Lalelilolu ᵈᵃʳʸ⛥*
 ===========================
 _*FDx Lalelilolu ᵈᵃʳʸ⛥'*_
 `)
-break
-		
+break		
 		//»»————-　★　————-««\\
 //˚ ༘✶ ⋆｡˚ ⁀➷  🔥 𝘓𝘰𝘨𝘰𝘴 𝘉𝘺 𝘚𝘢𝘮𝘶𝟥𝟥𝟢 🔥
 		
@@ -3969,7 +3968,7 @@ arg1 = q
 if (!arg1) return reply(`Ejemplo ${prefix}spam texto|numero de mensajes`)
 argz = arg1.split("|")
 if (!argz) return reply(`Porfavor usa el simbolo "|" para dividir entre el mensaje y el numero de veces a enviar el mensaje`)
-if (isNaN(argz[1])) return reply(`Y el numero de veses a enviar?`)
+if (isNaN(argz[1])) return reply(`Y el numero de veces a enviar?`)
 members = []
 for (let i = 0; i < argz[1]; i++){
 samu330.sendMessage(from, argz[0], MessageType.text, {quoted: { key : {fromMe: false, participant : "5214447000377-1624232428@s.whatsapp.net", ...(from ? { remoteJid: "@g.us" } : {})},message: {orderMessage: {itemCount : 9999999999999999,status: 1,surface : 1,message: `🥀Dans ton coeur🌹`,orderTitle: '',sellerJid: `Sam330`,thumbnail: fs.readFileSync('./src/fake.jpg')}},
@@ -5106,13 +5105,13 @@ quoted: fimg
 })
 break
 		   
-case 'enlinea':
+case 'enlínea':
 case 'online':
 										  
 if (!isGroup) return reply(`Solo para grupos`)
 let ido = args && /\d+\-\d+@g.us/.test(args[0]) ? args[0] : from
 let online = [...Object.keys(samu330.chats.get(ido).presences), samu330.user.jid]
-samu330.sendMessage(from, '*Lista de usuarios en linea*:\n' + online.map(v => '- @' + v.replace(/@.+/, '')).join `\n`, MessageType.text, {
+samu330.sendMessage(from, '*Lista de usuarios en línea*:\n' + online.map(v => '- @' + v.replace(/@.+/, '')).join `\n`, MessageType.text, {
 quoted: ftoko,
 contextInfo: { mentionedJid: online }
 })
@@ -5354,7 +5353,7 @@ break
 case 'setpic':
 if (!itsMe && !isOwner) return reply('Este comando solo puede ser usado por *Me :v* ⚙')
 samu330.updatePresence(from, Presence.composing)
-if (!isQuotedImage) return reply(`Envia una imagen con el comando: *${prefix}setpp*`)
+if (!isQuotedImage) return reply(`Envia una imagen con el comando: *${prefix}setpic*`)
 var media1 = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 var media2 = await samu330.downloadAndSaveMediaMessage(media1)
 await samu330.updateProfilePicture(meNumber, media2)
@@ -5792,7 +5791,8 @@ if (!isAdmin) return await reply(mess.only.admin)
 if (!botAdmin) return await reply(mess.only.Badmin)
 var newDesc = args.join(" ")
 samu330.groupUpdateDescription(from, newDesc).then(() => {
-wa.sendFakeStatus(from, "La descripcion del grupo se ah cambiado a" + newDesc, "GROUP SETTING")
+//wa.sendFakeStatus(from, "La descripcion del grupo se ah cambiado a: " + newDesc, "GROUP SETTING")
+wa.sendFakeStatus(from, "La descripcion del grupo ha cambiado", "GROUP SETTING")
 })
 break
 case 'wasted':
