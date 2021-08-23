@@ -2076,9 +2076,11 @@ samu330.sendMessage(from, thumb, MessageType.image, {caption: '/omg'})
 addFilter(from)
 break
 ///	
-**/
+**/	
+		
 case 'miniprof':
 samu330.updatePresence(from, Presence.composing)  
+mdata = await samu330.groupMetadata(from)
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 try {
@@ -2090,9 +2092,10 @@ Mh = await getBuffer(ppimg)
 	
 var p = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)		
 		
-  teks = `〘 *Comunidad otaku ⛥2.0⛥* 〙
+  teks = `〘 *${mdata.subject}* 〙
 ╔═══════════════════
 ╠≽️ *Número* : @${mentioned[0].split('@')[0]}
+╠≽️ *Nombre* : @${mentioned[0]}
 ╠≽️ *Status* : ${p.status}
 ╚═══════════════════`
 	
