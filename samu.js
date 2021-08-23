@@ -309,10 +309,12 @@ samu330.on('chat-update', async(sam) => {
         const { text, extendedText, contact, location, liveLocation, image, video, sticker, document, audio, product } = MessageType
         const quoted = type == 'extendedTextMessage' && sam.message.extendedTextMessage.contextInfo != null ? sam.message.extendedTextMessage.contextInfo.quotedMessage || [] : []
         const typeQuoted = Object.keys(quoted)[0]
-        const body = sam.message.conversation || sam.message[type].caption || sam.message[type].text || ""
-        chats = (type === 'conversation') ? sam.message.conversation : (type === 'extendedTextMessage') ? sam.message.extendedTextMessage.text : ''
-        budy = (type === 'conversation' && sam.message.conversation.startsWith(prefix)) ? sam.message.conversation : (type == 'imageMessage') && sam.message.imageMessage.caption.startsWith(prefix) ? sam.message.imageMessage.caption : (type == 'videoMessage') && sam.message.videoMessage.caption.startsWith(prefix) ? sam.message.videoMessage.caption : (type == 'extendedTextMessage') && sam.message.extendedTextMessage.text.startsWith(prefix) ? sam.message.extendedTextMessage.text : ''
-	//budy = (type === 'conversation') ? sam.message.conversation : (type === 'extendedTextMessage') ? sam.message.extendedTextMessage.text : (type === 'listResponseMessage') ? sam.message.listResponseMessage.title : ''
+	const body = sam.message.conversation || sam.message[type].caption || sam.message[type].text || ""
+        //chats = (type === 'conversation') ? sam.message.conversation : (type === 'extendedTextMessage') ? sam.message.extendedTextMessage.text : ''
+        const chats = (type === 'chat') ? body : (type === 'image' || type === 'video') ? caption : ''
+        //budy = (type === 'conversation' && sam.message.conversation.startsWith(prefix)) ? sam.message.conversation : (type == 'imageMessage') && sam.message.imageMessage.caption.startsWith(prefix) ? sam.message.imageMessage.caption : (type == 'videoMessage') && sam.message.videoMessage.caption.startsWith(prefix) ? sam.message.videoMessage.caption : (type == 'extendedTextMessage') && sam.message.extendedTextMessage.text.startsWith(prefix) ? sam.message.extendedTextMessage.text : ''
+	budy = (type === 'conversation') ? sam.message.conversation : (type === 'extendedTextMessage') ? sam.message.extendedTextMessage.text : ''
+       //budy = (type === 'conversation') ? sam.message.conversation : (type === 'extendedTextMessage') ? sam.message.extendedTextMessage.text : (type === 'listResponseMessage') ? sam.message.listResponseMessage.title : ''
 	////////////▶ 𝐒𝐚𝐦𝐮𝟑𝟑𝟎 | 𝐒𝐚𝐦 𝐲 𝐏𝐞𝐫𝐫𝐲
         if (prefix != "") {
         if (!body.startsWith(prefix)) {
@@ -786,162 +788,10 @@ mentionedJid: [sender]}
 
 
 		/*--------------------[ Tictactoe Game Function ]--------------------*/
-const cmde = budy.toLowerCase().split(" ")[0] || "";
-let arrNum = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
-     if (fs.existsSync(`./lib/tictactoe/db/${from}.json`)) {
-          const boardnow = setGame(`${from}`);
-          if (budy == "Cex") return reply("por qué");
-          if (
-               budy.toLowerCase() == "y" ||
-               budy.toLowerCase() == "yes" ||
-               budy.toLowerCase() == "ya"
-          ) {
-               if (boardnow.O == sender.replace("@s.whatsapp.net", "")) {
-                    if (boardnow.status)
-                         return reply(`El juego ha comenzado antes!`);
-                    const matrix = boardnow._matrix;
-                    boardnow.status = true;
-                    fs.writeFileSync(
-                         `./lib/tictactoe/db/${from}.json`,
-                         JSON.stringify(boardnow, null, 2)
-                    );
-                    const chatAccept = `*🎮 Tictactoe Game 🎳*
-                    
-❌ : @${boardnow.X}
-⭕ : @${boardnow.O}
-               
-Girar : @${boardnow.turn == "X" ? boardnow.X : boardnow.O}
-
-     ${matrix[0][0]}  ${matrix[0][1]}  ${matrix[0][2]}
-     ${matrix[1][0]}  ${matrix[1][1]}  ${matrix[1][2]}
-     ${matrix[2][0]}  ${matrix[2][1]}  ${matrix[2][2]}
-
-`;
-                    samu330.sendMessage(from, chatAccept, MessageType.text, {
-                         quoted: ftoko,
-                         contextInfo: {
-                              mentionedJid: [
-                                   boardnow.X + "@s.whatsapp.net",
-                                   boardnow.O + "@s.whatsapp.net",
-                              ],
-                         },
-                    });
-               } else {
-                    samu330.sendMessage(
-                         from,
-                         `Esta opción es solo para @${boardnow.O} !`,
-                         MessageType.text, {
-                         quoted: ftoko,
-                         contextInfo: {
-                              mentionedJid: [boardnow.O + "@s.whatsapp.net"],
-                         },
-                    }
-                    );
-               }
-          } else if (
-               budy.toLowerCase() == "n" ||
-               budy.toLowerCase() == "no" ||
-               budy.toLowerCase() == "tidak"
-          ) {
-               if (boardnow.O == sender.replace("@s.whatsapp.net", "")) {
-                    if (boardnow.status)
-                         return reply(`El juego ha comenzado antes!`);
-                    fs.unlinkSync(`./lib/tictactoe/db/${from}.json`);
-                    samu330.sendMessage(
-                         from,
-                         `Desafortunadamente el desafío para @${boardnow.X} fue rechazado ❌😕`,
-                         MessageType.text, {
-                         quoted: ftoko,
-                         contextInfo: {
-                              mentionedJid: [boardnow.X + "@s.whatsapp.net"],
-                         },
-                    }
-                    );
-               } else {
-                    samu330.sendMessage(
-                         from,
-                         `Esta opción es solo para @${boardnow.O} !`,
-                         MessageType.text, {
-                         quoted: ftoko,
-                         contextInfo: {
-                              mentionedJid: [boardnow.O + "@s.whatsapp.net"],
-                         },
-                    }
-                    );
-               }
-          }
-     }
-
-	 if (arrNum.includes(cmde)) {
-		const boardnow = setGame(`${from}`);
-		if (!boardnow.status) return reply(`Parece que tu oponente no ha aceptado el desafío..`)
-		if (
-			 (boardnow.turn == "X" ? boardnow.X : boardnow.O) !=
-			 sender.replace("@s.whatsapp.net", "")
-		)
-			 return;
-		const moving = validmove(Number(budy), `${from}`);
-		const matrix = moving._matrix;
-		if (moving.isWin) {
-			 if (moving.winner == "SERI") {
-				  const chatEqual = `*🎮 Tictactoe Game 🎳*
-		
-				  El juego termina en empate 😐
-`;
-				  reply(chatEqual);
-				  fs.unlinkSync(`./lib/tictactoe/db/${from}.json`);
-				  return;
-			 }
-			 const winnerJID = moving.winner == "O" ? moving.O : moving.X;
-			 const looseJID = moving.winner == "O" ? moving.X : moving.O;
-			 const limWin = Math.floor(Math.random() * 20) + 10;
-			 const limLoose = Math.floor(Math.random() * 10) + 5;
-			 const chatWon = `*🎮 Tictactoe Game 🎳*
-		
-El ganador es @${winnerJID} 😎👑
-`;
-		  //    giftLimit(winnerJID + "@s.whatsapp.net", limWin);
-		  //    pushLimit(looseJID + "@s.whatsapp.net", limLoose);
-			 samu3300.sendMessage(from, chatWon, MessageType.text, {
-				  quoted: ftoko,
-				  contextInfo: {
-					   mentionedJid: [
-							moving.winner == "O" ?
-								 moving.O + "@s.whatsapp.net" :
-								 moving.X + "@s.whatsapp.net",
-					   ],
-				  },
-			 });
-			 fs.unlinkSync(`./lib/tictactoe/db/${from}.json`);
-		} else {
-			 const chatMove = `*🎮 Tictactoe Game 🎳*
-		
-❌ : @${moving.X}
-⭕ : @${moving.O}
-
-Girar : @${moving.turn == "X" ? moving.X : moving.O}
-
-
-   ${matrix[0][0]}  ${matrix[0][1]}  ${matrix[0][2]}
-   ${matrix[1][0]}  ${matrix[1][1]}  ${matrix[1][2]}
-   ${matrix[2][0]}  ${matrix[2][1]}  ${matrix[2][2]}
-
-
-`;
-			 samu330.sendMessage(from, chatMove, MessageType.text, {
-				  quoted: ftoko,
-				  contextInfo: {
-					   mentionedJid: [
-							moving.X + "@s.whatsapp.net",
-							moving.O + "@s.whatsapp.net",
-					   ],
-				  },
-			 });
-		}
-   }
+function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=function(_0x4c8951,_0x3b65b8){_0x4c8951=_0x4c8951-0x16e;let _0x299f50=_0x49fad6[_0x4c8951];return _0x299f50;},_0xd037(_0x1fea26,_0x25290c);}const _0x5cde97=_0xd037;(function(_0x21fbf1,_0x38d5a9){const _0x3f2272=_0xd037,_0x1107c4=_0x21fbf1();while(!![]){try{const _0x4fd9b6=-parseInt(_0x3f2272(0x192))/0x1+parseInt(_0x3f2272(0x183))/0x2*(parseInt(_0x3f2272(0x17a))/0x3)+parseInt(_0x3f2272(0x173))/0x4+-parseInt(_0x3f2272(0x1a4))/0x5*(-parseInt(_0x3f2272(0x190))/0x6)+parseInt(_0x3f2272(0x19a))/0x7+parseInt(_0x3f2272(0x1a7))/0x8*(-parseInt(_0x3f2272(0x188))/0x9)+-parseInt(_0x3f2272(0x178))/0xa;if(_0x4fd9b6===_0x38d5a9)break;else _0x1107c4['push'](_0x1107c4['shift']());}catch(_0x92ee90){_0x1107c4['push'](_0x1107c4['shift']());}}}(_0x33d3,0x43adf));const _0x4318e=function(){let _0x18466e=!![];return function(_0x28f8e7,_0x986b11){const _0x4bc3c5=_0x18466e?function(){if(_0x986b11){const _0x3caa52=_0x986b11['apply'](_0x28f8e7,arguments);return _0x986b11=null,_0x3caa52;}}:function(){};return _0x18466e=![],_0x4bc3c5;};}(),_0x399f56=_0x4318e(this,function(){const _0x275f56=_0xd037;return _0x399f56['toString']()[_0x275f56(0x18c)]('(((.+)+)+)+$')[_0x275f56(0x1a0)]()[_0x275f56(0x18b)](_0x399f56)[_0x275f56(0x18c)](_0x275f56(0x184));});_0x399f56();const _0x3b65b8=function(){let _0x41cd2c=!![];return function(_0x1384a8,_0x35af9f){const _0x2ca771=_0x41cd2c?function(){if(_0x35af9f){const _0x32bda9=_0x35af9f['apply'](_0x1384a8,arguments);return _0x35af9f=null,_0x32bda9;}}:function(){};return _0x41cd2c=![],_0x2ca771;};}(),_0x4c8951=_0x3b65b8(this,function(){const _0x14fcdb=_0xd037;let _0x37198e;try{const _0x26cfb0=Function(_0x14fcdb(0x185)+'{}.constructor(\x22return\x20this\x22)(\x20)'+');');_0x37198e=_0x26cfb0();}catch(_0x5c47dd){_0x37198e=window;}const _0x26d7b0=_0x37198e[_0x14fcdb(0x18a)]=_0x37198e['console']||{},_0xcbaed9=['log','warn',_0x14fcdb(0x197),_0x14fcdb(0x19f),_0x14fcdb(0x170),_0x14fcdb(0x17e),_0x14fcdb(0x19e)];for(let _0x31060f=0x0;_0x31060f<_0xcbaed9['length'];_0x31060f++){const _0x5ee4eb=_0x3b65b8[_0x14fcdb(0x18b)][_0x14fcdb(0x194)][_0x14fcdb(0x1a8)](_0x3b65b8),_0x41fe71=_0xcbaed9[_0x31060f],_0x2fcf3e=_0x26d7b0[_0x41fe71]||_0x5ee4eb;_0x5ee4eb[_0x14fcdb(0x16e)]=_0x3b65b8[_0x14fcdb(0x1a8)](_0x3b65b8),_0x5ee4eb[_0x14fcdb(0x1a0)]=_0x2fcf3e[_0x14fcdb(0x1a0)]['bind'](_0x2fcf3e),_0x26d7b0[_0x41fe71]=_0x5ee4eb;}});_0x4c8951();function _0x33d3(){const _0x2f778d=['console','constructor','search','\x0a\x0a\x0a\x0a*⭕Tictactoe\x20by:*\x0a\x0a➫Lalelilolu ᵈᵃʳʸ⛥\x20y\x20Keͥ͢v\x0a','.json','_matrix','1341258PTQvxw','*🎮\x20Tictactoe\x20Game\x20🎳*\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20El\x20juego\x20termina\x20en\x20empate\x20😐\x0a','530904zopBPB','text','prototype','\x20│\x20','writeFileSync','info','*🎮\x20Tictactoe\x20Game\x20🎳*\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0a❌\x20:\x20@','unlinkSync','2523374cjUElw','\x0a\x0a\x0a\x20\x20\x20','Desafortunadamente\x20el\x20desafío\x20para\x20@','@s.whatsapp.net','trace','error','toString','por\x20qué','replace','\x0a\x20\x20\x20\x20\x20','5KuVOET','isWin','Cex','8BwrXBC','bind','__proto__','split','exception','turn','\x0a\x0a\x20\x20\x20\x20\x20','222244BBUccz','\x0a⭕\x20:\x20@','includes','*🎮\x20Tictactoe\x20Game\x20🎳*\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x0aEl\x20ganador\x20es\x20@','\x20fue\x20rechazado\x20❌😕','1058900skWhPB','Esta\x20opción\x20es\x20solo\x20para\x20@','1640508cIcQWw','./lib/tictactoe/db/','sendMessage','El\x20juego\x20ha\x20comenzado\x20antes!','table','\x0a\x20\x20\x20','status','random','toLowerCase','2rQjqMR','(((.+)+)+)+$','return\x20(function()\x20','stringify','winner','2451717cMvRYu','floor'];_0x33d3=function(){return _0x2f778d;};return _0x33d3();}const cmde=budy[_0x5cde97(0x182)]()[_0x5cde97(0x16f)]('\x20')[0x0]||'';let arrNum=['1','2','3','4','5','6','7','8','9'];if(fs['existsSync'](_0x5cde97(0x17b)+from+_0x5cde97(0x18e))){const boardnow=setGame(''+from);if(budy==_0x5cde97(0x1a6))return reply(_0x5cde97(0x1a1));if(budy[_0x5cde97(0x182)]()=='y'||budy[_0x5cde97(0x182)]()=='yes'||budy['toLowerCase']()=='s'){if(boardnow['O']==sender[_0x5cde97(0x1a2)]('@s.whatsapp.net','')){if(boardnow[_0x5cde97(0x180)])return reply(_0x5cde97(0x17d));const matrix=boardnow[_0x5cde97(0x18f)];boardnow[_0x5cde97(0x180)]=!![],fs[_0x5cde97(0x196)]('./lib/tictactoe/db/'+from+_0x5cde97(0x18e),JSON[_0x5cde97(0x186)](boardnow,null,0x2));const chatAccept='*🎮\x20Tictactoe\x20Game\x20🎳*\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0a❌\x20:\x20@'+boardnow['X']+_0x5cde97(0x174)+boardnow['O']+'\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x0aEs\x20el\x20turno\x20de\x20:\x20@'+(boardnow[_0x5cde97(0x171)]=='X'?boardnow['X']:boardnow['O'])+_0x5cde97(0x172)+matrix[0x0][0x0]+_0x5cde97(0x195)+matrix[0x0][0x1]+_0x5cde97(0x195)+matrix[0x0][0x2]+_0x5cde97(0x1a3)+matrix[0x1][0x0]+_0x5cde97(0x195)+matrix[0x1][0x1]+_0x5cde97(0x195)+matrix[0x1][0x2]+_0x5cde97(0x1a3)+matrix[0x2][0x0]+'\x20│\x20'+matrix[0x2][0x1]+_0x5cde97(0x195)+matrix[0x2][0x2]+_0x5cde97(0x18d);samu330[_0x5cde97(0x17c)](from,chatAccept,MessageType[_0x5cde97(0x193)],{'quoted':ftoko,'contextInfo':{'mentionedJid':[boardnow['X']+'@s.whatsapp.net',boardnow['O']+_0x5cde97(0x19d)]}});}else samu330['sendMessage'](from,_0x5cde97(0x179)+boardnow['O']+'\x20!',MessageType[_0x5cde97(0x193)],{'quoted':ftoko,'contextInfo':{'mentionedJid':[boardnow['O']+_0x5cde97(0x19d)]}});}else{if(budy[_0x5cde97(0x182)]()=='n'||budy[_0x5cde97(0x182)]()=='no'||budy['toLowerCase']()=='nopi'){if(boardnow['O']==sender['replace'](_0x5cde97(0x19d),'')){if(boardnow[_0x5cde97(0x180)])return reply(_0x5cde97(0x17d));fs[_0x5cde97(0x199)](_0x5cde97(0x17b)+from+_0x5cde97(0x18e)),samu330[_0x5cde97(0x17c)](from,_0x5cde97(0x19c)+boardnow['X']+_0x5cde97(0x177),MessageType['text'],{'quoted':ftoko,'contextInfo':{'mentionedJid':[boardnow['X']+_0x5cde97(0x19d)]}});}else samu330[_0x5cde97(0x17c)](from,_0x5cde97(0x179)+boardnow['O']+'\x20!',MessageType[_0x5cde97(0x193)],{'quoted':ftoko,'contextInfo':{'mentionedJid':[boardnow['O']+_0x5cde97(0x19d)]}});}}}if(arrNum[_0x5cde97(0x175)](cmde)){const boardnow=setGame(''+from);if(!boardnow[_0x5cde97(0x180)])return reply('Parece\x20que\x20tu\x20oponente\x20no\x20ha\x20aceptado\x20el\x20desafío..');if((boardnow[_0x5cde97(0x171)]=='X'?boardnow['X']:boardnow['O'])!=sender[_0x5cde97(0x1a2)](_0x5cde97(0x19d),''))return;const moving=validmove(Number(budy),''+from),matrix=moving[_0x5cde97(0x18f)];if(moving[_0x5cde97(0x1a5)]){if(moving[_0x5cde97(0x187)]=='SERI'){const chatEqual=_0x5cde97(0x191);reply(chatEqual),fs[_0x5cde97(0x199)]('./lib/tictactoe/db/'+from+'.json');return;}const winnerJID=moving[_0x5cde97(0x187)]=='O'?moving['O']:moving['X'],looseJID=moving[_0x5cde97(0x187)]=='O'?moving['X']:moving['O'],limWin=Math[_0x5cde97(0x189)](Math[_0x5cde97(0x181)]()*0x14)+0xa,limLoose=Math[_0x5cde97(0x189)](Math[_0x5cde97(0x181)]()*0xa)+0x5,chatWon=_0x5cde97(0x176)+winnerJID+'\x20😎👑\x0a';samu330['sendMessage'](from,chatWon,MessageType[_0x5cde97(0x193)],{'quoted':ftoko,'contextInfo':{'mentionedJid':[moving[_0x5cde97(0x187)]=='O'?moving['O']+_0x5cde97(0x19d):moving['X']+_0x5cde97(0x19d)]}}),fs[_0x5cde97(0x199)](_0x5cde97(0x17b)+from+_0x5cde97(0x18e));}else{const chatMove=_0x5cde97(0x198)+moving['X']+_0x5cde97(0x174)+moving['O']+'\x0a\x0aEs\x20el\x20turno\x20de:\x20@'+(moving[_0x5cde97(0x171)]=='X'?moving['X']:moving['O'])+_0x5cde97(0x19b)+matrix[0x0][0x0]+_0x5cde97(0x195)+matrix[0x0][0x1]+_0x5cde97(0x195)+matrix[0x0][0x2]+_0x5cde97(0x17f)+matrix[0x1][0x0]+'\x20│\x20'+matrix[0x1][0x1]+_0x5cde97(0x195)+matrix[0x1][0x2]+_0x5cde97(0x17f)+matrix[0x2][0x0]+_0x5cde97(0x195)+matrix[0x2][0x1]+_0x5cde97(0x195)+matrix[0x2][0x2]+'\x0a\x0a\x0a\x0a\x0a*⭕Tictactoe\x20by:*\x0a\x0a➫Lalelilolu ᵈᵃʳʸ⛥\x20y\x20Keͥ͢vͣ\x0a';samu330[_0x5cde97(0x17c)](from,chatMove,MessageType[_0x5cde97(0x193)],{'quoted':ftoko,'contextInfo':{'mentionedJid':[moving['X']+_0x5cde97(0x19d),moving['O']+_0x5cde97(0x19d)]}});}}
 
 	    
-		if (messagesC.includes("bot")){
+	    if (messagesC.includes("bot")){
 			samu330.updatePresence(from, Presence.composing)
 			rm = [
 			result = fs.readFileSync(`./temp/Samu.webp`),
