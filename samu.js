@@ -2452,7 +2452,7 @@ addFilter(from)
 aud = fs.readFileSync('./audio/asen.ogg') 
 samu330.sendMessage(from, aud, audio, {quoted: faud, mimetype: 'audio/mp4', ptt: true, sendEphemeral: true}) 
 break
-case 'hentai':
+case 'hentaii':
 addFilter(from)
 aud = fs.readFileSync('./audio/hentai.ogg') 
 samu330.sendMessage(from, aud, audio, {quoted: faud, mimetype: 'audio/mp4', ptt: true, sendEphemeral: true}) 
@@ -2657,9 +2657,74 @@ addFilter(from)
 aud = fs.readFileSync('./audio/ñañañi.ogg') 
 samu330.sendMessage(from, aud, audio, {quoted: faud, mimetype: 'audio/mp4', ptt: true, sendEphemeral: true}) 
 break
+/**		
 case 'audios':
 addFilter(from)
 reply(`*Audios originales\n\n- anana\n- asen\n- flash\n- hentai\n- jai\n- jashire\n- kareta\n- kataka\n- kicks\n- kobarashi\n- mitamita\n- mma\n- motomoto\n- nani\n- niconico\n- nya\n- nyan\n- omaiga\n- omaiwa\n- omg\n- onichan\n- ooaa\n- piano\n- pikachu\n- pupu\n- sempai\n- sss\n- suspenso\n- talcho\n- tobec\n- tuturu\n- tututu\n- uchinchi\n- uff\n- uma\n- umai\n- unga\n- woau\n- yajaro\n- yame\n- yamete\n- yokese\n- yutki\n- ñaña\n- ñañañi`)
+break
+**/	
+///////Audios otak and bananeraudios			
+case 'audios':
+addFilter(from)
+audiosbot = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
+╭─────────────
+│ ${prefix}*anana*
+│ ${prefix}*asen*
+│ ${prefix}*flash*
+│ ${prefix}*hentaii*
+│ ${prefix}*jai*
+│ ${prefix}*jashire*
+│ ${prefix}*kareta*
+│ ${prefix}*kataka*
+│ ${prefix}*kicks*
+│ ${prefix}*kobarashi*
+│ ${prefix}*mitamita*
+│ ${prefix}*mma*
+│ ${prefix}*motomoto*
+│ ${prefix}*nani*
+│ ${prefix}*niconico*
+│ ${prefix}*nya*
+│ ${prefix}*nyan*
+│ ${prefix}*omaiga*
+│ ${prefix}*omaiwa*
+│ ${prefix}*omg*
+│ ${prefix}*onichan*
+│ ${prefix}*ooaa*
+│ ${prefix}*piano*
+│ ${prefix}*pikachu*
+│ ${prefix}*pupu*
+│ ${prefix}*sempai*
+│ ${prefix}*sss*
+│ ${prefix}*nya*
+│ ${prefix}*suspenso*
+│ ${prefix}*talcho*
+│ ${prefix}*tobec*
+│ ${prefix}*tuturu*
+│ ${prefix}*tututu*
+│ ${prefix}*uchinchin*
+│ ${prefix}*uff*
+│ ${prefix}*uma*
+│ ${prefix}*umai*
+│ ${prefix}*unga*
+│ ${prefix}*woau*
+│ ${prefix}*yajaro*
+│ ${prefix}*yame*
+│ ${prefix}*yamete*
+│ ${prefix}*yokese*
+│ ${prefix}*yutki*
+│ ${prefix}*ñaña*
+│ ${prefix}*ñañañi*
+╰──────────────╯`
+samu330.sendMessage(from, audiosbot, MessageType.text, {quoted:
+{ key: {
+fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+},
+message: {
+"documentMessage": { "title": "📚Audios :3", 'jpegThumbnail': fs.readFileSync('./src/otak.jpg')}}
+}})
+addFilter(from)
+addLevelingLevel(sender, 5)		
 break
 		
 case 'top5':
@@ -2688,7 +2753,8 @@ mentions(teks, member, true)
 break
 		
 case 'pr':
-respuesta = ['Si', 'No', 'Tal vez', 'Puede ser', 'Ai una probabilidad del 99.99999999991.01%', 'Puede que no', 'Yo que se', 'mmmm🤔.... Dejame lo pienso un poco']
+respuesta = ['Si', 'No', 'Tal vez', 'Puede ser', 'Ai una probabilidad del 99.99999999991.01%', 'Puede que no', 'Yo que se', 'mmmm🤔.... Dejame lo pienso un poco', 
+	     'La respuesta está en tu corazón :v', 'Pregúntale a tu hermana xd', 'Definitivamente no', 'Chipi']
 answer = respuesta[Math.floor(Math.random() * respuesta.length)]
 if (!q) return reply('Y la pregunta?')
 reply(answer)
