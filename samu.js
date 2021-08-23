@@ -3390,7 +3390,21 @@ dadu = dadus[Math.floor(Math.random() * dadus.length)]
 dador = fs.readFileSync(`./temp/dados/${dadu}.webp`)
 samu330.sendMessage(from, dador, sticker, {quoted: fnsfw, sendEphemeral: true})
 break	
-	
+case 'tdado':
+if (!isGroup) return reply(mess.only.group)
+ranp = getRandom('.gif')
+rano = getRandom('.webp')
+anu = await fetchText('http://api.lolhuman.xyz/api/random/nsfw/ecchi?apikey=847de7716f17a51eeba4235c')	
+exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
+			  fs.unlinkSync(ranp)
+				if (err) return reply('error')
+				buffer = fs.readFileSync(rano)
+				samu330.sendMessage(from, buffer, sticker, {quoted: fvid, caption: 'Lalelilolu ᵈᵃʳʸ⛥'})
+				fs.unlinkSync(rano)
+			})
+//wa.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), ftoko)	
+break
+		
 case 'delete':
 case 'del':
 	if (!isGroup) return await reply(mess.only.group)
