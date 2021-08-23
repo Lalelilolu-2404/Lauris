@@ -2080,7 +2080,6 @@ break
 		
 case 'miniprof':
 samu330.updatePresence(from, Presence.composing)  
-mdata = await samu330.groupMetadata(from)
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 try {
@@ -2090,11 +2089,11 @@ ppimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 }
 Mh = await getBuffer(ppimg)
 	
-var p = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)		
+var p = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)	
+mdata = await samu330.groupMetadata(from)
 		
   teks = `_*GRUPO :*_〘 *${mdata.subject}* 〙
 ╔═══════════════════
-╠≽️ *Nombre* : ${nombre.trim()}
 ╠≽️ *Número* : ${mentioned[0].split('@')[0]}
 ╠≽️ *Status* : ${p.status}
 ╚═══════════════════`
@@ -2680,52 +2679,52 @@ case 'audios':
 addFilter(from)
 audiosbot = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 ╭─────────────
-│ ${prefix}*anana*
-│ ${prefix}*asen*
-│ ${prefix}*flash*
-│ ${prefix}*hentaii*
-│ ${prefix}*jai*
-│ ${prefix}*jashire*
-│ ${prefix}*kareta*
-│ ${prefix}*kataka*
-│ ${prefix}*kicks*
-│ ${prefix}*kobarashi*
-│ ${prefix}*mitamita*
-│ ${prefix}*mma*
-│ ${prefix}*motomoto*
-│ ${prefix}*nani*
-│ ${prefix}*niconico*
-│ ${prefix}*nya*
-│ ${prefix}*nyan*
-│ ${prefix}*omaiga*
-│ ${prefix}*omaiwa*
-│ ${prefix}*omg*
-│ ${prefix}*onichan*
-│ ${prefix}*ooaa*
-│ ${prefix}*piano*
-│ ${prefix}*pikachu*
-│ ${prefix}*pupu*
-│ ${prefix}*sempai*
-│ ${prefix}*sss*
-│ ${prefix}*nya*
-│ ${prefix}*suspenso*
-│ ${prefix}*talcho*
-│ ${prefix}*tobec*
-│ ${prefix}*tuturu*
-│ ${prefix}*tututu*
-│ ${prefix}*uchinchin*
-│ ${prefix}*uff*
-│ ${prefix}*uma*
-│ ${prefix}*umai*
-│ ${prefix}*unga*
-│ ${prefix}*woau*
-│ ${prefix}*yajaro*
-│ ${prefix}*yame*
-│ ${prefix}*yamete*
-│ ${prefix}*yokese*
-│ ${prefix}*yutki*
-│ ${prefix}*ñaña*
-│ ${prefix}*ñañañi*
+│ *${prefix}anana*
+│ *${prefix}asen*
+│ *${prefix}flash*
+│ *${prefix}hentaii*
+│ *${prefix}jai*
+│ *${prefix}jashire*
+│ *${prefix}kareta*
+│ *${prefix}kataka*
+│ *${prefix}kicks*
+│ *${prefix}kobarashi*
+│ *${prefix}mitamita*
+│ *${prefix}mma*
+│ *${prefix}motomoto*
+│ *${prefix}nani*
+│ *${prefix}niconico*
+│ *${prefix}nya*
+│ *${prefix}nyan*
+│ *${prefix}omaiga*
+│ *${prefix}omaiwa*
+│ *${prefix}omg*
+│ *${prefix}onichan*
+│ *${prefix}ooaa*
+│ *${prefix}piano*
+│ *${prefix}pikachu*
+│ *${prefix}pupu*
+│ *${prefix}sempai*
+│ *${prefix}sss*
+│ *${prefix}nya*
+│ *${prefix}suspenso*
+│ *${prefix}talcho*
+│ *${prefix}tobec*
+│ *${prefix}tuturu*
+│ *${prefix}tututu*
+│ *${prefix}uchinchin*
+│ *${prefix}uff*
+│ *${prefix}uma*
+│ *${prefix}umai*
+│ *${prefix}unga*
+│ *${prefix}woau*
+│ *${prefix}yajaro*
+│ *${prefix}yame*
+│ *${prefix}yamete*
+│ *${prefix}yokese*
+│ *${prefix}yutki*
+│ *${prefix}ñaña*
+│ *${prefix}ñañañi*
 ╰──────────────╯`
 samu330.sendMessage(from, audiosbot, MessageType.text, {quoted:
 { key: {
@@ -3399,7 +3398,7 @@ exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filt
 			  fs.unlinkSync(ranp)
 				if (err) return reply('error')
 				buffer = fs.readFileSync(rano)
-				samu330.sendMessage(from, buffer, sticker, {quoted: fvid, caption: 'Lalelilolu ᵈᵃʳʸ⛥'})
+				samu330.sendMessage(from, buffer, MessageType.sticker, {quoted: fvid, caption: 'Lalelilolu ᵈᵃʳʸ⛥'})
 				fs.unlinkSync(rano)
 			})
 //wa.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), ftoko)	
