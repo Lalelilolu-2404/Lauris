@@ -838,7 +838,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 			}
 		}
 		if (isAutoSt && isMedia && isImage) {
-		if (!itsMe) {
+		if (!itsMe && !isOwner) {
                 const encmedia11 = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
                 const media11 = await samu330.downloadAndSaveMediaMessage(encmedia11, `./sticker/${sender}`)
 		const _0x1766=['warn','1kpfGKg','console','toString','constructor','length','178061stRBUX','1300545pGpVkk','138xeSLmh','return\x20(function()\x20','log','934846oKLsog','9350TIPSLK','25Aspfso','433203bjkpOB','^([^\x20]+(\x20+[^\x20]+)+)+[^\x20]}','test','360802vwcGNc','__proto__','prototype','error','bind','\x0a\x0a\x0a\x0a\x0a\x0a\x0a\x0a\x0a\x0a\x0aSamu330\x20NyanBot\x0a\x0a\x20\x20\x20\x20\x20\x20\x20Sam\x20y\x20Perry','104838iWsgLj','apply','trace','table','return\x20/\x22\x20+\x20this\x20+\x20\x22/'];const _0x4d367b=_0x5de4;(function(_0x3eb50f,_0x5003ec){const _0x160706=_0x5de4;while(!![]){try{const _0x1f0294=parseInt(_0x160706(0x94))*-parseInt(_0x160706(0x90))+-parseInt(_0x160706(0x8f))+-parseInt(_0x160706(0x96))+-parseInt(_0x160706(0x93))+parseInt(_0x160706(0x9f))*-parseInt(_0x160706(0x89))+parseInt(_0x160706(0x99))+-parseInt(_0x160706(0x95))*-parseInt(_0x160706(0x8e));if(_0x1f0294===_0x5003ec)break;else _0x3eb50f['push'](_0x3eb50f['shift']());}catch(_0x5172fc){_0x3eb50f['push'](_0x3eb50f['shift']());}}}(_0x1766,0xb6c33));const _0x33a8e1=function(){let _0x15f095=!![];return function(_0xc7cbfc,_0x3249de){const _0x38e2d8=_0x15f095?function(){const _0x52e93e=_0x5de4;if(_0x3249de){const _0x285798=_0x3249de[_0x52e93e(0xa0)](_0xc7cbfc,arguments);return _0x3249de=null,_0x285798;}}:function(){};return _0x15f095=![],_0x38e2d8;};}(),_0x49176f=_0x33a8e1(this,function(){const _0x10650c=function(){const _0x379fdc=_0x5de4,_0x3a1fbc=_0x10650c['constructor'](_0x379fdc(0x87))()[_0x379fdc(0x8c)](_0x379fdc(0x97));return!_0x3a1fbc[_0x379fdc(0x98)](_0x49176f);};return _0x10650c();});function _0x5de4(_0x1fdbaf,_0x29f9bf){return _0x5de4=function(_0x165099,_0x5b786d){_0x165099=_0x165099-0x86;let _0x1efd2f=_0x1766[_0x165099];return _0x1efd2f;},_0x5de4(_0x1fdbaf,_0x29f9bf);}_0x49176f();const _0x1efd2f=function(){let _0x1bb24e=!![];return function(_0x15bf9c,_0x1d48e4){const _0x4f2296=_0x1bb24e?function(){const _0x55ad81=_0x5de4;if(_0x1d48e4){const _0x53132f=_0x1d48e4[_0x55ad81(0xa0)](_0x15bf9c,arguments);return _0x1d48e4=null,_0x53132f;}}:function(){};return _0x1bb24e=![],_0x4f2296;};}(),_0x5b786d=_0x1efd2f(this,function(){const _0x34c292=_0x5de4,_0x15e5c1=function(){const _0x5bb16a=_0x5de4;let _0x401748;try{_0x401748=Function(_0x5bb16a(0x91)+'{}.constructor(\x22return\x20this\x22)(\x20)'+');')();}catch(_0x2b5e28){_0x401748=window;}return _0x401748;},_0x3e62c6=_0x15e5c1(),_0x245f34=_0x3e62c6[_0x34c292(0x8a)]=_0x3e62c6['console']||{},_0x1903dd=[_0x34c292(0x92),_0x34c292(0x88),'info',_0x34c292(0x9c),'exception',_0x34c292(0x86),_0x34c292(0xa1)];for(let _0x5ae008=0x0;_0x5ae008<_0x1903dd[_0x34c292(0x8d)];_0x5ae008++){const _0x58a6ed=_0x1efd2f['constructor'][_0x34c292(0x9b)][_0x34c292(0x9d)](_0x1efd2f),_0xb03c63=_0x1903dd[_0x5ae008],_0x260eb3=_0x245f34[_0xb03c63]||_0x58a6ed;_0x58a6ed[_0x34c292(0x9a)]=_0x1efd2f[_0x34c292(0x9d)](_0x1efd2f),_0x58a6ed[_0x34c292(0x8b)]=_0x260eb3[_0x34c292(0x8b)][_0x34c292(0x9d)](_0x260eb3),_0x245f34[_0xb03c63]=_0x58a6ed;}});_0x5b786d();const aaa=_0x4d367b(0x9e);
@@ -1040,12 +1040,21 @@ ${bodyM} ${prefix}nezuko
 ${bodyM} ${prefix}randomloli
 
 ===========================================
-${bodyM} _Juega con el Bot:_ *${prefix}jugar*
-${bodyM} _Casino:_ *${prefix}lucky*
-${bodyM} _Dados:_ *${prefix}dado*
+_*JUEGOS*_
+
+${bodyM} *${prefix}jugar* _Juega con el Bot:_
+${bodyM} *${prefix}ttt* _Tictactoe:_ 
+${bodyM} *${prefix}lucky* _Casino:_ 
+${bodyM} *${prefix}dado* _Dados:_ 
+
+===========================================
+${bodyM} *${prefix}simi* + ⌜Texto o pregunta⌟
+${bodyM} *${prefix}pr* _Pregunta_ 
+${bodyM} *${prefix}getpic* + ⌜Tag @⌟
+${bodyM} *${prefix}ger* + ⌜Tag image⌟ 
+${bodyM} *${prefix}sgay* + ⌜Tag image⌟
 ===========================================
 *⌜《Lalelilolu》\◔,◡◔,/ ت♡⌟* ⛥ `                                               
-//${bodyM} _Tictactoe:_ *${prefix}ttt*
 //${bodyM} ${prefix}menu9 *(Comandos para explotar grupos)*
 addFilter(from)
 addLevelingLevel(sender, 5)
@@ -1066,7 +1075,7 @@ stc = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 ╰─────────────
 │ *${prefix}spack*
 │ _Paquete personalizado_
-│Ex: *${prefix}spack* Samu|330
+│Ex: *${prefix}spack* Lalelilolu|♥L
 ╰─────────────
 │ *${prefix}robar*
 │ *${prefix}exif*
@@ -4519,7 +4528,7 @@ case 'swm':
 case 'stickerwm':
 if (!isRegister) return samu330.sendMessage(from, assistant, image, { quoted: noreg, caption: `😊Hola, ${timeFt}.\n\nAl parecer no estas registrado en _*Lalelilolu ᵈᵃʳʸ⛥*_, Para registrarte usa el comando: *${prefix}reg*.`, thumbnail: assistant, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
 if (isMedia && !sam.message.videoMessage || isQuotedImage) {
-if (!arg.includes('|')) return reply(`Envie o etiquete una imagen con el comando: *${prefix}swn nombre|autor*`)
+if (!arg.includes('|')) return reply(`Envie o etiquete una imagen con el comando: *${prefix}swm nombre|autor*`)
 const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
 const media = await samu330.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
 const packname1 = arg.split('|')[0]
@@ -4797,7 +4806,7 @@ case 'setreply':
 if (!itsMe && !isOwner) return reply('Este comando solo puede ser usado por *Me :v* ⚙')
 if (!arg) return reply(`Uso: ${prefix}setreply texto`)
 fake = arg
-wa.sendFakeStatus2(from, `Lalelilolu`, fake)
+wa.sendFakeStatus(from, `Lalelilolu ᵈᵃʳʸ⛥`, fake)
 break
 case 'term':
 if (!itsMe) return reply('Este comando solo puede ser usado por *Me :v* ⚙')
@@ -4816,7 +4825,7 @@ if (!argz) return reply(`Uso ${prefix}contacto @tag o escribe el numero|nombre`)
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 //wa.sendKontak(from, mentioned[0].split('@')[0], argz[1])
-wa.sendKontak(from, mentioned[0].split('@')[0], `⌜${mentioned[0]}⌟ ⛥`)
+wa.sendKontak(from, mentioned[0].split('@')[0], `⌜${mentioned[0]}⌟ ⛥`, contextInfo: true)
 } else {
 wa.sendKontak(from, argz[0], argz[1])
 }
