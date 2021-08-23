@@ -2128,7 +2128,7 @@ var p = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)
                             "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="
                         }
                     },
-                    contextInfo: {mentionedJid: [mentioned[0], ${pushname}],
+                    contextInfo: {mentionedJid: [mentioned[0], pushname],
                       "forwardingScore": 999, "isForwarded": true
                     }
                 }
@@ -6292,4 +6292,3 @@ return
 console.log(chalk.greenBright("├"), chalk.keyword("yellow")("[  ERROR  ]"), chalk.keyword("red")(e))
 }
 })
-
