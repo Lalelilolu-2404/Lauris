@@ -4825,13 +4825,13 @@ if (!argz) return reply(`Uso ${prefix}contacto @tag o escribe el numero|nombre`)
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 //wa.sendKontak(from, mentioned[0].split('@')[0], argz[1])
-wa.sendKontak(from, mentioned[0].split('@')[0], `⌜${mentioned[0]}⌟ ⛥`, contextInfo: true)
+wa.sendKontak(from, mentioned[0].split('@')[0], `⌜${mentioned[0]}⌟ ⛥`, contextInfo: {mentionedJid: true})
 } else {
 wa.sendKontak(from, argz[0], argz[1])
 }
 addFilter(from)
 break
-
+		
 case 'runtime':
 runt = process.uptime()
 let text = msg.runtime(runt)
