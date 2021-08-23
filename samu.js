@@ -2112,7 +2112,7 @@ var p = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)
                             "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc",
                             "mimetype": "image/jpeg",
                            // "caption": `「 *Holi cosita ^-^* 」\n ⊱ღ ${mentioned[0].split('@')[0]} ღ⊱`,
-			    "caption": `「 *Holi cosita ^-^* 」\n ⊱ღ *${mentioned[0]}* ღ⊱`,	
+			    "caption": `「 *Holi cosita ^-^* 」\n ⊱ღ *${pushname}* ღ⊱`,	
 			   // "caption": `「 *Uwu cosita :3* 」`,
 				
                             "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=",
@@ -2127,7 +2127,7 @@ var p = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)
                             "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="
                         }
                     },
-                    contextInfo: {mentioned,
+                    contextInfo: {
                       "forwardingScore": 999, "isForwarded": true
                     }
                 }
