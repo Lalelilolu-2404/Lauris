@@ -2092,11 +2092,10 @@ Mh = await getBuffer(ppimg)
 	
 var p = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)		
 		
-  teks = `〘 *${mdata.subject}* 〙
+  teks = `_*GRUPO :*_〘 *${mdata.subject}* 〙
 ╔═══════════════════
+╠≽️ *Nombre* : ${nombre.trim()}
 ╠≽️ *Número* : ${mentioned[0].split('@')[0]}
-╠≽️ *Nombre* : @${mentioned[0]}
-╠≽️ *Nombre* : ${mentioned[0]}
 ╠≽️ *Status* : ${p.status}
 ╚═══════════════════`
 	
@@ -2128,7 +2127,7 @@ var p = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)
                             "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="
                         }
                     },
-                    contextInfo: {mentionedJid: [mentioned[0], pushname],
+                    contextInfo: true,
                       "forwardingScore": 999, "isForwarded": true
                     }
                 }
@@ -6058,7 +6057,7 @@ if (args[0] === '1') {
 	autostick.push(from)             
 	fs.writeFileSync('./src/autostick.json', JSON.stringify(autostick))      
 	reply(`*[ Activado ]*`)  
-	reply(`*ahora, todas las fotos que se envien en el grupo se convertiran en sticker automaticamente*`)  
+	reply(`*Ahora, todas las fotos que se envien en el grupo se convertirán en sticker automaticamente*`)  
 } else if (args[0] === '0') {           
 	var ini = autostick.indexOf(from)
 	autostick.splice(ini, 1)                  
@@ -6079,7 +6078,7 @@ break
                  	                        badword.push(from)
                  	                        fs.writeFileSync('./src/badword.json', JSON.stringify(badword))
                   	                        reply(`*[ Activado ]*`)
-						reply(`*Las personas que envien una mala palabra sera eliminada*. _Para ver la lista de malas palabras usa el comando: listbad_`)  
+						reply(`*Las personas que envien una mala palabra serán eliminadas*. _Para ver la lista de malas palabras, usa el comando: listbad_`)  
                                         } else if (args[0] === '0') {
                   	                        var ini = badword.indexOf(from)
 						badword.splice(ini, 1)
