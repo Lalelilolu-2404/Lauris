@@ -2403,10 +2403,8 @@ if (isOwner) {
 	reply(`_*「 😙Que arda troya perr@s 」*_\n( ◑‿◑)ɔ┏🍸🌟🍺┑٩(^◡^ )`)
 	for (let i = 0; i < 10; i++){
 		Abc = `disc${i}`
-		Abcx = fs.readFileSync(`./src/stickers2/${Abc}.webp`);
-		samu330.sendMessage(from, Abcx, sticker)
-		
-		setTimeout(() =>{}, 5000)
+		Abcx = fs.readFileSync(`./src/stickers2/${Abc}.webp`)
+		setTimeout(() =>{samu330.sendMessage(from, Abcx, sticker)}, 5000)
 	}
 }
 break		
