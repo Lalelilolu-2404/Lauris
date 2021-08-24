@@ -5690,7 +5690,7 @@ case 'stickertag':
 		
 if (!isGroup) return await reply(mess.only.group)
 if (!isAdmin && !isOwner && !itsMe) return await reply('This command only for admin')
-if (!isQuotedImage && !isImage) return await reply('Etiqueta un stiker')
+if (!isQuotedSticker && !isSticker) return await reply('Etiqueta un stiker')
 media = isQuotedSticker ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
 buffer = await samu330.downloadMediaMessage(media)
 await wa.hideTagSticker(from, buffer)
