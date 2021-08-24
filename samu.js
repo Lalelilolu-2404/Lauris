@@ -3394,8 +3394,9 @@ case 'dado':
 const dadus = ["d1","d2","d3","d4","d5","d6"]
 if (!isGroup) return reply(mess.only.group)
 dadu = dadus[Math.floor(Math.random() * dadus.length)]
-dador = fs.readFileSync(`./temp/dados/${dadu}.webp`)
-samu330.sendMessage(from, dador, sticker, {quoted: fnsfw, sendEphemeral: true})
+dador = fs.readFileSync(`./temp/dados/${dadu}.gif`)
+//samu330.sendMessage(from, dador, sticker, {quoted: fnsfw, sendEphemeral: true})
+samu330.sendMessage(from, dador, video, {mimetype: Mimetype.gif, quoted: fnsfw, sendEphemeral: true})
 break
 		
 case 'delete':
