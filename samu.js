@@ -3396,7 +3396,7 @@ if (!isGroup) return reply(mess.only.group)
 dadu = dadus[Math.floor(Math.random() * dadus.length)]
 dador = fs.readFileSync(`./temp/dados/${dadu}.webp`)
 //samu330.sendMessage(from, dador, sticker, {quoted: fnsfw, sendEphemeral: true})
-samu330.sendMessage(from, dador, MessageType.sticker, {mimetype: Mimetype.gif, quoted: fnsfw, sendEphemeral: true})
+samu330.sendMessage(from, dador, sticker, {mimetype: Mimetype.gif, quoted: fnsfw})
 break
 		
 case 'delete':
