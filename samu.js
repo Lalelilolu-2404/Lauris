@@ -932,12 +932,12 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					}
 				}
 			}
-			if (isGroup && botAdmin && isAntiLeg) {      
+			/**if (isGroup && botAdmin && isAntiLeg) {      
 			if (!itsMe) {
 			if (isAudio) {
 			if (isAdmin) reply(`😒che admin pndejo, enves que des el ejemplo, ya que el Antilegiones esta activado, osea que no se permiten toda clase de mensajes que puedan ser travas... pero noooo... como eres admin te crees la gran vrg no?🙄\n*Pues conmigo te jodiste😑*\nALV por puto👿`)
 				reply(`*AUDIO DETECTADO, EN ESTE GRUPO NO SE PERMITEN LOS AUDIOS, YA QUE ESTAN ACTIVADOS LOS COMANDOS ANTILEGIONES, POR SEGURIDAD TE ELIMINARE*`)
-				samu330.groupRemove(from, [sender])
+				samu330.groupRemove(from, [sender])**/
 			}
 			}
 			}
@@ -3391,12 +3391,12 @@ samu330.sendMessage(from, dador, sticker, {quoted: fnsfw, sendEphemeral: true})
 break	
 **/
 case 'dado':
-const dadus = ["d1","d2","d3","d4","d5","d6"]
+const dadus = ["dd1","dd2","dd3","dd4","dd5","dd6"]
 if (!isGroup) return reply(mess.only.group)
 dadu = dadus[Math.floor(Math.random() * dadus.length)]
-dador = fs.readFileSync(`./temp/dados/${dadu}.gif`)
+dador = fs.readFileSync(`./temp/dados/${dadu}.webp`)
 //samu330.sendMessage(from, dador, sticker, {quoted: fnsfw, sendEphemeral: true})
-samu330.sendMessage(from, dador, video, {mimetype: Mimetype.gif, quoted: fnsfw, sendEphemeral: true})
+samu330.sendMessage(from, dador, MessageType.sticker, {mimetype: Mimetype.gif, quoted: fnsfw, sendEphemeral: true})
 break
 		
 case 'delete':
