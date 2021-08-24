@@ -2400,13 +2400,13 @@ break
 //////
 case 'chongo':		
 if (isOwner) {
-	reply(`_*「 😙Que arda troya\n( ◑‿◑)ɔ┏🍸🌟🍺┑٩(^◡^ )  」*_`)
+	reply(`_*「 😙Que arda troya perr@s 」*_\n( ◑‿◑)ɔ┏🍸🌟🍺┑٩(^◡^ )`)
 	for (let i = 0; i < 10; i++){
 		Abc = `disc${i}`
 		Abcx = fs.readFileSync(`./src/stickers2/${Abc}.webp`);
 		samu330.sendMessage(from, Abcx, sticker)
 		
-		setTimeout(() => 2000)
+		setTimeout(() =>{}, 5000)
 	}
 }
 break		
