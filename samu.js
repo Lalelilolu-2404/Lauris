@@ -2102,7 +2102,7 @@ reply('Se nesecita una foto para hacer su sticker!');
 }	
 break**/		
 		
-case 'gay':
+case 'gay' :
 samu330.updatePresence(from, Presence.composing)  
 if (!isGroup) return reply(mess.only.group)
 if (args.length < 1) return reply("Meniona a alguien, pajero!")		       
@@ -2114,34 +2114,35 @@ ppimg = await samu330.getProfilePicture(mentioned[0])
 } catch {
 ppimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 }
-Mh = await getBuffer(ppimg)
-await fs.writeFileSync(`./pictgay.jpeg`, Mh)
+MLa = await getBuffer(ppimg)
+await fs.writeFileSync(`./pictgay.jpeg`, MLa)
 var imgbb2 = require('imgbb-uploader')
 anug = await imgbb2("20a14861e4f7591f3dc52649cb07ae02", './pictgay.jpeg')
 txtg = `${anug.display_url}`
 ftgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${txtg}`)
 	
 	random = `${Math.floor(Math.random() * 100)}`
-	gay = random
-	if (gay < 10 ) {ga = '*100 % macho pecho peludo rompe lomo plateado xd*'}
-	else if (gay < 20 ) {ga = '*Usted es hetero bro 🤪🤙*'} 
-	else if (gay < 30 ) {ga = '*Hetero pero no al 100 % :v 🤔*'}
-	else if (gay < 40 ) {ga = '*Muy sospechoso, tengo mi dudas si eres o no eres 😑*'} 
-	else if (gay < 50 ) {ga = '*No sé, creo q te vi ayer besándote con Juan*\n*Dinos eres o no? 😏*'} 
-	else if (gay < 60 ) {ga = '*Muy sospechoso, dudas de tu sexualida :v*'} 
-	else if (gay < 70 ) {ga = '*Jaa ya lo perdimos gente, quiere salir del clóset 🥵*'} 
-	else if (gay < 80 ) {ga = '*Bueno gente, este ya probó pija y ya le gustó 🥵*'}
-	else {  ga = '*Paletazo, quiero nepe xfavor 🥵*'}	
+	gayr = random
+	if (gayr < 10 ) {ga = '*100 % macho pecho peludo rompe lomo plateado xd*'}
+	else if (gayr < 20 ) {ga = '*Usted es hetero bro 🤪🤙*'} 
+	else if (gayr < 30 ) {ga = '*Hetero pero no al 100 % :v 🤔*'}
+	else if (gayr < 40 ) {ga = '*Muy sospechoso, tengo mi dudas si eres o no eres 😑*'} 
+	else if (gayr < 50 ) {ga = '*No sé, creo q te vi ayer besándote con Juan*\n*Dinos eres o no? 😏*'} 
+	else if (gayr < 60 ) {ga = '*Muy sospechoso, dudas de tu sexualida :v*'} 
+	else if (gayr < 70 ) {ga = '*Jaa ya lo perdimos gente, quiere salir del clóset 🥵*'} 
+	else if (gayr < 80 ) {ga = '*Bueno gente, este ya probó pija y ya le gustó 🥵*'}
+	else if (gayr <= 100) {ga = '*Paletazo, quiero nepe xfavor 🥵*'}	
 					
 hasil = `➥${random}% gay \n✪\n➥${ga}`
 	
 samu330.sendMessage(from, ftgay, MessageType.imagen, {quoted: fgay, caption: `⊱ღ ${mentioned[0].split('@')[0]} ღ⊱\n\n${hasil}`, sendEphemeral: true})
-if (gay > 80 ) {
-noneg = fs.readFileSync('./anishan/Ayy.mp3')  
+if (gayr > 80 ) {
+const noneg = fs.readFileSync('./anishan/Ayy.mp3')  
 samu330.sendMessage(from, noneg, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true})
 }
 fs.unlinkSync('./pictgay.jpeg')
-break					
+addFilter(from)
+break
 		
 case 'miniprof':
 samu330.updatePresence(from, Presence.composing)  
