@@ -732,6 +732,15 @@ message: { "videoMessage": { "caption":"Lalelilolu ᵈᵃʳʸ⛥\n➫Jeux ♤◇
 }
 contextInfo: {
 mentionedJid: [sender]}
+const fgay = {
+key:
+{ fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ?
+{ remoteJid: "status@broadcast" } : {}) },
+message: { "imageMessage": { "mimetype": "image/jpeg","caption": `Lalelilolu ᵈᵃʳʸ⛥\n➥Nivel de gay 🥵`, 'jpegThumbnail': fs.readFileSync('./src/gay.jpg')}}
+}
+contextInfo: {
+mentionedJid: [sender]}
 const fliveLoc = {
 key:
 { fromMe: false,
@@ -2125,23 +2134,13 @@ ftgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${txtg}`)
 	else {  ga = '*Paletazo, quiero nepe xfavor 🥵*'}	
 					
 hasil = `➥${random}% gay \n✪\n➥${ga}`
-
-const fgay = {
-key:
-{ fromMe: false,
-participant: `0@s.whatsapp.net`, ...(from ?
-{ remoteJid: "status@broadcast" } : {}) },
-message: { "imageMessage": { "mimetype": "image/jpeg","caption": `Lalelilolu ᵈᵃʳʸ⛥\n➥Nivel de gay 🥵`, 'jpegThumbnail': fs.readFileSync('./src/gay.jpg')}}
-}
-contextInfo: {
-mentionedJid: [sender]}
 	
 samu330.sendMessage(from, ftgay, MessageType.imagen, {quoted: fgay, caption: `⊱ღ ${mentioned[0].split('@')[0]} ღ⊱\n\n${hasil}`, sendEphemeral: true})
 if (gay > 80 ) {
 noneg = fs.readFileSync('./anishan/Ayy.mp3')  
 samu330.sendMessage(from, noneg, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true})
 }
-fs.unlinkSync('./stickgay.jpeg')
+fs.unlinkSync('./pictgay.jpeg')
 break					
 		
 case 'miniprof':
