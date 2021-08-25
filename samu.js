@@ -1102,7 +1102,7 @@ stc = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 ╰─────────────
 │ *${prefix}spack*
 │ _Paquete personalizado_
-│Ex: *${prefix}spack* Lalelilolu|♥L
+│Ex: *${prefix}spack* Lalelilolu|Ily
 ╰─────────────
 │ *${prefix}robar*
 │ *${prefix}exif*
@@ -2129,6 +2129,7 @@ if (!isGroup) return reply(mess.only.group)
 if (args.length < 1) return reply("Meniona a alguien, pajero!")	
 samu330.updatePresence(from, Presence.composing) 
 //mentions(`@${mentioned[0].split('@')[0]}`, mentioned, true) 
+reply(mess.wait)
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 try {
@@ -2146,23 +2147,23 @@ ftgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${txtg}`)
 	
 	random = Math.floor(Math.random() * 100)
 	gayr = random
-	if (gayr < 10 ) {ga = '*100 % macho pecho peludo rompe lomo plateado xd*'}
-	else if (gayr < 20 ) {ga = '*Usted es hetero bro 🤪🤙*'} 
-	else if (gayr < 30 ) {ga = '*Hetero pero no al 100 % :v 🤔*'}
-	else if (gayr < 40 ) {ga = '*Muy sospechoso, tengo mi dudas si eres o no eres 😑*'} 
-	else if (gayr < 50 ) {ga = '*No sé, creo q te vi ayer besándote con Juan*\n*Dinos eres o no? 😏*'} 
-	else if (gayr < 60 ) {ga = '*Muy sospechoso, dudas de tu sexualida :v*'} 
-	else if (gayr < 70 ) {ga = '*Jaa ya lo perdimos gente, quiere salir del clóset 🥵*'} 
-	else if (gayr < 80 ) {ga = '*Bueno gente, este ya probó pija y ya le gustó 🥵*'}
-	else if (gayr <= 100) {ga = '*Paletazo, quiero nepe xfavor 🥵*'}	
+	if (gayr < 10 ) {ga = '100 % macho pecho peludo, lomo plateado xd'}
+	else if (gayr < 20 ) {ga = 'Usted es hetero bro 🤪🤙'} 
+	else if (gayr < 30 ) {ga = 'Hetero pero no al 100 % :v 🤔'}
+	else if (gayr < 40 ) {ga = 'Muy sospechoso, tengo mi dudas si eres o no eres 😑'} 
+	else if (gayr < 50 ) {ga = 'No sé, creo q te vi ayer besándote con Juan*\n*Dinos eres o no? 😏'} 
+	else if (gayr < 60 ) {ga = 'Muy sospechoso, dudas de tu sexualida :v'} 
+	else if (gayr < 70 ) {ga = 'Jaa ya lo perdimos gente, quiere salir del clóset 🥵'} 
+	else if (gayr < 80 ) {ga = 'Bueno gente, este ya probó pija y ya le gustó 🥵'}
+	else if (gayr <= 100) {ga = 'Paletazo, quiero nepe xfavor 🥵'}	
 					
-hasil = `➥${random}% gay \n✪\n➥${ga}`
+const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay \n✪\n➥*${ga}*\n\n@${sender.replace("@s.whatsapp.net", "")}`
 
 samu330.sendMessage(from, ftgay, MessageType.image, {
 quoted: fgay, 
-caption: `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n${hasil}\n\n@${sender.replace("@s.whatsapp.net", "")}`, 
+caption: `${hasil}`, 
 contextInfo: {
-mentionedJid: [sender, mentioned[0].replace("@", "") + "@s.whatsapp.net"],
+mentionedJid: [sender, mentionUser],
 },
 })
 
