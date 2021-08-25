@@ -2081,7 +2081,7 @@ break
 **/	
 		
 case 'gay':
-samu330.updatePresence(from, Presence.composing)  
+addFilter(from)	
 if (!isGroup) return reply(mess.only.group)
 if (args.length < 1) return reply("Meniona a alguien, pajero!")		       
 //mentions(`@${mentioned[0].split('@')[0]}`, mentioned, true) 
@@ -2091,6 +2091,7 @@ try {
 ppimg = await samu330.getProfilePicture(mentioned[0])
 } catch {
 ppimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
+}
 }
 MLa = await getBuffer(ppimg)
 await fs.writeFileSync(`./pictgay.jpeg`, MLa)
