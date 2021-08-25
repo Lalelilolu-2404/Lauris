@@ -2079,16 +2079,6 @@ addFilter(from)
 break
 ///	
 **/	
-await fs.writeFileSync(`./stickgay.jpeg`, owgig)
-var imgbb2 = require('imgbb-uploader')
-anug = await imgbb2("20a14861e4f7591f3dc52649cb07ae02", './stickgay.jpeg')
-txtg = `${anug.display_url}`
-sgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${txtg}`)
-const bas642 = `data:image/jpeg;base64,${sgay.toString('base64')}`
-var mantap2 = await convertSticker(bas642, `🌈同性恋世界！ = ${sender[0].split('@')[0]}`, `Lalelilolu ᵈᵃʳʸ⛥`)
-var imageBuffer2 = new Buffer.from(mantap2, 'base64');
-samu330.sendMessage(from, imageBuffer2, sticker, {quoted: floc, sendEphemeral: true})
-fs.unlinkSync('./stickgay.jpeg')
 		
 case 'gay':
 addFilter(from)	
