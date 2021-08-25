@@ -737,7 +737,7 @@ key:
 { fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ?
 { remoteJid: "status@broadcast" } : {}) },
-message: { "imageMessage": { "mimetype": "image/jpeg","caption": `Lalelilolu ᵈᵃʳʸ⛥\n➥Nivel de gay 🥵`, 'jpegThumbnail': fs.readFileSync('./src/gay.jpg')}}
+message: { "imageMessage": { "mimetype": "image/jpeg","caption": `Lalelilolu ᵈᵃʳʸ⛥\n➥Nivel de gay :3`, 'jpegThumbnail': fs.readFileSync('./src/gay.jpg')}}
 }
 contextInfo: {
 mentionedJid: [sender]}
@@ -2080,7 +2080,7 @@ break
 ///	
 **/	
 		
-case 'gay' :
+case 'gay':
 samu330.updatePresence(from, Presence.composing)  
 if (!isGroup) return reply(mess.only.group)
 if (args.length < 1) return reply("Meniona a alguien, pajero!")		       
@@ -2099,7 +2099,7 @@ anug = await imgbb2("20a14861e4f7591f3dc52649cb07ae02", './pictgay.jpeg')
 txtg = `${anug.display_url}`
 ftgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${txtg}`)
 	
-	random = `${Math.floor(Math.random() * 100)}`
+	random = Math.floor(Math.random() * 100)
 	gayr = random
 	if (gayr < 10 ) {ga = '*100 % macho pecho peludo rompe lomo plateado xd*'}
 	else if (gayr < 20 ) {ga = '*Usted es hetero bro 🤪🤙*'} 
@@ -2115,11 +2115,10 @@ hasil = `➥${random}% gay \n✪\n➥${ga}`
 	
 samu330.sendMessage(from, ftgay, MessageType.imagen, {quoted: fgay, caption: `⊱ღ ${mentioned[0].split('@')[0]} ღ⊱\n\n${hasil}`, sendEphemeral: true})
 if (gayr > 80 ) {
-const noneg = fs.readFileSync('./anishan/Ayy.mp3')  
+noneg = fs.readFileSync('./anishan/Ayy.mp3')  
 samu330.sendMessage(from, noneg, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true})
 }
 fs.unlinkSync('./pictgay.jpeg')
-addFilter(from)
 break
 		
 case 'miniprof':
