@@ -2151,16 +2151,17 @@ ftgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${txtg}`)
 	else if (gayr < 30 ) {ga = 'Hetero pero no al 100 % :v 🤔'}
 	else if (gayr < 40 ) {ga = 'Muy sospechoso, tengo mi dudas si eres o no eres 😑'} 
 	else if (gayr < 50 ) {ga = 'No sé, creo q te vi ayer besándote con Juan*\n*Dinos eres o no? 😏'} 
-	else if (gayr < 60 ) {ga = 'Muy sospechoso, dudas de tu sexualida :v'} 
+	else if (gayr < 60 ) {ga = 'Muy sospechoso, dudas de tu sexualidad :v'} 
 	else if (gayr < 70 ) {ga = 'Jaa ya lo perdimos gente, quiere salir del clóset 🥵'} 
 	else if (gayr < 80 ) {ga = 'Bueno gente, este ya probó pija y ya le gustó 🥵'}
 	else if (gayr <= 100) {ga = 'Paletazo, quiero nepe xfavor 🥵'}	
 					
-const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay \n✪\n➥*${ga}*\n\n@${sender.replace("@s.whatsapp.net", "")}`
-
+//const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay \n✪\n➥${ga}\n\n@${sender.replace("@s.whatsapp.net", "")}`
+const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay \n✪\n➥${ga}`
 samu330.sendMessage(from, ftgay, MessageType.image, {
 quoted: fgay, 
-caption: `${hasil}\n${pushname}`, 
+//caption: `${hasil}\n${pushname}`, 
+caption: `${hasil}`, 
 contextInfo: {
 mentionedJid: [sender, mentioned[0]],
 },
