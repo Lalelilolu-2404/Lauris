@@ -256,13 +256,13 @@ message: {
 "businessOwnerJid": `0@s.whatsapp.net`
 //}}}, caption: `😙Hola, @${num.split('@')[0]}, _*Bienvenido a ${mdata.subject}, esperamos que te la pases a gusto en este grupo✨*_\n\n_Recuerda siempre seguir las reglas y mantener una formalidad respetuosa_😉\n\nSon las *${jm}* del *${calender}*\n\n${mdata.desc}`, contextInfo: { mentionedJid: [num] }})
 //} catch {
-}}}, caption: `😙Hola, @${num.split('@')[0]}, _*Bienvenido a ${mdata.subject}✨*_\n\n_Sigue las reglas y manten una formalidad respetuosa_😉\n\nPara leer las reglas, escribe :\n *${prefix}rules*`, contextInfo: { mentionedJid: [num] }})
+}}}, caption: `😙Hola, @${num.split('@')[0]}, _*Bienvenido a :*_\n_*「 ${mdata.subject} 」*_\n\n_Sigue las reglas y manten una formalidad respetuosa_😉\n\nPara leer las reglas, escribe : *${prefix}rules*`, contextInfo: { mentionedJid: [num] }})
 } catch {	
 //samu330.sendMessage(mdata.id, `😙Hola, @${num.split('@')[0]}, _*Bienvenido a ${mdata.subject}, esperamos que te la pases a gusto en este grupo✨*_\n\n_Recuerda siempre seguir las reglas y mantener una formalidad respetuosa_😉\n\nSon las *${jm}* del *${calender}*\n\n${mdata.desc}`, MessageType.text)
 //}
-samu330.sendMessage(mdata.id, `😙Hola, @${num.split('@')[0]}, _*Bienvenido a ${mdata.subject}✨*_\n\n_Sigue las reglas y manten una formalidad respetuosa_😉\n\nPara leer las reglas, escribe : \n *${prefix}rules*`, MessageType.text)
+samu330.sendMessage(mdata.id, `😙Hola, @${num.split('@')[0]}, _*Bienvenido a :*_\n_*「 ${mdata.subject} 」*_\n\n_Sigue las reglas y manten una formalidad respetuosa_😉\n\nPara leer las reglas, escribe : *${prefix}rules*`, MessageType.text)
 const none2 = fs.readFileSync(`./src/stickers2/Bienvenido.webp`)
-samu330.sendMessage(mdata.id, none2, sticker, { contextInfo: {"mentionedJid": [num]}, quoted: fimg})		
+samu330.sendMessage(mdata.id, none2, sticker)		
 }
 //leave
 }  else if (anu.action == 'remove') {
@@ -273,7 +273,7 @@ _*Ojalá y le vaya bien, y más después..... que lo atropelle un tren!!🚉🤣
 //samu330.sendMessage(mdata.id, teks, MessageType.text,{ contextInfo: {"mentionedJid": [num]}})
 
 const none2 = fs.readFileSync(`./src/stickers2/Abandonar.webp`)
-samu330.sendMessage(mdata.id, none2, sticker, { contextInfo: {"mentionedJid": [num]}, quoted: fimg})	
+samu330.sendMessage(mdata.id, none2, sticker})	
 	
 } else if (anu.action == 'promote') {
 num = anu.participants[0]
