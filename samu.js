@@ -5461,8 +5461,8 @@ if (!botAdmin) return reply(mess.only.Badmin)
 		samu330.groupRemove(from, mentionUser)
 		//samu330.groupRemove(from, mentioned)
 		
-		const none = fs.readFileSync(`./src/stickers2/Funao.webp`)
-		samu330.sendMessage(from, none, sticker)	
+		//const none = fs.readFileSync(`./src/stickers2/Funao.webp`)
+		//samu330.sendMessage(from, none, sticker)	
 			
 		} else {
 	        //await wa.FakeTokoForwarded(from, `Baaaiii...`, '')
