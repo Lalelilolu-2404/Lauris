@@ -2079,7 +2079,7 @@ addFilter(from)
 break
 ///	
 **/	
-		
+/**		
 case 'gay':
 addFilter(from)	
 if (!isGroup) return reply(mess.only.group)
@@ -2116,6 +2116,57 @@ ftgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${txtg}`)
 hasil = `➥${random}% gay \n✪\n➥${ga}`
 	
 samu330.sendMessage(from, ftgay, MessageType.image, {quoted: fgay, caption: `⊱ღ ${mentioned[0].split('@')[0]} ღ⊱\n\n${hasil}`, sendEphemeral: true})
+if (gayr > 80 ) {
+noneg = fs.readFileSync('./anishan/Ayy.mp3')  
+samu330.sendMessage(from, noneg, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true})
+}
+fs.unlinkSync('./pictgay.jpeg')
+break
+**/		
+case 'gay':
+addFilter(from)	
+if (!isGroup) return reply(mess.only.group)
+if (args.length < 1) return reply("Meniona a alguien, pajero!")	
+samu330.updatePresence(from, Presence.composing) 
+//mentions(`@${mentioned[0].split('@')[0]}`, mentioned, true) 
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+try {
+ppimg = await samu330.getProfilePicture(mentioned[0])
+} catch {
+ppimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
+}
+}
+MLa = await getBuffer(ppimg)
+await fs.writeFileSync(`./pictgay.jpeg`, MLa)
+var imgbb2 = require('imgbb-uploader')
+anug = await imgbb2("20a14861e4f7591f3dc52649cb07ae02", './pictgay.jpeg')
+txtg = `${anug.display_url}`
+ftgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${txtg}`)
+	
+	random = Math.floor(Math.random() * 100)
+	gayr = random
+	if (gayr < 10 ) {ga = '*100 % macho pecho peludo rompe lomo plateado xd*'}
+	else if (gayr < 20 ) {ga = '*Usted es hetero bro 🤪🤙*'} 
+	else if (gayr < 30 ) {ga = '*Hetero pero no al 100 % :v 🤔*'}
+	else if (gayr < 40 ) {ga = '*Muy sospechoso, tengo mi dudas si eres o no eres 😑*'} 
+	else if (gayr < 50 ) {ga = '*No sé, creo q te vi ayer besándote con Juan*\n*Dinos eres o no? 😏*'} 
+	else if (gayr < 60 ) {ga = '*Muy sospechoso, dudas de tu sexualida :v*'} 
+	else if (gayr < 70 ) {ga = '*Jaa ya lo perdimos gente, quiere salir del clóset 🥵*'} 
+	else if (gayr < 80 ) {ga = '*Bueno gente, este ya probó pija y ya le gustó 🥵*'}
+	else if (gayr <= 100) {ga = '*Paletazo, quiero nepe xfavor 🥵*'}	
+					
+hasil = `➥${random}% gay \n✪\n➥${ga}`
+
+samu330.sendMessage(from, ftgay, MessageType.image, {
+quoted: fgay, 
+caption: `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n${hasil}\n\n@${sender.replace("@s.whatsapp.net", "")}`, 
+contextInfo: {
+mentionedJid: [sender, mentioned[0].replace("@", "") + "@s.whatsapp.net"],
+},
+})
+
+//samu330.sendMessage(from, ftgay, MessageType.image, {quoted: fgay, caption: `⊱ღ ${mentioned[0].split('@')[0]} ღ⊱\n\n${hasil}`, sendEphemeral: true})
 if (gayr > 80 ) {
 noneg = fs.readFileSync('./anishan/Ayy.mp3')  
 samu330.sendMessage(from, noneg, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true})
@@ -5084,7 +5135,7 @@ await samu330.sendMessage(from, teks, MessageType.text, {quoted: fdoc})
 console.log(chats.length)
 break
 case 'leertodo':
-if (!itsMe) return reply('Este comando solo puede ser usado por *Samu330* ⚙')
+if (!itsMe) return reply('Este comando solo puede ser usado por *Me :v* ⚙')
 var chats12 = await samu330.chats.all()
 chats12.map( async ({ jid }) => {
 await samu330.chatRead(jid)
