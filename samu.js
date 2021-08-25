@@ -1875,7 +1875,7 @@ case 'swtyou':
 			}
 		}			
 break	
-	**/
+**/	
 			case 'die':
 				samu330.updatePresence(from, Presence.composing)  
 				arg1 = q
@@ -2079,28 +2079,6 @@ addFilter(from)
 break
 ///	
 **/	
-/**
-case 'sgay':
-addFilter(from)	
-if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
-gay = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam;
-reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
-owgig = await samu330.downloadMediaMessage(gay)
-	
-await fs.writeFileSync(`./stickgay.jpeg`, owgig)
-var imgbb2 = require('imgbb-uploader')
-anug = await imgbb2("20a14861e4f7591f3dc52649cb07ae02", './stickgay.jpeg')
-txtg = `${anug.display_url}`
-sgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${txtg}`)
-const bas642 = `data:image/jpeg;base64,${sgay.toString('base64')}`
-var mantap2 = await convertSticker(bas642, `🌈同性恋世界！ = ${sender[0].split('@')[0]}`, `Lalelilolu ᵈᵃʳʸ⛥`)
-var imageBuffer2 = new Buffer.from(mantap2, 'base64');
-samu330.sendMessage(from, imageBuffer2, sticker, {quoted: floc, sendEphemeral: true})
-fs.unlinkSync('./stickgay.jpeg')
-} else {
-reply('Se nesecita una foto para hacer su sticker!');
-}	
-break**/		
 		
 case 'gay' :
 samu330.updatePresence(from, Presence.composing)  
