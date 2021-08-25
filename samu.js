@@ -2129,7 +2129,6 @@ if (!isGroup) return reply(mess.only.group)
 if (args.length < 1) return reply("Meniona a alguien, pajero!")	
 samu330.updatePresence(from, Presence.composing) 
 //mentions(`@${mentioned[0].split('@')[0]}`, mentioned, true) 
-reply(mess.wait)
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 try {
@@ -2161,12 +2160,11 @@ const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay
 
 samu330.sendMessage(from, ftgay, MessageType.image, {
 quoted: fgay, 
-caption: `${hasil}`, 
+caption: `${hasil}\n${pushname}`, 
 contextInfo: {
-mentionedJid: [sender, mentionUser],
+mentionedJid: [sender, mentioned[0]],
 },
 })
-
 //samu330.sendMessage(from, ftgay, MessageType.image, {quoted: fgay, caption: `⊱ღ ${mentioned[0].split('@')[0]} ღ⊱\n\n${hasil}`, sendEphemeral: true})
 if (gayr > 80 ) {
 noneg = fs.readFileSync('./anishan/Ayy.mp3')  
@@ -3522,8 +3520,7 @@ message: {
 "documentMessage": { "title": `✍🏻Nivel ${nivelActual}`, 'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}
 }}
 })
-break
-		
+break	
 		
 case 'reglas':
 reply(`*Hola, estas son las reglas*\n\n1- _Manten una formalidad respetuosa_\n2- _Si vas a añadir el bot a algun grupo, verifica que el grupo cumpla con los requisitos que son tener minimo 5 personas_\n3- _❌NO HAGAS SPAM DE COMANDOS❌_ *Esto es enserio, puedes hacer que el bot se apage*\n4- _📵NO HAGAS LLAMADAS POR WHATSAPP AL PROPIETARIO DEL BOT📵_ *Seras bloqueado inmediatamente*\n5- _🕐Espera el tiempo nesesario cuando pidas alguna funcion, 
