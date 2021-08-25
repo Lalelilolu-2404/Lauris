@@ -1879,7 +1879,7 @@ break
 					spamer = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 					pegat = await samu330.downloadMediaMessage(spamer)
 					spst = fs.readFileSync(`./src/stickers/Haha no.webp`)
-					if (argz[0] > 30) {
+					if (argz[0] > 50) {
 						samu330.sendMessage(from, spst, sticker, {quoted: fimg, "forwardingScore": 9999, "isForwarded": true})
 						argz[0] = 5
 					}					
@@ -1999,32 +1999,7 @@ mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
             })
 	
 }	
-break	
-	
-case 'gay':
-samu330.updatePresence(from, Presence.composing)  
-        
-mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-mentions(`@${mentioned[0].split('@')[0]}`, mentioned, true)
-             
-	random = `${Math.floor(Math.random() * 100)}`
-	gay = random
-if (gay < 20 ) {ga = 'Usted es hetero 🤪🤙'} 
-	else if (gay < 31 ) {ga = 'Mas o menos 🤔'}
-	else if (gay < 41 ) {ga = 'Tengo mi dudas 😑'} 
-	else if (gay < 51 ) {ga = 'Tengo razon? 😏'} 
-	else if (gay < 75 ) {ga = 'Eres o no? 🧐'} 
-	else if (gay < 88 ) {ga = 'Usted es gay 😉'}
-	else {  ga = 'Paletazo 🥵'
-		const none = fs.readFileSync('./anishan/Ayy.mp3');
-		samu330.sendMessage(from, none, MessageType.audio, {mimetype: 'audio/mp4', ptt:true})       
-	     }	
-					
-	hasil = `➥${random}% gay \n✪\n➥${ga}`
-	
-        samu330.sendMessage(from, hasil, text)
-break
-					
+break		
 
 case 'lesb':
 samu330.updatePresence(from, Presence.composing)  
@@ -2095,6 +2070,79 @@ addFilter(from)
 break
 ///	
 **/	
+/**
+case 'sgay':
+addFilter(from)	
+if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
+gay = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam;
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
+owgig = await samu330.downloadMediaMessage(gay)
+	
+await fs.writeFileSync(`./stickgay.jpeg`, owgig)
+var imgbb2 = require('imgbb-uploader')
+anug = await imgbb2("20a14861e4f7591f3dc52649cb07ae02", './stickgay.jpeg')
+txtg = `${anug.display_url}`
+sgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${txtg}`)
+const bas642 = `data:image/jpeg;base64,${sgay.toString('base64')}`
+var mantap2 = await convertSticker(bas642, `🌈同性恋世界！ = ${sender[0].split('@')[0]}`, `Lalelilolu ᵈᵃʳʸ⛥`)
+var imageBuffer2 = new Buffer.from(mantap2, 'base64');
+samu330.sendMessage(from, imageBuffer2, sticker, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickgay.jpeg')
+} else {
+reply('Se nesecita una foto para hacer su sticker!');
+}	
+break**/		
+		
+case 'gay':
+samu330.updatePresence(from, Presence.composing)  
+if (!isGroup) return reply(mess.only.group)
+if (args.length < 1) return reply("Meniona a alguien, pajero!")		       
+//mentions(`@${mentioned[0].split('@')[0]}`, mentioned, true) 
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+try {
+ppimg = await samu330.getProfilePicture(mentioned[0])
+} catch {
+ppimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
+}
+Mh = await getBuffer(ppimg)
+await fs.writeFileSync(`./pictgay.jpeg`, Mh)
+var imgbb2 = require('imgbb-uploader')
+anug = await imgbb2("20a14861e4f7591f3dc52649cb07ae02", './pictgay.jpeg')
+txtg = `${anug.display_url}`
+ftgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${txtg}`)
+	
+	random = `${Math.floor(Math.random() * 100)}`
+	gay = random
+	if (gay < 10 ) {ga = '*100 % macho pecho peludo rompe lomo plateado xd*'}
+	else if (gay < 20 ) {ga = '*Usted es hetero bro 🤪🤙*'} 
+	else if (gay < 30 ) {ga = '*Hetero pero no al 100 % :v 🤔*'}
+	else if (gay < 40 ) {ga = '*Muy sospechoso, tengo mi dudas si eres o no eres 😑*'} 
+	else if (gay < 50 ) {ga = '*No sé, creo q te vi ayer besándote con Juan*\n*Dinos eres o no? 😏*'} 
+	else if (gay < 60 ) {ga = '*Muy sospechoso, dudas de tu sexualida :v*'} 
+	else if (gay < 70 ) {ga = '*Jaa ya lo perdimos gente, quiere salir del clóset 🥵*'} 
+	else if (gay < 80 ) {ga = '*Bueno gente, este ya probó pija y ya le gustó 🥵*'}
+	else {  ga = '*Paletazo, quiero nepe xfavor 🥵*'}	
+					
+hasil = `➥${random}% gay \n✪\n➥${ga}`
+
+const fgay = {
+key:
+{ fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ?
+{ remoteJid: "status@broadcast" } : {}) },
+message: { "imageMessage": { "mimetype": "image/jpeg","caption": `Lalelilolu ᵈᵃʳʸ⛥`, 'jpegThumbnail': fs.readFileSync('./src/gay.jpg')}}
+}
+contextInfo: {
+mentionedJid: [sender]}
+	
+samu330.sendMessage(from, ftgay, {quoted: fgay, caption: `⊱ღ ${mentioned[0].split('@')[0]} ღ⊱\n\n${hasil}`, sendEphemeral: true})
+if (gay < 85 ) {
+noneg = fs.readFileSync('./anishan/Ayy.mp3')  
+samu330.sendMessage(from, noneg, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true})
+}
+fs.unlinkSync('./stickgay.jpeg')
+break					
 		
 case 'miniprof':
 samu330.updatePresence(from, Presence.composing)  
