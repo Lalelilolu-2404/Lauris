@@ -262,7 +262,7 @@ message: {
 //}
 samu330.sendMessage(mdata.id, `😙Hola, @${num.split('@')[0]}, _*Bienvenido a :*_\n_*「 ${mdata.subject} 」*_\n\n_Sigue las reglas y manten una formalidad respetuosa_😉\n\nPara leer las reglas, escribe : *${prefix}rules*`, MessageType.text)
 const none2 = fs.readFileSync(`./src/stickers2/Bienvenido.webp`)
-samu330.sendMessage(mdata.id, none2, sticker)		
+samu330.sendMessage(mdata.id, none2, MessageType.sticker)		
 }
 //leave
 }  else if (anu.action == 'remove') {
@@ -273,7 +273,7 @@ _*Ojalá y le vaya bien, y más después..... que lo atropelle un tren!!🚉🤣
 //samu330.sendMessage(mdata.id, teks, MessageType.text,{ contextInfo: {"mentionedJid": [num]}})
 
 const none2 = fs.readFileSync(`./src/stickers2/Abandonar.webp`)
-samu330.sendMessage(mdata.id, none2, sticker})	
+samu330.sendMessage(mdata.id, none2, MessageType.sticker)	
 	
 } else if (anu.action == 'promote') {
 num = anu.participants[0]
