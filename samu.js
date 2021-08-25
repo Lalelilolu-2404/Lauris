@@ -2079,11 +2079,22 @@ addFilter(from)
 break
 ///	
 **/	
+await fs.writeFileSync(`./stickgay.jpeg`, owgig)
+var imgbb2 = require('imgbb-uploader')
+anug = await imgbb2("20a14861e4f7591f3dc52649cb07ae02", './stickgay.jpeg')
+txtg = `${anug.display_url}`
+sgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${txtg}`)
+const bas642 = `data:image/jpeg;base64,${sgay.toString('base64')}`
+var mantap2 = await convertSticker(bas642, `🌈同性恋世界！ = ${sender[0].split('@')[0]}`, `Lalelilolu ᵈᵃʳʸ⛥`)
+var imageBuffer2 = new Buffer.from(mantap2, 'base64');
+samu330.sendMessage(from, imageBuffer2, sticker, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickgay.jpeg')
 		
 case 'gay':
 addFilter(from)	
 if (!isGroup) return reply(mess.only.group)
-if (args.length < 1) return reply("Meniona a alguien, pajero!")		       
+if (args.length < 1) return reply("Meniona a alguien, pajero!")	
+samu330.updatePresence(from, Presence.composing) 
 //mentions(`@${mentioned[0].split('@')[0]}`, mentioned, true) 
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
@@ -2114,7 +2125,7 @@ ftgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${txtg}`)
 					
 hasil = `➥${random}% gay \n✪\n➥${ga}`
 	
-samu330.sendMessage(from, ftgay, MessageType.imagen, {quoted: fgay, caption: `⊱ღ ${mentioned[0].split('@')[0]} ღ⊱\n\n${hasil}`, sendEphemeral: true})
+samu330.sendMessage(from, ftgay, MessageType.image, {quoted: fgay, caption: `⊱ღ ${mentioned[0].split('@')[0]} ღ⊱\n\n${hasil}`, sendEphemeral: true})
 if (gayr > 80 ) {
 noneg = fs.readFileSync('./anishan/Ayy.mp3')  
 samu330.sendMessage(from, noneg, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true})
