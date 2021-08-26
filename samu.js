@@ -2256,20 +2256,22 @@ case prefix+ 'lewdkemo':
 **/
 case 'amongus':
 if (!isGroup) return reply(mess.only.group)
-//if (args.length < 1) return reply("Meniona a alguien,impostor!")	
+if (args.length < 1) return reply("Mentiona a los tripulantes!")	
 samu330.updatePresence(from, Presence.composing) 
-//if (sam.message.extendedTextMessage != undefined){
-if (sam.message.extendedTextMessage != undefined || sam.message.extendedTextMessage === null) return reply("Meniona a alguien,impostor!")
+//if (sam.message.extendedTextMessage != undefined){	
+if (sam.message.extendedTextMessage === undefined || sam.message.extendedTextMessage === null) return reply("Meniona a alguien,impostor!")
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 pro = '.\n'
 for (let _ of mentioned) {
 pro += `@${_.split('@')[0]}\n`
 }
+random = Math.floor(Math.random() * mentioned.length)
+i = random
 sus = 
 `.      　。　　　　•　    　ﾟ　　。
 　　.　　　.　　　  　　.　　　　　。　　   。　.
 　.　　      。　        ඞ   。　    .    •
-•            @${mentioned[0].split('@')[0]} was E j e c t e d
+•            @${mentioned[i].split('@')[0]} was E j e c t e d
                   1 impostor remain   。　.
 　 　　。　　 　　　　ﾟ　　　.　      　　　.
 ,　　　　.                  .`
