@@ -2229,7 +2229,55 @@ mdata = await samu330.groupMetadata(from)
             })	
 }
 break	
-	
+/////////////////////////
+/**		
+case prefix+ 'lewd':
+			lewdd = await axios.get('https://nekos.life/api/v2/img/lewd')
+			buflewd = await getBuffer(lewdd.data.url)
+			turbo.sendMessage(from, buflewd, image, { quoted: mek })
+
+			break
+	case prefix+ 'lewdk':
+			lewdkk = await axios.get('https://nekos.life/api/v2/img/lewdk')
+			lewdkz = await getBuffer(lewdkz.data.url)
+			turbo.sendMessage(from, lewdkz, image, { quoted: mek })
+			.catch(err =>{
+			  return('Tobat puasa goblokk..')
+			})
+			break
+case prefix+ 'lewdkemo':
+			lewdkm = await axios.get('https://nekos.life/api/v2/img/lewdkemo')
+			buflewd = await getBuffer(lewdkm.data.url)
+			turbo.sendMessage(from, buflewd, image, { quoted: mek })
+			.catch(err => {
+			return('Intentalo nuevamente..')
+			})
+			break
+**/
+case 'amongus':
+if (!isGroup) return reply(mess.only.group)
+//if (args.length < 1) return reply("Meniona a alguien,impostor!")	
+samu330.updatePresence(from, Presence.composing) 
+//if (sam.message.extendedTextMessage != undefined){
+if (sam.message.extendedTextMessage != undefined || sam.message.extendedTextMessage === null) return reply("Meniona a alguien,impostor!")
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+pro = '.\n'
+for (let _ of mentioned) {
+pro += `@${_.split('@')[0]}\n`
+}
+sus = 
+`.      　。　　　　•　    　ﾟ　　。
+　　.　　　.　　　  　　.　　　　　。　　   。　.
+　.　　      。　        ඞ   。　    .    •
+•            @${mentioned[0].split('@')[0]} was E j e c t e d
+                  1 impostor remain   。　.
+　 　　。　　 　　　　ﾟ　　　.　      　　　.
+,　　　　.                  .`
+//  turbo.groupRemove(from, mentioned)
+mentions(`${sus}`, mentioned, true)
+break		
+		
+///////////	
 			case 'waifu':
 			if (!isNsfw) return reply(mess.nsfw)
 			waifud = await axios.get('https://api.waifu.pics/nsfw/waifu')
