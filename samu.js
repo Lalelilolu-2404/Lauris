@@ -2275,15 +2275,15 @@ samu330.updatePresence(from, Presence.composing)
 if (sam.message.extendedTextMessage === undefined || sam.message.extendedTextMessage === null) return reply("Meniona a alguien,impostor!")
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 if (mentioned.length > 10) return reply('*Máximo 10 tripulantes*')
-const pro = ''
-for (let _ of mentioned) {
-pro += `@${_.split('@')[0]}\n`
+const pro = 'Tripulantes a bordo'
+for (let j = 0; j < mentioned.length; j++) {
+pro = pro + `@${mentioned[j].split('@')[0]}\n`
 }		
 samu330.sendMessage(from, fs.readFileSync('./temp/amongus/amongus1.jpg'), MessageType.image, {
 quoted: fimg,  
 caption: `${pro}`, 
 contextInfo: {
-mentionedJid: [mentioned[0], mentioned[1]],
+mentionedJid: [mentioned[0], mentioned],
 },
 })
 //mentions(`${pro}`, mentioned, true)
