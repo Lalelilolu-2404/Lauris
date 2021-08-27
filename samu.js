@@ -2244,7 +2244,7 @@ if (!isGroup) return reply(mess.only.group)
 if (isBan) return reply('*Lo siento pero usted es un usuario baneado, no puede hacer uso del bot!*')
 reply('*Buscando una buena imagen...*')
 pw = ["https://nekos.life/api/v2/img/lewd", "https://nekos.life/api/v2/img/lewdk", "https://nekos.life/api/v2/img/lewdkemo"]
-gat = gat[Math.floor(Math.random() * pw.length)]
+gat = pw[Math.floor(Math.random() * pw.length)]
 cat = await getJson(`${gat}`)
 sendFileFromUrl(cat.url, image, {quoted: fimg, caption: '💎 *Miau 🥵* 💠', sendEphemeral: true})
 addFilter(from)
