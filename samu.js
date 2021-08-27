@@ -2274,8 +2274,9 @@ if (args.length < 1) return reply("Mentiona a los tripulantes!")
 samu330.updatePresence(from, Presence.composing) 
 if (sam.message.extendedTextMessage === undefined || sam.message.extendedTextMessage === null) return reply("Meniona a alguien!! Impostor!")
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-if (mentioned.length > 10) return reply('*Máximo 10 tripulantes*')
-pro = 'Tripulantes a bordo'
+//if (mentioned.length > 10)
+reply(`*${mentioned.length} tripulantes*`)
+pro = 'Tripulantes a bordo\n'
 for (let j = 0; j < mentioned.length; j++) {
 pro = pro + `@${mentioned[j].split('@')[0]}\n`
 }	
@@ -2291,13 +2292,13 @@ mentionedJid: [mentioned],
 random = Math.floor(Math.random() * mentioned.length)
 i = random
 sus = 
-`.      　。　　　　•　    　ﾟ　　。。　　　　•　　ﾟ　　。
+`.      　。　　　　•　    　ﾟ　　。。　　　　•　　　。
 　　.　　　.　　　  　　.　　　　　。　　   。　.•   。 
 　.　　      。　        ඞ   。　    .    •    •  . 
 •          @${mentioned[i].split('@')[0]} was E j e c t e d
-                  1 impostor remain   。　.  •　
+                    Was the impostor     。　.  •　
 　 　　。　　 　　　　ﾟ　　　.　      　　　.	,　
-,　　　　.                  .	　.   .•       .• `
+,　　　　.         °        .	.   .•       .• `
 //  turbo.groupRemove(from, mentioned)
 mentions(`${sus}`, mentioned, true)
 break	
