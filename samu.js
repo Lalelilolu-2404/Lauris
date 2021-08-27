@@ -2383,16 +2383,16 @@ bdp = bd[Math.floor(Math.random() * bd.length)]
 sendFileFromUrl(bdp, image, {quoted: fimg, caption: `*Uwu Delphine*`, sendEphemeral: true})		
 break	
 		
-case 'FBI':
+case 'fbi':
 if (!isOwner) return reply('No eres mi dueño UnU')				
 reply('*Espera porfavor...*')
-samu330.sendMessage(from, fs.readFileSync('./media/Detente.mp4'), video, {quoted: fvid, mimetype: 'video/gif', caption: `*FBI, détengase perro*`, sendEphemeral: true})			
+samu330.sendMessage(from, fs.readFileSync('./media/Detente.mp4'), video, {quoted: fvid, mimetype: 'video/gif', caption: `*FBI, détengase perro*`, sendEphemeral: true, duration: -6666666})		
 break
 		
-case 'Quiero pack':
+case 'quiero pack':
 if (!isAdmin) return reply(mess.only.admin)			
 reply('*Espera porfavor...*')
-samu330.sendMessage(from, fs.readFileSync('./media/Vip.mp4'), video, {quoted: fvid, mimetype: 'video/gif', caption: `*Lean la Biblia perros*`, sendEphemeral: true})			
+samu330.sendMessage(from, fs.readFileSync('./media/Vip.mp4'), video, {quoted: fvid, mimetype: 'video/gif', caption: `*Lean la Biblia perros*`, sendEphemeral: true, duration: -6666666})			
 break
 ////		
 			case 'waifu':
