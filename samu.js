@@ -2252,16 +2252,33 @@ addFilter(from)
 break
 
 /////////
+case 'gay':
+	random = Math.floor(Math.random() * 100)
+	gayr = random
+	if (gayr < 10 ) {ga = '100 % macho pecho peludo, lomo plateado xd'}
+					
+//const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay \n✪\n➥${ga}\n\n@${sender.replace("@s.whatsapp.net", "")}`
+const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay \n✪\n➥${ga}`
+samu330.sendMessage(from, ftgay, MessageType.image, {
+quoted: fgay, 
+//caption: `${hasil}\n${pushname}`, 
+caption: `${hasil}`, 
+contextInfo: {
+mentionedJid: [sender, mentioned[0]],
+},
+})
+//samu330.sendMessage(from, ftgay, MessageType.image, {quoted: fgay, caption: `⊱ღ ${mentioned[0].split('@')[0]} ღ⊱\n\n${hasil}`, sendEphemeral: true})
+break		
 		
 case 'amongus':
 addFilter(from)
 if (!isGroup) return reply(mess.only.group)
 if (args.length < 1) return reply("Mentiona a los tripulantes!")	
 samu330.updatePresence(from, Presence.composing) 
-//if (sam.message.extendedTextMessage != undefined){	
 if (sam.message.extendedTextMessage === undefined || sam.message.extendedTextMessage === null) return reply("Meniona a alguien,impostor!")
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-const pro = '.\n'
+if (mentioned.length > 10) return reply('*Máximo 10 tripulantes*')
+const pro = ''
 for (let _ of mentioned) {
 pro += `@${_.split('@')[0]}\n`
 }		
@@ -2269,10 +2286,10 @@ samu330.sendMessage(from, fs.readFileSync('./temp/amongus/amongus1.jpg'), Messag
 quoted: fimg,  
 caption: `${pro}`, 
 contextInfo: {
-mentionedJid: [sender, mentioned[0], mentioned[1]],
+mentionedJid: [mentioned[0], mentioned[1]],
 },
 })
-mentions(`${pro}`, mentioned, true)
+//mentions(`${pro}`, mentioned, true)
 random = Math.floor(Math.random() * mentioned.length)
 i = random
 sus = 
@@ -2550,7 +2567,7 @@ break
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							xpuss = await axios.get('https://nekos.life/api/v2/img/pussy')
 							buffer = await getBuffer(xpuss.data.url)
-							samu330.sendMessage(from, buffer, video, {quoted: sam, mimetype: 'video/gif'})
+							samu330.sendMessage(from, buffer, sticker, {quoted: sam, mimetype: 'video/gif'})
 						} catch (e) {
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌')
