@@ -621,7 +621,7 @@ samu330.on('chat-update', async(sam) => {
 	    
 
 	const reply = async(teks) => {
-                await samu330.sendMessage(from, teks, MessageType.text, { quoted: { key: {                
+                await belleu330.sendMessage(from, teks, MessageType.text, { quoted: { key: {                
 		fromMe: false,
                 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
                 },
@@ -2245,7 +2245,7 @@ if (isBan) return reply('*Lo siento pero usted es un usuario baneado, no puede h
 reply('*Buscando una buena imagen...*')
 pw = ["https://nekos.life/api/v2/img/lewd", "https://nekos.life/api/v2/img/lewdk", "https://nekos.life/api/v2/img/lewdkemo"]
 gat = gat[Math.floor(Math.random() * pw.length)]
-cat = await getJson(`${gat}`, {method: 'get'})
+cat = await getJson(`${gat}`)
 sendFileFromUrl(cat.url, image, {quoted: fimg, caption: '💎 *Miau 🥵* 💠', sendEphemeral: true})
 addFilter(from)
 break
@@ -2383,10 +2383,10 @@ bdp = bd[Math.floor(Math.random() * bd.length)]
 sendFileFromUrl(bdp, image, {quoted: fimg, caption: `*Uwu Delphine*`, sendEphemeral: true})		
 break	
 		
-case 'fbi':
+case 'FBI':
 if (!isOwner) return reply('No eres mi dueño UnU')				
 reply('*Espera porfavor...*')
-samu330.sendMessage(from, fs.readFileSync('./media/Detente.mp4'), video, {quoted: fvid, mimetype: 'video/gif', caption: `*FBI, détengase perro*`, sendEphemeral: true, duration: -6666666})		
+samu330.sendMessage(from, fs.readFileSync('./media/Detente.mp4'), video, {quoted: sam, mimetype: 'video/gif', caption: `*FBI, détengase perro*`, sendEphemeral: true, duration: -6666666})		
 break
 		
 case 'quiero pack':
