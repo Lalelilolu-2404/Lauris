@@ -2252,11 +2252,8 @@ addFilter(from)
 break
 
 /////////
+/**
 case 'gay':
-	random = Math.floor(Math.random() * 100)
-	gayr = random
-	if (gayr < 10 ) {ga = '100 % macho pecho peludo, lomo plateado xd'}
-					
 //const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay \n✪\n➥${ga}\n\n@${sender.replace("@s.whatsapp.net", "")}`
 const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay \n✪\n➥${ga}`
 samu330.sendMessage(from, ftgay, MessageType.image, {
@@ -2269,7 +2266,7 @@ mentionedJid: [sender, mentioned[0]],
 })
 //samu330.sendMessage(from, ftgay, MessageType.image, {quoted: fgay, caption: `⊱ღ ${mentioned[0].split('@')[0]} ღ⊱\n\n${hasil}`, sendEphemeral: true})
 break		
-		
+**/		
 case 'amongus':
 addFilter(from)
 if (!isGroup) return reply(mess.only.group)
