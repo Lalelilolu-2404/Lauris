@@ -2276,17 +2276,18 @@ if (sam.message.extendedTextMessage === undefined || sam.message.extendedTextMes
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 //if (mentioned.length > 10)
 nave = 'Tripulantes a bordo\n'
-for (let j = 0; j < mentioned.length; j++) {
+for (let j = 0; j < mentioned.length - 1; j++) {
 nave = nave + `@${mentioned[j].split('@')[0]}\n`
 }
-reply(`*${mentioned.length} tripulantes*\n\n${nave}`)
+reply(`*${mentioned.length - 1} tripulantes*\n\n${nave}`)
 const trip = `${nave}`
-samu330.sendMessage(from, fs.readFileSync('./temp/amongus/amongus1.jpg'), MessageType.image, {
-quoted: fgay, 
+imgus = fs.readFileSync('./temp/amongus/amongus1.jpg')
+samu330.sendMessage(from, imgus, MessageType.image, {
+quoted: fimg, 
 //caption: `${hasil}\n${pushname}`, 
 caption: `${trip}`, 
 contextInfo: {
-mentionedJid: [sender, mentioned],
+mentionedJid: [mentioned[0], mentioned[1]],
 },
 })
 //mentions(`${pro}`, mentioned, true)
