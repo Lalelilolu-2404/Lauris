@@ -2272,18 +2272,19 @@ addFilter(from)
 if (!isGroup) return reply(mess.only.group)
 if (args.length < 1) return reply("Mentiona a los tripulantes!")	
 samu330.updatePresence(from, Presence.composing) 
-if (sam.message.extendedTextMessage === undefined || sam.message.extendedTextMessage === null) return reply("Meniona a alguien,impostor!")
+if (sam.message.extendedTextMessage === undefined || sam.message.extendedTextMessage === null) return reply("Meniona a alguien!! Impostor!")
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 if (mentioned.length > 10) return reply('*Máximo 10 tripulantes*')
-const pro = 'Tripulantes a bordo'
+pro = 'Tripulantes a bordo'
 for (let j = 0; j < mentioned.length; j++) {
 pro = pro + `@${mentioned[j].split('@')[0]}\n`
-}		
+}	
+const trip = `${pro}`
 samu330.sendMessage(from, fs.readFileSync('./temp/amongus/amongus1.jpg'), MessageType.image, {
 quoted: fimg,  
-caption: `${pro}`, 
+caption: `${trip}`, 
 contextInfo: {
-mentionedJid: [mentioned[0], mentioned],
+mentionedJid: [mentioned],
 },
 })
 //mentions(`${pro}`, mentioned, true)
