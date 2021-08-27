@@ -2268,11 +2268,11 @@ samu330.sendMessage(from, fimg, MessageType.image, {
 quoted: fgay,  
 caption: `${pro}`, 
 contextInfo: {
-mentionedJid: [sender, mentioned],
+mentionedJid: [sender, mentionedJid],
 },
 })
 mentions(`${pro}`, mentioned, true)
-random = Math.floor(Math.random() * 10 + 1)
+random = Math.floor(Math.random() * mentioned.length)
 i = random
 sus = 
 `.      　。　　　　•　    　ﾟ　　。。　　　　•　　ﾟ　　。
@@ -2384,16 +2384,16 @@ bdp = bd[Math.floor(Math.random() * bd.length)]
 sendFileFromUrl(bdp, image, {quoted: fimg, caption: `*Uwu Delphine*`, sendEphemeral: true})		
 break	
 		
-case 'FBI':
+case 'Fbi':
 if (!isOwner) return reply('No eres mi dueño UnU')				
 reply('*Espera porfavor...*')
-samu330.sendMessage(from, fs.readFileSync('./media/Detente.mp4'), video, {quoted: sam, mimetype: 'video/gif', caption: `*FBI, détengase perro*`, sendEphemeral: true, duration: -6666666})		
+samu330.sendMessage(from, fs.readFileSync('./media/Detente.mp4'), video, {quoted: sam, mimetype: 'video/gif', caption: '*FBI, détengase perro*', sendEphemeral: true, duration: -6666666})		
 break
 		
-case 'quiero pack':
+case 'Vip':
 if (!isAdmin) return reply(mess.only.admin)			
 reply('*Espera porfavor...*')
-samu330.sendMessage(from, fs.readFileSync('./media/Vip.mp4'), video, {quoted: fvid, mimetype: 'video/gif', caption: `*Lean la Biblia perros*`, sendEphemeral: true, duration: -6666666})			
+samu330.sendMessage(from, fs.readFileSync('./media/Vip.mp4'), video, {quoted: sam, mimetype: 'video/gif', caption: '*Lean la Biblia puerc@s*', sendEphemeral: true, duration: -6666666})
 break
 
 ////		
