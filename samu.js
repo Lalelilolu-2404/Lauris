@@ -2275,19 +2275,19 @@ samu330.updatePresence(from, Presence.composing)
 if (sam.message.extendedTextMessage === undefined || sam.message.extendedTextMessage === null) return reply("Meniona a alguien!! Impostor!")
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 //if (mentioned.length > 10)
-nave = 'Tripulantes a bordo\n'
+nave = `${mentioned.length - 1} Tripulantes a bordo\n`
 for (let j = 0; j < mentioned.length - 1; j++) {
 nave = nave + `@${mentioned[j].split('@')[0]}\n`
 }
-reply(`*${mentioned.length - 1} tripulantes*\n\n${nave}`)
+//reply(`*${mentioned.length - 1} tripulantes*\n\n${nave}`)
 const trip = `${nave}`
 imgus = fs.readFileSync('./temp/amongus/amongus1.jpg')
 samu330.sendMessage(from, imgus, MessageType.image, {
-quoted: fimg, 
+quoted: fjeux, 
 //caption: `${hasil}\n${pushname}`, 
 caption: `${trip}`, 
 contextInfo: {
-mentionedJid: [mentioned[0], mentioned[1]],
+mentionedJid: [mentioned],
 },
 })
 //mentions(`${pro}`, mentioned, true)
@@ -2302,7 +2302,16 @@ sus =
 　 　　。　　 　　　　ﾟ　　　.　      　　　.	,　
 ,　　　　.         °        .	.   .•       .• `
 //  turbo.groupRemove(from, mentioned)
-mentions(`${sus}`, mentioned, true)
+//mentions(`${sus}`, mentioned, true)
+//samu330.sendMessage(mdata.id, teks, MessageType.text,{ contextInfo: {"mentionedJid": [num]}})
+samu330.sendMessage(from, sus, MessageType.text, {
+quoted: fjeux, 
+//caption: `${hasil}\n${pushname}`, 
+//caption: `${trip}`, 
+contextInfo: {
+mentionedJid: [mentioned[i]],
+},
+})
 break	
 /**		
 case 'amongus':
