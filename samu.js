@@ -1066,6 +1066,7 @@ ${bodyM} ${prefix}adminlist
 ${bodyM} ${prefix}waifu
 ${bodyM} ${prefix}nezuko
 ${bodyM} ${prefix}randomloli
+${bodyM} ${prefix}gatitas
 
 ===========================================
 _*JUEGOS*_
@@ -2275,6 +2276,7 @@ samu330.updatePresence(from, Presence.composing)
 if (sam.message.extendedTextMessage === undefined || sam.message.extendedTextMessage === null) return reply("Meniona a alguien!! Impostor!")
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 //if (mentioned.length > 10)
+members = []
 nave = `${mentioned.length - 1} Tripulantes a bordo\n`
 for (let j = 0; j < mentioned.length - 1; j++) {
 nave = nave + `@${mentioned[j].split('@')[0]}\n`
@@ -2286,21 +2288,22 @@ samu330.sendMessage(from, imgus, MessageType.image, {
 quoted: fjeux, 
 //caption: `${hasil}\n${pushname}`, 
 caption: `${trip}`, 
-contextInfo: {
-mentionedJid: [mentioned],
-},
-})
+contextInfo: { mentionedJid: members }})
+//contextInfo: {
+//mentionedJid: [mentioned],
+//},
+//})
 //mentions(`${pro}`, mentioned, true)
 random = Math.floor(Math.random() * mentioned.length)
 i = random
 sus = 
-`.      　。　　　　•　    　ﾟ　　。。　　　　•　　　。
-　　.　　　.　　　  　　.　　　　　。　　   。　.•   。 
-　.　　      。　        ඞ   。　    .    •    •  . 
+`.      　。　　　　•　    　ﾟ　　。。　　　　•　　    　。
+　　.　　　.　　　  　　.　　　　　。　　   。　 .•    。 
+　.　　      。　        ඞ   。　    .    •        •  . 
 •          @${mentioned[i].split('@')[0]} was E j e c t e d
-                    Was the impostor     。　.  •　
-　 　　。　　 　　　　ﾟ　　　.　      　　　.	,　
-,　　　　.         °        .	.   .•       .• `
+                    Was the impostor     。　.     •　
+　 　　。　　 　　　　ﾟ　　　.　      　　　.	  ,　
+,　　　　.         °        .	 .     .•       .• `
 //  turbo.groupRemove(from, mentioned)
 //mentions(`${sus}`, mentioned, true)
 //samu330.sendMessage(mdata.id, teks, MessageType.text,{ contextInfo: {"mentionedJid": [num]}})
