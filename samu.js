@@ -2265,7 +2265,7 @@ const pro = '.\n'
 for (let _ of mentioned) {
 pro += `@${_.split('@')[0]}\n`
 }		
-samu330.sendMessage(from, fs.readFileSync('./media/Vip.mp4'), MessageType.image, {
+samu330.sendMessage(from, fs.readFileSync('./temp/amongus/amongus1.jpg'), MessageType.image, {
 quoted: fimg,  
 caption: `${pro}`, 
 contextInfo: {
