@@ -1130,10 +1130,12 @@ stc = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 ╰─────────────
 │ *${prefix}aimg*
 │ _Stiker a imagen_
-╰─────────────
+╰──────────────╯`
+/**
 │ *${prefix}agif*
 │ _Stiker a gif_ 
 ╰──────────────╯`
+**/
 samu330.sendMessage(from, stc, MessageType.text, {quoted:
 { key: {
 fromMe: false,
@@ -1235,7 +1237,11 @@ case 'menu3':
 samu330.updatePresence(from, Presence.composing)
 if (!isRegister) return reply(mess.only.usrReg)
 uptime = process.uptime()
-
+/**		
+🚧 *El siguiente comando es para crashear los grupos!! este comando es muy peligroso :) solo administradores pueden usarlo.* 🚧
+*${prefix}buggp*
+_Usalo bajo tu responsabilidad!_
+**/
 const Menug = {
 text: `🔐Hola *${pushname}*
 
@@ -1258,12 +1264,7 @@ _Modo simsimi ilimitado_
 
 *Para que el bot entre a tu grupo, usa el siguiente comando:*
 ${prefix}entrabot *(Link del grupo)*
-	
-🚧 *El siguiente comando es para crashear los grupos!! este comando es muy peligroso :) solo administradores pueden usarlo.* 🚧
-*${prefix}buggp*
-_Usalo bajo tu responsabilidad!_
-
-
+================================
 ${bodyM} ${prefix}doxing _(Etiqueta un participante o algun mensaje)_
 ${bodyM} ${prefix}inspeccionar _(Requiere link de un grupo)_
 ${bodyM} ${prefix}nuevogrupo
@@ -1358,7 +1359,7 @@ ${bodyM} ${prefix}hexatext *(codigo hex a texto)*
 ${bodyM} ${prefix}wa.me
 ${bodyM} ${prefix}idiomas
 ${bodyM} ${prefix}reversa
-${bodyM} ${prefix}meme
+${bodyM} ${prefix}smeme
 ${bodyM} ${prefix}leermas _frase/frase_
 ${bodyM} ${prefix}mapa
 ${bodyM} ${prefix}soyyo
@@ -1383,7 +1384,7 @@ if (!isGroup) return reply(mess.only.group)
 if (!isNsfw) return reply(mess.nsfw)
 samuPn = fs.readFileSync('./src/+18.jpg')
 uptime = process.uptime()
-const Menu18 = `================================
+/**		
 ${bodyM} ${prefix}porno
 ${bodyM} ${prefix}lesbian 
 ${bodyM} ${prefix}tetas
@@ -1393,7 +1394,15 @@ ${bodyM} ${prefix}xnxx *(Link de Xnxx.com)*
 ${bodyM} ${prefix}pornode *(Japonesas)*
 ${bodyM} ${prefix}xvid *(Japonesas)*
 ${bodyM} ${prefix}dxvid *(Descarga videos de Xvideos)* _Requiere contraseña_
-${bodyM} ${prefix}pdf *(Nsfw en pdf)*
+${bodyM} ${prefix}pdf *(Nsfw en pdf)*	
+
+${bodyM} ${prefix}xpussy
+**/
+const Menu18 = `================================
+${bodyM} ${prefix}lesbian 
+${bodyM} ${prefix}tetas
+${bodyM} ${prefix}ass
+${bodyM} ${prefix}pussy
 
 _*🍒Estilo anime🍒*_
 
@@ -1405,7 +1414,6 @@ ${bodyM} ${prefix}hentai
 ${bodyM} ${prefix}ahegao
 ${bodyM} ${prefix}xboobs
 ${bodyM} ${prefix}xass
-${bodyM} ${prefix}xpussy
 ${bodyM} ${prefix}neko
 ${bodyM} ${prefix}muslos
 ${bodyM} ${prefix}patas
@@ -2230,30 +2238,53 @@ mdata = await samu330.groupMetadata(from)
 }
 break	
 /////////////////////////
-/**		
-case prefix+ 'lewd':
-			lewdd = await axios.get('https://nekos.life/api/v2/img/lewd')
-			buflewd = await getBuffer(lewdd.data.url)
-			turbo.sendMessage(from, buflewd, image, { quoted: mek })
+		
+case 'gatitas':
+if (!isGroup) return reply(mess.only.group)
+if (isBan) return reply('*Lo siento pero usted es un usuario baneado, no puede hacer uso del bot!*')
+reply('*Buscando una buena imagen...*')
+pw = ["https://nekos.life/api/v2/img/lewd", "https://nekos.life/api/v2/img/lewdk", "https://nekos.life/api/v2/img/lewdkemo"]
+gat = gat[Math.floor(Math.random() * pw.length)]
+cat = await getJson(`${gat}`, {method: 'get'})
+sendFileFromUrl(cat.url, image, {quoted: fimg, caption: '💎 *Miau 🥵* 💠', sendEphemeral: true})
+addFilter(from)
+break
 
-			break
-	case prefix+ 'lewdk':
-			lewdkk = await axios.get('https://nekos.life/api/v2/img/lewdk')
-			lewdkz = await getBuffer(lewdkz.data.url)
-			turbo.sendMessage(from, lewdkz, image, { quoted: mek })
-			.catch(err =>{
-			  return('Tobat puasa goblokk..')
-			})
-			break
-case prefix+ 'lewdkemo':
-			lewdkm = await axios.get('https://nekos.life/api/v2/img/lewdkemo')
-			buflewd = await getBuffer(lewdkm.data.url)
-			turbo.sendMessage(from, buflewd, image, { quoted: mek })
-			.catch(err => {
-			return('Intentalo nuevamente..')
-			})
-			break
-**/
+/////////
+case 'amongus':
+addFilter(from)
+if (!isGroup) return reply(mess.only.group)
+if (args.length < 1) return reply("Mentiona a los tripulantes!")	
+samu330.updatePresence(from, Presence.composing) 
+//if (sam.message.extendedTextMessage != undefined){	
+if (sam.message.extendedTextMessage === undefined || sam.message.extendedTextMessage === null) return reply("Meniona a alguien,impostor!")
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+const pro = '.\n'
+for (let _ of mentioned) {
+pro += `@${_.split('@')[0]}\n`
+}
+samu330.sendMessage(from, fimg, MessageType.image, {
+quoted: fgay,  
+caption: `${pro}`, 
+contextInfo: {
+mentionedJid: [sender, mentioned],
+},
+})
+mentions(`${pro}`, mentioned, true)
+random = Math.floor(Math.random() * 10 + 1)
+i = random
+sus = 
+`.      　。　　　　•　    　ﾟ　　。。　　　　•　　ﾟ　　。
+　　.　　　.　　　  　　.　　　　　。　　   。　.•   。 
+　.　　      。　        ඞ   。　    .    •    •  . 
+•          @${mentioned[i].split('@')[0]} was E j e c t e d
+                  1 impostor remain   。　.  •　
+　 　　。　　 　　　　ﾟ　　　.　      　　　.	,　
+,　　　　.                  .	　.   .•       .• `
+//  turbo.groupRemove(from, mentioned)
+mentions(`${sus}`, mentioned, true)
+break	
+/**		
 case 'amongus':
 addFilter(from)
 if (!isGroup) return reply(mess.only.group)
@@ -2305,7 +2336,7 @@ sus =
 ,　　　　.                  .	　.   .•       .• `
 //  turbo.groupRemove(from, mentioned)
 mentions(`${sus}`, mentioned, true)
-break		
+break	
 random3 = `${Math.floor(Math.random() * 3)+1}`	
 case 'top5':
 addFilter(from)
@@ -2341,8 +2372,29 @@ member.push(o4.jid)
 member.push(o5.jid)
 mentions(teks, member, true)
 break
-	
+**/	
 ///////////	
+case 'belle':
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(mess.nsfw)	
+if (isBan) return reply('*F, estás baneado :v!*')
+bd = ["https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-1-715x384.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-2-715x384.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-3-715x384.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-4-715x384.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-5-715x384.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-6-715x384.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-7-715x384.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-8-715x384.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-9-715x384.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-10.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-11-715x384.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-12-715x385.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-13-715x385.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-13-715x385.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-14-715x385.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-15.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-15.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-17.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-17.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-18.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-19.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-20.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-21.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-22.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-23.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-24.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-25.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-27.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-28.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-29.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-30.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-31.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-31.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-32.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-33.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-34.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-35.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-36.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-37.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-38.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-39.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-40.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-41.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche-1-715x536.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche-2-715x536.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche-3-715x537.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche-4-715x953.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche-5.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche-6.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche-7.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche-8.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche-9.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche-10-715x859.jpg"]
+bdp = bd[Math.floor(Math.random() * bd.length)]
+sendFileFromUrl(bdp, image, {quoted: fimg, caption: `*Uwu Delphine*`, sendEphemeral: true})		
+break	
+		
+case 'FBI':
+if (!isOwner) return reply('No eres mi dueño UnU')				
+reply('*Espera porfavor...*')
+samu330.sendMessage(from, fs.readFileSync('./media/Detente.mp4'), video, {quoted: fvid, mimetype: 'video/gif', caption: `*FBI, détengase perro*`, sendEphemeral: true})			
+break
+		
+case 'Quiero pack':
+if (!isAdmin) return reply(mess.only.admin)			
+reply('*Espera porfavor...*')
+samu330.sendMessage(from, fs.readFileSync('./media/Vip.mp4'), video, {quoted: fvid, mimetype: 'video/gif', caption: `*Lean la Biblia perros*`, sendEphemeral: true})			
+break
+////		
 			case 'waifu':
 			if (!isNsfw) return reply(mess.nsfw)
 			waifud = await axios.get('https://api.waifu.pics/nsfw/waifu')
@@ -4854,7 +4906,7 @@ const mp3111 = await samu330.downloadAndSaveMediaMessage(mp3121)
   }
 		reply(res.url)
 		break
-			
+/**			
 case 'pornode':
 if (!isRegister) return samu330.sendMessage(from, assistant, image, { quoted: noreg, caption: `😊Hola, ${timeFt}.\nAl parecer no estas registrado. Para registrarte usa el comando: *${prefix}reg*.`, thumbnail: assistant, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
 if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Japonesas`)
@@ -4910,7 +4962,7 @@ reply(`*Espere un momento, su video se esta enviando...*`)
 sendFileFromUrl(xv.mp4, video, {quoted: fvid, caption: `*⌜《Lalelilolu》\◔,◡◔,/ ت♡⌟* ⛥`})
 addFilter(from)
 break
-
+**/
 case 'lucky':
 if (!isGroup) return reply(mess.only.group)
 a = '🍇'
@@ -5528,6 +5580,7 @@ message: {
 })
 break
 case 'emoji':
+
 if (args.length == 0) return reply(`Ejemplo: ${prefix + command} 😭`)
 emoji = args[0]
 try {
@@ -5535,7 +5588,7 @@ emoji = encodeURIComponent(emoji[0])
 } catch {
 emoji = encodeURIComponent(emoji)
 }
-ini_buffer = await axios.get('https://api.lolhuman.xyz/api/emoji/${emoji}?apikey=${api}')
+ini_buffer = await getBuffer(`https://api.lolhuman.xyz/api/smoji/${emoji}?apikey=${api}`)
 await samu330.sendMessage(from, ini_buffer, sticker, { quoted: ftoko })
 break
 		
