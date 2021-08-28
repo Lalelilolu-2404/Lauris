@@ -2321,7 +2321,7 @@ nave = `*Lista de impostores :*\n\n
 member.push(tr1.jid)
 member.push(tr2.jid)
 const trip = `${nave}`
-k = Math.floor(Math.random() * 3 + 1)
+k = Math.floor(Math.random() * 3) + 1
 imgus = fs.readFileSync(`./temp/amongus/amongus${k}.jpg`)
 samu330.sendMessage(from, imgus, MessageType.image, {
 quoted: fjeux, 
@@ -2330,6 +2330,7 @@ contextInfo: { mentionedJid: [member[0], member[1]]}})
 //mentions(nave, member, true)		
 //random = Math.floor(Math.random() * mentioned.length)
 //i = random
+await sleep(300)
 sus = 
 `⠄⠄⠄⢰⣧⣼⣯⠄⣸⣠⣶⣶⣦⣾⠄⠄⠄⠄⡀⠄⢀⣿⣿⠄⠄⠄⢸⡇⠄⠄
  ⠄ඞ⠄⣾⣿⠿⠿⠶⠿⢿⣿⣿⣿⣿⣦⣤⣄⢀⡅⢠⣾⣛⡉⠄⠄⠄⠸⢀⣿⠄
@@ -2354,12 +2355,18 @@ contextInfo: {
 mentionedJid: [member[1]],
 },
 })
+/**
 setTimeout(() => {
 wa.promoteAdmin(from, member[1])
-}, 3000)
+}, 100)
 setTimeout(() => {
 wa.demoteAdmin(from, member[i])
-}, 10000)		
+}, 5000)
+**/
+await sleep(300)
+wa.promoteAdmin(from, member[1])
+await sleep(2000)
+wa.demoteAdmin(from, member[i])
 break	
 ///////////	
 case 'belle':
