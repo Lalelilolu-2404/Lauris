@@ -2504,16 +2504,16 @@ mentionedJid: [member[1]],
 })
 **/
 setTimeout(() => {
-reply(`${prefix}EmergencyMetting`)
+reply(`${prefix}emergencymetting`)
 }, 4000)
 break	
 		
-case 'EmergencyMetting':
+case 'emergencymetting':
 addFilter(from)
 addLevelingLevel(sender, 5)		
 let amongs = samu330.prepareMessageFromContent(from, {
 "listMessage":  {
-"title": "*AMONG'US X👑X*",
+"title": "*AMONGUS X👑X*",
 "description": `\n*Selecciona que hacer con el impostor restante!!`,
 "buttonText": "[Emergency Metting!!]",
 "listType": "SINGLE_SELECT",
