@@ -2355,10 +2355,10 @@ mentionedJid: [mentioned[i]],
 },
 })
 setTimeout(() => {
-await wa.promoteAdmin(from, mentioned[i])
+wa.promoteAdmin(from, mentioned[i])
 }, 3000)
 setTimeout(() => {
-await wa.demoteAdmin(from, mentioned[i])
+wa.demoteAdmin(from, mentioned[i])
 }, 10000)		
 break	
 ///////////	
