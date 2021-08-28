@@ -555,7 +555,7 @@ samu330.on('chat-update', async(sam) => {
 	})
 	})
 	}
-		    
+	/**	    
 	const nivelActual = getLevelingLevel(sender)
             var rango = '🎭Principiante'
             if (nivelActual == 10) {
@@ -573,7 +573,126 @@ samu330.on('chat-update', async(sam) => {
             } else if (nivelActual > 200) {
                 rango = '*🔮Nivel Maximo🗡*'
             }
-
+	**/
+	const nivelActual = getLevelingLevel(sender)
+            var rango = '🎭Principiante'
+            if (nivelActual <= 10) {
+                rango = '*Noob ㋡*'
+            } else if (nivelActual <= 20) {
+                rango = '*Noob ⚊¹*'
+            } else if (nivelActual <= 40) {
+                rango = '*Noob ⚊²*'
+	    } else if (nivelActual <= 60) {
+                rango = '*Noob ⚊³*'
+            } else if (nivelActual <= 80) {
+                rango = '*Noob ⚊⁴*'
+            } else if (nivelActual <= 100) {
+                rango = '*Noob ⚊⁵*'
+	    } else if (nivelActual <= 120) {
+                rango = '*Herald ⚊¹*'
+            } else if (nivelActual <= 140) {
+                rango = '*Herald ⚊²*'
+	    } else if (nivelActual <= 160) {
+                rango = '*Herlad ⚊³*'
+            } else if (nivelActual <= 180) {
+                rango = '*Herald ⚊⁴*'
+            } else if (nivelActual <= 200) {
+                rango = '*Herald ⚊⁵*'
+	    } else if (nivelActual <= 220) {
+                rango = '*Guardian ⚊¹*'
+            } else if (nivelActual <= 240) {
+                rango = '*Guardian ⚊²*'
+	    } else if (nivelActual <= 260) {
+                rango = '*Guardian ⚊³*'
+            } else if (nivelActual <= 280) {
+                rango = '*Guardian ⚊⁴*'
+            } else if (nivelActual <= 300) {
+                rango = '*Guardian ⚊⁵*'
+	    } else if (nivelActual <= 320) {
+                rango = '*Crusader ⚊¹*'
+            } else if (nivelActual <= 340) {
+                rango = '*Crusader ⚊²*'
+	    } else if (nivelActual <= 360) {
+                rango = '*Crusader ⚊³*'
+            } else if (nivelActual <= 380) {
+                rango = '*Crusader ⚊⁴*'
+            } else if (nivelActual <= 400) {
+                rango = '*Crusader ⚊⁵*'
+	} else if (nivelActual <= 420) {
+                rango = '*Archon ⚊¹*'
+            } else if (nivelActual <= 440) {
+                rango = '*Archon ⚊²*'
+	    } else if (nivelActual <= 460) {
+                rango = '*Archon ⚊³*'
+            } else if (nivelActual <= 480) {
+                rango = '*Archon ⚊⁴*'
+            } else if (nivelActual <= 500) {
+                rango = '*Archon ⚊⁵*'
+	} else if (nivelActual <= 520) {
+                rango = '*Legend ⚊¹*'
+            } else if (nivelActual <= 540) {
+                rango = '*legend ⚊²*'
+	    } else if (nivelActual <= 560) {
+                rango = '*Legend ⚊³*'
+            } else if (nivelActual <= 580) {
+                rango = '*Legend ⚊⁴*'
+            } else if (nivelActual <= 600) {
+                rango = '*Legend ⚊⁵*'
+	} else if (nivelActual <= 620) {
+                rango = '*Ancient ⚊¹*'
+            } else if (nivelActual <= 640) {
+                rango = '*Ancient ⚊²*'
+	    } else if (nivelActual <= 660) {
+                rango = '*Ancient ⚊³*'
+            } else if (nivelActual <= 680) {
+                rango = '*Ancient ⚊⁴*'
+            } else if (nivelActual <= 700) {
+                rango = '*Ancient ⚊⁵*'
+	} else if (nivelActual <= 750) {
+                rango = '*Divine ✷¹*'
+            } else if (nivelActual <= 800) {
+                rango = '*Divine ✷²*'
+	    } else if (nivelActual <= 850) {
+                rango = '*Divine ✷³*'
+            } else if (nivelActual <= 900) {
+                rango = '*Divine ✷⁴*'
+            } else if (nivelActual <= 950) {
+                rango = '*Divine ✷⁵*'
+	} else if (nivelActual <= 1000) {
+                rango = '*Immortal ✰¹*'
+            } else if (nivelActual <= 1100) {
+                rango = '*Immortal ✩²*'
+	    } else if (nivelActual <= 1200) {
+                rango = '*Immortal ✯³*'
+            } else if (nivelActual <= 1300) {
+                rango = '*Immortal ✬⁴*'
+            } else if (nivelActual <= 1400) {
+                rango = '*Immortal ✪⁵*'
+	} else if (nivelActual <= 1600) {
+                rango = '*Mythic ✯¹*'
+            } else if (nivelActual <= 1800) {
+                rango = '*Mythic ✯²*'
+	    } else if (nivelActual <= 2000) {
+                rango = '*Mythic ✯³*'
+            } else if (nivelActual <= 2200) {
+                rango = '*Mythic ✯⁴*'
+            } else if (nivelActual <= 2400) {
+                rango = '*Mythic ✯⁵*'
+	} else if (nivelActual <= 2800) {
+                rango = '*Shinigami ⍣*'
+            } else if (nivelActual <= 3200) {
+                rango = '*Shinigami ≛*'
+	    } else if (nivelActual <= 3400) {
+                rango = '*Shinigami ⍟*'
+            } else if (nivelActual <= 3800) {
+                rango = '*Shinigami 上帝*'
+            } else if (nivelActual <= 4400) {
+                rango = '*Awakened Shinigami 尔贡*'
+	    } else if (nivelActual <= 5000) {
+                rango = '*Mythic Shinigami 尔贡*'
+            } else if (nivelActual > 5000) {
+                rango = '*End level 程度❗*'
+            }
 	
 	if (isOwner) {
 	var tipoDeUsr = '*🔮Ownwer*'
@@ -2320,6 +2439,34 @@ nave = `*Lista de impostores :*\n
 `
 member.push(tr1.jid)
 member.push(tr2.jid)
+sus = 
+`⠄⠄⠄⢰⣧⣼⣯⠄⣸⣠⣶⣶⣦⣾⠄⠄⠄⠄⡀⠄⢀⣿⣿⠄⠄⠄⢸⡇⠄⠄
+ ⠄ඞ⠄⣾⣿⠿⠿⠶⠿⢿⣿⣿⣿⣿⣦⣤⣄⢀⡅⢠⣾⣛⡉⠄⠄⠄⠸⢀⣿⠄
+⠄⠄⢀⡋⣡⣴⣶⣶⡀⠄⠄⠙⢿⣿⣿⣿⣿⣿⣴⣿⣿⣿⢃⣤⣄⣀⣥⣿⣿⠄
+⠄⠄⢸⣇⠻⣿⣿⣿⣧⣀⢀⣠⡌⢻⣿⣿ඞ⣿⣿⣿⣿⣿⣿⠿⠿⠿⣿⣿⣿⠄
+⠄⢀⢸⣿⣷⣤⣤⣤⣬⣙⣛⢿⣿⣿⣿⣿⣿⣿⡿⣿⣿⡍⠄⠄⢀⣤⣄⠉⠋⣰
+⠄⣼⣖⣿⣿⣿ඞ⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⢇⣿⣿⡷⠶⠶⢿⣿⣿⠇⢀⣤
+⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣷⣶⣥⣴⣿⡗
+⣿@${member[0].split('@')[0]} was E j e c t e d
+⢸⣿⣦⣌⣛⣻⣿⣿⣧⠙⠛⠛⡭⠅⠒⠦⠭⣭⡻⣿⣿⣿⣿ඞ⣿⣿⣿⡿⠃⠄
+⠘⣿⣿⣿⣿⣿⣿⣿⣿⡆⠄⠄⠄⠄⠄⠄⠄⠄⠹⠈⢋⣽⣿⣿⣿⣿⣵⣾⠃⠄
+⠄⠘⣿⣿⣿⣿⣿⣿⣿⣿⠄⣴⣿⣶⣄⠄⣴⣶⠄⢀⣾⣿⣿⣿⣿⣿⣿⠃⠄⠄
+⠄⠄⠈⠻⣿⣿ඞ⣿⣿⣿⡄⢻⣿⣿⣿⠄⣿⣿⡀⣾⣿⣿⣿⣿⣛⠛⠁⠄⠄⠄
+⠄⠄⠄⠄⠈⠛⢿⣿⣿⣿⠁⠞⢿⣿⣿⡄⢿⣿⡇⣸⣿⣿⠿⠛⠁⠄⠄⠄⠄⠄
+⠄⠄⠄⠄⠄⠄⠄⠉⠻⣿⣿⣾⣦⡙⠻⣷⣾⣿⠃⠿⠋⠁⠄⠄⠄⠄⠄⢀⣠⣴
+⣿⣿⣿⣶⣶⣮⣥⣒⠲⢮⣝⡿⣿⣿⡆⣿⡿⠃⠄⠄⠄⠄⠄⠄⠄⣠⣴⣿⣿⣿
+⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
+@${member[1].split('@')[0]} Remains
+⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
+`
+const trip = `${nave}`
+k = Math.floor(Math.random() * 3) + 1
+imgus = fs.readFileSync(`./temp/amongus/amongus${k}.jpg`)
+samu330.sendMessage(from, imgus, MessageType.image, {
+quoted: fjeux, 
+caption: `${sus}`, 
+contextInfo: { mentionedJid: [member[0], member[1]]}})
+/**		
 const trip = `${nave}`
 k = Math.floor(Math.random() * 3) + 1
 imgus = fs.readFileSync(`./temp/amongus/amongus${k}.jpg`)
@@ -2355,18 +2502,16 @@ contextInfo: {
 mentionedJid: [member[1]],
 },
 })
-/**
-setTimeout(() => {
-wa.promoteAdmin(from, member[1])
-}, 100)
-setTimeout(() => {
-wa.demoteAdmin(from, member[i])
-}, 5000)
 **/
+setTimeout(() => {
+reply('_*Expulsar impostores!!*_')
+}, 3000)
+/**
 await sleep(300)
 await wa.promoteAdmin(from, member[1])
 await sleep(4000)
-await wa.demoteAdmin(from, member[i])
+await wa.demoteAdmin(from, member[1])
+**/
 break	
 ///////////	
 case 'belle':
