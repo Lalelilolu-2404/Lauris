@@ -2504,11 +2504,11 @@ mentionedJid: [member[1]],
 })
 **/
 setTimeout(() => {
-reply(`${prefix}Emergency Metting`)
+reply(`${prefix}EmergencyMetting`)
 }, 4000)
 break	
 		
-case 'Emergency Metting':
+case 'EmergencyMetting':
 addFilter(from)
 addLevelingLevel(sender, 5)		
 let amongs = samu330.prepareMessageFromContent(from, {
