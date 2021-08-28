@@ -2309,10 +2309,6 @@ addFilter(from)
 if (!isGroup) return reply(mess.only.group)
 reply(mess.wait)
 samu330.updatePresence(from, Presence.composing) 
-for (let mem of groupMembers) {
-teks += `┃ @${mem.jid.split('@')[0]}\n`
-members_id.push(mem.jid)
-}
 member = []	
 const am1 = groupMembers
 const am2 = groupMembers
@@ -2351,14 +2347,20 @@ sus =
 ⠄⠄⠄⠄⠈⠛⢿⣿⣿⣿⠁⠞⢿⣿⣿⡄⢿⣿⡇⣸⣿⣿⠿⠛⠁⠄⠄⠄⠄⠄
 ⠄⠄⠄⠄⠄⠄⠄⠉⠻⣿⣿⣾⣦⡙⠻⣷⣾⣿⠃⠿⠋⠁⠄⠄⠄⠄⠄⢀⣠⣴
 ⣿⣿⣿⣶⣶⣮⣥⣒⠲⢮⣝⡿⣿⣿⡆⣿⡿⠃⠄⠄⠄⠄⠄⠄⠄⣠⣴⣿⣿⣿`
-await sleep(10000)
+await sleep(8000)
 samu330.sendMessage(from, sus, MessageType.text, {
 quoted: fjeux, 
 contextInfo: {
 mentionedJid: [mentioned[i]],
 },
 })
-break			
+setTimeout(() => {
+await wa.promoteAdmin(from, mentioned[i])
+}, 3000)
+setTimeout(() => {
+await wa.demoteAdmin(from, mentioned[i])
+}, 10000)		
+break	
 ///////////	
 case 'belle':
 if (!isGroup) return reply(mess.only.group)
