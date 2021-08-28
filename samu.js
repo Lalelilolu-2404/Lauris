@@ -2314,7 +2314,7 @@ const am1 = groupMembers
 const am2 = groupMembers
 const tr1 = am1[Math.floor(Math.random() * am1.length)]
 const tr2 = am2[Math.floor(Math.random() * am2.length)]
-nave = `*Lista de impostores :*\n\n
+nave = `*Lista de impostores :*\n
 1= @${tr1.jid.split('@')[0]}\n
 2= @${tr2.jid.split('@')[0]}
 `
@@ -2364,9 +2364,9 @@ wa.demoteAdmin(from, member[i])
 }, 5000)
 **/
 await sleep(300)
-wa.promoteAdmin(from, member[1])
-await sleep(2000)
-wa.demoteAdmin(from, member[i])
+await wa.promoteAdmin(from, member[1])
+await sleep(4000)
+await wa.demoteAdmin(from, member[i])
 break	
 ///////////	
 case 'belle':
