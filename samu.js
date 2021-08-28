@@ -2254,20 +2254,6 @@ break
 
 /////////
 /**
-case 'gay':
-//const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay \n✪\n➥${ga}\n\n@${sender.replace("@s.whatsapp.net", "")}`
-const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay \n✪\n➥${ga}`
-samu330.sendMessage(from, ftgay, MessageType.image, {
-quoted: fgay, 
-//caption: `${hasil}\n${pushname}`, 
-caption: `${hasil}`, 
-contextInfo: {
-mentionedJid: [sender, mentioned[0]],
-},
-})
-//samu330.sendMessage(from, ftgay, MessageType.image, {quoted: fgay, caption: `⊱ღ ${mentioned[0].split('@')[0]} ღ⊱\n\n${hasil}`, sendEphemeral: true})
-break		
-**/		
 case 'amongus':
 addFilter(from)
 if (!isGroup) return reply(mess.only.group)
@@ -2316,6 +2302,75 @@ mentionedJid: [mentioned[i]],
 },
 })
 break	
+**/
+/////////		
+for (let mem of groupMembers) {
+teks += `┃ @${mem.jid.split('@')[0]}\n`
+members_id.push(mem.jid)
+}
+member = []
+const p1 = groupMembers
+const p2 = groupMembers
+const o1 = p1[Math.floor(Math.random() * p1.length)]
+const o2 = p2[Math.floor(Math.random() * p2.length)]
+teks = `
+*TOP CINCO:*\n
+1= @${o1.jid.split('@')[0]}\n\n
+2=@${o2.jid.split('@')[0]}\n\n
+`
+member.push(o1.jid)
+member.push(o2.jid)
+mentions(teks, member, true)		
+//////	
+case 'amongus':
+addFilter(from)
+if (!isGroup) return reply(mess.only.group)
+reply(mess.wait)
+samu330.updatePresence(from, Presence.composing) 
+if (sam.message.extendedTextMessage === undefined || sam.message.extendedTextMessage === null) return reply("Meniona a alguien!! Impostor!")
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+//if (mentioned.length > 10)
+members = []
+nave = `${mentioned.length - 1} Tripulantes a bordo\n`
+for (let j = 0; j < mentioned.length - 1; j++) {
+nave = nave + `@${mentioned[j].split('@')[0]}\n`
+}
+//reply(`*${mentioned.length - 1} tripulantes*\n\n${nave}`)
+const trip = `${nave}`
+imgus = fs.readFileSync('./temp/amongus/amongus1.jpg')
+samu330.sendMessage(from, imgus, MessageType.image, {
+quoted: fjeux, 
+//caption: `${hasil}\n${pushname}`, 
+caption: `${trip}`, 
+contextInfo: { mentionedJid: members }})
+//contextInfo: {
+//mentionedJid: [mentioned],
+//},
+//})
+//mentions(`${pro}`, mentioned, true)
+random = Math.floor(Math.random() * mentioned.length)
+i = random
+sus = 
+`.      　。　　　　•　    　ﾟ　　。。　　　　•　　    　。
+　　.　　　.　　　  　　.　　　　　。　　   。　 .•    。 
+　.　　      。　        ඞ   。　    .    •        •  . 
+•          @${mentioned[i].split('@')[0]} was E j e c t e d
+                    Was the impostor     。　.     •　
+　 　　。　　 　　　　ﾟ　　　.　      　　　.	  ,　
+,　　　　.         °        .	 .     .•       .• `
+//  turbo.groupRemove(from, mentioned)
+//mentions(`${sus}`, mentioned, true)
+//samu330.sendMessage(mdata.id, teks, MessageType.text,{ contextInfo: {"mentionedJid": [num]}})
+samu330.sendMessage(from, sus, MessageType.text, {
+quoted: fjeux, 
+//caption: `${hasil}\n${pushname}`, 
+//caption: `${trip}`, 
+contextInfo: {
+mentionedJid: [mentioned[i]],
+},
+})
+break			
+/////		
 /**		
 case 'amongus':
 addFilter(from)
@@ -4746,12 +4801,12 @@ reply(`*「 SU REGISTRO FUE UN EXITO😉 」*\n\n*◦ Nombre : ${nombre.trim()}*
 }
 addFilter(from)
 break
-
+/**
 case 'owner':
 case 'creador':
 await wa.sendContact(from, '33749258491', "⌜《Lalelilolu》\◔,◡◔,/ ت♡⌟ ⛥")
 break
-			
+**/			
 case 'smeme':
 gh = body.slice(7).replace(/ /g, '%20')
 wo1 = gh.split("|")[0];
