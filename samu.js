@@ -2504,15 +2504,37 @@ mentionedJid: [member[1]],
 })
 **/
 setTimeout(() => {
-reply('_*Expulsar impostores!!*_')
+reply(`${prefix}Emergency Metting`)
 }, 4000)
-/**
-await sleep(300)
-await wa.promoteAdmin(from, member[1])
-await sleep(4000)
-await wa.demoteAdmin(from, member[1])
-**/
 break	
+		
+case 'Emergency Metting':
+addFilter(from)
+addLevelingLevel(sender, 5)		
+let amongs = samu330.prepareMessageFromContent(from, {
+"listMessage":  {
+"title": "*AMONG'US X👑X*",
+"description": `\n*Selecciona que hacer con el impostor restante!!`,
+"buttonText": "[Emergency Metting!!]",
+"listType": "SINGLE_SELECT",
+"sections": [
+{
+"rows": [
+{
+"title": "Funar impostor!!",
+"rowId": `${prefix}funarlo`
+},
+{
+"title": "Banear impostor!!",
+"rowId": `${prefix}banearlo`
+},	
+]
+}
+]
+}
+}, {})
+samu330.relayWAMessage(amongs, {waitForAck: true})
+break
 ///////////	
 case 'belle':
 if (!isGroup) return reply(mess.only.group)
