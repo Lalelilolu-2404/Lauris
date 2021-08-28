@@ -1119,9 +1119,32 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 			}             
 			}                     
 			}
-			
+///////			
+			if (sam.message.listResponseMessage){
+				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
+				if (test.includes(`${prefix}banearlo`)){
+					if (!isGroup) return reply(mess.only.group)
+					amgf = fs.readFileSync(`./src/stickers2/Funao.webp`)
+					samu330.sendMessage(from, amgf, sticker, {sendEphemeral: true})
+					addFilter(from)
+			}
+			}
+			if (sam.message.listResponseMessage){
+				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
+				if (test.includes(`${prefix}killed`)){
+					if (!isGroup) return reply(mess.only.group)
+					sus = `@${member[1].split('@')[0]} was killed`
+					k = Math.floor(Math.random() * 16) + 1
+					imgkill = fs.readFileSync(`./temp/amongus/kill${k}.jpg`)
+					samu330.sendMessage(from, imgkill, MessageType.image, {
+					quoted: fjeux, 
+					caption: `${sus}`, 
+					contextInfo: { mentionedJid: [member[1]]}})
+					addFilter(from)
+			}
+			}
 	    
-	//Zona de Comandos🛵
+//Zona de Comandos🛵
 switch (command) {
 case 'help':
 case 'menu':
@@ -1873,17 +1896,17 @@ break
 
 case 'forme':
 		
-const onlyme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "Amistad", "Anna", "Amm", "Anni", "Así me gusta", "Asustado", "Ay caramba", "Ay me asusté", 
+const onlyme = ["69", "Ahohsi", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "Amistad", "Anna", "Amm", "Anni", "Así me gusta", "Asustado", "Ay caramba", "Ay me asusté", 
 		"Ban", "Besos", "Bien", "Bragas", "Buen culo", "Buenas noches", "Bye", "C rasca", "Cállate", "Cc", "Chelitas", "Chongo", "Colita", "Colitaxxx", 
 		"Contesta", "Contra el muro", "Ctm", "Cunni", "Dame", "Delito", "Doncon", "Duren", "En fin", "Encuérate", "Eres bonita", "F el grupo", "F en el chat", 
 		"F", "Facha", "Fallesí", "FBI", "Flap", "Funao", "Gansito", "Gatita", "Gomitas", "Háblame bonito", "Hack", "Haha no", "Hahaha", "Helado", "Hentai", 
-		"I wanna fuck you", "Ily", "Im dead", "Inflingir", "Jiji", "Jutsu", "Kuaker", "La ahorca", "La ata", "Las bragitas", "Lau", "Lit", "Llegó papi", "Lolxd", 
+		"I wanna fuck you", "Ily", "Im dead", "Inflingir", "Jálame", "Jiji", "Jutsu", "Kuaker", "La ahorca", "La ata", "Las bragitas", "Lau", "Lit", "Llegó papi", "Lolxd", 
 		"Love", "Ly", "Me dormí", "Me encanta", "Me prometiste", "Me vengo", "Meyou", "Mimitos", "Muy bien", "Nani", "Nel", "Nezuko chan", "No antojes", 
-		"No me interesa", "No puede ser", "No sé", "No te excites", "Oh yeah mami", "Onichan", "Ouioui", "Pack", "Packsito pls", "Paja", "Paja2", "Pansito", "Pantsu", "Patito", 
+		"No me interesa", "No mire", "No puede ser", "No sé", "No te excites", "Oh yeah mami", "Onichan", "Ouioui", "Pack", "Packsito pls", "Paja", "Paja2", "Pansito", "Pantsu", "Patito", 
 		"Pérame", "Pero", "Perro", "Pichula", "Pollita", "Pollito frito", "Preséntate", "Procede", "Purga", "Que weba", "Rico", "Rip", "Sad", "Safa ctv", "Santas escrituras", 
-		"Sapee", "Se encuera", "Se ofendió", "Se va xd", "Sex", "Sexo", "Shh", "Si mi amor", "Si xd", "Sit on me pls", "Slap", "Ta fuerte", "Te me calmas", 
-		"Toma tu galleta", "Triste", "Tu culito", "Turbio", "Tuyyo", "Ufff", "Uhm", "Umm", "Uwu", "Vamos a culear", "Vas a llorar", "Volví", "Wow", "Wtf", 
-		"Xdxd", "Y mis nudes", "Ya antojaron", "Ya es hora", "Ya sabes", "Ya se durmieron", "Ya se enojó", "Ya veo", "Yop", "Youme"]		
+		"Sapee", "Se encuera", "Se ofendió", "Se va xd", "Sex", "Sexo", "Shh", "Si mi amor", "Si xd", "Sit on me pls", "Slap", "Ta fuerte", "Takeself", "Te me calmas", 
+		"Toma tu galleta", "Tqm1", "Tqm2", "Triste", "Tu culito", "Turbio", "Tuyyo", "Ufff", "Uhm", "Umm", "Uwu", "Vamos a culear", "Vas a llorar", "Volví", "Wow", 
+		"Wtf", "Xdxd", "Y mis nudes", "Ya antojaron", "Ya es hora", "Ya sabes", "Ya se durmieron", "Ya se enojó", "Ya veo", "Yop", "Youme"]		
 	var textme = ''	
 	var abcd = ''
 	let n = 22
@@ -2455,9 +2478,9 @@ sus =
 ⠄⠄⠄⠄⠈⠛⢿⣿⣿⣿⠁⠞⢿⣿⣿⡄⢿⣿⡇⣸⣿⣿⠿⠛⠁⠄⠄⠄⠄⠄
 ⠄⠄⠄⠄⠄⠄⠄⠉⠻⣿⣿⣾⣦⡙⠻⣷⣾⣿⠃⠿⠋⠁⠄⠄⠄⠄⠄⢀⣠⣴
 ⣿⣿⣿⣶⣶⣮⣥⣒⠲⢮⣝⡿⣿⣿⡆⣿⡿⠃⠄⠄⠄⠄⠄⠄⠄⣠⣴⣿⣿⣿
-⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
+⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 @${member[1].split('@')[0]} Remains
-⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
+⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 `
 const trip = `${nave}`
 k = Math.floor(Math.random() * 3) + 1
@@ -2503,14 +2526,6 @@ mentionedJid: [member[1]],
 },
 })
 **/
-setTimeout(() => {
-reply(`${prefix}emergencymetting`)
-}, 4000)
-break	
-		
-case 'emergencymetting':
-addFilter(from)
-addLevelingLevel(sender, 5)		
 let amongs = samu330.prepareMessageFromContent(from, {
 "listMessage":  {
 "title": "*AMONGUS X👑X*",
@@ -2521,20 +2536,23 @@ let amongs = samu330.prepareMessageFromContent(from, {
 {
 "rows": [
 {
-"title": "Funar impostor!!",
-"rowId": `${prefix}funarlo`
+"title": "Banear impostor !!",
+"rowId": `${prefix}banearlo`
 },
 {
-"title": "Banear impostor!!",
-"rowId": `${prefix}banearlo`
+"title": "Kill tripulante 🔪!!",
+"rowId": `${prefix}killed`
 },	
 ]
 }
 ]
 }
 }, {})
+setTimeout(() => {
+//reply(`${prefix}emergencymetting`)
 samu330.relayWAMessage(amongs, {waitForAck: true})
-break
+}, 6000)
+break	
 ///////////	
 case 'belle':
 if (!isGroup) return reply(mess.only.group)
@@ -6666,7 +6684,7 @@ if (isNsfw) {
 }
 if (!isOwner){	
 if (!isNsfw) return
-const Fer =  ["Ban", "Funao", "Love", "Ya se durmieron", "Te me calmas", "Ta fuerte", "Hahaha", "F el grupo", "Ctm", "Shh", "Nani", "Lolxd", "F", "Amm", "Pichula", 
+const Fer =  ["Ban", "Funao", "Love", "Ya se durmieron", "Te me calmas", "Ta fuerte", "Takeself", "Hahaha", "F el grupo", "Ctm", "Shh", "Nani", "Lolxd", "F", "Amm", "Pichula", 
 	      "Si xd", "Haha no", "Paja2", "Perro", "Ufff"]		
   if (!isBan){
 	for (let i = 0; i < Fer.length; i++){
@@ -6709,17 +6727,17 @@ if (!isNsfw) return
 	
 }
 ///////Only me and mods
-const stickme = ["69", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "Amistad", "Anna", "Amm", "Anni", "Así me gusta", "Asustado", "Ay caramba", "Ay me asusté", 
+const stickme = ["69", "Ahohsi", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "Amistad", "Anna", "Amm", "Anni", "Así me gusta", "Asustado", "Ay caramba", "Ay me asusté", 
 		"Ban", "Besos", "Bien", "Bragas", "Buen culo", "Buenas noches", "Bye", "C rasca", "Cállate", "Cc", "Chelitas", "Chongo", "Colita", "Colitaxxx", 
 		"Contesta", "Contra el muro", "Ctm", "Cunni", "Dame", "Delito", "Doncon", "Duren", "En fin", "Encuérate", "Eres bonita", "F el grupo", "F en el chat", 
 		"F", "Facha", "Fallesí", "FBI", "Flap", "Funao", "Gansito", "Gatita", "Gomitas", "Háblame bonito", "Hack", "Haha no", "Hahaha", "Helado", "Hentai", 
-		"I wanna fuck you", "Ily", "Im dead", "Inflingir", "Jiji", "Jutsu", "Kuaker", "La ahorca", "La ata", "Las bragitas", "Lau", "Lit", "Llegó papi", "Lolxd", 
-		"Love", "Ly", "Me dormí", "Me encanta", "Me prometiste", "Me vengo", "Meyou", "Mimitos", "Muy bien", "Nani", "Nel", "No antojes", 
-		"No me interesa", "No puede ser", "No sé", "No te excites", "Oh yeah mami", "Onichan", "Ouioui", "Pack", "Packsito pls", "Paja", "Paja2", "Pansito", "Pantsu", "Patito", 
+		"I wanna fuck you", "Ily", "Im dead", "Inflingir", "Jálame", "Jiji", "Jutsu", "Kuaker", "La ahorca", "La ata", "Las bragitas", "Lau", "Lit", "Llegó papi", "Lolxd", 
+		"Love", "Ly", "Me dormí", "Me encanta", "Me prometiste", "Me vengo", "Meyou", "Mimitos", "Muy bien", "Nani", "Nel", "Nezuko chan", "No antojes", 
+		"No me interesa", "No mire", "No puede ser", "No sé", "No te excites", "Oh yeah mami", "Onichan", "Ouioui", "Pack", "Packsito pls", "Paja", "Paja2", "Pansito", "Pantsu", "Patito", 
 		"Pérame", "Pero", "Perro", "Pichula", "Pollita", "Pollito frito", "Preséntate", "Procede", "Purga", "Que weba", "Rico", "Rip", "Sad", "Safa ctv", "Santas escrituras", 
-		"Sapee", "Se encuera", "Se ofendió", "Se va xd", "Sex", "Sexo", "Shh", "Si mi amor", "Si xd", "Sit on me pls", "Slap", "Ta fuerte", "Te me calmas", 
-		"Toma tu galleta", "Triste", "Tu culito", "Turbio", "Tuyyo", "Ufff", "Uhm", "Umm", "Uwu", "Vamos a culear", "Vas a llorar", "Volví", "Wow", "Wtf", 
-		"Xdxd", "Y mis nudes", "Ya antojaron", "Ya es hora", "Ya sabes", "Ya se durmieron", "Ya se enojó", "Ya veo", "Yop", "Youme"]		
+		"Sapee", "Se encuera", "Se ofendió", "Se va xd", "Sex", "Sexo", "Shh", "Si mi amor", "Si xd", "Sit on me pls", "Slap", "Ta fuerte", "Takeself", "Te me calmas", 
+		"Toma tu galleta", "Tqm1", "Tqm2", "Triste", "Tu culito", "Turbio", "Tuyyo", "Ufff", "Uhm", "Umm", "Uwu", "Vamos a culear", "Vas a llorar", "Volví", "Wow", 
+		"Wtf", "Xdxd", "Y mis nudes", "Ya antojaron", "Ya es hora", "Ya sabes", "Ya se durmieron", "Ya se enojó", "Ya veo", "Yop", "Youme"]	
 
 if (isOwner){
 if (!isNsfw) return
