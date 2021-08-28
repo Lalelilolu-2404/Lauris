@@ -2323,15 +2323,14 @@ member.push(tr1.jid)
 member.push(tr2.jid)
 const trip = `${nave}`
 k = Math.floor(Math.random() * 3 + 1)
-/**imgus = fs.readFileSync(`./temp/amongus/amongus${k}.jpg`)
+imgus = fs.readFileSync(`./temp/amongus/amongus${k}.jpg`)
 samu330.sendMessage(from, imgus, MessageType.image, {
 quoted: fjeux, 
 caption: `${trip}`, 
-contextInfo: { mentionedJid: [member]}})
-**/
-mentions(nave, member, true)		
-random = Math.floor(Math.random() * mentioned.length)
-i = random
+contextInfo: { mentionedJid: [member[0], member[1]]}})
+//mentions(nave, member, true)		
+//random = Math.floor(Math.random() * mentioned.length)
+//i = random
 sus = 
 `⠄⠄⠄⢰⣧⣼⣯⠄⣸⣠⣶⣶⣦⣾⠄⠄⠄⠄⡀⠄⢀⣿⣿⠄⠄⠄⢸⡇⠄⠄
  ⠄ඞ⠄⣾⣿⠿⠿⠶⠿⢿⣿⣿⣿⣿⣦⣤⣄⢀⡅⢠⣾⣛⡉⠄⠄⠄⠸⢀⣿⠄
@@ -2340,7 +2339,7 @@ sus =
 ⠄⢀⢸⣿⣷⣤⣤⣤⣬⣙⣛⢿⣿⣿⣿⣿⣿⣿⡿⣿⣿⡍⠄⠄⢀⣤⣄⠉⠋⣰
 ⠄⣼⣖⣿⣿⣿ඞ⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⢇⣿⣿⡷⠶⠶⢿⣿⣿⠇⢀⣤
 ⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣷⣶⣥⣴⣿⡗
-@${mentioned[i].split('@')[0]} was E j e c t e d
+@${member[1].split('@')[0]} was E j e c t e d
 ⢸⣿⣦⣌⣛⣻⣿⣿⣧⠙⠛⠛⡭⠅⠒⠦⠭⣭⡻⣿⣿⣿⣿ඞ⣿⣿⣿⡿⠃⠄
 ⠘⣿⣿⣿⣿⣿⣿⣿⣿⡆⠄⠄⠄⠄⠄⠄⠄⠄⠹⠈⢋⣽⣿⣿⣿⣿⣵⣾⠃⠄
 ⠄⠘⣿⣿⣿⣿⣿⣿⣿⣿⠄⣴⣿⣶⣄⠄⣴⣶⠄⢀⣾⣿⣿⣿⣿⣿⣿⠃⠄⠄
@@ -2352,14 +2351,14 @@ sus =
 samu330.sendMessage(from, sus, MessageType.text, {
 quoted: fjeux, 
 contextInfo: {
-mentionedJid: [mentioned[i]],
+mentionedJid: [member[1]],
 },
 })
 setTimeout(() => {
-wa.promoteAdmin(from, mentioned[i])
+wa.promoteAdmin(from, member[1])
 }, 3000)
 setTimeout(() => {
-wa.demoteAdmin(from, mentioned[i])
+wa.demoteAdmin(from, member[i])
 }, 10000)		
 break	
 ///////////	
