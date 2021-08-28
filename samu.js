@@ -2304,162 +2304,61 @@ mentionedJid: [mentioned[i]],
 break	
 **/
 /////////		
-for (let mem of groupMembers) {
-teks += `┃ @${mem.jid.split('@')[0]}\n`
-members_id.push(mem.jid)
-}
-member = []
-const p1 = groupMembers
-const p2 = groupMembers
-const o1 = p1[Math.floor(Math.random() * p1.length)]
-const o2 = p2[Math.floor(Math.random() * p2.length)]
-teks = `
-*TOP CINCO:*\n
-1= @${o1.jid.split('@')[0]}\n\n
-2=@${o2.jid.split('@')[0]}\n\n
-`
-member.push(o1.jid)
-member.push(o2.jid)
-mentions(teks, member, true)		
-//////	
 case 'amongus':
 addFilter(from)
 if (!isGroup) return reply(mess.only.group)
 reply(mess.wait)
 samu330.updatePresence(from, Presence.composing) 
-if (sam.message.extendedTextMessage === undefined || sam.message.extendedTextMessage === null) return reply("Meniona a alguien!! Impostor!")
-mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-//if (mentioned.length > 10)
-members = []
-nave = `${mentioned.length - 1} Tripulantes a bordo\n`
-for (let j = 0; j < mentioned.length - 1; j++) {
-nave = nave + `@${mentioned[j].split('@')[0]}\n`
+for (let mem of groupMembers) {
+teks += `┃ @${mem.jid.split('@')[0]}\n`
+members_id.push(mem.jid)
 }
-//reply(`*${mentioned.length - 1} tripulantes*\n\n${nave}`)
+member = []	
+const am1 = groupMembers
+const am2 = groupMembers
+const tr1 = am1[Math.floor(Math.random() * am1.length)]
+const tr2 = am2[Math.floor(Math.random() * am2.length)]
+nave = `
+*Lista de impostores :*\n\N
+1= @${tr1.jid.split('@')[0]}\n\n
+2= @${tr2.jid.split('@')[0]}\n\n
+`
+member.push(tr1.jid)
+member.push(tr2.jid)
 const trip = `${nave}`
-imgus = fs.readFileSync('./temp/amongus/amongus1.jpg')
+k = Math.floor(Math.random() * 3 + 1)
+imgus = fs.readFileSync(`./temp/amongus/amongus${k}.jpg`)
 samu330.sendMessage(from, imgus, MessageType.image, {
 quoted: fjeux, 
-//caption: `${hasil}\n${pushname}`, 
 caption: `${trip}`, 
-contextInfo: { mentionedJid: members }})
-//contextInfo: {
-//mentionedJid: [mentioned],
-//},
-//})
-//mentions(`${pro}`, mentioned, true)
+contextInfo: { mentionedJid: [member]}})
+
 random = Math.floor(Math.random() * mentioned.length)
 i = random
 sus = 
-`.      　。　　　　•　    　ﾟ　　。。　　　　•　　    　。
-　　.　　　.　　　  　　.　　　　　。　　   。　 .•    。 
-　.　　      。　        ඞ   。　    .    •        •  . 
-•          @${mentioned[i].split('@')[0]} was E j e c t e d
-                    Was the impostor     。　.     •　
-　 　　。　　 　　　　ﾟ　　　.　      　　　.	  ,　
-,　　　　.         °        .	 .     .•       .• `
-//  turbo.groupRemove(from, mentioned)
-//mentions(`${sus}`, mentioned, true)
-//samu330.sendMessage(mdata.id, teks, MessageType.text,{ contextInfo: {"mentionedJid": [num]}})
+`⠄⠄⠄⢰⣧⣼⣯⠄⣸⣠⣶⣶⣦⣾⠄⠄⠄⠄⡀⠄⢀⣿⣿⠄⠄⠄⢸⡇⠄⠄
+ ⠄ඞ⠄⣾⣿⠿⠿⠶⠿⢿⣿⣿⣿⣿⣦⣤⣄⢀⡅⢠⣾⣛⡉⠄⠄⠄⠸⢀⣿⠄
+⠄⠄⢀⡋⣡⣴⣶⣶⡀⠄⠄⠙⢿⣿⣿⣿⣿⣿⣴⣿⣿⣿⢃⣤⣄⣀⣥⣿⣿⠄
+⠄⠄⢸⣇⠻⣿⣿⣿⣧⣀⢀⣠⡌⢻⣿⣿ඞ⣿⣿⣿⣿⣿⣿⠿⠿⠿⣿⣿⣿⠄
+⠄⢀⢸⣿⣷⣤⣤⣤⣬⣙⣛⢿⣿⣿⣿⣿⣿⣿⡿⣿⣿⡍⠄⠄⢀⣤⣄⠉⠋⣰
+⠄⣼⣖⣿⣿⣿ඞ⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⢇⣿⣿⡷⠶⠶⢿⣿⣿⠇⢀⣤
+⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣷⣶⣥⣴⣿⡗
+@${mentioned[i].split('@')[0]} was E j e c t e d
+⢸⣿⣦⣌⣛⣻⣿⣿⣧⠙⠛⠛⡭⠅⠒⠦⠭⣭⡻⣿⣿⣿⣿ඞ⣿⣿⣿⡿⠃⠄
+⠘⣿⣿⣿⣿⣿⣿⣿⣿⡆⠄⠄⠄⠄⠄⠄⠄⠄⠹⠈⢋⣽⣿⣿⣿⣿⣵⣾⠃⠄
+⠄⠘⣿⣿⣿⣿⣿⣿⣿⣿⠄⣴⣿⣶⣄⠄⣴⣶⠄⢀⣾⣿⣿⣿⣿⣿⣿⠃⠄⠄
+⠄⠄⠈⠻⣿⣿ඞ⣿⣿⣿⡄⢻⣿⣿⣿⠄⣿⣿⡀⣾⣿⣿⣿⣿⣛⠛⠁⠄⠄⠄
+⠄⠄⠄⠄⠈⠛⢿⣿⣿⣿⠁⠞⢿⣿⣿⡄⢿⣿⡇⣸⣿⣿⠿⠛⠁⠄⠄⠄⠄⠄
+⠄⠄⠄⠄⠄⠄⠄⠉⠻⣿⣿⣾⣦⡙⠻⣷⣾⣿⠃⠿⠋⠁⠄⠄⠄⠄⠄⢀⣠⣴
+⣿⣿⣿⣶⣶⣮⣥⣒⠲⢮⣝⡿⣿⣿⡆⣿⡿⠃⠄⠄⠄⠄⠄⠄⠄⣠⣴⣿⣿⣿`
+await sleep(10000)
 samu330.sendMessage(from, sus, MessageType.text, {
 quoted: fjeux, 
-//caption: `${hasil}\n${pushname}`, 
-//caption: `${trip}`, 
 contextInfo: {
 mentionedJid: [mentioned[i]],
 },
 })
 break			
-/////		
-/**		
-case 'amongus':
-addFilter(from)
-if (!isGroup) return reply(mess.only.group)
-if (args.length < 1) return reply("Mentiona a los tripulantes!")	
-samu330.updatePresence(from, Presence.composing) 
-//if (sam.message.extendedTextMessage != undefined){	
-if (sam.message.extendedTextMessage === undefined || sam.message.extendedTextMessage === null) return reply("Meniona a alguien,impostor!")
-mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-n = mentioned.length	
-member = []
-const allm = groupMembers
-pro = '.\n'
-for (let _ of mentioned) {
-pro += `@${_.split('@')[0]}\n`
-}
-const Atrip = new Array(10)
-const k = new Array(10)
-for (let i = 1; i <= n; i++){
-	Atrip[i] = mentioned[i-1]
-}
-if (n > 0 && n < 10) {
-//let k = 10 - n
-	for (let i = n + 1; i <= 10; i++){
-	 k[i] = Math.floor(Math.random() * allm.length) + 1
-	 	for (let j = n + 1; j < i; j++){
-			if (k[i] != k[j]){
-				i = i
-			}else if {i = i - 1}
-		}
-	}	
-}
-for (let i = n + 1; i <= 10; i++){
-	var l = k[i] 
-	Atrip[i] = allm[l]
-}
-text = ''
-for (let i = 1; i <= 10; i++){
-	text = text k[i] = mentioned[i-1]
-}		
-random = Math.floor(Math.random() * 10 + 1)
-i = random
-sus = 
-`.      　。　　　　•　    　ﾟ　　。。　　　　•　　ﾟ　　。
-　　.　　　.　　　  　　.　　　　　。　　   。　.•   。 
-　.　　      。　        ඞ   。　    .    •    •  . 
-•          @${mentioned[i].split('@')[0]} was E j e c t e d
-                  1 impostor remain   。　.  •　
-　 　　。　　 　　　　ﾟ　　　.　      　　　.	,　
-,　　　　.                  .	　.   .•       .• `
-//  turbo.groupRemove(from, mentioned)
-mentions(`${sus}`, mentioned, true)
-break	
-random3 = `${Math.floor(Math.random() * 3)+1}`	
-case 'top5':
-addFilter(from)
-if (!isGroup) return reply('*Este comando solo puede usarse en grupos🤕')
-for (let mem of groupMembers) {
-teks += `┃ @${mem.jid.split('@')[0]}\n`
-members_id.push(mem.jid)
-}
-member = []
-top5 = args.join(' ')
-const p1 = groupMembers
-const p2 = groupMembers
-const p3 = groupMembers
-const p4 = groupMembers
-const p5 = groupMembers
-const o1 = p1[Math.floor(Math.random() * p1.length)]
-const o2 = p2[Math.floor(Math.random() * p2.length)]
-const o3 = p3[Math.floor(Math.random() * p3.length)]
-const o4 = p4[Math.floor(Math.random() * p4.length)]
-const o5 = p5[Math.floor(Math.random() * p5.length)]
-teks = `
-*😵TOP CINCO:*\n\n
-1= @${o1.jid.split('@')[0]}\n\n
-2=@${o2.jid.split('@')[0]}\n\n
-3=@${o3.jid.split('@')[0]}\n\n
-4= @${o4.jid.split('@')[0]}\n\n
-5= @${o5.jid.split('@')[0]}\n\n\n_
-Top 5 de_ *${top5}* en este grupo`
-member.push(o1.jid)
-member.push(o2.jid)
-member.push(o3.jid)
-member.push(o4.jid)
-member.push(o5.jid)
-mentions(teks, member, true)
-break
-**/	
 ///////////	
 case 'belle':
 if (!isGroup) return reply(mess.only.group)
