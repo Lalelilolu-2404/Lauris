@@ -2323,12 +2323,13 @@ member.push(tr1.jid)
 member.push(tr2.jid)
 const trip = `${nave}`
 k = Math.floor(Math.random() * 3 + 1)
-imgus = fs.readFileSync(`./temp/amongus/amongus${k}.jpg`)
+/**imgus = fs.readFileSync(`./temp/amongus/amongus${k}.jpg`)
 samu330.sendMessage(from, imgus, MessageType.image, {
 quoted: fjeux, 
 caption: `${trip}`, 
 contextInfo: { mentionedJid: [member]}})
-
+**/
+mentions(nave, member, true)		
 random = Math.floor(Math.random() * mentioned.length)
 i = random
 sus = 
@@ -2347,7 +2348,7 @@ sus =
 ⠄⠄⠄⠄⠈⠛⢿⣿⣿⣿⠁⠞⢿⣿⣿⡄⢿⣿⡇⣸⣿⣿⠿⠛⠁⠄⠄⠄⠄⠄
 ⠄⠄⠄⠄⠄⠄⠄⠉⠻⣿⣿⣾⣦⡙⠻⣷⣾⣿⠃⠿⠋⠁⠄⠄⠄⠄⠄⢀⣠⣴
 ⣿⣿⣿⣶⣶⣮⣥⣒⠲⢮⣝⡿⣿⣿⡆⣿⡿⠃⠄⠄⠄⠄⠄⠄⠄⣠⣴⣿⣿⣿`
-await sleep(8000)
+//await sleep(8000)
 samu330.sendMessage(from, sus, MessageType.text, {
 quoted: fjeux, 
 contextInfo: {
