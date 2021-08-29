@@ -2458,7 +2458,7 @@ const tr1 = am1[Math.floor(Math.random() * am1.length)]
 //const tr2 = am2[Math.floor(Math.random() * am2.length)]
 const tr2 = am2[Math.floor(Math.random() * am2.length)]
 do {
-const tr2 = am2[Math.floor(Math.random() * am2.length)]
+tr2 = am2[Math.floor(Math.random() * am2.length)]
 }
 while (tr2 === tr1)
 const tr2 = tr2
