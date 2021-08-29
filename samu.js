@@ -2612,6 +2612,40 @@ if (!isAdmin) return reply(mess.only.admin)
 reply('*Espera porfavor...*')
 samu330.sendMessage(from, fs.readFileSync('./media/Vip.mp4'), video, {quoted: sam, mimetype: 'video/gif', caption: '*Lean la Biblia puerc@s*', sendEphemeral: true, duration: -6666666})
 break
+/**
+case 'mimitos':
+if (!isOwner) return reply('No eres mi dueño UnU')				
+reply('*Espera porfavor...*')
+samu330.sendMessage(from, fs.readFileSync('./media/Detente.mp4'), video, {quoted: sam, mimetype: 'video/gif', caption: '*FBI, détengase perro*', sendEphemeral: true, duration: -6666666})		
+break	
+**/
+case 'mimitos':
+addFilter(from)	
+if (!isGroup) return reply(mess.only.group)
+if (args.length < 1) return reply("Meniona a alguien, pajero!")	
+samu330.updatePresence(from, Presence.composing) 
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+try {
+ppimg = await samu330.getProfilePicture(mentioned[0])
+} catch {
+ppimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
+}
+}
+MLa = await getBuffer(ppimg)
+mimen = fs.readFileSync('./src/stickers.webp')  				
+//const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay \n✪\n➥${ga}\n\n@${sender.replace("@s.whatsapp.net", "")}`
+const mimit = `*⊱ღ @${mentioned[0].split('@')[0]} ღ⊱ recibiste mimitos*\n*De @${sender.replace("@s.whatsapp.net", "")}*`
+samu330.sendMessage(from, mimen, MessageType.sticker, {
+quoted: fgay, 
+//caption: `${hasil}\n${pushname}`, 
+caption: `${mimit}`, 
+contextInfo: {
+mentionedJid: [sender, mentioned[0]],
+},
+})
+//samu330.sendMessage(from, ftgay, MessageType.image, {quoted: fgay, caption: `⊱ღ ${mentioned[0].split('@')[0]} ღ⊱\n\n${hasil}`, sendEphemeral: true})
+break
 
 ////		
 			case 'waifu':
