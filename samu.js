@@ -1129,23 +1129,14 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					addFilter(from)
 			}
 			}
-	    		const replyamg ='El admin se la come doblada xd'
-			
-case 'replyamong':
-if (!isGroup) return reply(mess.only.group)
-arg1 = q
-if (!arg1) return reply(`Set ${prefix}replyamong El admin se la come xd`)
-argz = arg1.split("|")
-if (argz[0].spli('') != ''){
-replyamg = `${argz[0]}`
-}else {replyamg = 'El admin se la come doblada xd'}
-reply(`La respuesta fué cambiada a :\n ${replyamg}`)	
-break
 	    		if (sam.message.listResponseMessage){
 				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
 				if (test.includes(`${prefix}selacome`)){
 					if (!isGroup) return reply(mess.only.group)
-					samu330.sendMessage(from, replyamg, MessageType.text, {sendEphemeral: true})
+					selc = `*➥@${member[4].split('@')[0]} se la come doblada :v*`	
+					samu330.sendMessage(from, selc, MessageType.text, {
+					quoted: fjeux, 
+					contextInfo: { mentionedJid: [member[4]]}})
 					addFilter(from)
 			}
 			}
@@ -2508,8 +2499,6 @@ ${bodyM} *Participantes* : ${groupMembers.length}
 ${bodyM} *Impostores*    : 2
 
 ${bodyM} Para iniciar	 : ${prefix}amongus
-${bodyM} Para fijar respuesta : 
-\t${prefix}replyamong + ⌜Texto u Opción⌟
 ⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 *⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
 samu330.sendMessage(from, amgp, MessageType.text, {quoted: fjeux})
@@ -2525,6 +2514,7 @@ member = []
 const am1 = groupMembers
 const am2 = groupMembers
 const am3 = groupMembers
+const am4 = groupMembers
 tr11 = Math.floor(Math.random() * am1.length)
 //const tr1 = am1[Math.floor(Math.random() * am1.length)]
 const tr1 = am1[tr11]
@@ -2541,14 +2531,17 @@ tr31 = Math.floor(Math.random() * am3.length)
 }
 while (tr31 == tr21 || tr31 == tr11)
 const tr3 = am3[tr31]
+const tr4 = am4[Math.floor(Math.random() * am4.length)]
 nave = `*Lista de impostores :*\n
 1= @${tr1.jid.split('@')[0]}\n
 2= @${tr2.jid.split('@')[0]}\n
-3= @${tr3.jid.split('@')[0]}
+3= @${tr3.jid.split('@')[0]}\n
+3= @${tr4.jid.split('@')[0]}
 `
 member.push(tr1.jid)
 member.push(tr2.jid)
 member.push(tr3.jid)
+member.push(tr4.jid)
 sus = 
 `⠄⠄⠄⢰⣧⣼⣯⠄⣸⣠⣶⣶⣦⣾⠄⠄⠄⠄⡀⠄⢀⣿⣿⠄⠄⠄⢸⡇⠄⠄
  ⠄ඞ⠄⣾⣿⠿⠿⠶⠿⢿⣿⣿⣿⣿⣦⣤⣄⢀⡅⢠⣾⣛⡉⠄⠄⠄⠸⢀⣿⠄
