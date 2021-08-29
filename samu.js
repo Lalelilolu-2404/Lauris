@@ -2474,25 +2474,31 @@ break
 **/
 /////////
 case 'among-rules':
-arg1 = q
-if (!arg1) return reply(`Ejemplo ${prefix}spam texto|numero de mensajes`)
-argz = arg1.split("|")
-if (!argz) return reply(`Porfavor usa el simbolo "|" para dividir entre el mensaje y el numero de veces a enviar el mensaje`)
-if (isNaN(argz[1])) return reply(`Y el numero de veces a enviar?`)
-members = []
-for (let i = 0; i < argz[1]; i++){
-samu330.sendMessage(from, argz[0], MessageType.text, {quoted: { key : {fromMe: false, participant : "5214447000377-1624232428@s.whatsapp.net", ...(from ? { remoteJid: "@g.us" } : {})},message: {orderMessage: {itemCount : 9999999999999999,status: 1,surface : 1,message: `🥀Dans ton coeur🌹`,orderTitle: '',sellerJid: `Sam330`,thumbnail: fs.readFileSync('./src/fake.jpg')}},
-contextInfo: { mentionedJid: members }}})
-}
+samu330.updatePresence(from, Presence.composing)
+amgrul = `
+🔐Hola *${pushname}* 
+⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
+_*AMONG'US PLAY*_
+
+${bodyM} *Participantes* : ${groupMembers.length}
+${bodyM} *Impostores*    : 2
+
+${bodyM} Para fijar respuesta : 
+\t${prefixe}replyamong + ⌜4' Opción⌟
+⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
+*⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
+samu330.sendMessage(from, amgrul, MessageType.text, {quoted: fjeux})
 break
-		
+
+const replyamg = "El admin se la come doblada xd"
 case 'reply-among':
+if (!isGroup) return reply(mess.only.group)
 arg1 = q
 if (!arg1) return reply(`Set ${prefix}reply-among Texto (El admin se la come xd!)`)
 argz = arg1.split("|")
 if (argz[0].spli('') != ''){
-const replyamg = argz[0]
-}else {const replyamg = "El admin se la come doblada xd"}
+replyamg = argz[0]
+}else {replyamg = "El admin se la come doblada xd"}
 break
 		
 case 'amongus':
