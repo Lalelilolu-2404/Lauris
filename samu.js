@@ -2492,10 +2492,10 @@ tr21 = Math.floor(Math.random() * am2.length)
 while (tr21 == tr11)
 const tr2 = am2[tr21]
 tr31 = Math.floor(Math.random() * am3.length)
-//do {
-//tr31 = Math.floor(Math.random() * am3.length)
-//}
-//while (tr31 == tr21 || tr31 == tr11)
+do {
+tr31 = Math.floor(Math.random() * am3.length)
+}
+while (tr31 == tr21 || tr31 == tr11)
 const tr3 = am3[tr31]
 nave = `*Lista de impostores :*\n
 1= @${tr1.jid.split('@')[0]}\n
@@ -2504,7 +2504,7 @@ nave = `*Lista de impostores :*\n
 `
 member.push(tr1.jid)
 member.push(tr2.jid)
-merber.push(tr3.jid)
+member.push(tr3.jid)
 sus = 
 `⠄⠄⠄⢰⣧⣼⣯⠄⣸⣠⣶⣶⣦⣾⠄⠄⠄⠄⡀⠄⢀⣿⣿⠄⠄⠄⢸⡇⠄⠄
  ⠄ඞ⠄⣾⣿⠿⠿⠶⠿⢿⣿⣿⣿⣿⣦⣤⣄⢀⡅⢠⣾⣛⡉⠄⠄⠄⠸⢀⣿⠄
@@ -2645,19 +2645,17 @@ pmimg = await samu330.getProfilePicture(mentioned[0])
 pmimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 }
 }
-pictm = await getBuffer(pmimg)
+mimit = await getBuffer(pmimg)
 mimen = fs.readFileSync('./src/stickers.webp')  				
-//const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay \n✪\n➥${ga}\n\n@${sender.replace("@s.whatsapp.net", "")}`
-const mimit = `*⊱ღ @${mentioned[0].split('@')[0]} ღ⊱ recibiste mimitos*\n*De @${sender.replace("@s.whatsapp.net", "")}*`
-samu330.sendMessage(from, pictm, MessageType.image, {
-quoted: fnsfw, 
+const hast = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱ recibió mimitos de parte de : *@${sender.replace("@s.whatsapp.net", "")}*`
+samu330.sendMessage(from, mimit, MessageType.image, {
+quoted: fimg, 
 //caption: `${hasil}\n${pushname}`, 
-caption: `${mimit}`, 
+caption: `${hast}`, 
 contextInfo: {
 mentionedJid: [sender, mentioned[0]],
 },
 })
-//samu330.sendMessage(from, ftgay, MessageType.image, {quoted: fgay, caption: `⊱ღ ${mentioned[0].split('@')[0]} ღ⊱\n\n${hasil}`, sendEphemeral: true})
 addFilter(from)	
 break
 
