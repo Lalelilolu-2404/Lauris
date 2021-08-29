@@ -1129,6 +1129,14 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					addFilter(from)
 			}
 			}
+	    		if (sam.message.listResponseMessage){
+				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
+				if (test.includes(`${prefix}selacome`)){
+					if (!isGroup) return reply(mess.only.group)
+					samu330.sendMessage(from, replyamg, MessageType.text, {sendEphemeral: true})
+					addFilter(from)
+			}
+			}
 			if (sam.message.listResponseMessage){
 				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
 				if (test.includes(`${prefix}matartrip`)){
@@ -2620,9 +2628,8 @@ let amongs = samu330.prepareMessageFromContent(from, {
 "rowId": `${prefix}matartrip`
 },
 {
-//"title": "El admin se la come doblada xd",
-"title": `${replyamg}`,
-//"rowId": `${prefix}killed`
+"title": "El admin se la come doblada xd",
+"rowId": `${prefix}selacome`
 },
 ]
 }
