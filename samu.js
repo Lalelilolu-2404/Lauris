@@ -1134,9 +1134,8 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 				if (test.includes(`${prefix}matartrip`)){
 					if (!isGroup) return reply(mess.only.group)
 					sus = `⚠️!! @${member[2].split('@')[0]} was killed!!`
-					k = Math.floor(Math.random() * 16) + 1
+					k = Math.floor(Math.random() * 17) + 1
 					imgkill = fs.readFileSync(`./temp/amongus/kill${k}.JPG`)
-					mentions(`${sus}`, member, true)
 					samu330.sendMessage(from, imgkill, MessageType.image, {
 					quoted: fjeux, 
 					caption: `${sus}`, 
@@ -1154,13 +1153,24 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					//addBanned(member[1], args[1], ban)
 					}
 					sus = `☠️!! @${member[1].split('@')[0]} expulsado`	
-					samu330.sendMessage(from, imgkill, MessageType.image, {
+					samu330.sendMessage(from, sus, MessageType.text, {
 					quoted: fjeux, 
-					caption: `${sus}`, 
 					contextInfo: { mentionedJid: [member[1]]}})
 					addFilter(from)
 			}
 			}	    
+	    
+////
+/**
+samu330.sendMessage(from, stc, MessageType.text, {quoted:
+{ key: {
+fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+},
+message: {
+"documentMessage": { "title": "📚𝑆𝑡𝑖𝑘𝑒𝑟 𝑚𝑒𝑛𝑢", 'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}}
+}})
+**/
 //Zona de Comandos🛵
 switch (command) {
 case 'help':
@@ -2490,7 +2500,8 @@ while (tr31 == tr21 || tr31 == tr11)
 const tr3 = am3[tr31]
 nave = `*Lista de impostores :*\n
 1= @${tr1.jid.split('@')[0]}\n
-2= @${tr2.jid.split('@')[0]}
+2= @${tr2.jid.split('@')[0]}\n
+3= @${tr3.jid.split('@')[0]}
 `
 member.push(tr1.jid)
 member.push(tr2.jid)
