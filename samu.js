@@ -2474,7 +2474,6 @@ break
 **/
 /////////		
 case 'amongus':
-addFilter(from)
 if (!isGroup) return reply(mess.only.group)
 reply(mess.wait)
 samu330.updatePresence(from, Presence.composing) 
@@ -2584,7 +2583,7 @@ let amongs = samu330.prepareMessageFromContent(from, {
 "rowId": `${prefix}banearlo`
 },
 {
-"title": "Kill 2° impostor 🔪(kick)!!",
+"title": "Kill 2nd impostor 🔪(kick ⚠️)!!",
 "rowId": `${prefix}killed`
 },
 {
@@ -2603,7 +2602,8 @@ let amongs = samu330.prepareMessageFromContent(from, {
 setTimeout(() => {
 //reply(`${prefix}emergencymetting`)
 samu330.relayWAMessage(amongs, {waitForAck: true})
-}, 6000)
+}, 4000)
+addFilter(from)
 break	
 ///////////	
 case 'belle':
@@ -2634,7 +2634,6 @@ samu330.sendMessage(from, fs.readFileSync('./media/Detente.mp4'), video, {quoted
 break	
 **/
 case 'mimitos':
-addFilter(from)	
 if (!isGroup) return reply(mess.only.group)
 if (args.length < 1) return reply("Meniona a alguien, pajero!")	
 samu330.updatePresence(from, Presence.composing) 
@@ -2650,7 +2649,7 @@ pictm = await getBuffer(pmimg)
 mimen = fs.readFileSync('./src/stickers.webp')  				
 //const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay \n✪\n➥${ga}\n\n@${sender.replace("@s.whatsapp.net", "")}`
 const mimit = `*⊱ღ @${mentioned[0].split('@')[0]} ღ⊱ recibiste mimitos*\n*De @${sender.replace("@s.whatsapp.net", "")}*`
-samu330.sendMessage(from, pictm, MessageType.imagen, {
+samu330.sendMessage(from, pictm, MessageType.image, {
 quoted: fnsfw, 
 //caption: `${hasil}\n${pushname}`, 
 caption: `${mimit}`, 
@@ -2659,6 +2658,7 @@ mentionedJid: [sender, mentioned[0]],
 },
 })
 //samu330.sendMessage(from, ftgay, MessageType.image, {quoted: fgay, caption: `⊱ღ ${mentioned[0].split('@')[0]} ღ⊱\n\n${hasil}`, sendEphemeral: true})
+addFilter(from)	
 break
 
 ////		
