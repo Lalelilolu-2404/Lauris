@@ -1136,6 +1136,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					sus = `⚠️!! @${member[2].split('@')[0]} was killed!!`
 					k = Math.floor(Math.random() * 16) + 1
 					imgkill = fs.readFileSync(`./temp/amongus/kill${k}.JPG`)
+					mentions(`${sus}`, member, true)
 					samu330.sendMessage(from, imgkill, MessageType.image, {
 					quoted: fjeux, 
 					caption: `${sus}`, 
@@ -1149,7 +1150,8 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					if (!isGroup) return reply(mess.only.group)
 					if (!botAdmin) return reply(mess.only.Badmin)
 					if (member[1] != owner && member[1] != botNumber){
-					samu330.groupRemove(from, member[1])	
+					//samu330.groupRemove(from, member[1])	
+					//addBanned(member[1], args[1], ban)
 					}
 					sus = `☠️!! @${member[1].split('@')[0]} expulsado`	
 					samu330.sendMessage(from, imgkill, MessageType.image, {
@@ -2492,6 +2494,7 @@ nave = `*Lista de impostores :*\n
 `
 member.push(tr1.jid)
 member.push(tr2.jid)
+merber.push(tr3.jid)
 sus = 
 `⠄⠄⠄⢰⣧⣼⣯⠄⣸⣠⣶⣶⣦⣾⠄⠄⠄⠄⡀⠄⢀⣿⣿⠄⠄⠄⢸⡇⠄⠄
  ⠄ඞ⠄⣾⣿⠿⠿⠶⠿⢿⣿⣿⣿⣿⣦⣤⣄⢀⡅⢠⣾⣛⡉⠄⠄⠄⠸⢀⣿⠄
@@ -2636,8 +2639,8 @@ MLa = await getBuffer(ppimg)
 mimen = fs.readFileSync('./src/stickers.webp')  				
 //const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay \n✪\n➥${ga}\n\n@${sender.replace("@s.whatsapp.net", "")}`
 const mimit = `*⊱ღ @${mentioned[0].split('@')[0]} ღ⊱ recibiste mimitos*\n*De @${sender.replace("@s.whatsapp.net", "")}*`
-samu330.sendMessage(from, mimen, MessageType.sticker, {
-quoted: fgay, 
+samu330.sendMessage(from, Mla, MessageType.imagen, {
+quoted: fnsfw, 
 //caption: `${hasil}\n${pushname}`, 
 caption: `${mimit}`, 
 contextInfo: {
