@@ -1133,10 +1133,10 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
 				if (test.includes(`${prefix}selacome`)){
 					if (!isGroup) return reply(mess.only.group)
-					selc = `*➥@${member[4].split('@')[0]} se la come doblada :v*`	
+					selc = `*➥@${member[3].split('@')[0]} se la come doblada :v*`	
 					samu330.sendMessage(from, selc, MessageType.text, {
 					quoted: fjeux, 
-					contextInfo: { mentionedJid: [member[4]]}})
+					contextInfo: { mentionedJid: [member[3]]}})
 					addFilter(from)
 			}
 			}
@@ -2490,15 +2490,14 @@ break
 **/
 /////////
 case 'amgplay':
-amgp = `
-🔐Hola *${pushname}* 
+amgp = `🔐Hola *${pushname}* 
 ⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 _*AMONGUS PLAY*_
 
-${bodyM} *Participantes* : ${groupMembers.length}
-${bodyM} *Impostores*    : 2
+${bodyM} *Participantes : ${groupMembers.length}*
+${bodyM} *Impostores    : 2*
 
-${bodyM} Para iniciar	 : ${prefix}amongus
+${bodyM} *Para iniciar \t${prefix}amongus*
 ⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 *⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
 samu330.sendMessage(from, amgp, MessageType.text, {quoted: fjeux})
