@@ -2456,11 +2456,11 @@ const am1 = groupMembers
 const am2 = groupMembers
 const tr1 = am1[Math.floor(Math.random() * am1.length)]
 //const tr2 = am2[Math.floor(Math.random() * am2.length)]
-tr2 = am2[Math.floor(Math.random() * am2.length)]
+const tr2 = am2[Math.floor(Math.random() * am2.length)]
 do {
-tr2 = am2[Math.floor(Math.random() * am2.length)]
+const tr2 = am2[Math.floor(Math.random() * am2.length)]
 }
-while (tr1 == tr2)
+while (tr2 === tr1)
 const tr2 = tr2
 nave = `*Lista de impostores :*\n
 1= @${tr1.jid.split('@')[0]}\n
