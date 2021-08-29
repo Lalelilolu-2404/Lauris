@@ -1134,7 +1134,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
 				if (test.includes(`${prefix}selacome`)){
 					if (!isGroup) return reply(mess.only.group)
-					samu330.sendMessage(from, replyamg, MessageType.text, {sendEphemeral: true})
+					samu330.sendMessage(from, ${replyamg}, MessageType.text, {sendEphemeral: true})
 					addFilter(from)
 			}
 			}
@@ -1807,7 +1807,8 @@ break
 **/
 		
 case 'stickers':
-
+["Ban", "Funaoahaha", "F el grupo", "Ctm", "Shh", "Nani", "Lolxd", "F", "Amm", "Pichula", 
+	      "Si xd", "Haha no", "Paja2", "Perro", "Ufff"]
 stckr = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 ╰────ြ𝐒𝐭𝐢𝐜𝐤𝐞𝐫🃏
 ╭─────────────
@@ -1817,6 +1818,7 @@ stckr = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 │ *Ya se durmieron*
 │ *Te me calmas*
 │ *Ta fuerte*
+│ *Takeself*
 │ *Hahaha*
 │ *F el grupo*
 │ *Ctm*
@@ -1828,6 +1830,9 @@ stckr = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 │ *Pichula*
 │ *Si xd*
 │ *Haha no*
+│ *Paja2*
+│ *Perro*
+│ *Ufff*
 ╰──────────────╯`
 samu330.sendMessage(from, stckr, MessageType.text, {quoted:
 { key: {
