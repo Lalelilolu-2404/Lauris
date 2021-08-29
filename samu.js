@@ -2472,7 +2472,27 @@ mentionedJid: [mentioned[i]],
 })
 break	
 **/
-/////////		
+/////////
+case 'among-rules':
+arg1 = q
+if (!arg1) return reply(`Ejemplo ${prefix}spam texto|numero de mensajes`)
+argz = arg1.split("|")
+if (!argz) return reply(`Porfavor usa el simbolo "|" para dividir entre el mensaje y el numero de veces a enviar el mensaje`)
+if (isNaN(argz[1])) return reply(`Y el numero de veces a enviar?`)
+members = []
+for (let i = 0; i < argz[1]; i++){
+samu330.sendMessage(from, argz[0], MessageType.text, {quoted: { key : {fromMe: false, participant : "5214447000377-1624232428@s.whatsapp.net", ...(from ? { remoteJid: "@g.us" } : {})},message: {orderMessage: {itemCount : 9999999999999999,status: 1,surface : 1,message: `🥀Dans ton coeur🌹`,orderTitle: '',sellerJid: `Sam330`,thumbnail: fs.readFileSync('./src/fake.jpg')}},
+contextInfo: { mentionedJid: members }}})
+}
+break
+		
+case 'reply-among':
+arg1 = q
+if (!arg1) return reply(`Set ${prefix}reply-among Texto (El admin se la come xd!)`)
+argz = arg1.split("|")
+const replyamg = argz[0]
+break
+		
 case 'amongus':
 if (!isGroup) return reply(mess.only.group)
 reply(mess.wait)
