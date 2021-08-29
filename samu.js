@@ -1131,19 +1131,34 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 			}
 			if (sam.message.listResponseMessage){
 				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
-				if (test.includes(`${prefix}killed`)){
+				if (test.includes(`${prefix}matartrip`)){
 					if (!isGroup) return reply(mess.only.group)
-					sus = `@${member[1].split('@')[0]} was killed`
+					sus = `⚠️!! @${member[2].split('@')[0]} was killed!!`
 					k = Math.floor(Math.random() * 16) + 1
 					imgkill = fs.readFileSync(`./temp/amongus/kill${k}.JPG`)
+					samu330.sendMessage(from, imgkill, MessageType.image, {
+					quoted: fjeux, 
+					caption: `${sus}`, 
+					contextInfo: { mentionedJid: [member[2]]}})
+					addFilter(from)
+			}
+			}
+			if (sam.message.listResponseMessage){
+				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
+				if (test.includes(`${prefix}killed`)){
+					if (!isGroup) return reply(mess.only.group)
+					if (!botAdmin) return reply(mess.only.Badmin)
+					if (member[1] != owner && member[1] != botNumber){
+					samu330.groupRemove(from, member[1])	
+					}
+					sus = `☠️!! @${member[1].split('@')[0]} expulsado`	
 					samu330.sendMessage(from, imgkill, MessageType.image, {
 					quoted: fjeux, 
 					caption: `${sus}`, 
 					contextInfo: { mentionedJid: [member[1]]}})
 					addFilter(from)
 			}
-			}
-	    
+			}	    
 //Zona de Comandos🛵
 switch (command) {
 case 'help':
@@ -2454,6 +2469,7 @@ samu330.updatePresence(from, Presence.composing)
 member = []	
 const am1 = groupMembers
 const am2 = groupMembers
+const am3 = groupMembers
 tr11 = Math.floor(Math.random() * am1.length)
 //const tr1 = am1[Math.floor(Math.random() * am1.length)]
 const tr1 = am1[tr11]
@@ -2464,6 +2480,12 @@ tr21 = Math.floor(Math.random() * am2.length)
 }
 while (tr21 == tr11)
 const tr2 = am2[tr21]
+tr31 = Math.floor(Math.random() * am3.length)
+do {
+tr31 = Math.floor(Math.random() * am3.length)
+}
+while (tr31 == tr21 || tr31 == tr11)
+const tr3 = am3[tr31]
 nave = `*Lista de impostores :*\n
 1= @${tr1.jid.split('@')[0]}\n
 2= @${tr2.jid.split('@')[0]}
@@ -2536,23 +2558,27 @@ mentionedJid: [member[1]],
 **/
 let amongs = samu330.prepareMessageFromContent(from, {
 "listMessage":  {
-"title": "*AMONGUS X👑X*",
-"description": `*Uwu ${pushname}*\n*Un impostor aún sigue en la nave!!*\n*Selecciona que hacer con él ↴*`,
+"title": "\t*AMONGUS X👑X*",
+"description": `\t*Uwu ${pushname}*\n\t*Un impostor aún sigue en la nave!!*\n\t*Selecciona que hacer con él ↴*`,
 "buttonText": "[Emergency Metting!!]",
 "listType": "SINGLE_SELECT",
 "sections": [
 {
 "rows": [
 {
-"title": "Banear impostor !!",
+"title": "Banear 1er impostor !!",
 "rowId": `${prefix}banearlo`
 },
 {
-"title": "Kill tripulante 🔪!!",
+"title": "Kill 2° impostor 🔪(kick)!!",
 "rowId": `${prefix}killed`
 },
 {
-"title": "Se la come doblada xd",
+"title": "Kill tripulante (azar) 🔪!!",
+"rowId": `${prefix}matartrip`
+},
+{
+"title": "El admin se la come doblada xd",
 //"rowId": `${prefix}killed`
 },
 ]
