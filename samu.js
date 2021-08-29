@@ -2473,7 +2473,8 @@ mentionedJid: [mentioned[i]],
 break	
 **/
 /////////
-case 'amongrules':
+case 'amgplay':
+addFilter(from)
 samu330.updatePresence(from, Presence.composing)
 amgrul = `
 🔐Hola *${pushname}* 
@@ -2487,7 +2488,7 @@ ${bodyM} Para fijar respuesta :
 \t${prefixe}replyamong + ⌜Texto u Opción⌟
 ⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 *⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
-samu330.sendMessage(from, amgrul, MessageType.text, {quoted: fjeux})
+samu330.sendMessage(from, amgrul, MessageType.text, { quoted: fjeux})
 break
 
 const replyamg = "El admin se la come doblada xd"
@@ -2677,7 +2678,7 @@ pmimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 mimit = await getBuffer(pmimg)
 mimen = fs.readFileSync('./src/stickers/Mimitos.webp')  				
 //const hast = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱ recibió mimitos de parte de : *@${sender.replace("@s.whatsapp.net", "")}*`
-const hast = `*ℒℴѵℯ*¨*• ♡\t*»»ᅳlᅳoᅳvᅳeᅳ►*\n*Mimitos de : @${sender.replace("@s.whatsapp.net", "")}*\n*Para \t: ⊱ღ @${mentioned[0].split('@')[0]} ღ⊱*\n😍💞💘`
+const hast = `*ℒℴѵℯ*¨*• ♡\t*»»ᅳlᅳoᅳvᅳeᅳ►*\n*Mimitos de : @${sender.replace("@s.whatsapp.net", "")}*\n*Para : ⊱ღ @${mentioned[0].split('@')[0]} ღ⊱*\n😍💞💘`
 samu330.sendMessage(from, fs.readFileSync('./media/Mimitos.mp4'), video, {
 	quoted: sam, mimetype: 'video/gif', caption: `${hast}`, contextInfo: {mentionedJid: [sender, mentioned[0]]}, duration: -6666666})
 //samu330.sendMessage(from, mimit, MessageType.image, {
