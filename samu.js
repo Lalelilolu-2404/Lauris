@@ -1148,12 +1148,12 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 				if (test.includes(`${prefix}killed`)){
 					if (!isGroup) return reply(mess.only.group)
 					if (!botAdmin) return reply(mess.only.Badmin)
-					if (member[1] != owner && member[1] != botNumber){
+					//if (member[1].split('@')[0] != owner && member[1].split('@')[0] != botNumber){
 					//samu330.groupRemove(from, member[1])	
 					//addBanned(member[1], args[1], ban)
-					}
-					sus = `☠️!! @${member[1].split('@')[0]} expulsado`	
-					samu330.sendMessage(from, sus, MessageType.text, {
+					//}
+					susp = `☠️!! @${member[1].split('@')[0]} expulsado`	
+					samu330.sendMessage(from, susp, MessageType.text, {
 					quoted: fjeux, 
 					contextInfo: { mentionedJid: [member[1]]}})
 					addFilter(from)
@@ -2493,10 +2493,10 @@ tr21 = Math.floor(Math.random() * am2.length)
 while (tr21 == tr11)
 const tr2 = am2[tr21]
 tr31 = Math.floor(Math.random() * am3.length)
-do {
-tr31 = Math.floor(Math.random() * am3.length)
-}
-while (tr31 == tr21 || tr31 == tr11)
+//do {
+//tr31 = Math.floor(Math.random() * am3.length)
+//}
+//while (tr31 == tr21 || tr31 == tr11)
 const tr3 = am3[tr31]
 nave = `*Lista de impostores :*\n
 1= @${tr1.jid.split('@')[0]}\n
@@ -2650,7 +2650,7 @@ MLa = await getBuffer(ppimg)
 mimen = fs.readFileSync('./src/stickers.webp')  				
 //const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay \n✪\n➥${ga}\n\n@${sender.replace("@s.whatsapp.net", "")}`
 const mimit = `*⊱ღ @${mentioned[0].split('@')[0]} ღ⊱ recibiste mimitos*\n*De @${sender.replace("@s.whatsapp.net", "")}*`
-samu330.sendMessage(from, Mla, MessageType.imagen, {
+samu330.sendMessage(from, MLa, MessageType.imagen, {
 quoted: fnsfw, 
 //caption: `${hasil}\n${pushname}`, 
 caption: `${mimit}`, 
