@@ -2497,7 +2497,7 @@ ${bodyM} *Participantes* : ${groupMembers.length}
 ${bodyM} *Impostores*    : 2
 
 ${bodyM} Para fijar respuesta : 
-\t${prefix}replyamg + ⌜Texto u Opción⌟
+\t${prefix}replyamong + ⌜Texto u Opción⌟
 ⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 *⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
 samu330.sendMessage(from, amgp, MessageType.text, {quoted: fjeux})
