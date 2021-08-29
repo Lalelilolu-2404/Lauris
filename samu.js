@@ -2646,7 +2646,7 @@ pmimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 }
 }
 mimit = await getBuffer(pmimg)
-mimen = fs.readFileSync('./src/stickers.webp')  				
+//mimen = fs.readFileSync('./src/stickers.webp')  				
 const hast = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱ recibió mimitos de parte de : *@${sender.replace("@s.whatsapp.net", "")}*`
 samu330.sendMessage(from, mimit, MessageType.image, {
 quoted: fimg, 
