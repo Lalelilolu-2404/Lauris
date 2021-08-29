@@ -2455,7 +2455,13 @@ member = []
 const am1 = groupMembers
 const am2 = groupMembers
 const tr1 = am1[Math.floor(Math.random() * am1.length)]
-const tr2 = am2[Math.floor(Math.random() * am2.length)]
+//const tr2 = am2[Math.floor(Math.random() * am2.length)]
+tr2 = am2[Math.floor(Math.random() * am2.length)]
+do {
+tr2 = am2[Math.floor(Math.random() * am2.length)]
+}
+while (tr1 == tr2)
+const tr2 = tr2
 nave = `*Lista de impostores :*\n
 1= @${tr1.jid.split('@')[0]}\n
 2= @${tr2.jid.split('@')[0]}
@@ -2529,8 +2535,7 @@ mentionedJid: [member[1]],
 let amongs = samu330.prepareMessageFromContent(from, {
 "listMessage":  {
 "title": "*AMONGUS X👑X*",
-"description": `*Uwu ${pushname}, un impostor aún sigue en la nave*\n*Selecciona 
-que hacer con él!!`,
+"description": `*Uwu ${pushname}*\n*Un impostor aún sigue en la nave!!*\n*Selecciona que hacer con él ↴*`,
 "buttonText": "[Emergency Metting!!]",
 "listType": "SINGLE_SELECT",
 "sections": [
@@ -2543,7 +2548,11 @@ que hacer con él!!`,
 {
 "title": "Kill tripulante 🔪!!",
 "rowId": `${prefix}killed`
-},	
+},
+{
+"title": "Se la come doblada xd",
+//"rowId": `${prefix}killed`
+},
 ]
 }
 ]
