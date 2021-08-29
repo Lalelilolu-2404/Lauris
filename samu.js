@@ -2641,16 +2641,16 @@ samu330.updatePresence(from, Presence.composing)
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 try {
-ppimg = await samu330.getProfilePicture(mentioned[0])
+pmimg = await samu330.getProfilePicture(mentioned[0])
 } catch {
-ppimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
+pmimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 }
 }
-MLa = await getBuffer(ppimg)
+pictm = await getBuffer(pmimg)
 mimen = fs.readFileSync('./src/stickers.webp')  				
 //const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay \n✪\n➥${ga}\n\n@${sender.replace("@s.whatsapp.net", "")}`
 const mimit = `*⊱ღ @${mentioned[0].split('@')[0]} ღ⊱ recibiste mimitos*\n*De @${sender.replace("@s.whatsapp.net", "")}*`
-samu330.sendMessage(from, MLa, MessageType.imagen, {
+samu330.sendMessage(from, pictm, MessageType.imagen, {
 quoted: fnsfw, 
 //caption: `${hasil}\n${pushname}`, 
 caption: `${mimit}`, 
