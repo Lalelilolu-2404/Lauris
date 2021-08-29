@@ -1134,7 +1134,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
 				if (test.includes(`${prefix}selacome`)){
 					if (!isGroup) return reply(mess.only.group)
-					samu330.sendMessage(from, ${replyamg}, MessageType.text, {sendEphemeral: true})
+					samu330.sendMessage(from, replyamg, MessageType.text, {sendEphemeral: true})
 					addFilter(from)
 			}
 			}
