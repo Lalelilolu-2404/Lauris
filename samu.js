@@ -2454,13 +2454,16 @@ samu330.updatePresence(from, Presence.composing)
 member = []	
 const am1 = groupMembers
 const am2 = groupMembers
-const tr1 = am1[Math.floor(Math.random() * am1.length)]
+tr11 = Math.floor(Math.random() * am1.length)
+//const tr1 = am1[Math.floor(Math.random() * am1.length)]
+const tr1 = am1[tr11]
 //const tr2 = am2[Math.floor(Math.random() * am2.length)]
-const tr2 = am2[Math.floor(Math.random() * am2.length)]
+tr21 = Math.floor(Math.random() * am2.length)
 do {
-tr2 = am2[Math.floor(Math.random() * am2.length)]
+tr21 = Math.floor(Math.random() * am2.length)
 }
-while (tr2 === tr1)
+while (tr21 == tr11)
+const tr2 = am2[tr21]
 nave = `*Lista de impostores :*\n
 1= @${tr1.jid.split('@')[0]}\n
 2= @${tr2.jid.split('@')[0]}
