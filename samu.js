@@ -2461,7 +2461,6 @@ do {
 tr2 = am2[Math.floor(Math.random() * am2.length)]
 }
 while (tr2 === tr1)
-const tr2 = tr2
 nave = `*Lista de impostores :*\n
 1= @${tr1.jid.split('@')[0]}\n
 2= @${tr2.jid.split('@')[0]}
