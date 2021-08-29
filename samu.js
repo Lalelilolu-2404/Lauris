@@ -2474,31 +2474,31 @@ break
 **/
 /////////
 case 'amgplay':
-addFilter(from)
-samu330.updatePresence(from, Presence.composing)
-amgrul = `
+amgp = `
 🔐Hola *${pushname}* 
 ⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
-_*AMONG'US PLAY*_
+_*AMONGUS PLAY*_
 
 ${bodyM} *Participantes* : ${groupMembers.length}
 ${bodyM} *Impostores*    : 2
 
 ${bodyM} Para fijar respuesta : 
-\t${prefixe}replyamong + ⌜Texto u Opción⌟
+\t${prefix}replyamg + ⌜Texto u Opción⌟
 ⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 *⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
-samu330.sendMessage(from, amgrul, MessageType.text, { quoted: fjeux})
+samu330.sendMessage(from, amgp, MessageType.text, {quoted: fjeux})
+addFilter(from)
+addLevelingLevel(sender, 5)
 break
 
-const replyamg = "El admin se la come doblada xd"
+const replyamg ='El admin se la come doblada xd'
 case 'replyamong':
 if (!isGroup) return reply(mess.only.group)
 arg1 = q
-if (!arg1) return reply(`Set ${prefix}reply-among Texto (El admin se la come xd!)`)
+if (!arg1) return reply(`Set ${prefix}replyamg El admin se la come xd`)
 argz = arg1.split("|")
 if (argz[0].spli('') != ''){
-replyamg = argz[0]
+replyamg = `${argz[0]}`
 }else {replyamg = 'El admin se la come doblada xd'}
 break
 		
