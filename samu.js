@@ -2736,7 +2736,7 @@ mify = fs.readFileSync(`./media/Mimitos${k}.mp4`)
                     message: {
                         "imageMessage": {
                             "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc",
-                            "mimetype": "image/jpeg"',
+                            "mimetype": "image/jpeg",
                            // "caption": `「 *Holi cosita ^-^* 」\n ⊱ღ ${mentioned[0].split('@')[0]} ღ⊱`,
 			    "caption": `「 *Uwu cosita ^-^* 」\n ⊱ღ *Mimitos for you ♡* ღ⊱`,	
 			   // "caption": `「 *Uwu cosita :3* 」`,
