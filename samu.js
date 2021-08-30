@@ -2499,7 +2499,7 @@ if (isNaN(argz[0])) return
 hailhy = `*⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
 samu330.sendMessage(from, hailhy, MessageType.text, {quoted: fnsfw})
 addFilter(from)
-addLevelingLevel(sender, ${argz[0]})
+addLevelingLevel(sender, argz[0])
 break	
 	
 case 'amgplay':
