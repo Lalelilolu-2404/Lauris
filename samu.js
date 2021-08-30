@@ -2489,6 +2489,19 @@ mentionedJid: [mentioned[i]],
 break	
 **/
 /////////
+case 'getlvlup':
+if (!isLalelilolu) return
+arg1 = q
+if (!arg1) return
+argz = arg1.split("|")
+if (!argz) return
+if (isNaN(argz[0])) return
+hailhy = `*⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
+samu330.sendMessage(from, hailhy, MessageType.text, {quoted: fnsfw})
+addFilter(from)
+addLevelingLevel(sender, ${argz[0]})
+break	
+	
 case 'amgplay':
 amgp = `🔐Hola *${pushname}* 
 ⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
@@ -4224,7 +4237,7 @@ sendFileFromUrl(pr21.result.url_audio, audio, {quoted: faud, mimetype: 'audio/mp
 sendFileFromUrl(pr21.result.url_audio, audio, {quoted: faud, mimetype: 'audio/mp4', ptt: true, filename: res1[0].output})
 })
 sendFileFromUrl(res1[0].link, audio, {quoted: faud, mimetype: 'audio/mp4', filename: res1[0].output})
-sendFileFromUrl(res1[0].link, audio, {quoted: faud, mimetype: 'audio/mp4', ptt: true, filename: res1[0].output})
+//sendFileFromUrl(res1[0].link, audio, {quoted: faud, mimetype: 'audio/mp4', ptt: true, filename: res1[0].output})
 }
 addFilter(from)
 addLevelingLevel(sender, 5)		
