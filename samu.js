@@ -397,7 +397,7 @@ samu330.on('chat-update', async(sam) => {
 	const vicioNumber = ["573214985886"]
 	const isVicio = senderNumber == vicioNumber
 	
-	const laleliloluNumber = ["33749258491@s.whatsapp.net"]
+	const laleliloluNumber = ["33749258491"]
 	const isLalelilolu = senderNumber == laleliloluNumber
 	/////
 	if (isBanChat && !isOwner) return
