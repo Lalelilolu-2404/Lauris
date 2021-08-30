@@ -6858,7 +6858,7 @@ const stickme = ["69", "Ahohsi", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok
 		"Contesta", "Contra el muro", "Ctm", "Cunni", "Dame", "Delito", "Doncon", "Duren", "En fin", "Encuérate", "Eres bonita", "F el grupo", "F en el chat", 
 		"F", "Facha", "Fallesí", "FBI", "Flap", "Funao", "Gansito", "Gatita", "Gomitas", "Háblame bonito", "Hack", "Haha no", "Hahaha", "Helado", "Hentai", 
 		"I wanna fuck you", "Ily", "Im dead", "Inflingir", "Jálame", "Jiji", "Jutsu", "Kuaker", "La ahorca", "La ata", "Las bragitas", "Lau", "Lit", "Llegó papi", "Lolxd", 
-		"Love", "Ly", "Me dormí", "Me encanta", "Me prometiste", "Me vengo", "Meyou", "Mimitos", "Muy bien", "Nani", "Nel", "Nezuko chan", "No antojes", 
+		"Love", "Ly", "Me dormí", "Me encanta", "Me prometiste", "Me vengo", "Meyou", "Mimitos", "Muy bien", "Nani", "Nel", "No antojes", 
 		"No me interesa", "No mires", "No puede ser", "No sé", "No te excites", "Oh yeah mami", "Onichan", "Ouioui", "Pack", "Packsito pls", "Paja", "Paja2", "Pansito", "Pantsu", "Patito", 
 		"Pérame", "Pero", "Perro", "Pichula", "Pollita", "Pollito frito", "Preséntate", "Procede", "Purga", "Que weba", "Rico", "Rip", "Sad", "Safa ctv", "Santas escrituras", 
 		"Sapee", "Se encuera", "Se ofendió", "Se va xd", "Sex", "Sexo", "Shh", "Si mi amor", "Si xd", "Sit on me pls", "Slap", "Ta fuerte", "Takeself", "Te me calmas", 
