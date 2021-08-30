@@ -1124,6 +1124,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
 				if (test.includes(`${prefix}banearlo`)){
 					if (!isGroup) return reply(mess.only.group)
+					addBanned(member[1], args[1], ban)
 					amgf = fs.readFileSync(`./src/stickers2/Funao.webp`)
 					samu330.sendMessage(from, amgf, sticker, {sendEphemeral: true})
 					addFilter(from)
@@ -1160,7 +1161,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					if (!isGroup) return reply(mess.only.group)
 					if (!botAdmin) return reply(mess.only.Badmin)
 					//if (member[1].split('@')[0] != owner && member[1].split('@')[0] != botNumber){
-					//samu330.groupRemove(from, member[1])	
+					samu330.groupRemove(from, member[1])	
 					//addBanned(member[1], args[1], ban)
 					//}
 					susp = `☠️!! @${member[1].split('@')[0]} expulsado`	
@@ -2499,7 +2500,7 @@ if (isNaN(argz[0])) return
 hailhy = `*⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
 samu330.sendMessage(from, hailhy, MessageType.text, {quoted: fnsfw})
 addFilter(from)
-addLevelingLevel(sender, argz[0])
+addLevelingLevel(sender, argz[0].trim())
 break	
 
 case 'getxpup':
@@ -2512,7 +2513,7 @@ if (isNaN(argz[0])) return
 hailhx = `*⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
 samu330.sendMessage(from, hailhx, MessageType.text, {quoted: fnsfw})
 addFilter(from)
-addLevelingXp(sender, argz[0])
+addLevelingXp(sender, argz[0].trim())
 break		
 		
 case 'amgplay':
@@ -2721,7 +2722,7 @@ mentionedJid: [sender]}
 **/
 //mimen = fs.readFileSync('./src/stickers/Mimitos.webp')  				
 //const hast = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱ recibió mimitos de parte de : *@${sender.replace("@s.whatsapp.net", "")}*`
-const hast = `*ℒℴѵℯ*¨*• ♡\t*»»ᅳlᅳoᅳvᅳeᅳ►*\n*Mimitos de : @${sender.replace("@s.whatsapp.net", "")}*\n*Para : ⊱ღ @${mentioned[0].split('@')[0]} ღ⊱*\n😍💞💘`
+const hast = `*ℒℴѵℯ*¨*• ♡\t*»»ᅳlᅳoᅳvᅳeᅳ►*\n*Mimitos de : @${sender.replace("@s.whatsapp.net", "")}*\n*Para : ⊱ღ @${mentioned[0].split('@')[0]} ღ⊱*`
 k = Math.floor(Math.random() * 4) + 1
 mify = fs.readFileSync(`./media/Mimitos${k}.mp4`)
 samu330.sendMessage(from, mify, video, {
