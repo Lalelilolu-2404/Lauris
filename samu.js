@@ -1164,6 +1164,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					samu330.groupRemove(from, member[1])	
 					//addBanned(member[1], args[1], ban)
 					//}
+					reply(`${member[1]}`)
 					susp = `☠️!! @${member[1].split('@')[0]} expulsado`	
 					samu330.sendMessage(from, susp, MessageType.text, {
 					quoted: fjeux, 
