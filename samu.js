@@ -6055,6 +6055,7 @@ if (!botAdmin) return reply(mess.only.Badmin)
 		if (mentionUser.length == 1)
 		samu330.groupRemove(from, mentionUser)
 		//samu330.groupRemove(from, mentioned)
+		reply(`${mentionUser}`)
 		
 		//const none = fs.readFileSync(`./src/stickers2/Funao.webp`)
 		//samu330.sendMessage(from, none, sticker)	
@@ -6627,7 +6628,6 @@ if (mentioned.length !== 0){
 for (let i = 0; i < mentioned.length; i++){
 addBanned(mentioned[i], args[1], ban)
 }
-reply(`${args[1]}`)
 mentions(`@${mentioned[0].split('@')[0]} Usted a sido baneado, lo que significa que no podra usar el bot!`, mentioned, true)
 } else if (isQuotedMsg) {
 if (quotedMsg.sender.match('33749258491')) return reply(`🤨`)
