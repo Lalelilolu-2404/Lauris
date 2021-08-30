@@ -1124,7 +1124,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
 				if (test.includes(`${prefix}banearlo`)){
 					if (!isGroup) return reply(mess.only.group)
-					addBanned(member[1], args[1], ban)
+					addBanned(member[0], args[1], ban)
 					amgf = fs.readFileSync(`./src/stickers2/Funao.webp`)
 					samu330.sendMessage(from, amgf, sticker, {sendEphemeral: true})
 					addFilter(from)
@@ -6050,7 +6050,7 @@ if (!isAdmin) return reply(mess.only.admin)
 if (!botAdmin) return reply(mess.only.Badmin)
                 if (sam.message.extendedTextMessage != undefined){
                 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-		if (!mentioned) return reply(`exampol xd: ${prefix + command} @participante... o etiqueta el mensaje de la persona a eliminar`)
+		if (!mentioned) return reply(`Ejemplo : ${prefix + command} @participante... o etiqueta el mensaje de la persona a eliminar`)
 		//await wa.FakeTokoForwarded(from, `Baaaiii...`, '')
 		if (mentionUser.length == 1)
 		samu330.groupRemove(from, mentionUser)
@@ -6627,6 +6627,7 @@ if (mentioned.length !== 0){
 for (let i = 0; i < mentioned.length; i++){
 addBanned(mentioned[i], args[1], ban)
 }
+reply(`${args[1]}`)
 mentions(`@${mentioned[0].split('@')[0]} Usted a sido baneado, lo que significa que no podra usar el bot!`, mentioned, true)
 } else if (isQuotedMsg) {
 if (quotedMsg.sender.match('33749258491')) return reply(`🤨`)
