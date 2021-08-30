@@ -1164,12 +1164,11 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					//if (member[1].split('@')[0] != owner && member[1].split('@')[0] != botNumber){
 					//samu330.groupRemove(from, member[1])
 					//mentionUser = member[1]
-					samu330.groupRemove(from,member[1])
+					samu330.groupRemove(from, member[1])
 					//addBanned(member[1], args[1], ban)
 					//}
 					//reply(`${member[1]}`)
-					//susp = `☠️!! @${member[1].split('@')[0]} expulsado`	
-					susp = `${prefix}kick @${member[1].split('@')[0]}  *Expulsado ☠️*`	
+					susp = `☠️!! @${member[1].split('@')[0]} expulsado`		
 					samu330.sendMessage(from, susp, MessageType.text, {
 					quoted: fjeux, 
 					contextInfo: { mentionedJid: [member[1]]}})
