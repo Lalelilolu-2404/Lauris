@@ -2725,13 +2725,7 @@ const hast = `*ℒℴѵℯ*¨*• ♡\t*»»ᅳlᅳoᅳvᅳeᅳ►*\n*Mimitos de
 k = Math.floor(Math.random() * 4) + 1
 mify = fs.readFileSync(`./media/Mimitos${k}.mp4`)
 samu330.sendMessage(from, mify, video, {
-	quoted: { 
-	key:
-	{ fromMe: false,
-	participant: `0@s.whatsapp.net`, ...(from ?
-	{ remoteJid: "status@broadcast" } : {}) },
-	message: { "videoMessage": { "caption":"「 *Uwu cosita ^-^* 」\n ⊱ღ *Mimitos for you ♡* ღ⊱", 'jpegThumbnail': mimit}}
-	},
+	quoted: fnsfw,
 	mimetype: 'video/gif', caption: `${hast}`, contextInfo: {mentionedJid: [sender, mentioned[0]]}, duration: -6666666})
 addFilter(from)	
 break
