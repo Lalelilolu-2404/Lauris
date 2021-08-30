@@ -2501,7 +2501,20 @@ samu330.sendMessage(from, hailhy, MessageType.text, {quoted: fnsfw})
 addFilter(from)
 addLevelingLevel(sender, argz[0])
 break	
-	
+
+case 'getxpup':
+if (!isLalelilolu) return
+arg1 = q
+if (!arg1) return
+argz = arg1.split("|")
+if (!argz) return
+if (isNaN(argz[0])) return
+hailhx = `*⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
+samu330.sendMessage(from, hailhx, MessageType.text, {quoted: fnsfw})
+addFilter(from)
+addLevelingXp(sender, argz[0])
+break		
+		
 case 'amgplay':
 amgp = `🔐Hola *${pushname}* 
 ⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
