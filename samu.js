@@ -2712,7 +2712,7 @@ mimen = fs.readFileSync('./src/stickers/Mimitos.webp')
 //const hast = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱ recibió mimitos de parte de : *@${sender.replace("@s.whatsapp.net", "")}*`
 const hast = `*ℒℴѵℯ*¨*• ♡\t*»»ᅳlᅳoᅳvᅳeᅳ►*\n*Mimitos de : @${sender.replace("@s.whatsapp.net", "")}*\n*Para : ⊱ღ @${mentioned[0].split('@')[0]} ღ⊱*\n😍💞💘`
 samu330.sendMessage(from, fs.readFileSync('./media/Mimitos.mp4'), video, {
-	quoted: sam, mimetype: 'video/gif', caption: `${hast}`, contextInfo: {mentionedJid: [sender, mentioned[0]]}, duration: -6666666})
+	quoted: fnsfw, mimetype: 'video/gif', caption: `${hast}`, contextInfo: {mentionedJid: [sender, mentioned[0]]}, duration: -6666666})
 //samu330.sendMessage(from, mimit, MessageType.image, {
 /**
 samu330.sendMessage(from, mimen, sticker, {
