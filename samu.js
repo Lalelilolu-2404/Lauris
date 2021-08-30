@@ -2680,13 +2680,13 @@ break
 case 'fbixd':
 if (!isOwner) return reply('No eres mi dueño UnU')				
 reply('*Espera porfavor...*')
-samu330.sendMessage(from, fs.readFileSync('./media/Detente.mp4'), video, {quoted: sam, mimetype: 'video/gif', caption: '*FBI, détengase perro*', sendEphemeral: true, duration: -6666666})		
+samu330.sendMessage(from, fs.readFileSync('./media/Detente.mp4'), video, {quoted: fnsfw, mimetype: 'video/gif', caption: '*FBI, détengase perro*', sendEphemeral: true, duration: -6666666})		
 break
 		
 case 'vip':
 if (!isAdmin) return reply(mess.only.admin)			
 reply('*Espera porfavor...*')
-samu330.sendMessage(from, fs.readFileSync('./media/Vip.mp4'), video, {quoted: sam, mimetype: 'video/gif', caption: '*Lean la Biblia puerc@s*', sendEphemeral: true, duration: -6666666})
+samu330.sendMessage(from, fs.readFileSync('./media/Vip.mp4'), video, {quoted: fnsfw, mimetype: 'video/gif', caption: '*Lean la Biblia puerc@s*', sendEphemeral: true, duration: -6666666})
 break
 /**
 case 'mimitos':
@@ -2708,22 +2708,22 @@ pmimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 }
 }
 mimit = await getBuffer(pmimg)
+const flove = {
+key:
+{ fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ?
+{ remoteJid: "status@broadcast" } : {}) },
+message: { "videoMessage": { "caption":"✪ Mimitos for you ♡", 'jpegThumbnail': mimit}}
+}
+contextInfo: {
+mentionedJid: [sender]}
 mimen = fs.readFileSync('./src/stickers/Mimitos.webp')  				
 //const hast = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱ recibió mimitos de parte de : *@${sender.replace("@s.whatsapp.net", "")}*`
 const hast = `*ℒℴѵℯ*¨*• ♡\t*»»ᅳlᅳoᅳvᅳeᅳ►*\n*Mimitos de : @${sender.replace("@s.whatsapp.net", "")}*\n*Para : ⊱ღ @${mentioned[0].split('@')[0]} ღ⊱*\n😍💞💘`
-samu330.sendMessage(from, fs.readFileSync('./media/Mimitos.mp4'), video, {
-	quoted: fnsfw, mimetype: 'video/gif', caption: `${hast}`, contextInfo: {mentionedJid: [sender, mentioned[0]]}, duration: -6666666})
-//samu330.sendMessage(from, mimit, MessageType.image, {
-/**
-samu330.sendMessage(from, mimen, sticker, {
-quoted: fjeux, 
-//caption: `${hasil}\n${pushname}`, 
-caption: `${hast}`, 
-contextInfo: {
-mentionedJid: [sender, mentioned[0]],
-},
-})
-**/
+k = Math.floor(Math.random() * 4) + 1
+mify = fs.readFileSync(`./media/Mimitos${k}.mp4`)
+samu330.sendMessage(from, mify, video, {
+	quoted: flove, mimetype: 'video/gif', caption: `${hast}`, contextInfo: {mentionedJid: [sender, mentioned[0]]}, duration: -6666666})
 addFilter(from)	
 break
 
