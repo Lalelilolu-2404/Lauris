@@ -2517,6 +2517,7 @@ addLevelingXp(sender, argz[0].trim())
 break		
 		
 case 'amgplay':
+samu330.updatePresence(from, Presence.composing) 
 amgp = `🔐Hola *${pushname}* 
 ⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 _*AMONGUS PLAY*_
