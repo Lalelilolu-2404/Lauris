@@ -1127,6 +1127,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					addBanned(member[0], args[1], ban)
 					amgf = fs.readFileSync(`./src/stickers2/Funao.webp`)
 					samu330.sendMessage(from, amgf, sticker, {sendEphemeral: true})
+					mentions(`@${member[0].split('@')[0]} Usted a sido baneado, lo que significa que no podra usar el bot!`, mentioned, true)
 					addFilter(from)
 			}
 			}
@@ -1161,10 +1162,12 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					if (!isGroup) return reply(mess.only.group)
 					if (!botAdmin) return reply(mess.only.Badmin)
 					//if (member[1].split('@')[0] != owner && member[1].split('@')[0] != botNumber){
-					samu330.groupRemove(from, member[1])	
+					//samu330.groupRemove(from, member[1])
+					mentionUser = member[1]
+					samu330.groupRemove(from, mentionUser)
 					//addBanned(member[1], args[1], ban)
 					//}
-					reply(`${member[1]}`)
+					//reply(`${member[1]}`)
 					susp = `☠️!! @${member[1].split('@')[0]} expulsado`	
 					samu330.sendMessage(from, susp, MessageType.text, {
 					quoted: fjeux, 
@@ -6056,7 +6059,6 @@ if (!botAdmin) return reply(mess.only.Badmin)
 		if (mentionUser.length == 1)
 		samu330.groupRemove(from, mentionUser)
 		//samu330.groupRemove(from, mentioned)
-		reply(`${mentionUser}`)
 		
 		//const none = fs.readFileSync(`./src/stickers2/Funao.webp`)
 		//samu330.sendMessage(from, none, sticker)	
