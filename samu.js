@@ -2708,7 +2708,7 @@ pmimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 }
 }
 mimit = await getBuffer(pmimg)
-
+/**
 let flove = {
 key:
 { fromMe: false,
@@ -2716,16 +2716,23 @@ participant: `0@s.whatsapp.net`, ...(from ?
 { remoteJid: "status@broadcast" } : {}) },
 message: { "videoMessage": { "caption":"「 *Uwu cosita ^-^* 」\n ⊱ღ *Mimitos for you ♡* ღ⊱", 'jpegThumbnail': mimit}}
 }
-//contextInfo: {
-//mentionedJid: [sender]}
-
+contextInfo: {
+mentionedJid: [sender]}
+**/
 //mimen = fs.readFileSync('./src/stickers/Mimitos.webp')  				
 //const hast = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱ recibió mimitos de parte de : *@${sender.replace("@s.whatsapp.net", "")}*`
 const hast = `*ℒℴѵℯ*¨*• ♡\t*»»ᅳlᅳoᅳvᅳeᅳ►*\n*Mimitos de : @${sender.replace("@s.whatsapp.net", "")}*\n*Para : ⊱ღ @${mentioned[0].split('@')[0]} ღ⊱*\n😍💞💘`
 k = Math.floor(Math.random() * 4) + 1
 mify = fs.readFileSync(`./media/Mimitos${k}.mp4`)
 samu330.sendMessage(from, mify, video, {
-	quoted: flove, mimetype: 'video/gif', caption: `${hast}`, contextInfo: {mentionedJid: [sender, mentioned[0]]}, duration: -6666666})
+	quoted: { 
+	key:
+	{ fromMe: false,
+	participant: `0@s.whatsapp.net`, ...(from ?
+	{ remoteJid: "status@broadcast" } : {}) },
+	message: { "videoMessage": { "caption":"「 *Uwu cosita ^-^* 」\n ⊱ღ *Mimitos for you ♡* ღ⊱", 'jpegThumbnail': mimit}}
+	},
+	mimetype: 'video/gif', caption: `${hast}`, contextInfo: {mentionedJid: [sender, mentioned[0]]}, duration: -6666666})
 addFilter(from)	
 break
 
