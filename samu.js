@@ -1232,7 +1232,7 @@ ${bodyM} ${prefix}menu4 *(Menu de descargas)*
 ${bodyM} ${prefix}menu5 *(Comandos Tools)*
 ${bodyM} ${prefix}menu6 *(Comandos +18)* 
 ${bodyM} ${prefix}menu7 *(Comandos de logos)*
-${bodyM} ${prefix}menu8 *(Comandos para el Owner)*
+${bodyM} ${prefix}menu8 *(Only Owner)*
 ${bodyM} ${prefix}audios *(Audios)*
 ${bodyM} ${prefix}otak *(Otak_audios)*
 ${bodyM} ${prefix}bana *(Bananeraudios)*
@@ -1683,6 +1683,7 @@ addLevelingLevel(sender, 5)
 break
 case 'menu8':
 samu330.updatePresence(from, Presence.composing)
+if (!isOwner) return reply('No eres mi dueño UnU')
 if (!isRegister) return reply(mess.only.usrReg)
 const Menu8 = {
 text: `*COMANDOS PARA ${botNumber}*
