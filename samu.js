@@ -4377,6 +4377,7 @@ break
 case 'play':
 assistant = fs.readFileSync('./src/assistant.jpg')		
 if (!isRegister) return samu330.sendMessage(from, assistant, image, { quoted: noreg, caption: `😊Hola, ${timeFt}.\nAl parecer no estas registrado en, Para registrarte usa el comando: *${prefix}reg Nombre|Edad*.`, thumbnail: assistant, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
+if (args.length < 1) return reply('Y el Name de la música!? Pajero')
 reply(`*Espere un momento, su audio ${q} se esta descargando...*`)
 teks = args.join(' ')
 if (!teks.endsWith("-doc")){
