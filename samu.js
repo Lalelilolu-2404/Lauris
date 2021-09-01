@@ -1106,7 +1106,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 				})
 				samu330.groupRemove(from, [sender])
 				//await sleep(10000)
-				await sleep(100)
+				await sleep(300)
 				samu330.groupSettingChange(from, GroupSettingChange.messageSend, false)
 			}
 			}
