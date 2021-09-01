@@ -1384,7 +1384,6 @@ ${bodyM} ${prefix}tagall
 ${bodyM} ${prefix}adminlist
 ${bodyM} ${prefix}waifu
 ${bodyM} ${prefix}nezuko
-${bodyM} ${prefix}randomloli
 ${bodyM} ${prefix}gatitas
 
 ===========================================
