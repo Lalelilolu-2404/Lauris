@@ -984,6 +984,139 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 				}
 			}
 		}
+	    
+	    ///////
+	   if ((Object.keys(sam.message)[0] === 'ephemeralMessage' && JSON.stringify(sam.message).includes('EPHEMERAL_SETTING')) && sam.message.ephemeralMessage.message.protocolMessage.type === 3) {			bugquien = sam.participants[0]
+			samu330.groupSettingChange(from, GroupSettingChange.messageSend, true)
+			txt = `*Epaa.... Crash Bot Detectado!!!*
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+			
+			
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   \`\`\`BUG DETECTADO!!\`\`\`
+		   *MARCA COMO LEIDO ESTE CHAT, PARA QUE EL CRASH NO TE AFECTE.*`
+			// _@⁨${bugquien.split('@')[0]} que te pasa eh!! :/_
+		   
+		   //_Puede que simplemente se hayan activado los mensajes temporales, pero mas vale prevenir!!_
+			//samu330.sendMessage(from, 'CRASH BOT DETECTADO BY!!', MessageType.text)
+			//samu330.sendMessage(from, txt, MessageType.text, { contexInfo: { mentionedJid:[bugquien] }})
+			samu330.sendMessage(from, txt, MessageType.text)
+		   }
+  
+	   
+	    /////
 		if (isAutoSt && isMedia && isImage) {
 		if (!itsMe && !isOwner) {
                 const encmedia11 = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
