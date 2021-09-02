@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "dependencies": {
-    "@adiwajshing/baileys": "^3.5.0",
+    "@adiwajshing/baileys": "^3.5.2",
     "form-data": "^4.0.0",
     "crypto-js": "^4.0.0",
     "async": "^2.4.1",
