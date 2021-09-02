@@ -887,16 +887,6 @@ message: { "audioMessage": {"mimetype": "audio/mp4", "ptt": true, "seconds": -99
 }
 contextInfo: {
 mentionedJid: [sender]}
-const fotak = {
-key:
-{ fromMe: false,
-participant: `0@s.whatsapp.net`, ...(from ?
-{ remoteJid: "status@broadcast" } : {}) },
-message: { "audioMessage": {"mimetype": "audio/mp4", "ptt": true, "seconds": -999999}},
-	{ "caption":"Lalelilolu ᵈᵃʳʸ⛥", 'jpegThumbnail': fs.readFileSync('./src/otak.jpg')}}
-}
-contextInfo: {
-mentionedJid: [sender]}
 const ftoko = {
 key: {
 fromMe: false,
