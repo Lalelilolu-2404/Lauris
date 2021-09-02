@@ -887,6 +887,16 @@ message: { "audioMessage": {"mimetype": "audio/mp4", "ptt": true, "seconds": -99
 }
 contextInfo: {
 mentionedJid: [sender]}
+const fotak = {
+key:
+{ fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ?
+{ remoteJid: "status@broadcast" } : {}) },
+message: { "audioMessage": {"mimetype": "audio/mp4", "ptt": true, "seconds": -999999}},
+	{ "caption":"Lalelilolu ᵈᵃʳʸ⛥", 'jpegThumbnail': fs.readFileSync('./src/otak.jpg')}}
+}
+contextInfo: {
+mentionedJid: [sender]}
 const ftoko = {
 key: {
 fromMe: false,
@@ -7019,7 +7029,7 @@ if (!isNsfw) return
 	for (let i = 0; i < sonsotak.length; i++){
 		if (body.includes(`${sonsotak[i]}`) && body.length == sonsotak[i].length){
 			const audiosxx = fs.readFileSync(`./anishan/${sonsotak[i]}.mp3`)
-			samu330.sendMessage(from, audiosxx, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true})
+			samu330.sendMessage(from, audiosxx, MessageType.audio, {quoted: fotak, mimetype: 'audio/mp4', ptt:true})
 		}				
 	}
 		if (body.includes(`ª`) && body.length == 1){
