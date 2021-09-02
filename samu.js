@@ -4162,7 +4162,7 @@ const getLevel1 = getLevelingLevel(sender)
 const lvup =  `✴ _*🧗🏻‍♂️Nivel Actual!͟*_ ✴
 	
 𓆩*𓆪 *💠 Nombre:* ${pushname} 𓆩*𓆪
-✨Rank: ${getUserRank(sender, ${getLevelingLevel(sender)})}	
+	
 ┎┈┈┈┈┈┈┈┈┈┈┈┈┈┈
 ✨XP: ${getLevelingXp(sender)}
 📚Nivel: ${getLevel1} ➫ ${getLevelingLevel(sender)}
