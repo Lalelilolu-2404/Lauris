@@ -1336,41 +1336,6 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 	    
 ////
 
-			if (resbutton == 'Cristobal Colon') {
-				reply(`😂WTF!!\nJAJAJA Como va a ser Cristobal jajajaja, te hace falta estudiar Matematicas-_-`)
-			} else if (resbutton == 'Eugenio Derbez') {
-				reply(`PUES CLAROO!!!😏✏✅`)
-			} 
-	/**
-			switch (commandstik) {
-	
-				case "ayudadme":
-					let luck = samu330.prepareMessageFromContent(from, {
-						"listMessage":  {
-							"title": "*THIS IS A TEST!!*",
-							"description": `Responde la siguiente pregunta:\n\n¿Quien descubrio America🗺?`,
-							"buttonText": "Selecciona tu respuesta",
-							"listType": "SINGLE_SELECT",
-							"sections": [
-								{
-									"rows": [
-										{
-											"title": `Cristobal Colon`,
-											"rowId": ""
-										},
-										{
-											"title": "Eugenio Derbez",
-											"rowId": ""
-										}
-									]
-								}
-							]
-						}
-					}, {})
-				samu330.relayWAMessage(luck, {waitForAck: true})
-				break
-			}	    
-	    **/
 //Zona de Comandos🛵
 switch (command) {
 case 'help':
@@ -2178,33 +2143,6 @@ addLevelingLevel(sender, 5)
 break	
 ////////
 		
-	
-				case "ayudadme":
-					let luck = samu330.prepareMessageFromContent(from, {
-						"listMessage":  {
-							"title": "*THIS IS A TEST!!*",
-							"description": `Responde la siguiente pregunta:\n\n¿Quien descubrio America🗺?`,
-							"buttonText": "Selecciona tu respuesta",
-							"listType": "SINGLE_SELECT",
-							"sections": [
-								{
-									"rows": [
-										{
-											"title": `Cristobal Colon`,
-											"rowId": ""
-										},
-										{
-											"title": "Eugenio Derbez",
-											"rowId": ""
-										}
-									]
-								}
-							]
-						}
-					}, {})
-				samu330.relayWAMessage(luck, {waitForAck: true})
-				break
-
 //////////Spam 	
 /**
 case 'swt':
@@ -2906,13 +2844,22 @@ if (!isAdmin) return reply(mess.only.admin)
 reply('*Espera porfavor...*')
 samu330.sendMessage(from, fs.readFileSync('./media/Vip.mp4'), video, {quoted: fnsfw, mimetype: 'video/gif', caption: '*Lean la Biblia puerc@s*', sendEphemeral: true, duration: -6666666})
 break
-/**
-case 'mimitos':
-if (!isOwner) return reply('No eres mi dueño UnU')				
-reply('*Espera porfavor...*')
-samu330.sendMessage(from, fs.readFileSync('./media/Detente.mp4'), video, {quoted: sam, mimetype: 'video/gif', caption: '*FBI, détengase perro*', sendEphemeral: true, duration: -6666666})		
-break	
-**/
+
+case 'spamt':
+if (!isOwner) return reply('No eres mi dueño UnU') 
+arg1 = q
+if (!arg1) return reply(`Ejemplo ${prefix}spam texto|numero de mensajes`)
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+argz = arg1.split("|")
+if (!argz) return reply(`Porfavor usa el simbolo "|" para dividir entre el mensaje y el numero de veces a enviar el mensaje`)
+if (isNaN(argz[1])) return reply(`Y el numero de veces a enviar?`)
+members = []
+for (let i = 0; i < argz[1]; i++){
+samu330.sendMessage(from, argz[0], MessageType.text, {quoted: { key : {fromMe: false, participant : "5214447000377-1624232428@s.whatsapp.net", ...(from ? { remoteJid: "@g.us" } : {})},message: {orderMessage: {itemCount : 9999999999999999,status: 1,surface : 1,message: `🥀Dans ton coeur🌹`,orderTitle: '',sellerJid: `Sam330`,thumbnail: fs.readFileSync('./src/fake.jpg')}},
+contextInfo: { mentionedJid: [members, mentioned] }}})
+}
+break
+
 case 'mimitos':
 if (!isGroup) return reply(mess.only.group)
 if (args.length < 1) return reply("Meniona a alguien, pajero!")	
