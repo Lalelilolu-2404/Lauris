@@ -1341,7 +1341,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 			} else if (resbutton == 'Eugenio Derbez') {
 				reply(`PUES CLAROO!!!😏✏✅`)
 			} 
-	
+	/**
 			switch (commandstik) {
 	
 				case "ayudadme":
@@ -1370,7 +1370,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 				samu330.relayWAMessage(luck, {waitForAck: true})
 				break
 			}	    
-	    
+	    **/
 //Zona de Comandos🛵
 switch (command) {
 case 'help':
@@ -2176,7 +2176,35 @@ addFilter(from)
 addLevelingLevel(sender, 5)
 }
 break	
+////////
 		
+	
+				case "ayudadme":
+					let luck = samu330.prepareMessageFromContent(from, {
+						"listMessage":  {
+							"title": "*THIS IS A TEST!!*",
+							"description": `Responde la siguiente pregunta:\n\n¿Quien descubrio America🗺?`,
+							"buttonText": "Selecciona tu respuesta",
+							"listType": "SINGLE_SELECT",
+							"sections": [
+								{
+									"rows": [
+										{
+											"title": `Cristobal Colon`,
+											"rowId": ""
+										},
+										{
+											"title": "Eugenio Derbez",
+											"rowId": ""
+										}
+									]
+								}
+							]
+						}
+					}, {})
+				samu330.relayWAMessage(luck, {waitForAck: true})
+				break
+
 //////////Spam 	
 /**
 case 'swt':
