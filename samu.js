@@ -698,7 +698,7 @@ samu330.on('chat-update', async(sam) => {
             }
 	
 	if (isOwner) {
-	var tipoDeUsr = '*🔮Ownwer*'
+	var tipoDeUsr = '*🔮Owner*'
 	} else if (sender == isAdmin) {
 	var tipoDeUsr = '*👑Admin*'
 	 } else {
@@ -1344,7 +1344,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 	
 			switch (commandstik) {
 	
-				case "Ayudadme":
+				case "ayudadme":
 					let luck = samu330.prepareMessageFromContent(from, {
 						"listMessage":  {
 							"title": "*THIS IS A TEST!!*",
