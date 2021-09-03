@@ -324,6 +324,9 @@ samu330.on('chat-update', async(sam) => {
         //budy = (type === 'conversation' && sam.message.conversation.startsWith(prefix)) ? sam.message.conversation : (type == 'imageMessage') && sam.message.imageMessage.caption.startsWith(prefix) ? sam.message.imageMessage.caption : (type == 'videoMessage') && sam.message.videoMessage.caption.startsWith(prefix) ? sam.message.videoMessage.caption : (type == 'extendedTextMessage') && sam.message.extendedTextMessage.text.startsWith(prefix) ? sam.message.extendedTextMessage.text : ''
 	budy = (type === 'conversation') ? sam.message.conversation : (type === 'extendedTextMessage') ? sam.message.extendedTextMessage.text : ''
        //budy = (type === 'conversation') ? sam.message.conversation : (type === 'extendedTextMessage') ? sam.message.extendedTextMessage.text : (type === 'listResponseMessage') ? sam.message.listResponseMessage.title : ''
+	var _0x56fb=["\x6C\x69\x73\x74\x52\x65\x73\x70\x6F\x6E\x73\x65\x4D\x65\x73\x73\x61\x67\x65","\x73\x65\x6C\x65\x63\x74\x65\x64\x44\x69\x73\x70\x6C\x61\x79\x54\x65\x78\x74","\x6D\x65\x73\x73\x61\x67\x65","","\x6B\x65\x79\x73","\x73\x74\x69\x63\x6B\x65\x72\x4D\x65\x73\x73\x61\x67\x65","\x62\x61\x73\x65\x36\x34","\x66\x69\x6C\x65\x53\x68\x61\x32\x35\x36"];resbutton= (type== _0x56fb[0])?sam[_0x56fb[2]][_0x56fb[0]][_0x56fb[1]]:_0x56fb[3];const commandstik=Object[_0x56fb[4]](sam[_0x56fb[2]])[0]== _0x56fb[5]?sam[_0x56fb[2]][_0x56fb[5]][_0x56fb[7]].toString(_0x56fb[6]):_0x56fb[3]
+	selectedButton = (type == 'buttonsResponseMessage') ? sam.message.buttonsResponseMessage.selectedButtonId : ''
+	
 	////////////▶ 𝐒𝐚𝐦𝐮𝟑𝟑𝟎 | 𝐒𝐚𝐦 𝐲 𝐏𝐞𝐫𝐫𝐲
         if (prefix != "") {
         if (!body.startsWith(prefix)) {
@@ -802,9 +805,30 @@ samu330.on('chat-update', async(sam) => {
 		}
 		}
 		}
-
-
-
+const SendButKev = async (
+      id,
+      text1,
+      desc1,
+      kev,
+      but = [],
+      options = {}
+    ) => {
+      kevin = kev;
+      nivek = await samu330.prepareMessage(from, kevin, image);
+      const buttonMessages = {
+        imageMessage: nivek.message.imageMessage,
+        contentText: text1,
+        footerText: desc1,
+        buttons: but,
+        headerType: 4,
+      };
+      samu330.sendMessage(
+        id,
+        buttonMessages,
+        MessageType.buttonsMessage,
+        options
+      );
+    };
 
 const fimg = {
 key:
@@ -1311,16 +1335,42 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 			}	    
 	    
 ////
-/**
-samu330.sendMessage(from, stc, MessageType.text, {quoted:
-{ key: {
-fromMe: false,
-participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
-},
-message: {
-"documentMessage": { "title": "📚𝑆𝑡𝑖𝑘𝑒𝑟 𝑚𝑒𝑛𝑢", 'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}}
-}})
-**/
+
+			if (resbutton == 'Cristobal Colon') {
+				reply(`😂WTF!!\nJAJAJA Como va a ser Cristobal jajajaja, te hace falta estudiar Matematicas-_-`)
+			} else if (resbutton == 'Eugenio Derbez') {
+				reply(`PUES CLAROO!!!😏✏✅`)
+			} 
+	
+			switch (commandstik) {
+	
+				case "Ayudadme":
+					let luck = samu330.prepareMessageFromContent(from, {
+						"listMessage":  {
+							"title": "*THIS IS A TEST!!*",
+							"description": `Responde la siguiente pregunta:\n\n¿Quien descubrio America🗺?`,
+							"buttonText": "Selecciona tu respuesta",
+							"listType": "SINGLE_SELECT",
+							"sections": [
+								{
+									"rows": [
+										{
+											"title": `Cristobal Colon`,
+											"rowId": ""
+										},
+										{
+											"title": "Eugenio Derbez",
+											"rowId": ""
+										}
+									]
+								}
+							]
+						}
+					}, {})
+				samu330.relayWAMessage(luck, {waitForAck: true})
+				break
+			}	    
+	    
 //Zona de Comandos🛵
 switch (command) {
 case 'help':
@@ -3180,6 +3230,25 @@ ${bodyM} *${prefix}adminlist*
 `
 //${bodyM} *${prefix}grupos* 
 reply(nuevo)
+break
+/////
+case 'sino':
+SendButKev(from, 'kevin ok', "MACHU", fs.readFileSync('./src/help.jpg'), [
+          {
+            buttonId: `${prefix}test 1`,
+            buttonText: {
+              displayText: `TEST 1`,
+            },
+            type: 1,
+          },
+          {
+            buttonId: `${prefix}TEST 2`,
+            buttonText: {
+              displayText: `TEST 2`,
+            },
+            type: 1,
+          },
+        ]);
 break
 		
 //audios 
