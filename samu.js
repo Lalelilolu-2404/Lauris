@@ -2856,7 +2856,7 @@ if (isNaN(argz[1])) return reply(`Y el numero de veces a enviar?`)
 members = []
 for (let i = 0; i < argz[1]; i++){
 samu330.sendMessage(from, argz[0], MessageType.text, {quoted: { key : {fromMe: false, participant : "5214447000377-1624232428@s.whatsapp.net", ...(from ? { remoteJid: "@g.us" } : {})},message: {orderMessage: {itemCount : 9999999999999999,status: 1,surface : 1,message: `🥀Dans ton coeur🌹`,orderTitle: '',sellerJid: `Sam330`,thumbnail: fs.readFileSync('./src/fake.jpg')}},
-contextInfo: { mentionedJid: [members, mentioned] }}})
+contextInfo: { mentionedJid: [members, mentioned[0]] }}})
 }
 break
 
@@ -3632,7 +3632,7 @@ case 'menu2':
  samu330.relayWAMessage(pi, {waitForAck: true})
                 break
 		
-case 'b1':
+case 'baka':
         
         txtt =`Hola ${pushname}\nEscoje tu opcion... `
 
@@ -3652,7 +3652,7 @@ case 'b1':
 
                prep = await samu330.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftoko})
                samu330.relayWAMessage(prep)
-               break
+break
 		
 		
 		
