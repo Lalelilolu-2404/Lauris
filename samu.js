@@ -2026,6 +2026,7 @@ otakusaud = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 │ *A mimir*
 │ *A*
 │ *a*
+│ *Baka*
 │ *Banx*
 │ *Ctm*
 │ *Daddy*
@@ -7187,7 +7188,7 @@ const Fer =  ["Me das admin", "Ban", "Funao", "Love", "Ya se durmieron", "Te me 
 		}
 	}
 **/		
-const sonsotak = ["A mimir", "A", "a", "Acm1pt", "Admin", "Ahhh", "Arrecha", "Ayy", "Banx", "Besito", "Brr", "Brr2", "Bésame", "Concha", 
+const sonsotak = ["A mimir", "A", "a", "Acm1pt", "Admin", "Ahhh", "Arrecha", "Ayy", "Baka", "Banx", "Besito", "Brr", "Brr2", "Bésame", "Concha", 
 	      "Ctm", "Daddy", "Feliz jueves", "Gambare", "Help", "Hentai", "Iluminati", "Imposible", "Jaa", "Japi", "La mimición", 
 	      "Las pelotas", "Lokita", "Me vengo", "Mi reina", "Mujer", "Nya", "Oh oh si", "Onichan", "Orto", "Pack", "Pasa pack", "Pero en fin", 
 	      "Petardo", "Pete", "Profe", "Sapee", "Setso", "Sexual", "Sparta", "Te quiero", "Umm", "Yamete kudasai", "Yamete", "Dime onichan", 
