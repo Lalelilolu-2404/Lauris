@@ -1978,11 +1978,10 @@ break
 **/
 		
 case 'stickers':
-["Ban", "Funaoahaha", "F el grupo", "Ctm", "Shh", "Nani", "Lolxd", "F", "Amm", "Pichula", 
-	      "Si xd", "Haha no", "Paja2", "Perro", "Ufff"]
 stckr = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 ╰────ြ𝐒𝐭𝐢𝐜𝐤𝐞𝐫🃏
 ╭─────────────
+│ *Amm*
 │ *Ban*
 │ *Funao*
 │ *Love*
@@ -1991,13 +1990,15 @@ stckr = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 │ *Ta fuerte*
 │ *Takeself*
 │ *Hahaha*
+│ *Hola*
+│ *Faptality*
 │ *F el grupo*
 │ *Ctm*
 │ *Shh*
+│ *Me das admin*
 │ *Nani*
 │ *Lolxd*
 │ *F*
-│ *Amm*
 │ *Pichula*
 │ *Si xd*
 │ *Haha no*
@@ -2050,6 +2051,7 @@ otakusaud = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 │ *Setso*
 │ *Sexual*
 │ *Te amo botsito*
+│ *Te quiero*
 │ *Me gimes*
 │ *Quien es tu sempai*
 │ *Umm*
@@ -7163,8 +7165,8 @@ if (isNsfw) {
 }
 if (!isOwner){	
 if (!isNsfw) return
-const Fer =  ["Ban", "Funao", "Love", "Ya se durmieron", "Te me calmas", "Ta fuerte", "Takeself", "Hahaha", "F el grupo", "Ctm", "Shh", "Nani", "Lolxd", "F", "Amm", "Pichula", 
-	      "Si xd", "Haha no", "Paja2", "Perro", "Ufff"]		
+const Fer =  ["Me das admin", "Ban", "Funao", "Love", "Ya se durmieron", "Te me calmas", "Ta fuerte", "Takeself", "Hahaha", "Hola", "Faptality", "F el grupo", "Ctm", "Shh", "Nani", 
+	      "Lolxd", "F", "Amm", "Pichula", "Si xd", "Haha no", "Paja2", "Perro", "Ufff"]		
   if (!isBan){
 	for (let i = 0; i < Fer.length; i++){
 		if (body.includes(`${Fer[i]}`) && body.length == Fer[i].length){
@@ -7209,10 +7211,10 @@ if (!isNsfw) return
 const stickme = ["69", "Ahohsi", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "Amistad", "Anna", "Amm", "Anni", "Así me gusta", "Asustado", "Ay caramba", "Ay me asusté", 
 		"Ban", "Báñate", "Besos", "Bien", "Bragas", "Buen culo", "Buenas noches", "Bye", "C rasca", "Cállate", "Cc", "Chelitas", "Chongo", "Colita", "Colitaxxx", 
 		"Contesta", "Contra el muro", "Ctm", "Cunni", "Dame", "Delito", "Depre", "Doncon", "Duren", "En fin", "Encuérate", "Eres bonita", "F el grupo", "F en el chat", 
-		"F", "Facha", "Fallesí", "FBI", "Flap", "Funao", "Gansito", "Gatita", "Gomitas", "Háblame bonito", "Hack", "Haha no", "Hahaha", "Helado", "Hentai", 
-		"I wanna fuck you", "Ily", "Im dead", "Inflingir", "Jálame", "Jiji", "Jutsu", "Kuaker", "La ahorca", "La ata", "La nalguea", "Las bragitas", "Lau", "Lit", "Llegó papi", "Lolxd", 
-		"Lo mira feo", "Love", "Ly", "Me dormí", "Me encanta", "Me prometiste", "Me vengo", "Meyou", "Mimitos", "Muy bien", "Nani", "Nel", "No antojes", 
-		"No me interesa", "No mires", "No puede ser", "No sé", "No te excites", "Oh yeah mami", "Onichan", "Ouioui", "Pack", "Packsito pls", "Paja", "Paja2", "Pansito", "Pantsu", "Patito", 
+		"F", "Facha", "Fallesí", "Faptality", "FBI", "Flap", "Funao", "Gansito", "Gatita", "Gomitas", "Háblame bonito", "Hack", "Haha no", "Hahaha", "Helado", "Hentai", "Hola", 
+		"I wanna fuck you", "Ily", "Im dead", "Inflingir", "Jálame", "Jiji", "Jutsu", "Kuaker", "La ahorca", "La ata", "La nalguea", "Las bragitas", "Lau", "Le muerde", "Lit", "Llegó papi", "Lolxd", 
+		"Lo mira feo", "Love", "Ly", "Me das admin", "Me dormí", "Me encanta", "Me prometiste", "Me vengo", "Meyou", "Mimitos", "Muy bien", "Nani", "Nel", "No antojes", 
+		"No me interesa", "No mires", "No puede ser", "No sé", "No te excites", "No te rias xd", "Oh yeah mami", "Onichan", "Ouioui", "Pack", "Packsito pls", "Paja", "Paja2", "Pansito", "Pantsu", "Patito", 
 		"Pérame", "Pero", "Perro", "Pichula", "Pollita", "Pollito frito", "Preséntate", "Procede", "Purga", "Que weba", "Rico", "Rip", "Sad", "Safa ctv", "Santas escrituras", 
 		"Sapee", "Se encuera", "Se ofendió", "Se va xd", "Sex", "Sexo", "Shh", "Si mi amor", "Si xd", "Sit on me pls", "Slap", "Ta fuerte", "Takeself", "Te me calmas", 
 		"Toma tu galleta", "Tqm1", "Tqm2", "Triste", "Tu culito", "Turbio", "Tuyyo", "Ufff", "Uhm", "Umm", "Uwu", "Vamos a culear", "Vas a llorar", "Volví", "Wow", 
@@ -7237,7 +7239,7 @@ function _0x5718(){var _0x1c4b44=['122885QdGzyn','sticker','137193xgROlL','12021
 	    parseInt(_0x2d3808(0x67))/0x9+-parseInt(_0x2d3808(0x66))/0xa;if(_0x544ce6===_0x3a3bbb)break;else _0x33a117['push'](_0x33a117['shift']());}catch(_0x4c558d){_0x33a117
 	    ['push'](_0x33a117['shift']());}}}(_0x5718,0x1dbb9));body['includes']('Xd')&&samu330[_0x5b64d5(0x68)](from,fs[_0x5b64d5(0x6e)]('./temp/xd.webp'),
 MessageType[_0x5b64d5(0x73)],{'quoted':fnsfw,'contextInfo':{'externalAdReply':{'title':'Los\x20que\x20no\x20dejan\x20el\x20xd:\x20\x27POR\x20AHI\x20NO!!\x27',
-'body':_0x5b64d5(0x71),'sourceUrl':'https://chat.whatsapp.com/Ff7t0WhSB5ELteaNJjV07F','thumbnail':fs[_0x5b64d5(0x6e)](_0x5b64d5(0x6d))}}});		
+'body':_0x5b64d5(0x71),'sourceUrl':'https://chat.whatsapp.com/KFe9KLIHjPTIay4YjvCAXx','thumbnail':fs[_0x5b64d5(0x6e)](_0x5b64d5(0x6d))}}});		
 	
 if (isSimi && !itsMe &&  body != undefined){
 res = await getJson(`https://api.simsimi.net/v1/?text=${body}&lang=es`)
