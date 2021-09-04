@@ -4583,9 +4583,10 @@ case 'flamming':
 case 'harrypotter':
 if (!q) return reply('*Y el texto para crear el logo donde esta?*')
 reply(`*Porfavor espera un momento, tu logo ${command} esta siendo creado con el texto ${q}!*`)		
-logo = getBuffer(`http://api.lolhuman.xyz/api/photooxy1/${command}?apikey=${lolhumankey}&text=${q}`)
-samu330.sendMessage(from, logo, MessageType.image, {quoted: fimg, caption: '*🔥 𝘓𝘰𝘨𝘰𝘴 🔥*', sendEphemeral: true})
-break		
+logo = await axios.get(`http://api.lolhuman.xyz/api/photooxy1/${command}?apikey=${lolhumankey}&text=${q}`)
+buffer = await getBuffer(logo.data.url)
+samu330.sendMessage(from, buffer, MessageType.image, {quoted: fimg, caption: '*🔥 𝘓𝘰𝘨𝘰𝘴 🔥*', sendEphemeral: true})
+break	
 
 case 'toxic':
 case 'metaldark':
@@ -4597,8 +4598,9 @@ case 'horrorblood':
 case 'thunder':
 if (!q) return reply('*Y el texto para crear el logo donde esta?*')
 reply(`*Porfavor espera un momento, tu logo ${command} esta siendo creado con el texto ${q}!*`)		
-logo = getBuffer(`http://api.lolhuman.xyz/api/textprome/${command}?apikey=${lolhumankey}&text=${q}`)
-samu330.sendMessage(from, logo, MessageType.image, {quoted: fimg, caption: '*🔥 𝘓𝘰𝘨𝘰𝘴 🔥*', sendEphemeral: true})
+logo = await axios.get(`http://api.lolhuman.xyz/api/textprome/${command}?apikey=${lolhumankey}&text=${q}`)
+buffer = await getBuffer(logo.data.url)
+samu330.sendMessage(from, buffer, MessageType.image, {quoted: fimg, caption: '*🔥 𝘓𝘰𝘨𝘰𝘴 🔥*', sendEphemeral: true})
 break			
 		
 case 'neon':
