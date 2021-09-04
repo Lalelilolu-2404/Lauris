@@ -4545,6 +4545,61 @@ _*FDx Lalelilolu ᵈᵃʳʸ⛥'*_
 break		
 		//»»————-　★　————-««\\
 //˚ ༘✶ ⋆｡˚ ⁀➷  🔥 𝘓𝘰𝘨𝘰𝘴 𝘉𝘺 𝘚𝘢𝘮𝘶𝟥𝟥𝟢 🔥
+//Apis :v		
+const lolhumankey = 'NikolaTesla';
+const lolhuman = 'AkiRaAPI';
+const xteam = 'AkiraBotWa';
+const apivinz = 'NikolaTesla';
+const zeks = 'apivinz';
+/////
+case 'animeme':               
+if (!isRegister) return reply(mess.only.usrReg)
+if (!isGroup) return reply(mess.only.group)
+
+samu330.updatePresence(from, Presence.composing)
+uk = [""]
+nk = uk[Math.floor(Math.random() * uk.length)]
+try {
+data = await fetchJson(`https://api.lolhuman.xyz/api/pinterest2?apikey=NikolaTesla&query=shitpost+otaku+espa%C3%B1ol`, {
+  method: 'get'
+})
+reply(mess.wait)
+n = JSON.parse(JSON.stringify(data.result));
+nimek = n[Math.floor(Math.random() * n.length)];
+pok = await getBuffer(nimek)
+samu330.sendMessage(from, pok, image, {
+  quoted: fvid, caption: ` equis d `
+})
+} catch {
+  reply(mess.ferr)
+}
+break
+		
+////		
+case 'love':
+case 'lovemessage':
+case 'burnpaper':
+case 'flamming':
+case 'harrypotter':
+if (!q) return reply('*Y el texto para crear el logo donde esta?*')
+reply(`*Porfavor espera un momento, tu logo ${command} esta siendo creado con el texto ${q}!*`)		
+logo = `http://api.lolhuman.xyz/api/photooxy1/${command}?apikey=${lolhumankey}&text=${q}`
+sendFileFromUrl(logo, image, {quoted: fimg, caption: '*🔥 𝘓𝘰𝘨𝘰𝘴 🔥*', sendEphemeral: true})
+break		
+
+case 'toxic':
+case 'metaldark':
+case 'bloodfrosted':
+case 'halloween':
+case 'minion':
+case 'icecold':
+case 'horrorblood':
+case 'thunder':
+if (!q) return reply('*Y el texto para crear el logo donde esta?*')
+reply(`*Porfavor espera un momento, tu logo ${command} esta siendo creado con el texto ${q}!*`)		
+logo = `http://api.lolhuman.xyz/api/textprome/${command}?apikey=${lolhumankey}&text=${q}`
+sendFileFromUrl(logo, image, {quoted: fimg, caption: '*🔥 𝘓𝘰𝘨𝘰𝘴 🔥*', sendEphemeral: true})
+break			
 		
 case 'neon':
 if (!q) return reply('*Y el texto para crear el logo donde esta?*')
