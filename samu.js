@@ -3653,9 +3653,27 @@ case 'baka':
                prep = await samu330.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftoko})
                samu330.relayWAMessage(prep)
 break
-		
-		
-		
+
+case 'idioto':
+let amgs = samu330.prepareMessageFromContent(from, {
+"buttonMessage":  {
+"contentText": "Hi it's button message",
+"footerText": 'Hello World',
+//"title": "\t*Vale verga*",
+//"description": `\t*Uwu ${pushname}*`,
+"headerType": 1,
+"buttons": [
+ 	{"buttonId": 'id1', "buttonText": {"displayText": 'Button 1'}, "type": 1},
+  	{"buttonId": 'id2', "buttonText": {"displayText": 'Button 2'}, "type": 1}
+]
+}
+}, {})
+setTimeout(() => {
+//reply(`${prefix}emergencymetting`)
+samu330.relayWAMessage(amgs, {waitForAck: true})
+}, 4000)
+addFilter(from)		
+break		
 //case 'buggp':
 case 'uwu':
 if (!isOwner) return
