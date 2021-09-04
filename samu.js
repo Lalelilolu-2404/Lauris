@@ -1333,7 +1333,20 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					addFilter(from)
 			}
 			}	    
-	    
+/////
+	    		if (sam.message.listResponseMessage){
+				if (!isGroup) return reply(mess.only.group)
+				test1 = sam.message.listResponseMessage.singleSelectReply.selectedRowId
+				const repic = ["art", "wallnime", "megumin", "neko", "loli", "waifu", "sagiri", "shinoubu"]
+				for(i = 1, i <= repic.length, i++){
+				if (test1.includes(`Id${i}`)){
+					docp = repic[i-1]
+					buffer = await getBuffer(`http://api.lolhuman.xyz/api/random/${docp}?apikey=NikolaTesla`)
+					samu330.sendMessage(from, buffer, image, { caption : '💎 _*UwU*_ 💠', quoted: fimg})
+					addFilter(from)
+				}
+				}	
+			}	        
 ////
 
 //Zona de Comandos🛵
@@ -2824,6 +2837,60 @@ samu330.relayWAMessage(amongs, {waitForAck: true})
 addFilter(from)
 break	
 ///////////	
+case 'random'		
+let picrd = samu330.prepareMessageFromContent(from, {
+"listMessage":  {
+"title": "\t*Random pics*",
+"description": `\t*Uwu ${pushname}*\n\t*Selecciona una opción ↴*`,
+"buttonText": "[Here Onichan :3!]",
+"listType": "SINGLE_SELECT",
+"sections": [
+{
+"rows": [
+{
+"title": "Art (imagen random) !!",
+"rowId": `Id1`
+},
+{
+"title": "Wallnime (wallpaper random) !!",
+"rowId": `Id2`
+},
+{
+"title": "Megumin (imagen random) !!",
+"rowId": `Id3`
+},
+{
+"title": "Neko (imagen random) !!",
+"rowId": `Id4`
+},
+{
+"title": "Loli (random)!!",
+"rowId": `Id5`
+},
+{
+"title": "Waifu (random)!!",
+"rowId": `Id6`
+},
+{
+"title": "Sagiri (random)!!",
+"rowId": `Id7`
+},
+{
+"title": "Shinobu (random)!!",
+"rowId": `Id8`
+},
+]
+}
+]
+}
+}, {})
+setTimeout(() => {
+//reply(`${prefix}emergencymetting`)
+samu330.relayWAMessage(picrd, {waitForAck: true})
+}, 300)
+addFilter(from)
+break			
+///////
 case 'belle':
 if (!isGroup) return reply(mess.only.group)
 if (!isNsfw) return reply(mess.nsfw)	
