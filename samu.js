@@ -1337,13 +1337,14 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 	    const repic = ["art", "wallnime", "megumin", "neko", "loli", "waifu", "sagiri", "shinoubu"]
 	    		if (sam.message.listResponseMessage){
 				if (!isGroup) return reply(mess.only.group)
-				test1 = sam.message.listResponseMessage.singleSelectReply.selectedRowId
 				for(let i = 1; i <= repic.length; i++){
+				test1 = sam.message.listResponseMessage.singleSelectReply.selectedRowId
 				if (test1.includes(`Id${i}`)){
+					reply(`Id${i}`)
 					j = i - 1
 					docp = repic[j]
-					buffer = await getBuffer(`http://api.lolhuman.xyz/api/random/${docp}?apikey=NikolaTesla`)
-					samu330.sendMessage(from, buffer, image, { caption : '💎 _*UwU*_ 💠', quoted: fimg})
+					bufpr = await getBuffer(`http://api.lolhuman.xyz/api/random/${docp}?apikey=NikolaTesla`)
+					samu330.sendMessage(from, bufpr, image, { caption : '💎 _*UwU*_ 💠', quoted: fimg})
 					addFilter(from)
 				}
 				}	
