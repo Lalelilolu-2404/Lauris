@@ -2845,21 +2845,6 @@ reply('*Espera porfavor...*')
 samu330.sendMessage(from, fs.readFileSync('./media/Vip.mp4'), video, {quoted: fnsfw, mimetype: 'video/gif', caption: '*Lean la Biblia puerc@s*', sendEphemeral: true, duration: -6666666})
 break
 
-case 'spamt':
-if (!isOwner) return reply('No eres mi dueño UnU') 
-arg1 = q
-if (!arg1) return reply(`Ejemplo ${prefix}spam texto|numero de mensajes`)
-mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-argz = arg1.split("|")
-if (!argz) return reply(`Porfavor usa el simbolo "|" para dividir entre el mensaje y el numero de veces a enviar el mensaje`)
-if (isNaN(argz[1])) return reply(`Y el numero de veces a enviar?`)
-members = []
-for (let i = 0; i < argz[1]; i++){
-samu330.sendMessage(from, argz[0], MessageType.text, {quoted: { key : {fromMe: false, participant : "5214447000377-1624232428@s.whatsapp.net", ...(from ? { remoteJid: "@g.us" } : {})},message: {orderMessage: {itemCount : 9999999999999999,status: 1,surface : 1,message: `🥀Dans ton coeur🌹`,orderTitle: '',sellerJid: `Sam330`,thumbnail: fs.readFileSync('./src/fake.jpg')}},
-contextInfo: { mentionedJid: [members, mentioned[0]] }}})
-}
-break
-
 case 'mimitos':
 if (!isGroup) return reply(mess.only.group)
 if (args.length < 1) return reply("Meniona a alguien, pajero!")	
