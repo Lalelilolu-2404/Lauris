@@ -7021,6 +7021,10 @@ if (isNsfw) {
 		const none2 = fs.readFileSync(`./src/stickers/No entender.webp`)
 		samu330.sendMessage(from, none2, sticker)	
 	} 
+	if (body.includes(`:3`) && body.length == 1){
+		const none2 = fs.readFileSync(`./src/stickers/Sonrisita.webp`)
+		samu330.sendMessage(from, none2, sticker)	
+	} 
 	if (body.includes(`Nezuko chan`) && body.length == 11){
 		const none2 = fs.readFileSync(`./src/stickers/Nezuko chan.webp`)
 		for (let i = 0; i < 2; i++){
@@ -7074,11 +7078,11 @@ if (!isNsfw) return
 }
 ///////Only me and mods
 const stickme = ["69", "Ahohsi", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "Amistad", "Anna", "Amm", "Anni", "Así me gusta", "Asustado", "Ay caramba", "Ay me asusté", 
-		"Ban", "Besos", "Bien", "Bragas", "Buen culo", "Buenas noches", "Bye", "C rasca", "Cállate", "Cc", "Chelitas", "Chongo", "Colita", "Colitaxxx", 
-		"Contesta", "Contra el muro", "Ctm", "Cunni", "Dame", "Delito", "Doncon", "Duren", "En fin", "Encuérate", "Eres bonita", "F el grupo", "F en el chat", 
+		"Ban", "Báñate", "Besos", "Bien", "Bragas", "Buen culo", "Buenas noches", "Bye", "C rasca", "Cállate", "Cc", "Chelitas", "Chongo", "Colita", "Colitaxxx", 
+		"Contesta", "Contra el muro", "Ctm", "Cunni", "Dame", "Delito", "Depre", "Doncon", "Duren", "En fin", "Encuérate", "Eres bonita", "F el grupo", "F en el chat", 
 		"F", "Facha", "Fallesí", "FBI", "Flap", "Funao", "Gansito", "Gatita", "Gomitas", "Háblame bonito", "Hack", "Haha no", "Hahaha", "Helado", "Hentai", 
-		"I wanna fuck you", "Ily", "Im dead", "Inflingir", "Jálame", "Jiji", "Jutsu", "Kuaker", "La ahorca", "La ata", "Las bragitas", "Lau", "Lit", "Llegó papi", "Lolxd", 
-		"Love", "Ly", "Me dormí", "Me encanta", "Me prometiste", "Me vengo", "Meyou", "Mimitos", "Muy bien", "Nani", "Nel", "No antojes", 
+		"I wanna fuck you", "Ily", "Im dead", "Inflingir", "Jálame", "Jiji", "Jutsu", "Kuaker", "La ahorca", "La ata", "La nalguea", "Las bragitas", "Lau", "Lit", "Llegó papi", "Lolxd", 
+		"Lo mira feo", "Love", "Ly", "Me dormí", "Me encanta", "Me prometiste", "Me vengo", "Meyou", "Mimitos", "Muy bien", "Nani", "Nel", "No antojes", 
 		"No me interesa", "No mires", "No puede ser", "No sé", "No te excites", "Oh yeah mami", "Onichan", "Ouioui", "Pack", "Packsito pls", "Paja", "Paja2", "Pansito", "Pantsu", "Patito", 
 		"Pérame", "Pero", "Perro", "Pichula", "Pollita", "Pollito frito", "Preséntate", "Procede", "Purga", "Que weba", "Rico", "Rip", "Sad", "Safa ctv", "Santas escrituras", 
 		"Sapee", "Se encuera", "Se ofendió", "Se va xd", "Sex", "Sexo", "Shh", "Si mi amor", "Si xd", "Sit on me pls", "Slap", "Ta fuerte", "Takeself", "Te me calmas", 
