@@ -2837,7 +2837,7 @@ samu330.relayWAMessage(amongs, {waitForAck: true})
 addFilter(from)
 break	
 ///////////	
-case 'random'		
+case 'random':		
 let picrd = samu330.prepareMessageFromContent(from, {
 "listMessage":  {
 "title": "\t*Random pics*",
