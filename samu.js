@@ -2936,7 +2936,7 @@ jsonData = JSON.parse(data);
 randIndex = Math.floor(Math.random() * jsonData.length);
 randKey = jsonData[randIndex];
 buffr = await getBuffer(randKey.result)
-samu330.sendMessage(from buffr, image, {quoted: fimg})
+samu330.sendMessage(from, buffr, image, {quoted: fimg})
 break	
 		
 ///////
