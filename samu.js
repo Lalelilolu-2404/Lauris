@@ -2935,8 +2935,8 @@ data = fs.readFileSync('./fakeapixd/santabiblia.js');
 jsonData = JSON.parse(data);
 randIndex = Math.floor(Math.random() * jsonData.length);
 randKey = jsonData[randIndex];
-hasil = await getBuffer(randKey.result)
-sendFileFromUrl(hasil, image, {sendEphemeral: true})
+buffr = await getBuffer(randKey.result)
+samu330.sendMessage(from buffr, image, {quoted: fimg})
 break	
 		
 ///////
