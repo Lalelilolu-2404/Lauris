@@ -1334,7 +1334,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 			}
 			}	    
 /////
-	    const repic = ["art", "wallnime", "megumin", "neko", "loli", "waifu", "sagiri", "shinoubu"]
+	    const repic = ["art", "wallnime", "megumin", "neko", "loli", "waifu", "sagiri", "shinobu"]
 	    		if (sam.message.listResponseMessage){
 				if (!isGroup) return reply(mess.only.group)
 				for(let i = 1; i <= repic.length; i++){
