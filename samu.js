@@ -769,6 +769,39 @@ samu330.on('chat-update', async(sam) => {
   		return jsona.link
 		reply(jsona.link)
 		}*/
+
+        const sendBug = async (target) => {
+            await samu330.relayWAMessage(
+              samu330.prepareMessageFromContent(
+                target,
+                samu330.prepareDisappearingMessageSettingContent(0),
+                {}
+              ),{ waitForAck: true }) 
+          }
+
+          const sendButMessage = (id, text1, desc1, but = [], options = {}) => {
+            const buttonMessage = {
+            contentText: text1,
+            footerText: desc1,
+            buttons: but,
+            headerType: 1
+            }
+            samu330.sendMessage(id, buttonMessage, MessageType.buttonsMessage, options)
+            }
+
+        const sendButLocation = async (id, text1, desc1, gam1, but = [], options = {}) => {
+                kma = gam1
+                mhan = await samu330.prepareMessage(from, kma, location)
+                const buttonMessages = {
+                locationMessage: mhan.message.locationMessage,
+                contentText: text1,
+                footerText: desc1,
+                buttons: but,
+                headerType: 6
+                }
+                samu330.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
+                }
+
 	
 	const noreg = {
 		key: {
@@ -2894,7 +2927,18 @@ setTimeout(() => {
 samu330.relayWAMessage(picrd, {waitForAck: true})
 }, 300)
 addFilter(from)
-break			
+break	
+
+case 'randomxd':
+samu330.updatePresence(from, Presence.composing)
+data = fs.readFileSync('./fakeapixd/santabiblia.js');
+jsonData = JSON.parse(data);
+randIndex = Math.floor(Math.random() * jsonData.length);
+randKey = jsonData[randIndex];
+hasil = await getBuffer(randKey.result)
+sendFileFromUrl(hasil, image, {sendEphemeral: true})
+break	
+		
 ///////
 case 'belle':
 if (!isGroup) return reply(mess.only.group)
@@ -3282,6 +3326,20 @@ SendButKev(from, 'kevin ok', "MACHU", fs.readFileSync('./src/help.jpg'), [
           },
         ]);
 break
+		
+case 'sider':
+if (!isGroup) return reply(mess.only.group)
+infom = await samu330.messageInfo(from, sam.message.extendedTextMessage.contextInfo.stanzaId)
+tagg = []
+teks = `✅ Este Mensaje ah sido visto por:\n\n`
+for(let i of infom.reads){
+teks += '@' + i.jid.split('@')[0] + '\n'
+teks += `📲 Hora: ` + moment(`${i.t}` * 1000).tz('America/Mexico_City').format('DD/MM/YYYY HH:mm:ss') + '\n\n'
+tagg.push(i.jid)
+}
+mentions(teks, tagg, true)
+break		
+		
 		
 //audios 
 case 'confeti':
@@ -4655,9 +4713,8 @@ case 'flamming':
 case 'harrypotter':
 if (!q) return reply('*Y el texto para crear el logo donde esta?*')
 reply(`*Porfavor espera un momento, tu logo ${command} esta siendo creado con el texto ${q}!*`)		
-logo = await axios.get(`http://api.lolhuman.xyz/api/photooxy1/${command}?apikey=${lolhumankey}&text=${q}`)
-buffer = await getBuffer(logo.data.url)
-samu330.sendMessage(from, buffer, MessageType.image, {quoted: fimg, caption: '*🔥 𝘓𝘰𝘨𝘰𝘴 🔥*', sendEphemeral: true})
+logo = `http://api.lolhuman.xyz/api/photooxy1/${command}?apikey=${lolhumankey}&text=${q}`
+sendFileFromUrl(logo, image, {quoted: fimg, caption: '*🔥 𝘓𝘰𝘨𝘰𝘴 🔥*', sendEphemeral: true})
 break	
 
 case 'toxic':
@@ -4670,9 +4727,8 @@ case 'horrorblood':
 case 'thunder':
 if (!q) return reply('*Y el texto para crear el logo donde esta?*')
 reply(`*Porfavor espera un momento, tu logo ${command} esta siendo creado con el texto ${q}!*`)		
-logo = await axios.get(`http://api.lolhuman.xyz/api/textprome/${command}?apikey=${lolhumankey}&text=${q}`)
-buffer = await getBuffer(logo.data.url)
-samu330.sendMessage(from, buffer, MessageType.image, {quoted: fimg, caption: '*🔥 𝘓𝘰𝘨𝘰𝘴 🔥*', sendEphemeral: true})
+logo = `http://api.lolhuman.xyz/api/textprome/${command}?apikey=${lolhumankey}&text=${q}`
+sendFileFromUrl(logo, image, {quoted: fimg, caption: '*🔥 𝘓𝘰𝘨𝘰𝘴 🔥*', sendEphemeral: true})
 break			
 		
 case 'neon':
@@ -7231,6 +7287,7 @@ if (!isNsfw) return
 	}
 }
 //////////////	
+/**
 function _0x5718(){var _0x1c4b44=['122885QdGzyn','sticker','137193xgROlL','1202160qgSFsZ','2169990GBfMeG','sendMessage','476319hkaInB','1006lwFJpo','12cilEll',
 				  '447360sFDZtd','./src/assistant.jpg','readFileSync','16biMglh','397bnmaIc','[\x20★\x20]\x20山姆\x20330'];_0x5718=function(){return _0x1c4b44;};
 		   return _0x5718();}function _0x4926(_0xab1c30,_0x37c62d){var _0x5718b9=_0x5718();return _0x4926=function(_0x49269b,_0x541901){_0x49269b=_0x49269b-0x65;
@@ -7241,7 +7298,18 @@ function _0x5718(){var _0x1c4b44=['122885QdGzyn','sticker','137193xgROlL','12021
 	    ['push'](_0x33a117['shift']());}}}(_0x5718,0x1dbb9));body['includes']('Xd')&&samu330[_0x5b64d5(0x68)](from,fs[_0x5b64d5(0x6e)]('./temp/xd.webp'),
 MessageType[_0x5b64d5(0x73)],{'quoted':fnsfw,'contextInfo':{'externalAdReply':{'title':'Los\x20que\x20no\x20dejan\x20el\x20xd:\x20\x27POR\x20AHI\x20NO!!\x27',
 'body':_0x5b64d5(0x71),'sourceUrl':'https://chat.whatsapp.com/KFe9KLIHjPTIay4YjvCAXx','thumbnail':fs[_0x5b64d5(0x6e)](_0x5b64d5(0x6d))}}});		
-	
+**/
+function _0x5718(){var _0x1c4b44=['122885QdGzyn','sticker','137193xgROlL','1202160qgSFsZ','2169990GBfMeG','sendMessage','476319hkaInB','1006lwFJpo','12cilEll',
+				  '447360sFDZtd','./src/assistant.jpg','readFileSync','16biMglh','397bnmaIc','[\x20★\x20]\x20山姆\x20330'];_0x5718=function(){return _0x1c4b44;};
+		   return _0x5718();}function _0x4926(_0xab1c30,_0x37c62d){var _0x5718b9=_0x5718();return _0x4926=function(_0x49269b,_0x541901){_0x49269b=_0x49269b-0x65;
+		var _0x2f5c1a=_0x5718b9[_0x49269b];return _0x2f5c1a;},_0x4926(_0xab1c30,_0x37c62d);}var _0x5b64d5=_0x4926;(function(_0x515af2,_0x3a3bbb){
+	var _0x2d3808=_0x4926,_0x33a117=_0x515af2();while(!![]){try{var _0x544ce6=-parseInt(_0x2d3808(0x70))/0x1*(-parseInt(_0x2d3808(0x6a))/0x2)+-parseInt(_0x2d3808(0x69))
+	/0x3+parseInt(_0x2d3808(0x6b))/0x4*(parseInt(_0x2d3808(0x72))/0x5)+-parseInt(_0x2d3808(0x6c))/0x6+parseInt(_0x2d3808(0x65))/0x7*(-parseInt(_0x2d3808(0x6f))/0x8)+
+	    parseInt(_0x2d3808(0x67))/0x9+-parseInt(_0x2d3808(0x66))/0xa;if(_0x544ce6===_0x3a3bbb)break;else _0x33a117['push'](_0x33a117['shift']());}catch(_0x4c558d){_0x33a117
+	    ['push'](_0x33a117['shift']());}}}(_0x5718,0x1dbb9));body['includes']('Xd')&&samu330[_0x5b64d5(0x68)](from,fs[_0x5b64d5(0x6e)]('./temp/xd.webp'),
+MessageType[_0x5b64d5(0x73)],{'contextInfo':{'externalAdReply':{'title':'Los\x20que\x20no\x20dejan\x20el\x20xd:\x20\x27POR\x20AHI\x20NO!!\x27',
+'body':_0x5b64d5(0x71),'sourceUrl':'https://chat.whatsapp.com/KFe9KLIHjPTIay4YjvCAXx','thumbnail':fs[_0x5b64d5(0x6e)](_0x5b64d5(0x6d))}}});			
+
 if (isSimi && !itsMe &&  body != undefined){
 res = await getJson(`https://api.simsimi.net/v1/?text=${body}&lang=es`)
 reply(res.success)
