@@ -1373,7 +1373,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 				for(let i = 1; i <= repic.length; i++){
 				test1 = sam.message.listResponseMessage.singleSelectReply.selectedRowId
 				if (test1.includes(`Id${i}`)){
-					reply(`Id${i}`)
+					//reply(`Id${i}`)
 					j = i - 1
 					docp = repic[j]
 					bufpr = await getBuffer(`http://api.lolhuman.xyz/api/random/${docp}?apikey=NikolaTesla`)
@@ -1382,6 +1382,54 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 				}
 				}	
 			}	        
+
+
+	    		if (sam.message.listResponseMessage){
+				if (!isGroup) return reply(mess.only.group)
+				test1 = sam.message.listResponseMessage.singleSelectReply.selectedRowId
+				if (test1.includes(`Id9`)){
+					reply(mess.wait)
+					waifusd = await axios.get('https://waifu.pics/api/sfw/waifu')
+					nysd = await getBuffer(waifusd.data.url)
+					samu330.sendMessage(from, nysd, image, { caption: '💎 _*UwU*_ 💠', quoted: fimg })
+					addFilter(from)
+				}
+			}	
+	    
+	   		if (sam.message.listResponseMessage){
+				if (!isGroup) return reply(mess.only.group)
+				test1 = sam.message.listResponseMessage.singleSelectReply.selectedRowId
+				if (test1.includes(`Id10`)){
+					reply(mess.wait)
+					kawai1 = await axios.get(`http://api.lolhuman.xyz/api/random/neko?apikey=NikolaTesla`)
+					kawai2 = await axios.get(`http://api.lolhuman.xyz/api/random2/neko?apikey=NikolaTesla`)
+					k = Math.floor(Math.random() * 2) + 1
+					kawaii = `kawai${k}`
+					kawx = await getBuffer(kawaii.data.url)
+					samu330.sendMessage(from, kawx, image, { caption: '💎 _*Kawaii :3*_ 💠', quoted: fimg })
+					addFilter(from)
+				}
+			}
+	
+                      
+	   		if (sam.message.listResponseMessage){
+				if (!isGroup) return reply(mess.only.group)
+				test1 = sam.message.listResponseMessage.singleSelectReply.selectedRowId
+				if (test1.includes(`Id11`)){
+					reply(mess.wait)
+					ranp = getRandom('.gif')
+                    			rano = getRandom('.webp')
+					ini_buffer = `https://api.lolhuman.xyz/api/random2/baka?apikey=NikolaTesla`
+					exec(`wget ${ini_buffer} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
+                        		fs.unlinkSync(ranp)
+                        		buff = fs.readFileSync(rano)
+					samu330.sendMessage(from, buff, sticker})
+					fs.unlinkSync(rano)
+					})
+					addFilter(from)
+				}
+			}
+       
 ////
 
 //Zona de Comandos🛵
@@ -2875,7 +2923,7 @@ samu330.relayWAMessage(amongs, {waitForAck: true})
 addFilter(from)
 break	
 ///////////	
-case 'random':		
+case 'imgrandom':		
 let picrd = samu330.prepareMessageFromContent(from, {
 "listMessage":  {
 "title": "\t*Random pics*",
@@ -2916,6 +2964,18 @@ let picrd = samu330.prepareMessageFromContent(from, {
 {
 "title": "Shinobu (random)!!",
 "rowId": `Id8`
+},
+{
+"title": "Waifus (random)!!",
+"rowId": `Id9`
+},
+{
+"title": "Kawai (random)!!",
+"rowId": `Id10`
+},
+{
+"title": "Baka (sticker random)!!",
+"rowId": `Id11`
 },
 ]
 }
@@ -3908,7 +3968,7 @@ break
 case 'imagen':
 assistant = fs.readFileSync('./src/assistant.jpg')
 if (!isGroup) return reply(mess.only.group)
-if (!isRegister) return samu330.sendMessage(from, assistant, image, { quoted: noreg, caption: `😊Hola, ${timeFt}.\nAl parecer no estas _*Registrado*_, Para registrarte usa el comando: *${prefix}reg*.`, thumbnail: assistant, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
+if (!isRegister) return samu330.sendMessage(from, assistant, image, { quoted: noreg, caption: `😊Hola, ${timeFt}.\nAl parecer no estas _*Registrado*_, Para registrarte usa el comando: *${prefix}reg Nombre|Edad*.`, thumbnail: assistant, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
 if (args.length < 1) return reply('Que deseas buscar?')
 reply(`Porfavor espera un momento mientras busco imagenes de ` + args.join(' '))
 ggimg = args.join(' ')
@@ -4713,7 +4773,7 @@ case 'flamming':
 case 'harrypotter':
 if (!q) return reply('*Y el texto para crear el logo donde esta?*')
 reply(`*Porfavor espera un momento, tu logo ${command} esta siendo creado con el texto ${q}!*`)		
-logo = `http://api.lolhuman.xyz/api/photooxy1/${command}?apikey=${lolhumankey}&text=${q}`
+logo = `http://api.lolhuman.xyz/api/photooxy1/${command}?apikey=NikolaTesla&text=${q}`
 sendFileFromUrl(logo, image, {quoted: fimg, caption: '*🔥 𝘓𝘰𝘨𝘰𝘴 🔥*', sendEphemeral: true})
 break	
 
@@ -4727,7 +4787,7 @@ case 'horrorblood':
 case 'thunder':
 if (!q) return reply('*Y el texto para crear el logo donde esta?*')
 reply(`*Porfavor espera un momento, tu logo ${command} esta siendo creado con el texto ${q}!*`)		
-logo = `http://api.lolhuman.xyz/api/textprome/${command}?apikey=${lolhumankey}&text=${q}`
+logo = `http://api.lolhuman.xyz/api/textprome/${command}?apikey=NikolaTesla&text=${q}`
 sendFileFromUrl(logo, image, {quoted: fimg, caption: '*🔥 𝘓𝘰𝘨𝘰𝘴 🔥*', sendEphemeral: true})
 break			
 		
