@@ -3107,14 +3107,14 @@ boda2 = Math.floor(Math.random() * kossx.length)
 }
 while (kossx[boda2] == sender)	
 const diaax = kossx[boda2]
-teks = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${sender.replace("@s.whatsapp.net", "")} ❤️ @${diaax.jid.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
+teks = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${sender.jid.replace("@s.whatsapp.net", "")} ❤️ @${diaax.jid.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
 jdx.push(diaax.jid)
 jdx.push(sender.jid)
 setTimeout( () => {
 mentions(teks, jdx, true)
 }, 1000)
 break
-		
+/**		
 case 'casar':
 if (!isGroup) return reply(mess.only.group)
 if (args.length < 1) return reply("Mentiona a alguien, pajero!")	
@@ -3131,13 +3131,20 @@ boda2 = Math.floor(Math.random() * kossy.length)
 }
 while (kossy[boda2] == mentioned[0])	
 const diaay = kossy[boda2]
-teks = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${mentioned[0].split('@')[0]} ❤️ @${diaay.jid.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
+teks = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${mentioned[0].jid.split('@')[0]} ❤️ @${diaay.jid.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
 jdx.push(diaay.jid)
 jdx.push(mentioned[0].jid)
-setTimeout( () => {
-mentions(teks, jdx, true)
-}, 1000)
+const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay \n✪\n➥${ga}`
+samu330.sendMessage(from, ftgay, MessageType.image, {
+quoted: fgay, 
+//caption: `${hasil}\n${pushname}`, 
+caption: `${hasil}`, 
+contextInfo: {
+mentionedJid: [sender, mentioned[0]],
+},
+})
 break
+**/
 //const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay \n✪\n➥${ga}\n\n@${sender.replace("@s.whatsapp.net", "")}`		
 ///////
 case 'belle':
