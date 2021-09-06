@@ -2245,15 +2245,22 @@ break
 case 'crealogos':
 const xlogos = ["love", "lovemessage", "burnpaper", "flamming", "harrypotter", "toxic", "metaldark", "bloodfrosted", "halloween", "minion", "icecold", "horrorblood", "thunder"]
 	var textme = ''	     
-	for (let i = 0; i < onlyme.length; i++){
+	for (let i = 0; i < xlogos.length; i++){
 	textme = textme + `${bodyM} ${prefix}${xlogos[i]}\n`			
 	}	
-const logmenu = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
+logmenu = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 │ *Lalelilolu ᵈᵃʳʸ*⛥
 ╭───────────────────
 ${textme}
 ╰────────────────────╯`
-samu330.sendMessage(from, logmenu, MessageType.text, {quoted: fotak})
+samu330.sendMessage(from, logmenu, MessageType.text, {quoted:
+{ key: {
+fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+},
+message: {
+"documentMessage": { "title": "📚Logos for you :3", 'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}}
+}})
 addFilter(from)
 break		    
 ////////
