@@ -398,7 +398,7 @@ samu330.on('chat-update', async(sam) => {
 	/////	
 	const laleliloluNumber = ["33749258491"]
 	const isLalelilolu = senderNumber == laleliloluNumber
-	const cherryNumber = ["17602630309"]
+	const cherryNumber = ["527721618499"]
 	const isCherry = senderNumber == cherryNumber
 	/////
 	if (isBanChat && !isOwner) return
@@ -3099,7 +3099,7 @@ case 'emparejarme':
 if (!isGroup) return reply(mess.only.group)	
 samu330.updatePresence(from, Presence.composing) 
 reply(`${pushname} quiere una boda\n\n*Generando pareja...*`)
-jds = []		
+jdx = []		
 const kossx = groupMembers
 const akuux = sender
 boda2 = Math.floor(Math.random() * kossx.length)
@@ -3109,10 +3109,10 @@ boda2 = Math.floor(Math.random() * kossx.length)
 while (kossx[boda2] == akuux)	
 const diaax = kossx[boda2]
 teks = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${akuux.jid.split('@')[0]} ❤️ @${diaax.jid.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
-jds.push(akuux.jid)
-jds.push(diaax.jid)
+jdx.push(akuux.jid)
+jdx.push(diaax.jid)
 setTimeout( () => {
-mentions(teks, jds, true)
+mentions(teks, jdx, true)
 }, 1000)
 break
 //const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay \n✪\n➥${ga}\n\n@${sender.replace("@s.whatsapp.net", "")}`		
