@@ -4893,7 +4893,7 @@ const lolhuman = 'AkiRaAPI';
 const xteam = 'AkiraBotWa';
 const apivinz = 'NikolaTesla';
 const zeks = 'apivinz';
-/////
+/////			
 case 'animeme':               
 if (!isGroup) return reply(mess.only.group)
 samu330.updatePresence(from, Presence.composing)
@@ -4901,12 +4901,13 @@ uk = [""]
 nk = uk[Math.floor(Math.random() * uk.length)]
 try {
 data = await getJson('https://api.lolhuman.xyz/api/pinterest2?apikey=NikolaTesla&query=shitpost+otaku+espa%C3%B1ol')
+data = await getJson('https://api.lolhuman.xyz/api/pinterest2?apikey=NikolaTesla&query=humor+estupido')
 reply(mess.wait)
 n = JSON.parse(JSON.stringify(data.result));
 nimek = n[Math.floor(Math.random() * n.length)];
 pok = await getBuffer(nimek)
 samu330.sendMessage(from, pok, image, {
-  quoted: fimg, caption: ` equis d `
+  quoted: fimg, caption: `Equis d `
 })
 } catch {
   reply(mess.ferr)
