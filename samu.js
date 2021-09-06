@@ -3104,17 +3104,17 @@ if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }
 jds = []		
-const koss = groupMembers
-const akuu = mentioned[0]
-boda2 = Math.floor(Math.random() * koss.length)
+const kossx = groupMembers
+const akuux = mentioned[0]
+boda2 = Math.floor(Math.random() * kossx.length)
 do {
-boda2 = Math.floor(Math.random() * koss.length)
+boda2 = Math.floor(Math.random() * kossx.length)
 }
 while (koss[boda2] == akuu)	
-const diaa = koss[boda2]
-teks = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${akuu.jid.split('@')[0]} ❤️ @${diaa.jid.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
-jds.push(akuu.jid)
-jds.push(diaa.jid)
+const diaax = kossx[boda2]
+teks = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${akuux.jid.split('@')[0]} ❤️ @${diaax.jid.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
+jds.push(akuux.jid)
+jds.push(diaax.jid)
 setTimeout( () => {
 mentions(teks, jds, true)
 }, 1000)
