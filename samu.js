@@ -3105,10 +3105,9 @@ do {
 boda2 = Math.floor(Math.random() * kossx.length)
 }
 while (kossx[boda2] == sender)	
-const diaax = kossx[boda2]
+diaax = kossx[boda2]
 const teksx = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${sender.replace("@s.whatsapp.net", "")} ❤️ @${diaax.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
 samu330.sendMessage(from, teksx, MessageType.text, {
-quoted: fotak,  
 contextInfo: {
 mentionedJid: [sender, diaax],
 },
