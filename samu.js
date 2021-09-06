@@ -4897,14 +4897,13 @@ uk = [""]
 nk = uk[Math.floor(Math.random() * uk.length)]
 try {
 //data = await getJson('https://api.lolhuman.xyz/api/pinterest2?apikey=NikolaTesla&query=shitpost+otaku+espa%C3%B1ol')
-data = await getJson('https://api.lolhuman.xyz/api/pinterest2?apikey=NikolaTesla&query=humor+estupido')
+data = await axios.get('https://api.lolhuman.xyz/api/pinterest2?apikey=NikolaTesla&query=humor+estupido')	
 reply(mess.wait)
 mmx = JSON.parse(JSON.stringify(data.result));
-nimek =mmx[Math.floor(Math.random() * n.length)];
-pok = await getBuffer(nimek)
-samu330.sendMessage(from, pok, image, {
-  quoted: fimg, caption: `Equis d `
-})
+nimek =mmx[Math.floor(Math.random() * mmx.length)];
+buffer = await getBuffer(nimek)
+reply(`${nimek}`)
+samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: `Equis d `})
 } catch {
   reply(mess.ferr)
 }
