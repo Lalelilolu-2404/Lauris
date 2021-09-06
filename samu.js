@@ -3133,7 +3133,7 @@ while (kossy[boda2] == mentioned[0])
 const diaay = kossy[boda2]
 teks = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${mentioned[0].split('@')[0]} ❤️ @${diaay.jid.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
 jdx.push(diaay.jid)
-jdx.push(mentioned[0.jid)
+jdx.push(mentioned[0].jid)
 setTimeout( () => {
 mentions(teks, jdx, true)
 }, 1000)
