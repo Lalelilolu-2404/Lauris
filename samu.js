@@ -4894,16 +4894,13 @@ const zeks = 'apivinz';
 /////			
 case 'animeme':               
 if (!isGroup) return reply(mess.only.group)
-samu330.updatePresence(from, Presence.composing)
-uk = [""]
-nk = uk[Math.floor(Math.random() * uk.length)]
+if (isBan) return reply('*Lo siento pero usted es un usuario baneado, no puede hacer uso del bot!*')
+reply(mess.wait)
+//uk = [""]
+//nk = uk[Math.floor(Math.random() * uk.length)]
 try {
 //data = await getJson('https://api.lolhuman.xyz/api/pinterest2?apikey=NikolaTesla&query=shitpost+otaku+espa%C3%B1ol')
-data = await fetchJson(`https://api.lolhuman.xyz/api/pinterest2?apikey=NikolaTesla&query=memes+sin+sentido`, {
-  method: 'get'
-})
-reply(mess.wait)	
-reply(mess.wait)
+data = await getJson(`https://api.lolhuman.xyz/api/pinterest2?apikey=NikolaTesla&query=memes+sin+sentido`)
 mmx = JSON.parse(JSON.stringify(data.result));
 nimek =mmx[Math.floor(Math.random() * mmx.length)];
 buffer = await getBuffer(nimek)
