@@ -1423,7 +1423,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					exec(`wget ${ini_buffer} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
                         		fs.unlinkSync(ranp)
                         		buff = fs.readFileSync(rano)
-					samu330.sendMessage(from, buff, sticker})
+					samu330.sendMessage(from, buff, sticker)
 					fs.unlinkSync(rano)
 					})
 					addFilter(from)
