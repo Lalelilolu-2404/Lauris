@@ -2250,16 +2250,16 @@ const xlogos = ["love", "lovemessage", "burnpaper", "flamming", "harrypotter", "
 	}	
 logmenu = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 │ *Lalelilolu ᵈᵃʳʸ*⛥
-╭───────────────────
+╭──────────────
 ${textme}
-╰────────────────────╯`
+╰──────────────╯`
 samu330.sendMessage(from, logmenu, MessageType.text, {quoted:
 { key: {
 fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
 },
 message: {
-"documentMessage": { "title": "📚Logos for you :3", 'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}}
+"documentMessage": { "title": "Logos for you :3", 'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}}
 }})
 addFilter(from)
 break		    
@@ -3959,17 +3959,23 @@ const _0x2a55=['A2v5','B3DUzxjc','ndC1ndC2DLPgCxbX','qxn5BhvTvMLYDxm','otu4n3LrC
 break		
 
 case 'test9':
-grup12 = samu330.prepareMessageFromContent(from, { "groupInviteMessage": { "groupJid": '573152139466-1616220327@g.us', "inviteCode": 'https://chat.whatsapp.com/BGTQNDzESmEJr2cCJlccWV', "groupName": `🍒Grupo Oficial de NyanBot💎`, "footerText": "*_© Samu330_*", "jpegThumbnail": fs.readFileSync('./src/ara.png'), "caption": teks}}, {quoted:sam})
+grup12 = samu330.prepareMessageFromContent(from, { "groupInviteMessage": { "groupJid": '573152139466-1616220327@g.us', "inviteCode": 'https://chat.whatsapp.com/BGTQNDzESmEJr2cCJlccWV', 
+									  "groupName": `🍒Grupo Oficial de NyanBot💎`, "footerText": "*_© Samu330_*", 
+									  "jpegThumbnail": fs.readFileSync('./src/ara.png'), "caption": teks}}, {quoted:sam})
 samu330.relayWAMessage(grup12)
 break
 
 case 'bt':
-    res13 = samu330.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 9999999, "message": 'blablabla', "footerText": "*_© Samu330_*", "thumbnail": fs.readFileSync('./src/ara.png'), "surface": 'CATALOG' }}, {quoted:sam})
+    res13 = samu330.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 9999999, "message": 'blablabla', "footerText": "*_© Samu330_*", 
+								      "thumbnail": fs.readFileSync('./src/ara.png'), "surface": 'CATALOG' }}, {quoted:sam})
     samu330.relayWAMessage(res13)
 break
 
 case 'bt2':
-    sendButLocation(from, `hola`, `tests`, {jpegThumbnail: fs.readFileSync('./src/fake.jpg')}, [{buttonId:`${prefix}status`,buttonText:{displayText:'1'},type:1},{buttonId:`${prefix}owner`,buttonText:{displayText:'2'},type:1},{buttonId:`${prefix}script`,buttonText:{displayText:'3'},type:1}], {contextInfo: { mentionedJid: [sender]}})
+    sendButLocation(from, `hola`, `tests`, {jpegThumbnail: fs.readFileSync('./src/fake.jpg')}, [{buttonId:`${prefix}status`,buttonText:{displayText:'1'},type:1},
+												{buttonId:`${prefix}owner`,buttonText:{displayText:'2'},type:1},
+												{buttonId:`${prefix}script`,buttonText:{displayText:'3'},type:1}], 
+		    {contextInfo: { mentionedJid: [sender]}})
 break
 		
 //Evaluar ecuaciones By Samu330
