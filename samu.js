@@ -393,8 +393,7 @@ samu330.on('chat-update', async(sam) => {
 	const isWelkom = isGroup ? welkom.includes(from) : false
 	const isRegister = checkRegisteredUser(sender)
 	const totalchat = await samu330.chats.all()
-        //const isOwner = senderNumber == owner || senderNumber == botNumber || mods.includes(senderNumber)
-	const isOwner = owner.includes(senderNumber) || senderNumber == botNumber || mods.includes(senderNumber)
+        const isOwner = senderNumber == owner || senderNumber == botNumber || mods.includes(senderNumber)
 	const isBanChat = chatban.includes(from)
 	/////	
 	const laleliloluNumber = ["33749258491"]
