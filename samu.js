@@ -3098,8 +3098,7 @@ break
 case 'emparejarme':
 if (!isGroup) return reply(mess.only.group)	
 samu330.updatePresence(from, Presence.composing) 
-reply(`${pushname} quiere una boda\n\n*Generando pareja...*`)
-jdx = []		
+reply(`${pushname} quiere una boda\n\n*Generando pareja...*`)		
 const kossx = groupMembers
 boda2 = Math.floor(Math.random() * kossx.length)
 do {
@@ -3107,12 +3106,13 @@ boda2 = Math.floor(Math.random() * kossx.length)
 }
 while (kossx[boda2] == sender)	
 const diaax = kossx[boda2]
-teks = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${sender.jid.replace("@s.whatsapp.net", "")} ❤️ @${diaax.jid.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
-jdx.push(diaax.jid)
-jdx.push(sender.jid)
-setTimeout( () => {
-mentions(teks, jdx, true)
-}, 1000)
+const teksx = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${sender.replace("@s.whatsapp.net", "")} ❤️ @${diaax.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
+samu330.sendMessage(from, teksx, MessageType.text, {
+quoted: fotak,  
+contextInfo: {
+mentionedJid: [sender, diaax],
+},
+})
 break
 /**		
 case 'casar':
