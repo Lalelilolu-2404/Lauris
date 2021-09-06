@@ -3107,8 +3107,33 @@ boda2 = Math.floor(Math.random() * kossx.length)
 }
 while (kossx[boda2] == sender)	
 const diaax = kossx[boda2]
-teks = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${pushname} ❤️ @${diaax.jid.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
+teks = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${sender.replace("@s.whatsapp.net", "")} ❤️ @${diaax.jid.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
 jdx.push(diaax.jid)
+jdx.push(sender.jid)
+setTimeout( () => {
+mentions(teks, jdx, true)
+}, 1000)
+break
+		
+case 'casar':
+if (!isGroup) return reply(mess.only.group)
+if (args.length < 1) return reply("Mentiona a alguien, pajero!")	
+samu330.updatePresence(from, Presence.composing)  
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+}
+reply(`*Generando pareja...*`)
+jdx = []		
+const kossy = groupMembers
+boda2 = Math.floor(Math.random() * kossy.length)
+do {
+boda2 = Math.floor(Math.random() * kossy.length)
+}
+while (kossy[boda2] == mentioned[0])	
+const diaay = kossy[boda2]
+teks = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${mentioned[0].split('@')[0]} ❤️ @${diaay.jid.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
+jdx.push(diaay.jid)
+jdx.push(mentioned[0.jid)
 setTimeout( () => {
 mentions(teks, jdx, true)
 }, 1000)
