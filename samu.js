@@ -4900,11 +4900,11 @@ samu330.updatePresence(from, Presence.composing)
 uk = [""]
 nk = uk[Math.floor(Math.random() * uk.length)]
 try {
-data = await getJson('https://api.lolhuman.xyz/api/pinterest2?apikey=NikolaTesla&query=shitpost+otaku+espa%C3%B1ol')
+//data = await getJson('https://api.lolhuman.xyz/api/pinterest2?apikey=NikolaTesla&query=shitpost+otaku+espa%C3%B1ol')
 data = await getJson('https://api.lolhuman.xyz/api/pinterest2?apikey=NikolaTesla&query=humor+estupido')
 reply(mess.wait)
-n = JSON.parse(JSON.stringify(data.result));
-nimek = n[Math.floor(Math.random() * n.length)];
+mmx = JSON.parse(JSON.stringify(data.result));
+nimek =mmx[Math.floor(Math.random() * n.length)];
 pok = await getBuffer(nimek)
 samu330.sendMessage(from, pok, image, {
   quoted: fimg, caption: `Equis d `
