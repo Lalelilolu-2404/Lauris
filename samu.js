@@ -395,11 +395,7 @@ samu330.on('chat-update', async(sam) => {
 	const totalchat = await samu330.chats.all()
         const isOwner = senderNumber == owner || senderNumber == botNumber || mods.includes(senderNumber)
 	const isBanChat = chatban.includes(from)
-	/////
-	
-	const vicioNumber = ["573214985886"]
-	const isVicio = senderNumber == vicioNumber
-	
+	/////	
 	const laleliloluNumber = ["33749258491"]
 	const isLalelilolu = senderNumber == laleliloluNumber
 	/////
@@ -7424,6 +7420,7 @@ samu330.sendMessage(from, dias, audio, {quoted: fliveLoc, mimetype: 'audio/mp4',
 	
 ////////////Stickers para todos
 if (!isGroup) return 
+if (isBan) return
 if (isNsfw) {	  
 	if (body.includes(`?`) && body.length == 1){
 		const none2 = fs.readFileSync(`./src/stickers/No entender.webp`)
