@@ -2243,7 +2243,8 @@ addLevelingLevel(sender, 5)
 break	
 
 case 'crealogos':
-const xlogos = ["love", "lovemessage", "burnpaper", "flamming", "harrypotter", "toxic", "metaldark", "bloodfrosted", "halloween", "minion", "icecold", "horrorblood", "thunder"]
+const xlogos = ["love", "lovemessage", "burnpaper", "flamming", "harrypotter", "toxic", "metaldark", "bloodfrosted", "halloween", "minion", "icecold", "horrorblood", 
+		"thunder", "beautifulflower", "birthdayday", "birthdaycake", "galaxybat", "snow3d"]
 	var textme = ''	     
 	for (let i = 0; i < xlogos.length; i++){
 	textme = textme + `${bodyM} ${prefix}${xlogos[i]}\n`			
@@ -4935,7 +4936,18 @@ if (!q) return reply('*Y el texto para crear el logo donde esta?*')
 reply(`*Porfavor espera un momento, tu logo ${command} esta siendo creado con el texto ${q}!*`)		
 logo = `http://api.lolhuman.xyz/api/textprome/${command}?apikey=NikolaTesla&text=${q}`
 sendFileFromUrl(logo, image, {quoted: fimg, caption: '*🔥 𝘓𝘰𝘨𝘰𝘴 🔥*', sendEphemeral: true})
-break			
+break	
+		
+case 'beautifulflower':
+case 'birthdayday':
+case 'birthdaycake':
+case 'galaxybat':
+case 'snow3d':
+if (!q) return reply('*Y el texto para crear el logo donde esta?*')
+reply(`*Porfavor espera un momento, tu logo ${command} esta siendo creado con el texto ${q}!*`)		
+logo = `http://api.lolhuman.xyz/api/ephoto1/${command}?apikey=NikolaTesla&text=${q}``
+sendFileFromUrl(logo, image, {quoted: fimg, caption: '*🔥 𝘓𝘰𝘨𝘰𝘴 🔥*', sendEphemeral: true})
+break		
 		
 case 'neon':
 if (!q) return reply('*Y el texto para crear el logo donde esta?*')
