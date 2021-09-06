@@ -3066,7 +3066,7 @@ mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 var replace3 = fitn.split("|")[0];
 var target3 = fitn.split("|")[1];
 var bot3 = fitn.split("|")[2];
-samu330.sendMessage(from, `${bot3.trim()}`, text, {quoted: { key: { fromMe: false, participant: `${mentioned}`, ...(from ? { remoteJid: from } : {}) }, 
+samu330.sendMessage(from, `${bot3.trim()}`, text, {quoted: { key: { fromMe: false, participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {}) }, 
 						     message: { conversation: `${target3.trim()}` }}})
 break
 		
@@ -3084,7 +3084,7 @@ boda2 = Math.floor(Math.random() * koss.length)
 }
 while (boda2 == boda1)	
 const diaa = koss[boda2]
-teks = ` ❑ *Pareja formada* : \n\n ┏─━─━─━∞◆∞━─━─━─┓\n@${akuu.jid.split('@')[0]} ❤️ @${diaa.jid.split('@')[0]} \n ┗─━─━─━∞◆∞━─━─━─┛`
+teks = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${akuu.jid.split('@')[0]} ❤️ @${diaa.jid.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
 jds.push(akuu.jid)
 jds.push(diaa.jid)
 setTimeout( () => {
@@ -4600,9 +4600,8 @@ break
 		
 case 'clima':
 if (!isGroup) return reply(mess.only.group)
-if (args.length == 0) return reply(`Ejemplo de uso : ${prefix}clima sicuani`)
-daerah = args[0]
-get_result = await axios.get(`http://api.lolhuman.xyz/api/cuaca/${daerah}?apikey=NikolaTesla`)
+if (!q) return reply(`Ejemplo de uso : ${prefix}clima sicuani`)
+get_result = await axios.get(`http://api.lolhuman.xyz/api/cuaca/${q}?apikey=NikolaTesla`)
 get_result = get_result.result
 ini_txt = `•Lugar : ${get_result.tempat}\n`
 ini_txt += `•Velocidad de viento : ${get_result.angin}\n`
@@ -4610,7 +4609,7 @@ ini_txt += `•Humedad : ${get_result.kelembapan}\n`
 ini_txt += `•Temperatura : ${get_result.suhu}\n`
 //ini_txt += `•Aire : ${get_result.udara} Presion atmosferica\n`
 //ini_txt += `•Nivel del mar : ${get_result.permukaan_laut} Presion atmosferica\n`
-samu330.sendMessage(from, { degreesLatitude: get_result.latitude, degreesLongitude: get_result.longitude }, location, { quoted: sam})
+//samu330.sendMessage(from, { degreesLatitude: get_result.latitude, degreesLongitude: get_result.longitude }, location, { quoted: sam})
 reply(ini_txt)
 break
 		
@@ -4622,7 +4621,7 @@ argz = arg1.split("|")
 if (!argz) return reply(`Porfavor usa el simbolo "|" para dividir`)
 kode_negara = argz[0].trim()
 ini_txt = argz[1].trim()
-get_result = await axios.get(`http://api.lolhuman.xyz/api/translate/auto/${kode_negara}?apikey=${lolhumankey}&text=${ini_txt}`)
+get_result = await axios.get(`http://api.lolhuman.xyz/api/translate/auto/${kode_negara}?apikey=NikolaTesla&text=${ini_txt}`)
 get_result = get_result.result
 init_txt = `Prefijo del idioma detectado : ${get_result.from}\n`
 init_txt += `Traducido a : ${get_result.to}\n`
@@ -4783,7 +4782,7 @@ res1 = await y2mateA(res1.all[0].url).catch(e => {
 pr21 = getJson(`https://api.zeks.xyz/api/ytmp3?apikey=hamilton20&url=${res1.all[0].url}`)	
 reply(`_[ ! ] Lo siento, su descarga no pudo ser completada_\n\n*Realizando busqueda en el servidor 2*`)
 sendFileFromUrl(pr21.result.url_audio, audio, {quoted: faud, mimetype: 'audio/mp4', filename: res1[0].output})
-sendFileFromUrl(pr21.result.url_audio, audio, {quoted: faud, mimetype: 'audio/mp4', ptt: true, filename: res1[0].output})
+//sendFileFromUrl(pr21.result.url_audio, audio, {quoted: faud, mimetype: 'audio/mp4', ptt: true, filename: res1[0].output})
 })
 sendFileFromUrl(res1[0].link, audio, {quoted: faud, mimetype: 'audio/mp4', filename: res1[0].output})
 //sendFileFromUrl(res1[0].link, audio, {quoted: faud, mimetype: 'audio/mp4', ptt: true, filename: res1[0].output})
