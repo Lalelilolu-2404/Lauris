@@ -4896,16 +4896,15 @@ case 'animeme':
 if (!isGroup) return reply(mess.only.group)
 if (isBan) return reply('*Lo siento pero usted es un usuario baneado, no puede hacer uso del bot!*')
 reply(mess.wait)
-//uk = [""]
-//nk = uk[Math.floor(Math.random() * uk.length)]
+uk = ["shitpost+otaku+espa%C3%B1ol", "humor+estupido", "image+cursed", "Imagenes+turbias+terror", "memes+sin+sentido", "random+imagenes", "shitpost+magia"]
+nk = uk[Math.floor(Math.random() * uk.length)]
 try {
-//data = await getJson('https://api.lolhuman.xyz/api/pinterest2?apikey=NikolaTesla&query=shitpost+otaku+espa%C3%B1ol')
-data = await getJson(`https://api.lolhuman.xyz/api/pinterest2?apikey=NikolaTesla&query=memes+sin+sentido`)
+data = await getJson(`https://api.lolhuman.xyz/api/pinterest2?apikey=NikolaTesla&query=${nk}`)
 mmx = JSON.parse(JSON.stringify(data.result));
 nimek =mmx[Math.floor(Math.random() * mmx.length)];
 buffer = await getBuffer(nimek)
-reply(`${nimek}`)
-samu330.sendMessage(from, buffer, image, {quoted: fvid, caption: `Equis d `})
+//reply(`${nimek}`)
+samu330.sendMessage(from, buffer, image, {quoted: fvid, caption: `Equis d ._. `})
 } catch {
   reply(mess.ferr)
 }
