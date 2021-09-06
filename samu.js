@@ -4945,7 +4945,7 @@ case 'galaxybat':
 case 'snow3d':
 if (!q) return reply('*Y el texto para crear el logo donde esta?*')
 reply(`*Porfavor espera un momento, tu logo ${command} esta siendo creado con el texto ${q}!*`)		
-logo = `http://api.lolhuman.xyz/api/ephoto1/${command}?apikey=NikolaTesla&text=${q}``
+logo = `http://api.lolhuman.xyz/api/ephoto1/${command}?apikey=NikolaTesla&text=${q}`
 sendFileFromUrl(logo, image, {quoted: fimg, caption: '*🔥 𝘓𝘰𝘨𝘰𝘴 🔥*', sendEphemeral: true})
 break		
 		
