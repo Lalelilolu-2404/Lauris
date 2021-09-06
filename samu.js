@@ -3107,7 +3107,7 @@ boda2 = Math.floor(Math.random() * kossx.length)
 }
 while (kossx[boda2] == sender)	
 const diaax = kossx[boda2]
-teks = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${sender.replace("@s.whatsapp.net", "")} ❤️ @${diaax.jid.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
+teks = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${pushname} ❤️ @${diaax.jid.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
 jdx.push(diaax.jid)
 setTimeout( () => {
 mentions(teks, jdx, true)
