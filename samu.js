@@ -3062,7 +3062,9 @@ case 'calumnia':
 if (!isGroup) return reply(mess.only.group)
 samu330.updatePresence(from, Presence.composing) 		
 if (args.length < 1) return reply(`Usa :\n${prefix}calumnia [@tag|mensaje|respuesta]\n\nEjemplo : \n${prefix}calumnia @usuarioetiquetado|bendiceme|bendecido`)
+if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+}
 var fitn = body.slice(10)
 var replace3 = fitn.split("|")[0].trim();
 var target3 = fitn.split("|")[1].trim();
@@ -4608,12 +4610,13 @@ ini_txt = `•Lugar : ${get_result.tempat}\n`
 ini_txt += `•Velocidad de viento : ${get_result.angin}\n`
 ini_txt += `•Humedad : ${get_result.kelembapan}\n`
 ini_txt += `•Temperatura : ${get_result.suhu}\n`
+ini_txt += `•Descripción : ${get_result.description}\n`
 //ini_txt += `•Aire : ${get_result.udara} Presion atmosferica\n`
 //ini_txt += `•Nivel del mar : ${get_result.permukaan_laut} Presion atmosferica\n`
 //samu330.sendMessage(from, { degreesLatitude: get_result.latitude, degreesLongitude: get_result.longitude }, location, { quoted: sam})
 reply(ini_txt)
 break
-		
+/**		
 case 'traductor':
 if (!isGroup) return reply(mess.only.group)
 arg1 = q
@@ -4631,7 +4634,7 @@ init_txt += `Traducido : ${get_result.translated}\n`
 init_txt += `Pronunciacion : ${get_result.pronunciation}\n`
 reply(init_txt)
 break
-		
+**/		
 case 'idiomas':
 reply(`*Estos son los idiomas soportados por la voz👇🏻*:
 
@@ -4903,7 +4906,7 @@ n = JSON.parse(JSON.stringify(data.result));
 nimek = n[Math.floor(Math.random() * n.length)];
 pok = await getBuffer(nimek)
 samu330.sendMessage(from, pok, image, {
-  quoted: fvid, caption: ` equis d `
+  quoted: fimg, caption: ` equis d `
 })
 } catch {
   reply(mess.ferr)
