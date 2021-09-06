@@ -3101,15 +3101,13 @@ samu330.updatePresence(from, Presence.composing)
 reply(`${pushname} quiere una boda\n\n*Generando pareja...*`)
 jdx = []		
 const kossx = groupMembers
-const akuux = sender
 boda2 = Math.floor(Math.random() * kossx.length)
 do {
 boda2 = Math.floor(Math.random() * kossx.length)
 }
-while (kossx[boda2] == akuux)	
+while (kossx[boda2] == sender)	
 const diaax = kossx[boda2]
-teks = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${akuux.jid.split('@')[0]} ❤️ @${diaax.jid.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
-jdx.push(akuux.jid)
+teks = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${sender.replace("@s.whatsapp.net", "")} ❤️ @${diaax.jid.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
 jdx.push(diaax.jid)
 setTimeout( () => {
 mentions(teks, jdx, true)
