@@ -3056,7 +3056,42 @@ randKey = jsonData[randIndex];
 buffr = await getBuffer(randKey.result)
 samu330.sendMessage(from, buffr, image, {quoted: fimg})
 break	
+
+case 'calumnia':
+if (!isGroup) return reply(mess.only.group)
+if (args.length < 1) return reply(`Usa :\n${prefix}calumnia [@tag|mensaje|respuesta]\n\nEjemplo : \n${prefix}calumnia @usuarioetiquetado|bendiceme|bendecido`)
+var fitn = body.slice(10)
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+var replace3 = fitn.split("|")[0];
+var target3 = fitn.split("|")[1];
+var bot3 = fitn.split("|")[2];
+samu330.sendMessage(from, `${bot3.trim()}`, text, {quoted: { key: { fromMe: false, participant: `${mentioned}`, ...(from ? { remoteJid: from } : {}) }, 
+						     message: { conversation: `${target3.trim()}` }}})
+break
 		
+case 'emparejar':
+if (!isGroup) return reply(mess.only.group)
+reply(`${pushname} esta realizando una boda\n\n*Generando pareja...*`)
+jds = []		
+const jdii = groupMembers
+const koss = groupMembers
+boda1 = Math.floor(Math.random() * jdii.length)
+const akuu = jdii[boda1]
+boda2 = Math.floor(Math.random() * koss.length)
+do {
+boda2 = Math.floor(Math.random() * koss.length)
+}
+while (boda2 == boda1)	
+const diaa = koss[boda2]
+teks = ` ❑ *Pareja formada* : \n\n ┏─━─━─━∞◆∞━─━─━─┓\n@${akuu.jid.split('@')[0]} ❤️ @${diaa.jid.split('@')[0]} \n ┗─━─━─━∞◆∞━─━─━─┛`
+jds.push(akuu.jid)
+jds.push(diaa.jid)
+setTimeout( () => {
+mentions(teks, jds, true)
+}, 800)
+//vivannn = fs.readFileSync(`./fiestamp3/audiouwu/willyuwu.m4a`)
+//samu330.sendMessage(from, vivannn, audio, { mimetype: 'audio/mp4',  quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": `𝗘𝘀𝘁𝗼 𝗳𝘂𝗲 𝗽𝗼𝘀𝗶𝗯𝗹𝗲 𝗴𝗿𝗮𝗰𝗶𝗮𝘀 𝗮 ${pushname}`, "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('recursos/multimediauwu/vivannnnn.jpg')} } }, mek, ptt: true })
+break
 ///////
 case 'belle':
 if (!isGroup) return reply(mess.only.group)
@@ -4554,11 +4589,46 @@ const group = await samu330.groupCreate(`${nombregc}`, [sender])
 reply(`*EL GRUPO FUE CREADO CORRECTAMENTE CON EL NOMBRE:*\n\n*${nombregc}*\n\nid del grupo: ${group.gid}`)
 samu330.sendMessage(group.gid, "hello everyone", MessageType.text, {quoted: fliveLoc})
 break
-		
+/**		
 case 'clima':
 if (!q) return reply('*Y el lugar del que quieres ver el clima?*')
 clima = `https://api.apiflash.com/v1/urltoimage?access_key=57fcd6384cff4e529b9ca76089f05992&url=https://pt.wttr.in/${q}`
 sendFileFromUrl(clima, image, {quoted: fimg})
+break
+**/
+		
+case 'clima':
+if (!isGroup) return reply(mess.only.group)
+if (args.length == 0) return reply(`Ejemplo de uso : ${prefix}clima sicuani`)
+daerah = args[0]
+get_result = await axios.get(`http://api.lolhuman.xyz/api/cuaca/${daerah}?apikey=NikolaTesla`)
+get_result = get_result.result
+ini_txt = `•Lugar : ${get_result.tempat}\n`
+ini_txt += `•Velocidad de viento : ${get_result.angin}\n`
+ini_txt += `•Humedad : ${get_result.kelembapan}\n`
+ini_txt += `•Temperatura : ${get_result.suhu}\n`
+//ini_txt += `•Aire : ${get_result.udara} Presion atmosferica\n`
+//ini_txt += `•Nivel del mar : ${get_result.permukaan_laut} Presion atmosferica\n`
+samu330.sendMessage(from, { degreesLatitude: get_result.latitude, degreesLongitude: get_result.longitude }, location, { quoted: sam})
+reply(ini_txt)
+break
+		
+case 'traductor':
+if (!isGroup) return reply(mess.only.group)
+arg1 = q
+if (!arg1) return reply(`Ejemplo ${prefix}spam es|Fuck you`)
+argz = arg1.split("|")
+if (!argz) return reply(`Porfavor usa el simbolo "|" para dividir`)
+kode_negara = argz[0].trim()
+ini_txt = argz[1].trim()
+get_result = await axios.get(`http://api.lolhuman.xyz/api/translate/auto/${kode_negara}?apikey=${lolhumankey}&text=${ini_txt}`)
+get_result = get_result.result
+init_txt = `Prefijo del idioma detectado : ${get_result.from}\n`
+init_txt += `Traducido a : ${get_result.to}\n`
+init_txt += `Original : ${get_result.original}\n`
+init_txt += `Traducido : ${get_result.translated}\n`
+init_txt += `Pronunciacion : ${get_result.pronunciation}\n`
+reply(init_txt)
 break
 		
 case 'idiomas':
@@ -4828,9 +4898,7 @@ samu330.updatePresence(from, Presence.composing)
 uk = [""]
 nk = uk[Math.floor(Math.random() * uk.length)]
 try {
-data = await fetchJson(`https://api.lolhuman.xyz/api/pinterest2?apikey=NikolaTesla&query=shitpost+otaku+espa%C3%B1ol`, {
-  method: 'get'
-})
+data = await axios.get('https://api.lolhuman.xyz/api/pinterest2?apikey=NikolaTesla&query=shitpost+otaku+espa%C3%B1ol')
 reply(mess.wait)
 n = JSON.parse(JSON.stringify(data.result));
 nimek = n[Math.floor(Math.random() * n.length)];
