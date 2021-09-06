@@ -2599,7 +2599,7 @@ break
 case 'gay':
 addFilter(from)	
 if (!isGroup) return reply(mess.only.group)
-if (args.length < 1) return reply("Meniona a alguien, pajero!")	
+if (args.length < 1) return reply("Mentiona a alguien, pajero!")	
 samu330.updatePresence(from, Presence.composing) 
 //mentions(`@${mentioned[0].split('@')[0]}`, mentioned, true) 
 if (sam.message.extendedTextMessage != undefined){
@@ -3060,14 +3060,15 @@ break
 
 case 'calumnia':
 if (!isGroup) return reply(mess.only.group)
+samu330.updatePresence(from, Presence.composing) 		
 if (args.length < 1) return reply(`Usa :\n${prefix}calumnia [@tag|mensaje|respuesta]\n\nEjemplo : \n${prefix}calumnia @usuarioetiquetado|bendiceme|bendecido`)
-var fitn = body.slice(10)
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-var replace3 = fitn.split("|")[0];
-var target3 = fitn.split("|")[1];
-var bot3 = fitn.split("|")[2];
-samu330.sendMessage(from, `${bot3.trim()}`, text, {quoted: { key: { fromMe: false, participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {}) }, 
-						     message: { conversation: `${target3.trim()}` }}})
+var fitn = body.slice(10)
+var replace3 = fitn.split("|")[0].trim();
+var target3 = fitn.split("|")[1].trim();
+var bot3 = fitn.split("|")[2].trim();
+samu330.sendMessage(from, `${bot3}`, MessageType.text, {quoted: { key: { fromMe: false, participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {}) }, 
+						     message: { conversation: `${target3}` }}})
 break
 		
 case 'emparejar':
@@ -4601,7 +4602,7 @@ break
 case 'clima':
 if (!isGroup) return reply(mess.only.group)
 if (!q) return reply(`Ejemplo de uso : ${prefix}clima sicuani`)
-get_result = await axios.get(`http://api.lolhuman.xyz/api/cuaca/${q}?apikey=NikolaTesla`)
+get_result = await getJson(`http://api.lolhuman.xyz/api/cuaca/${q}?apikey=NikolaTesla`)
 get_result = get_result.result
 ini_txt = `•Lugar : ${get_result.tempat}\n`
 ini_txt += `•Velocidad de viento : ${get_result.angin}\n`
@@ -4621,7 +4622,7 @@ argz = arg1.split("|")
 if (!argz) return reply(`Porfavor usa el simbolo "|" para dividir`)
 kode_negara = argz[0].trim()
 ini_txt = argz[1].trim()
-get_result = await axios.get(`http://api.lolhuman.xyz/api/translate/auto/${kode_negara}?apikey=NikolaTesla&text=${ini_txt}`)
+get_result = await getJson(`http://api.lolhuman.xyz/api/translate/auto/${kode_negara}?apikey=NikolaTesla&text=${ini_txt}`)
 get_result = get_result.result
 init_txt = `Prefijo del idioma detectado : ${get_result.from}\n`
 init_txt += `Traducido a : ${get_result.to}\n`
@@ -4891,14 +4892,12 @@ const apivinz = 'NikolaTesla';
 const zeks = 'apivinz';
 /////
 case 'animeme':               
-if (!isRegister) return reply(mess.only.usrReg)
 if (!isGroup) return reply(mess.only.group)
-
 samu330.updatePresence(from, Presence.composing)
 uk = [""]
 nk = uk[Math.floor(Math.random() * uk.length)]
 try {
-data = await axios.get('https://api.lolhuman.xyz/api/pinterest2?apikey=NikolaTesla&query=shitpost+otaku+espa%C3%B1ol')
+data = await getJson('https://api.lolhuman.xyz/api/pinterest2?apikey=NikolaTesla&query=shitpost+otaku+espa%C3%B1ol')
 reply(mess.wait)
 n = JSON.parse(JSON.stringify(data.result));
 nimek = n[Math.floor(Math.random() * n.length)];
