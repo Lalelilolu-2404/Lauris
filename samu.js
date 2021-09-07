@@ -3094,7 +3094,7 @@ mentions(teks, jds, true)
 //vivannn = fs.readFileSync(`./fiestamp3/audiouwu/willyuwu.m4a`)
 //samu330.sendMessage(from, vivannn, audio, { mimetype: 'audio/mp4',  quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": `𝗘𝘀𝘁𝗼 𝗳𝘂𝗲 𝗽𝗼𝘀𝗶𝗯𝗹𝗲 𝗴𝗿𝗮𝗰𝗶𝗮𝘀 𝗮 ${pushname}`, "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('recursos/multimediauwu/vivannnnn.jpg')} } }, mek, ptt: true })
 break
-	
+/**	
 case 'emparejarme':
 if (!isGroup) return reply(mess.only.group)	
 samu330.updatePresence(from, Presence.composing) 
@@ -3118,7 +3118,62 @@ mentions(teksx, prj, true)
 //quoted: sam, 
 //contextInfo: { mentionedJid: [prj[0], prj[1]]}})
 break
-		
+**/
+case 'emparejarme':
+if (!isGroup) return reply(mess.only.group)	
+samu330.updatePresence(from, Presence.composing) 
+reply(`${pushname} quiere una boda\n\n*Generando pareja...*`)
+pm2 = groupMembers
+tr21 = Math.floor(Math.random() * pm2.length)
+do {
+tr21 = Math.floor(Math.random() * pm2.length)
+}
+while (pm2[tr21] == sender)	
+tp2 = pm2[tr21]
+const teksx = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${sender.replace("@s.whatsapp.net", "")} ❤️ @${tp2.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
+setTimeout( () => {
+samu330.sendMessage(from, teksx, MessageType.text, {
+quoted: sam,
+contextInfo: {
+mentionedJid: [sender, tp2],
+},
+});
+}, 1000)
+///samu330.sendMessage(from, teksx, MessageType.text, {
+//quoted: sam, 
+//contextInfo: { mentionedJid: [prj[0], prj[1]]}})
+break	
+/**		
+if (argss.length === 1)
+return reply(
+`Etiqueta a quien quieras que sea ser tu oponente!\n\nEjemplo : *${prefix}ttt <@tag>*`
+);
+	const boardnow = setGame(`${from}`);
+	console.log(`NUEVA SECCION DE TTT ${boardnow.session}`);
+	boardnow.status = false;
+	boardnow.X = sender.replace("@s.whatsapp.net", "");
+	boardnow.O = argss[1].replace("@", "");
+	fs.writeFileSync(
+		 `./lib/tictactoe/db/${from}.json`,
+		 JSON.stringify(boardnow, null, 2)
+);
+const strChat = `*🎮 Iniciar el juego tictactoe 🎳*
+
+@${sender.replace(
+		 "@s.whatsapp.net",
+		 ""
+)} te desafió a convertirte en su oponente del juego
+
+_[ ${argss[1]} ] Escribe "S" o "N" para aceptar o rechazar el juego._ 
+`;
+samu330.sendMessage(from, strChat, MessageType.text, {
+quoted: fjeux,
+contextInfo: {
+mentionedJid: [sender, argss[1].replace("@", "") + "@s.whatsapp.net"],
+},
+});
+break
+**/
 /**		
 case 'casar':
 if (!isGroup) return reply(mess.only.group)
