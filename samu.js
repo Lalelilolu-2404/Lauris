@@ -3111,11 +3111,10 @@ const tp2 = pm2[tr21]
 prj.push(tp1.jid)
 prj.push(tp2.jid)
 teksx = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${prj[0].split('@')[0]} ❤️ @${prj[1].split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
-setTimeout( () => {
-samu330.sendMessage(from, teksx, MessageType.text, {
-quoted: sam, 
-contextInfo: { mentionedJid: [prj[0], prj[1]]}})
-}, 1000)
+reply(`${teksx}`)
+///samu330.sendMessage(from, teksx, MessageType.text, {
+//quoted: sam, 
+//contextInfo: { mentionedJid: [prj[0], prj[1]]}})
 break
 		
 /**		
