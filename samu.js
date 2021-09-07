@@ -3110,7 +3110,7 @@ while (pm2[tr21] == sender)
 const tp2 = pm2[tr21]
 prj.push(tp1.jid)
 prj.push(tp2.jid)
-teksx = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${prj[0].split('@')[0]} ❤️ @${prj[1].split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
+teksx = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${tp1.jid.split('@')[0]} ❤️ @${tp2.jid.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
 setTimeout( () => {
 mentions(teksx, prj, true)
 }, 1000)
