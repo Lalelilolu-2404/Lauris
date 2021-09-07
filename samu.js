@@ -3123,6 +3123,7 @@ case 'emparejarme':
 if (!isGroup) return reply(mess.only.group)	
 samu330.updatePresence(from, Presence.composing) 
 reply(`${pushname} quiere una boda\n\n*Generando pareja...*`)
+prj = []
 const pm2 = groupMembers
 tr21 = Math.floor(Math.random() * pm2.length)
 do {
@@ -3130,12 +3131,13 @@ tr21 = Math.floor(Math.random() * pm2.length)
 }
 while (pm2[tr21] == sender)	
 const tp2 = pm2[tr21]
-reply(`${tp2}`)
-const teksx = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${sender.replace("@s.whatsapp.net", "")} ❤️ @${tp2.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
+prj.push(tp2.jid)
+reply(`${prj[0]}`)
+const teksx = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${sender.replace("@s.whatsapp.net", "")} ❤️ @${prj[0].split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
 samu330.sendMessage(from, teksx, MessageType.text, {
 quoted: sam,
 contextInfo: {
-mentionedJid: [sender, tp2],
+mentionedJid: [sender, prj[0]],
 },
 })
 ///samu330.sendMessage(from, teksx, MessageType.text, {
