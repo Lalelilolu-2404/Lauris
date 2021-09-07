@@ -3100,23 +3100,24 @@ if (!isGroup) return reply(mess.only.group)
 samu330.updatePresence(from, Presence.composing) 
 reply(`${pushname} quiere una boda\n\n*Generando pareja...*`)
 prj = []
-const kossx = groupMembers
-const diaay = sender
-boda2 = Math.floor(Math.random() * kossx.length)
+const tr1 == sender
+const pm2 = groupMembers
+tr21 = Math.floor(Math.random() * pm2.length)
 do {
-boda2 = Math.floor(Math.random() * kossx.length)
+tr21 = Math.floor(Math.random() * pm2.length)
 }
-while (kossx[boda2] == sender)	
-const diaax = kossx[boda2]
-prj.push(diaax.jid)
-prj.push(diaay.jid)
-teksx = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${prj[1].split('@')[0]} ❤️ @${prj[0].split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
+while (pm2[tr21] == tr1)	
+const tr2 = pm2[tr21]
+prj.push(tr1.jid)
+prj.push(tr2.jid)
+teksx = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${prj[0].split('@')[0]} ❤️ @${prj[1].split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
 setTimeout( () => {
 samu330.sendMessage(from, teksx, MessageType.text, {
 quoted: fjeux, 
 contextInfo: { mentionedJid: [prj[0], prj[1]]}})
 }, 1000)
 break
+		
 /**		
 case 'casar':
 if (!isGroup) return reply(mess.only.group)
