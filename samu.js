@@ -3100,7 +3100,7 @@ if (!isGroup) return reply(mess.only.group)
 samu330.updatePresence(from, Presence.composing) 
 reply(`${pushname} quiere una boda\n\n*Generando pareja...*`)
 prj = []
-const tp1 = [`${sender}`]
+var tp1 = sender
 const pm2 = groupMembers
 tr21 = Math.floor(Math.random() * pm2.length)
 do {
