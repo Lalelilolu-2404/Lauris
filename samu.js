@@ -3094,31 +3094,7 @@ mentions(teks, jds, true)
 //vivannn = fs.readFileSync(`./fiestamp3/audiouwu/willyuwu.m4a`)
 //samu330.sendMessage(from, vivannn, audio, { mimetype: 'audio/mp4',  quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": `𝗘𝘀𝘁𝗼 𝗳𝘂𝗲 𝗽𝗼𝘀𝗶𝗯𝗹𝗲 𝗴𝗿𝗮𝗰𝗶𝗮𝘀 𝗮 ${pushname}`, "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('recursos/multimediauwu/vivannnnn.jpg')} } }, mek, ptt: true })
 break
-/**	
-case 'emparejarme':
-if (!isGroup) return reply(mess.only.group)	
-samu330.updatePresence(from, Presence.composing) 
-reply(`${pushname} quiere una boda\n\n*Generando pareja...*`)
-prj = []
-const tp1 = sender
-const pm2 = groupMembers
-tr21 = Math.floor(Math.random() * pm2.length)
-do {
-tr21 = Math.floor(Math.random() * pm2.length)
-}
-while (pm2[tr21] == sender)	
-const tp2 = pm2[tr21]
-prj.push(tp1.jid)
-prj.push(tp2.jid)
-teksx = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${tp1.jid.split('@')[0]} ❤️ @${tp2.jid.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
-setTimeout( () => {
-mentions(teksx, prj, true)
-}, 1000)
-///samu330.sendMessage(from, teksx, MessageType.text, {
-//quoted: sam, 
-//contextInfo: { mentionedJid: [prj[0], prj[1]]}})
-break
-**/
+
 case 'emparejarme':
 if (!isGroup) return reply(mess.only.group)	
 samu330.updatePresence(from, Presence.composing) 
@@ -3132,7 +3108,7 @@ tr21 = Math.floor(Math.random() * pm2.length)
 while (pm2[tr21] == sender)	
 const tp2 = pm2[tr21]
 prj.push(tp2.jid)
-reply(`${prj[0]}`)
+//reply(`${prj[0]}`)
 const teksx = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${sender.replace("@s.whatsapp.net", "")} ❤️ @${prj[0].split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
 samu330.sendMessage(from, teksx, MessageType.text, {
 quoted: sam,
@@ -3140,42 +3116,8 @@ contextInfo: {
 mentionedJid: [sender, prj[0]],
 },
 })
-///samu330.sendMessage(from, teksx, MessageType.text, {
-//quoted: sam, 
-//contextInfo: { mentionedJid: [prj[0], prj[1]]}})
 break	
-/**		
-if (argss.length === 1)
-return reply(
-`Etiqueta a quien quieras que sea ser tu oponente!\n\nEjemplo : *${prefix}ttt <@tag>*`
-);
-	const boardnow = setGame(`${from}`);
-	console.log(`NUEVA SECCION DE TTT ${boardnow.session}`);
-	boardnow.status = false;
-	boardnow.X = sender.replace("@s.whatsapp.net", "");
-	boardnow.O = argss[1].replace("@", "");
-	fs.writeFileSync(
-		 `./lib/tictactoe/db/${from}.json`,
-		 JSON.stringify(boardnow, null, 2)
-);
-const strChat = `*🎮 Iniciar el juego tictactoe 🎳*
-
-@${sender.replace(
-		 "@s.whatsapp.net",
-		 ""
-)} te desafió a convertirte en su oponente del juego
-
-_[ ${argss[1]} ] Escribe "S" o "N" para aceptar o rechazar el juego._ 
-`;
-samu330.sendMessage(from, strChat, MessageType.text, {
-quoted: fjeux,
-contextInfo: {
-mentionedJid: [sender, argss[1].replace("@", "") + "@s.whatsapp.net"],
-},
-});
-break
-**/
-/**		
+		
 case 'casar':
 if (!isGroup) return reply(mess.only.group)
 if (args.length < 1) return reply("Mentiona a alguien, pajero!")	
@@ -3184,29 +3126,24 @@ if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }
 reply(`*Generando pareja...*`)
-jdx = []		
-const kossy = groupMembers
-boda2 = Math.floor(Math.random() * kossy.length)
+pcj = []
+const pm1 = groupMembers
+tr11 = Math.floor(Math.random() * pm1.length)
 do {
-boda2 = Math.floor(Math.random() * kossy.length)
+tr11 = Math.floor(Math.random() * pm1.length)
 }
-while (kossy[boda2] == mentioned[0])	
-const diaay = kossy[boda2]
-teks = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${mentioned[0].jid.split('@')[0]} ❤️ @${diaay.jid.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
-jdx.push(diaay.jid)
-jdx.push(mentioned[0].jid)
-const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay \n✪\n➥${ga}`
-samu330.sendMessage(from, ftgay, MessageType.image, {
-quoted: fgay, 
-//caption: `${hasil}\n${pushname}`, 
-caption: `${hasil}`, 
+while (pm1[tr11] == sender)	
+const tp1 = pm1[tr11]
+pcj.push(tp1.jid)
+//reply(`${prj[0]}`)
+const teksy = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${mentioned[0].replace("@s.whatsapp.net", "")} ❤️ @${pcj[0].split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
+samu330.sendMessage(from, teksy, MessageType.text, {
+quoted: sam,
 contextInfo: {
-mentionedJid: [sender, mentioned[0]],
+mentionedJid: [mentioned[0], pcj[0]],
 },
 })
-break
-**/
-//const hasil = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱\n\n➥${random}% gay \n✪\n➥${ga}\n\n@${sender.replace("@s.whatsapp.net", "")}`		
+break	
 ///////
 case 'belle':
 if (!isGroup) return reply(mess.only.group)
