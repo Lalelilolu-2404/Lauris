@@ -3108,9 +3108,9 @@ boda2 = Math.floor(Math.random() * kossx.length)
 }
 while (kossx[boda2] == sender)	
 const diaax = kossx[boda2]
-teksx = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${diaay.jid.split('@')[0]} ❤️ @${diaax.jid.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
-jds.push(diaax.jid)
-jds.push(diaay.jid)
+teksx = ` ❑ *Pareja formada* : \n\n ┏─━─━─━─━∞◆∞━─━─━─━─┓\n@${diaay.split('@')[0]} ❤️ @${diaax.split('@')[0]} \n ┗─━─━─━─━∞◆∞━─━─━─━─┛`
+prj.push(diaax.jid)
+prj.push(diaay.jid)
 setTimeout( () => {
 samu330.sendMessage(from, teksx, MessageType.text, {quoted: sam, contextInfo: { mentionedJid: [prj]}})
 }, 1000)
