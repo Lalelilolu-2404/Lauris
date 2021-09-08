@@ -6063,12 +6063,29 @@ wa.setName(arg)
 .then((res) => wa.sendFakeStatus2(from, JSON.stringify(res), fake))
 .catch((err) => wa.sendFakeStatus2(from, JSON.stringify(err), fake))
 break
+/**
 case 'setreply':
 if (!itsMe && !isOwner) return reply('Este comando solo puede ser usado por *Me :v* ⚙')
 if (!arg) return reply(`Uso: ${prefix}setreply texto`)
 fake = arg
 wa.sendFakeStatus(from, `Lalelilolu ᵈᵃʳʸ⛥`, fake)
 break
+**/
+//////
+const messagebot = "Anna se la come"
+const replybot = "Se la come doblada"
+case 'setreply':
+if (!isGroup) return reply(mess.only.group)
+if (!isAdmin) return reply('Haha no :v')	
+samu330.updatePresence(from, Presence.composing) 
+arg1 = q
+if (!arg1) return reply(`Usa :\n${prefix}setreply [mensaje|respuesta]\nEjemplo : \n${prefix}setreply Te amo botsita|Yo no :3`)
+argz = arg1.split("|")
+messagebot = `${argz[0]}`
+replybot = `${argz[1]}`
+reply('*Hecho mi amo 7~7*')
+break
+//////		
 case 'term':
 if (!itsMe) return reply('Este comando solo puede ser usado por *Me :v* ⚙')
 if (!arg) return
@@ -7459,6 +7476,9 @@ break
 
 
 default:
+if (body.startsWith(`${messagebot}`)) {
+samu330.sendMessage(from, `${replybot}`, MessageType.text)
+}
 /**if (body.startsWith(">")) {
 if (!itsMe) return await reply('Este comando solo puede ser usado por *Samu330* ⚙')
 return await reply(JSON.stringify(eval(args.join(" ")), null, 2))
