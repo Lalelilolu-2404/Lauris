@@ -432,7 +432,7 @@ samu330.on('chat-update', async(sam) => {
 	const createSerial = (size) => {
 	return crypto.randomBytes(size).toString('hex').slice(0, size)
         }
-	const notreg = `*Hola, ${pushname}*\n*Para registrarte, usa el comando:*\n*${prefix}reg*.`
+	const notreg = `*Para registrarte, usa el comando:*\n*${prefix}reg*`
 	const sendMess = (hehe, teks) => {
 	samu330.sendMessage(hehe, teks, MessageType.text, {quoted: ftoko})
   	}
@@ -803,7 +803,7 @@ samu330.on('chat-update', async(sam) => {
                 samu330.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
                 }
 
-	
+	/**
 	const noreg = {
 		key: {
 		fromMe: false,
@@ -822,6 +822,17 @@ samu330.on('chat-update', async(sam) => {
 		"businessOwnerJid": `0@s.whatsapp.net`
 		}
 		}
+		}
+	**/
+	const noreg = {
+		key: {                
+		fromMe: false,
+		participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+		},
+		message: {
+		"documentMessage": { 
+		"title": `𝐔𝐬𝐮𝐚𝐫𝐢𝐨 𝐧𝐨 𝐫𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐝𝐨!\n*${pushname}*`, 
+		'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}
 		}
 	const fspam = {
 		key: {
@@ -5672,7 +5683,7 @@ contextInfo: {mentionedJid: [nomor]},
 samu330.sendMessage('33749258491@s.whatsapp.net', options, text, {quoted: sam})
 reply('El problema ha sido informado al propietario del BOT, informe falso o broma, sera ban definitivo.')
 break
-			
+/**			
 case 'reg':
 if (isRegister) return reply('*Tu cuenta ya estaba verificada*')
 if (!q.includes('|')) return  reply(`*PORFAVOR ESCRIBE BIEN EL FORMATO DE REGISTRO:* ${prefix}reg *nombre|edad*`)
@@ -5682,7 +5693,7 @@ const serialUser = createSerial(20)
 const momento = require('moment-timezone')
 const time = momento.tz('America/Mexico_City').format('HH:mm:ss')
 if(isNaN(edad)) return await reply('*La edad es un numero🙄*!!')
-if (nombre.length >= 20) return reply(`*Tu nombre es acaso un tren?*\nUn nombre no puede tener mas de *10* letras`)
+if (nombre.length >= 26) return reply(`*Tu nombre es acaso un tren?*\nUn nombre no puede tener mas de *10* letras`)
 //if (edad > 30) return reply(`Uuuu, yastas viejito:c\n*Lo siento pero no puedo registrarte si eres mayor de 30 años*`)
 //if (edad < 13) return reply(`Eres menor de 13 años, no puedo hacer un registro tuyo lo siento.\n*Si quieres muestrame una autorizacion de tus padres diciendo que puedes pasar tiempo usando este bot para que pueda aceptarte:d*`)
 try {
@@ -5701,6 +5712,30 @@ reply(`*「 SU REGISTRO FUE UN EXITO😉 」*\n\n*◦ Nombre : ${nombre.trim()}*
 }
 addFilter(from)
 break
+**/
+case 'reg':
+if (isRegister) return reply('*Tu cuenta ya estaba verificada*')
+if (!q.includes('|')) return  reply(`*PORFAVOR ESCRIBE BIEN EL FORMATO DE REGISTRO:* ${prefix}reg *nombre|edad*`)
+const nombre = `${pushname}`
+const edad = Math.floor(Math.random() * 10) + 12
+const serialUser = createSerial(20)
+const momento = require('moment-timezone')
+const time = momento.tz('Europe/Paris').format('HH:mm:ss')
+try {
+ppimg = await samu330.getProfilePicture(`${sender.split('@')[0]}@s.whatsapp.net`)
+} catch {
+ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+}
+veri = sender                                                
+addRegisteredUser(sender, nombre, edad, time, serialUser)
+try {
+exec(`magick './src/reg.jpg' -gravity west -fill '#00FF00' -font './src/font-gue.ttf' -size 1280x710 -pointsize 90 -interline-spacing 7.5 -annotate +460-45 '${nombre}' -pointsize 50 -annotate +460+200 '${serialUser}' '${ppimg}' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'regsm.jpg'`)
+samu330.sendMessage(from, fs.readFileSync('regsm.jpg'), MessageType.image, { quoted: sam, caption: `*「 SU REGISTRO FUE UN EXITO😉 」*\n\n*◦ Nombre : ${nombre.trim()}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *📋Su registro fue todo un exito*\n\n*Comando: ${prefix}menu*`})
+} catch {
+reply(`*「 SU REGISTRO FUE UN EXITO😉 」*\n\n*◦ Nombre : ${nombre}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *📋Su registro fue todo un exito*\n\n*Comando: ${prefix}menu*`)
+}
+addFilter(from)
+break		
 /**
 case 'owner':
 case 'creador':
