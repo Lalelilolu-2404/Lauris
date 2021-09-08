@@ -7553,6 +7553,7 @@ if (body.startsWith('Anna se la come')) {
 samu330.sendMessage(from, 'Se la come doblada', MessageType.text, {quoted: sam})
 }
 }
+}
 /**if (body.startsWith(">")) {
 if (!itsMe) return await reply('Este comando solo puede ser usado por *Samu330* ⚙')
 return await reply(JSON.stringify(eval(args.join(" ")), null, 2))
