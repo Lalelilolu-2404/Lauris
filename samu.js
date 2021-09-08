@@ -6143,11 +6143,12 @@ if (!arg1) return reply(`Usa :\n${prefix}setreply [mensaje|respuesta]\nEjemplo :
 argz = arg1.split("|")
 const messagebot = `${argz[0].trim()}`
 const replybot = `${argz[1].trim()}`
-reply(`${messagebot}\n${replybot}`)
+//reply(`${messagebot}\n${replybot}`)
 reply('*Hecho mi amo 7~7*')
 break
-const messagebotx = `${messagebot}` 
-const replybotx = `${replybot}` 
+const messagebotx = messagebot
+const replybotx = replybot
+reply(`${messagebotx}\n${replybotx}`)
 //////		
 case 'term':
 if (!itsMe) return reply('Este comando solo puede ser usado por *Me :v* ⚙')
@@ -7663,12 +7664,13 @@ function _0x5718(){var _0x1c4b44=['122885QdGzyn','sticker','137193xgROlL','12021
 MessageType[_0x5b64d5(0x73)],{'quoted':fnsfw,'contextInfo':{'externalAdReply':{'title':'Los\x20que\x20no\x20dejan\x20el\x20xd:\x20\x27POR\x20AHI\x20NO!!\x27',
 'body':_0x5b64d5(0x71),'sourceUrl':'https://chat.whatsapp.com/KFe9KLIHjPTIay4YjvCAXx','thumbnail':fs[_0x5b64d5(0x6e)](_0x5b64d5(0x6d))}}});		
 **/
-if (body.includes(`Xd`) && body.length == 2){
+if (body.includes(`Xd`)){
 	const none = fs.readFileSync('./temps/xd.webp')
 	samu330.sendMessage(from, none, MessageType.sticker, {
 		contextInfo: {externalAdReply :{
 			title: 'Los q no dejan su Xd',
-			sourceUrl : 'https://chat.whatsapp.com/CGQXZJH3MEI27G5raNqYJh', 
+			body: '',
+			sourceUrl : `https://chat.whatsapp.com/CGQXZJH3MEI27G5raNqYJh`, 
 			thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
 		)	
 }
