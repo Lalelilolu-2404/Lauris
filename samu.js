@@ -400,8 +400,8 @@ samu330.on('chat-update', async(sam) => {
 	const isLalelilolu = senderNumber == laleliloluNumber
 	const cherryNumber = ["527721618499"]
 	const isCherry = senderNumber == cherryNumber
-	var messagebot = 'Anna se la come'
-	var replybot = 'Se la come doblada 🥵'
+	//var messagebot = 'Anna se la come'
+	//var replybot = 'Se la come doblada 🥵'
 	/////
 	if (isBanChat && !isOwner) return
 	const isBan = cekBannedUser(sender, ban)
@@ -1442,11 +1442,6 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					addFilter(from)
 				}
 			}
-if (isGroup){
-if (body.startsWith(`${messagebot}`)) {
-samu330.sendMessage(from, `${replybot}`, MessageType.text, {quoted: sam})
-} 
-}
 
 ////
 
@@ -6146,8 +6141,8 @@ samu330.updatePresence(from, Presence.composing)
 arg1 = q
 if (!arg1) return reply(`Usa :\n${prefix}setreply [mensaje|respuesta]\nEjemplo : \n${prefix}setreply Te amo botsita|Yo no :3`)
 argz = arg1.split("|")
-messagebot = `${argz[0].trim()}`
-replybot = `${argz[1].trim()}`
+const messagebot = `${argz[0].trim()}`
+const replybot = `${argz[1].trim()}`
 reply(`${messagebot}\n${replybot}`)
 reply('*Hecho mi amo 7~7*')
 break
@@ -7548,6 +7543,16 @@ break
 
 
 default:
+if (isGroup){
+try{
+if (body.startsWith(`${messagebot}`)) {
+samu330.sendMessage(from, `${replybot}`, MessageType.text, {quoted: sam})
+} 
+}catch{
+if (body.startsWith('Anna se la come')) {
+samu330.sendMessage(from, 'Se la come doblada', MessageType.text, {quoted: sam})
+}
+}
 /**if (body.startsWith(">")) {
 if (!itsMe) return await reply('Este comando solo puede ser usado por *Samu330* ⚙')
 return await reply(JSON.stringify(eval(args.join(" ")), null, 2))
@@ -7658,10 +7663,10 @@ MessageType[_0x5b64d5(0x73)],{'quoted':fnsfw,'contextInfo':{'externalAdReply':{'
 if (body.includes(`Xd`) && body.length == 2){
 	const none = fs.readFileSync('./temps/xd.webp')
 	samu330.sendMessage(from, none, MessageType.sticker, {
-		'contextInfo': {'externalAdReply' :{
-			'title': 'Los q no dejan su Xd',
-			'sourceUrl' : 'https://chat.whatsapp.com/CGQXZJH3MEI27G5raNqYJh', 
-			'thumbnail' : fs.readFileSync('./src/nsfw.jpg')}}}
+		contextInfo: {externalAdReply :{
+			title: 'Los q no dejan su Xd',
+			sourceUrl : 'https://chat.whatsapp.com/CGQXZJH3MEI27G5raNqYJh', 
+			thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
 		)	
 }
 /**		
