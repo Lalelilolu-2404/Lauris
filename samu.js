@@ -7548,7 +7548,7 @@ try{
 if (body.startsWith(`${messagebot}`)) {
 samu330.sendMessage(from, `${replybot}`, MessageType.text, {quoted: sam})
 } 
-}catch{
+} catch {
 if (body.startsWith('Anna se la come')) {
 samu330.sendMessage(from, 'Se la come doblada', MessageType.text, {quoted: sam})
 }
