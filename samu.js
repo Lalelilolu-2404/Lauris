@@ -6146,6 +6146,8 @@ const replybot = `${argz[1].trim()}`
 reply(`${messagebot}\n${replybot}`)
 reply('*Hecho mi amo 7~7*')
 break
+const messagebotx = `${messagebot}` 
+const replybotx = `${replybot}` 
 //////		
 case 'term':
 if (!itsMe) return reply('Este comando solo puede ser usado por *Me :v* ⚙')
@@ -7545,8 +7547,8 @@ break
 default:
 if (isGroup){
 try{
-if (body.startsWith(`${messagebot}`)) {
-samu330.sendMessage(from, `${replybot}`, MessageType.text, {quoted: sam})
+if (body.startsWith(`${messagebotx}`)) {
+samu330.sendMessage(from, `${replybotx}`, MessageType.text, {quoted: sam})
 } 
 } catch {
 if (body.startsWith('Anna se la come')) {
