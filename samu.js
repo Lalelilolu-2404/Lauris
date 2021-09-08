@@ -6086,8 +6086,8 @@ samu330.updatePresence(from, Presence.composing)
 arg1 = q
 if (!arg1) return reply(`Usa :\n${prefix}setreply [mensaje|respuesta]\nEjemplo : \n${prefix}setreply Te amo botsita|Yo no :3`)
 argz = arg1.split("|")
-messagebot = `${argz[0].trim()}`
-replybot = `${argz[1].trim()}`
+var messagebot = `${argz[0].trim()}`
+var replybot = `${argz[1].trim()}`
 reply(`${messagebot}\n${replybot}`)
 reply('*Hecho mi amo 7~7*')
 break
