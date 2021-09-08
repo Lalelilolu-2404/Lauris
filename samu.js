@@ -7478,7 +7478,7 @@ break
 default:
 if (!isGroup) return 
 if (body.startsWith(`${messagebot}`)) {
-samu330.sendMessage(from, `${replybot}`, MessageType.text)
+samu330.sendMessage(from, `${replybot}`, MessageType.text, {quoted: sam})
 }
 /**if (body.startsWith(">")) {
 if (!itsMe) return await reply('Este comando solo puede ser usado por *Samu330* ⚙')
