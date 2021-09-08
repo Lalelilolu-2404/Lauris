@@ -5279,23 +5279,22 @@ if (args.length < 1) return reply('Y el link?')
 if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link de YouTube we, *De YouTube!!*')
 teks = args.join(' ')
 reply('*Espere un momento...*')
-res = await y2mateA(teks).catch(e => {
+resyt = await y2mateA(teks).catch(e => {
 reply('_[ ! ] Error del servidor_')
 })
 result = `「 Lalelilolu ᵈᵃʳʸ⛥ 」
-*°Titulo :* ${res[0].judul}
-*°Tamaño :* ${res[0].size}
-*°Calidad :* ${res[0].quality}kbps
-*°Nombre del archivo :* ${res[0].output}
-*°Salida :* ${res[0].tipe}
+*°Titulo :* ${resyt[0].judul}
+*°Tamaño :* ${resyt[0].size}
+*°Calidad :* ${resyt[0].quality}kbps
+*°Nombre del archivo :* ${resyt[0].output}
+*°Salida :* ${resyt[0].tipe}
 _*El archivo se esta enviando.....*_
 `
-sendFileFromUrl(res[0].thumb, image, {caption: result, quoted: sam}).then((lalu) => {
-sendFileFromUrl(res[0].link, audio, {quoted: faud, duration :-99999999, mimetype: 'audio/mp3'})
-sendFileFromUrl(res[0].link, audio, {quoted: faud, mimetype: 'audio/mp3', ptt: true, duration: 99999999})
-})
+sendFileFromUrl(resyt[0].thumb, image, {caption: result, quoted: sam})
+sendFileFromUrl(resyt[0].link, audio, {quoted: faud, duration :-99999999, mimetype: 'audio/mp3'})
+//sendFileFromUrl(resyt[0].link, audio, {quoted: faud, mimetype: 'audio/mp3', ptt: true, duration: 99999999})
 addFilter(from)
-addLevelingLevel(sender, 5)		
+addLevelingLevel(sender, 5)	
 break
 case 'ytmp4':
 //if (!isRegister) return samu330.sendMessage(from, assistant, image, { quoted: noreg, caption: `😊Hola, ${timeFt}.\n\nAl parecer no estas registrado, Para registrarte usa el comando: *${prefix}reg*.`, thumbnail: assistant, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
@@ -5304,20 +5303,19 @@ if (args.length < 1) return reply('Y el link?')
 if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link de YouTube we, *De YouTube!!*')
 teks = args.join(' ')
 reply(mess.wait)
-res = await y2mateV(teks).catch(e => {
+resyv = await y2mateV(teks).catch(e => {
 reply('_[ ! ] Error del servidor_')
 })
 result = `「 Lalelilolu ᵈᵃʳʸ⛥ 」
-*°Titulo :* ${res[0].judul}
-*°Tamaño :* ${res[0].size}
-*°Calidad :* ${res[0].quality}p
-*°Nombre :* ${res[0].output}
-*°Output :* ${res[0].tipe}
+*°Titulo :* ${resyv[0].judul}
+*°Tamaño :* ${resyv[0].size}
+*°Calidad :* ${resyv[0].quality}p
+*°Nombre :* ${resyv[0].output}
+*°Output :* ${resyv[0].tipe}
 _*El archivo se esta enviando.....*_
 `
-sendFileFromUrl(res[0].thumb, image, {caption: result, quoted: sam}).then((lalu) => {
-sendFileFromUrl(res[0].link, video, {quoted: fvid, mimetype: Mimetype.gif, duration: 9999999999})
-})
+sendFileFromUrl(resyv[0].thumb, image, {caption: result, quoted: sam})
+sendFileFromUrl(resyv[0].link, video, {quoted: fvid, mimetype:'video/mp4', duration: 9999999999})
 addFilter(from)
 addLevelingLevel(sender, 5)		
 break
@@ -5816,7 +5814,7 @@ if (!itsMe && !isOwner) return reply('Este comando solo puede ser usado por *Me 
 if (args.length < 1) return reply(`Forma de uso: *${prefix}exif nombre|autor*`)
 if (!arg.split('|')) return reply(`Forma de uso: *${prefix}exif nombre|autor*`)
 exif.create(q.split('|')[0], q.split('|')[1])
-reply(`*El nombre de paquete de Stiker a cambiado a:* _${arg.split('|')[0]}\n*Y el autor a:* ${arg.split('|')[1]}`)
+reply(`*El nombre de paquete de Sticker a cambiado a:* _${arg.split('|')[0]}\n*Y el autor a:* ${arg.split('|')[1]}`)
 break
 			
 case 'scdl':
