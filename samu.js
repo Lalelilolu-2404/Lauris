@@ -400,6 +400,8 @@ samu330.on('chat-update', async(sam) => {
 	const isLalelilolu = senderNumber == laleliloluNumber
 	const cherryNumber = ["527721618499"]
 	const isCherry = senderNumber == cherryNumber
+	var messagebot = 'Anna se la come'
+	var replybot = 'Se la come doblada'
 	/////
 	if (isBanChat && !isOwner) return
 	const isBan = cekBannedUser(sender, ban)
@@ -1427,8 +1429,11 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					addFilter(from)
 				}
 			}
-
-   
+if (isGroup){
+if (body.startsWith(`${messagebot}`)) {
+samu330.sendMessage(from, `${replybot}`, MessageType.text, {quoted: sam})
+} 
+}
 ////
 
 //Zona de Comandos🛵
@@ -6072,8 +6077,8 @@ wa.sendFakeStatus(from, `Lalelilolu ᵈᵃʳʸ⛥`, fake)
 break
 **/
 //////
-var messagebot = 'Anna se la come'
-var replybot = 'Se la come doblada'
+//var messagebot = 'Anna se la come'
+//var replybot = 'Se la come doblada'
 case 'setreply':
 if (!isGroup) return reply(mess.only.group)
 if (!isAdmin) return reply('Haha no :v')	
@@ -6081,14 +6086,11 @@ samu330.updatePresence(from, Presence.composing)
 arg1 = q
 if (!arg1) return reply(`Usa :\n${prefix}setreply [mensaje|respuesta]\nEjemplo : \n${prefix}setreply Te amo botsita|Yo no :3`)
 argz = arg1.split("|")
-messagebot = `${argz[0]}`
-replybot = `${argz[1]}`
+messagebot = `${argz[0].trim()}`
+replybot = `${argz[1].trim()}`
 reply(`${messagebot}\n${replybot}`)
 reply('*Hecho mi amo 7~7*')
 break
-if (body.startsWith(`${messagebot}`)) {
-samu330.sendMessage(from, `${replybot}`, MessageType.text, {quoted: sam})
-}
 //////		
 case 'term':
 if (!itsMe) return reply('Este comando solo puede ser usado por *Me :v* ⚙')
