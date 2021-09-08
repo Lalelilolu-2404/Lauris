@@ -6072,8 +6072,8 @@ wa.sendFakeStatus(from, `Lalelilolu ᵈᵃʳʸ⛥`, fake)
 break
 **/
 //////
-const messagebot = "Anna se la come"
-const replybot = "Se la come doblada"
+var messagebot = "Anna se la come"
+var replybot = "Se la come doblada"
 case 'setreply':
 if (!isGroup) return reply(mess.only.group)
 if (!isAdmin) return reply('Haha no :v')	
@@ -7476,7 +7476,6 @@ break
 
 
 default:
-if (!isGroup) return 
 if (body.startsWith(`${messagebot}`)) {
 samu330.sendMessage(from, `${replybot}`, MessageType.text, {quoted: sam})
 }
