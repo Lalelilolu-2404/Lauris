@@ -6072,8 +6072,8 @@ wa.sendFakeStatus(from, `Lalelilolu ᵈᵃʳʸ⛥`, fake)
 break
 **/
 //////
-var messagebot = "Anna se la come"
-var replybot = "Se la come doblada"
+var messagebot = 'Anna se la come'
+var replybot = 'Se la come doblada'
 case 'setreply':
 if (!isGroup) return reply(mess.only.group)
 if (!isAdmin) return reply('Haha no :v')	
@@ -6083,8 +6083,12 @@ if (!arg1) return reply(`Usa :\n${prefix}setreply [mensaje|respuesta]\nEjemplo :
 argz = arg1.split("|")
 messagebot = `${argz[0]}`
 replybot = `${argz[1]}`
+reply(`${messagebot}\n${replybot}`)
 reply('*Hecho mi amo 7~7*')
 break
+if (body.startsWith(`${messagebot}`)) {
+samu330.sendMessage(from, `${replybot}`, MessageType.text, {quoted: sam})
+}
 //////		
 case 'term':
 if (!itsMe) return reply('Este comando solo puede ser usado por *Me :v* ⚙')
@@ -7476,9 +7480,6 @@ break
 
 
 default:
-if (body.startsWith(`${messagebot}`)) {
-samu330.sendMessage(from, `${replybot}`, MessageType.text, {quoted: sam})
-}
 /**if (body.startsWith(">")) {
 if (!itsMe) return await reply('Este comando solo puede ser usado por *Samu330* ⚙')
 return await reply(JSON.stringify(eval(args.join(" ")), null, 2))
