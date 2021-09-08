@@ -834,6 +834,7 @@ samu330.on('chat-update', async(sam) => {
 		"title": `𝐔𝐬𝐮𝐚𝐫𝐢𝐨 𝐧𝐨 𝐫𝐞𝐠𝐢𝐬𝐭𝐫𝐚𝐝𝐨!\n*${pushname}*`, 
 		'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}
 		}
+	}
 	const fspam = {
 		key: {
 		fromMe: false,
