@@ -7476,6 +7476,7 @@ break
 
 
 default:
+if (!isGroup) return 
 if (body.startsWith(`${messagebot}`)) {
 samu330.sendMessage(from, `${replybot}`, MessageType.text)
 }
