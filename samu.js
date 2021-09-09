@@ -4891,7 +4891,7 @@ case 'play2':
 					  "rows": [
 						{
 						  "title": `[ ${plist.all[0].title} ]`,
-						  "description": `Duracion : ${plist.all[0].timestamp}\nCanal : ${plist.all[0].author.name}\nLink : ${plist.all[0].author.url}`,
+						  "description": `Duracion : ${plist.all[0].timestamp}\nLink : ${plist.all[0].author.url}`,
 						  "rowId": `listoption1`
 						},
 						{
