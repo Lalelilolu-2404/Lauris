@@ -4282,7 +4282,6 @@ sendFileFromUrl(waifu.url, image, {quoted: fimg, caption: '💎 *Nya* 💠', sen
 addFilter(from)
 break
 
-
 case 'b2':
 	buttons2 = [{buttonId: `${prefix}owner`,buttonText:{displayText: 'Contact Owner'},type:1},{buttonId:`${prefix}ping`,buttonText:{displayText:'Bot Ping'},type:1}]
 
@@ -6278,24 +6277,9 @@ break
 
 case 'ytsearch':
 if (args.length == 0) return reply(`Ejemplo: ${prefix + command} Me olvide de vivir`)
-query = args.join(' ')
-try {
-get_result = await getJson(`https://api.lolhuman.xyz/api/ytsearch?apikey=${api}&query=${query}`)
-get_result = get_result.result
-ini_txt = ""
-for (var x of get_result) {
-ini_txt += `*◦Titulo* : ${x.title}\n`
-ini_txt += `*◦Vistas* : ${x.views}\n`
-ini_txt += `◦Publicado el ${x.published}\n`
-ini_txt += `📸Thumbnail : ${x.thumbnail}\n`
-ini_txt += `📲Link : https://www.youtube.com/watch?v=${x.videoId}\n\n`
-}
-reply(ini_txt)
-} catch {
-reply(`Servidor *1* con problemas, realizando tu busqueda de *${q}* en el servidor *2*`)
-res = await yts(q)
+resvi = await yts(q)
 searchyt = ``
-for (let i of res.all) {
+for (let i of resvi.all) {
 searchyt += `
 *Titulo :* ${i.title}
 *ID Video :* ${i.videoId}
@@ -6308,8 +6292,7 @@ searchyt += `
 `
 }
 var samusamuxd = searchyt.trim()
-sendFileFromUrl(res.all[0].image, image, {quoted: fimg, caption: samusamuxd, sendEphemeral: true})
-}
+sendFileFromUrl(resvi.all[0].image, image, {quoted: fimg, caption: samusamuxd, sendEphemeral: true})
 addFilter(from)
 break
 
@@ -7025,8 +7008,7 @@ topt = fs.readFileSync(ran)
 samu330.sendMessage(from, topt, MessageType.audio, {mimetype: 'audio/mp4', quoted: faud, ptt:true})
 })
 break
-case 'stickertag':
-		
+case 'stickertag':		
 if (!isGroup) return await reply(mess.only.group)
 if (!isAdmin && !isOwner && !itsMe) return await reply('This command only for admin')
 if (!isQuotedSticker && !isSticker) return await reply('Etiqueta un stiker')
@@ -7034,6 +7016,121 @@ media = isQuotedSticker ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')
 buffer = await samu330.downloadMediaMessage(media)
 await wa.hideTagSticker(from, buffer)
 break
+
+case 'totag':
+if (!isGroup) return reply(mess.only.group)
+if ((isMedia && !sam.message.videoMessage || isQuotedSticker) && args.length == 0) {
+encmediau = isQuotedSticker ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
+file = await samu330.downloadAndSaveMediaMessage(encmediau, filename = getRandom())
+value = args.join(" ")
+var group2 = await samu330.groupMetadata(from)
+var member = group2['participants']
+var mem = []
+member.map(async adm => {
+mem.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+var options = {
+contextInfo: { mentionedJid: mem },
+quoted: fvid
+}
+ini_buffer = fs.readFileSync(file)
+samu330.sendMessage(from, ini_buffer, sticker, options)
+fs.unlinkSync(file)
+} else if ((isMedia && !sam.message.videoMessage || isQuotedImage) && args.length == 0) {
+encmediau = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
+file = await samu330.downloadAndSaveMediaMessage(encmediau, filename = getRandom())
+value = args.join(" ")
+var group26 = await samu330.groupMetadata(from)
+var member = group26['participants']
+var mem = []
+member.map(async adm => {
+mem.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+var options = {
+contextInfo: { mentionedJid: mem },
+quoted: fvid
+}
+ini_buffer = fs.readFileSync(file)
+samu330.sendMessage(from, ini_buffer, image, options)
+fs.unlinkSync(file)
+} else if ((isMedia && !sam.message.videoMessage || isQuotedAudio) && args.length == 0) {
+encmediau = isQuotedAudio ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
+file = await samu330.downloadAndSaveMediaMessage(encmediau, filename = getRandom())
+value = args.join(" ")
+var group25 = await samu330.groupMetadata(from)
+var member = group25['participants']
+var mem = []
+member.map(async adm => {
+mem.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+var options = {
+mimetype : 'audio/mp4', duration: 9999999,
+ptt : true,
+contextInfo: { mentionedJid: mem },
+quoted: faud
+}
+ini_buffer = fs.readFileSync(file)
+samu330.sendMessage(from, ini_buffer, audio, options)
+fs.unlinkSync(file)
+} else if ((isMedia && !sam.message.videoMessage || isQuotedVideo) && args.length == 0) {
+encmediau = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
+file = await samu330.downloadAndSaveMediaMessage(encmediau, filename = getRandom())
+value = args.join(" ")
+var group24 = await samu330.groupMetadata(from)
+var member = group24['participants']
+var mem = []
+member.map(async adm => {
+mem.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+var options = {
+mimetype : 'video/gif',
+contextInfo: { mentionedJid: mem },
+quoted: fvid
+}
+ini_buffer = fs.readFileSync(file)
+samu330.sendMessage(from, ini_buffer, video, options)
+fs.unlinkSync(file)
+} else if ((isMedia && !sam.message.videoMessage || isQuotedDocument) && args.length == 0) {
+encmediau = isQuotedDocument ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
+file = await samu330.downloadAndSaveMediaMessage(encmediau, filename = getRandom())
+value = args.join(" ")
+var group23 = await samu330.groupMetadata(from)
+var member = group23['participants']
+var mem = []
+member.map(async adm => {
+mem.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+var options = {
+mimetype : 'text/plain',
+contextInfo: { mentionedJid: mem },
+quoted: fdoc
+}
+ini_buffer = fs.readFileSync(file)
+denz.sendMessage(from, ini_buffer, document, options)
+fs.unlinkSync(file)
+}  else if ((isMedia && !sam.message.videoMessage || isQuotedVideo) && args.length == 0) {
+encmediau = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
+file = await samu330.downloadAndSaveMediaMessage(encmediau, filename = getRandom())
+value = args.join(" ")
+var group21 = await samu330.groupMetadata(from)
+var member = group21['participants']
+var mem = []
+member.map(async adm => {
+mem.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+var options = {
+mimetype : 'video/mp4', duration: 555555555,
+contextInfo: { mentionedJid: mem },
+quoted: fvid
+}
+ini_buffer = fs.readFileSync(file)
+samu330.sendMessage(from, ini_buffer, video, options)
+fs.unlinkSync(file)
+} else{
+reply(`Etiqueta un texto/documento/gif/sticker/audio/video con el comando: ${prefix}totag`)
+}
+break		
+		
 case 'promote':
 addFilter(from)
 if (!isGroup) return await reply(mess.only.group)
@@ -7350,7 +7447,7 @@ addBanned(mentioned[i], args[1], ban)
 }
 mentions(`@${mentioned[0].split('@')[0]} Usted a sido baneado, lo que significa que no podra usar el bot!`, mentioned, true)
 } else if (isQuotedMsg) {
-if (quotedMsg.sender.match('33749258491')) return reply(`🤨`)
+if (quotedMsg.sender.match('33749258491@s.whatsapp.net')) return reply('Nel perro :v')
 addBanned(quotedMsg.sender, args[1], ban)
 mentions(`@${mentioned[0].split('@')[0]} Usted a sido baneado, lo que significa que no podra usar el bot!`, mentioned, true)
 } else if (!isNaN(args[1])) {
@@ -7670,7 +7767,8 @@ if (body.includes(`Xd`)){
 			title: 'Spameen a Anna xd',
 			//body: '',
 			//sourceUrl : 'https://chat.whatsapp.com/LKZOC09DoJb6lwS5UUZRlj', 
-			sourceUrl : 'https://api.whatsapp.com/send?phone=12729998838', 
+			//sourceUrl : 'https://api.whatsapp.com/send?phone=12729998838',
+			sourceUrl : 'https://wa.me/12729998838', 
 			thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
 		)
 }
