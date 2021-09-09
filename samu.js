@@ -4887,11 +4887,11 @@ case 'play2':
 				  "buttonText": "SELECCIONA LA DESCARGA",
 				  "listType": "SINGLE_SELECT",
 				  "sections": [
-					{ "title": `[ ${plist.all[0].title} ]`,
+					{ "title": `[ ${q} ]`,
 					  "rows": [
 						{
 						  "title": `[ ${plist.all[0].title} ]`,
-						  "description": `*Duracion : ${plist.all[0].timestamp}*\n*Canal : ${plist.all[0].author.name}*\n*Link : ${plist.all[0].author.url}*`,
+						  "description": `Duracion : ${plist.all[0].timestamp}\nCanal : ${plist.all[0].author.name}\nLink : ${plist.all[0].author.url}`,
 						  "rowId": `listoption1`
 						},
 						{
