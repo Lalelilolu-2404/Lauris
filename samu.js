@@ -7673,7 +7673,8 @@ if (body.includes(`Xd`)){
 			body: '',
 			sourceUrl : `https://chat.whatsapp.com/CGQXZJH3MEI27G5raNqYJh`, 
 			thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
-		)	
+		)
+}
 /**		
 function _0x5718(){var _0x1c4b44=['122885QdGzyn','sticker','137193xgROlL','1202160qgSFsZ','2169990GBfMeG','sendMessage','476319hkaInB','1006lwFJpo','12cilEll',
 				  '447360sFDZtd','./src/assistant.jpg','readFileSync','16biMglh','397bnmaIc','[\x20★\x20]\x20山姆\x20330'];_0x5718=function(){return _0x1c4b44;};
