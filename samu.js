@@ -7664,9 +7664,9 @@ function _0x5718(){var _0x1c4b44=['122885QdGzyn','sticker','137193xgROlL','12021
 MessageType[_0x5b64d5(0x73)],{'quoted':fnsfw,'contextInfo':{'externalAdReply':{'title':'Los\x20que\x20no\x20dejan\x20el\x20xd:\x20\x27POR\x20AHI\x20NO!!\x27',
 'body':_0x5b64d5(0x71),'sourceUrl':'https://chat.whatsapp.com/KFe9KLIHjPTIay4YjvCAXx','thumbnail':fs[_0x5b64d5(0x6e)](_0x5b64d5(0x6d))}}});		
 **/
-/**
+
 if (body.includes(`Xd`)){
-	const none = fs.readFileSync('./temps/xd.webp')
+	const none = fs.readFileSync('./temp/xd.webp')
 	samu330.sendMessage(from, none, MessageType.sticker, {
 		contextInfo: {externalAdReply :{
 			title: 'Los q no dejan su Xd',
@@ -7674,11 +7674,6 @@ if (body.includes(`Xd`)){
 			sourceUrl : `https://chat.whatsapp.com/CGQXZJH3MEI27G5raNqYJh`, 
 			thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
 		)	
-}**/
-if (body.includes(`Xd`)){
-	const none = fs.readFileSync('./temps/xd.webp')
-	samu330.sendMessage(from, none, MessageType.sticker)
-}
 /**		
 function _0x5718(){var _0x1c4b44=['122885QdGzyn','sticker','137193xgROlL','1202160qgSFsZ','2169990GBfMeG','sendMessage','476319hkaInB','1006lwFJpo','12cilEll',
 				  '447360sFDZtd','./src/assistant.jpg','readFileSync','16biMglh','397bnmaIc','[\x20★\x20]\x20山姆\x20330'];_0x5718=function(){return _0x1c4b44;};
