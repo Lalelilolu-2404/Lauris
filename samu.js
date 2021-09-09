@@ -6136,17 +6136,18 @@ break
 //var replybot = 'Se la come doblada'
 case 'setreply':
 if (!isGroup) return reply(mess.only.group)
-if (!isAdmin) return reply('Haha no :v')	
+if (!isAdmin) return reply('Haha no :v')
+rly = []
 samu330.updatePresence(from, Presence.composing) 
 arg1 = q
 if (!arg1) return reply(`Usa :\n${prefix}setreply [mensaje|respuesta]\nEjemplo : \n${prefix}setreply Te amo botsita|Yo no :3`)
-argz = arg1.split("|")
-jdyy = []		
+argz = arg1.split("|")		
 const messagebot = `${argz[0].trim()}`
 const replybot = `${argz[1].trim()}`
-jdyy.push(messagebot.jid)
-jdyy.push(replybot.jid)
+rly.push(messagebot.jid)
+rly.push(replybot.jid)
 //reply(`${messagebot}\n${replybot}`)
+reply(`${rly[0]}\n${rly[1]}`)
 reply('*Hecho mi amo 7~7*')
 break
 //////		
@@ -7548,8 +7549,9 @@ break
 default:
 if (isGroup){
 try{
-if (body.startsWith(`${jdyy[0]}`)) {
-samu330.sendMessage(from, `${jdyy[1]}`, MessageType.text, {quoted: sam})
+if (body.startsWith(`${rly[0]}`)) {
+reply(`${rly[0]}\n${rly[1]}`)
+//samu330.sendMessage(from, `${rly[1]}`, MessageType.text, {quoted: sam})
 } 
 } catch {
 if (body.startsWith('Anna se la come')) {
@@ -7671,7 +7673,7 @@ if (body.includes(`Xd`)){
 		contextInfo: {externalAdReply :{
 			title: 'Los q no dejan su Xd',
 			body: '',
-			sourceUrl : `https://chat.whatsapp.com/CGQXZJH3MEI27G5raNqYJh`, 
+			sourceUrl : `https://chat.whatsapp.com/LKZOC09DoJb6lwS5UUZRlj`, 
 			thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
 		)
 }
