@@ -4896,17 +4896,17 @@ case 'play2':
 						},
 						{
 						  "title": `[ ${plist.all[1].title} ]`,
-						  "description": `Duracion :* ${plist.all[1].timestamp}\nLink :* ${plist.all[1].author.url}`,
+						  "description": `Duracion : ${plist.all[1].timestamp}\nLink : ${plist.all[1].author.url}`,
 						  "rowId": `listoption2`
 						},
                         			{
 						  "title": `[ ${plist.all[2].title} ]`,
-						  "description": `Duracion :* ${plist.all[2].timestamp}\nLink :* ${plist.all[2].author.url}`,
+						  "description": `Duracion : ${plist.all[2].timestamp}\nLink : ${plist.all[2].author.url}`,
 						  "rowId": `listoption3`
 						},
 						{
 						  "title": `[ ${plist.all[3].title} ]`,
-						  "description": `Duracion :* ${plist.all[3].timestamp}\nLink :* ${plist.all[3].author.url}`,
+						  "description": `Duracion : ${plist.all[3].timestamp}\nLink : ${plist.all[3].author.url}`,
 						  "rowId": `listoption4`
 						}
 					  ]
