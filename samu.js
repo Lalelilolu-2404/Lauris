@@ -4873,6 +4873,61 @@ addFilter(from)
 addLevelingLevel(sender, 5)		
 break
 		
+case 'play2':
+	assistant = fs.readFileSync('./src/assistant.jpg')		
+	if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+	if (!q) return reply('*Que audio quieres descargar?...Pajero*')
+	let plist = await yts(q)
+	//sendFileFromUrl(plist.all[0].image, image, {quoted: sam, caption: '_*Comando play*_'})
+
+	let play2v = samu330.prepareMessageFromContent(from,{
+		"listMessage": {
+				  "title": "🌬 *DESCARGAS DE AUDIO!!*",
+				  "description": `\t*Uwu ${pushname}*\n\t*Selecciona una opción ↴*`,
+				  "buttonText": "SELECCIONA LA DESCARGA",
+				  "listType": "SINGLE_SELECT",
+				  "sections": [
+					{ "title": `[ ${plist.all[0].title} ]`,
+					  "rows": [
+						{
+						  "title": `[ ${plist.all[0].title} ]`,
+						  "description": `*Duracion : ${plist.all[0].timestamp}*\n*Canal : ${plist.all[0].author.name}*\n*Link : ${plist.all[0].author.url}*`,
+						  "rowId": `listoption1`
+						},
+						{
+						  "title": `[ ${plist.all[1].title} ]`,
+						  "description": `Duracion :* ${plist.all[1].timestamp}\nLink :* ${plist.all[1].author.url}`,
+						  "rowId": `listoption2`
+						},
+                        			{
+						  "title": `[ ${plist.all[2].title} ]`,
+						  "description": `Duracion :* ${plist.all[2].timestamp}\nLink :* ${plist.all[2].author.url}`,
+						  "rowId": `listoption3`
+						},
+						{
+						  "title": `[ ${plist.all[3].title} ]`,
+						  "description": `Duracion :* ${plist.all[3].timestamp}\nLink :* ${plist.all[3].author.url}`,
+						  "rowId": `listoption4`
+						}
+					  ]
+					},
+                    {
+                        "title": `[ Anna se la come doblada ]`,
+                        "rows": [
+                          {
+                            "title": 'Ban a la pajera de Anna xd',
+                            //"description": '- Audio en nota de voz con efecto SlowMotion -',
+                            //"rowId": `${plist.all[0].title}@list4`
+                          }
+                        ]    
+                    }
+				  ]
+				}
+	  }, {quoted: sam})
+	  samu330.relayWAMessage(play2v)
+
+break
+		
 case 'playvid':	
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (!q) return reply('*Porfavor escribe el nombre del video que quieres descargar.*')
