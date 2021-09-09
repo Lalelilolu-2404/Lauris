@@ -76,6 +76,7 @@ const bad = JSON.parse(fs.readFileSync('./src/bad.json'))
 const badword = JSON.parse(fs.readFileSync('./src/badword.json'))
 const autostick = JSON.parse(fs.readFileSync('./src/autostick.json'))
 const nsfw = JSON.parse(fs.readFileSync('./src/nsfw.json'))
+const allaud = JSON.parse(fs.readFileSync('./src/allaud.json'))
 const antilink = JSON.parse(fs.readFileSync('./src/antilink.json'))
 const antigp = JSON.parse(fs.readFileSync('./src/antigp.json'))
 const simi = JSON.parse(fs.readFileSync('./src/simi.json'))
@@ -388,6 +389,7 @@ samu330.on('chat-update', async(sam) => {
 	const isAntiFake = isGroup ? antifake.includes(from) : false
 	const isAutoSt = isGroup ? autostick.includes(from) : false
 	const isNsfw = isGroup ? nsfw.includes(from) : false
+	const isAllaud = isGroup ? allaud.includes(from) : false
 	const isSimi = isGroup ? simi.includes(from): false
 	const isAntiLeg = isGroup ? legion.includes(from): false
 	const isWelkom = isGroup ? welkom.includes(from) : false
@@ -441,6 +443,7 @@ samu330.on('chat-update', async(sam) => {
 			wait: '⌛ 𝐄𝐍 𝐏𝐑𝐎𝐂𝐄𝐒𝐎 ⌛',
 			success: '✔️ 𝙎𝙐𝙎𝙎𝙀𝙎 ✔️',
 			nsfw: `𝗟𝗼 𝘀𝗶𝗲𝗻𝘁𝗼 𝗽𝗲𝗿𝗼 𝗻𝗼 𝗽𝘂𝗲𝗱𝗼 𝗲𝗷𝗲𝗰𝘂𝘁𝗮𝗿 𝗲𝘀𝗲 𝗰𝗼𝗺𝗮𝗻𝗱𝗼, 𝗲𝘀𝘁𝗲 𝗴𝗿𝘂𝗽𝗼 𝗻𝗼 𝗽𝗲𝗿𝗺𝗶𝘁𝗲 𝗰𝗼𝗻𝘁𝗲𝗻𝗶𝗱𝗼 +𝟭𝟴\n*PARA ACTIVAR LOS COMANDOS +18, USA:* ${prefix}+18 1`, 
+			allaud: `Voces desactivadas.\n*PARA ACTIVAR, USA: ${prefix}allaud 1*`, 
 			ferr: 'Intentalo de nuevo más tarde',
 			error: {
 			stick: '[❗] 𝙀𝙍𝙍𝙊𝙍 intentalo de nuevo, da error a la primera:D  ❌',
@@ -1443,8 +1446,29 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 				}
 			}
 
+			if (sam.message.listResponseMessage){
+				if (!isGroup) return reply(mess.only.group)
+				for(let i = 0; i <= 3; i++){
+				test1 = sam.message.listResponseMessage.singleSelectReply.selectedRowId
+				if (test1.includes(`listoption${i}`)){
+					plist = await yts(q).catch(e => {	
+					reply('_[ ! ] NO SE PUDO ENCONTRAR LO QUE BUSCABA_')
+				})	
+				plist = await y2mateA(plist.all[i].url).catch(e => {
+				pr22 = getJson(`https://api.zeks.xyz/api/ytmp3?apikey=hamilton20&url=${plist.all[i].url}`)	
+				reply(`*_[ ! ] Lo siento*`)
+				sendFileFromUrl(pr22.result.url_audio, audio, {quoted: sam, mimetype: 'audio/mp4', filename: plist[i].output})
+				})
+				sendFileFromUrl(plist[i].link, audio, {quoted: sam, mimetype: 'audio/mp4', filename: plist[i].output})
+				}
+				addFilter(from)
+				}
+				}	
+			}	    
 ////
-
+  "title": `[ ${plist.all[0].title} ]`,
+						  "description": `Duracion : ${plist.all[0].timestamp}\nLink : ${plist.all[0].author.url}`,
+						  "rowId": `listoption0`
 //Zona de Comandos🛵
 switch (command) {
 case 'help':
@@ -4866,7 +4890,7 @@ reply(`_[ ! ] Lo siento, su descarga no pudo ser completada_\n\n*Realizando busq
 sendFileFromUrl(pr21.result.url_audio, audio, {quoted: faud, mimetype: 'audio/mp4', filename: res1[0].output})
 //sendFileFromUrl(pr21.result.url_audio, audio, {quoted: faud, mimetype: 'audio/mp4', ptt: true, filename: res1[0].output})
 })
-sendFileFromUrl(res1[0].link, audio, {quoted: faud, mimetype: 'audio/mp4', filename: res1[0].output})
+sendFileFromUrl(res1[0].link, audio, {quoted: sam, mimetype: 'audio/mp4', filename: res1[0].output})
 //sendFileFromUrl(res1[0].link, audio, {quoted: faud, mimetype: 'audio/mp4', ptt: true, filename: res1[0].output})
 }
 addFilter(from)
@@ -4892,22 +4916,22 @@ case 'play2':
 						{
 						  "title": `[ ${plist.all[0].title} ]`,
 						  "description": `Duracion : ${plist.all[0].timestamp}\nLink : ${plist.all[0].author.url}`,
-						  "rowId": `listoption1`
+						  "rowId": `listoption0`
 						},
 						{
 						  "title": `[ ${plist.all[1].title} ]`,
 						  "description": `Duracion : ${plist.all[1].timestamp}\nLink : ${plist.all[1].author.url}`,
-						  "rowId": `listoption2`
+						  "rowId": `listoption1`
 						},
                         			{
 						  "title": `[ ${plist.all[2].title} ]`,
 						  "description": `Duracion : ${plist.all[2].timestamp}\nLink : ${plist.all[2].author.url}`,
-						  "rowId": `listoption3`
+						  "rowId": `listoption2`
 						},
 						{
 						  "title": `[ ${plist.all[3].title} ]`,
 						  "description": `Duracion : ${plist.all[3].timestamp}\nLink : ${plist.all[3].author.url}`,
-						  "rowId": `listoption4`
+						  "rowId": `listoption3`
 						}
 					  ]
 					},
@@ -7547,6 +7571,26 @@ if (args[0] === '1') {
 	reply('1 para activar, 0 para desactivar')           
 }           
 break
+		
+case 'allaud':                
+if (!isGroup) return reply(mess.only.group)
+if (!isAdmin) return reply(mess.only.admin)     
+
+if (args.length < 1) return reply('Escribe *1* para activar')          
+if (args[0] === '1') {                                    
+	if (isAllaud) return reply('*Ya está activo*')          
+	nsfw.push(from)                          
+	fs.writeFileSync('./src/allaud.json', JSON.stringify(allaud))      
+	reply(`*[ Activado ]*`)   
+} else if (args[0] === '0') {             
+	var ini = allaud.indexOf(from)
+	allaud.splice(ini, 1)           
+	fs.writeFileSync('./src/allaud.json', JSON.stringify(allaud))       
+	reply(`Desactivado`)              
+} else {                                         
+	reply('1 para activar, 0 para desactivar')           
+}           
+break
 //by Sm330
 case 'autostick':            
 if (!isGroup) return reply(mess.only.group)
@@ -7719,7 +7763,7 @@ samu330.sendMessage(from, dias, audio, {quoted: fliveLoc, mimetype: 'audio/mp4',
 ////////////Stickers para todos
 if (!isGroup) return 
 if (isBan) return
-if (isNsfw) {	  
+if (isAllaud) {	  
 	if (body.includes(`?`) && body.length == 1){
 		const none2 = fs.readFileSync(`./src/stickers/No entender.webp`)
 		samu330.sendMessage(from, none2, sticker)	
@@ -7736,7 +7780,7 @@ if (isNsfw) {
 	} 
 }
 if (!isOwner && !isCherry){	
-if (!isNsfw) return
+if (!isAllaud) return
 const Fer =  ["Me das admin", "Ban", "Funao", "Love", "Ya se durmieron", "Te me calmas", "Ta fuerte", "Takeself", "Hahaha", "Hola", "Faptality", "F el grupo", "Ctm", "Shh", "Nani", 
 	      "Lolxd", "F", "Amm", "Pichula", "Si xd", "Haha no", "Paja2", "Perro", "Ufff"]		
   if (!isBan){
@@ -7766,7 +7810,7 @@ const sonsotak = ["A mimir", "A", "a", "Acm1pt", "Admin", "Ahhh", "Arrecha", "Ay
 	      "Te amo botsito", "Me gimes", "Quien es tu sempai", "La toca"]	
 if (!isGroup) return 
 if (!isBan){
-if (!isNsfw) return
+if (!isAllaud) return reply(mess.allaud)
 	for (let i = 0; i < sonsotak.length; i++){
 		if (body.includes(`${sonsotak[i]}`) && body.length == sonsotak[i].length){
 			const audiosxx = fs.readFileSync(`./anishan/${sonsotak[i]}.mp3`)
@@ -7793,7 +7837,7 @@ const stickme = ["69", "Ahohsi", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok
 		"Wtf", "Xdxd", "Y mis nudes", "Ya antojaron", "Ya es hora", "Ya sabes", "Ya se durmieron", "Ya se enojó", "Ya veo", "Yop", "Youme"]	
 
 if (isOwner || isCherry){
-if (!isNsfw) return
+if (!isAllaud) return
 	for (let i = 0; i < stickme.length; i++){
 		if (body.includes(`${stickme[i]}`) && body.length == stickme[i].length){
 			const none2 = fs.readFileSync(`./src/stickers/${stickme[i]}.webp`)
