@@ -1446,29 +1446,26 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 				}
 			}
 
-			if (sam.message.listResponseMessage){
-				if (!isGroup) return reply(mess.only.group)
-				for(let i = 0; i <= 3; i++){
-				test1 = sam.message.listResponseMessage.singleSelectReply.selectedRowId
-				if (test1.includes(`listoption${i}`)){
-					plist = await yts(q).catch(e => {	
-					reply('_[ ! ] NO SE PUDO ENCONTRAR LO QUE BUSCABA_')
-				})	
-				plist = await y2mateA(plist.all[i].url).catch(e => {
-				pr22 = getJson(`https://api.zeks.xyz/api/ytmp3?apikey=hamilton20&url=${plist.all[i].url}`)	
-				reply(`*_[ ! ] Lo siento*`)
-				sendFileFromUrl(pr22.result.url_audio, audio, {quoted: sam, mimetype: 'audio/mp4', filename: plist[i].output})
-				})
-				sendFileFromUrl(plist[i].link, audio, {quoted: sam, mimetype: 'audio/mp4', filename: plist[i].output})
-				}
-				addFilter(from)
-				}
-				}	
-			}	    
+	if (sam.message.listResponseMessage){
+	if (!isGroup) return reply(mess.only.group)
+		for(let i = 0; i <= 3; i++){
+		test1 = sam.message.listResponseMessage.singleSelectReply.selectedRowId
+			if (test1.includes(`listoption${i}`)){
+			plist = await yts(q).catch(e => {	
+			reply('_[ ! ] NO SE PUDO ENCONTRAR LO QUE BUSCABA_')
+			})	
+			plist = await y2mateA(plist.all[i].url).catch(e => {
+			pr22 = getJson(`https://api.zeks.xyz/api/ytmp3?apikey=hamilton20&url=${plist.all[i].url}`)	
+			reply(`*_[ ! ] Lo siento*`)
+			sendFileFromUrl(pr22.result.url_audio, audio, {quoted: sam, mimetype: 'audio/mp4', filename: plist[i].output})
+			})
+			sendFileFromUrl(plist[i].link, audio, {quoted: sam, mimetype: 'audio/mp4', filename: plist[i].output})
+			addFilter(from)
+			}
+		}	
+	}	    
 ////
-  "title": `[ ${plist.all[0].title} ]`,
-						  "description": `Duracion : ${plist.all[0].timestamp}\nLink : ${plist.all[0].author.url}`,
-						  "rowId": `listoption0`
+
 //Zona de Comandos🛵
 switch (command) {
 case 'help':
