@@ -742,7 +742,7 @@ samu330.on('chat-update', async(sam) => {
 	}
 	}	
 	    
-
+    
 	const reply = async(teks) => {
                 await samu330.sendMessage(from, teks, MessageType.text, { quoted: { key: {                
 		fromMe: false,
@@ -7670,7 +7670,7 @@ if (body.includes(`Xd`)){
 			title: 'Spameen a Anna xd',
 			//body: '',
 			//sourceUrl : 'https://chat.whatsapp.com/LKZOC09DoJb6lwS5UUZRlj', 
-			sourceUrl : 'wa.me/12729998838', 
+			sourceUrl : 'https://api.whatsapp.com/send?phone=12729998838', 
 			thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
 		)
 }
