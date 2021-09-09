@@ -7668,8 +7668,9 @@ if (body.includes(`Xd`)){
 	samu330.sendMessage(from, none, MessageType.sticker, {
 		contextInfo: {externalAdReply :{
 			title: 'Los q no dejan su Xd',
-			body: '',
-			sourceUrl : 'https://chat.whatsapp.com/LKZOC09DoJb6lwS5UUZRlj', 
+			//body: '',
+			//sourceUrl : 'https://chat.whatsapp.com/LKZOC09DoJb6lwS5UUZRlj', 
+			sourceUrl : 'https://www.youtube.com/watch?v=JcF_c5xD99E', 
 			thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
 		)
 }
