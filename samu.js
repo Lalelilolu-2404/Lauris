@@ -7807,7 +7807,7 @@ const sonsotak = ["A mimir", "A", "a", "Acm1pt", "Admin", "Ahhh", "Arrecha", "Ay
 	      "Te amo botsito", "Me gimes", "Quien es tu sempai", "La toca"]	
 if (!isGroup) return 
 if (!isBan){
-if (!isAllaud) return reply(mess.allaud)
+if (!isAllaud) return 
 	for (let i = 0; i < sonsotak.length; i++){
 		if (body.includes(`${sonsotak[i]}`) && body.length == sonsotak[i].length){
 			const audiosxx = fs.readFileSync(`./anishan/${sonsotak[i]}.mp3`)
