@@ -6137,17 +6137,13 @@ break
 case 'setreply':
 if (!isGroup) return reply(mess.only.group)
 if (!isAdmin) return reply('Haha no :v')
-rly = []
 samu330.updatePresence(from, Presence.composing) 
 arg1 = q
 if (!arg1) return reply(`Usa :\n${prefix}setreply [mensaje|respuesta]\nEjemplo : \n${prefix}setreply Te amo botsita|Yo no :3`)
 argz = arg1.split("|")		
 const messagebot = `${argz[0].trim()}`
 const replybot = `${argz[1].trim()}`
-rly.push(messagebot.jid)
-rly.push(replybot.jid)
-//reply(`${messagebot}\n${replybot}`)
-reply(`${rly[0]}\n${rly[1]}`)
+reply(`${messagebot}\n${replybot}`)
 reply('*Hecho mi amo 7~7*')
 break
 //////		
@@ -7549,8 +7545,8 @@ break
 default:
 if (isGroup){
 try{
-if (body.startsWith(`${rly[0]}`)) {
-reply(`${rly[0]}\n${rly[1]}`)
+if (body.startsWith(`${messagebot}`)) {
+reply(`${replybot}`)
 //samu330.sendMessage(from, `${rly[1]}`, MessageType.text, {quoted: sam})
 } 
 } catch {
@@ -7673,7 +7669,7 @@ if (body.includes(`Xd`)){
 		contextInfo: {externalAdReply :{
 			title: 'Los q no dejan su Xd',
 			body: '',
-			sourceUrl : `https://chat.whatsapp.com/LKZOC09DoJb6lwS5UUZRlj`, 
+			sourceUrl : 'https://chat.whatsapp.com/LKZOC09DoJb6lwS5UUZRlj', 
 			thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
 		)
 }
