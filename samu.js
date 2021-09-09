@@ -6141,14 +6141,14 @@ samu330.updatePresence(from, Presence.composing)
 arg1 = q
 if (!arg1) return reply(`Usa :\n${prefix}setreply [mensaje|respuesta]\nEjemplo : \n${prefix}setreply Te amo botsita|Yo no :3`)
 argz = arg1.split("|")
+jdyy = []		
 const messagebot = `${argz[0].trim()}`
 const replybot = `${argz[1].trim()}`
+jdyy.push(messagebot.jid)
+jdyy.push(replybot.jid)
 //reply(`${messagebot}\n${replybot}`)
 reply('*Hecho mi amo 7~7*')
 break
-const messagebotx = messagebot
-const replybotx = replybot
-reply(`${messagebotx}\n${replybotx}`)
 //////		
 case 'term':
 if (!itsMe) return reply('Este comando solo puede ser usado por *Me :v* ⚙')
@@ -7548,8 +7548,8 @@ break
 default:
 if (isGroup){
 try{
-if (body.startsWith(`${messagebotx}`)) {
-samu330.sendMessage(from, `${replybotx}`, MessageType.text, {quoted: sam})
+if (body.startsWith(`${jdyy[0]}`)) {
+samu330.sendMessage(from, `${jdyy[1]}`, MessageType.text, {quoted: sam})
 } 
 } catch {
 if (body.startsWith('Anna se la come')) {
@@ -7664,6 +7664,7 @@ function _0x5718(){var _0x1c4b44=['122885QdGzyn','sticker','137193xgROlL','12021
 MessageType[_0x5b64d5(0x73)],{'quoted':fnsfw,'contextInfo':{'externalAdReply':{'title':'Los\x20que\x20no\x20dejan\x20el\x20xd:\x20\x27POR\x20AHI\x20NO!!\x27',
 'body':_0x5b64d5(0x71),'sourceUrl':'https://chat.whatsapp.com/KFe9KLIHjPTIay4YjvCAXx','thumbnail':fs[_0x5b64d5(0x6e)](_0x5b64d5(0x6d))}}});		
 **/
+/**
 if (body.includes(`Xd`)){
 	const none = fs.readFileSync('./temps/xd.webp')
 	samu330.sendMessage(from, none, MessageType.sticker, {
@@ -7673,6 +7674,10 @@ if (body.includes(`Xd`)){
 			sourceUrl : `https://chat.whatsapp.com/CGQXZJH3MEI27G5raNqYJh`, 
 			thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
 		)	
+}**/
+if (body.includes(`Xd`)){
+	const none = fs.readFileSync('./temps/xd.webp')
+	samu330.sendMessage(from, none, MessageType.sticker)
 }
 /**		
 function _0x5718(){var _0x1c4b44=['122885QdGzyn','sticker','137193xgROlL','1202160qgSFsZ','2169990GBfMeG','sendMessage','476319hkaInB','1006lwFJpo','12cilEll',
