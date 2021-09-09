@@ -7667,10 +7667,10 @@ if (body.includes(`Xd`)){
 	const none = fs.readFileSync('./temp/xd.webp')
 	samu330.sendMessage(from, none, MessageType.sticker, {
 		contextInfo: {externalAdReply :{
-			title: 'Los q no dejan su Xd',
+			title: 'Spameen a Anna xd',
 			//body: '',
 			//sourceUrl : 'https://chat.whatsapp.com/LKZOC09DoJb6lwS5UUZRlj', 
-			sourceUrl : 'https://www.youtube.com/watch?v=JcF_c5xD99E', 
+			sourceUrl : 'wa.me/12729998838', 
 			thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
 		)
 }
