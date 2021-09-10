@@ -44,7 +44,7 @@ const fromBuffer = require('file-type');
 const FormData = require('form-data')
 const samuGg = require('google-it');
 const samuGgImg = require('g-i-s');
-const hx = require('hxz-api');
+//const hx = require('hxz-api');
 ////////////▶ 𝐒𝐚𝐦𝐮𝟑𝟑𝟎 | 𝐒𝐚𝐦 𝐲 𝐏𝐞𝐫𝐫𝐲
 const { validmove, setGame } = require("./lib/tictactoe");
 const simple = require('./lib/simple.js');
