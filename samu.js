@@ -4488,6 +4488,7 @@ break
 		
 case 'delete':
 case 'del':
+	if (!isOwner) return reply('Nel perro :v')
 	if (!isGroup) return await reply(mess.only.group)
 	samu330.deleteMessage(from, { id: sam.message.extendedTextMessage.contextInfo.stanzaId, remoteJid: from, fromMe: true })
 break
