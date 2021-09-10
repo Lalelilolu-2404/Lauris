@@ -1445,7 +1445,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					addFilter(from)
 				}
 			}
-
+/**
 	if (sam.message.listResponseMessage){
 	if (!isGroup) return reply(mess.only.group)
 		for(let i = 0; i <= 3; i++){
@@ -1465,7 +1465,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 			}
 		}	
 	}
-	    
+**/	    
 ////
 
 
