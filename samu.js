@@ -2434,6 +2434,7 @@ break
                 			samu330.sendMessage(from, pegat, MessageType.sticker, {sendEphemeral: true})
                 			}
 			
+				addLevelingLevel(sender, 5)
 			break	
 /**	
 case 'spam':
@@ -2655,6 +2656,7 @@ gat = pw[Math.floor(Math.random() * pw.length)]
 cat = await getJson(`${gat}`)
 sendFileFromUrl(cat.url, image, {quoted: fimg, caption: '💎 *Miau 🥵* 💠', sendEphemeral: true})
 addFilter(from)
+addLevelingLevel(sender, 5)
 break
 /////////
 case 'getlvlup':
@@ -2682,7 +2684,7 @@ if (isNaN(argz[0])) return
 hailhx = `*⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
 samu330.sendMessage(from, hailhx, MessageType.text, {quoted: fnsfw})
 for (let i = 1; i <= argz[0].trim(); i++){
-addLevelingXp(sender, 1)
+addLevelingXp(sender, 10)
 }
 addFilter(from)
 break		
@@ -7103,6 +7105,7 @@ var textt = msg.admin(groupAdmins, groupName)
 await wa.sendFakeStatus(from, textt, "LIST ADMIN", groupAdmins)
 break
 case 'link':
+if (!isAdmin) return reply(mess.only.admin)
 addFilter(from)
 var link = await wa.getGroupInvitationCode(from)
 await wa.sendFakeStatus(from, link, "El link de este grupo es")
