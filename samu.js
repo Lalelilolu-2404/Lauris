@@ -4491,18 +4491,21 @@ contextInfo: { mentionedJid: members }}})
 case 'dado':
 const dadus = ["d1","d2","d3","d4","d5","d6"]
 if (!isGroup) return reply(mess.only.group)
-arg1 = q	
+arg1 = q
+if (!arg1) return reply(`Ejemplo ${prefix}dado 2\nSi aciertas ganas Xp`)
 argz = arg1.split("|")
 if (isNaN(argz[0])) return reply(`Elige un # pajero!`)
-if (argz[0] <= 0 && argz[0] > 6) return reply(`Del 1 al 6 pajín`)
+if (argz[0] < 1 && argz[0] > 6) return reply(`Del 1 al 6 pajín`)
 dadu = dadus[Math.floor(Math.random() * dadus.length)]
-dador = fs.readFileSync(`./temp/dados/${dadu}.webp`)
-samu330.sendMessage(from, dador, sticker, {quoted: fjeux, sendEphemeral: true})
+//dador = fs.readFileSync(`./temp/dados/${dadu}.webp`)
+//samu330.sendMessage(from, dador, sticker, {quoted: fjeux, sendEphemeral: true})
 rndd = `d${argz[0]}`
 if (dadu == rndd) {
-	addLevelingXp(sender, 30)
-	reply('Ganaste 30xp perro!!')
-} else reply('F bro, perdiste :v')
+	addLevelingXp(sender, 100)
+	dador = fs.readFileSync(`./temp/dados/${dadu}.webp`)
+	samu330.sendMessage(from, dador, sticker, {quoted: fjeux, sendEphemeral: true})
+	reply('Ganaste 100xp perro!!')
+} else {reply(`F bro, perdiste :v\nSalió ${dadu}*`)}
 break
 		
 case 'delete':
