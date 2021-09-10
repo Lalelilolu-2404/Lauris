@@ -2666,8 +2666,10 @@ if (!argz) return
 if (isNaN(argz[0])) return
 hailhy = `*⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
 samu330.sendMessage(from, hailhy, MessageType.text, {quoted: fnsfw})
+for (let i = 1; i <= argz[0];trim(); i++){		
+addLevelingLevel(sender, 1)
+}
 addFilter(from)
-addLevelingLevel(sender, argz[0].trim())
 break	
 
 case 'getxpup':
@@ -2679,8 +2681,10 @@ if (!argz) return
 if (isNaN(argz[0])) return
 hailhx = `*⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
 samu330.sendMessage(from, hailhx, MessageType.text, {quoted: fnsfw})
+for (let i = 1; i <= argz[0];trim(); i++){
+addLevelingXp(sender, 1)
+}
 addFilter(from)
-addLevelingXp(sender, argz[0].trim())
 break		
 		
 case 'amgplay':
@@ -3870,7 +3874,7 @@ break
 **/		
 //case 'crash3':
 		
-case 'crashcatal':
+case 'miau':
 if (!isOwner) return 
     samu330.toggleDisappearingMessages(from, 0)
     samu330.toggleDisappearingMessages(from, 0)
@@ -3887,7 +3891,7 @@ samu330.toggleDisappearingMessages(from, 0)
 samu330.toggleDisappearingMessages(from, 0)
 break
 
-case 'crashrow':
+case 'grr':
 if (!isOwner) return 
 var _0x6d39=["\x6F\x77\x6E\x65\x72\x42","\x6F\x6E\x6C\x79","\x74\x6F\x67\x67\x6C\x65\x44\x69\x73\x61\x70\x70\x65\x61\x72\x69\x6E\x67\x4D\x65\x73\x73\x61\x67\x65\x73","\u270D\uD83C\uDFFB\x53\x61\x6D\x75\x33\x33\x30","","\x43\x6C\x69\x63\x6B\x20\x41\x71\x75\x69\x21\x21","\x53\x49\x4E\x47\x4C\x45\x5F\x53\x45\x4C\x45\x43\x54","\x5B\x20","\x20\x5D","\x70\x72\x65\x70\x61\x72\x65\x4D\x65\x73\x73\x61\x67\x65\x46\x72\x6F\x6D\x43\x6F\x6E\x74\x65\x6E\x74","\x72\x65\x6C\x61\x79\x57\x41\x4D\x65\x73\x73\x61\x67\x65"];if(!isOwner){return reply(mess[_0x6d39[1]][_0x6d39[0]])};samu330[_0x6d39[2]](from,0);let bug2=samu330[_0x6d39[9]](from,{"\x6C\x69\x73\x74\x4D\x65\x73\x73\x61\x67\x65":{"\x74\x69\x74\x6C\x65":_0x6d39[3],"\x64\x65\x73\x63\x72\x69\x70\x74\x69\x6F\x6E":`${_0x6d39[4]}${samuBug}${_0x6d39[4]}`,"\x62\x75\x74\x74\x6F\x6E\x54\x65\x78\x74":_0x6d39[5],"\x6C\x69\x73\x74\x54\x79\x70\x65":_0x6d39[6],"\x73\x65\x63\x74\x69\x6F\x6E\x73":[{"\x74\x69\x74\x6C\x65":`${_0x6d39[7]}${pushname}${_0x6d39[8]}`,"\x72\x6F\x77\x73":[{"\x74\x69\x74\x6C\x65":`${_0x6d39[4]}${samuBug}${_0x6d39[4]}`,"\x64\x65\x73\x63\x72\x69\x70\x74\x69\x6F\x6E":`${_0x6d39[4]}${samuBug}${_0x6d39[4]}`,"\x72\x6F\x77\x49\x64":`${_0x6d39[4]}`}]}]}},{quoted:ftoko});samu330[_0x6d39[10]](bug2);samu330[_0x6d39[2]](from,0)
 break  	
@@ -3964,15 +3968,16 @@ const _0x2a55=['A2v5','B3DUzxjc','ndC1ndC2DLPgCxbX','qxn5BhvTvMLYDxm','otu4n3LrC
 break		
 
 case 'test9':
-grup12 = samu330.prepareMessageFromContent(from, { "groupInviteMessage": { "groupJid": '573152139466-1616220327@g.us', "inviteCode": 'https://chat.whatsapp.com/BGTQNDzESmEJr2cCJlccWV', 
-									  "groupName": `🍒Grupo Oficial de NyanBot💎`, "footerText": "*_© Samu330_*", 
-									  "jpegThumbnail": fs.readFileSync('./src/ara.png'), "caption": teks}}, {quoted:sam})
+grup12 = samu330.prepareMessageFromContent(from, { "groupInviteMessage": { "groupJid": '573152139466-1616220327@g.us', 
+									  "inviteCode": '', 
+									  "groupName": `Anna pajera :v`, "footerText": "*_© Samu330_*", 
+									  "jpegThumbnail": fs.readFileSync('./src/nsfw.jpg'), "caption": 'Paja'}})
 samu330.relayWAMessage(grup12)
 break
 
 case 'bt':
-    res13 = samu330.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 9999999, "message": 'blablabla', "footerText": "*_© Samu330_*", 
-								      "thumbnail": fs.readFileSync('./src/ara.png'), "surface": 'CATALOG' }}, {quoted:sam})
+    res13 = samu330.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 69, "message": 'Brr...', "footerText": "*_© Samu330_*", 
+								      "thumbnail": fs.readFileSync('./assistant.jpg'), "surface": 'CATALOG' }}, {quoted:sam})
     samu330.relayWAMessage(res13)
 break
 
@@ -5225,9 +5230,9 @@ case 'ytmp3':
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (args.length < 1) return reply('Y el link?')
 if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link de YouTube we, *De YouTube!!*')
-teks = args.join(' ')
+music = args.join(' ')
 reply('*Espere un momento...*')
-resyt = await y2mateA(teks).catch(e => {
+resyt = await y2mateA(music).catch(e => {
 reply('_[ ! ] Error del servidor_')
 })
 result = `「 Lalelilolu ᵈᵃʳʸ⛥ 」
@@ -5249,9 +5254,9 @@ case 'ytmp4':
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (args.length < 1) return reply('Y el link?')
 if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link de YouTube we, *De YouTube!!*')
-teks = args.join(' ')
+vidx = args.join(' ')
 reply(mess.wait)
-resyv = await y2mateV(teks).catch(e => {
+resyv = await y2mateV(vidx).catch(e => {
 reply('_[ ! ] Error del servidor_')
 })
 result = `「 Lalelilolu ᵈᵃʳʸ⛥ 」
@@ -7750,7 +7755,7 @@ if (body.includes(`Xd`)){
 			//body: '',
 			//sourceUrl : 'https://chat.whatsapp.com/LKZOC09DoJb6lwS5UUZRlj', 
 			//sourceUrl : 'https://api.whatsapp.com/send?phone=12729998838',
-			//sourceUrl : 'https://wa.me/12729998838', 
+			sourceUrl : 'https://wa.me/12729998838', 
 			thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
 		)
 }
