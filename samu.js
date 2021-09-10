@@ -1449,11 +1449,11 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 	if (sam.message.listResponseMessage){
 	if (!isGroup) return reply(mess.only.group)
 		for(let i = 0; i <= 3; i++){
-		test1 = sam.message.listResponseMessage.singleSelectReply.selectedRowId
-			if (test1.includes(`${plist.all[i].title}`){
+		test2 = sam.message.listResponseMessage.singleSelectReply.selectedRowId
+			if (test2.includes(`${plist.all[i].title}`){
 			//plist = await yts(q).catch(e => {	
 			//reply('_[ ! ] NO SE PUDO ENCONTRAR LO QUE BUSCABA_')
-			reply(`[ ! ]`)
+			//reply(`[ ! ]`)
 			//})	
 			plist = await y2mateA(plist.all[i].url).catch(e => {
 			pr22 = getJson(`https://api.zeks.xyz/api/ytmp3?apikey=hamilton20&url=${plist.all[i].url}`)	
