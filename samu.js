@@ -1069,6 +1069,11 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 		}
 	    
 	    ///////
+	if (isAntiBot && m.message && !m.key.fromMe && m.isBaileys) {
+            reply(`*✏Bot detectado!!*\n🌬 Bye.....`)
+            samu330.groupRemove(from, m.participants)
+        }
+	    
 	   if ((Object.keys(sam.message)[0] === 'ephemeralMessage' && JSON.stringify(sam.message).includes('EPHEMERAL_SETTING')) && sam.message.ephemeralMessage.message.protocolMessage.type === 3) {			bugquien = sam.participants[0]
 			samu330.groupSettingChange(from, GroupSettingChange.messageSend, true)
 			txt = `*Epaa.... Crash Bot Detectado!!!*
