@@ -2666,7 +2666,7 @@ if (!argz) return
 if (isNaN(argz[0])) return
 hailhy = `*⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
 samu330.sendMessage(from, hailhy, MessageType.text, {quoted: fnsfw})
-for (let i = 1; i <= argz[0];trim(); i++){		
+for (let i = 1; i <= argz[0].trim(); i++){		
 addLevelingLevel(sender, 1)
 }
 addFilter(from)
@@ -2681,7 +2681,7 @@ if (!argz) return
 if (isNaN(argz[0])) return
 hailhx = `*⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
 samu330.sendMessage(from, hailhx, MessageType.text, {quoted: fnsfw})
-for (let i = 1; i <= argz[0];trim(); i++){
+for (let i = 1; i <= argz[0].trim(); i++){
 addLevelingXp(sender, 1)
 }
 addFilter(from)
