@@ -4495,7 +4495,7 @@ arg1 = q
 if (!arg1) return reply(`Ejemplo ${prefix}dado 2\nSi aciertas ganas Xp`)
 argz = arg1.split("|")
 if (isNaN(argz[0])) return reply(`Elige un # pajero!`)
-if (argz[0] < 1 && argz[0] > 6) return reply(`Del 1 al 6 pajín`)
+if (argz[0] < 1 || argz[0] > 6) return reply(`Del 1 al 6 pajín`)
 dadu = dadus[Math.floor(Math.random() * dadus.length)]
 //dador = fs.readFileSync(`./temp/dados/${dadu}.webp`)
 //samu330.sendMessage(from, dador, sticker, {quoted: fjeux, sendEphemeral: true})
@@ -4505,7 +4505,7 @@ if (dadu == rndd) {
 	dador = fs.readFileSync(`./temp/dados/${dadu}.webp`)
 	samu330.sendMessage(from, dador, sticker, {quoted: fjeux, sendEphemeral: true})
 	reply('Ganaste 100xp perro!!')
-} else {reply(`F bro, perdiste :v\nSalió ${dadu}*`)}
+} else {reply(`F bro, perdiste :v\n*Salió ${dadu}*`)}
 break
 		
 case 'delete':
