@@ -6208,24 +6208,14 @@ console.log('succes unmute chat = ' + from)
 break
 case 'facebook':
 case 'fb':
-if (args.length < 1) return reply('Y el link? ')
-if(!isUrl(args[0]) && !args[0].includes('facebook')) return reply('LINK DE FACEBOOK MLDT STUPID!!')
-teks = args.join(' ')
+if (!isUrl) return reply('Y el Link?')
+if (!isUrl(args[0]) && !args[0].includes('facebook.com')) return reply('*Seas mmon... link de Facebook!!!*')
 reply(mess.wait)
-res = await fbDown(teks).catch(e => {
-  reply(mess.ferr)
+hx.fbdown(q)
+.then(result => {
+reply(result)
+sendMediaURL(from,result,`*Link Del Video*`)
 })
-a = res[0]
-result = `
-Titulo :* ${a.judul}
-*Source :* ${a.source}
-*Tamaño :* ${a.size}
-*Calidad :* ${a.quality}
-*Tipo :* ${a.type}
-*Name File :* ${a.judul}.${a.type}
-`
-sendFileFromUrl(a.thumb, image, {caption: result, quoted: sam})
-sendFileFromUrl(a.link, video, { mimetype: 'video/mp4',quoted: sam, filename: `${a.judul}.${a.type}`})
 break
 
 case 'ytsearch':
