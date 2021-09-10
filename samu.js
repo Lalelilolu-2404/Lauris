@@ -1465,7 +1465,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 	if (!isGroup) return reply(mess.only.group)
 		//for(let i = 0; i <= 3; i++){
 		test2 = sam.message.listResponseMessage.singleSelectReply.selectedRowId
-			if (test2.includes(`${plist.all[0].title}`){
+			if (test2.includes(`${plist.all[0].title}A1`) {
 			//plist = await yts(q).catch(e => {	
 			//reply('_[ ! ] NO SE PUDO ENCONTRAR LO QUE BUSCABA_')
 			//reply(`[ ! ]`)
@@ -1473,14 +1473,14 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 			plist = await y2mateA(plist.all[0].url).catch(e => {
 			pr22 = getJson(`https://api.zeks.xyz/api/ytmp3?apikey=hamilton20&url=${plist.all[0].url}`)	
 			reply(`*_[ ! ] Lo siento*`)
-			sendFileFromUrl(pr22.result.url_audio, audio, {quoted: sam, mimetype: 'audio/mp4', filename: plist[i].output})
+			sendFileFromUrl(pr22.result.url_audio, audio, {quoted: sam, mimetype: 'audio/mp4', filename: plist[0].output})
 			})
-			sendFileFromUrl(plist[0].link, audio, {quoted: sam, mimetype: 'audio/mp4', filename: plist[i].output})
+			sendFileFromUrl(plist[0].link, audio, {quoted: sam, mimetype: 'audio/mp4', filename: plist[0].output})
 			addFilter(from)
 			}
 		//}	
 	}
-	    
+	
 ////
 /**	    
 	    "rowId": `${plist.all[0].title}@list`
@@ -4795,22 +4795,22 @@ case 'play2':
 						{
 						  "title": `[ ${plist.all[0].title} ]`,
 						  "description": `Duracion : ${plist.all[0].timestamp}\nLink : ${plist.all[0].author.url}`,
-						  "rowId": `${plist.all[0].title}`
+						  "rowId": `${plist.all[0].title}A1`
 						},
 						{
 						  "title": `[ ${plist.all[1].title} ]`,
 						  "description": `Duracion : ${plist.all[1].timestamp}\nLink : ${plist.all[1].author.url}`,
-						  "rowId": `${plist.all[1].title}`
+						  "rowId": `${plist.all[1].title}A2`
 						},
                         			{
 						  "title": `[ ${plist.all[2].title} ]`,
 						  "description": `Duracion : ${plist.all[2].timestamp}\nLink : ${plist.all[2].author.url}`,
-						  "rowId": `${plist.all[2].title}`
+						  "rowId": `${plist.all[2].title}A3`
 						},
 						{
 						  "title": `[ ${plist.all[3].title} ]`,
 						  "description": `Duracion : ${plist.all[3].timestamp}\nLink : ${plist.all[3].author.url}`,
-						  "rowId": `${plist.all[3].title}`
+						  "rowId": `${plist.all[3].title}A4`
 						}
 					  ]
 					},
