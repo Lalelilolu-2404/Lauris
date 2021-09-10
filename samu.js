@@ -1465,7 +1465,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 	if (!isGroup) return reply(mess.only.group)
 		//for(let i = 0; i <= 3; i++){
 		test2 = sam.message.listResponseMessage.singleSelectReply.selectedRowId
-			if (test2.includes(`${plist.all[0].title}A1`) {
+			if (test2.includes(`${plist.all[0].title}A1`)) {
 			//plist = await yts(q).catch(e => {	
 			//reply('_[ ! ] NO SE PUDO ENCONTRAR LO QUE BUSCABA_')
 			//reply(`[ ! ]`)
