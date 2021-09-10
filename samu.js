@@ -1460,27 +1460,27 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					addFilter(from)
 				}
 			}
-/**
+
 	if (sam.message.listResponseMessage){
 	if (!isGroup) return reply(mess.only.group)
-		for(let i = 0; i <= 3; i++){
+		//for(let i = 0; i <= 3; i++){
 		test2 = sam.message.listResponseMessage.singleSelectReply.selectedRowId
-			if (test2.includes(`${plist.all[i].title}`){
+			if (test2.includes(`${plist.all[0].title}`){
 			//plist = await yts(q).catch(e => {	
 			//reply('_[ ! ] NO SE PUDO ENCONTRAR LO QUE BUSCABA_')
 			//reply(`[ ! ]`)
 			//})	
-			plist = await y2mateA(plist.all[i].url).catch(e => {
-			pr22 = getJson(`https://api.zeks.xyz/api/ytmp3?apikey=hamilton20&url=${plist.all[i].url}`)	
+			plist = await y2mateA(plist.all[0].url).catch(e => {
+			pr22 = getJson(`https://api.zeks.xyz/api/ytmp3?apikey=hamilton20&url=${plist.all[0].url}`)	
 			reply(`*_[ ! ] Lo siento*`)
 			sendFileFromUrl(pr22.result.url_audio, audio, {quoted: sam, mimetype: 'audio/mp4', filename: plist[i].output})
 			})
-			sendFileFromUrl(plist[i].link, audio, {quoted: sam, mimetype: 'audio/mp4', filename: plist[i].output})
+			sendFileFromUrl(plist[0].link, audio, {quoted: sam, mimetype: 'audio/mp4', filename: plist[i].output})
 			addFilter(from)
 			}
-		}	
+		//}	
 	}
-**/	    
+	    
 ////
 /**	    
 	    "rowId": `${plist.all[0].title}@list`
