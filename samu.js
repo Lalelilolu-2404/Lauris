@@ -443,7 +443,7 @@ samu330.on('chat-update', async(sam) => {
 			wait: '⌛ 𝐄𝐍 𝐏𝐑𝐎𝐂𝐄𝐒𝐎 ⌛',
 			success: '✔️ 𝙎𝙐𝙎𝙎𝙀𝙎 ✔️',
 			nsfw: `𝗟𝗼 𝘀𝗶𝗲𝗻𝘁𝗼 𝗽𝗲𝗿𝗼 𝗻𝗼 𝗽𝘂𝗲𝗱𝗼 𝗲𝗷𝗲𝗰𝘂𝘁𝗮𝗿 𝗲𝘀𝗲 𝗰𝗼𝗺𝗮𝗻𝗱𝗼, 𝗲𝘀𝘁𝗲 𝗴𝗿𝘂𝗽𝗼 𝗻𝗼 𝗽𝗲𝗿𝗺𝗶𝘁𝗲 𝗰𝗼𝗻𝘁𝗲𝗻𝗶𝗱𝗼 +𝟭𝟴\n*PARA ACTIVAR LOS COMANDOS +18, USA:* ${prefix}+18 1`, 
-			allaud: `Voces desactivadas.\n*PARA ACTIVAR, USA: ${prefix}allaud 1*`, 
+			allaud: `Voces desactivadas.\nPara activar, usa: *${prefix}allaud 1*`, 
 			ferr: 'Intentalo de nuevo más tarde',
 			error: {
 			stick: '[❗] 𝙀𝙍𝙍𝙊𝙍 intentalo de nuevo, da error a la primera:D  ❌',
@@ -1450,10 +1450,11 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 	if (!isGroup) return reply(mess.only.group)
 		for(let i = 0; i <= 3; i++){
 		test1 = sam.message.listResponseMessage.singleSelectReply.selectedRowId
-			if (test1.includes(`listoption${i}`)){
-			plist = await yts(q).catch(e => {	
-			reply('_[ ! ] NO SE PUDO ENCONTRAR LO QUE BUSCABA_')
-			})	
+			if (test1.includes(`${plist.all[i].title}`){
+			//plist = await yts(q).catch(e => {	
+			//reply('_[ ! ] NO SE PUDO ENCONTRAR LO QUE BUSCABA_')
+			reply(`[ ! ]`)
+			//})	
 			plist = await y2mateA(plist.all[i].url).catch(e => {
 			pr22 = getJson(`https://api.zeks.xyz/api/ytmp3?apikey=hamilton20&url=${plist.all[i].url}`)	
 			reply(`*_[ ! ] Lo siento*`)
@@ -1463,9 +1464,12 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 			addFilter(from)
 			}
 		}	
-	}	    
+	}
+	    
 ////
 
+
+	    
 //Zona de Comandos🛵
 switch (command) {
 case 'help':
@@ -4913,22 +4917,22 @@ case 'play2':
 						{
 						  "title": `[ ${plist.all[0].title} ]`,
 						  "description": `Duracion : ${plist.all[0].timestamp}\nLink : ${plist.all[0].author.url}`,
-						  "rowId": `listoption0`
+						  "rowId": `${plist.all[0].title}`
 						},
 						{
 						  "title": `[ ${plist.all[1].title} ]`,
 						  "description": `Duracion : ${plist.all[1].timestamp}\nLink : ${plist.all[1].author.url}`,
-						  "rowId": `listoption1`
+						  "rowId": `${plist.all[1].title}`
 						},
                         			{
 						  "title": `[ ${plist.all[2].title} ]`,
 						  "description": `Duracion : ${plist.all[2].timestamp}\nLink : ${plist.all[2].author.url}`,
-						  "rowId": `listoption2`
+						  "rowId": `${plist.all[2].title}`
 						},
 						{
 						  "title": `[ ${plist.all[3].title} ]`,
 						  "description": `Duracion : ${plist.all[3].timestamp}\nLink : ${plist.all[3].author.url}`,
-						  "rowId": `listoption3`
+						  "rowId": `${plist.all[3].title}`
 						}
 					  ]
 					},
@@ -7576,7 +7580,7 @@ if (!isAdmin) return reply(mess.only.admin)
 if (args.length < 1) return reply('Escribe *1* para activar')          
 if (args[0] === '1') {                                    
 	if (isAllaud) return reply('*Ya está activo*')          
-	nsfw.push(from)                          
+	allaud.push(from)                          
 	fs.writeFileSync('./src/allaud.json', JSON.stringify(allaud))      
 	reply(`*[ Activado ]*`)   
 } else if (args[0] === '0') {             
