@@ -4771,7 +4771,8 @@ break
 	
 case 'leaderboard':
 case 'lb':
-bo = args[0]
+samu330.updatePresence(from, Presence.composing)
+bo = []
 _level.sort((a, b) => (a.xp < b.xp) ? 1 : -1)
 //uang.sort((a, b) => (a.uang < b.uang) ? 1 : -1)
 let leaderboardlvl = '-----[ *NIVEL DE LIDERAZGO* ]----\n\n'
@@ -4780,16 +4781,29 @@ let nomm = 0
 try {
 for (let i = 0; i < 10; i++) {
 	nomm++
-        leaderboardlvl += `*[${nomm}]* wa.me/${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
+        //leaderboardlvl += `*[${nomm}]* wa.me/${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
         //leaderboarduang += `*[${nomm}]* wa.me/${uang[i].id.replace('@s.whatsapp.net', '')}\n┣⊱ *Dinero*: _Rp${uang[i].uang}_\n`
+	leaderboardlvl += `*[${nomm}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
+        bo.push(_level[i].id)
 }
-await reply(leaderboardlvl)
+//await reply(leaderboardlvl)
+await mentions(leaderboardlvl, bo, true))	
 ///await reply(leaderboarduang)
 } catch (err) {
 console.error(err)
 await reply(`usuario mínimo de para poder acceder a la base de datos`)
 }
 break
+case 'tagall':
+members_id = []
+teks += `  Total : ${groupMembers.length}\n`
+for (let mem of groupMembers) {
+teks += `┃ @${mem.jid.split('@')[0]}\n`
+members_id.push(mem.jid)
+}
+mentions('+teks+', members_id, true)
+addFilter(from)
+break 
 		
 case 'reglas':
 reply(`*Hola, estas son las reglas*\n\n1- _Manten una formalidad respetuosa_\n2- _Si vas a añadir el bot a algun grupo, verifica que el grupo cumpla con los requisitos que son tener minimo 5 personas_\n3- _❌NO HAGAS SPAM DE COMANDOS❌_ *Esto es enserio, puedes hacer que el bot se apage*\n4- _📵NO HAGAS LLAMADAS POR WHATSAPP AL PROPIETARIO DEL BOT📵_ *Seras bloqueado inmediatamente*\n5- _🕐Espera el tiempo nesesario cuando pidas alguna funcion, 
