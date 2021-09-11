@@ -2330,7 +2330,273 @@ message: {
 addFilter(from)
 break		    
 ////////
+/**	
+case 'trabajar':
+if (isUser2) return reply('Ya trabajaste mucho vuelve mañana')
+cnf.updatePresence(from, Presence.composing)       		                			      		
+user2.push(sender)					
+fs.writeFileSync('./database/json/user2.json', JSON.stringify(user2))	
+addKoinUser(sender, 100)
+reply(`Gracias por tu trabajo ten tu pago
+-Recibiste 100 coins`)
+break		
+
+case 'anime':
+    	if (isLimit(sender)) return reply(ind.limitend(pushname))      
+	if (!isRegistered) return reply(ind.noregis())			  
+            reply(mess.wait)
+            fetch('https://raw.githubusercontent.com/pajaar/grabbed-results/master/pajaar-2020-gambar-anime.txt')
+            .then(res => res.text())
+            .then(body => {
+            let tod = body.split("\n");
+            let pjr = tod[Math.floor(Math.random() * tod.length)];
+            imageToBase64(pjr)
+            .then((response) => {
+            media =  Buffer.from(response, 'base64');
+            cnf.sendMessage(from,media,image,{quoted:mek,caption:'༊𝕮࿆𝖔ྂ𝖓𝖋𝖚ྂ𝕭𝖔ྂ𝖙࿆࿑'})
+            }
+            )
+            .catch((error) => {
+            console.log(error); 
+            }
+            )
+            });
+break
+
+case 'pussyimage':
+if (!isNsfw) return reply(mess.nsfwoff)
+const uaangkaukayrru = checkATMuser(sender)
+const jmokuro = [`${uaangkaukayrru}`]
+if (jmokuro < 30) return reply(`𝐋𝐨 𝐬𝐢𝐞𝐧𝐭𝐨 𝐬𝐨𝐟𝐢𝐜𝐨𝐢𝐧𝐬 𝐢𝐧𝐬𝐮𝐟𝐢𝐜𝐢𝐞𝐧𝐭𝐞𝐬.`)
+confirmATM(sender, 30)
+
+  pusiimg = await axios.get('https://nekos.life/api/v2/img/pussy_jpg')
+			bufpusy = await getBuffer(pusiimg.data.url)
+				cnf.sendMessage(from, bufpusy, MessageType.image, {quoted: mek})
+						reply('Se te cobraron 30 coins')
+			.catch(err => {
+			return('E-error ⊙﹏⊙')
+			})
+break		
+	
+case  'pat':
+    if (isLimit(sender)) return reply(ind.limitend(pushname))      
+if (!isRegistered) return reply(ind.noregis())			  
+      ranp = getRandom('.gif')
+      rano = getRandom('.webp')
+			anu = await axios.get('https://nekos.life/api/v2/img/pat')
+			exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
+			  fs.unlinkSync(ranp)
+				if (err) return reply('error')
+				buffer = fs.readFileSync(rano)
+				cnf.sendMessage(from, buffer, MessageType.sticker, {quoted: mek})
+				fs.unlinkSync(rano)
+			})
+break
 		
+      case prefix+'loli':
+      if (isLimit(sender)) return reply(ind.limitend(pushname))      
+      if (!isRegistered) return reply(ind.noregis())			  
+      const uaangkauuu = checkATMuser(sender)
+      const jño = [`${uaangkauuu}`]
+      if (jño < 20) return reply(`𝐋𝐨 𝐬𝐢𝐞𝐧𝐭𝐨 𝐬𝐨𝐟𝐢𝐜𝐨𝐢𝐧𝐬 𝐢𝐧𝐬𝐮𝐟𝐢𝐜𝐢𝐞𝐧𝐭𝐞𝐬.`)
+      confirmATM(sender, 20)
+	  anu = await fetchJson(`https://bx-hunter.herokuapp.com/api/randomloli?apikey=Ikyy69`)
+      buffer = await getBuffer(anu.link)
+	  cnf.sendMessage(from, buffer, image, {
+      quoted: mek, caption: '𝐒𝐞 𝐭𝐞 𝐜𝐨𝐛𝐫𝐚𝐫𝐨 𝟐𝟎 𝐜𝐨𝐢𝐧𝐬'})
+	  break
+
+	  case prefix+'waifu':
+	  if (isLimit(sender)) return reply(ind.limitend(pushname))      
+      if (!isRegistered) return reply(ind.noregis())			  
+      const uaangkauuuuu = checkATMuser(sender)
+      const jññpo = [`${uaangkauuuuu}`]
+      if (jññpo < 30) return reply(`𝐋𝐨 𝐬𝐢𝐞𝐧𝐭𝐨 𝐬𝐨𝐟𝐢𝐜𝐨𝐢𝐧𝐬 𝐢𝐧𝐬𝐮𝐟𝐢𝐜𝐢𝐞𝐧𝐭𝐞𝐬.`)
+      confirmATM(sender, 30)
+	  sendMediaURL(from, `https://bx-hunter.herokuapp.com/api/sfw/neko?apikey=Ikyy69`)
+      reply('𝐒𝐞 𝐭𝐞 𝐜𝐨𝐛𝐫𝐚𝐫𝐨 𝟑𝟎 𝐜𝐨𝐢𝐧𝐬')
+	  break
+		
+case prefix+'perfil':
+    				cnf.updatePresence(from, Presence.composing)
+				if (isLimit(sender)) return reply(ind.limitend(pushname))      
+if (!isRegistered) return reply(ind.noregis())			  
+    				try {
+					profil = await cnf.getProfilePicture(`${sender.split('@')[0]}@s.whatsapp.net`)
+					} catch {
+					profil = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+					}
+					   const uaangku = checkATMuser(sender)
+					profile = `╭─「 *PERFIL* 」
+│• *Nombre:* ${pushname}
+│• *Rol :${role}*
+│• *Usuario registrado:* ✅
+│• *Tu Dinero: Rp${uaangku}*
+│• *XP: ${getLevelingXp(sender)}*
+│• *Level: ${getLevelingLevel(sender)}*				
+│• *Link:* wa.me/${sender.split("@")[0]}
+╰─────────────────────`
+	 				buff = await getBuffer(profil)
+					cnf.sendMessage(from, buff, image, {quoted: mek, caption: profile})
+					break
+				
+case prefix+'credits':
+case prefix+'credito':
+case prefix+'creditos':
+				      if (isLimit(sender)) return reply(ind.limitend(pushname))      
+      if (!isRegistered) return reply(ind.noregis())			  
+wew = fs.readFileSync(`./media/cnf.jpeg`)
+ credi = `┏━⊱ConfuMods
+┗⊱https://youtube.com/c/ConfuMods
+┏━⊱FelixCrack409
+┗⊱$https://youtube.com/c/Felixcrack409
+┏━⊱Eli Hope
+┗⊱¿?
+┏━⊱Fadhil Graphy
+┗⊱https://youtube.com/c/FadhilGraphy`
+        cnf.sendMessage(from, wew, image,{contextInfo: {forwardingScore : 508, isForwarded: true},sendEphemeral: true, quoted:ftoko, caption:credi})
+break
+		
+case prefix+'leaderboard':
+case prefix+'lb':
+				bo = args[0]
+				_level.sort((a, b) => (a.xp < b.xp) ? 1 : -1)
+				uang.sort((a, b) => (a.uang < b.uang) ? 1 : -1)
+                let leaderboardlvl = '-----[ *NIVEL DE LIDERAZGO* ]----\n\n'
+                let leaderboarduang = '-----[ *TABLA DE MILLONARIOS* ]----\n\n'
+                let nomm = 0
+                try {
+                    for (let i = 0; i < 10; i++) {
+                        nomm++
+                        leaderboardlvl += `*[${nomm}]* wa.me/${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
+                        leaderboarduang += `*[${nomm}]* wa.me/${uang[i].id.replace('@s.whatsapp.net', '')}\n┣⊱ *Dinero*: _Rp${uang[i].uang}_\n┗⊱ *Limit*: ${limitawal - _limit[i].limit}\n`
+                    }
+                    await reply(leaderboardlvl)
+                    await reply(leaderboarduang)
+                } catch (err) {
+                    console.error(err)
+                    await reply(`usuario mínimo de  para poder acceder a la base de datos`)
+                }
+break		
+	
+case prefix+'transfer':
+case prefix+'trasferir':
+case prefix+'transferir':
+if (!isRegistered) return reply(ind.noregis())
+if (!q.includes('|')) return  reply(ind.wrongf())
+                const tujuan = q.substring(0, q.indexOf('|') - 1)
+                const jumblah = q.substring(q.lastIndexOf('|') + 1)
+                if(isNaN(jumblah)) return await reply('la cantidad debe ser un número!!')
+                if (jumblah < 100 ) return reply(`transferencia mínima 100`)
+                if (checkATMuser(sender) < jumblah) return reply(`No tienes suficiente dinero para realizar la transferencia`)
+                const tujuantf = `${tujuan.replace("@", '')}@s.whatsapp.net`
+                fee = 0.005 *  jumblah
+                hasiltf = jumblah - fee
+                addKoinUser(tujuantf, hasiltf)
+                confirmATM(sender, jumblah)
+                addKoinUser('+50254371795@s.whatsapp.net', fee)
+                reply(`*「 ÉXITO 」*\n\nLa transferencia de dinero ha sido exitosa\n\nDe : +${sender.split("@")[0]}\nPara : +${tujuan}\n\nmonto de la transferencia : ${jumblah}\nimpuesto : ${fee}%`)
+break
+			
+case prefix+'cartera':
+case prefix+'catera':
+case prefix+'cartea':
+case prefix+'cartra':
+if (!isRegistered) return reply(ind.noregis())
+const kantong = checkATMuser(sender)
+				reply(ind.uangkau(pushname, sender, kantong))
+				break
+				case prefix+'buylimit':
+				if (!isRegistered) return reply(ind.noregis())
+				payout = body.slice(10)
+				if(isNaN(payout)) return await reply('el límite debe ser un número!!')
+				const koinPerlimit = 30
+				const total = koinPerlimit * payout
+				if ( checkATMuser(sender) <= total) return reply(`lo siento, tu dinero no es suficiente. recoger y comprar más tarde`)
+				if ( checkATMuser(sender) >= total ) {
+					confirmATM(sender, total)
+					bayarLimit(sender, payout)
+					await reply(`*「 PAGO EXITOSO 」*\n\n*remitente* : Admin\n*receptor* : ${pushname}\n*compra nominal* : ${payout} \n*precio límite* : ${koinPerlimit}/limit\n*el resto de tu dinero* : ${checkATMuser(sender)}\n\nel proceso es exitoso con el número de pago\n${createSerial(15)}`)
+				} 
+break		
+	
+case prefix+'roulette':	
+case prefix+'ruleta':
+case prefix+'suerte':
+if (!isRegistered) return reply(ind.noregis())    	
+const dinn = ['1','1','1','100','1','1','1']    
+  const holi = dinn[Math.floor(Math.random() * dinn.length)]
+ if (holi < 5) return reply(`★᭄ꦿ𝐑𝐎𝐔𝐋𝐄𝐓𝐓𝐄💸
+-🥀Lo siento🥀
+-🥀${pushname}
+-🥀As perdido
+-🥀No recibes ningun premio
+-🥀Gracias por jugar`)
+ 
+reply(`★᭄ꦿ𝐑𝐎𝐔𝐋𝐄𝐓𝐓𝐄💸
+-🥀Felicidades 🎉 
+-🥀${pushname}
+-🥀As Ganado!! 🎉
+-🥀Tu premio : 100 coins`)
+addKoinUser(sender, 100)
+break	
+		
+case prefix+'apostar':
+dineroapostado = body.slice(9)
+if (args.length < 1) return reply('*Cuanto deseas apostar?')
+  if(isNaN(dineroapostado)) return await reply('la cantidad debe ser un número')
+ const uaangkauuuiiu = checkATMuser(sender)
+const jññño = [`${uaangkauuuiiu}`]
+if (jññño < dineroapostado) return reply(`𝐋𝐨 𝐬𝐢𝐞𝐧𝐭𝐨 𝐬𝐨𝐟𝐢𝐜𝐨𝐢𝐧𝐬 𝐢𝐧𝐬𝐮𝐟𝐢𝐜𝐢𝐞𝐧𝐭𝐞𝐬.`)
+confirmATM(sender, dineroapostado)
+const gpp = ['10','10','10','10','10','10','10','10','10','10','10','10','10','50000']
+	const gppp = gpp[Math.floor(Math.random() * gpp.length)]
+piro = `*[💲] [ 𝗔𝗣𝗨𝗘𝗦𝗧𝗔𝗦 ] [💲]*
+᭕- Dinero apostado :
+᭕- ${dineroapostado}
+᭕- Jugador :
+᭕- ${pushname}
+*{💲}---𝐑𝐄𝐒𝐔𝐋𝐓𝐀𝐃𝐎--{-💲}*
+        ༊    𝙿𝙴𝚁𝙳𝙴𝙳𝙾𝚁    ༊
+*{💲}---𝐑𝐄𝐒𝐔𝐋𝐓𝐀𝐃𝐎--{-💲}*
+× No ganas nada
+× Pierdes el dinero apostado
+× Gracias por jugar`
+
+
+ganadorxd = `*[💲] [ 𝗔𝗣𝗨𝗘𝗦𝗧𝗔𝗦 ] [💲]*
+᭕- Dinero apostado :
+᭕- ${dineroapostado}
+᭕- Jugador :
+᭕- ${pushname}
+*{💲}---𝐑𝐄𝐒𝐔𝐋𝐓𝐀𝐃𝐎--{-💲}*
+        ༊     𝙶𝙰𝙽𝙰𝙳𝙾𝚁     ༊
+*{💲}---𝐑𝐄𝐒𝐔𝐋𝐓𝐀𝐃𝐎--{-💲}*
+× Ganaste :
+× 50000 coins
+× Gracias por jugar`
+if (gppp < 90) return reply(piro)
+addKoinUser(sender, 50000)
+
+reply(`${ganadorxd}`)
+break
+
+case prefix+'megumin':
+case prefix+'megu':
+      if (isLimit(sender)) return reply(ind.limitend(pusname))  
+      if	(!isRegistered) return reply(ind.noregis())	
+      const meguumin = checkATMuser(sender)
+      const mmeegu = [`${meguumin}`]
+      if (mmeegu < 30) return reply(`𝐋𝐨 𝐬𝐢𝐞𝐧𝐭𝐨 𝐬𝐨𝐟𝐢𝐜𝐨𝐢𝐧𝐬 𝐢𝐧𝐬𝐮𝐟𝐢𝐜𝐢𝐞𝐧𝐭𝐞𝐬.`)
+      confirmATM(sender, 30)			
+	  reply(mess.wait)
+       const apiiis2 =['7c6c9a9e1138b473e6c64388','ff8508e71c332b870c1e8a1b','b57c69801b7b3e63b3b3e94c','e07d2ff8ff95d995809ec7b3','99ae3d189586081a2be37357','8cd8a7918eab2510afd496c0']
+ const nepe222 = apiiis2[Math.floor(Math.random() * apiiis2.length)]        
+buff = await getBuffer(`https://api.lolhuman.xyz/api/random/megumin?apikey=${nepe222}`, {method: 'get'})
+                     cnf.sendMessage(from, buff, image, {quoted: mek, caption: '𝐒𝐞 𝐭𝐞 𝐜𝐨𝐛𝐫𝐚𝐫𝐨 𝟑𝟎 𝐜𝐨𝐢𝐧𝐬'})
+break	
+**/		
 //////////Spam 	
 /**
 case 'swt':
