@@ -4787,7 +4787,7 @@ for (let i = 0; i < 10; i++) {
         bo.push(_level[i].id)
 }
 //await reply(leaderboardlvl)
-await mentions(leaderboardlvl, bo, true))	
+await mentions(leaderboardlvl, bo, true)	
 ///await reply(leaderboarduang)
 } catch (err) {
 console.error(err)
