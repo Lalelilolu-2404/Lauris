@@ -4673,6 +4673,7 @@ case 'del':
 break
 		
 case 'nivel':
+samu330.updatePresence(from, Presence.composing)
 const getLevel1 = getLevelingLevel(sender)
 const lvup =  `✴ _*🧗🏻‍♂️Nivel Actual!͟*_ ✴
 	
