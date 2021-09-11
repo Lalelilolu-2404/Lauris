@@ -4695,7 +4695,7 @@ let leaderboardlvl = '-----[ *NIVEL DE LIDERAZGO* ]----\n\n'
 //let leaderboarduang = '-----[ *TABLA DE MILLONARIOS* ]----\n\n'
 let nomm = 0
 try {
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 5; i++) {
 	nomm++
         //leaderboardlvl += `*[${nomm}]* wa.me/${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
         //leaderboarduang += `*[${nomm}]* wa.me/${uang[i].id.replace('@s.whatsapp.net', '')}\n┣⊱ *Dinero*: _Rp${uang[i].uang}_\n`
