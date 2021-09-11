@@ -4692,7 +4692,7 @@ bo = []
 _level.sort((a, b) => (a.xp < b.xp) ? 1 : -1)
 //uang.sort((a, b) => (a.uang < b.uang) ? 1 : -1)
 let leaderboardlvl = '-----[ *NIVEL DE LIDERAZGO* ]----\n\n'
-let leaderboarduang = '-----[ *TABLA DE MILLONARIOS* ]----\n\n'
+//let leaderboarduang = '-----[ *TABLA DE MILLONARIOS* ]----\n\n'
 let nomm = 0
 try {
 for (let i = 0; i < 10; i++) {
@@ -4717,11 +4717,11 @@ samu330.updatePresence(from, Presence.composing)
 box = []
 uang.sort((a, b) => (a.uang < b.uang) ? 1 : -1)
 let leaderboarduang = '-----[ *TABLA DE MILLONARIOS* ]----\n\n'
-let nomm = 0
+let nommx = 0
 try {
 for (let i = 0; i < 5; i++) {
-	nomm++
-        leaderboarduang += `*[${nomm}]* @${uang[i].id.replace('@s.whatsapp.net', '')}\n┣⊱ *Dinero*: _Rp${uang[i].uang}_\n`
+	nommx++
+        leaderboarduang += `*[${nommx}]* @${uang[i].id.replace('@s.whatsapp.net', '')}\n┣⊱ *Dinero*: _Rp${uang[i].uang}_\n`
         box.push(uang[i].id)
 }
 await mentions(leaderboarduang, box, true)	
