@@ -2344,22 +2344,19 @@ case 'anime':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
             reply(mess.wait)
-            fetch('https://raw.githubusercontent.com/pajaar/grabbed-results/master/pajaar-2020-gambar-anime.txt')
+            getJson('https://raw.githubusercontent.com/pajaar/grabbed-results/master/pajaar-2020-gambar-anime.txt')
             .then(res => res.text())
             .then(body => {
             let tod = body.split("\n");
             let pjr = tod[Math.floor(Math.random() * tod.length)];
             imageToBase64(pjr)
             .then((response) => {
-            media =  Buffer.from(response, 'base64');
+            media =  getBuffer.from(response, 'base64');
             cnf.sendMessage(from, media, MessageType.image,{quoted: fimg,caption:'༊𝕮࿆𝖔ྂ𝖓𝖋𝖚ྂ𝕭𝖔ྂ𝖙࿆࿑'})
             }
             )
-            .catch((error) => {
-            console.log(error); 
-            }
-            )
-            });
+            .catch(err => {
+	return('Pwrdon... T_T')
 break
 	
 case 'trabajar':
@@ -2392,15 +2389,22 @@ break
 case 'lolixx':   
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})  			 
-	anux = await axios.get(`https://bx-hunter.herokuapp.com/api/randomloli?apikey=Ikyy69`)
-      buffer = await getBuffer(anux.link)
-	  samu330.sendMessage(from, buffer, image, {quoted: sam})
+	anux = await axios.get('https://bx-hunter.herokuapp.com/api/randomloli?apikey=Ikyy69')
+	buffer = await getBuffer(anux.link)
+	samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: '_*Por que muslos?*_'})
+	.catch(err => {
+	return('Pwrdon... T_T')
+})	
 break
 
-case 'waifuxx':      
+case 'nekoxx':      
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})     
-	sendMediaURL(from, `https://bx-hunter.herokuapp.com/api/sfw/neko?apikey=Ikyy69`)
+	buffer = await getBuffer(`https://bx-hunter.herokuapp.com/api/sfw/neko?apikey=Ikyy69`)
+	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Nekos :3*_ 💠', quoted: fimg})
+	.catch(err => {
+	return('Pwrdon... T_T')
+	})
 break
 			
 	
@@ -2411,15 +2415,15 @@ if (!q.includes('|')) return  reply(`Ej. ${prefix}givemoney @Tag | Monto a trans
 	const tujuan = q.substring(0, q.indexOf('|') - 1)
         const jumblah = q.substring(q.lastIndexOf('|') + 1)
         if(isNaN(jumblah)) return await reply('La cantidad debe ser un número!!')
-        if (jumblah < 100 ) return reply(`Transferencia mínima 100`)
+        if (jumblah < 100 ) return reply(`Transferencia mínima de 100`)
         if (checkATMuser(sender) < jumblah) return reply(`No tienes suficiente dinero para realizar la transferencia`)
         const tujuantf = `${tujuan.replace("@", '')}@s.whatsapp.net`
-        fee = 0.005 *  jumblah
+        fee = 0.01 *  jumblah
         hasiltf = jumblah - fee
         addKoinUser(tujuantf, hasiltf)
         confirmATM(sender, jumblah)
         addKoinUser('33749258491@s.whatsapp.net', fee)
-reply(`*「 ÉXITO 」*\n\nLa transferencia de dinero ha sido exitosa\n\nDe : +${sender.split("@")[0]}\nPara : +${tujuan}\n\nmonto de la transferencia : ${jumblah}\nimpuesto : ${fee}%`)
+reply(`*「 TRANSFERENCIA ÉXITOSA 」*\n\nDe : @${sender.split("@")[0]}\nPara : @${tujuan}\n\nMonto de la transferencia : ${jumblah}\nImpuesto : ${fee}`)
 break
 			
 case 'balance':
@@ -2440,6 +2444,7 @@ if (!arg1) return reply(`Ejemplo ${prefix}apostar ***\nGanas o pierdes Otakoins`
 argz = arg1.split("|")
 if (isNaN(argz[0])) return reply(`Has una apuesta pajero!`)
 if (argz[0] < 0) return reply(`No seas pendejo, pajín!`)
+if (argz[0] < 100 ) return reply(`Apuesta mínima de 100`)
 dineroapostado = argz[0]
 const uaangkauuuiiu = checkATMuser(sender)
 const jññño = [`${uaangkauuuiiu}`]
