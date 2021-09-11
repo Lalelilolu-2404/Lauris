@@ -2356,7 +2356,7 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
             }
             )
             .catch(err => {
-	return('Pwrdon... T_T')
+	return('Pwrdon... T_T')})
 break
 	
 case 'trabajar':
