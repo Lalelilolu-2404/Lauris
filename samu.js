@@ -2355,8 +2355,11 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
             cnf.sendMessage(from, media, MessageType.image,{quoted: fimg,caption:'༊𝕮࿆𝖔ྂ𝖓𝖋𝖚ྂ𝕭𝖔ྂ𝖙࿆࿑'})
             }
             )
-            .catch(err => {
-	return('Pwrdon... T_T')})
+ 	.catch((error) => {
+            console.log(error); 
+            }
+            )
+            });
 break
 	
 case 'trabajar':
