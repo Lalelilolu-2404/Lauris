@@ -620,7 +620,7 @@ const isUser2 = user2.includes(sender)
             } else if (nivelActual <= 25) {
                 rango = '*Herald II*'
 	    } else if (nivelActual <= 28) {
-                rango = '*Herlad III*'
+                rango = '*Herald III*'
             } else if (nivelActual <= 31) {
                 rango = '*Herald IV*'
             } else if (nivelActual <= 34) {
@@ -1571,7 +1571,7 @@ _*JUEGOS*_
 ${bodyM} *${prefix}jugar* _Juega con el Bot:_
 ${bodyM} *${prefix}ttt* _Tictactoe:_ 
 ${bodyM} *${prefix}lucky* _Casino:_ 
-${bodyM} *${prefix}dado* _Dados:_ 
+${bodyM} *${prefix}dado #* _Dados:_ 
 
 ===========================================
 ${bodyM} *${prefix}simi* + ⌜Texto o pregunta⌟
@@ -1579,8 +1579,9 @@ ${bodyM} *${prefix}pr* _Pregunta_
 ${bodyM} *${prefix}getpic* + ⌜Tag @⌟
 ${bodyM} *${prefix}ger* + ⌜Tag image⌟ 
 ${bodyM} *${prefix}sgay* + ⌜Tag image⌟
+${bodyM} *${prefix}gay* + ⌜Tag @⌟
 ===========================================
-*⌜《Lalelilolu》\◔,◡◔,/ ت♡⌟* ⛥ `                                               
+⌜⸸⁶Lalelilolu⁹†⛧⌟ ⛥ `                                               
 //${bodyM} ${prefix}menu9 *(Comandos para explotar grupos)*
 addFilter(from)
 addLevelingLevel(sender, 5)
@@ -7998,7 +7999,7 @@ MessageType[_0x5b64d5(0x73)],{'quoted':fnsfw,'contextInfo':{'externalAdReply':{'
 'body':_0x5b64d5(0x71),'sourceUrl':'https://chat.whatsapp.com/KFe9KLIHjPTIay4YjvCAXx','thumbnail':fs[_0x5b64d5(0x6e)](_0x5b64d5(0x6d))}}});		
 **/
 
-if (body.includes(`Xd`)){
+if (body.includes(`Xd`) && body.length == 2){
 	nkx = Math.floor(Math.random() * 11)
 	const none = fs.readFileSync(`./temp/Xd${nkx}.webp`)
 	samu330.sendMessage(from, none, MessageType.sticker, {
