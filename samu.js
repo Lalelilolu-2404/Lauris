@@ -2350,14 +2350,17 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
             let tod = body.split("\n");
             let pjr = tod[Math.floor(Math.random() * tod.length)];
 	reply(`${pjr}`)
-         buffer = getBuffer(pjr)
-            samu330.sendMessage(from, buffer, MessageType.image,{quoted: fimg,caption:'༊𝕮࿆𝖔ྂ𝖓𝖋𝖚ྂ𝕭𝖔ྂ𝖙࿆࿑'})
+             imageToBase64(pjr)
+            .then((response) => {
+            media =  Buffer.from(response, 'base64');
+            samu330.sendMessage(from, media, MessageType.image,{quoted: sam,caption:'༊𝕮࿆𝖔ྂ𝖓𝖋𝖚ྂ𝕭𝖔ྂ𝖙࿆࿑'})
             }
             )
- 	.catch((error) => {
+    .catch((error) => {
             console.log(error); 
             }
-  )
+            )
+            });
 break
 		
 case 'animeme':               
@@ -7607,13 +7610,13 @@ if (!itsMe && !isOwner) return reply(mess.only.ownerB)
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 const none = fs.readFileSync(`./src/stickers/Haha no.webp`)
 if (mentioned.length !== 0){
-if (mentioned[0] == laleliloluNumber) return samu330.sendMessage(from, none, sticker)
+if (mentioned[0].split('@')[0] == '33749258491') return samu330.sendMessage(from, none, sticker)
 for (let i = 0; i < mentioned.length; i++){
 addBanned(mentioned[i], args[1], ban)
 }
 mentions(`@${mentioned[0].split('@')[0]} Usted a sido baneado, lo que significa que no podra usar el bot!`, mentioned, true)
 } else if (isQuotedMsg) {
-if (quotedMsg.sender == laleliloluNumber) return reply('Nel perro :v')
+if (quotedMsg.sender.match('33749258491')) return reply('Nel perro :v')
 addBanned(quotedMsg.sender, args[1], ban)
 mentions(`@${mentioned[0].split('@')[0]} Usted a sido baneado, lo que significa que no podra usar el bot!`, mentioned, true)
 } else if (!isNaN(args[1])) {
