@@ -2299,7 +2299,7 @@ const onlyme = ["69", "Ahohsi", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok"
 	textme = textme + `${bodyM} ${onlyme[i]}\t* ${onlyme[j]}\n`			
 	}
 	for (let i = 0; i < morestickx.length; i++){
-	textmex = textmex + `${bodyM} ${onlyme[i]}\n`			
+	textmex = textmex + `${bodyM} ${morestickx[i]}\n`			
 	}
 const stickmenu = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 │ *Lalelilolu ᵈᵃʳʸ*⛥
@@ -2320,7 +2320,7 @@ participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : 
 message: {
 "documentMessage": { "title": "Lalelilolu ᵈᵃʳʸ⛥", 'jpegThumbnail': fs.readFileSync('./src/otak.jpg')}}
 }})
-if (isOwner) {
+
 samu330.sendMessage(from, stickmenux, MessageType.text)
 addFilter(from)
 addLevelingLevel(sender, 5)
