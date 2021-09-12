@@ -2364,15 +2364,7 @@ ${bodyM} ${prefix}gatitas
 ╰──────────────╯`
 samu330.sendMessage(from, { degreesLatitude: `0`, degreesLongitude: `0`, 
 			   name: `${xmenu}`, address : `0`, sequenceNumber: '69', 
-			   jpegThumbnail: fs.readFileSync('./src/nsfw.jpg')}, MessageType.liveLocation, 
-		    {quoted: 
-		     { key: {
-			     fromMe: false,
-			     participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
-		     },
-		      message: {
-			      "documentMessage": { "title": "Otakuslife :3", 'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}}
-		     }})
+			   jpegThumbnail: fs.readFileSync('./src/nsfw.jpg')}, MessageType.liveLocation)
 addFilter(from)
 addLevelingXp(sender, 20)
 break								
