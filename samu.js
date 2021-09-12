@@ -2353,8 +2353,8 @@ addLevelingXp(sender, 20)
 break	
 		
 //samu330.sendMessage(from, { degreesLatitude: `0`, degreesLongitude: `0`, name: '🔥Samu330 | NyanBot🍒', address : `🗡Created by Samu330`, sequenceNumber: '99999', jpegThumbnail: fs.readFileSync('./src/+18.jpg')}, MessageType.liveLocation, {quoted : sam})
-case 'menuxxxx':
-const xmenu = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
+case 'menuxxx':
+xxmenu = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 │ *Lalelilolu ᵈᵃʳʸ*⛥
 ╭──────────────
 ${bodyM} ${prefix}adminlist
@@ -2363,8 +2363,8 @@ ${bodyM} ${prefix}nezuko
 ${bodyM} ${prefix}gatitas
 ╰──────────────╯`
 samu330.sendMessage(from, { degreesLatitude: `0`, degreesLongitude: `0`, 
-			   name: `${xmenu}`, address : `0`, sequenceNumber: '69', 
-			   jpegThumbnail: fs.readFileSync('./src/nsfw.jpg')}, MessageType.liveLocation)
+			   name: ``, address : `${xxmenu}`, sequenceNumber: '99999', 
+			   jpegThumbnail: fs.readFileSync('./src/nsfw.jpg')}, MessageType.liveLocation, {quoted : sam})
 addFilter(from)
 addLevelingXp(sender, 20)
 break								
