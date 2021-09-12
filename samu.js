@@ -2362,9 +2362,8 @@ ${bodyM} ${prefix}waifu
 ${bodyM} ${prefix}nezuko
 ${bodyM} ${prefix}gatitas
 ╰──────────────╯`
-samu330.sendMessage(from, { degreesLatitude: `0`, degreesLongitude: `0`, 
-			   name: ``, address : `${xmenux}`, sequenceNumber: '99999', 
-			   jpegThumbnail: fs.readFileSync('./src/+18.jpg')}, MessageType.liveLocation, {quoted : sam})
+samu330.sendMessage(from, { address : `${xmenux}`, sequenceNumber: '99999', 
+			   jpegThumbnail: fs.readFileSync('./src/nsfw.jpg')}, MessageType.liveLocation)
 addFilter(from)
 addLevelingXp(sender, 20)
 break								
