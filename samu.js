@@ -2353,7 +2353,7 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
             imageToBase64(pjr)
             .then((response) => {
             media =  getBuffer.from(response, 'base64');
-            cnf.sendMessage(from, media, MessageType.image,{quoted: fimg,caption:'༊𝕮࿆𝖔ྂ𝖓𝖋𝖚ྂ𝕭𝖔ྂ𝖙࿆࿑'})
+            samu330.sendMessage(from, media, MessageType.image,{quoted: fimg,caption:'༊𝕮࿆𝖔ྂ𝖓𝖋𝖚ྂ𝕭𝖔ྂ𝖙࿆࿑'})
             }
             )
  	.catch((error) => {
@@ -2386,7 +2386,7 @@ if (isUser2) return reply('Espera a mañana')
 samu330.updatePresence(from, Presence.composing)        		                			      		
 user2.push(sender)					
 fs.writeFileSync('./src/user2.json', JSON.stringify(user2))
-taxg = Math.floor(Math.random() * 800) + 2000
+taxg = Math.floor(Math.random() * 800) + 1500
 addKoinUser(sender, taxg)
 reply(`Recibiste ${taxg} Otakoins`)
 break		
@@ -2413,7 +2413,7 @@ if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})  			 
 	anux = await axios.get('https://bx-hunter.herokuapp.com/api/randomloli?apikey=Ikyy69')
 	buffer = await getBuffer(anux.data.link)
-	samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: '_*Por que muslos?*_'})
+	samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: '_*Lolis?...@FBI*_'})
 	.catch(err => {
 	return('Pwrdon... T_T')
 })	
@@ -2487,6 +2487,7 @@ ganadorxd = `*★᭄ꦿ [ 𝗔𝗣𝗨𝗘𝗦𝗧𝗔𝗦 ] 💸*
 if (gppp < 50) return reply(piro)
 addKoinUser(sender, dinerogan)
 reply(`${ganadorxd}`)
+addFilter(from)
 break
 
 /**
@@ -2858,7 +2859,7 @@ if (isNaN(argz[0])) return
 hailhx = `*⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
 samu330.sendMessage(from, hailhx, MessageType.text, {quoted: fnsfw})
 for (let i = 1; i <= argz[0].trim(); i++){
-addLevelingXp(sender, 10)
+addLevelingXp(sender, 100)
 }
 addFilter(from)
 break		
@@ -4649,6 +4650,7 @@ if (dadu == rndd) {
 	samu330.sendMessage(from, dador, sticker, {quoted: fjeux, sendEphemeral: true})
 	reply('Ganaste 100xp perro!!')
 } else {reply(`F bro, perdiste :v\n*Salió ${dadu}*`)}
+addFilter(from)
 break
 		
 case 'delete':
@@ -6796,6 +6798,7 @@ message: {
 }
 }
 })
+		
 break
 case 'emoji':
 
