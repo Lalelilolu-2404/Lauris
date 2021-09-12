@@ -128,8 +128,8 @@ const getRegisteredRandomId = () => {
         fs.writeFileSync('./src/registered.json', JSON.stringify(_registered))
         }
 const addRegisteredUser2 = (userid, sender) => {
-	const obj = { id: userid, name: sender }
-        user2.push(sender)		
+	const objx = { id: userid, name: sender }
+        user2.push(objx)		
         fs.writeFileSync('./src/user2.json', JSON.stringify(_registered))
 } 
 	
@@ -2350,7 +2350,33 @@ message: {
 }})
 addFilter(from)
 addLevelingXp(sender, 20)
-break		    
+break	
+		
+//samu330.sendMessage(from, { degreesLatitude: `0`, degreesLongitude: `0`, name: '🔥Samu330 | NyanBot🍒', address : `🗡Created by Samu330`, sequenceNumber: '99999', jpegThumbnail: fs.readFileSync('./src/+18.jpg')}, MessageType.liveLocation, {quoted : sam})
+case 'menuxxxx':
+
+const xmenu = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
+│ *Lalelilolu ᵈᵃʳʸ*⛥
+╭──────────────
+${bodyM} ${prefix}adminlist
+${bodyM} ${prefix}waifu
+${bodyM} ${prefix}nezuko
+${bodyM} ${prefix}gatitas
+╰──────────────╯`
+samu330.sendMessage(from, { degreesLatitude: `0`, degreesLongitude: `0`, 
+			   name: `${xmenu}`, address : ``, sequenceNumber: '', 
+jpegThumbnail: fs.readFileSync('./src/nsfw.jpg')}, MessageType.liveLocation, {quoted: 
+{ key: {
+fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+},
+message: {
+"documentMessage": { "title": "Otakuslife :3", 'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}}
+}})
+addFilter(from)
+addLevelingXp(sender, 20)
+break								
+				
 ////////
 		
 case 'anime':	
@@ -6350,13 +6376,13 @@ ${m}
 //reply(`${u}`)
 if (luck3 == luck4 && luck3 == luck5 && luck4 == luck5) {
 addLevelingXp(sender, 666)
-glucky = `*★᭄ꦿ [ GANASTE ] 💸*\n\n
+glucky = `*★᭄ꦿ [ GANASTE ] 💸*\n
 ᭕- Recibes ༊ 666 Xp ༊`
 reply(`${glucky}`)
 }
 if (luck3 == f && luck4 == f && luck5 == f) {
 addLevelingXp(sender, 6666)
-gglucky = `*★᭄ꦿ [ GANASTE ] 💸*\n\n
+gglucky = `*★᭄ꦿ [ GANASTE ] 💸*\n
 ᭕- Recibes ༊ 6666 Xp ༊`
 reply(`${gglucky}`)
 }	
