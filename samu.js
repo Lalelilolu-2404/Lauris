@@ -7889,7 +7889,7 @@ if (isAllaud) {
 	} 
 	if (body.includes(`Comida de Anna`) && body.length == 14){
 		randc = Math.floor(Math.random() * 5)
-		none2 = fs.readFileSync(`./src/stickers/Comida de Anna${randc}.webp`)
+		none2 = fs.readFileSync(`./src/stickers2/Comida de Anna${randc}.webp`)
 		samu330.sendMessage(from, none2, sticker, {quoted: sam})
 	} 
 }
