@@ -2353,7 +2353,7 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
              imageToBase64(pjr)
             .then((response) => {
             media =  Buffer.from(response, 'base64');
-            samu330.sendMessage(from, media, MessageType.image,{quoted: sam,caption:'༊𝕮࿆𝖔ྂ𝖓𝖋𝖚ྂ𝕭𝖔ྂ𝖙࿆࿑'})
+            samu330.sendMessage(from, media, MessageType.image,{quoted: sam,caption:'༊ Uwu ࿑'})
             }
             )
     .catch((error) => {
