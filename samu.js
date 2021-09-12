@@ -2357,8 +2357,7 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
  	.catch((error) => {
             console.log(error); 
             }
-            )
-            });
+  )
 break
 		
 case 'animeme':               
