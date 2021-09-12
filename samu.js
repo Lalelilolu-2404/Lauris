@@ -6349,10 +6349,18 @@ ${m}
 ╰─┨⃞🔮𝉃𝜄𝜐𝉃𝜍𝜅𝉃𝛾🔮⃞ ┠─╯`
 //reply(`${u}`)
 if (luck3 == luck4 && luck3 == luck5 && luck4 == luck5) {
+addLevelingXp(sender, 666)
 glucky = `*★᭄ꦿ [ GANASTE ] 💸*\n\n
 ᭕- Recibes ༊ 666 Xp ༊`
 reply(`${glucky}`)
 }
+f = '💰'
+if (luck3 == f && luck3 == f && luck4 == f) {
+addLevelingXp(sender, 6666)
+gglucky = `*★᭄ꦿ [ GANASTE ] 💸*\n\n
+᭕- Recibes ༊ 6666 Xp ༊`
+reply(`${gglucky}`)
+}	
 samu330.sendMessage(from, `${u}`, MessageType.text, {quoted: fjeux})
 addFilter(from)
 addLevelingXp(sender, 5)
@@ -6925,9 +6933,10 @@ texto = body.slice(5)
 sim0 = await getJson(`https://api.simsimi.net/v1/?text=${texto}&lang=es`)
 sim1 = await getJson(`https://api.lolhuman.xyz/api/simi?apikey=NikolaTesla&text=${texto}`)
 sim2 = await getJson(`https://simsumi.herokuapp.com/api?text=${texto}`)	
-simx = Math.floor(Math.random() * 3)
-sim = `sim${simx}`
-smuu = (`${sim.success}`)
+try {smuu = (`${sim1.result}`)
+    } catch {smuu = (`${sim0.success}`)
+	    } finally {smuu = (`${sim2.success}`)
+		      }
 samu330.sendMessage(from, smuu, MessageType.text, {quoted: { key: {
 fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
