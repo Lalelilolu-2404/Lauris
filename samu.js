@@ -6354,8 +6354,7 @@ glucky = `*★᭄ꦿ [ GANASTE ] 💸*\n\n
 ᭕- Recibes ༊ 666 Xp ༊`
 reply(`${glucky}`)
 }
-f = '💰'
-if (luck3 == f && luck3 == f && luck4 == f) {
+if (luck3 == f && luck4 == f && luck5 == f) {
 addLevelingXp(sender, 6666)
 gglucky = `*★᭄ꦿ [ GANASTE ] 💸*\n\n
 ᭕- Recibes ༊ 6666 Xp ༊`
