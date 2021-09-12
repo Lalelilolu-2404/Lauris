@@ -607,118 +607,118 @@ const isUser2 = user2.includes(sender)
                 rango = '*Noob ㋡*'
             } else if (nivelActual <= 7) {
                 rango = '*Noob I*'
-            } else if (nivelActual <= 10) {
+            } else if (nivelActual <= 9) {
                 rango = '*Noob II*'
-	    } else if (nivelActual <= 13) {
+	    } else if (nivelActual <= 11) {
                 rango = '*Noob III*'
-            } else if (nivelActual <= 16) {
+            } else if (nivelActual <= 15) {
                 rango = '*Noob IV*'
-            } else if (nivelActual <= 19) {
+            } else if (nivelActual <= 20) {
                 rango = '*Noob V*'
-	    } else if (nivelActual <= 22) {
+	    } else if (nivelActual <= 25) {
                 rango = '*Herald I*'
-            } else if (nivelActual <= 25) {
+            } else if (nivelActual <= 30) {
                 rango = '*Herald II*'
-	    } else if (nivelActual <= 28) {
+	    } else if (nivelActual <= 35) {
                 rango = '*Herald III*'
-            } else if (nivelActual <= 31) {
-                rango = '*Herald IV*'
-            } else if (nivelActual <= 34) {
-                rango = '*Herald V*'
-	    } else if (nivelActual <= 37) {
-                rango = '*Guardian I*'
             } else if (nivelActual <= 40) {
-                rango = '*Guardian II*'
-	    } else if (nivelActual <= 43) {
-                rango = '*Guardian III*'
-            } else if (nivelActual <= 46) {
-                rango = '*Guardian IV*'
-            } else if (nivelActual <= 49) {
-                rango = '*Guardian V*'
-	    } else if (nivelActual <= 52) {
-                rango = '*Crusader I*'
+                rango = '*Herald IV*'
+            } else if (nivelActual <= 45) {
+                rango = '*Herald V*'
+	    } else if (nivelActual <= 50) {
+                rango = '*Guardian I*'
             } else if (nivelActual <= 55) {
+                rango = '*Guardian II*'
+	    } else if (nivelActual <= 60) {
+                rango = '*Guardian III*'
+            } else if (nivelActual <= 65) {
+                rango = '*Guardian IV*'
+            } else if (nivelActual <= 70) {
+                rango = '*Guardian V*'
+	    } else if (nivelActual <= 75) {
+                rango = '*Crusader I*'
+            } else if (nivelActual <= 80) {
                 rango = '*Crusader II*'
-	    } else if (nivelActual <= 58) {
+	    } else if (nivelActual <= 85) {
                 rango = '*Crusader III*'
-            } else if (nivelActual <= 61) {
+            } else if (nivelActual <= 90) {
                 rango = '*Crusader IV*'
-            } else if (nivelActual <= 64) {
+            } else if (nivelActual <= 95) {
                 rango = '*Crusader V*'
-	} else if (nivelActual <= 70) {
+	} else if (nivelActual <= 100) {
                 rango = '*Archon I*'
-            } else if (nivelActual <= 74) {
+            } else if (nivelActual <= 105) {
                 rango = '*Archon II*'
-	    } else if (nivelActual <= 78) {
+	    } else if (nivelActual <= 110) {
                 rango = '*Archon III*'
-            } else if (nivelActual <= 82) {
-                rango = '*Archon IV*'
-            } else if (nivelActual <= 86) {
-                rango = '*Archon V*'
-	} else if (nivelActual <= 90) {
-                rango = '*Legend I*'
-            } else if (nivelActual <= 94) {
-                rango = '*legend II*'
-	    } else if (nivelActual <= 98) {
-                rango = '*Legend III*'
-            } else if (nivelActual <= 102) {
-                rango = '*Legend IV*'
-            } else if (nivelActual <= 106) {
-                rango = '*Legend V*'
-	} else if (nivelActual <= 110) {
-                rango = '*Ancient I*'
             } else if (nivelActual <= 115) {
-                rango = '*Ancient II*'
-	    } else if (nivelActual <= 120) {
-                rango = '*Ancient III*'
-            } else if (nivelActual <= 125) {
-                rango = '*Ancient IV*'
+                rango = '*Archon IV*'
+            } else if (nivelActual <= 120) {
+                rango = '*Archon V*'
+	} else if (nivelActual <= 125) {
+                rango = '*Legend I*'
             } else if (nivelActual <= 130) {
-                rango = '*Ancient V*'
-	} else if (nivelActual <= 135) {
-                rango = '*Divine I✷*'
+                rango = '*legend II*'
+	    } else if (nivelActual <=135) {
+                rango = '*Legend III*'
             } else if (nivelActual <= 140) {
-                rango = '*Divine II✷*'
-	    } else if (nivelActual <= 145) {
-                rango = '*Divine III✷*'
-            } else if (nivelActual <= 150) {
-                rango = '*Divine IV✷*'
+                rango = '*Legend IV*'
+            } else if (nivelActual <= 145) {
+                rango = '*Legend V*'
+	} else if (nivelActual <= 150) {
+                rango = '*Ancient I*'
             } else if (nivelActual <= 155) {
-                rango = '*Divine V✷*'
-	} else if (nivelActual <= 160) {
-                rango = '*Immortal ✰¹*'
+                rango = '*Ancient II*'
+	    } else if (nivelActual <= 160) {
+                rango = '*Ancient III*'
             } else if (nivelActual <= 165) {
-                rango = '*Immortal ✩²*'
-	    } else if (nivelActual <= 170) {
-                rango = '*Immortal ✯³*'
-            } else if (nivelActual <= 175) {
-                rango = '*Immortal ✬⁴*'
+                rango = '*Ancient IV*'
+            } else if (nivelActual <= 170) {
+                rango = '*Ancient V*'
+	} else if (nivelActual <= 175) {
+                rango = '*Divine I✷*'
             } else if (nivelActual <= 180) {
-                rango = '*Immortal ✪⁵*'
-	} else if (nivelActual <= 185) {
-                rango = '*Mythic ✯¹*'
+                rango = '*Divine II✷*'
+	    } else if (nivelActual <= 185) {
+                rango = '*Divine III✷*'
             } else if (nivelActual <= 190) {
-                rango = '*Mythic ✯²*'
-	    } else if (nivelActual <= 195) {
-                rango = '*Mythic ✯³*'
-            } else if (nivelActual <= 200) {
-                rango = '*Mythic ✯⁴*'
+                rango = '*Divine IV✷*'
+            } else if (nivelActual <= 195) {
+                rango = '*Divine V✷*'
+	} else if (nivelActual <= 200) {
+                rango = '*Immortal ✰¹*'
             } else if (nivelActual <= 210) {
-                rango = '*Mythic ✯⁵*'
-	} else if (nivelActual <= 220) {
-                rango = '*Shinigami ⍣*'
+                rango = '*Immortal ✩²*'
+	    } else if (nivelActual <= 220) {
+                rango = '*Immortal ✯³*'
+            } else if (nivelActual <= 230) {
+                rango = '*Immortal ✬⁴*'
             } else if (nivelActual <= 240) {
-                rango = '*Shinigami ≛*'
-	    } else if (nivelActual <= 260) {
-                rango = '*Shinigami ⍟*'
+                rango = '*Immortal ✪⁵*'
+	} else if (nivelActual <= 250) {
+                rango = '*Mythic ✯¹*'
+            } else if (nivelActual <= 260) {
+                rango = '*Mythic ✯²*'
+	    } else if (nivelActual <= 270) {
+                rango = '*Mythic ✯³*'
             } else if (nivelActual <= 280) {
+                rango = '*Mythic ✯⁴*'
+            } else if (nivelActual <= 290) {
+                rango = '*Mythic ✯⁵*'
+	} else if (nivelActual <= 300) {
+                rango = '*Shinigami ⍣*'
+            } else if (nivelActual <= 350) {
+                rango = '*Shinigami ≛*'
+	    } else if (nivelActual <= 400) {
+                rango = '*Shinigami ⍟*'
+            } else if (nivelActual <= 450) {
                 rango = '*Shinigami 上帝*'
-            } else if (nivelActual <= 300) {
+            } else if (nivelActual <= 500) {
                 rango = '*Awakened Shinigami 尔贡*'
-	    } else if (nivelActual <= 350) {
+	    } else if (nivelActual <= 600) {
                 rango = '*Mythic Shinigami 尔贡*'
-            } else if (nivelActual > 350) {
-                rango = '*End level 程度❗*'
+            } else if (nivelActual > 600) {
+                rango = '*Mythic GOD 程度❗*'
             }
 	
 	if (isOwner) {
@@ -1584,7 +1584,7 @@ ${bodyM} *${prefix}gay* + ⌜Tag @⌟
 ⌜⸸⁶Lalelilolu⁹†⛧⌟ ⛥ `                                               
 //${bodyM} ${prefix}menu9 *(Comandos para explotar grupos)*
 addFilter(from)
-addLevelingLevel(sender, 5)
+addLevelingXp(sender, 20)
 var _0x56da=['367342lxQRgg','relayWAMessage','52224EUhLvZ','readFileSync','3184312811796096','2ZQhqXh','37BvfGXn','1QpYCgS','233589MYSAPS','296046BsnUGu','./src/fake.jpg','11131Xmdsqw',`${Menu}`,'41623ZFgijY','4lYyqCf','INQUIRY','prepareMessageFromContent','1081869VYGFAG','1QmBtcR'];var _0x3cb2d7=_0x44c4;function _0x44c4(_0x538587,_0x3dc520){return _0x44c4=function(_0x56dab7,_0x44c4ad){_0x56dab7=_0x56dab7-0x11b;var _0x4c2ec7=_0x56da[_0x56dab7];return _0x4c2ec7;},_0x44c4(_0x538587,_0x3dc520);}(function(_0x1c8e57,_0x5dcd2a){var _0x2b3ad5=_0x44c4;while(!![]){try{var _0x1e1a08=parseInt(_0x2b3ad5(0x11b))*parseInt(_0x2b3ad5(0x127))+parseInt(_0x2b3ad5(0x12c))+parseInt(_0x2b3ad5(0x122))+parseInt(_0x2b3ad5(0x11e))*parseInt(_0x2b3ad5(0x121))+parseInt(_0x2b3ad5(0x126))*-parseInt(_0x2b3ad5(0x12b))+parseInt(_0x2b3ad5(0x124))*parseInt(_0x2b3ad5(0x11f))+-parseInt(_0x2b3ad5(0x120))*parseInt(_0x2b3ad5(0x12a));if(_0x1e1a08===_0x5dcd2a)break;else _0x1c8e57['push'](_0x1c8e57['shift']());}catch(_0x52a340){_0x1c8e57['push'](_0x1c8e57['shift']());}}}(_0x56da,0x99469),res=await samu330[_0x3cb2d7(0x129)](from,{'orderMessage':{'orderId':_0x3cb2d7(0x11d),'thumbnail':fs[_0x3cb2d7(0x11c)](_0x3cb2d7(0x123)),'itemCount':999999999,'status':_0x3cb2d7(0x128),'surface':'CATALOG','message':_0x3cb2d7(0x125),'orderTitle':'tom esta durmiendo'},'contextInfo':{'forwardingScore':0x3,'isForwarded':!![]}},{'quoted':forder,'contextInfo':{}}),samu330[_0x3cb2d7(0x12d)](res));
 } catch {
 samu330.sendMessage(from, fs.readFileSync('./src/assistant.jpg'), image, {quoted: ftoko, caption: Menu, thumbnail: fs.readFileSync('./src/assistant.jpg'), sendEphemeral: true})
@@ -1646,7 +1646,7 @@ message: {
 "documentMessage": { "title": "📚𝑆𝑡𝑖𝑘𝑒𝑟 𝑚𝑒𝑛𝑢", 'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}}
 }})
 addFilter(from)
-addLevelingLevel(sender, 5)		
+addLevelingXp(sender, 20)		
 break
 
 case 'menu1':
@@ -1732,7 +1732,7 @@ message: {
 "imageMessage": { "caption": "🧸𝙈𝙀𝙉𝙐⁡ 𝘿𝙀 𝙈𝙀𝘿𝙄𝘼📌", 'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}}
 }})
 addFilter(from)
-addLevelingLevel(sender, 5)		
+addLevelingXp(sender, 20)		
 break
 case 'menu3':
 samu330.updatePresence(from, Presence.composing)
@@ -1798,7 +1798,7 @@ mentionedJid: [sender], "forwardingScore": 9999, "isForwarded": true
 }
 }
 addFilter(from)
-addLevelingLevel(sender, 5)		
+addLevelingXp(sender, 20)		
 samu330.sendMessage(from, Menug, MessageType.text, {
 quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "mimetype": "image/jpeg", "caption": "➫𝑴𝒆𝒏𝒖 𝑫𝒆 𝑮𝒓𝒖𝒑𝒐𝒔❣️" ,"jpegThumbnail": fs.readFileSync(`./NyanBot.jpg`)}}}})
 break
@@ -1830,7 +1830,7 @@ mentionedJid: [sender], "forwardingScore": 9999, "isForwarded": true
 samu330.sendMessage(from, Menud, MessageType.text, {
 quoted:  fvid})
 addFilter(from)
-addLevelingLevel(sender, 5)		
+addLevelingXp(sender, 20)		
 break
 case 'menu5':
 samu330.updatePresence(from, Presence.composing)
@@ -1879,7 +1879,7 @@ mentionedJid: [sender], "forwardingScore": 9999, "isForwarded": true
 samu330.sendMessage(from, Menuo, MessageType.text, {
 quoted: floc})
 addFilter(from)
-addLevelingLevel(sender, 5)		
+addLevelingXp(sender, 20)		
 break
 case 'menu6':
 samu330.updatePresence(from, Presence.composing)
@@ -1939,7 +1939,7 @@ ${bodyM} ${prefix}analg
 ================================
 `
 addFilter(from)
-addLevelingLevel(sender, 5)		
+addLevelingXp(sender, 20)		
 samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${Menu18}`, thumbnail: samuPn, contextInfo: { mentionedJid: [sender], "forwardingScore": 9999, "isForwarded": true }})              
 break
 /////////			
@@ -1998,7 +1998,7 @@ mentionedJid: [sender], "forwardingScore": 9999, "isForwarded": true
 samu330.sendMessage(from, Menu7, MessageType.text, {
 quoted: fvid})
 addFilter(from)
-addLevelingLevel(sender, 5)		
+addLevelingXp(sender, 20)		
 break
 case 'menu8':
 samu330.updatePresence(from, Presence.composing)
@@ -2101,7 +2101,7 @@ mentionedJid: [sender], "forwardingScore": 9999, "isForwarded": true
 samu330.sendMessage(from, Menu8, MessageType.text, {
 quoted: ftoko})
 addFilter(from)
-addLevelingLevel(sender, 5)		
+addLevelingXp(sender, 20)		
 break
 
 /**
@@ -2172,7 +2172,7 @@ message: {
 "documentMessage": { "title": "📚𝑆𝑡𝑖c𝑘𝑒𝑟s", 'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}}
 }})
 addFilter(from)
-addLevelingLevel(sender, 5)		
+addLevelingXp(sender, 20)		
 break		
 		
 ///////Audios otak and bananeraudios			
@@ -2225,7 +2225,7 @@ message: {
 "documentMessage": { "title": "📚Otak_audios", 'jpegThumbnail': fs.readFileSync('./src/otak.jpg')}}
 }})
 addFilter(from)
-addLevelingLevel(sender, 5)		
+addLevelingXp(sender, 20)		
 break	
 	
 case 'bana':
@@ -2261,7 +2261,7 @@ message: {
 "documentMessage": { "title": "♥Bananer_audios", 'jpegThumbnail': fs.readFileSync('./src/bana.jpg')}}
 }})
 addFilter(from)
-addLevelingLevel(sender, 5)		
+addLevelingXp(sender, 20)		
 break	
 		
 ////////////Stickers me
@@ -2324,7 +2324,7 @@ message: {
 
 samu330.sendMessage(from, stickmenux, MessageType.text)
 addFilter(from)
-addLevelingLevel(sender, 5)
+addLevelingXp(sender, 500)
 }
 break	
 
@@ -2349,6 +2349,7 @@ message: {
 "documentMessage": { "title": "Logos for you :3", 'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}}
 }})
 addFilter(from)
+addLevelingXp(sender, 20)
 break		    
 ////////
 		
@@ -2373,6 +2374,8 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
             }
             )
             });
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 		
 case 'trabajar':
@@ -2383,6 +2386,8 @@ fs.writeFileSync('./src/user2.json', JSON.stringify(user2))
 taxg = Math.floor(Math.random() * 800) + 1500
 addKoinUser(sender, taxg)
 reply(`Recibiste ${taxg} Otakoins`)
+addFilter(from)
+addLevelingXp(sender, 10)
 break		
 /**
 case 'pussyimage':
@@ -2410,7 +2415,9 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
 	samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: '_*Lolis?...@FBI*_'})
 	.catch(err => {
 	return('Pwrdon... T_T')
-})	
+})
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 
 case 'nekoxx':      
@@ -2421,9 +2428,10 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
 	.catch(err => {
 	return('Pwrdon... T_T')
 	})
+addFilter(from)
+addLevelingXp(sender, 20)
 break
-			
-	
+				
 case 'givemoney':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
@@ -2441,6 +2449,8 @@ samu330.updatePresence(from, Presence.composing)
         confirmATM(sender, jumblah)
         addKoinUser('33749258491@s.whatsapp.net', fee)
 reply(`*「 TRANSFERENCIA ÉXITOSA 」*\n\nDe : @${sender.split("@")[0]}\nPara : ${tujuan}\n\nMonto de la transferencia : ${jumblah}\nImpuesto : ${fee}`)
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 			
 case 'balance':
@@ -2451,6 +2461,8 @@ const kantong = checkATMuser(sender)
 hailhy = `*⌜${pushname}⌟*\n★᭄ꦿ ${kantong} Otakoins`   
 samu330.sendMessage(from, hailhy, MessageType.text, {quoted: sam})
 //reply(ind.uangkau(pushname, sender, kantong))
+addFilter(from)
+addLevelingXp(sender, 20)
 break		
 		
 case 'apostar':
@@ -2482,6 +2494,7 @@ if (gppp < 50) return reply(piro)
 addKoinUser(sender, dinerogan)
 reply(`${ganadorxd}`)
 addFilter(from)
+addLevelingXp(sender, 20)
 break
 
 /**
@@ -2601,7 +2614,8 @@ break
                 			samu330.sendMessage(from, pegat, MessageType.sticker, {sendEphemeral: true})
                 			}
 			
-				addLevelingLevel(sender, 5)
+				addFilter(from)
+				addLevelingXp(sender, 120)
 			break	
 /**	
 case 'spam':
@@ -2756,6 +2770,8 @@ noneg = fs.readFileSync('./anishan/Ayy.mp3')
 samu330.sendMessage(from, noneg, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true})
 }
 fs.unlinkSync('./pictgay.jpeg')
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 		
 case 'miniprof':
@@ -2813,6 +2829,8 @@ mdata = await samu330.groupMetadata(from)
                 }
             })	
 }
+addFilter(from)
+addLevelingXp(sender, 20)
 break	
 /////////////////////////
 		
@@ -2825,7 +2843,7 @@ gat = pw[Math.floor(Math.random() * pw.length)]
 cat = await getJson(`${gat}`)
 sendFileFromUrl(cat.url, image, {quoted: fimg, caption: '💎 *Miau 🥵* 💠', sendEphemeral: true})
 addFilter(from)
-addLevelingLevel(sender, 5)
+addLevelingXp(sender, 40)
 break
 /////////
 case 'getlvlup':
@@ -2872,7 +2890,7 @@ ${bodyM} *Para iniciar \t${prefix}amongus*
 *⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
 samu330.sendMessage(from, amgp, MessageType.text, {quoted: fjeux})
 addFilter(from)
-addLevelingLevel(sender, 5)
+addLevelingXp(sender, 20)
 break
 		
 case 'amongus':
@@ -2975,6 +2993,7 @@ setTimeout(() => {
 samu330.relayWAMessage(amongs, {waitForAck: true})
 }, 4000)
 addFilter(from)
+addLevelingXp(sender, 20)
 break	
 ///////////	
 case 'imgrandom':		
@@ -3041,6 +3060,7 @@ setTimeout(() => {
 samu330.relayWAMessage(picrd, {waitForAck: true})
 }, 300)
 addFilter(from)
+addLevelingXp(sender, 20)
 break	
 /**
 case 'crealogos':		
@@ -3086,6 +3106,8 @@ randIndex = Math.floor(Math.random() * jsonData.length);
 randKey = jsonData[randIndex];
 buffr = await getBuffer(randKey.result)
 samu330.sendMessage(from, buffr, image, {quoted: fimg})
+addFilter(from)
+addLevelingXp(sender, 20)
 break	
 
 case 'calumnia':
@@ -3102,6 +3124,8 @@ var target3 = fitn.split("|")[1].trim();
 var bot3 = fitn.split("|")[2].trim();
 samu330.sendMessage(from, `${bot3}`, MessageType.text, {quoted: { key: { fromMe: false, participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {}) }, 
 						     message: { conversation: `${target3}` }}})
+addFilter(from)
+addLevelingXp(sender, 40)
 break
 		
 case 'emparejar':
@@ -3127,6 +3151,8 @@ mentions(teks, jds, true)
 }, 1000)
 //vivannn = fs.readFileSync(`./fiestamp3/audiouwu/willyuwu.m4a`)
 //samu330.sendMessage(from, vivannn, audio, { mimetype: 'audio/mp4',  quoted: { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) }, message: { "imageMessage": { "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc", "mimetype": "image/jpeg", "caption": `𝗘𝘀𝘁𝗼 𝗳𝘂𝗲 𝗽𝗼𝘀𝗶𝗯𝗹𝗲 𝗴𝗿𝗮𝗰𝗶𝗮𝘀 𝗮 ${pushname}`, "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=", "fileLength": "28777", "height": 1080, "width": 1079, "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=", "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=", "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69", "mediaKeyTimestamp": "1610993486", "jpegThumbnail": fs.readFileSync('recursos/multimediauwu/vivannnnn.jpg')} } }, mek, ptt: true })
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 
 case 'emparejarme':
@@ -3150,6 +3176,8 @@ contextInfo: {
 mentionedJid: [sender, prj[0]],
 },
 })
+addFilter(from)
+addLevelingXp(sender, 20)
 break	
 		
 case 'casar':
@@ -3177,6 +3205,8 @@ contextInfo: {
 mentionedJid: [mentioned[0], pcj[0]],
 },
 })
+addFilter(from)
+addLevelingXp(sender, 20)
 break	
 ///////
 case 'belle':
@@ -3185,19 +3215,25 @@ if (!isNsfw) return reply(mess.nsfw)
 if (isBan) return reply('*F, estás baneado :v!*')
 bd = ["https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-1-715x384.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-2-715x384.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-3-715x384.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-4-715x384.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-5-715x384.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-6-715x384.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-7-715x384.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-8-715x384.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-9-715x384.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-10.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-11-715x384.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-12-715x385.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-13-715x385.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-13-715x385.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-14-715x385.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-15.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-15.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-17.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-17.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-18.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-19.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-20.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-21.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-22.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-23.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-24.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-25.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-27.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-28.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-29.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-30.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-31.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-31.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-32.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-33.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-34.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-35.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-36.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-37.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-38.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-39.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-40.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-Delphine-desnuda-y-follando-en-fotos-y-videos-XXX-41.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche-1-715x536.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche-2-715x536.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche-3-715x537.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche-4-715x953.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche-5.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche-6.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche-7.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche-8.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche-9.jpg", "https://www.bytesexy.com/wp-content/uploads/2021/01/Belle-delphine-secuestrada-y-follada-en-un-coche-10-715x859.jpg"]
 bdp = bd[Math.floor(Math.random() * bd.length)]
-sendFileFromUrl(bdp, image, {quoted: fimg, caption: `*Uwu Delphine*`, sendEphemeral: true})		
+sendFileFromUrl(bdp, image, {quoted: fimg, caption: `*Uwu Delphine*`, sendEphemeral: true})
+addFilter(from)
+addLevelingXp(sender, 20)
 break	
 		
 case 'fbixd':
 if (!isOwner) return reply('No eres mi dueño UnU')				
 reply('*Espera porfavor...*')
 samu330.sendMessage(from, fs.readFileSync('./media/Detente.mp4'), video, {quoted: fnsfw, mimetype: 'video/gif', caption: '*FBI, détengase perro*', sendEphemeral: true, duration: -6666666})		
+addFilter(from)
+addLevelingXp(sender, 120)
 break
 		
 case 'vip':
 if (!isAdmin) return reply(mess.only.admin)			
 reply('*Espera porfavor...*')
 samu330.sendMessage(from, fs.readFileSync('./media/Vip.mp4'), video, {quoted: fnsfw, mimetype: 'video/gif', caption: '*Lean la Biblia puerc@s*', sendEphemeral: true, duration: -6666666})
+addFilter(from)
+addLevelingXp(sender, 120)
 break
 
 case 'mimitos':
@@ -3227,7 +3263,8 @@ samu330.sendMessage(from, mify, video, {
 	message: { "videoMessage": { "caption":"「 *Uwu cosita ^-^* 」\n ⊱ღ *Mimitos for you ♡* ღ⊱", 'jpegThumbnail': mimit}}
 	},	
 	mimetype: 'video/gif', caption: `${hast}`, contextInfo: {mentionedJid: [sender, mentioned[0]]}, duration: -6666666})
-addFilter(from)	
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 
 case  'pat':
@@ -3242,6 +3279,8 @@ if (err) return reply('Error')
 	samu330.sendMessage(from, buffer, MessageType.sticker, {quoted: sam})
 	fs.unlinkSync(rano)
 })
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 ////		
 			case 'waifu':
@@ -3253,6 +3292,8 @@ break
 			.catch(err => {
 				return('Pwrdon... T_T')
 			})
+			addFilter(from)
+			addLevelingXp(sender, 20)
 			break
 	
 			case 'wallpaper':
@@ -3262,6 +3303,8 @@ break
 			.catch(err => {
 				return('Pwrdon... T_T')
 			})
+			addFilter(from)
+			addLevelingXp(sender, 20)
 			break
 	
 			case 'loli':
@@ -3271,6 +3314,8 @@ break
 			.catch(err => {
 				return('Pwrdon... T_T')
 			})
+			addFilter(from)
+			addLevelingXp(sender, 20)
 			break	
 		
 			case 'randomloli':
@@ -3279,6 +3324,8 @@ break
 			.catch(err => {
 				return('Pwrdon... T_T')
 			})
+			addFilter(from)
+			addLevelingXp(sender, 20)
 			break
 		
 			case 'nezuko':
@@ -3288,6 +3335,8 @@ break
 			.catch(err => {
 				return('Pwrdon... T_T')
 			})
+			addFilter(from)
+			addLevelingXp(sender, 20)
 			break	
 		
 			case 'ecchi':
@@ -3296,6 +3345,8 @@ break
 			.catch(err => {
 				return('Pwrdon... T_T')
 			})
+			addFilter(from)
+			addLevelingXp(sender, 20)
 			break	
 		
 			
@@ -3311,6 +3362,8 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 				samu330.sendMessage(from, buffer, MessageType.sticker)
 				fs.unlinkSync(rano)
 			})
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 					
 case 'boobsg':
@@ -3325,6 +3378,8 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 				samu330.sendMessage(from, buffer, MessageType.sticker)
 				fs.unlinkSync(rano)
 			})
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 					
 case 'analg':
@@ -3339,6 +3394,8 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 				samu330.sendMessage(from, buffer, MessageType.sticker)
 				fs.unlinkSync(rano)
 			})
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 	
 case 'cumimg':
@@ -3349,6 +3406,8 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 			.catch(err => {
 			return('Error 7-7..')
 			})
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 		
 case 'oppai':
@@ -3359,6 +3418,8 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 			.catch(err => {
 			return('Error 7-7..')
 			})
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 	
 
@@ -3370,7 +3431,9 @@ break
 					.catch(err => {
 					return('Pwrdon... T_T')
 					})
-						break
+						addFilter(from)
+					addLevelingXp(sender, 20)
+					break
 					case 'blowjob':
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 							blowj = await axios.get('https://nekos.life/api/v2/img/blowjob')
@@ -3379,6 +3442,8 @@ break
 						.catch(err => {
 						return('Pwrdon... T_T')
 						})
+						addFilter(from)
+					addLevelingXp(sender, 20)
 						break
 					case 'neko':
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
@@ -3388,6 +3453,8 @@ break
 						.catch(err => {
 						return('Pwrdon... T_T')
 						})
+					addFilter(from)
+					addLevelingXp(sender, 20)
 						break
 	
 	
@@ -3401,6 +3468,8 @@ break
 							console.log(`Error :`, color(e,'red'))
 							reply('❌ *ERROR* ❌')
 						}
+					addFilter(from)
+					addLevelingXp(sender, 20)
 						break
 					case 'xass':
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
@@ -3410,6 +3479,8 @@ break
 						.catch(err => {
 						return('Pwrdon... T_T')
 						})
+					addFilter(from)
+					addLevelingXp(sender, 20)
 						break
 					case 'sidebobs':
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
@@ -3419,6 +3490,8 @@ break
 						.catch(err => {
 						return('Pwrdon... T_T')
 						})
+						addFilter(from)
+						addLevelingXp(sender, 20)
 					    break
 					case 'ahegao':
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
@@ -3428,6 +3501,8 @@ break
 						.catch(err => {
 						return('Pwrdon... T_T')
 						})
+					addFilter(from)
+					addLevelingXp(sender, 20)
 						break
 					case 'hentai':
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
@@ -3437,6 +3512,8 @@ break
 						.catch(err => {
 						return('Pwrdon... T_T')
 						})
+					addFilter(from)
+					addLevelingXp(sender, 20)
 						break
 					case 'pussyimg':
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
@@ -3446,6 +3523,8 @@ break
 						.catch(err => {
 						return('Pwrdon... T_T')
 						})
+					addFilter(from)
+					addLevelingXp(sender, 20)
 						break
 					case 'muslos':
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
@@ -3455,6 +3534,8 @@ break
 							.catch(err => {
 							return('Pwrdon... T_T')
 						})
+					addFilter(from)
+					addLevelingXp(sender, 20)
 						break
 	
 					case 'patas':
@@ -3465,6 +3546,8 @@ break
 						.catch(err => {
 						return('Pwrdon... T_T')
 						})
+					addFilter(from)
+					addLevelingXp(sender, 20)
 						break
 					case 'armpits':
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
@@ -3474,6 +3557,8 @@ break
 						.catch(err => {
 						return('Pwrdon... T_T')
 						})
+					addFilter(from)
+					addLevelingXp(sender, 20)
 						break
 	
 					case 'futa':	
@@ -3484,6 +3569,8 @@ break
 						.catch(err => {
 						return('Pwrdon... T_T')
 						})
+					addFilter(from)
+					addLevelingXp(sender, 20)
 						break
 			
 					case 'femdom':	
@@ -3494,10 +3581,9 @@ break
 						.catch(err => {
 						return('Pwrdon... T_T')
 						})
+					addFilter(from)
+					addLevelingXp(sender, 20)
 						break
-
-	
-
 //////
 case 'chongo':		
 if (isOwner) {
@@ -3511,6 +3597,8 @@ if (isOwner) {
 		samu330.sendMessage(from, Abcx, sticker)
 	}
 }
+addFilter(from)
+addLevelingXp(sender, 120)
 break		
 //////		
 case 'gracias':
@@ -3579,6 +3667,8 @@ teks += `📲 Hora: ` + moment(`${i.t}` * 1000).tz('Europe/Paris').format('DD/MM
 tagg.push(i.jid)
 }
 mentions(teks, tagg, true)
+addFilter(from)
+addLevelingXp(sender, 20)
 break		
 		
 		
@@ -3880,7 +3970,7 @@ message: {
 "documentMessage": { "title": "📚Audios :3", 'jpegThumbnail': fs.readFileSync('./src/otak.jpg')}}
 }})
 addFilter(from)
-addLevelingLevel(sender, 5)		
+addLevelingXp(sender, 20)		
 break
 		
 case 'top5':
@@ -3906,6 +3996,8 @@ member.push(o3.jid)
 member.push(o4.jid)
 member.push(o5.jid)
 mentions(teks, member, true)
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 		
 case 'pr':
@@ -3915,6 +4007,7 @@ answer = respuesta[Math.floor(Math.random() * respuesta.length)]
 if (!q) return reply('Y la pregunta?')
 reply(answer)
 addFilter(from)
+addLevelingXp(sender, 20)
 break
 		
 case 'lirik':
@@ -3933,6 +4026,7 @@ sendFileFromUrl(anu.thumbnail.genius, image, {quoted: fimg, caption: lyrics, sen
 reply(mess.ferr)
 }
 addFilter(from)
+addLevelingXp(sender, 20)
 break	
 
 case 'baka':
@@ -4183,6 +4277,7 @@ break
 /**/throw 'Formato incorrecto, solo 0-9 y símbolo -, +, *, /, ×, ÷, π, e, (, ) son compatibles'
 /**/}
 /**/addFilter(from)
+addLevelingXp(sender, 20)
 /**/break
 
 case 'google':
@@ -4204,6 +4299,7 @@ ggsm += `
 var nyangg = ggsm.trim()
 reply(`*🔍Busqueda realizada por* Lalelilolu ᵈᵃʳʸ⛥\n\n${nyangg}`)
 addFilter(from)
+addLevelingXp(sender, 20)
 break
 			
 case 'imagen':
@@ -4223,7 +4319,8 @@ var random =  gugIm[Math.floor(Math.random() * gugIm.length)].url
 sendFileFromUrl(random, image, {quoted: fimg, caption: `*🔍Busqueda de* _*「 ${ggimg} 」*_\n*Realizada por Lalelilolu ᵈᵃʳʸ⛥*`})
 }
 }
-addFilter(from)
+addFilter(from)addFilter(from)
+addLevelingXp(sender, 20)
 break
 		
 case 'apagar':
@@ -4262,6 +4359,7 @@ if (!isGroup) return reply(mess.only.group)
 if (args.length < 1) return reply("Escriba una frase despues del comando para poder continuar!")
 reply(zalgo(`${body.slice(6)}`))
 addFilter(from)
+addLevelingXp(sender, 20)
 break
 		
 case 'contar':
@@ -4273,6 +4371,8 @@ reply(`El texto solo contine *${count}* caracter.`)
 } else if (count > 1) {
 reply(`Su texto contiene *${count}* caracteres.`)
 }
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 		
 case 'reportar':
@@ -4304,6 +4404,7 @@ reply('*Buscando una buena imagen...*')
 waifu = await getJson(`https://api.waifu.pics/nsfw/waifu`)
 sendFileFromUrl(waifu.url, image, {quoted: fimg, caption: '💎 *Uff zii 🥵* 💠', sendEphemeral: true})
 addFilter(from)
+addLevelingXp(sender, 20)
 break
 
 case 'xneko':
@@ -4313,6 +4414,7 @@ reply('*Buscando una buena imagen...*')
 waifu = await getJson(`https://api.waifu.pics/nsfw/neko`)
 sendFileFromUrl(waifu.url, image, {quoted: fimg, caption: '💎 *Umm gatita 🥵* 💠', sendEphemeral: true})
 addFilter(from)
+addLevelingXp(sender, 20)
 break
 		
 case 'trap':
@@ -4322,6 +4424,7 @@ reply('*Buscando una buena imagen...*')
 waifu = await getJson(`https://api.waifu.pics/nsfw/trap`)
 sendFileFromUrl(waifu.url, image, {quoted: fimg, caption: '💎 *Trapito :3 🥵* 💠', sendEphemeral: true})
 addFilter(from)
+addLevelingXp(sender, 20)
 break
 		
 case 'blow':
@@ -4331,6 +4434,7 @@ reply('*Buscando una buena imagen...*')
 waifu = await getJson(`https://api.waifu.pics/nsfw/blowjob`)
 sendFileFromUrl(waifu.url, image, {quoted: fimg, caption: '💎 *Nya* 💠', sendEphemeral: true})
 addFilter(from)
+addLevelingXp(sender, 20)
 break
 
 case 'b2':
@@ -4443,6 +4547,7 @@ var mantap = await convertSticker(bas64, `${author2}`, `${pack}`)
 var imageBuffer = new Buffer.from(mantap, 'base64');
 samu330.sendMessage(from, imageBuffer, sticker, {quoted: fnsfw})
 addFilter(from)
+addLevelingXp(sender, 20)
 break
 		
 case 'sp':
@@ -4454,6 +4559,7 @@ var imageBuffersp = new Buffer.from(mantapsp, 'base64');
 var mantapsp = await convertSticker(bas64sp, `Sp By Idk :3`, `${pushname}\n🌬`)
 samu330.sendMessage(from, imageBuffersp, sticker, {quoted: sam})
 addFilter(from)
+addLevelingXp(sender, 20)
 break
 		
 case 'sticker':
@@ -4505,6 +4611,7 @@ ase,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=rese
 reply(`Envie o etiquete una imagen/vido/gif con el comando: ${prefix}s nombre|autor *OJO!* El video/gif no debe de durar mas de 10 segundos`)
 }
 addFilter(from)
+addLevelingXp(sender, 20)
 break
 
 //encode y decode by Samu
@@ -4639,12 +4746,13 @@ dadu = dadus[Math.floor(Math.random() * dadus.length)]
 //samu330.sendMessage(from, dador, sticker, {quoted: fjeux, sendEphemeral: true})
 rndd = `d${argz[0]}`
 if (dadu == rndd) {
-	addLevelingXp(sender, 100)
+	addLevelingXp(sender, 200)
 	dador = fs.readFileSync(`./temp/dados/${dadu}.webp`)
 	samu330.sendMessage(from, dador, sticker, {quoted: fjeux, sendEphemeral: true})
-	reply('Ganaste 100xp perro!!')
+	reply('Ganaste 200xp perro!!')
 } else {reply(`F bro, perdiste :v\n*Salió ${dadu}*`)}
 addFilter(from)
+addLevelingXp(sender, 5)
 break
 		
 case 'delete':
@@ -4674,6 +4782,7 @@ message: {
 "documentMessage": { "title": `✍🏻Nivel ${nivelActual}`, 'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}
 }}
 })
+addFilter(from)
 break	
 	
 case 'leaderboard':
@@ -4730,6 +4839,8 @@ case 'rules':
 samu330.updatePresence(from, Presence.composing)  		
 mdata = await samu330.groupMetadata(from)
 reply(`_*「 Hola, @${pushname} 」*_\n_*Bienvenido a 「 ${mdata.subject} 」*_\n\n_*Esperamos que te la pases a gusto en este grupo*_\n_*Recuerda siempre seguir las reglas😉*_\n\n${mdata.desc}`)
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 	
 //Con este case se envia la aplicacion Tutorial
@@ -4805,6 +4916,8 @@ ini_txt += `•Descripción : ${get_result.description}\n`
 //ini_txt += `•Nivel del mar : ${get_result.permukaan_laut} Presion atmosferica\n`
 //samu330.sendMessage(from, { degreesLatitude: get_result.latitude, degreesLongitude: get_result.longitude }, location, { quoted: sam})
 reply(ini_txt)
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 /**		
 case 'traductor':
@@ -4984,7 +5097,7 @@ sendFileFromUrl(res1[0].link, audio, {quoted: sam, mimetype: 'audio/mp4', filena
 //sendFileFromUrl(res1[0].link, audio, {quoted: faud, mimetype: 'audio/mp4', ptt: true, filename: res1[0].output})
 }
 addFilter(from)
-addLevelingLevel(sender, 5)		
+addLevelingXp(sender, 20)	
 break
 		
 case 'play2':
@@ -5039,7 +5152,8 @@ case 'play2':
 				}
 	  }, {quoted: sam})
 	  samu330.relayWAMessage(play2v)
-
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 		
 case 'playvid':	
@@ -5070,7 +5184,7 @@ sendFileFromUrl(v21.result.url_video, video, {mimetype: 'video/mp4', filename: `
 sendFileFromUrl(anu[0].link, video, {mimetype: 'video/mp4', filename: `${anu[0].output}`, quoted: fvid, caption: `[ *${res3.all[0].title}* ]\n\n\nLalelilolu ᵈᵃʳʸ⛥`})	
 }
 addFilter(from)
-addLevelingLevel(sender, 5)		
+addLevelingXp(sender, 20)		
 break
 		
 case 'twit':
@@ -5161,6 +5275,8 @@ samu330.sendMessage(from, buffer, image, {quoted: fvid, caption: `Equis d ._. `}
 } catch {
   reply(mess.ferr)
 }
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 		
 ////		
@@ -5173,6 +5289,8 @@ if (!q) return reply('*Y el texto para crear el logo donde esta?*')
 reply(`*Porfavor espera un momento, tu logo ${command} esta siendo creado con el texto ${q}!*`)		
 logo = `http://api.lolhuman.xyz/api/photooxy1/${command}?apikey=NikolaTesla&text=${q}`
 sendFileFromUrl(logo, image, {quoted: fimg, caption: '*🔥 𝘓𝘰𝘨𝘰𝘴 🔥*', sendEphemeral: true})
+addFilter(from)
+addLevelingXp(sender, 20)
 break	
 
 case 'toxic':
@@ -5187,6 +5305,8 @@ if (!q) return reply('*Y el texto para crear el logo donde esta?*')
 reply(`*Porfavor espera un momento, tu logo ${command} esta siendo creado con el texto ${q}!*`)		
 logo = `http://api.lolhuman.xyz/api/textprome/${command}?apikey=NikolaTesla&text=${q}`
 sendFileFromUrl(logo, image, {quoted: fimg, caption: '*🔥 𝘓𝘰𝘨𝘰𝘴 🔥*', sendEphemeral: true})
+addFilter(from)
+addLevelingXp(sender, 20)
 break	
 		
 case 'beautifulflower':
@@ -5198,6 +5318,8 @@ if (!q) return reply('*Y el texto para crear el logo donde esta?*')
 reply(`*Porfavor espera un momento, tu logo ${command} esta siendo creado con el texto ${q}!*`)		
 logo = `http://api.lolhuman.xyz/api/ephoto1/${command}?apikey=NikolaTesla&text=${q}`
 sendFileFromUrl(logo, image, {quoted: fimg, caption: '*🔥 𝘓𝘰𝘨𝘰𝘴 🔥*', sendEphemeral: true})
+addFilter(from)
+addLevelingXp(sender, 20)
 break		
 		
 case 'neon':
@@ -5435,6 +5557,8 @@ for (let i = 0; i < argz[1]; i++){
 samu330.sendMessage(from, argz[0], MessageType.text, {quoted: { key : {fromMe: false, participant : "5214447000377-1624232428@s.whatsapp.net", ...(from ? { remoteJid: "@g.us" } : {})},message: {orderMessage: {itemCount : 9999999999999999,status: 1,surface : 1,message: `🥀Dans ton coeur🌹`,orderTitle: '',sellerJid: `Sam330`,thumbnail: fs.readFileSync('./src/fake.jpg')}},
 contextInfo: { mentionedJid: members }}})
 }
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 case 'ytmp3':
 //if (!isRegister) return samu330.sendMessage(from, assistant, image, { quoted: noreg, caption: `😊Hola, ${timeFt}.\n\nAl parecer no estas registrado, Para registrarte usa el comando: *${prefix}reg*.`, thumbnail: assistant, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
@@ -5458,7 +5582,7 @@ sendFileFromUrl(resyt[0].thumb, image, {caption: result, quoted: sam})
 sendFileFromUrl(resyt[0].link, audio, {quoted: faud, duration :-99999999, mimetype: 'audio/mp3'})
 //sendFileFromUrl(resyt[0].link, audio, {quoted: faud, mimetype: 'audio/mp3', ptt: true, duration: 99999999})
 addFilter(from)
-addLevelingLevel(sender, 5)	
+addLevelingXp(sender, 20)	
 break
 case 'ytmp4':
 //if (!isRegister) return samu330.sendMessage(from, assistant, image, { quoted: noreg, caption: `😊Hola, ${timeFt}.\n\nAl parecer no estas registrado, Para registrarte usa el comando: *${prefix}reg*.`, thumbnail: assistant, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
@@ -5481,7 +5605,7 @@ _*El archivo se esta enviando.....*_
 sendFileFromUrl(resyv[0].thumb, image, {caption: result, quoted: sam})
 sendFileFromUrl(resyv[0].link, video, {quoted: fvid, mimetype:'video/mp4', duration: 9999999999})
 addFilter(from)
-addLevelingLevel(sender, 5)		
+addLevelingXp(sender, 20)		
 break
 
 case 'tomp3':
@@ -5501,6 +5625,7 @@ samu330.sendMessage(from, buffer, audio, { mimetype: 'audio/mp4', quoted: faud})
 fs.unlinkSync(ran)
 })
 addFilter(from)
+addLevelingXp(sender, 20)
 break
 
 case 'imut':
@@ -5920,6 +6045,7 @@ samu330.sendMessage(from, fs.readFileSync('regsm.jpg'), MessageType.image, { quo
 reply(`*「 SU REGISTRO FUE UN EXITO 」*\n\n*◦ Nombre : ${nombre}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *Comando: ${prefix}menu*`)
 }
 addFilter(from)
+addLevelingXp(sender, 20)
 break		
 /**
 case 'owner':
@@ -5940,6 +6066,8 @@ anu = await uploadImages('smeme.jpeg')
 baleg = await getBuffer(`https://api.memegen.link/images/custom/${wo1}/${wo2}.png?background=${anu}`)
 samu330.sendMessage(from, baleg, MessageType.image, {quoted: sam})
 }
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 case 'noprefix':
 if (!isOwner) return reply('No eres mi dueño UnU') 
@@ -6220,7 +6348,14 @@ ${m}
 ╿ └──────────┘ ╿
 ╰─┨⃞🔮𝉃𝜄𝜐𝉃𝜍𝜅𝉃𝛾🔮⃞ ┠─╯`
 //reply(`${u}`)
+if (luck3 == luck4 && luck3 == luck5 && luck4 == luck5) {
+glucky = `*★᭄ꦿ [ GANASTE ] 💸*\n\n
+᭕- Recibes ༊ 666 Xp ༊`
+reply(`${glucky}`)
+}
 samu330.sendMessage(from, `${u}`, MessageType.text, {quoted: fjeux})
+addFilter(from)
+addLevelingXp(sender, 5)
 break
 /**
 case 'purga': 
@@ -6245,6 +6380,7 @@ if (p.status == 401) {
 reply("[ERROR 401] Status Profile Not Found")
 }
 addFilter(from)
+addLevelingXp(sender, 20)
 break
 case 'getpic':
 if (sam.message.extendedTextMessage != undefined){
@@ -6258,6 +6394,7 @@ thumb = await getBuffer(pic)
 samu330.sendMessage(from, thumb, MessageType.image, {caption: '/omg'})
 }
 addFilter(from)
+addLevelingXp(sender, 20)
 break
 case 'fdeface':
 var nn = budy.slice(9)
@@ -6337,6 +6474,7 @@ wa.sendKontak(from, mentioned[0].split('@')[0], `⌜${mentioned[0].split('@')[0]
 wa.sendKontak(from, argz[0], argz[1])
 }
 addFilter(from)
+addLevelingXp(sender, 20)
 break
 		
 case 'runtime':
@@ -6359,6 +6497,8 @@ message: {
 "businessOwnerJid": `0@s.whatsapp.net`
 }
 }}                                                                                                                                                                                                                                                                        })
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 case 'desfijar':
 if (!itsMe) return reply('Este comando solo puede ser usado por *Lalelilolu ⛥*')
@@ -6453,6 +6593,7 @@ searchyt += `
 var samusamuxd = searchyt.trim()
 sendFileFromUrl(resvi.all[0].image, image, {quoted: fimg, caption: samusamuxd, sendEphemeral: true})
 addFilter(from)
+addLevelingXp(sender, 20)
 break
 
 case 'tts':
@@ -6472,6 +6613,7 @@ samu330.sendMessage(from, fs.readFileSync(ranm), audio, {quoted: faud, mimetype:
 fs.unlinkSync(ranm)
 })
 addFilter(from)
+addLevelingXp(sender, 10)
 break
 case 'estadopic':
 if (!itsMe && !isOwner) return reply('Este comando solo puede ser usado por *Me :v* ⚙')
@@ -6546,6 +6688,7 @@ members_id.push(mem.jid)
 }
 mentions('*〈 Mención grupal 〉*\n╭┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈\n┝ ● '+teks+'┊┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈\n┊────*⌜《Lalelilolu》\◔,◡◔,/ ت♡⌟* ⛥────\n╰┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈', members_id, true)
 addFilter(from)
+addLevelingXp(sender, 10)
 break 
 		
 case 'notificar':
@@ -6569,6 +6712,7 @@ mentionedJid: jids, "forwardingScore": 9999, "isForwarded": true
 quoted: faud
 }
 addFilter(from)
+addLevelingXp(sender, 20)
 await samu330.sendMessage(from, options, MessageType.text)
 break
 case 'leermas':
@@ -6597,6 +6741,8 @@ samu330.sendMessage(from, '*Lista de usuarios en línea*:\n' + online.map(v => '
 quoted: ftoko,
 contextInfo: { mentionedJid: online }
 })
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 		
 case 'soyyo':
@@ -6615,7 +6761,8 @@ its = await getBuffer (ppimg)
 samu330.sendMessage(from, its, image, {
 quoted: fliveLoc, caption: teks, contextInfo: {"forwardingScore": 9999, "isForwarded": true}
 })
-
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 case 'pastebin':
 if (args.length < 1) return reply('Escribe el texto que se mostrara en pastebin.')
@@ -6687,6 +6834,8 @@ reply(mess.wait)
 buffer = await getBuffer(`${porn.url}`)
 samu330.sendMessage(from, buffer, image, {
 fimg})
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 
 case 'tetas':
@@ -6706,6 +6855,8 @@ buffer = await getBuffer(`${porn.url}`)
 samu330.sendMessage(from, buffer, image, {
 quoted: fimg
 })
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 
 case 'ass':
@@ -6724,6 +6875,8 @@ buffer = await getBuffer(`${porn.url}`)
 samu330.sendMessage(from, buffer, image, {
 quoted: fimg
 })
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 //Esta funcion fue creada gracias a la api de fxc-7
 case 'porno':
@@ -6761,6 +6914,8 @@ buffer = await getBuffer(`${porn.url}`)
 samu330.sendMessage(from, buffer, image, {
 quoted: fimg
 })
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 
 case 'simi':
@@ -6796,7 +6951,8 @@ message: {
 }
 }
 })
-		
+addFilter(from)
+addLevelingXp(sender, 5)		
 break
 case 'emoji':
 
@@ -6908,6 +7064,8 @@ var media1 = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.exte
 var media2 = await samu330.downloadMediaMessage(media1)
 fs.writeFileSync('./src/simi.jpg', media2)  
 reply('*Hecho mi amo 7~7*')
+addFilter(from)
+addLevelingXp(sender, 200)
 break
 
 case 'kick':
@@ -7117,6 +7275,7 @@ case 'hidetag':
 //if (!isOwner && !itsMe) return await reply('Este comando solo puede ser usado por *Samu330* ⚙')
 if (!isAdmin && !isOwner && !itsMe) return await reply(mess.only.admin)
 await wa.hideTag(from, args.join(" "))
+addLevelingXp(sender, 40)
 break
 case 'imagetag':
 if (!isGroup) return await reply(mess.only.group)
@@ -7419,7 +7578,9 @@ fs.writeFileSync('wasted.jpg', anu1)
 samu330.sendMessage(from, fs.readFileSync('wasted.jpg'), MessageType.image)
 } else {
 reply('Manda la foto!');
-}			
+}
+addFilter(from)
+addLevelingXp(sender, 40)
 break
 
 case 'wanted':
@@ -7458,6 +7619,8 @@ fs.unlinkSync('./stickgay.jpeg')
 } else {
 reply('Se nesecita una foto para hacer su sticker!');
 }	
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 
 case 'srip':
@@ -7479,6 +7642,8 @@ fs.unlinkSync('./stickrip.jpeg')
 } else {
 reply('Se nesecita una foto para hacer su sticker!');
 }
+addFilter(from)
+addLevelingXp(sender, 20)
 break
 
 case 'scarcel':
@@ -7500,6 +7665,8 @@ fs.unlinkSync('./stickc.jpeg')
 } else {
 reply('Se nesecita una foto para hacer su sticker!');
 }
+addFilter(from)
+addLevelingXp(sender, 20)
 break		
 		
 case 'caras':
@@ -7538,13 +7705,13 @@ if (err) return reply('*Uuuu, algo salio mal, intenta de nuevo*')
 nobg = fs.readFileSync(rano)
 samu330.sendMessage(from, nobg, sticker, {quoted: fimg})
 fs.unlinkSync(rano)
-})
-                                    
+})                                
 } else {
 reply('Se nececita una foto!')
 }
-				
- break
+addFilter(from)
+addLevelingXp(sender, 20)				
+break
 	case 'antimedia':                
 if (!isGroup) return reply(mess.only.group)
                                         if (!isAdmin) return reply(mess.only.admin)     
