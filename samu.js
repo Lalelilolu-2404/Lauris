@@ -2361,7 +2361,7 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
             .then(body => {
             let tod = body.split("\n");
             let pjr = tod[Math.floor(Math.random() * tod.length)];
-	reply(`${pjr}`)
+	//reply(`${pjr}`)
              imageToBase64(pjr)
             .then((response) => {
             media =  Buffer.from(response, 'base64');
@@ -2375,24 +2375,6 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
             });
 break
 		
-case 'animeme':               
-if (!isGroup) return reply(mess.only.group)
-if (isBan) return reply('*Lo siento pero usted es un usuario baneado, no puede hacer uso del bot!*')
-reply(mess.wait)
-uk = ["shitpost+otaku+espa%C3%B1ol", "humor+estupido", "image+cursed", "Imagenes+turbias+terror", "memes+sin+sentido", "random+imagenes", "shitpost+magia"]
-nk = uk[Math.floor(Math.random() * uk.length)]
-try {
-data = await getJson(`https://api.lolhuman.xyz/api/pinterest2?apikey=NikolaTesla&query=${nk}`)
-mmx = JSON.parse(JSON.stringify(data.result));
-nimek =mmx[Math.floor(Math.random() * mmx.length)];
-buffer = await getBuffer(nimek)
-//reply(`${nimek}`)
-samu330.sendMessage(from, buffer, image, {quoted: fvid, caption: `Equis d ._. `})
-} catch {
-  reply(mess.ferr)
-}
-break		
-	
 case 'trabajar':
 if (isUser2) return reply('Espera a mañana')
 samu330.updatePresence(from, Presence.composing)        		                			      		
@@ -6785,7 +6767,11 @@ case 'simi':
 samu330.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(mess.only.group)
 texto = body.slice(5)
-sim = await getJson(`https://api.simsimi.net/v1/?text=${texto}&lang=es`)
+sim0 = await getJson(`https://api.simsimi.net/v1/?text=${texto}&lang=es`)
+sim1 = await getJson(`https://api.lolhuman.xyz/api/simi?apikey=NikolaTesla&text=${texto}`)
+sim2 = await getJson(`https://simsumi.herokuapp.com/api?text=${texto}`)	
+simx = Math.floor(Math.random() * 3)
+sim = `sim${simx}`
 smuu = (`${sim.success}`)
 samu330.sendMessage(from, smuu, MessageType.text, {quoted: { key: {
 fromMe: false,
