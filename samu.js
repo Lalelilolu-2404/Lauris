@@ -7887,6 +7887,11 @@ if (isAllaud) {
 		samu330.sendMessage(from, none2, sticker)
 		}
 	} 
+	if (body.includes(`Comida de Anna`) && body.length == 14){
+		randc = Math.floor(Math.random() * 5)
+		none2 = fs.readFileSync(`./src/stickers/Comida de Anna${randc}.webp`)
+		samu330.sendMessage(from, none2, sticker, {quoted: sam})
+	} 
 }
 if (!isOwner && !isCherry){	
 if (!isAllaud) return
@@ -7956,6 +7961,19 @@ if (!isAllaud) return
 	}
 }
 //////////////	
+const morestick = ["Abasho", "Lean las reglas", "Nel mijo", "Se la coge", "Soy inevitable", "Le mete el brazo", 
+		  "Fbi", "X el chikito"]	
+
+if (isLalelilolu){
+if (!isAllaud) return
+	for (let i = 0; i < morestick.length; i++){
+		if (body.includes(`${morestick[i]}`) && body.length == morestick[i].length){
+			const none3 = fs.readFileSync(`./src/stickers2/${morestick[i]}.webp`)
+			samu330.sendMessage(from, none3, sticker)	
+		}				
+	}
+}	
+////////
 /**
 function _0x5718(){var _0x1c4b44=['122885QdGzyn','sticker','137193xgROlL','1202160qgSFsZ','2169990GBfMeG','sendMessage','476319hkaInB','1006lwFJpo','12cilEll',
 				  '447360sFDZtd','./src/assistant.jpg','readFileSync','16biMglh','397bnmaIc','[\x20★\x20]\x20山姆\x20330'];_0x5718=function(){return _0x1c4b44;};
@@ -7970,8 +7988,10 @@ MessageType[_0x5b64d5(0x73)],{'quoted':fnsfw,'contextInfo':{'externalAdReply':{'
 **/
 
 if (body.includes(`Xd`)){
-	const none = fs.readFileSync('./temp/xd.webp')
+	nkx = Math.floor(Math.random() * 11)
+	const none = fs.readFileSync(`./temp/Xd${nkx}.webp`)
 	samu330.sendMessage(from, none, MessageType.sticker, {
+		quoted : fvid, 
 		contextInfo: {externalAdReply :{
 			title: 'Spameen a Anna xd',
 			//body: '',
