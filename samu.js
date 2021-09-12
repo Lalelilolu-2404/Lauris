@@ -4319,7 +4319,7 @@ var random =  gugIm[Math.floor(Math.random() * gugIm.length)].url
 sendFileFromUrl(random, image, {quoted: fimg, caption: `*🔍Busqueda de* _*「 ${ggimg} 」*_\n*Realizada por Lalelilolu ᵈᵃʳʸ⛥*`})
 }
 }
-addFilter(from)addFilter(from)
+addFilter(from)
 addLevelingXp(sender, 20)
 break
 		
