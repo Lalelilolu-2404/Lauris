@@ -2352,9 +2352,9 @@ addFilter(from)
 addLevelingXp(sender, 20)
 break	
 		
-//samu330.sendMessage(from, { degreesLatitude: `0`, degreesLongitude: `0`, name: '🔥Samu330 | NyanBot🍒', address : `🗡Created by Samu330`, sequenceNumber: '99999', jpegThumbnail: fs.readFileSync('./src/+18.jpg')}, MessageType.liveLocation, {quoted : sam})
+//samu330.sendMessage(from, { degreesLatitude: `0`, degreesLongitude: `0`, name: '🔥Samu330 | NyanBot🍒', 
+address : `🗡Created by Samu330`, sequenceNumber: '99999', jpegThumbnail: fs.readFileSync('./src/+18.jpg')}, MessageType.liveLocation, {quoted : sam})
 case 'menuxxxx':
-
 const xmenu = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 │ *Lalelilolu ᵈᵃʳʸ*⛥
 ╭──────────────
@@ -2364,15 +2364,16 @@ ${bodyM} ${prefix}nezuko
 ${bodyM} ${prefix}gatitas
 ╰──────────────╯`
 samu330.sendMessage(from, { degreesLatitude: `0`, degreesLongitude: `0`, 
-			   name: `${xmenu}`, address : ``, sequenceNumber: '', 
-jpegThumbnail: fs.readFileSync('./src/nsfw.jpg')}, MessageType.liveLocation, {quoted: 
-{ key: {
-fromMe: false,
-participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
-},
-message: {
-"documentMessage": { "title": "Otakuslife :3", 'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}}
-}})
+			   name: `${xmenu}`, address : `0`, sequenceNumber: '69', 
+			   jpegThumbnail: fs.readFileSync('./src/nsfw.jpg')}, MessageType.liveLocation, 
+		    {quoted: 
+		     { key: {
+			     fromMe: false,
+			     participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+		     },
+		      message: {
+			      "documentMessage": { "title": "Otakuslife :3", 'jpegThumbnail': fs.readFileSync('./src/assistant.jpg')}}
+		     }})
 addFilter(from)
 addLevelingXp(sender, 20)
 break								
