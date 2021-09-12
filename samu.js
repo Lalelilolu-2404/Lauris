@@ -2344,11 +2344,12 @@ case 'anime':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
             reply(mess.wait)
-            getJson('https://raw.githubusercontent.com/pajaar/grabbed-results/master/pajaar-2020-gambar-anime.txt')
+            fetch('https://raw.githubusercontent.com/pajaar/grabbed-results/master/pajaar-2020-gambar-anime.txt')
             .then(res => res.text())
             .then(body => {
             let tod = body.split("\n");
             let pjr = tod[Math.floor(Math.random() * tod.length)];
+	reply(`${pjr}`)
             imageToBase64(pjr)
             .then((response) => {
             media =  getBuffer.from(response, 'base64');
@@ -2361,6 +2362,24 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
             )
             });
 break
+		
+case 'animeme':               
+if (!isGroup) return reply(mess.only.group)
+if (isBan) return reply('*Lo siento pero usted es un usuario baneado, no puede hacer uso del bot!*')
+reply(mess.wait)
+uk = ["shitpost+otaku+espa%C3%B1ol", "humor+estupido", "image+cursed", "Imagenes+turbias+terror", "memes+sin+sentido", "random+imagenes", "shitpost+magia"]
+nk = uk[Math.floor(Math.random() * uk.length)]
+try {
+data = await getJson(`https://api.lolhuman.xyz/api/pinterest2?apikey=NikolaTesla&query=${nk}`)
+mmx = JSON.parse(JSON.stringify(data.result));
+nimek =mmx[Math.floor(Math.random() * mmx.length)];
+buffer = await getBuffer(nimek)
+//reply(`${nimek}`)
+samu330.sendMessage(from, buffer, image, {quoted: fvid, caption: `Equis d ._. `})
+} catch {
+  reply(mess.ferr)
+}
+break		
 	
 case 'trabajar':
 if (isUser2) return reply('Espera a mañana')
@@ -2393,7 +2412,7 @@ case 'lolixx':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})  			 
 	anux = await axios.get('https://bx-hunter.herokuapp.com/api/randomloli?apikey=Ikyy69')
-	buffer = await getBuffer(anux.link)
+	buffer = await getBuffer(anux.data.link)
 	samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: '_*Por que muslos?*_'})
 	.catch(err => {
 	return('Pwrdon... T_T')
@@ -2415,6 +2434,7 @@ case 'givemoney':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (!q.includes('|')) return  reply(`Ej. ${prefix}givemoney @Tag | Monto a transferir`)
+samu330.updatePresence(from, Presence.composing)  
 	const tujuan = q.substring(0, q.indexOf('|') - 1)
         const jumblah = q.substring(q.lastIndexOf('|') + 1)
         if(isNaN(jumblah)) return await reply('La cantidad debe ser un número!!')
@@ -2426,12 +2446,13 @@ if (!q.includes('|')) return  reply(`Ej. ${prefix}givemoney @Tag | Monto a trans
         addKoinUser(tujuantf, hasiltf)
         confirmATM(sender, jumblah)
         addKoinUser('33749258491@s.whatsapp.net', fee)
-reply(`*「 TRANSFERENCIA ÉXITOSA 」*\n\nDe : @${sender.split("@")[0]}\nPara : @${tujuan}\n\nMonto de la transferencia : ${jumblah}\nImpuesto : ${fee}`)
+reply(`*「 TRANSFERENCIA ÉXITOSA 」*\n\nDe : @${sender.split("@")[0]}\nPara : ${tujuan}\n\nMonto de la transferencia : ${jumblah}\nImpuesto : ${fee}`)
 break
 			
 case 'balance':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+samu330.updatePresence(from, Presence.composing)  
 const kantong = checkATMuser(sender)
 hailhy = `*⌜${pushname}⌟*\n★᭄ꦿ ${kantong} Otakoins`   
 samu330.sendMessage(from, hailhy, MessageType.text, {quoted: sam})
@@ -2439,7 +2460,8 @@ samu330.sendMessage(from, hailhy, MessageType.text, {quoted: sam})
 break		
 		
 case 'apostar':
-const gpp = ['90','10','10','10','10','10','10','10','10','90','90','90','90','90']
+const gpp = ['90','10','10','10','90','10','10','10','10','90','90','90','90','90']
+samu330.updatePresence(from, Presence.composing)  
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 arg1 = q
@@ -2922,43 +2944,7 @@ samu330.sendMessage(from, imgus, MessageType.image, {
 quoted: fjeux, 
 caption: `${sus}`, 
 contextInfo: { mentionedJid: [member[0], member[1]]}})
-/**		
-const trip = `${nave}`
-k = Math.floor(Math.random() * 3) + 1
-imgus = fs.readFileSync(`./temp/amongus/amongus${k}.jpg`)
-samu330.sendMessage(from, imgus, MessageType.image, {
-quoted: fjeux, 
-caption: `${trip}`, 
-contextInfo: { mentionedJid: [member[0], member[1]]}})
-//mentions(nave, member, true)		
-//random = Math.floor(Math.random() * mentioned.length)
-//i = random
-await sleep(300)
-sus = 
-`⠄⠄⠄⢰⣧⣼⣯⠄⣸⣠⣶⣶⣦⣾⠄⠄⠄⠄⡀⠄⢀⣿⣿⠄⠄⠄⢸⡇⠄⠄
- ⠄ඞ⠄⣾⣿⠿⠿⠶⠿⢿⣿⣿⣿⣿⣦⣤⣄⢀⡅⢠⣾⣛⡉⠄⠄⠄⠸⢀⣿⠄
-⠄⠄⢀⡋⣡⣴⣶⣶⡀⠄⠄⠙⢿⣿⣿⣿⣿⣿⣴⣿⣿⣿⢃⣤⣄⣀⣥⣿⣿⠄
-⠄⠄⢸⣇⠻⣿⣿⣿⣧⣀⢀⣠⡌⢻⣿⣿ඞ⣿⣿⣿⣿⣿⣿⠿⠿⠿⣿⣿⣿⠄
-⠄⢀⢸⣿⣷⣤⣤⣤⣬⣙⣛⢿⣿⣿⣿⣿⣿⣿⡿⣿⣿⡍⠄⠄⢀⣤⣄⠉⠋⣰
-⠄⣼⣖⣿⣿⣿ඞ⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⢇⣿⣿⡷⠶⠶⢿⣿⣿⠇⢀⣤
-⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣷⣶⣥⣴⣿⡗
-      @${member[1].split('@')[0]} was E j e c t e d
-⢸⣿⣦⣌⣛⣻⣿⣿⣧⠙⠛⠛⡭⠅⠒⠦⠭⣭⡻⣿⣿⣿⣿ඞ⣿⣿⣿⡿⠃⠄
-⠘⣿⣿⣿⣿⣿⣿⣿⣿⡆⠄⠄⠄⠄⠄⠄⠄⠄⠹⠈⢋⣽⣿⣿⣿⣿⣵⣾⠃⠄
-⠄⠘⣿⣿⣿⣿⣿⣿⣿⣿⠄⣴⣿⣶⣄⠄⣴⣶⠄⢀⣾⣿⣿⣿⣿⣿⣿⠃⠄⠄
-⠄⠄⠈⠻⣿⣿ඞ⣿⣿⣿⡄⢻⣿⣿⣿⠄⣿⣿⡀⣾⣿⣿⣿⣿⣛⠛⠁⠄⠄⠄
-⠄⠄⠄⠄⠈⠛⢿⣿⣿⣿⠁⠞⢿⣿⣿⡄⢿⣿⡇⣸⣿⣿⠿⠛⠁⠄⠄⠄⠄⠄
-⠄⠄⠄⠄⠄⠄⠄⠉⠻⣿⣿⣾⣦⡙⠻⣷⣾⣿⠃⠿⠋⠁⠄⠄⠄⠄⠄⢀⣠⣴
-⣿⣿⣿⣶⣶⣮⣥⣒⠲⢮⣝⡿⣿⣿⡆⣿⡿⠃⠄⠄⠄⠄⠄⠄⠄⣠⣴⣿⣿⣿
-`
-//await sleep(8000)
-samu330.sendMessage(from, sus, MessageType.text, {
-quoted: fjeux, 
-contextInfo: {
-mentionedJid: [member[1]],
-},
-})
-**/
+
 let amongs = samu330.prepareMessageFromContent(from, {
 "listMessage":  {
 "title": "\t*AMONGUS X👑X*",
@@ -4704,7 +4690,7 @@ let leaderboardlvl = '-----[ *NIVEL DE LIDERAZGO* ]----\n\n'
 //let leaderboarduang = '-----[ *TABLA DE MILLONARIOS* ]----\n\n'
 let nomm = 0
 try {
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 10; i++) {
 	nomm++
         //leaderboardlvl += `*[${nomm}]* wa.me/${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
         //leaderboarduang += `*[${nomm}]* wa.me/${uang[i].id.replace('@s.whatsapp.net', '')}\n┣⊱ *Dinero*: _Rp${uang[i].uang}_\n`
@@ -4728,7 +4714,7 @@ uang.sort((a, b) => (a.uang < b.uang) ? 1 : -1)
 let leaderboarduang = '-----[ *TABLA DE MILLONARIOS* ]----\n\n'
 let nommx = 0
 try {
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 3; i++) {
 	nommx++
         leaderboarduang += `*[${nommx}]* @${uang[i].id.replace('@s.whatsapp.net', '')}\n┣⊱ *Dinero*: _Rp${uang[i].uang}_\n`
         box.push(uang[i].id)
