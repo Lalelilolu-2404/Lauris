@@ -2350,7 +2350,7 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
             let tod = body.split("\n");
             let pjr = tod[Math.floor(Math.random() * tod.length)];
 	reply(`${pjr}`)
-         buffer = await getBuffer(pjr)
+         buffer = getBuffer(pjr)
             samu330.sendMessage(from, buffer, MessageType.image,{quoted: fimg,caption:'༊𝕮࿆𝖔ྂ𝖓𝖋𝖚ྂ𝕭𝖔ྂ𝖙࿆࿑'})
             }
             )
