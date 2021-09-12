@@ -2266,7 +2266,8 @@ break
 ////////////Stickers me
 
 case 'forme':
-		
+const morestickx = ["Abasho", "Lean las reglas", "Nel mijo", "Se la coge", "Soy inevitable", "Le mete el brazo", 
+		  "Fbi", "X el chikito", "Xd", "Comida de Anna"]		
 const onlyme = ["69", "Ahohsi", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "Amistad", "Anna", "Amm", "Anni", "Así me gusta", "Asustado", "Ay caramba", "Ay me asusté", 
 		"Ban", "Báñate", "Besos", "Bien", "Bragas", "Buen culo", "Buenas noches", "Bye", "C rasca", "Cállate", "Cc", "Chelitas", "Chongo", "Colita", "Colitaxxx", 
 		"Contesta", "Contra el muro", "Ctm", "Cunni", "Dame", "Delito", "Depre", "Doncon", "Duren", "En fin", "Encuérate", "Eres bonita", "F el grupo", "F en el chat", 
@@ -2279,6 +2280,7 @@ const onlyme = ["69", "Ahohsi", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok"
 		"Toma tu galleta", "Tqm1", "Tqm2", "Triste", "Tu culito", "Turbio", "Tuyyo", "Ufff", "Uhm", "Umm", "Uwu", "Vamos a culear", "Vas a llorar", "Volví", "Wow", 
 		"Wtf", "Xdxd", "Y mis nudes", "Ya antojaron", "Ya es hora", "Ya sabes", "Ya se durmieron", "Ya se enojó", "Ya veo", "Yop", "Youme"]		
 	var textme = ''	
+	var textmex = ''	
 	var abcd = ''
 	let n = 22
 	let aug = ''
@@ -2296,11 +2298,18 @@ const onlyme = ["69", "Ahohsi", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok"
 		let j = i + 1
 	textme = textme + `${bodyM} ${onlyme[i]}\t* ${onlyme[j]}\n`			
 	}
-	
+	for (let i = 0; i < morestickx.length; i++){
+	textmex = textmex + `${bodyM} ${onlyme[i]}\n`			
+	}
 const stickmenu = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 │ *Lalelilolu ᵈᵃʳʸ*⛥
 ╭───────────────────
 ${textme}
+╰────────────────────╯`
+const stickmenux = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
+│ *Lalelilolu ᵈᵃʳʸ*⛥
+╭───────────────────
+${textmex}
 ╰────────────────────╯`
 if (isOwner) {
 samu330.sendMessage(from, stickmenu, MessageType.text, {quoted:
@@ -2311,6 +2320,8 @@ participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : 
 message: {
 "documentMessage": { "title": "Lalelilolu ᵈᵃʳʸ⛥", 'jpegThumbnail': fs.readFileSync('./src/otak.jpg')}}
 }})
+if (isOwner) {
+samu330.sendMessage(from, stickmenux, MessageType.text)
 addFilter(from)
 addLevelingLevel(sender, 5)
 }
