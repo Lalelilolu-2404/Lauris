@@ -811,7 +811,7 @@ const isUser2 = user2.includes(sender)
             }
             samu330.sendMessage(id, buttonMessage, MessageType.buttonsMessage, options)
             }
-
+/**
         const sendButLocation = async (id, text1, desc1, gam1, but = [], options = {}) => {
                 kma = gam1
                 mhan = await samu330.prepareMessage(from, kma, location)
@@ -824,7 +824,7 @@ const isUser2 = user2.includes(sender)
                 }
                 samu330.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
                 }
-
+**/
 	/**
 	const noreg = {
 		key: {
@@ -1498,7 +1498,17 @@ if(test[_0x4dab[5]](`${_0x4dab[4]}`)){let orlist= await yts(`${_0x4dab[6]}${test
 reply(`${_0x4dab[8]}${test[_0x4dab[7]](_0x4dab[4])}${_0x4dab[9]}${orlist[_0x4dab[11]][0][_0x4dab[10]]}${_0x4dab[12]}${orlist[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);let dorg= await y2mateA(`${_0x4dab[6]}${orlist[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);sendFileFromUrl(dorg[0][_0x4dab[14]],audio,{quoted:faud,mimetype:_0x4dab[15],contextInfo:{externalAdReply:{title:`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[6]}`,body:_0x4dab[17],mediaType:2,mediaUrl:`${_0x4dab[6]}${orlist[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`}}})}};if(sam[_0x4dab[1]][_0x4dab[0]]){test= sam[_0x4dab[1]][_0x4dab[0]][_0x4dab[3]][_0x4dab[2]];if(test[_0x4dab[5]](`${_0x4dab[18]}`)){let orlist1= await yts(`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[18])}${_0x4dab[6]}`);reply(`${_0x4dab[19]}${test[_0x4dab[7]](_0x4dab[18])}${_0x4dab[9]}${orlist1[_0x4dab[11]][0][_0x4dab[10]]}${_0x4dab[12]}${orlist1[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);let dorg1= await y2mateA(`${_0x4dab[6]}${orlist1[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);sendFileFromUrl(dorg1[0][_0x4dab[14]],audio,{quoted:faud,mimetype:_0x4dab[15],ptt:true,contextInfo:{externalAdReply:{title:`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[6]}`,body:_0x4dab[17],mediaType:2,mediaUrl:`${_0x4dab[6]}${orlist1[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`}}})}};if(sam[_0x4dab[1]][_0x4dab[0]]){test= sam[_0x4dab[1]][_0x4dab[0]][_0x4dab[3]][_0x4dab[2]];if(test[_0x4dab[5]](`${_0x4dab[20]}`)){let orlist11= await yts(`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[20])}${_0x4dab[6]}`);reply(`${_0x4dab[8]}${test[_0x4dab[7]](_0x4dab[20])}${_0x4dab[9]}${orlist11[_0x4dab[11]][0][_0x4dab[10]]}${_0x4dab[12]}${orlist11[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);let dorg11= await y2mateA(`${_0x4dab[6]}${orlist11[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);sendFileFromUrl(dorg11[0][_0x4dab[14]],audio,{quoted:faud,mimetype:_0x4dab[15],duration:-777,contextInfo:{externalAdReply:{title:`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[6]}`,body:_0x4dab[17],mediaType:2,mediaUrl:`${_0x4dab[6]}${orlist11[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`}}})}};if(sam[_0x4dab[1]][_0x4dab[0]]){test= sam[_0x4dab[1]][_0x4dab[0]][_0x4dab[3]][_0x4dab[2]];if(test[_0x4dab[5]](`${_0x4dab[16]}`)){let orlist111= await yts(`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[6]}`);reply(`${_0x4dab[21]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[22]}${orlist111[_0x4dab[11]][0][_0x4dab[10]]}${_0x4dab[23]}${orlist111[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);let dorg111= await y2mateA(`${_0x4dab[6]}${orlist111[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);sendFileFromUrl(dorg111[0][_0x4dab[14]],audio,{quoted:faud,mimetype:_0x4dab[15],ptt:true,duration:-777,contextInfo:{externalAdReply:{title:`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[6]}`,body:_0x4dab[17],mediaType:2,mediaUrl:`${_0x4dab[6]}${orlist111[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`}}})}}
 **/
 
-	    
+        const sendButLocation = async (id, text1, desc1, but = [], options = {}) => {
+                logor = fs.readFileSync(`.src/nsfw.jpg`)
+                const buttonMessages = {
+                locationMessage: {jpegThumbnail:logor},
+                contentText: text1,
+                footerText: desc1,
+                buttons: but,
+                headerType: 6
+                }
+                samu330.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
+                }	    
 //Zona de Comandos🛵
 switch (command) {
 case 'help':
@@ -2353,6 +2363,7 @@ addLevelingXp(sender, 20)
 break	
 		
 //samu330.sendMessage(from, { degreesLatitude: `0`, degreesLongitude: `0`, name: '🔥Samu330 | NyanBot🍒', address : `🗡Created by Samu330`, sequenceNumber: '99999', jpegThumbnail: fs.readFileSync('./src/+18.jpg')}, MessageType.liveLocation, {quoted : sam})
+/**
 case 'menuxx':
 xmenux = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 │ *Lalelilolu ᵈᵃʳʸ*⛥
@@ -2367,7 +2378,30 @@ samu330.sendMessage(from, { address : ``, sequenceNumber: '99999',
 		   { quoted: sam, caption: `${xmenux}`})
 addFilter(from)
 addLevelingXp(sender, 20)
-break								
+break	
+**/		
+case 'menuxx':
+xmenux = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
+│ *Lalelilolu ᵈᵃʳʸ*⛥
+╭──────────────
+${bodyM} ${prefix}adminlist
+${bodyM} ${prefix}waifu
+${bodyM} ${prefix}nezuko
+${bodyM} ${prefix}gatitas
+╰──────────────╯`
+/**
+samu330.sendMessage(from, { address : ``, sequenceNumber: '99999', 
+			   jpegThumbnail: fs.readFileSync('./src/nsfw.jpg')}, MessageType.liveLocation,
+		   { quoted: sam, caption: `${xmenux}`})
+**/
+
+sendButLocation(from, `Hola perros`, `tests`, 
+		    [{buttonId:`${prefix}status`,buttonText:{displayText:'1'},type:1},
+		{buttonId:`${prefix}owner`,buttonText:{displayText:'2'},type:1}], 
+		    {contextInfo: { mentionedJid: [sender]}})
+
+	
+break	
 				
 ////////
 		
