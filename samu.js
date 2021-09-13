@@ -2395,7 +2395,7 @@ samu330.sendMessage(from, { address : ``, sequenceNumber: '99999',
 		   { quoted: sam, caption: `${xmenux}`})
 **/
 
-sendButLocation(from, `Hola perros`, `tests`, 
+sendButLocation(from, `${xmenux}`, `tests`, 
 		    [{buttonId:`${prefix}status`,buttonText:{displayText:'1'},type:1},
 		{buttonId:`${prefix}owner`,buttonText:{displayText:'2'},type:1}], 
 		    {contextInfo: { mentionedJid: [sender]}})
