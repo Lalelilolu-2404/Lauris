@@ -2445,7 +2445,7 @@ const tujuantf = `${mentioned[0].split('@')[0]}@s.whatsapp.net`
         addKoinUser(tujuantf, hasiltf)
         confirmATM(sender, jumblah)
         addKoinUser('33749258491@s.whatsapp.net', fee)
-reply(`*「 TRANSFERENCIA ÉXITOSA 」*\n\nDe : @${sender.split("@")[0]}\nPara : ${tujuan}\n\nMonto de la transferencia : ${jumblah}\nImpuesto : ${fee}`)
+reply(`*「 TRANSFERENCIA EXITOSA 」*\n\nDe : @${sender.split("@")[0]}\nPara : @${mentioned[0].split('@')[0]}\n\nMonto de la transferencia : ${jumblah}\nImpuesto : ${fee}`)
 addFilter(from)
 addLevelingXp(sender, 20)
 break
@@ -2473,7 +2473,7 @@ argz = arg1.split("|")
 if (isNaN(argz[0])) return reply(`Has una apuesta pajero!`)
 if (argz[0] < 0) return reply(`No seas pendejo, pajín!`)
 if (argz[0] < 100 ) return reply(`Apuesta mínima de 100`)
-dineroapostado = argz[0]
+dineroapostado = argz[0].trim()
 const uaangkauuuiiu = checkATMuser(sender)
 const jññño = [`${uaangkauuuiiu}`]
 if (jññño < dineroapostado) return reply(`Otakoins insuficientes.`)
