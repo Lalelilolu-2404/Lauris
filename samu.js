@@ -6410,7 +6410,7 @@ ${m}
 ╿ └─────────┘ ╿
 ╰─┨⃞🔮𝉃𝜄𝜐𝉃𝜍𝜅𝉃𝛾🔮⃞ ┠─╯`
 //reply(`${u}`)
-if (luck3 != f]{
+if (luck3 != f){
 if (luck3 == luck4 && luck3 == luck5 && luck4 == luck5) {
 addLevelingXp(sender, 666)
 glucky = `*★᭄ꦿ [ GANASTE ] 💸*\n
