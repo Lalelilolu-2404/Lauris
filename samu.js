@@ -4867,8 +4867,7 @@ for (let i = 0; i < 12; i++) {
 	nomm++
         //leaderboardlvl += `*[${nomm}]* wa.me/${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
         //leaderboarduang += `*[${nomm}]* wa.me/${uang[i].id.replace('@s.whatsapp.net', '')}\n┣⊱ *Dinero*: _Rp${uang[i].uang}_\n`
-	leaderboardlvl += `*[${nomm}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ 
-	*XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
+	leaderboardlvl += `*[${nomm}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
         bo.push(_level[i].id)
 }
 //await reply(leaderboardlvl)
