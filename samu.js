@@ -2412,7 +2412,7 @@ samu330.sendButLocation(from, `${xmenux}`, `tests`,
 break	
 				
 ////////		
-case 'trabajar':
+case 'work':
 if (isUser2) return reply('Espera a mañana')
 samu330.updatePresence(from, Presence.composing)        		                			      		
 user2.push(sender)					
@@ -2474,7 +2474,7 @@ if (isNaN(argz[0])) return reply(`Has una apuesta pajero!`)
 if (argz[0] < 0) return reply(`No seas pendejo, pajín!`)
 if (argz[0] < 100 ) return reply(`Apuesta mínima de 100`)
 dineroapostado = argz[0].trim()
-reply(`${argz[0]}\n{argz[1]}`)
+//reply(`${argz[0]}\n{argz[1]}`)
 const uaangkauuuiiu = checkATMuser(sender)
 const jññño = [`${uaangkauuuiiu}`]
 if (jññño < dineroapostado) return reply(`Otakoins insuficientes.`)
