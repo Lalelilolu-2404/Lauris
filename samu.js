@@ -2425,8 +2425,8 @@ case 'work':
 if (isUser2) return reply('Espera a mañana')
 samu330.updatePresence(from, Presence.composing)  
 const name = `${pushname}`
-user2.push(sender)					
-fs.writeFileSync('./src/user2.json', JSON.stringify(user2))
+//user2.push(sender)					
+//fs.writeFileSync('./src/user2.json', JSON.stringify(user2))
 addRegisteredUser2(sender, name)
 taxg = Math.floor(Math.random() * 800) + 1500
 addKoinUser(sender, taxg)
@@ -6118,7 +6118,7 @@ veri = sender
 addRegisteredUser(sender, nombre, edad, time, serialUser)
 try {
 exec(`magick './src/reg.jpg' -gravity west -fill '#00FF00' -font './src/font-gue.ttf' -size 1280x710 -pointsize 90 -interline-spacing 7.5 -annotate +460-45 '${nombre}' -pointsize 50 -annotate +460+200 '${serialUser}' '${ppimg}' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'regsm.jpg'`)
-samu330.sendMessage(from, fs.readFileSync('regsm.jpg'), MessageType.image, { quoted: sam, caption: `*「 SU REGISTRO FUE UN EXITO😉 」*\n\n*◦ Nombre : ${nombre.trim()}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *📋Su registro fue todo un exito*\n\n*Comando: ${prefix}menu*`})
+samu330.sendMessage(from, fs.readFileSync('./regsm.jpg'), MessageType.image, { quoted: sam, caption: `*「 SU REGISTRO FUE UN EXITO 」*\n\n *◦ Nombre : ${nombre}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *Usa : ${prefix}menu*`})
 } catch {
 reply(`*「 SU REGISTRO FUE UN EXITO 」*\n\n*◦ Nombre : ${nombre}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *Comando: ${prefix}menu*`)
 }
