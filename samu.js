@@ -2448,7 +2448,7 @@ if (!arg1) return reply(`Ej. ${prefix}givemoney @Tag | Monto a transferir`)
 argz = arg1.split("|")
 if (isNaN(argz[1])) return reply(`Indica el monto a transferir!`)
 if (argz[1] < 100 ) return reply(`Transferencia mínima de 100`)
-jumblah = argz[1].trim()
+const jumblah = argz[1]
 if (checkATMuser(sender) < jumblah) return reply(`No tienes suficiente dinero para realizar la transferencia`)
 const tujuantf = `${mentioned[0].split('@')[0]}@s.whatsapp.net`
         fee = 0.005 *  jumblah
@@ -2491,13 +2491,11 @@ const jññño = [`${uaangkauuuiiu}`]
 if (jññño < dineroapostado) return reply(`Otakoins insuficientes.`)
 dinerogan = 2 * dineroapostado
 const gppp = gpp[Math.floor(Math.random() * gpp.length)]
-piro = `*★᭄ꦿ [ 𝗔𝗣𝗨𝗘𝗦𝗧𝗔𝗦 ] 💸*
-᭕- Resultado 
-᭕- Pierdes ༊ ${dineroapostado} ༊`
+piro = `*★᭄ꦿ [ 𝗔𝗣𝗨𝗘𝗦𝗧𝗔𝗦 ]* 
+Pierdes : ${dineroapostado} Otakoins`
 
-ganadorxd = `*★᭄ꦿ [ 𝗔𝗣𝗨𝗘𝗦𝗧𝗔𝗦 ] 💸*
-᭕- Resultado
-᭕- Ganaste ༊ ${dinerogan} ༊ Otakoins`
+ganadorxd = `*★᭄ꦿ [ 𝗔𝗣𝗨𝗘𝗦𝗧𝗔𝗦 ]*
+Ganaste : ${dinerogan} Otakoins`
 if (gppp < 50) {
 confirmATM(sender, dineroapostado)
 reply(piro)
