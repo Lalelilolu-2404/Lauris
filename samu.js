@@ -2441,9 +2441,9 @@ jumblah = argz[1].trim()
 if (checkATMuser(sender) < jumblah) return reply(`No tienes suficiente dinero para realizar la transferencia`)
 const tujuantf = `${mentioned[0].split('@')[0]}@s.whatsapp.net`
         fee = 0.005 *  jumblah
-        hasiltf = jumblah - fee
-        addKoinUser(tujuantf, hasiltf)
-        confirmATM(sender, jumblah)
+        hasiltf = jumblah + fee
+        addKoinUser(tujuantf, jumblah)
+        confirmATM(sender, hasiltf)
         addKoinUser('33749258491@s.whatsapp.net', fee)
 reply(`*「 TRANSFERENCIA EXITOSA 」*\n\nDe : @${sender.split("@")[0]}\nPara : @${mentioned[0].split('@')[0]}\n\nMonto de la transferencia : ${jumblah}\nImpuesto : ${fee}`)
 addFilter(from)
@@ -2474,6 +2474,7 @@ if (isNaN(argz[0])) return reply(`Has una apuesta pajero!`)
 if (argz[0] < 0) return reply(`No seas pendejo, pajín!`)
 if (argz[0] < 100 ) return reply(`Apuesta mínima de 100`)
 dineroapostado = argz[0].trim()
+reply(`${argz[0]}\n{argz[1]}`)
 const uaangkauuuiiu = checkATMuser(sender)
 const jññño = [`${uaangkauuuiiu}`]
 if (jññño < dineroapostado) return reply(`Otakoins insuficientes.`)
@@ -4880,7 +4881,7 @@ await reply(`Usuario mínimo para poder acceder a la base de datos`)
 break
 
 case 'economyboard':
-case 'ebm':
+case 'ecb':
 samu330.updatePresence(from, Presence.composing)
 box = []
 uang.sort((a, b) => (a.uang < b.uang) ? 1 : -1)
@@ -4889,7 +4890,7 @@ let nommx = 0
 try {
 for (let i = 0; i < 3; i++) {
 	nommx++
-        leaderboarduang += `*[${nommx}]* @${uang[i].id.replace('@s.whatsapp.net', '')}\n┣⊱ *Dinero*: _Rp${uang[i].uang}_\n`
+        leaderboarduang += `*[${nommx}]* @${uang[i].id.replace('@s.whatsapp.net', '')}\n┣⊱ *Dinero*: ${uang[i].uang}_\n`
         box.push(uang[i].id)
 }
 await mentions(leaderboarduang, box, true)	
