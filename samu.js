@@ -35,7 +35,7 @@ const fs = require('fs');
 const { wait, h2k, generateMessageID, getGroupAdmins, banner, start, info, success, close } = require('./lib/functions')
 const { addBanned, unBanned, BannedExpired, cekBannedUser } = require('./lib/banned.js')
 const { getLevelingXp, getLevelingId, addLevelingXp, addLevelingLevel, addLevelingId, getLevelingLevel, getUserRank, addCooldown, leveltab } = require('./lib/leveling.js')
-const { addATM, addKoinUser, checkATMuser, bayarLimit, confirmATM, limitAdd } = require('./lib/limitatm.js')
+const { addATM, addKoinUser, checkATMuser, bayarLimit, confirmATM, limitAdd, ATMCouldown } = require('./lib/limitatm.js')
 const { removeBackgroundFromImageFile } = require('remove.bg');
 const { exec } = require('child_process');
 const ffmpeg = require('fluent-ffmpeg');
@@ -2431,7 +2431,7 @@ addRegisteredUser2(sender, name)
 taxg = Math.floor(Math.random() * 800) + 1500
 addKoinUser(sender, taxg)
 reply(`Recibiste ${taxg} Otakoins`)
-addFilter(from)
+ATMCouldown(sender)
 addLevelingXp(sender, 10)
 break		
 				
