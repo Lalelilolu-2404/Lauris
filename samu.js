@@ -2422,7 +2422,7 @@ break
 				
 ////////		
 case 'work':
-if (isUser2) return reply('Espera a mañana')
+//if (isUser2) return reply('Espera a mañana')
 samu330.updatePresence(from, Presence.composing)  
 const name = `${pushname}`
 //user2.push(sender)					
