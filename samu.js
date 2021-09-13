@@ -130,7 +130,7 @@ const getRegisteredRandomId = () => {
 const addRegisteredUser2 = (userid, sender) => {
 	const objx = { id: userid, name: sender }
         user2.push(objx)		
-        fs.writeFileSync('./src/user2.json', JSON.stringify(_registered))
+        fs.writeFileSync('./src/user2.json', JSON.stringify(user2))
 } 
 	
         const createSerial = (size) => {
