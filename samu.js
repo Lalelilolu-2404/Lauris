@@ -2395,7 +2395,7 @@ samu330.sendMessage(from, { address : ``, sequenceNumber: '99999',
 		   { quoted: sam, caption: `${xmenux}`})
 **/
 
-sendButLocation(from, `${xmenux}`, `tests`, 
+samu330.sendButLocation(from, `${xmenux}`, `tests`, 
 		    [{buttonId:`${prefix}status`,buttonText:{displayText:'1'},type:1},
 		{buttonId:`${prefix}owner`,buttonText:{displayText:'2'},type:1}], 
 		    {contextInfo: { mentionedJid: [sender]}})
@@ -2518,7 +2518,7 @@ addLevelingXp(sender, 20)
 break		
 		
 case 'apostar':
-const gpp = ['90','10','10','10','90','10','10','10','10','90','90','90','90','90']
+const gpp = ['90','10','10','10','90','10','10','10','10','90','10','90','10','90']
 samu330.updatePresence(from, Presence.composing)  
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
@@ -2532,7 +2532,6 @@ dineroapostado = argz[0]
 const uaangkauuuiiu = checkATMuser(sender)
 const jññño = [`${uaangkauuuiiu}`]
 if (jññño < dineroapostado) return reply(`Otakoins insuficientes.`)
-confirmATM(sender, dineroapostado)
 dinerogan = 2 * dineroapostado
 const gppp = gpp[Math.floor(Math.random() * gpp.length)]
 piro = `*★᭄ꦿ [ 𝗔𝗣𝗨𝗘𝗦𝗧𝗔𝗦 ] 💸*
@@ -2542,9 +2541,13 @@ piro = `*★᭄ꦿ [ 𝗔𝗣𝗨𝗘𝗦𝗧𝗔𝗦 ] 💸*
 ganadorxd = `*★᭄ꦿ [ 𝗔𝗣𝗨𝗘𝗦𝗧𝗔𝗦 ] 💸*
 ᭕- Resultado
 ᭕- Ganaste ༊ ${dinerogan} ༊ Otakoins`
-if (gppp < 50) return reply(piro)
+if (gppp < 50) {
+confirmATM(sender, dineroapostado)
+reply(piro)
+} else {
 addKoinUser(sender, dinerogan)
 reply(`${ganadorxd}`)
+}
 addFilter(from)
 addLevelingXp(sender, 20)
 break
