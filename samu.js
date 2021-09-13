@@ -2390,7 +2390,7 @@ ${bodyM} ${prefix}nezuko
 ${bodyM} ${prefix}gatitas
 ╰──────────────╯`
 
-samu330.sendMessage(from, jpegThumbnail: fs.readFileSync('./src/nsfw.jpg'), MessageType.liveLocation,
+samu330.sendMessage(from, fs.readFileSync('./src/nsfw.jpg'), MessageType.liveLocation,
 		   { quoted: sam, caption: `${xmenux}`})
 /**
 samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${Menu18}`, 
