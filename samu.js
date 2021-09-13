@@ -2422,11 +2422,11 @@ break
 				
 ////////		
 case 'work':
-//if (isUser2) return reply('Espera a mañana')
+if (isUser2) return reply('Espera a mañana')
 samu330.updatePresence(from, Presence.composing)  
 const name = `${pushname}`
-//user2.push(sender)					
-//fs.writeFileSync('./src/user2.json', JSON.stringify(user2))
+user2.push(sender)					
+fs.writeFileSync('./src/user2.json', JSON.stringify(user2))
 addRegisteredUser2(sender, name)
 taxg = Math.floor(Math.random() * 800) + 1500
 addKoinUser(sender, taxg)
