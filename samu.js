@@ -109,7 +109,7 @@ blocked = []
 let _level = JSON.parse(fs.readFileSync('./src/level.json'))
 const uang = JSON.parse(fs.readFileSync('./src/uang.json'))
 const _registered = JSON.parse(fs.readFileSync('./src/registered.json'))
-const user2 = JSON.parse(fs.readFileSync('./src/user2.json'))
+const _user2 = JSON.parse(fs.readFileSync('./src/user2.json'))
 const daily = JSON.parse(fs.readFileSync('./src/diario.json'));
 const dailiy = JSON.parse(fs.readFileSync('./src/limitem.json'));
 const X = "❌"
@@ -129,9 +129,18 @@ const getRegisteredRandomId = () => {
         }
 const addRegisteredUser2 = (userid, sender) => {
 	const objx = { id: userid, name: sender }
-        user2.push(objx)		
-        fs.writeFileSync('./src/user2.json', JSON.stringify(user2))
+        _user2.push(objx)		
+        fs.writeFileSync('./src/user2.json', JSON.stringify(_user2))
 } 
+  	const checkRegisteredUser2 = (sender) => {
+        let status = false
+        Object.keys(_user2).forEach((i) => {
+        if (_user2[i].id === sender) {
+        status = true
+        }
+        })
+            return status
+        }
 	
         const createSerial = (size) => {
         return crypto.randomBytes(size).toString('hex').slice(0, size)
@@ -413,7 +422,7 @@ m = simple.smsg(samu330, sam)
 	const isAntiLeg = isGroup ? legion.includes(from): false
 	const isWelkom = isGroup ? welkom.includes(from) : false
 	const isRegister = checkRegisteredUser(sender)
-const isUser2 = user2.includes(sender)
+const isUser2 = checkRegisteredUser2(sender)
 	const totalchat = await samu330.chats.all()
         const isOwner = senderNumber == owner || senderNumber == botNumber || mods.includes(senderNumber)
 	const isBanChat = chatban.includes(from)
@@ -2414,9 +2423,11 @@ break
 ////////		
 case 'work':
 if (isUser2) return reply('Espera a mañana')
-samu330.updatePresence(from, Presence.composing)        		                			      		
+samu330.updatePresence(from, Presence.composing)  
+const = name = `${pushname}`
 user2.push(sender)					
 fs.writeFileSync('./src/user2.json', JSON.stringify(user2))
+addRegisteredUser2(sender, name)
 taxg = Math.floor(Math.random() * 800) + 1500
 addKoinUser(sender, taxg)
 reply(`Recibiste ${taxg} Otakoins`)
