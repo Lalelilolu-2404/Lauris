@@ -2390,8 +2390,9 @@ ${bodyM} ${prefix}nezuko
 ${bodyM} ${prefix}gatitas
 ╰──────────────╯`
 
-samu330.sendMessage(from, fs.readFileSync('./src/nsfw.jpg'), MessageType.liveLocation,
+samu330.sendMessage(from, {jpegThumbnail: fs.readFileSync('./src/nsfw.jpg')}, MessageType.liveLocation,
 		   { quoted: sam, caption: `${xmenux}`})
+samu330.sendMessage(from,`${xmenux}`, MessageType.text)
 /**
 samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${Menu18}`, 
 					  thumbnail: samuPn, 
@@ -2674,7 +2675,8 @@ break
 					for (let i = 0; i < argz[0]; i++){
                 			samu330.sendMessage(from, pegat, MessageType.sticker, {sendEphemeral: true})
                 			}
-			
+					taxg = argz[0] * 100
+					addKoinUser(sender, taxg)
 				addFilter(from)
 				addLevelingXp(sender, 120)
 			break	
@@ -4808,6 +4810,7 @@ dadu = dadus[Math.floor(Math.random() * dadus.length)]
 rndd = `d${argz[0]}`
 if (dadu == rndd) {
 	addLevelingXp(sender, 200)
+	addKoinUser(sender, 200)
 	dador = fs.readFileSync(`./temp/dados/${dadu}.webp`)
 	samu330.sendMessage(from, dador, sticker, {quoted: fjeux, sendEphemeral: true})
 	reply('Ganaste 200xp perro!!')
