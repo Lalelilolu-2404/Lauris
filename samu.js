@@ -2389,47 +2389,24 @@ ${bodyM} ${prefix}waifu
 ${bodyM} ${prefix}nezuko
 ${bodyM} ${prefix}gatitas
 ╰──────────────╯`
-/**
-samu330.sendMessage(from, { address : ``, sequenceNumber: '99999', 
-			   jpegThumbnail: fs.readFileSync('./src/nsfw.jpg')}, MessageType.liveLocation,
-		   { quoted: sam, caption: `${xmenux}`})
-**/
 
+samu330.sendMessage(from, jpegThumbnail: fs.readFileSync('./src/nsfw.jpg'), MessageType.liveLocation,
+		   { quoted: sam, caption: `${xmenux}`})
+/**
+samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${Menu18}`, 
+					  thumbnail: samuPn, 
+					  contextInfo: { mentionedJid: [sender], "forwardingScore": 9999, "isForwarded": true }})              
+**/
+/**
 samu330.sendButLocation(from, `${xmenux}`, `tests`, 
 		    [{buttonId:`${prefix}status`,buttonText:{displayText:'1'},type:1},
 		{buttonId:`${prefix}owner`,buttonText:{displayText:'2'},type:1}], 
 		    {contextInfo: { mentionedJid: [sender]}})
-
+**/
 	
 break	
 				
-////////
-		
-case 'anime':	
-if (!isGroup) return reply(mess.only.group)
-if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
-            reply(mess.wait)
-            fetch('https://raw.githubusercontent.com/pajaar/grabbed-results/master/pajaar-2020-gambar-anime.txt')
-            .then(res => res.text())
-            .then(body => {
-            let tod = body.split("\n");
-            let pjr = tod[Math.floor(Math.random() * tod.length)];
-	//reply(`${pjr}`)
-             imageToBase64(pjr)
-            .then((response) => {
-            media =  Buffer.from(response, 'base64');
-            samu330.sendMessage(from, media, MessageType.image,{quoted: sam,caption:'༊ Uwu ࿑'})
-            }
-            )
-    .catch((error) => {
-            console.log(error); 
-            }
-            )
-            });
-addFilter(from)
-addLevelingXp(sender, 20)
-break
-		
+////////		
 case 'trabajar':
 if (isUser2) return reply('Espera a mañana')
 samu330.updatePresence(from, Presence.composing)        		                			      		
@@ -2441,61 +2418,24 @@ reply(`Recibiste ${taxg} Otakoins`)
 addFilter(from)
 addLevelingXp(sender, 10)
 break		
-/**
-case 'pussyimage':
-if (!isNsfw) return reply(mess.nsfwoff)
-const uaangkaukayrru = checkATMuser(sender)
-const jmokuro = [`${uaangkaukayrru}`]
-if (jmokuro < 30) return reply(`𝐋𝐨 𝐬𝐢𝐞𝐧𝐭𝐨 𝐬𝐨𝐟𝐢𝐜𝐨𝐢𝐧𝐬 𝐢𝐧𝐬𝐮𝐟𝐢𝐜𝐢𝐞𝐧𝐭𝐞𝐬.`)
-confirmATM(sender, 30)
-
-  pusiimg = await axios.get('https://nekos.life/api/v2/img/pussy_jpg')
-			bufpusy = await getBuffer(pusiimg.data.url)
-				cnf.sendMessage(from, bufpusy, MessageType.image, {quoted: mek})
-						reply('Se te cobraron 30 coins')
-			.catch(err => {
-			return('E-error ⊙﹏⊙')
-			})
-break		
-**/	
-		
-case 'lolixx':   
-if (!isGroup) return reply(mess.only.group)
-if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})  			 
-	anux = await axios.get('https://bx-hunter.herokuapp.com/api/randomloli?apikey=Ikyy69')
-	buffer = await getBuffer(anux.data.link)
-	samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: '_*Lolis?...@FBI*_'})
-	.catch(err => {
-	return('Pwrdon... T_T')
-})
-addFilter(from)
-addLevelingXp(sender, 20)
-break
-
-case 'nekoxx':      
-if (!isGroup) return reply(mess.only.group)
-if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})     
-	buffer = await getBuffer(`https://bx-hunter.herokuapp.com/api/sfw/neko?apikey=Ikyy69`)
-	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Nekos :3*_ 💠', quoted: fimg})
-	.catch(err => {
-	return('Pwrdon... T_T')
-	})
-addFilter(from)
-addLevelingXp(sender, 20)
-break
 				
 case 'givemoney':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
-if (!q.includes('|')) return  reply(`Ej. ${prefix}givemoney @Tag | Monto a transferir`)
-samu330.updatePresence(from, Presence.composing)  
-	const tujuan = q.substring(0, q.indexOf('|') - 1)
-        const jumblah = q.substring(q.lastIndexOf('|') + 1)
-        if(isNaN(jumblah)) return await reply('La cantidad debe ser un número!!')
-        if (jumblah < 100 ) return reply(`Transferencia mínima de 100`)
-        if (checkATMuser(sender) < jumblah) return reply(`No tienes suficiente dinero para realizar la transferencia`)
-        const tujuantf = `${tujuan.replace("@", '')}@s.whatsapp.net`
-        fee = 0.01 *  jumblah
+if (args.length < 1) return reply("Mentiona a alguien, pajero!")	
+samu330.updatePresence(from, Presence.composing) 
+arg1 = q
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+}
+if (!arg1) return reply(`Ej. ${prefix}givemoney @Tag | Monto a transferir`)
+argz = arg1.split("|")
+if (isNaN(argz[1])) return reply(`Indica el monto a transferir!`)
+if (argz[1] < 100 ) return reply(`Transferencia mínima de 100`)
+jumblah = argz[1].trim()
+if (checkATMuser(sender) < jumblah) return reply(`No tienes suficiente dinero para realizar la transferencia`)
+const tujuantf = `${mentioned[0].split('@')[0]}@s.whatsapp.net`
+        fee = 0.005 *  jumblah
         hasiltf = jumblah - fee
         addKoinUser(tujuantf, hasiltf)
         confirmATM(sender, jumblah)
@@ -2510,7 +2450,7 @@ if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 samu330.updatePresence(from, Presence.composing)  
 const kantong = checkATMuser(sender)
-hailhy = `*⌜${pushname}⌟*\n★᭄ꦿ ${kantong} Otakoins`   
+hailhy = `*⌜${pushname}⌟*\n★᭄ꦿ Posees ${kantong} Otakoins`   
 samu330.sendMessage(from, hailhy, MessageType.text, {quoted: sam})
 //reply(ind.uangkau(pushname, sender, kantong))
 addFilter(from)
@@ -2518,7 +2458,7 @@ addLevelingXp(sender, 20)
 break		
 		
 case 'apostar':
-const gpp = ['90','10','10','10','90','10','10','10','10','90','10','90','10','90']
+const gpp = ['10','90','10','10','90','10','10','90','10','10']
 samu330.updatePresence(from, Presence.composing)  
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
@@ -2552,6 +2492,72 @@ addFilter(from)
 addLevelingXp(sender, 20)
 break
 
+/**
+case 'pussyimage':
+if (!isNsfw) return reply(mess.nsfwoff)
+const uaangkaukayrru = checkATMuser(sender)
+const jmokuro = [`${uaangkaukayrru}`]
+if (jmokuro < 30) return reply(`𝐋𝐨 𝐬𝐢𝐞𝐧𝐭𝐨 𝐬𝐨𝐟𝐢𝐜𝐨𝐢𝐧𝐬 𝐢𝐧𝐬𝐮𝐟𝐢𝐜𝐢𝐞𝐧𝐭𝐞𝐬.`)
+confirmATM(sender, 30)
+
+  pusiimg = await axios.get('https://nekos.life/api/v2/img/pussy_jpg')
+			bufpusy = await getBuffer(pusiimg.data.url)
+				cnf.sendMessage(from, bufpusy, MessageType.image, {quoted: mek})
+						reply('Se te cobraron 30 coins')
+			.catch(err => {
+			return('E-error ⊙﹏⊙')
+			})
+break		
+**/	
+case 'anime':	
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+            reply(mess.wait)
+            fetch('https://raw.githubusercontent.com/pajaar/grabbed-results/master/pajaar-2020-gambar-anime.txt')
+            .then(res => res.text())
+            .then(body => {
+            let tod = body.split("\n");
+            let pjr = tod[Math.floor(Math.random() * tod.length)];
+	//reply(`${pjr}`)
+             imageToBase64(pjr)
+            .then((response) => {
+            media =  Buffer.from(response, 'base64');
+            samu330.sendMessage(from, media, MessageType.image,{quoted: sam,caption:'༊ Uwu ࿑'})
+            }
+            )
+    .catch((error) => {
+            console.log(error); 
+            }
+            )
+            });
+addFilter(from)
+addLevelingXp(sender, 20)
+break
+		
+case 'lolixx':   
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})  			 
+	anux = await axios.get('https://bx-hunter.herokuapp.com/api/randomloli?apikey=Ikyy69')
+	buffer = await getBuffer(anux.data.link)
+	samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: '_*Lolis?...@FBI*_'})
+	.catch(err => {
+	return('Pwrdon... T_T')
+})
+addFilter(from)
+addLevelingXp(sender, 20)
+break
+
+case 'nekoxx':      
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})     
+	buffer = await getBuffer(`https://bx-hunter.herokuapp.com/api/sfw/neko?apikey=Ikyy69`)
+	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Nekos :3*_ 💠', quoted: fimg})
+	.catch(err => {
+	return('Pwrdon... T_T')
+	})
+addFilter(from)
+addLevelingXp(sender, 20)
+break
 /**
 case 'megu':
 addFilter(from)	
@@ -4850,11 +4856,12 @@ let leaderboardlvl = '-----[ *NIVEL DE LIDERAZGO* ]----\n\n'
 //let leaderboarduang = '-----[ *TABLA DE MILLONARIOS* ]----\n\n'
 let nomm = 0
 try {
-for (let i = 0; i < 15; i++) {
+for (let i = 0; i < 12; i++) {
 	nomm++
         //leaderboardlvl += `*[${nomm}]* wa.me/${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
         //leaderboarduang += `*[${nomm}]* wa.me/${uang[i].id.replace('@s.whatsapp.net', '')}\n┣⊱ *Dinero*: _Rp${uang[i].uang}_\n`
-	leaderboardlvl += `*[${nomm}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
+	leaderboardlvl += `*[${nomm}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ 
+	*XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
         bo.push(_level[i].id)
 }
 //await reply(leaderboardlvl)
@@ -6387,31 +6394,35 @@ pw6 = [`${a}`, `${b}`, `${c}`, `${e}`, `${f}`, `${g}`]
 luck6 = pw6[Math.floor(Math.random() * pw6.length)]
 pw7 = [`${a}`, `${b}`, `${c}`, `${e}`, `${f}`, `${g}`]
 luck7 = pw7[Math.floor(Math.random() * pw7.length)]
-pw7 = [`${a}`, `${b}`, `${c}`, `${e}`, `${f}`, `${g}`]
-luck7 = pw7[Math.floor(Math.random() * pw7.length)]
+pw8 = [`${a}`, `${b}`, `${c}`, `${e}`, `${f}`, `${g}`]
+luck8 = pw8[Math.floor(Math.random() * pw8.length)]
 s = `┃ │  ${luck} │  ${luck1} │ ${luck2}`
 a = `┃ │  ${luck3} │  ${luck4} │ ${luck5}`
-m = `┃ │  ${luck6} │  ${luck7} │ ${luck7}`
+m = `┃ │  ${luck6} │  ${luck7} │ ${luck8}`
 u = `┌ ﹍﹍𝈺﹉﹉﹉𝈻﹍﹍ ┐ 
 ╭──╼┥𝈸⛥⛥⛥𝈹┝╾──╮
-╽ ┌──────────┐ ┃
+╽ ┌─────────┐ ┃
 ${s}
-┃ ├──────────┤ ┃
+┃ ├─────────┤ ┃
 ${a}
-┃ ├──────────┤ ┃
+┃ ├─────────┤ ┃
 ${m}
-╿ └──────────┘ ╿
+╿ └─────────┘ ╿
 ╰─┨⃞🔮𝉃𝜄𝜐𝉃𝜍𝜅𝉃𝛾🔮⃞ ┠─╯`
 //reply(`${u}`)
+if (luck3 != f]{
 if (luck3 == luck4 && luck3 == luck5 && luck4 == luck5) {
 addLevelingXp(sender, 666)
 glucky = `*★᭄ꦿ [ GANASTE ] 💸*\n
+⛥ ${pushname}
 ᭕- Recibes ༊ 666 Xp ༊`
 reply(`${glucky}`)
 }
+}
 if (luck3 == f && luck4 == f && luck5 == f) {
 addLevelingXp(sender, 6666)
-gglucky = `*★᭄ꦿ [ GANASTE ] 💸*\n
+gglucky = `*★᭄ꦿ [ GANASTE ] 💸*
+⛥ ${pushname}
 ᭕- Recibes ༊ 6666 Xp ༊`
 reply(`${gglucky}`)
 }	
