@@ -1554,25 +1554,25 @@ ${bodyM} rango: ${rango}
 ┖┈┈┈┈┈┈┈┈┈┈┈┈┈┈
 Son las *${hora}*\nHoy es *${week1}  ${calender1}*
 ===========================================
-_POR FAVOR LEE LAS REGLAS_: *${prefix}reglas*
-${bodyM} *${prefix}rules* 
+${bodyM} _Reglas del BOT_: *${prefix}reglas*
+${bodyM} _Reglas del Grupo_: *${prefix}rules* 
 ===========================================
 ${bodyM} *Prefijo :* [ *${prefix}* ]
 ===========================================
 _*LISTA DE MENUS*_
 
-${bodyM} ${prefix}menu1 *(Menu de Media)*
-${bodyM} ${prefix}menu2 *(Menu de Sticker)*
-${bodyM} ${prefix}menu3 *(Menu de Grupos)*
-${bodyM} ${prefix}menu4 *(Menu de descargas)*
-${bodyM} ${prefix}menu5 *(Comandos Tools)*
-${bodyM} ${prefix}menu6 *(Comandos +18)* 
-${bodyM} ${prefix}menu7 *(Comandos de logos)*
-${bodyM} ${prefix}menu8 *(Only Owner)*
-${bodyM} ${prefix}audios *(Audios)*
-${bodyM} ${prefix}otak *(Otak_audios)*
-${bodyM} ${prefix}bana *(Bananeraudios)*
-${bodyM} ${prefix}stickers *(Stickers)*
+${bodyM} ${prefix}menu1 (Menu de Media)
+${bodyM} ${prefix}menu2 (Menu de Sticker)
+${bodyM} ${prefix}menu3 (Menu de Grupos)
+${bodyM} ${prefix}menu4 (Menu de descargas)
+${bodyM} ${prefix}menu5 (Comandos Tools)
+${bodyM} ${prefix}menu6 (Comandos +18) 
+${bodyM} ${prefix}menu7 (Comandos de logos)
+${bodyM} ${prefix}menu8 (Only Owner)
+${bodyM} ${prefix}audios (Audios)
+${bodyM} ${prefix}otak (Otak_audios)
+${bodyM} ${prefix}bana (Bananeraudios)
+${bodyM} ${prefix}stickers (Stickers)
 
 ===========================================
 _*LISTA DE COMANDOS*_
@@ -1592,7 +1592,8 @@ ${bodyM} ${prefix}gatitas
 _*JUEGOS*_
 
 ${bodyM} *${prefix}jugar* _Juega con el Bot:_
-${bodyM} *${prefix}ttt* _Tictactoe:_ 
+${bodyM} *${prefix}ttt* _Tictactoe:_
+${bodyM} *${prefix}delttc* _Cerrar sesión de juego ttt_
 ${bodyM} *${prefix}lucky* _Casino:_ 
 ${bodyM} *${prefix}dado #* _Dados:_ 
 
@@ -1603,7 +1604,7 @@ ${bodyM} *${prefix}getpic* + ⌜Tag @⌟
 ${bodyM} *${prefix}ger* + ⌜Tag image⌟ 
 ${bodyM} *${prefix}sgay* + ⌜Tag image⌟
 ${bodyM} *${prefix}gay* + ⌜Tag @⌟
-===========================================
+⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 ⌜⸸⁶Lalelilolu⁹†⛧⌟ ⛥ `                                               
 //${bodyM} ${prefix}menu9 *(Comandos para explotar grupos)*
 addFilter(from)
@@ -1942,7 +1943,6 @@ ${bodyM} ${prefix}hentai
 ${bodyM} ${prefix}ahegao
 ${bodyM} ${prefix}xboobs
 ${bodyM} ${prefix}xass
-${bodyM} ${prefix}neko
 ${bodyM} ${prefix}muslos
 ${bodyM} ${prefix}patas
 ${bodyM} ${prefix}futa
@@ -2291,7 +2291,7 @@ break
 
 case 'forme':
 const morestickx = ["Abasho", "Lean las reglas", "Nel mijo", "Se la coge", "Soy inevitable", "Le mete el brazo", 
-		  "Fbi", "X el chikito", "Xd", "Comida de Anna"]		
+		  "Fbi", "X el chikito", "Xd", "Comida de Anna", "Nel pastel", "Despreciox"]		
 const onlyme = ["69", "Ahohsi", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "Amistad", "Anna", "Amm", "Anni", "Así me gusta", "Asustado", "Ay caramba", "Ay me asusté", 
 		"Ban", "Báñate", "Besos", "Bien", "Bragas", "Buen culo", "Buenas noches", "Bye", "C rasca", "Cállate", "Cc", "Chelitas", "Chongo", "Colita", "Colitaxxx", 
 		"Contesta", "Contra el muro", "Ctm", "Cunni", "Dame", "Delito", "Depre", "Doncon", "Duren", "En fin", "Encuérate", "Eres bonita", "F el grupo", "F en el chat", 
@@ -2394,14 +2394,151 @@ addLevelingXp(sender, 20)
 break	
 **/		
 case 'menuxx':
-xmenux = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
-│ *Lalelilolu ᵈᵃʳʸ*⛥
-╭──────────────
-${bodyM} ${prefix}adminlist
+const xmenux = `Nightcore  -  Rock mix  
+01:52 ━━━●───── 03:08
+     ⇆ㅤㅤ ◁ㅤ ❚❚ㅤ ▷ㅤ ㅤ↻﻿
+                  ılıılıılıılıılıılı
+⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
+Hola *${pushname}* ${timeFt}
+
+_Tipo de usuario:_ ${tipoDeUsr}
+┎┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+${bodyM} XP: ${getLevelingXp(sender)}
+${bodyM} Nivel: ${getLevelingLevel(sender)}
+${bodyM} rango: ${rango}
+┖┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+Son las *${hora}*\nHoy es *${week1}  ${calender1}*
+===========================================
+${bodyM} _Reglas del BOT_: *${prefix}reglas*
+${bodyM} _Reglas del Grupo_: *${prefix}rules* 
+${bodyM} *Prefijo :* [ *${prefix}* ]
+${bodyM} ${prefix}nivel
+${bodyM} ${prefix}lb (ranked)
+===========================================
+_*COMANDOS ADMINS*_
+
+${bodyM} ${prefix}kick + ⌜Tag @⌟
+${bodyM} ${prefix}promote + ⌜Tag @⌟
+${bodyM} ${prefix}demote + ⌜Tag @⌟
+${bodyM} ${prefix}adminlist/listadmin
+${bodyM} ${prefix}link
+${bodyM} ${prefix}grupo abrir/cerrar
+${bodyM} ${prefix}inspeccionar + ⌜link⌟
+
+_*SWITCH COMANDOS*_
+${bodyM} ${prefix}antimedia 1/0
+${bodyM} ${prefix}antigp 1/0
+${bodyM} ${prefix}+18 1/0
+${bodyM} ${prefix}welcome 1/0
+${bodyM} ${prefix}allaud 1/0 (audios)
+${bodyM} ${prefix}autostick 1/0
+${bodyM} ${prefix}antibad 1/0 F
+
+_*TAG'S*_
+${bodyM} ${prefix}tagall + ⌜Texto⌟
+${bodyM} ${prefix}hidetag + ⌜Texto⌟
+${bodyM} ${prefix}notificar + ⌜Texto⌟
+${bodyM} ${prefix}imagetag + ⌜ImageQuoted⌟
+${bodyM} ${prefix}stickertag + ⌜Tag Sticker⌟
+${bodyM} ${prefix}totag
 ${bodyM} ${prefix}waifu
-${bodyM} ${prefix}nezuko
+${bodyM} ${prefix}belle
 ${bodyM} ${prefix}gatitas
-╰──────────────╯`
+===========================================
+_*COMANDOS OWNER*_
+
+${bodyM} ${prefix}public
+${bodyM} ${prefix}self
+${bodyM} ${prefix}del/delete
+${bodyM} ${prefix}ban + ⌜Tag @⌟ 
+${bodyM} ${prefix}unban
+${bodyM} ${prefix}banchat 1/0
+${bodyM} ${prefix}apagar
+===========================================
+_*MUSICA Y OTROS*_
+
+${bodyM} ${prefix}play + ⌜Texto / link⌟
+${bodyM} ${prefix}letra/lirik + ⌜Texto⌟
+${bodyM} ${prefix}playvid + ⌜Texto / link⌟
+${bodyM} ${prefix}attp + ⌜Texto⌟
+${bodyM} ${prefix}tts + ⌜Code⌟ + ⌜Texto⌟
+${bodyM} ${prefix}idiomas (Code para ${prefix}tts)
+${bodyM} ${prefix}ytsearch + ⌜Texto⌟
+${bodyM} ${prefix}google + ⌜Texto⌟
+
+${bodyM} ${prefix}runtime
+${bodyM} ${prefix}wame
+${bodyM} ${prefix}doxing
+${bodyM} ${prefix}clima + ⌜Texto⌟
+${bodyM} ${prefix}calc
+${bodyM} ${prefix}zalgo + ⌜Texto⌟
+${bodyM} ${prefix}contar + ⌜Texto⌟
+===========================================
+_*LOGOS Y MENU +18*_
+
+${bodyM} ${prefix}menu6 (Comandos +18) 
+${bodyM} ${prefix}menu7 (Comandos de logos)
+===========================================
+_*JUEGOS*_
+
+${bodyM} ${prefix}jugar _Juega con el Bot:_
+${bodyM} ${prefix}ttt + ⌜Tag @⌟ _Tictactoe_
+${bodyM} ${prefix}delttc _Cerrar sesión de juego ttt_
+${bodyM} ${prefix}lucky _Casino_ 
+${bodyM} ${prefix}dado # _Dados_ 
+${bodyM} ${prefix}amgplay _Among'us_ 
+===========================================
+_*INTERACCION CON EL BOT*_
+
+${bodyM} ${prefix}audios (Audios)
+${bodyM} ${prefix}otak (Otak_audios)
+${bodyM} ${prefix}bana (Bananeraudios)
+${bodyM} ${prefix}stickers (Stickers)
+${bodyM} ${prefix}simi + ⌜Texto o pregunta⌟
+${bodyM} ${prefix}pr _Pregunta_ 
+${bodyM} ${prefix}setprof (Perfil del menú)
+===========================================
+_*FUN*_
+
+${bodyM} ${prefix}getpic + ⌜Tag @⌟
+${bodyM} ${prefix}getbio + ⌜Tag @⌟
+${bodyM} ${prefix}soyyo
+
+${bodyM} ${prefix}sticker + ⌜Tag image⌟
+${bodyM} ${prefix}robar Author | Pack  + ⌜@stick⌟
+${bodyM} ${prefix}toimg + ⌜Tag sticker⌟
+${bodyM} ${prefix}ger + ⌜Tag image⌟ 
+${bodyM} ${prefix}wasted + ⌜Tag profil⌟ 
+${bodyM} ${prefix}sgay + ⌜Tag image⌟
+${bodyM} ${prefix}srip + ⌜Tag image⌟ 
+${bodyM} ${prefix}scarcel + ⌜Tag image⌟ 
+${bodyM} ${prefix}gay + ⌜Tag @⌟
+${bodyM} ${prefix}mimitos + ⌜Tag @⌟
+${bodyM} ${prefix}smeme + ⌜T1⌟ + ⌜T2⌟ (Tag Image) 
+
+${bodyM} ${prefix}emparejar (Parejas random)
+${bodyM} ${prefix}emparejarme (Busca tu pareja)
+${bodyM} ${prefix}casar + ⌜Tag @⌟
+${bodyM} ${prefix}top5 + ⌜Texto⌟
+${bodyM} ${prefix}calumnia + ⌜@tag⌟ | Text | Reply
+===========================================
+_*IMAGENES*_
+
+${bodyM} ${prefix}imagen + ⌜Texto⌟
+${bodyM} ${prefix}wallpaper
+${bodyM} ${prefix}anime
+${bodyM} ${prefix}nezuko
+${bodyM} ${prefix}neko
+${bodyM} ${prefix}loli
+${bodyM} ${prefix}randomloli
+${bodyM} ${prefix}lolixx
+${bodyM} ${prefix}nekoxx
+${bodyM} ${prefix}imgrandom
+${bodyM} ${prefix}randomxd
+${bodyM} ${prefix}animeme
+
+⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
+⌜⸸⁶Lalelilolu⁹†⛧⌟ ⛥ `  
 
 samu330.sendMessage(from, {jpegThumbnail: fs.readFileSync('./src/nsfw.jpg')}, MessageType.liveLocation,
 		   { quoted: sam, caption: `${xmenux}`})
@@ -4571,6 +4708,8 @@ break
 	
 //======== _-By Samu330-_ ========\\
 case 'inspeccionar':
+if (!isGroup) return await reply(mess.only.group)
+if (!isAdmin) return await reply(mess.only.admin)
 if (!isUrl(args[0]) && !args[0].includes('whatsapp.com')) return reply('*Este no es un link de WhatsApp...*')
 if (!q) return reply('*Y el link??...Pajero*')
 sp = args[0]
@@ -4910,13 +5049,15 @@ await reply(`Usuario mínimo de para poder acceder a la base de datos`)
 break		
 		
 case 'reglas':
-reply(`*Hola, estas son las reglas*\n\n1- _Manten una formalidad respetuosa_\n2- _Si vas a añadir el bot a algun grupo, verifica que el grupo cumpla con los requisitos que son tener minimo 5 personas_\n3- _❌NO HAGAS SPAM DE COMANDOS❌_ *Esto es enserio, puedes hacer que el bot se apage*\n4- _📵NO HAGAS LLAMADAS POR WHATSAPP AL PROPIETARIO DEL BOT📵_ *Seras bloqueado inmediatamente*\n5- _🕐Espera el tiempo nesesario cuando pidas alguna funcion, 
-ya que algunas tardan en realizarse, no vuelvas a pedir el comando nuevamente hasta que te llege un mensaje de error_\n\nLee las reglas y cumplelas, no te quieras hacer el chistoso, por que no lo eres y ni te sale, asi que porfavor respeta las reglas.`)
+samu330.updatePresence(from, Presence.composing)  		
+mdata = await samu330.groupMetadata(from)
+reply(`_*「 Hola, @${pushname} 」*_\n_*Bienvenido a 「 ${mdata.subject} 」*_\n\n_*Estas son la reglas para el uso del Bot :*_\n\n1- No hablar ni pedir comandos en privado, al Bot.\n2- _*❌No hagas spam de comandos❌*_\nEsto es enserio, el Bot puede saturarse y desconectarse.\n3- _*📵No hagas llamadas al BOT📵*_\nSerás bloqueado inmediatamente.\n4- _🕐Espera el tiempo nesesario cuando pidas alguna funcion. 
+Ya que algunas tardan en realizarse._\n\n5- _*IMPORTANTE!!!*_\nEscribe bien los commandos : *${prefix}comando (Ningún espacio entre el prefijo y el comando en minúscula)*_\n\n*Lee bien las reglas y cúmplelas, no te quieras pasar de pendejo o serás baneado del uso de BOT.*`)
 break
 case 'rules':
 samu330.updatePresence(from, Presence.composing)  		
 mdata = await samu330.groupMetadata(from)
-reply(`_*「 Hola, @${pushname} 」*_\n_*Bienvenido a 「 ${mdata.subject} 」*_\n\n_*Esperamos que te la pases a gusto en este grupo*_\n_*Recuerda siempre seguir las reglas😉*_\n\n${mdata.desc}`)
+reply(`_*「 Hola, @${pushname} 」*_\n_*Bienvenido a 「 ${mdata.subject} 」*_\n\n${mdata.desc}`)
 addFilter(from)
 addLevelingXp(sender, 20)
 break
@@ -5168,7 +5309,7 @@ sendFileFromUrl(res1.all[0].image, image, {quoted: sam, caption: thumbInfo})
 res1 = await y2mateA(res1.all[0].url).catch(e => {
 pr21 = getJson(`https://api.zeks.xyz/api/ytmp3?apikey=hamilton20&url=${res1.all[0].url}`)	
 reply(`_[ ! ] Lo siento, su descarga no pudo ser completada_\n\n*Realizando busqueda en el servidor 2*`)
-sendFileFromUrl(pr21.result.url_audio, audio, {quoted: faud, mimetype: 'audio/mp4', filename: res1[0].output})
+sendFileFromUrl(pr21.result.url_audio, audio, {quoted: sam, mimetype: 'audio/mp4', filename: res1[0].output})
 //sendFileFromUrl(pr21.result.url_audio, audio, {quoted: faud, mimetype: 'audio/mp4', ptt: true, filename: res1[0].output})
 })
 sendFileFromUrl(res1[0].link, audio, {quoted: sam, mimetype: 'audio/mp4', filename: res1[0].output})
@@ -7617,6 +7758,7 @@ break
 
 case 'antileg':
 if (!isGroup) return reply('Este comando es solo para grupos')
+if (!isAdmin) return await reply(mess.only.admin)
 if (args.length < 1) return reply('escriba *1* para activar')
 if (args[0] === '1') {
 if (isAntiLeg) return reply('Ya esta activo')
@@ -8217,7 +8359,7 @@ if (!isAllaud) return
 }
 //////////////	
 const morestick = ["Abasho", "Lean las reglas", "Nel mijo", "Se la coge", "Soy inevitable", "Le mete el brazo", 
-		  "Fbi", "X el chikito"]	
+		  "Fbi", "X el chikito", "Nel pastel", "Desprecio1", "Desprecio2", "Desprecio3"]	
 
 if (isLalelilolu){
 if (!isAllaud) return
