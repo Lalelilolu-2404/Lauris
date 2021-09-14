@@ -2416,7 +2416,7 @@ ${bodyM} rango: ${rango}
 ┖┈┈┈┈┈┈┈┈┈┈┈┈┈┈
 Son las *${hora}*\nHoy es *${week1}  ${calender1}*
 ===========================================
-╟╼╾┤*INFORMACION!?*├╼╾
+╟╼╾┤INFORMACION!?├╼╾
 
 ${bodyM} _Reglas del BOT_: *${prefix}reglas*
 ${bodyM} _Reglas del Grupo_: *${prefix}rules* 
@@ -2424,7 +2424,7 @@ ${bodyM} *Prefijo :* [ *${prefix}* ]
 ${bodyM} ${prefix}nivel
 ${bodyM} ${prefix}lb (ranked)
 ===========================================
-╟╼╾┤*COMANDOS ADMINS*├╼╾
+╟╼╾┤COMANDOS ADMINS├╼╾
 
 ${bodyM} ${prefix}kick + ⌜Tag @⌟
 ${bodyM} ${prefix}promote + ⌜Tag @⌟
@@ -2434,7 +2434,7 @@ ${bodyM} ${prefix}link
 ${bodyM} ${prefix}grupo abrir/cerrar
 ${bodyM} ${prefix}inspeccionar + ⌜link⌟
 
-${brr} *SWITCH COMANDOS*
+${brr} SWITCH COMANDOS
 
 ${bodyM} ${prefix}antimedia 1/0
 ${bodyM} ${prefix}antigp 1/0
@@ -2444,7 +2444,7 @@ ${bodyM} ${prefix}allaud 1/0 (audios)
 ${bodyM} ${prefix}autostick 1/0
 ${bodyM} ${prefix}antibad 1/0 F
 
-${brr} *TAG'S*
+${brr} TAG'S
 
 ${bodyM} ${prefix}tagall + ⌜Texto⌟
 ${bodyM} ${prefix}hidetag + ⌜Texto⌟
@@ -2453,7 +2453,7 @@ ${bodyM} ${prefix}imagetag + ⌜ImageQuoted⌟
 ${bodyM} ${prefix}stickertag + ⌜Tag Sticker⌟
 ${bodyM} ${prefix}totag
 ===========================================
-╟╼╾┤*COMANDOS OWNER*├╼╾
+╟╼╾┤COMANDOS OWNER├╼╾
 
 ${bodyM} ${prefix}public
 ${bodyM} ${prefix}self
@@ -2463,7 +2463,7 @@ ${bodyM} ${prefix}unban
 ${bodyM} ${prefix}banchat 1/0
 ${bodyM} ${prefix}apagar
 ===========================================
-╟╼╾┤*MUSICA/VIDEO Y OTROS*├╼╾_
+╟╼╾┤MUSICA/VIDEO Y OTROS├╼╾_
 
 ${bodyM} ${prefix}play + ⌜Texto / link⌟
 ${bodyM} ${prefix}letra/lirik + ⌜Texto⌟
@@ -2473,7 +2473,7 @@ ${bodyM} ${prefix}idiomas (Code para ${prefix}tts)
 ${bodyM} ${prefix}ytsearch + ⌜Texto⌟
 ${bodyM} ${prefix}google + ⌜Texto⌟
 
-${brr} 🎧*EFECTOS AUDIO*🎧
+${brr} 🎧EFECTOS AUDIO🎧
 
 ${bodyM} ${prefix}robot + ⌜Tag audio⌟
 ${bodyM} ${prefix}fantasma + ⌜Tag audio⌟
@@ -2487,7 +2487,7 @@ ${bodyM} ${prefix}imut + ⌜Tag audio⌟
 ${bodyM} ${prefix}hode + ⌜Tag audio⌟
 ${bodyM} ${prefix}+volumen + ⌜Tag audio⌟
 
-${brr} 🎞*EFECTOS VIDEO*🎞
+${brr} 🎞EFECTOS VIDEO🎞
 
 ${bodyM} ${prefix}reversa + ⌜Tag video⌟
 ${bodyM} ${prefix}vrapido + ⌜Tag video⌟
@@ -2496,7 +2496,7 @@ ${bodyM} ${prefix}mirror + ⌜Tag video⌟
 ${bodyM} ${prefix}vefecto + ⌜Tag video⌟
 ${bodyM} ${prefix}sinsonido + ⌜Tag video⌟
 
-${brr} *OTROS*
+${brr} OTROS
 
 ${bodyM} ${prefix}runtime
 ${bodyM} ${prefix}wame
@@ -2506,7 +2506,7 @@ ${bodyM} ${prefix}calc
 ${bodyM} ${prefix}zalgo + ⌜Texto⌟
 ${bodyM} ${prefix}contar + ⌜Texto⌟
 ===========================================
-╟╼╾┤*LOGOS Y MENU +18*├╼╾
+╟╼╾┤LOGOS Y MENU +18├╼╾
 
 ${bodyM} ${prefix}menu18 (Comandos +18) 
 ${bodyM} ${prefix}menulog (Comandos de logos)
@@ -2515,7 +2515,7 @@ ${bodyM} ${prefix}waifu
 ${bodyM} ${prefix}belle
 ${bodyM} ${prefix}gatitas
 ===========================================
-╟╼╾┤*STICKERS/IMG'S*├╼╾
+╟╼╾┤STICKERS/IMG'S├╼╾
 
 ${bodyM} ${prefix}attp + ⌜Texto⌟
 ${bodyM} ${prefix}sticker + ⌜Tag image⌟
@@ -2530,7 +2530,7 @@ ${bodyM} ${prefix}gay + ⌜Tag @⌟
 ${bodyM} ${prefix}mimitos + ⌜Tag @⌟
 ${bodyM} ${prefix}smeme + ⌜T1⌟ + ⌜T2⌟ (Tag Image) 
 
-${brr} *IMAGENES*
+${brr} IMAGENES
 
 ${bodyM} ${prefix}imagen + ⌜Texto⌟
 ${bodyM} ${prefix}wallpaper
@@ -2547,24 +2547,24 @@ ${bodyM} ${prefix}animeme
 ⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 ⌜⸸⁶Lalelilolu⁹†⛧⌟ `  
 
-const menuplay = `⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
-╟╼╾┤*INTERACCION/INFO y JUEGOS*├╼╾
+const menuplay = `⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
+╟╼╾┤INTERACCION/INFO y JUEGOS├╼╾
 
-${brr} *JUEGOS*
+${brr} JUEGOS
 
-${bodyM} ${prefix}jugar _Juega con el Bot:_
-${bodyM} ${prefix}ttt + ⌜Tag @⌟ _Tictactoe_
-${bodyM} ${prefix}delttc _Cerrar sesión de juego ttt_
-${bodyM} ${prefix}lucky _Casino_ 
-${bodyM} ${prefix}dado # _Dados_ 
-${bodyM} ${prefix}amgplay _Among'us_ 
+${bodyM} ${prefix}jugar (Juega con el Bot)
+${bodyM} ${prefix}ttt + ⌜Tag @⌟ (Tictactoe/Michi)
+${bodyM} ${prefix}delttc (Cerrar sesión de juego ttt)
+${bodyM} ${prefix}lucky (10 partidas free x día) 
+${bodyM} ${prefix}dado # (Tirar dados) 
+${bodyM} ${prefix}amgplay (Among'us) 
 ${bodyM} ${prefix}emparejar (Parejas random)
 ${bodyM} ${prefix}emparejarme (Busca tu pareja)
 ${bodyM} ${prefix}casar + ⌜Tag @⌟
 ${bodyM} ${prefix}top5 + ⌜Texto⌟
 ${bodyM} ${prefix}calumnia + ⌜@tag⌟ | Text | Reply
 
-${brr} *INTERACCION CON EL BOT*
+${brr} INTERACCION CON EL BOT
 
 ${bodyM} ${prefix}audios (Audios)
 ${bodyM} ${prefix}otak (Otak_audios)
@@ -2574,12 +2574,12 @@ ${bodyM} ${prefix}simi + ⌜Texto o pregunta⌟
 ${bodyM} ${prefix}pr _Pregunta_ 
 ${bodyM} ${prefix}setprof (Perfil del menú)
 
-${brr} *INFO*
+${brr} INFO
 
 ${bodyM} ${prefix}getpic + ⌜Tag @⌟
 ${bodyM} ${prefix}getbio + ⌜Tag @⌟
 ${bodyM} ${prefix}soyyo
-⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
+⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 `	             
 /**
 samu330.sendMessage(from, {jpegThumbnail: fs.readFileSync('./src/nsfw.jpg')}, MessageType.liveLocation,
@@ -2591,8 +2591,17 @@ samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${Menu18}`,
 					  contextInfo: { mentionedJid: [sender], "forwardingScore": 9999, "isForwarded": true }})              
 samu330.sendMessage(from, fs.readFileSync('./src/assistant.jpg'), image, {quoted: ftoko, caption: Menu, thumbnail: fs.readFileSync('./src/assistant.jpg'), sendEphemeral: true})
 **/
+const fmenu = {
+key:
+{ fromMe: false,
+participant: `33749258491@s.whatsapp.net`, ...(from ?
+{ remoteJid: "status@broadcast" } : {}) },
+message: { "videoMessage": { "caption":"Lalelilolu ᵈᵃʳʸ⛥", 'jpegThumbnail': 
+			    fs.readFileSync('./src/fake.jpg')}}
+}
+
 samu330.sendMessage(from, `${xmenux}`, MessageType.text, {
-	quoted : ftoko, 
+	quoted : fmenu, 
 	contextInfo: {externalAdReply :{
 	title: `BIENVENIDO A :\n「 ${mdata.subject} 」`,
 	//body: '',
@@ -2604,7 +2613,7 @@ setTimeout(() => {
 samu330.sendMessage(from, `${menuplay}`, MessageType.text, {
 	//quoted : fjeux, 
 	contextInfo: {externalAdReply :{
-	title: `「 JEUGOS Y MAS AQUI 」\nUwu ${pushname}↴`,
+	title: `「 JUEGOS Y MAS AQUI 」\n${pushname}↴`,
 	//body: '',
 	//sourceUrl : `${linkx}`, 
 	thumbnail : fs.readFileSync('./src/jeux.jpg')}}}
