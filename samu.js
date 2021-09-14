@@ -2393,7 +2393,7 @@ addFilter(from)
 addLevelingXp(sender, 20)
 break	
 **/		
-case 'menuxx':)	
+case 'menuxx':
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 uptime = process.uptime()
 samu330.updatePresence(from, Presence.composing)  		
