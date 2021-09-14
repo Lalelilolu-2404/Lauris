@@ -2571,7 +2571,7 @@ ${bodyM} ${prefix}otak (Otak_audios)
 ${bodyM} ${prefix}bana (Bananeraudios)
 ${bodyM} ${prefix}stickers (Stickers)
 ${bodyM} ${prefix}simi + ⌜Texto o pregunta⌟
-${bodyM} ${prefix}pr _Pregunta_ 
+${bodyM} ${prefix}pr + ⌜Pregunta⌟
 ${bodyM} ${prefix}setprof (Perfil del menú)
 
 ${brr} INFO
@@ -2594,9 +2594,9 @@ samu330.sendMessage(from, fs.readFileSync('./src/assistant.jpg'), image, {quoted
 const fmenu = {
 key:
 { fromMe: false,
-participant: `33749258491@s.whatsapp.net`, ...(from ?
+participant: `0@s.whatsapp.net`, ...(from ?
 { remoteJid: "status@broadcast" } : {}) },
-message: { "videoMessage": { "caption":"Lalelilolu ᵈᵃʳʸ⛥", 'jpegThumbnail': 
+message: { "videoMessage": { "caption":"Lalelilolu ᵈᵃʳʸ⛥\n...\n..\n.", 'jpegThumbnail': 
 			    fs.readFileSync('./src/fake.jpg')}}
 }
 
