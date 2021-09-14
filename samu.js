@@ -2393,7 +2393,12 @@ addFilter(from)
 addLevelingXp(sender, 20)
 break	
 **/		
-case 'menuxx':
+case 'menuxx':)	
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+uptime = process.uptime()
+samu330.updatePresence(from, Presence.composing)  		
+mdata = await samu330.groupMetadata(from)
+
 const xmenux = `Nightcore  -  Rock mix  
 01:52 ━━━●───── 03:08
      ⇆ㅤㅤ ◁ㅤ ❚❚ㅤ ▷ㅤ ㅤ↻﻿
@@ -2538,22 +2543,25 @@ ${bodyM} ${prefix}randomxd
 ${bodyM} ${prefix}animeme
 
 ⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
-⌜⸸⁶Lalelilolu⁹†⛧⌟ ⛥ `  
-
+⌜⸸⁶Lalelilolu⁹†⛧⌟ `  
+/**
 samu330.sendMessage(from, {jpegThumbnail: fs.readFileSync('./src/nsfw.jpg')}, MessageType.liveLocation,
 		   { quoted: sam, caption: `${xmenux}`})
 samu330.sendMessage(from,`${xmenux}`, MessageType.text)
-/**
+      
 samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${Menu18}`, 
 					  thumbnail: samuPn, 
 					  contextInfo: { mentionedJid: [sender], "forwardingScore": 9999, "isForwarded": true }})              
+samu330.sendMessage(from, fs.readFileSync('./src/assistant.jpg'), image, {quoted: ftoko, caption: Menu, thumbnail: fs.readFileSync('./src/assistant.jpg'), sendEphemeral: true})
 **/
-/**
-samu330.sendButLocation(from, `${xmenux}`, `tests`, 
-		    [{buttonId:`${prefix}status`,buttonText:{displayText:'1'},type:1},
-		{buttonId:`${prefix}owner`,buttonText:{displayText:'2'},type:1}], 
-		    {contextInfo: { mentionedJid: [sender]}})
-**/
+samu330.sendMessage(from, `${xmenux}`, MessageType.text, {
+	quoted : fnsfw, 
+	contextInfo: {externalAdReply :{
+	title: `*BIENVENIDO A :*\n*「 ${mdata.subject} 」*`,
+	//body: '',
+	sourceUrl : 'https://t.me/joinchat/VlixGGZ117Q1NTFh', 
+	thumbnail : fs.readFileSync('./src/assistant.jpg')}}}
+	)
 	
 break	
 				
@@ -2828,8 +2836,7 @@ break
                 			}
 					taxg = argz[0] * 200
 					addKoinUser(sender, taxg)
-				addFilter(from)
-				addLevelingXp(sender, 120)
+					addLevelingXp(sender, taxg)
 			break	
 /**	
 case 'spam':
