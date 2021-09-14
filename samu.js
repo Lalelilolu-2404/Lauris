@@ -1905,7 +1905,7 @@ quoted: floc})
 addFilter(from)
 addLevelingXp(sender, 20)		
 break
-case 'menu6':
+case 'menu18':
 samu330.updatePresence(from, Presence.composing)
 //if (!isRegister) return reply(mess.only.usrReg)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
@@ -1963,11 +1963,11 @@ ${bodyM} ${prefix}analg
 `
 addFilter(from)
 addLevelingXp(sender, 20)		
-samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${Menu18}`, thumbnail: samuPn, contextInfo: { mentionedJid: [sender], "forwardingScore": 9999, "isForwarded": true }})              
+samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${Menu18}`, thumbnail: samuPn, contextInfo: { mentionedJid: [sender]}})              
 break
 /////////			
 		
-case 'menu7':
+case 'menulog':
 samu330.updatePresence(from, Presence.composing)
 //if (!isRegister) return reply(mess.only.usrReg)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
@@ -2398,6 +2398,8 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
 uptime = process.uptime()
 samu330.updatePresence(from, Presence.composing)  		
 mdata = await samu330.groupMetadata(from)
+var linkx = await wa.getGroupInvitationCode(from)
+brr = `★᭄ꦿ`
 
 const xmenux = `Nightcore  -  Rock mix  
 01:52 ━━━●───── 03:08
@@ -2414,13 +2416,15 @@ ${bodyM} rango: ${rango}
 ┖┈┈┈┈┈┈┈┈┈┈┈┈┈┈
 Son las *${hora}*\nHoy es *${week1}  ${calender1}*
 ===========================================
+╟╼╾┤*INFORMACION!?*├╼╾
+
 ${bodyM} _Reglas del BOT_: *${prefix}reglas*
 ${bodyM} _Reglas del Grupo_: *${prefix}rules* 
 ${bodyM} *Prefijo :* [ *${prefix}* ]
 ${bodyM} ${prefix}nivel
 ${bodyM} ${prefix}lb (ranked)
 ===========================================
-_*COMANDOS ADMINS*_
+╟╼╾┤*COMANDOS ADMINS*├╼╾
 
 ${bodyM} ${prefix}kick + ⌜Tag @⌟
 ${bodyM} ${prefix}promote + ⌜Tag @⌟
@@ -2430,7 +2434,8 @@ ${bodyM} ${prefix}link
 ${bodyM} ${prefix}grupo abrir/cerrar
 ${bodyM} ${prefix}inspeccionar + ⌜link⌟
 
-_*SWITCH COMANDOS*_
+${brr} *SWITCH COMANDOS*
+
 ${bodyM} ${prefix}antimedia 1/0
 ${bodyM} ${prefix}antigp 1/0
 ${bodyM} ${prefix}+18 1/0
@@ -2439,18 +2444,16 @@ ${bodyM} ${prefix}allaud 1/0 (audios)
 ${bodyM} ${prefix}autostick 1/0
 ${bodyM} ${prefix}antibad 1/0 F
 
-_*TAG'S*_
+${brr} *TAG'S*
+
 ${bodyM} ${prefix}tagall + ⌜Texto⌟
 ${bodyM} ${prefix}hidetag + ⌜Texto⌟
 ${bodyM} ${prefix}notificar + ⌜Texto⌟
 ${bodyM} ${prefix}imagetag + ⌜ImageQuoted⌟
 ${bodyM} ${prefix}stickertag + ⌜Tag Sticker⌟
 ${bodyM} ${prefix}totag
-${bodyM} ${prefix}waifu
-${bodyM} ${prefix}belle
-${bodyM} ${prefix}gatitas
 ===========================================
-_*COMANDOS OWNER*_
+╟╼╾┤*COMANDOS OWNER*├╼╾
 
 ${bodyM} ${prefix}public
 ${bodyM} ${prefix}self
@@ -2460,16 +2463,40 @@ ${bodyM} ${prefix}unban
 ${bodyM} ${prefix}banchat 1/0
 ${bodyM} ${prefix}apagar
 ===========================================
-_*MUSICA Y OTROS*_
+╟╼╾┤*MUSICA/VIDEO Y OTROS*├╼╾_
 
 ${bodyM} ${prefix}play + ⌜Texto / link⌟
 ${bodyM} ${prefix}letra/lirik + ⌜Texto⌟
 ${bodyM} ${prefix}playvid + ⌜Texto / link⌟
-${bodyM} ${prefix}attp + ⌜Texto⌟
 ${bodyM} ${prefix}tts + ⌜Code⌟ + ⌜Texto⌟
 ${bodyM} ${prefix}idiomas (Code para ${prefix}tts)
 ${bodyM} ${prefix}ytsearch + ⌜Texto⌟
 ${bodyM} ${prefix}google + ⌜Texto⌟
+
+${brr} 🎧*EFECTOS AUDIO*🎧
+
+${bodyM} ${prefix}robot + ⌜Tag audio⌟
+${bodyM} ${prefix}fantasma + ⌜Tag audio⌟
+${bodyM} ${prefix}grave + ⌜Tag audio⌟
+${bodyM} ${prefix}bass + ⌜Tag audio⌟
+${bodyM} ${prefix}ardilla + ⌜Tag audio⌟
+${bodyM} ${prefix}trigger + ⌜Tag audio⌟
+${bodyM} ${prefix}lento + ⌜Tag audio⌟
+${bodyM} ${prefix}rapido + ⌜Tag audio⌟
+${bodyM} ${prefix}imut + ⌜Tag audio⌟
+${bodyM} ${prefix}hode + ⌜Tag audio⌟
+${bodyM} ${prefix}+volumen + ⌜Tag audio⌟
+
+${brr} 🎞*EFECTOS VIDEO*🎞
+
+${bodyM} ${prefix}reversa + ⌜Tag video⌟
+${bodyM} ${prefix}vrapido + ⌜Tag video⌟
+${bodyM} ${prefix}vlento + ⌜Tag video⌟
+${bodyM} ${prefix}mirror + ⌜Tag video⌟
+${bodyM} ${prefix}vefecto + ⌜Tag video⌟
+${bodyM} ${prefix}sinsonido + ⌜Tag video⌟
+
+${brr} *OTROS*
 
 ${bodyM} ${prefix}runtime
 ${bodyM} ${prefix}wame
@@ -2479,36 +2506,18 @@ ${bodyM} ${prefix}calc
 ${bodyM} ${prefix}zalgo + ⌜Texto⌟
 ${bodyM} ${prefix}contar + ⌜Texto⌟
 ===========================================
-_*LOGOS Y MENU +18*_
+╟╼╾┤*LOGOS Y MENU +18*├╼╾
 
-${bodyM} ${prefix}menu6 (Comandos +18) 
-${bodyM} ${prefix}menu7 (Comandos de logos)
+${bodyM} ${prefix}menu18 (Comandos +18) 
+${bodyM} ${prefix}menulog (Comandos de logos)
+${bodyM} ${prefix}crealogos (+logos)
+${bodyM} ${prefix}waifu
+${bodyM} ${prefix}belle
+${bodyM} ${prefix}gatitas
 ===========================================
-_*JUEGOS*_
+╟╼╾┤*STICKERS/IMG'S*├╼╾
 
-${bodyM} ${prefix}jugar _Juega con el Bot:_
-${bodyM} ${prefix}ttt + ⌜Tag @⌟ _Tictactoe_
-${bodyM} ${prefix}delttc _Cerrar sesión de juego ttt_
-${bodyM} ${prefix}lucky _Casino_ 
-${bodyM} ${prefix}dado # _Dados_ 
-${bodyM} ${prefix}amgplay _Among'us_ 
-===========================================
-_*INTERACCION CON EL BOT*_
-
-${bodyM} ${prefix}audios (Audios)
-${bodyM} ${prefix}otak (Otak_audios)
-${bodyM} ${prefix}bana (Bananeraudios)
-${bodyM} ${prefix}stickers (Stickers)
-${bodyM} ${prefix}simi + ⌜Texto o pregunta⌟
-${bodyM} ${prefix}pr _Pregunta_ 
-${bodyM} ${prefix}setprof (Perfil del menú)
-===========================================
-_*FUN*_
-
-${bodyM} ${prefix}getpic + ⌜Tag @⌟
-${bodyM} ${prefix}getbio + ⌜Tag @⌟
-${bodyM} ${prefix}soyyo
-
+${bodyM} ${prefix}attp + ⌜Texto⌟
 ${bodyM} ${prefix}sticker + ⌜Tag image⌟
 ${bodyM} ${prefix}robar Author | Pack  + ⌜@stick⌟
 ${bodyM} ${prefix}toimg + ⌜Tag sticker⌟
@@ -2521,13 +2530,7 @@ ${bodyM} ${prefix}gay + ⌜Tag @⌟
 ${bodyM} ${prefix}mimitos + ⌜Tag @⌟
 ${bodyM} ${prefix}smeme + ⌜T1⌟ + ⌜T2⌟ (Tag Image) 
 
-${bodyM} ${prefix}emparejar (Parejas random)
-${bodyM} ${prefix}emparejarme (Busca tu pareja)
-${bodyM} ${prefix}casar + ⌜Tag @⌟
-${bodyM} ${prefix}top5 + ⌜Texto⌟
-${bodyM} ${prefix}calumnia + ⌜@tag⌟ | Text | Reply
-===========================================
-_*IMAGENES*_
+${brr} *IMAGENES*
 
 ${bodyM} ${prefix}imagen + ⌜Texto⌟
 ${bodyM} ${prefix}wallpaper
@@ -2541,9 +2544,43 @@ ${bodyM} ${prefix}nekoxx
 ${bodyM} ${prefix}imgrandom
 ${bodyM} ${prefix}randomxd
 ${bodyM} ${prefix}animeme
-
 ⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 ⌜⸸⁶Lalelilolu⁹†⛧⌟ `  
+
+const menuplay = `⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
+╟╼╾┤*INTERACCION/INFO y JUEGOS*├╼╾
+
+${brr} *JUEGOS*
+
+${bodyM} ${prefix}jugar _Juega con el Bot:_
+${bodyM} ${prefix}ttt + ⌜Tag @⌟ _Tictactoe_
+${bodyM} ${prefix}delttc _Cerrar sesión de juego ttt_
+${bodyM} ${prefix}lucky _Casino_ 
+${bodyM} ${prefix}dado # _Dados_ 
+${bodyM} ${prefix}amgplay _Among'us_ 
+${bodyM} ${prefix}emparejar (Parejas random)
+${bodyM} ${prefix}emparejarme (Busca tu pareja)
+${bodyM} ${prefix}casar + ⌜Tag @⌟
+${bodyM} ${prefix}top5 + ⌜Texto⌟
+${bodyM} ${prefix}calumnia + ⌜@tag⌟ | Text | Reply
+
+${brr} *INTERACCION CON EL BOT*
+
+${bodyM} ${prefix}audios (Audios)
+${bodyM} ${prefix}otak (Otak_audios)
+${bodyM} ${prefix}bana (Bananeraudios)
+${bodyM} ${prefix}stickers (Stickers)
+${bodyM} ${prefix}simi + ⌜Texto o pregunta⌟
+${bodyM} ${prefix}pr _Pregunta_ 
+${bodyM} ${prefix}setprof (Perfil del menú)
+
+${brr} *INFO*
+
+${bodyM} ${prefix}getpic + ⌜Tag @⌟
+${bodyM} ${prefix}getbio + ⌜Tag @⌟
+${bodyM} ${prefix}soyyo
+⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
+`	             
 /**
 samu330.sendMessage(from, {jpegThumbnail: fs.readFileSync('./src/nsfw.jpg')}, MessageType.liveLocation,
 		   { quoted: sam, caption: `${xmenux}`})
@@ -2555,14 +2592,26 @@ samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${Menu18}`,
 samu330.sendMessage(from, fs.readFileSync('./src/assistant.jpg'), image, {quoted: ftoko, caption: Menu, thumbnail: fs.readFileSync('./src/assistant.jpg'), sendEphemeral: true})
 **/
 samu330.sendMessage(from, `${xmenux}`, MessageType.text, {
-	quoted : fnsfw, 
+	quoted : ftoko, 
 	contextInfo: {externalAdReply :{
-	title: `*BIENVENIDO A :*\n*「 ${mdata.subject} 」*`,
+	title: `BIENVENIDO A :\n「 ${mdata.subject} 」`,
 	//body: '',
-	sourceUrl : 'https://t.me/joinchat/VlixGGZ117Q1NTFh', 
+	sourceUrl : `${linkx}`, 
 	thumbnail : fs.readFileSync('./src/assistant.jpg')}}}
 	)
-	
+		
+setTimeout(() => {
+samu330.sendMessage(from, `${menuplay}`, MessageType.text, {
+	//quoted : fjeux, 
+	contextInfo: {externalAdReply :{
+	title: `「 JEUGOS Y MAS AQUI 」\nUwu ${pushname}↴`,
+	//body: '',
+	//sourceUrl : `${linkx}`, 
+	thumbnail : fs.readFileSync('./src/jeux.jpg')}}}
+	)	
+}, 3000)
+addFilter(from)
+addLevelingXp(sender, 20)		
 break	
 				
 ////////		
