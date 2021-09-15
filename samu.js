@@ -1,4 +1,4 @@
-//============ Death ============\\
+//============ NyanBot ============\\
 // + Favor de mantener este codigo
 //   tal y como esta.
 // + Si modificaras, manten los
