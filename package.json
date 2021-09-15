@@ -7,10 +7,10 @@
     "lib": "lib"
   },
   "dependencies": {
-    "@adiwajshing/baileys": "^3.5.0",
+    "@adiwajshing/baileys": "github:adiwajshing/baileys0",
     "form-data": "^4.0.0",
     "crypto-js": "^4.0.0",
-    "async": "^2.4.1",
+    "async": "^3.2.0",
     "hxz-api": "^1.0.1",
     "performance-now": "^2.1.0",
     "dotenv": "^8.2.0",
