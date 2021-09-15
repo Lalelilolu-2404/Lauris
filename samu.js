@@ -21,8 +21,9 @@ const {
   WA_DEFAULT_EPHEMERAL,
   mentionedJid,
   Browsers,
-  processTime
-} = require("@adiwajshing/baileys")
+  processTime,
+  whatsappID,
+} = require('@adiwajshing/baileys')
 const moment = require("moment-timezone");
 const os = require("os");
 const imageToBase64 = require('image-to-base64');
