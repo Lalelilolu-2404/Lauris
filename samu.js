@@ -820,17 +820,17 @@ const isUser2 = checkRegisteredUser2(sender)
               ),{ waitForAck: true }) 
           }
 
-          const sendButMessage = (id, text1, desc1, but = [], options = {}) => {
-            const buttonMessage = {
-            contentText: text1,
-            footerText: desc1,
-            buttons: but,
-            headerType: 1
-            }
-            samu330.sendMessage(id, buttonMessage, MessageType.buttonsMessage, options)
-            }
+	const sendButMessage = (id, text1, desc1, but = [], options = {}) => {
+		const buttonMessage = {
+		contentText: text1,
+		footerText: desc1,
+		buttons: but,
+		headerType: 1
+		}
+		samu330.sendMessage(id, buttonMessage, MessageType.buttonsMessage, options)
+		}
 
-        const sendButLocation = async (id, text1, desc1, gam1, but = [], options = {}) => {
+	const sendButLocation = async (id, text1, desc1, gam1, but = [], options = {}) => {
                 kma = gam1
                 mhan = await samu330.prepareMessage(from, kma, location)
                 const buttonMessages = {
@@ -842,6 +842,19 @@ const isUser2 = checkRegisteredUser2(sender)
                 }
                 samu330.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
                 }
+	
+		const sendButImage = async(id, text1, desc1, gam1, but = [], options = {}) => {
+		kma = gam1
+		mhan = await samu330.prepareMessage(from, kma, image)
+		const buttonMessages = {
+		imageMessage: mhan.message.imageMessage,
+		contentText: text1,
+		footerText: desc1,
+		buttons: but,
+		headerType: 4
+		}
+		samu330.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
+		}
 
 	/**
 	const noreg = {
@@ -1023,21 +1036,21 @@ message: {
 contextInfo: {
 mentionedJid: [sender]}
 	    
-const menuxxx = `_*NORPO...*_\t\t\t\t\t\t\t_*GIFS*_	
-${bodyM} ${prefix}lesbian\t\t\t\t\t\t\t${bodyM} ${prefix}pussyg 
-${bodyM} ${prefix}tetas\t\t\t\t\t\t\t\t${bodyM} ${prefix}boobsg
-${bodyM} ${prefix}ass\t\t\t\t\t\t\t\t\t${bodyM} ${prefix}analg
+const menuxxx = `_*NORPO...*_             _*GIFS*_	
+${bodyM} ${prefix}lesbian            ${bodyM} ${prefix}pussyg 
+${bodyM} ${prefix}tetas              ${bodyM} ${prefix}boobsg
+${bodyM} ${prefix}ass                ${bodyM} ${prefix}analg
 ${bodyM} ${prefix}pussy
 _*HENTAI :3*_
-${bodyM} ${prefix}xwaifu\t\t\t\t\t\t\t${bodyM} ${prefix}xneko
-${bodyM} ${prefix}trap\t\t\t\t\t\t\t\t\t${bodyM} ${prefix}blow
-${bodyM} ${prefix}hentai\t\t\t\t\t\t\t${bodyM} ${prefix}ahegao
-${bodyM} ${prefix}xboobs\t\t\t\t\t\t\t${bodyM} ${prefix}xass
-${bodyM} ${prefix}muslos\t\t\t\t\t\t\t${bodyM} ${prefix}patas
-${bodyM} ${prefix}futa\t\t\t\t\t\t\t\t\t${bodyM} ${prefix}sidebobs
-${bodyM} ${prefix}blowjob\t\t\t\t\t\t${bodyM} ${prefix}armpits
-${bodyM} ${prefix}femdom\t\t\t\t\t\t${bodyM} ${prefix}pussyimg
-${bodyM} ${prefix}oppai\t\t\t\t\t\t\t\t${bodyM} ${prefix}cumimg`
+${bodyM} ${prefix}xwaifu             ${bodyM} ${prefix}xneko
+${bodyM} ${prefix}trap               ${bodyM} ${prefix}blow
+${bodyM} ${prefix}hentai             ${bodyM} ${prefix}ahegao
+${bodyM} ${prefix}xboobs             ${bodyM} ${prefix}xass
+${bodyM} ${prefix}muslos             ${bodyM} ${prefix}patas
+${bodyM} ${prefix}futa               ${bodyM} ${prefix}sidebobs
+${bodyM} ${prefix}blowjob            ${bodyM} ${prefix}armpits
+${bodyM} ${prefix}femdom             ${bodyM} ${prefix}pussyimg
+${bodyM} ${prefix}oppai              ${bodyM} ${prefix}cumimg`
 
 
 		if (!isGroup && isCmd) console.log(chalk.greenBright("├"), chalk.keyword("aqua")("[ COMMANDO ]"), chalk.whiteBright(typeMessage), chalk.greenBright("de"), chalk.keyword("yellow")(pushname))
@@ -1412,10 +1425,10 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 				if (test.includes(`${prefix}matartrip`)){
 					if (!isGroup) return reply(mess.only.group)
 					susd = `⚠️!! @${tripamg[2].split('@')[0]} was killed!!`
-					k = Math.floor(Math.random() * 17) + 1
-					imgkill = fs.readFileSync(`./temp/amongus/kill${k}.JPG`)
+					var k = Math.floor(Math.random() * 17) + 1
+					imgkilled = fs.readFileSync(`./temp/amongus/kill${k}.JPG`)
 					
-					samu330.sendMessage(from, {jpegThumbnail: imgkill}, MessageType.liveLocation,{ quoted: fjeux})
+					samu330.sendMessage(from, {jpegThumbnail: imgkilled}, MessageType.liveLocation,{ quoted: fjeux})
 					samu330.sendMessage(from, susd, MessageType.text, {contextInfo: { mentionedJid: [tripamg[2]]}})
 					/**
 					samu330.sendMessage(from, imgkill, MessageType.image, {
