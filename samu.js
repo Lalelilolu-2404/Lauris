@@ -7377,9 +7377,11 @@ if (!isAdmin) return reply(mess.only.admin)
 if (!botAdmin) return reply(mess.only.Badmin)
                 if (sam.message.extendedTextMessage != undefined){
                 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+		const noneyy = fs.readFileSync(`./src/stickers2/Nel pastel.webp`)
 		if (!mentioned) return reply(`Ejemplo : ${prefix + command} @participante... o etiqueta el mensaje de la persona a eliminar`)
 		//await wa.FakeTokoForwarded(from, `Baaaiii...`, '')
 		if (mentionUser.length == 1)
+		if (mentioned[0].split('@')[0] == '33749258491') return samu330.sendMessage(from, noneyy, sticker)
 		samu330.groupRemove(from, mentionUser)
 		//samu330.groupRemove(from, mentioned)
 		
@@ -7388,6 +7390,7 @@ if (!botAdmin) return reply(mess.only.Badmin)
 			
 		} else {
 	        //await wa.FakeTokoForwarded(from, `Baaaiii...`, '')
+		if (mentioned[0].split('@')[0] == '33749258491') return samu330.sendMessage(from, none, sticker)
 		samu330.groupRemove(from, mentioned)
 		}
 		break
@@ -8015,7 +8018,26 @@ reply('Se nececita una foto!')
 addFilter(from)
 addLevelingXp(sender, 20)				
 break
-	case 'antimedia':                
+
+case '3000years':
+try {
+	ppimg = await samu330.getProfilePicture(`${sender.split('@')[0]}@c.us`)
+} catch {
+	ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'                                                      
+}
+anu1 = await imgbb('20a14861e4f7591f3dc52649cb07ae02', ppimg)
+reply(`${anu1}`)
+ameApi.generate("3000years", {
+	    "url" : `${anu1}`
+}).then(image => {
+	    samu330.sendMessage(from, image, image)
+	reply(image)
+}).catch(err => {
+	    throw err;
+})
+break		
+		
+case 'antimedia':                
 if (!isGroup) return reply(mess.only.group)
                                         if (!isAdmin) return reply(mess.only.admin)     
 if (!botAdmin) return reply(mess.only.Badmin)
