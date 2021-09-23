@@ -5209,15 +5209,14 @@ break
 case 'nivel':
 samu330.updatePresence(from, Presence.composing)
 const getLevel1 = getLevelingLevel(sender)
-const lvup =  `✴ _*🧗🏻‍♂️Nivel Actual!͟*_ ✴
+const lvup =  `*💠 Nombre:* ${pushname}
 	
-𓆩*𓆪 *💠 Nombre:* ${pushname} 𓆩*𓆪
-	
-┎┈┈┈┈┈┈┈┈┈┈┈┈┈┈
+┎┈┈┈┈┈┈┈┈┈┈┈┈
 ✨XP: ${getLevelingXp(sender)}
 📚Nivel: ${getLevel1} ➫ ${getLevelingLevel(sender)}
 🕋rango: ${rango}
-┖┈┈┈┈┈┈┈┈┈┈┈┈┈┈`
+┖┈┈┈┈┈┈┈┈┈┈┈┈
+`
 samu330.sendMessage(from, lvup, MessageType.text, {quoted: { key: {                
 fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
