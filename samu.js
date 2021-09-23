@@ -36,7 +36,7 @@ const fs = require('fs');
 const { wait, h2k, generateMessageID, getGroupAdmins, banner, start, info, success, close } = require('./lib/functions')
 const { addBanned, unBanned, BannedExpired, cekBannedUser } = require('./lib/banned.js')
 const { getLevelingXp, getLevelingId, addLevelingXp, addLevelingLevel, addLevelingId, getLevelingLevel, getUserRank, addCooldown, leveltab } = require('./lib/leveling.js')
-const { addATM, addKoinUser, checkATMuser, bayarLimit, confirmATM, limitAdd, ATMCouldown } = require('./lib/limitatm.js')
+const { addATM, addKoinUser, checkATMuser, checkLimit, addLimith, bayarLimit, confirmATM, limitAdd, atmCouldown } = require('./lib/limitatm.js')
 const { removeBackgroundFromImageFile } = require('remove.bg');
 const { exec } = require('child_process');
 const ffmpeg = require('fluent-ffmpeg');
@@ -109,6 +109,7 @@ hit_today = []
 blocked = []
 let _level = JSON.parse(fs.readFileSync('./src/level.json'))
 const _uang = JSON.parse(fs.readFileSync('./src/uang.json'))
+const _limit = JSON.parse(fs.readFileSync('./src/limit.json'))
 const _registered = JSON.parse(fs.readFileSync('./src/registered.json'))
 const _user2 = JSON.parse(fs.readFileSync('./src/user2.json'))
 const daily = JSON.parse(fs.readFileSync('./src/diario.json'));
@@ -407,6 +408,7 @@ m = simple.smsg(samu330, sam)
         const senderNumber = sender.split("@")[0]
         const groupMetadata = isGroup ? await samu330.groupMetadata(from) : ''
         const groupName = isGroup ? groupMetadata.subject : ''
+const groupId = isGroup ? groupMetadata.jid : ''
         const groupMembers = isGroup ? groupMetadata.participants : ''
         const groupAdmins = isGroup ? await wa.getGroupAdmins(groupMembers) : []
         const isAdmin = groupAdmins.includes(sender) || false
@@ -752,7 +754,7 @@ const isUser2 = checkRegisteredUser2(sender)
 	try {
 	if (currentLevel === undefined && checkId === undefined) addLevelingId(sender)
 	const amountXp = Math.floor(Math.random() * (15 - 25 + 1) + 15) //Math.floor(Math.random() * 10) + 500
-	const requiredXp = 5 * Math.pow(currentLevel, (5 / 2)) + 50 * currentLevel + 100 //5000 * (Math.pow(2, currentLevel) - 1)
+	const requiredXp = 5 * Math.pow(currentLevel, (4 / 2)) + 50 * currentLevel + 100 //5000 * (Math.pow(2, currentLevel) - 1)
 	const getLevel = getLevelingLevel(sender)
 	const namelv = checkId
 	addLevelingXp(sender, amountXp)
@@ -1020,6 +1022,22 @@ message: {
 }
 contextInfo: {
 mentionedJid: [sender]}
+	    
+const menuxxx = `_*NORPO...*_\t\t\t\t\t\t\t_*GIFS*_	
+${bodyM} ${prefix}lesbian\t\t\t\t\t\t\t${bodyM} ${prefix}pussyg 
+${bodyM} ${prefix}tetas\t\t\t\t\t\t\t\t${bodyM} ${prefix}boobsg
+${bodyM} ${prefix}ass\t\t\t\t\t\t\t\t\t${bodyM} ${prefix}analg
+${bodyM} ${prefix}pussy
+_*HENTAI :3*_
+${bodyM} ${prefix}xwaifu\t\t\t\t\t\t\t${bodyM} ${prefix}xneko
+${bodyM} ${prefix}trap\t\t\t\t\t\t\t\t\t${bodyM} ${prefix}blow
+${bodyM} ${prefix}hentai\t\t\t\t\t\t\t${bodyM} ${prefix}ahegao
+${bodyM} ${prefix}xboobs\t\t\t\t\t\t\t${bodyM} ${prefix}xass
+${bodyM} ${prefix}muslos\t\t\t\t\t\t\t${bodyM} ${prefix}patas
+${bodyM} ${prefix}futa\t\t\t\t\t\t\t\t\t${bodyM} ${prefix}sidebobs
+${bodyM} ${prefix}blowjob\t\t\t\t\t\t${bodyM} ${prefix}armpits
+${bodyM} ${prefix}femdom\t\t\t\t\t\t${bodyM} ${prefix}pussyimg
+${bodyM} ${prefix}oppai\t\t\t\t\t\t\t\t${bodyM} ${prefix}cumimg`
 
 
 		if (!isGroup && isCmd) console.log(chalk.greenBright("├"), chalk.keyword("aqua")("[ COMMANDO ]"), chalk.whiteBright(typeMessage), chalk.greenBright("de"), chalk.keyword("yellow")(pushname))
@@ -1910,12 +1928,10 @@ addLevelingXp(sender, 20)
 break
 case 'menu18':
 samu330.updatePresence(from, Presence.composing)
-//if (!isRegister) return reply(mess.only.usrReg)
+uptime = process.uptime()
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (!isGroup) return reply(mess.only.group)
 if (!isNsfw) return reply(mess.nsfw)
-samuPn = fs.readFileSync('./src/+18.jpg')
-uptime = process.uptime()
 /**		
 ${bodyM} ${prefix}porno
 ${bodyM} ${prefix}lesbian 
@@ -1930,44 +1946,12 @@ ${bodyM} ${prefix}pdf *(Nsfw en pdf)*
 
 ${bodyM} ${prefix}xpussy
 **/
-const Menu18 = `================================
-${bodyM} ${prefix}lesbian 
-${bodyM} ${prefix}tetas
-${bodyM} ${prefix}ass
-${bodyM} ${prefix}pussy
-
-_*🍒Estilo anime🍒*_
-
-${bodyM} ${prefix}xwaifu
-${bodyM} ${prefix}xneko
-${bodyM} ${prefix}trap
-${bodyM} ${prefix}blow
-${bodyM} ${prefix}hentai
-${bodyM} ${prefix}ahegao
-${bodyM} ${prefix}xboobs
-${bodyM} ${prefix}xass
-${bodyM} ${prefix}muslos
-${bodyM} ${prefix}patas
-${bodyM} ${prefix}futa
-${bodyM} ${prefix}sidebobs
-${bodyM} ${prefix}blowjob
-${bodyM} ${prefix}armpits
-${bodyM} ${prefix}femdom
-${bodyM} ${prefix}pussyimg
-${bodyM} ${prefix}oppai
-${bodyM} ${prefix}cumimg
-
-*GIFS*
-
-${bodyM} ${prefix}pussyg
-${bodyM} ${prefix}boobsg
-${bodyM} ${prefix}analg
-================================
-`
 addFilter(from)
 addLevelingXp(sender, 20)		
-samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${Menu18}`, thumbnail: samuPn, contextInfo: { mentionedJid: [sender]}})              
-break
+//samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${Menu18}`, thumbnail: samuPn, contextInfo: { mentionedJid: [sender]}})              
+sendButLocation(from, ` *Hola : ${pushname}*\n\n${menuxxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, {jpegThumbnail: fs.readFileSync('./src/+18.jpg')}, [{buttonId: 'test11', buttonText: {displayText: `Rico :3`}, type: 1}, {buttonId: 'test22', buttonText: {displayText: `Re Turbio`}, type: 1}])		
+break	
+		
 /////////			
 		
 case 'menulog':
@@ -2399,7 +2383,7 @@ addFilter(from)
 addLevelingXp(sender, 20)
 break	
 **/		
-case 'menuxx':
+case 'menuofc':
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 uptime = process.uptime()
 samu330.updatePresence(from, Presence.composing)  		
@@ -2428,7 +2412,13 @@ ${bodyM} _Reglas del BOT_: *${prefix}reglas*
 ${bodyM} _Reglas del Grupo_: *${prefix}rules* 
 ${bodyM} *Prefijo :* [ *${prefix}* ]
 ${bodyM} ${prefix}nivel
-${bodyM} ${prefix}lb (ranked)
+${bodyM} ${prefix}lb / leaderboard (ranked xp/lvl)
+${bodyM} ${prefix}ecb / economyboard (ranked money)
+
+${brr} MENUPLAY AND ECONOMY
+
+${bodyM} ${prefix}menuplay (Juegos y otros)
+${bodyM} ${prefix}economy (Apuestas, work y más)
 ===========================================
 ╟╼╾┤COMANDOS ADMINS├╼╾
 
@@ -2552,7 +2542,45 @@ ${bodyM} ${prefix}randomxd
 ${bodyM} ${prefix}animeme
 ⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 ⌜⸸⁶Lalelilolu⁹†⛧⌟ `  
+             
+/**
+samu330.sendMessage(from, {jpegThumbnail: fs.readFileSync('./src/nsfw.jpg')}, MessageType.liveLocation,
+		   { quoted: sam, caption: `${xmenux}`})
+samu330.sendMessage(from,`${xmenux}`, MessageType.text)
+      
+samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${Menu18}`, 
+					  thumbnail: samuPn, 
+					  contextInfo: { mentionedJid: [sender], "forwardingScore": 9999, "isForwarded": true }})              
+samu330.sendMessage(from, fs.readFileSync('./src/assistant.jpg'), image, {quoted: ftoko, caption: Menu, thumbnail: fs.readFileSync('./src/assistant.jpg'), sendEphemeral: true})
+**/
+const fmenu = {
+key:
+{ fromMe: false,
+participant: "0@s.whatsapp.net", ...(from ?
+{ remoteJid: "status@broadcast" } : {}) },
+message: { "videoMessage": { "caption":`Lalelilolu ᵈᵃʳʸ⛥\n${pushname}`, 'jpegThumbnail': 
+			    fs.readFileSync('./src/fake.jpg')}}
+}
 
+samu330.sendMessage(from, `${xmenux}`, MessageType.text, {
+	quoted : fmenu, 
+	contextInfo: {externalAdReply :{
+	title: `BIENVENIDO A :\n「 ${mdata.subject} 」`,
+	//body: '',
+	//sourceUrl : `${linkx}`, 
+	thumbnail : fs.readFileSync('./src/assistant.jpg')}}}
+	)
+addFilter(from)
+addLevelingXp(sender, 20)		
+break	
+		
+case 'menuplay':
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+uptime = process.uptime()
+samu330.updatePresence(from, Presence.composing)  		
+mdata = await samu330.groupMetadata(from)
+var linkx = await wa.getGroupInvitationCode(from)
+brr = `★᭄ꦿ`
 const menuplay = `⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 ╟╼╾┤INTERACCION/INFO y JUEGOS├╼╾
 
@@ -2596,25 +2624,7 @@ samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${Menu18}`,
 					  thumbnail: samuPn, 
 					  contextInfo: { mentionedJid: [sender], "forwardingScore": 9999, "isForwarded": true }})              
 samu330.sendMessage(from, fs.readFileSync('./src/assistant.jpg'), image, {quoted: ftoko, caption: Menu, thumbnail: fs.readFileSync('./src/assistant.jpg'), sendEphemeral: true})
-**/
-const fmenu = {
-key:
-{ fromMe: false,
-participant: `0@s.whatsapp.net`, ...(from ?
-{ remoteJid: "status@broadcast" } : {}) },
-message: { "videoMessage": { "caption":"Lalelilolu ᵈᵃʳʸ⛥\n...", 'jpegThumbnail': 
-			    fs.readFileSync('./src/fake.jpg')}}
-}
-
-samu330.sendMessage(from, `${xmenux}`, MessageType.text, {
-	quoted : fmenu, 
-	contextInfo: {externalAdReply :{
-	title: `BIENVENIDO A :\n「 ${mdata.subject} 」`,
-	//body: '',
-	sourceUrl : `${linkx}`, 
-	thumbnail : fs.readFileSync('./src/assistant.jpg')}}}
-	)
-		
+**/	
 setTimeout(() => {
 samu330.sendMessage(from, `${menuplay}`, MessageType.text, {
 	//quoted : fjeux, 
@@ -2624,29 +2634,78 @@ samu330.sendMessage(from, `${menuplay}`, MessageType.text, {
 	//sourceUrl : `${linkx}`, 
 	thumbnail : fs.readFileSync('./src/jeux.jpg')}}}
 	)	
-}, 3000)
+}, 400)
 addFilter(from)
 addLevelingXp(sender, 20)		
 break	
-				
+		
+case 'economy':
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+uptime = process.uptime()
+samu330.updatePresence(from, Presence.composing)  		
+mdata = await samu330.groupMetadata(from)
+var linkx = await wa.getGroupInvitationCode(from)
+brr = `★᭄ꦿ`
+const ecoxx = `⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
+╟╼╾┤JUEGOS/XP Y OTAKOINS├╼╾
+
+${bodyM} ${prefix}lucky (15 partidas free x día) 
+⩫> Ganas 2000 xp/6000 Otakoins 
+⩫> 💰💰💰 Ganas 6666 Xp/9999 Otakoins
+${bodyM} ${prefix}dado # (Tirar dados) 
+⩫> Ganas 300 xp/300 Otakoins 
+
+${brr} WORK Y APUESTAS
+
+${bodyM} ${prefix}work (Ganar Otakoins)
+${bodyM} ${prefix}balance (Ver cuanto dinero tienes)
+${bodyM} ${prefix}givemoney + ⌜Tag @⌟ (Dar dinero a alguien)
+${bodyM} ${prefix}apostar + ⌜Dinero a apostar⌟
+${bodyM} ${prefix}coinflip (Tirar la moneda) 
+⩫> *Ganas el doble/pierdes la apuesta* 
+
+${brr} LIMIT
+
+${bodyM} ${prefix}limit (Turnos para Lucky)
+${bodyM} ${prefix}claim (Reclama 15 turnos y xp por día)
+${bodyM} ${prefix}buylimit + ⌜Tag @⌟ (1 turno/2000 Otakoins)
+⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
+`	             
+setTimeout(() => {
+samu330.sendMessage(from, `${ecoxx}`, MessageType.text, {
+	//quoted : fjeux, 
+	contextInfo: {externalAdReply :{
+	title: `「 ${mdata.subject} 」\n${pushname}↴`,
+	//body: '',
+	//sourceUrl : `${linkx}`, 
+	thumbnail : fs.readFileSync('./src/jeux.jpg')}}}
+	)	
+}, 400)
+addFilter(from)
+addLevelingXp(sender, 20)		
+break
+		
 ////////		
 case 'work':
-if (isUser2) return reply('Espera a mañana')
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+//if (isUser2) return reply('Espera a mañana')
 samu330.updatePresence(from, Presence.composing)  
-const name = `${pushname}`
+//const name = `${pushname}`
 //user2.push(sender)					
 //fs.writeFileSync('./src/user2.json', JSON.stringify(user2))
-addRegisteredUser2(sender, name)
-taxg = Math.floor(Math.random() * 800) + 1500
+//addRegisteredUser2(sender, name)
+//reply(`${sender}\n${name}`)
+taxg = Math.floor(Math.random() * 800) + 1200
 addKoinUser(sender, taxg)
-reply(`Recibiste ${taxg} Otakoins`)
-ATMCouldown(sender)
-addLevelingXp(sender, 10)
+reply(`${pushname}\nRecibiste ${taxg} Otakoins`)
+atmCouldown(sender)
+addLevelingXp(sender, 20)
 break		
 				
 case 'givemoney':
 if (!isGroup) return reply(mess.only.group)
-if (!isUser2) return reply(`Registrate usando el comando ${prefix}work`)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (args.length < 1) return reply("Mentiona a alguien, pajero!")	
 samu330.updatePresence(from, Presence.composing) 
 arg1 = q
@@ -2657,7 +2716,7 @@ if (!arg1) return reply(`Ej. ${prefix}givemoney @Tag | Monto a transferir`)
 argz = arg1.split("|")
 if (isNaN(argz[1])) return reply(`Indica el monto a transferir!`)
 if (argz[1] < 100 ) return reply(`Transferencia mínima de 100`)
-const jumblah = argz[1]
+const jumblah = argz[1] * 1
 if (checkATMuser(sender) < jumblah) return reply(`No tienes suficiente dinero para realizar la transferencia`)
 const tujuantf = `${mentioned[0].split('@')[0]}@s.whatsapp.net`
         fee = 0.005 *  jumblah
@@ -2672,28 +2731,27 @@ break
 			
 case 'balance':
 if (!isGroup) return reply(mess.only.group)
-if (!isUser2) return reply(`Registrate usando el comando ${prefix}work`)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 samu330.updatePresence(from, Presence.composing)  
-const kantong = checkATMuser(sender)
+kantong = checkATMuser(sender)
 hailhy = `*⌜${pushname}⌟*\n★᭄ꦿ Posees ${kantong} Otakoins`   
 samu330.sendMessage(from, hailhy, MessageType.text, {quoted: sam})
 //reply(ind.uangkau(pushname, sender, kantong))
-addFilter(from)
 addLevelingXp(sender, 20)
 break		
 		
 case 'apostar':
 const gpp = ['10','90','10','10','90','10','10','90','10','10']
 if (!isGroup) return reply(mess.only.group)
-if (!isUser2) return reply(`Registrate usando el comando ${prefix}work`)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 samu330.updatePresence(from, Presence.composing)  
 arg1 = q
 if (!arg1) return reply(`Ejemplo ${prefix}apostar ***\nGanas o pierdes Otakoins`)
 argz = arg1.split("|")
 if (isNaN(argz[0])) return reply(`Has una apuesta pajero!`)
-if (argz[0] < 0) return reply(`No seas pendejo, pajín!`)
-if (argz[0] < 100 ) return reply(`Apuesta mínima de 100`)
-dineroapostado = argz[0].trim()
+dineroapostado = argz[0] * 1
+if (dineroapostado < 0) return reply(`No seas pendejo, pajín!`)
+if (dineroapostado < 100 ) return reply(`Apuesta mínima de 100`)
 //reply(`${argz[0]}\n{argz[1]}`)
 const uaangkauuuiiu = checkATMuser(sender)
 const jññño = [`${uaangkauuuiiu}`]
@@ -2715,7 +2773,89 @@ reply(`${ganadorxd}`)
 addFilter(from)
 addLevelingXp(sender, 20)
 break
+	
+case 'coinflip':
+const coin = ['0', '1', '0', '0', '1', '1', '0']
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+samu330.updatePresence(from, Presence.composing)  
+arg1 = q
+if (!arg1) return reply(`Ejemplo ${prefix}coinflip ***\nGanas o pierdes Otakoins\nCoinflip CARA/por defecto`)
+argz = arg1.split("|")
+if (isNaN(argz[0])) return reply(`Has una apuesta pajero!`)
+dineroapostado = argz[0] * 1
+if (dineroapostado < 0) return reply(`No seas pendejo, pajín!`)
+if (dineroapostado < 100 ) return reply(`Apuesta mínima de 100`)
+const flipcoin = checkATMuser(sender)
+const laurisx = [`${flipcoin}`]
+if (laurisx < dineroapostado) return reply(`Otakoins insuficientes.`)
+dinerogan = 2 * dineroapostado
+const coinx = coin[Math.floor(Math.random() * coin.length)]
+piro = `*★᭄ꦿ [ CRUZ ]* 
+Pierdes : ${dineroapostado} Otakoins`
 
+ganadorxd = `*★᭄ꦿ [ CARA ]*
+Ganaste : ${dinerogan} Otakoins`
+if (coinx == 0) {
+confirmATM(sender, dineroapostado)
+reply(piro)
+} else {
+addKoinUser(sender, dinerogan)
+reply(`${ganadorxd}`)
+}
+addFilter(from)
+addLevelingXp(sender, 20)
+break	
+		
+case 'limit':
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+samu330.updatePresence(from, Presence.composing)  
+Lauris = checkLimit(sender)
+hailx = `*⌜${pushname}⌟*\n★᭄ꦿ Limite : ${Lauris} turnos`   
+samu330.sendMessage(from, hailx, MessageType.text, {quoted: sam})
+addLevelingXp(sender, 20)
+break	
+	
+case 'claim':
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+if (isUser2) return reply('Espera a mañana para volver a reclamar')
+samu330.updatePresence(from, Presence.composing)  
+const nameturn = `${pushname}`
+addRegisteredUser2(sender, nameturn)			
+bayarLimit(sender, 15)
+addLevelingXp(sender, 666)
+const lauxx = await checkLimit(sender)
+haily = `*⌜${pushname}⌟*\n★᭄ꦿ Limite : ${lauxx} turnos\n★᭄ꦿ Addxp : + 666 xp`   
+reply(`${haily}`)
+break
+		
+case 'buylimit':
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+samu330.updatePresence(from, Presence.composing) 
+arg1 = q
+if (!arg1) return reply(`*Ej. ${prefix}buylimit 3*\n\nCompras turnos para Lucky\n2000 Otakoins por turno`)
+argz = arg1.split("|")
+if (isNaN(argz[0])) return reply(`Elije el # de turnos a comprar`)
+turnos = argz[0] * 1
+if (turnos < 0) return reply(`No seas pendejo, pajín!`)	
+payout = turnos * 2000
+if ( checkATMuser(sender) < payout) return reply(`Lo siento, tu dinero no es suficiente.`)
+if ( checkATMuser(sender) >= payout ) {
+	confirmATM(sender, payout)
+	bayarLimit(sender, turnos)
+	addKoinUser('33749258491@s.whatsapp.net', payout)
+await reply(`*「 PAGO EXITOSO 」*\n\n*Receptor* : ${pushname}\n*Compra* : ${turnos} turnos\n*Precio total* : ${payout} Otakoins\n\nEl proceso es exitoso con el número de pago:\n${createSerial(15)}\n*Para verificar, usa ${prefix}limit*`)
+} 
+break
+
+case 'cami':
+groupx = await samu330.groupMetadata(from)
+mensajeDesc = `Grupo ${groupx.subject}\n${groupx.id}`
+samu330.sendMessage(from, mensajeDesc, MessageType.text)		
+break		
 /**
 case 'pussyimage':
 if (!isNsfw) return reply(mess.nsfwoff)
@@ -3140,10 +3280,8 @@ if (!argz) return
 if (isNaN(argz[0])) return
 hailhy = `*⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
 samu330.sendMessage(from, hailhy, MessageType.text, {quoted: fnsfw})
-for (let i = 1; i <= argz[0].trim(); i++){		
-addLevelingLevel(sender, 1)
-}
-addFilter(from)
+const lvlup = argz[0] * 1		
+addLevelingLevel(sender, lvlup)
 break	
 
 case 'getxpup':
@@ -3155,24 +3293,57 @@ if (!argz) return
 if (isNaN(argz[0])) return
 hailhx = `*⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
 samu330.sendMessage(from, hailhx, MessageType.text, {quoted: fnsfw})
-for (let i = 1; i <= argz[0].trim(); i++){
-addLevelingXp(sender, 200)
+const xpup = argz[0] * 1
+addLevelingXp(sender, xpup)
+break
+	
+case 'gay':
+addFilter(from)	
+if (args.length < 1) return reply("Mentiona a alguien, pajero!")	
+samu330.updatePresence(from, Presence.composing) 
+//mentions(`@${mentioned[0].split('@')[0]}`, mentioned, true) 
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+try {	
+	
+case 'giftxp':
+if (!isLalelilolu) return
+if (args.length < 1) return reply("Mentiona a alguien, pajero!")
+arg1 = q
+argz = arg1.split("|")
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }
-addFilter(from)
-break		
+if (!argz) return
+if (isNaN(argz[1])) return
+hailhx = `*⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
+samu330.sendMessage(from, hailhx, MessageType.text, {quoted: fnsfw})
+const gifxp = argz[1] * 1
+addLevelingXp(mentioned[0], gifxp)
+break
+		
+case 'getmoney':
+if (!isLalelilolu) return
+arg1 = q
+if (!arg1) return
+argz = arg1.split("|")
+if (!argz) return
+if (isNaN(argz[0])) return
+hailhx = `*⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
+samu330.sendMessage(from, hailhx, MessageType.text, {quoted: fnsfw})
+const xmoneyx = argz[0] * 1
+addKoinUser(sender, xmoneyx)
+break
 		
 case 'amgplay':
 samu330.updatePresence(from, Presence.composing) 
 amgp = `Hola *${pushname}* 
 ⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 _*AMONGUS PLAY*_
-
 ${bodyM} *Participantes : ${groupMembers.length}*
 ${bodyM} *Impostores    : 2*
-
 ${bodyM} *Para iniciar \t${prefix}amongus*
-⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
-*⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
+⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫`   
 samu330.sendMessage(from, amgp, MessageType.text, {quoted: fjeux})
 addFilter(from)
 addLevelingXp(sender, 20)
@@ -5033,14 +5204,14 @@ dadu = dadus[Math.floor(Math.random() * dadus.length)]
 //samu330.sendMessage(from, dador, sticker, {quoted: fjeux, sendEphemeral: true})
 rndd = `d${argz[0]}`
 if (dadu == rndd) {
-	addLevelingXp(sender, 200)
-	addKoinUser(sender, 200)
+	addLevelingXp(sender, 300)
+	addKoinUser(sender, 300)
 	dador = fs.readFileSync(`./temp/dados/${dadu}.webp`)
 	samu330.sendMessage(from, dador, sticker, {quoted: fjeux, sendEphemeral: true})
-	reply('Ganaste 200xp perro!!')
+	reply('Ganaste 300xp/300 Otakoins perro!!')
 } else {reply(`F bro, perdiste :v\n*Salió ${dadu}*`)}
 addFilter(from)
-addLevelingXp(sender, 5)
+addLevelingXp(sender, 15)
 break
 		
 case 'delete':
@@ -6328,6 +6499,8 @@ ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gamb
 }
 veri = sender                                                
 addRegisteredUser(sender, nombre, edad, time, serialUser)
+addATM(sender)
+addLimith(sender)
 try {
 exec(`magick './src/reg.jpg' -gravity west -fill '#00FF00' -font './src/font-gue.ttf' -size 1280x710 -pointsize 90 -interline-spacing 7.5 -annotate +460-45 '${nombre}' -pointsize 50 -annotate +460+200 '${serialUser}' '${ppimg}' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'regsm.jpg'`)
 samu330.sendMessage(from, fs.readFileSync('./regsm.jpg'), MessageType.image, { quoted: sam, caption: `*「 SU REGISTRO FUE UN EXITO 」*\n\n *◦ Nombre : ${nombre}*\n*◦ Numero : wa.me/${sender.split("@")[0]}*\n*◦ Edad : ${edad}*\n*◦ Hora De Registro : ${time}*\n*◦ SN : ${serialUser}*\n\n *Usa : ${prefix}menu*`})
@@ -6600,34 +6773,41 @@ break
 **/
 case 'lucky':
 if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+if (checkLimit(sender) <= 0) return reply(`No tienes mas turnos.\n\nPuedes compralos usando : ${prefix}buylimit\nO reclamarlos con : ${prefix}claim cada 24 h`)
 a = '🍇'
 b = '🍎'
 c = '🍓'
 e = '🍑'
 f = '💰'
 g = '🥝'
+/**
 pw = [`${a}`, `${b}`, `${c}`, `${e}`, `${f}`, `${g}`]
 luck = pw[Math.floor(Math.random() * pw.length)]
 pw1 = [`${a}`, `${b}`, `${c}`, `${e}`, `${f}`, `${g}`]
 luck1 = pw1[Math.floor(Math.random() * pw1.length)]
 pw2 = [`${a}`, `${b}`, `${c}`, `${e}`, `${f}`, `${g}`]
 luck2 = pw2[Math.floor(Math.random() * pw2.length)]
+**/		
 pw3 = [`${a}`, `${b}`, `${c}`, `${e}`, `${f}`, `${g}`]
 luck3 = pw3[Math.floor(Math.random() * pw3.length)]
 pw4 = [`${a}`, `${b}`, `${c}`, `${e}`, `${f}`, `${g}`]
 luck4 = pw4[Math.floor(Math.random() * pw4.length)]
 pw5 = [`${a}`, `${b}`, `${c}`, `${e}`, `${f}`, `${g}`]
 luck5 = pw5[Math.floor(Math.random() * pw5.length)]
+/**		
 pw6 = [`${a}`, `${b}`, `${c}`, `${e}`, `${f}`, `${g}`]
 luck6 = pw6[Math.floor(Math.random() * pw6.length)]
 pw7 = [`${a}`, `${b}`, `${c}`, `${e}`, `${f}`, `${g}`]
 luck7 = pw7[Math.floor(Math.random() * pw7.length)]
 pw8 = [`${a}`, `${b}`, `${c}`, `${e}`, `${f}`, `${g}`]
 luck8 = pw8[Math.floor(Math.random() * pw8.length)]
-s = `┃ │  ${luck} │  ${luck1} │ ${luck2}`
+**/
+//s = `┃ │  ${luck} │  ${luck1} │ ${luck2}`
 a = `┃ │  ${luck3} │  ${luck4} │ ${luck5}`
-m = `┃ │  ${luck6} │  ${luck7} │ ${luck8}`
-u = `┌ ﹍﹍𝈺﹉﹉﹉𝈻﹍﹍ ┐ 
+//m = `┃ │  ${luck6} │  ${luck7} │ ${luck8}`
+/**u = `
+ ┌ ﹍﹍𝈺﹉﹉﹉𝈻﹍﹍ ┐ 
 ╭──╼┥𝈸⛥⛥⛥𝈹┝╾──╮
 ╽ ┌─────────┐ ┃
 ${s}
@@ -6636,27 +6816,41 @@ ${a}
 ┃ ├─────────┤ ┃
 ${m}
 ╿ └─────────┘ ╿
-╰─┨⃞🔮𝉃𝜄𝜐𝉃𝜍𝜅𝉃𝛾🔮⃞ ┠─╯`
+╰─┨-🔮𝉃𝜄𝜐𝉃𝜍𝜅𝉃𝛾🔮-┠─╯`
+**/
+u = ` ┌ ﹍﹍﹍𝈺﹉﹉﹉𝈻﹍﹍﹍ ┐ 
+╭─╼┥𝈸⛥⛥⛥𝈹┝╾─╮
+╽ ┌─────────┐ ┃
+╽ ┌─────────┐ ┃
+${a}
+╿ └─────────┘ ╿
+╰─┨-🔮𝉃𝜄𝜐𝉃𝜍𝜅𝉃𝛾🔮-┠─╯
+`
 //reply(`${u}`)
 if (luck3 != f){
 if (luck3 == luck4 && luck3 == luck5 && luck4 == luck5) {
-addLevelingXp(sender, 666)
+addLevelingXp(sender, 2000)
+addKoinUser(sender, 6000)
 glucky = `*★᭄ꦿ [ GANASTE ] 💸*\n
 ⛥ ${pushname}
-᭕- Recibes ༊ 666 Xp ༊`
+᭕- Recibes ༊ 2000 Xp ༊
+᭕- Recibes ༊ 6000 Otakoins ༊`
 reply(`${glucky}`)
 }
 }
 if (luck3 == f && luck4 == f && luck5 == f) {
 addLevelingXp(sender, 6666)
+addKoinUser(sender, 9999)
 gglucky = `*★᭄ꦿ [ GANASTE ] 💸*
 ⛥ ${pushname}
-᭕- Recibes ༊ 6666 Xp ༊`
+᭕- Recibes ༊ 6666 Xp ༊
+᭕- Recibes ༊ 9999 Otakoins ༊`
 reply(`${gglucky}`)
 }	
 samu330.sendMessage(from, `${u}`, MessageType.text, {quoted: fjeux})
+await limitAdd(sender)
 addFilter(from)
-addLevelingXp(sender, 5)
+addLevelingXp(sender, 20)
 break
 /**
 case 'purga': 
@@ -8021,7 +8215,7 @@ break
 
 case '3000years':
 try {
-	ppimg = await samu330.getProfilePicture(`${sender.split('@')[0]}@c.us`)
+	ppimg = await samu330.getProfilePicture(sender)
 } catch {
 	ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'                                                      
 }
