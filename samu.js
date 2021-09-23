@@ -3302,15 +3302,6 @@ const xpup = argz[0] * 1
 addLevelingXp(sender, xpup)
 break
 	
-case 'gay':
-addFilter(from)	
-if (args.length < 1) return reply("Mentiona a alguien, pajero!")	
-samu330.updatePresence(from, Presence.composing) 
-//mentions(`@${mentioned[0].split('@')[0]}`, mentioned, true) 
-if (sam.message.extendedTextMessage != undefined){
-mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-try {	
-	
 case 'giftxp':
 if (!isLalelilolu) return
 if (args.length < 1) return reply("Mentiona a alguien, pajero!")
