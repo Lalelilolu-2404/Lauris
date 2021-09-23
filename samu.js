@@ -1035,23 +1035,6 @@ message: {
 }
 contextInfo: {
 mentionedJid: [sender]}
-	    
-const menuxxx = `_*NORPO...*_             _*GIFS*_	
-${bodyM} ${prefix}lesbian            ${bodyM} ${prefix}pussyg 
-${bodyM} ${prefix}tetas              ${bodyM} ${prefix}boobsg
-${bodyM} ${prefix}ass                ${bodyM} ${prefix}analg
-${bodyM} ${prefix}pussy
-_*HENTAI :3*_
-${bodyM} ${prefix}xwaifu             ${bodyM} ${prefix}xneko
-${bodyM} ${prefix}trap               ${bodyM} ${prefix}blow
-${bodyM} ${prefix}hentai             ${bodyM} ${prefix}ahegao
-${bodyM} ${prefix}xboobs             ${bodyM} ${prefix}xass
-${bodyM} ${prefix}muslos             ${bodyM} ${prefix}patas
-${bodyM} ${prefix}futa               ${bodyM} ${prefix}sidebobs
-${bodyM} ${prefix}blowjob            ${bodyM} ${prefix}armpits
-${bodyM} ${prefix}femdom             ${bodyM} ${prefix}pussyimg
-${bodyM} ${prefix}oppai              ${bodyM} ${prefix}cumimg`
-
 
 		if (!isGroup && isCmd) console.log(chalk.greenBright("├"), chalk.keyword("aqua")("[ COMMANDO ]"), chalk.whiteBright(typeMessage), chalk.greenBright("de"), chalk.keyword("yellow")(pushname))
         	if (isGroup && isCmd) console.log(chalk.greenBright("├"), chalk.keyword("aqua")("[ COMMANDO ]"), chalk.whiteBright(typeMessage), chalk.greenBright("de"), chalk.keyword("yellow")(pushname), chalk.greenBright("en el grupo"), chalk.keyword("yellow")(groupName))
@@ -1426,7 +1409,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					if (!isGroup) return reply(mess.only.group)
 					susd = `⚠️!! @${tripamg[2].split('@')[0]} was killed!!`
 					var k = Math.floor(Math.random() * 17) + 1
-					imgkilled = fs.readFileSync(`./temp/amongus/kill${k}.JPG`)
+					const imgkilled = fs.readFileSync(`./temp/amongus/kill${k}.JPG`)
 					
 					samu330.sendMessage(from, {jpegThumbnail: imgkilled}, MessageType.liveLocation,{ quoted: fjeux})
 					samu330.sendMessage(from, susd, MessageType.text, {contextInfo: { mentionedJid: [tripamg[2]]}})
@@ -1953,10 +1936,26 @@ ${bodyM} ${prefix}pdf *(Nsfw en pdf)*
 
 ${bodyM} ${prefix}xpussy
 **/
+const menuxxx = `
+_*NORPO...*_             _*GIFS*_	
+${bodyM} ${prefix}lesbian           ${bodyM} ${prefix}pussyg 
+${bodyM} ${prefix}tetas             ${bodyM} ${prefix}boobsg
+${bodyM} ${prefix}ass               ${bodyM} ${prefix}analg
+${bodyM} ${prefix}pussy
+_*HENTAI :3*_
+${bodyM} ${prefix}xwaifu            ${bodyM} ${prefix}xneko
+${bodyM} ${prefix}trap              ${bodyM} ${prefix}blow
+${bodyM} ${prefix}hentai            ${bodyM} ${prefix}ahegao
+${bodyM} ${prefix}xboobs            ${bodyM} ${prefix}xass
+${bodyM} ${prefix}muslos            ${bodyM} ${prefix}patas
+${bodyM} ${prefix}futa              ${bodyM} ${prefix}sidebobs
+${bodyM} ${prefix}blowjob           ${bodyM} ${prefix}armpits
+${bodyM} ${prefix}femdom            ${bodyM} ${prefix}pussyimg
+${bodyM} ${prefix}oppai             ${bodyM} ${prefix}cumimg`
 addFilter(from)
 addLevelingXp(sender, 20)		
 //samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${Menu18}`, thumbnail: samuPn, contextInfo: { mentionedJid: [sender]}})              
-sendButLocation(from, ` *Hola : ${pushname}*\n\n${menuxxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, {jpegThumbnail: fs.readFileSync('./src/+18.jpg')}, [{buttonId: 'test11', buttonText: {displayText: `Rico :3`}, type: 1}, {buttonId: 'test22', buttonText: {displayText: `Re Turbio`}, type: 1}])		
+sendButLocation(from, ` *Hola : ${pushname}*\n${menuxxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, {jpegThumbnail: fs.readFileSync('./src/+18.jpg')}, [{buttonId: 'test11', buttonText: {displayText: `Rico :3`}, type: 1}, {buttonId: 'test22', buttonText: {displayText: `Re Turbio`}, type: 1}])		
 break	
 		
 /////////			
