@@ -1939,21 +1939,32 @@ ${bodyM} ${prefix}pdf *(Nsfw en pdf)*
 ${bodyM} ${prefix}xpussy
 **/
 const menuxxx = `
-_*NORPO...*_\t⩫⩫>\t_*GIFS*_	
-${bodyM} ${prefix}lesbian\t⩫⩫>\t${bodyM} ${prefix}pussyg 
-${bodyM} ${prefix}tetas\b\b\t⩫⩫>\t${bodyM} ${prefix}boobsg
-${bodyM} ${prefix}ass\b\b\b\b\t⩫⩫>\t${bodyM} ${prefix}analg
+_*NORPO... Y GIFS*_
+
+${bodyM} ${prefix}lesbian	${bodyM} ${prefix}pussyg 
+${bodyM} ${prefix}tetas		${bodyM} ${prefix}boobsg
+${bodyM} ${prefix}ass		${bodyM} ${prefix}analg
 ${bodyM} ${prefix}pussy
+
 _*HENTAI :3*_
-${bodyM} ${prefix}xwaifu\b\t⩫⩫>\t${bodyM} ${prefix}xneko
-${bodyM} ${prefix}trap\b\b\b\t⩫⩫>\t${bodyM} ${prefix}blow
-${bodyM} ${prefix}hentai\b\t⩫⩫>\t${bodyM} ${prefix}ahegao
-${bodyM} ${prefix}xboobs\b\t⩫⩫>\t${bodyM} ${prefix}xass
-${bodyM} ${prefix}muslos\b\t⩫⩫>\t${bodyM} ${prefix}patas
-${bodyM} ${prefix}futa\b\b\t⩫⩫>\t${bodyM} ${prefix}sidebobs
-${bodyM} ${prefix}blowjob\t⩫⩫>\t${bodyM} ${prefix}armpits
-${bodyM} ${prefix}femdom\t⩫⩫>\t${bodyM} ${prefix}pussyimg
-${bodyM} ${prefix}oppai\b\b\t⩫⩫>\t${bodyM} ${prefix}cumimg`
+${bodyM} ${prefix}xwaifu
+${bodyM} ${prefix}xneko
+${bodyM} ${prefix}trap
+${bodyM} ${prefix}blow
+${bodyM} ${prefix}hentai
+${bodyM} ${prefix}ahegao
+${bodyM} ${prefix}xboobs
+${bodyM} ${prefix}xass
+${bodyM} ${prefix}muslos
+${bodyM} ${prefix}patas
+${bodyM} ${prefix}futa
+${bodyM} ${prefix}sidebobs
+${bodyM} ${prefix}blowjob
+${bodyM} ${prefix}armpits
+${bodyM} ${prefix}femdom
+${bodyM} ${prefix}pussyimg
+${bodyM} ${prefix}oppai	
+${bodyM} ${prefix}cumimg`
 addFilter(from)
 addLevelingXp(sender, 20)		
 //samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${Menu18}`, thumbnail: samuPn, contextInfo: { mentionedJid: [sender]}})              
@@ -2549,7 +2560,7 @@ ${bodyM} ${prefix}imgrandom
 ${bodyM} ${prefix}randomxd
 ${bodyM} ${prefix}animeme
 ⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
-⌜⸸⁶Lalelilolu⁹†⛧⌟ `  
+⌜⛧⸸⁶Death⁹†حب♡ت⌟ `  
              
 /**
 samu330.sendMessage(from, {jpegThumbnail: fs.readFileSync('./src/nsfw.jpg')}, MessageType.liveLocation,
