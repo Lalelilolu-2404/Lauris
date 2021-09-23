@@ -829,7 +829,7 @@ const isUser2 = checkRegisteredUser2(sender)
             }
             samu330.sendMessage(id, buttonMessage, MessageType.buttonsMessage, options)
             }
-/**
+
         const sendButLocation = async (id, text1, desc1, gam1, but = [], options = {}) => {
                 kma = gam1
                 mhan = await samu330.prepareMessage(from, kma, location)
@@ -842,7 +842,7 @@ const isUser2 = checkRegisteredUser2(sender)
                 }
                 samu330.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
                 }
-**/
+
 	/**
 	const noreg = {
 		key: {
@@ -1389,10 +1389,10 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
 				if (test.includes(`${prefix}banearlo`)){
 					if (!isGroup) return reply(mess.only.group)
-					addBanned(member[0], args[1], ban)
+					addBanned(tripamg[0], args[1], ban)
 					amgf = fs.readFileSync(`./src/stickers2/Funao.webp`)
 					samu330.sendMessage(from, amgf, sticker, {sendEphemeral: true})
-					mentions(`@${member[0].split('@')[0]} Usted a sido baneado, lo que significa que no podra usar el bot!`, mentioned, true)
+					mentions(`@${tripamg[0].split('@')[0]} Usted a sido baneado, lo que significa que no podra usar el bot!`, mentioned, true)
 					addFilter(from)
 			}
 			}
@@ -1400,10 +1400,10 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
 				if (test.includes(`${prefix}selacome`)){
 					if (!isGroup) return reply(mess.only.group)
-					selc = `*➥@${member[3].split('@')[0]} se la come doblada :v*`	
+					selc = `*➥@${tripamg[3].split('@')[0]} se la come doblada :v*`	
 					samu330.sendMessage(from, selc, MessageType.text, {
 					quoted: fjeux, 
-					contextInfo: { mentionedJid: [member[3]]}})
+					contextInfo: { mentionedJid: [tripamg[3]]}})
 					addFilter(from)
 			}
 			}
@@ -1411,12 +1411,12 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
 				if (test.includes(`${prefix}matartrip`)){
 					if (!isGroup) return reply(mess.only.group)
-					sus = `⚠️!! @${member[2].split('@')[0]} was killed!!`
+					susd = `⚠️!! @${tripamg[2].split('@')[0]} was killed!!`
 					k = Math.floor(Math.random() * 17) + 1
 					imgkill = fs.readFileSync(`./temp/amongus/kill${k}.JPG`)
 					
 					samu330.sendMessage(from, {jpegThumbnail: imgkill}, MessageType.liveLocation,{ quoted: fjeux})
-					samu330.sendMessage(from, sus, MessageType.text, {contextInfo: { mentionedJid: [member[2]]}})
+					samu330.sendMessage(from, susd, MessageType.text, {contextInfo: { mentionedJid: [tripamg[2]]}})
 					/**
 					samu330.sendMessage(from, imgkill, MessageType.image, {
 					quoted: fjeux, 
@@ -1434,14 +1434,14 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					//if (member[1].split('@')[0] != owner && member[1].split('@')[0] != botNumber){
 					//samu330.groupRemove(from, member[1])
 					//mentionUser = member[1]
-					samu330.groupRemove(from, member[1])
+					samu330.groupRemove(from, tripamg[1])
 					//addBanned(member[1], args[1], ban)
 					//}
 					//reply(`${member[1]}`)
-					susp = `☠️!! @${member[1].split('@')[0]} expulsado`		
+					susp = `☠️!! @${tripamg[1].split('@')[0]} expulsado`		
 					samu330.sendMessage(from, susp, MessageType.text, {
 					quoted: fjeux, 
-					contextInfo: { mentionedJid: [member[1]]}})
+					contextInfo: { mentionedJid: [tripamg[1]]}})
 					addFilter(from)
 			}
 			}	    
@@ -1450,8 +1450,8 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 	    		if (sam.message.listResponseMessage){
 				if (!isGroup) return reply(mess.only.group)
 				for(let i = 1; i <= repic.length; i++){
-				test1 = sam.message.listResponseMessage.singleSelectReply.selectedRowId
-				if (test1.includes(`Id${i}`)){
+				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
+				if (test.includes(`Id${i}`)){
 					//reply(`Id${i}`)
 					j = i - 1
 					docp = repic[j]
@@ -1465,8 +1465,8 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 
 	    		if (sam.message.listResponseMessage){
 				if (!isGroup) return reply(mess.only.group)
-				test1 = sam.message.listResponseMessage.singleSelectReply.selectedRowId
-				if (test1.includes(`Id9`)){
+				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
+				if (test.includes(`Id9`)){
 					reply(mess.wait)
 					waifusd = await axios.get('https://waifu.pics/api/sfw/waifu')
 					nysd = await getBuffer(waifusd.data.url)
@@ -1477,8 +1477,8 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 	    
 	   		if (sam.message.listResponseMessage){
 				if (!isGroup) return reply(mess.only.group)
-				test1 = sam.message.listResponseMessage.singleSelectReply.selectedRowId
-				if (test1.includes(`Id10`)){
+				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
+				if (test.includes(`Id10`)){
 					reply(mess.wait)
 					kawai1 = await axios.get(`http://api.lolhuman.xyz/api/random/neko?apikey=NikolaTesla`)
 					kawai2 = await axios.get(`http://api.lolhuman.xyz/api/random2/neko?apikey=NikolaTesla`)
@@ -1493,8 +1493,8 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
                       
 	   		if (sam.message.listResponseMessage){
 				if (!isGroup) return reply(mess.only.group)
-				test1 = sam.message.listResponseMessage.singleSelectReply.selectedRowId
-				if (test1.includes(`IdBaka`)){
+				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
+				if (test.includes(`IdBaka`)){
 					reply(mess.wait)
 					ranp = getRandom('.gif')
                     			rano = getRandom('.webp')
@@ -1508,7 +1508,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					addFilter(from)
 				}
 			}
-
+/**
 	if (sam.message.listResponseMessage){
 	if (!isGroup) return reply(mess.only.group)
 		//for(let i = 0; i <= 3; i++){
@@ -1528,7 +1528,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 			}
 		//}	
 	}
-	
+**/	
 ////
 /**	    
 	    "rowId": `${plist.all[0].title}@list`
@@ -1536,18 +1536,7 @@ var _0x4dab=[if(sam[_0x4dab[1]][_0x4dab[0]]){test= sam[_0x4dab[1]][_0x4dab[0]][_
 if(test[_0x4dab[5]](`${_0x4dab[4]}`)){let orlist= await yts(`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[4])}${_0x4dab[6]}`);
 reply(`${_0x4dab[8]}${test[_0x4dab[7]](_0x4dab[4])}${_0x4dab[9]}${orlist[_0x4dab[11]][0][_0x4dab[10]]}${_0x4dab[12]}${orlist[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);let dorg= await y2mateA(`${_0x4dab[6]}${orlist[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);sendFileFromUrl(dorg[0][_0x4dab[14]],audio,{quoted:faud,mimetype:_0x4dab[15],contextInfo:{externalAdReply:{title:`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[6]}`,body:_0x4dab[17],mediaType:2,mediaUrl:`${_0x4dab[6]}${orlist[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`}}})}};if(sam[_0x4dab[1]][_0x4dab[0]]){test= sam[_0x4dab[1]][_0x4dab[0]][_0x4dab[3]][_0x4dab[2]];if(test[_0x4dab[5]](`${_0x4dab[18]}`)){let orlist1= await yts(`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[18])}${_0x4dab[6]}`);reply(`${_0x4dab[19]}${test[_0x4dab[7]](_0x4dab[18])}${_0x4dab[9]}${orlist1[_0x4dab[11]][0][_0x4dab[10]]}${_0x4dab[12]}${orlist1[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);let dorg1= await y2mateA(`${_0x4dab[6]}${orlist1[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);sendFileFromUrl(dorg1[0][_0x4dab[14]],audio,{quoted:faud,mimetype:_0x4dab[15],ptt:true,contextInfo:{externalAdReply:{title:`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[6]}`,body:_0x4dab[17],mediaType:2,mediaUrl:`${_0x4dab[6]}${orlist1[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`}}})}};if(sam[_0x4dab[1]][_0x4dab[0]]){test= sam[_0x4dab[1]][_0x4dab[0]][_0x4dab[3]][_0x4dab[2]];if(test[_0x4dab[5]](`${_0x4dab[20]}`)){let orlist11= await yts(`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[20])}${_0x4dab[6]}`);reply(`${_0x4dab[8]}${test[_0x4dab[7]](_0x4dab[20])}${_0x4dab[9]}${orlist11[_0x4dab[11]][0][_0x4dab[10]]}${_0x4dab[12]}${orlist11[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);let dorg11= await y2mateA(`${_0x4dab[6]}${orlist11[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);sendFileFromUrl(dorg11[0][_0x4dab[14]],audio,{quoted:faud,mimetype:_0x4dab[15],duration:-777,contextInfo:{externalAdReply:{title:`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[6]}`,body:_0x4dab[17],mediaType:2,mediaUrl:`${_0x4dab[6]}${orlist11[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`}}})}};if(sam[_0x4dab[1]][_0x4dab[0]]){test= sam[_0x4dab[1]][_0x4dab[0]][_0x4dab[3]][_0x4dab[2]];if(test[_0x4dab[5]](`${_0x4dab[16]}`)){let orlist111= await yts(`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[6]}`);reply(`${_0x4dab[21]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[22]}${orlist111[_0x4dab[11]][0][_0x4dab[10]]}${_0x4dab[23]}${orlist111[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);let dorg111= await y2mateA(`${_0x4dab[6]}${orlist111[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);sendFileFromUrl(dorg111[0][_0x4dab[14]],audio,{quoted:faud,mimetype:_0x4dab[15],ptt:true,duration:-777,contextInfo:{externalAdReply:{title:`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[6]}`,body:_0x4dab[17],mediaType:2,mediaUrl:`${_0x4dab[6]}${orlist111[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`}}})}}
 **/
-
-        const sendButLocation = async (id, text1, desc1, but = [], options = {}) => {
-                logor = fs.readFileSync(`.src/nsfw.jpg`)
-                const buttonMessages = {
-                locationMessage: {jpegThumbnail:logor},
-                contentText: text1,
-                footerText: desc1,
-                buttons: but,
-                headerType: 6
-                }
-                samu330.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
-                }	    
+    
 //Zona de Comandos🛵
 switch (command) {
 case 'help':
@@ -2672,8 +2661,8 @@ ${bodyM} ${prefix}coinflip (Tirar la moneda)
 ${brr} LIMIT
 
 ${bodyM} ${prefix}limit (Turnos para Lucky)
-${bodyM} ${prefix}claim (Reclama 15 turnos y xp por día)
-${bodyM} ${prefix}buylimit + ⌜Tag @⌟ (1 turno/2000 Otakoins)
+${bodyM} ${prefix}claim (Reclama 15 turnos y 1111 xp por día)
+${bodyM} ${prefix}buylimit + ⌜# de turnos⌟ (1 turno/2000 Otakoins)
 ⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 `	             
 setTimeout(() => {
@@ -2830,9 +2819,9 @@ samu330.updatePresence(from, Presence.composing)
 const nameturn = `${pushname}`
 addRegisteredUser2(sender, nameturn)			
 bayarLimit(sender, 15)
-addLevelingXp(sender, 666)
+addLevelingXp(sender, 1111)
 const lauxx = await checkLimit(sender)
-haily = `*⌜${pushname}⌟*\n★᭄ꦿ Limite : ${lauxx} turnos\n★᭄ꦿ Addxp : + 666 xp`   
+haily = `*⌜${pushname}⌟*\n★᭄ꦿ Limite : ${lauxx} turnos\n★᭄ꦿ Addxp : + 1111 xp`   
 reply(`${haily}`)
 break
 		
@@ -3350,7 +3339,7 @@ if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 reply(mess.wait)
 samu330.updatePresence(from, Presence.composing) 
-member = []	
+tripamg = []	
 const am1 = groupMembers
 const am2 = groupMembers
 const am3 = groupMembers
@@ -3378,10 +3367,10 @@ nave = `*Lista de impostores :*\n
 3= @${tr3.jid.split('@')[0]}\n
 3= @${tr4.jid.split('@')[0]}
 `
-member.push(tr1.jid)
-member.push(tr2.jid)
-member.push(tr3.jid)
-member.push(tr4.jid)
+tripamg.push(tr1.jid)
+tripamg.push(tr2.jid)
+tripamg.push(tr3.jid)
+tripamg.push(tr4.jid)
 sus = 
 `⠄⠄⠄⢰⣧⣼⣯⠄⣸⣠⣶⣶⣦⣾⠄⠄⠄⠄⡀⠄⢀⣿⣿⠄⠄⠄⢸⡇⠄⠄
  ⠄ඞ⠄⣾⣿⠿⠿⠶⠿⢿⣿⣿⣿⣿⣦⣤⣄⢀⡅⢠⣾⣛⡉⠄⠄⠄⠸⢀⣿⠄
@@ -3390,7 +3379,7 @@ sus =
 ⠄⢀⢸⣿⣷⣤⣤⣤⣬⣙⣛⢿⣿⣿⣿⣿⣿⣿⡿⣿⣿⡍⠄⠄⢀⣤⣄⠉⠋⣰
 ⠄⣼⣖⣿⣿⣿ඞ⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⢇⣿⣿⡷⠶⠶⢿⣿⣿⠇⢀⣤
 ⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣷⣶⣥⣴⣿⡗
-⣿@${member[0].split('@')[0]} was E j e c t e d
+⣿@${tripamg[0].split('@')[0]} was E j e c t e d
 ⢸⣿⣦⣌⣛⣻⣿⣿⣧⠙⠛⠛⡭⠅⠒⠦⠭⣭⡻⣿⣿⣿⣿ඞ⣿⣿⣿⡿⠃⠄
 ⠘⣿⣿⣿⣿⣿⣿⣿⣿⡆⠄⠄⠄⠄⠄⠄⠄⠄⠹⠈⢋⣽⣿⣿⣿⣿⣵⣾⠃⠄
 ⠄⠘⣿⣿⣿⣿⣿⣿⣿⣿⠄⣴⣿⣶⣄⠄⣴⣶⠄⢀⣾⣿⣿⣿⣿⣿⣿⠃⠄⠄
@@ -3399,7 +3388,7 @@ sus =
 ⠄⠄⠄⠄⠄⠄⠄⠉⠻⣿⣿⣾⣦⡙⠻⣷⣾⣿⠃⠿⠋⠁⠄⠄⠄⠄⠄⢀⣠⣴
 ⣿⣿⣿⣶⣶⣮⣥⣒⠲⢮⣝⡿⣿⣿⡆⣿⡿⠃⠄⠄⠄⠄⠄⠄⠄⣠⣴⣿⣿⣿
 ⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
-@${member[1].split('@')[0]} Remains
+@${tripamg[1].split('@')[0]} Remains
 ⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 `
 const trip = `${nave}`
@@ -3408,7 +3397,7 @@ imgus = fs.readFileSync(`./temp/amongus/amongus${k}.jpg`)
 samu330.sendMessage(from, imgus, MessageType.image, {
 quoted: fjeux, 
 caption: `${sus}`, 
-contextInfo: { mentionedJid: [member[0], member[1]]}})
+contextInfo: { mentionedJid: [tripamg[0], tripamg[1]]}})
 
 let amongs = samu330.prepareMessageFromContent(from, {
 "listMessage":  {
