@@ -1947,56 +1947,7 @@ samu330.sendMessage(from, Menuo, MessageType.text, {
 quoted: floc})
 addFilter(from)
 addLevelingXp(sender, 20)		
-break
-
-case 'menu18':
-samu330.updatePresence(from, Presence.composing)
-uptime = process.uptime()
-if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
-if (!isGroup) return reply(mess.only.group)
-if (!isNsfw) return reply(mess.nsfw)
-/**
-const menuxxx = `_*NORPO...*_\t\t\t\t\t\t\t_*GIFS*_	
-${bodyM} ${prefix}lesbian\t\t\t\t\t\t\t${bodyM} ${prefix}pussyg 
-${bodyM} ${prefix}tetas\t\t\t\t\t\t\t\t${bodyM} ${prefix}boobsg
-${bodyM} ${prefix}ass\t\t\t\t\t\t\t\t\t${bodyM} ${prefix}analg
-${bodyM} ${prefix}pussy
-_*HENTAI :3*_
-${bodyM} ${prefix}xwaifu\t\t\t\t\t\t\t${bodyM} ${prefix}xneko
-${bodyM} ${prefix}trap\t\t\t\t\t\t\t\t\t${bodyM} ${prefix}blow
-${bodyM} ${prefix}hentai\t\t\t\t\t\t\t${bodyM} ${prefix}ahegao
-${bodyM} ${prefix}xboobs\t\t\t\t\t\t\t${bodyM} ${prefix}xass
-${bodyM} ${prefix}muslos\t\t\t\t\t\t\t${bodyM} ${prefix}patas
-${bodyM} ${prefix}futa\t\t\t\t\t\t\t\t\t${bodyM} ${prefix}sidebobs
-${bodyM} ${prefix}blowjob\t\t\t\t\t\t${bodyM} ${prefix}armpits
-${bodyM} ${prefix}femdom\t\t\t\t\t\t${bodyM} ${prefix}pussyimg
-\{bodyM} ${prefix}oppai\t\t\t\t\t\t\t\t${bodyM} ${prefix}cumimg`
-**/
-const menuxxx = `_*NORPO... Y GIFS*_	
-
-${bodyM} ${prefix}lesbian		${bodyM} ${prefix}pussyg 
-${bodyM} ${prefix}tetas			${bodyM} ${prefix}boobsg
-${bodyM} ${prefix}ass			${bodyM} ${prefix}analg
-${bodyM} ${prefix}pussy
-
-_*HENTAI :3*_
-
-${bodyM} ${prefix}xwaifu		${bodyM} ${prefix}xneko
-${bodyM} ${prefix}trap			${bodyM} ${prefix}blow
-${bodyM} ${prefix}hentai		${bodyM} ${prefix}ahegao
-${bodyM} ${prefix}xboobs		${bodyM} ${prefix}xass
-${bodyM} ${prefix}muslos		${bodyM} ${prefix}patas
-${bodyM} ${prefix}futa			${bodyM} ${prefix}sidebobs
-${bodyM} ${prefix}blowjob		${bodyM} ${prefix}armpits
-${bodyM} ${prefix}femdom		${bodyM} ${prefix}pussyimg
-\{bodyM} ${prefix}oppai			${bodyM} ${prefix}cumimg`
-
-addFilter(from)
-addLevelingXp(sender, 20)		
-//samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${Menu18}`, thumbnail: samuPn, contextInfo: { mentionedJid: [sender]}})              
-sendButLocation(from, ` *Hola : ${pushname}*\n\n${menuxxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, {jpegThumbnail: fs.readFileSync('./src/+18.jpg')}, [{buttonId: 'test11', buttonText: {displayText: `Rico :3`}, type: 1}, {buttonId: 'test22', buttonText: {displayText: `Re Turbio`}, type: 1}])		
-break	
-		
+break		
 /////////			
 		
 case 'menulog':
