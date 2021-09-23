@@ -1381,6 +1381,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 			}                     
 			}
 ///////			
+	   		/**
 			if (sam.message.listResponseMessage){
 				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
 				if (test.includes(`${prefix}banearlo`)){
@@ -1413,12 +1414,12 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					
 					samu330.sendMessage(from, {jpegThumbnail: imgkilled}, MessageType.liveLocation,{ quoted: fjeux})
 					samu330.sendMessage(from, susd, MessageType.text, {contextInfo: { mentionedJid: [tripamg[2]]}})
-					/**
+					
 					samu330.sendMessage(from, imgkill, MessageType.image, {
 					quoted: fjeux, 
 					caption: `${sus}`, 
 					contextInfo: { mentionedJid: [member[2]]}})
-					**/
+					
 					addFilter(from)
 			}
 			}
@@ -1440,7 +1441,8 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					contextInfo: { mentionedJid: [tripamg[1]]}})
 					addFilter(from)
 			}
-			}	    
+			}
+			**/
 /////
 	    const repic = ["art", "wallnime", "megumin", "neko", "loli", "waifu", "sagiri", "shinobu"]
 	    		if (sam.message.listResponseMessage){
@@ -3205,6 +3207,39 @@ addFilter(from)
 addLevelingXp(sender, 20)
 break
 		
+case 'golosa':
+addFilter(from)	
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+if (args.length < 1) return reply("Mentiona a alguien, pajero!")	
+samu330.updatePresence(from, Presence.composing) 
+mdata = await samu330.groupMetadata(from)
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+}
+random = Math.floor(Math.random() * 30)				
+const uffrico = `⊱ @${mentioned[0].split('@')[0]} se la come ➥${random} cm de nepe :v`
+samu330.sendMessage(from, ftgay, MessageType.image, {
+quoted: fnsfw, 
+caption: `${hasil}`, 
+contextInfo: {
+mentionedJid: [sender, mentioned[0]],
+},
+})		
+samu330.sendMessage(from, `${uffrico}`, MessageType.text, {
+	//quoted : fjeux, 
+	contextInfo: {
+	mentionedJid: [sender, mentioned[0]],
+	externalAdReply :{
+	title: `「 ${mdata.subject} 」\n✪ ➥ ↴`,
+	//body: '',
+	//sourceUrl : `${linkx}`, 
+	thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
+	)		
+addFilter(from)
+addLevelingXp(sender, 20)
+break		
+		
 case 'miniprof':
 samu330.updatePresence(from, Presence.composing)  
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
@@ -3410,7 +3445,7 @@ samu330.sendMessage(from, imgus, MessageType.image, {
 quoted: fjeux, 
 caption: `${sus}`, 
 contextInfo: { mentionedJid: [tripamg[0], tripamg[1]]}})
-
+/**
 let amongs = samu330.prepareMessageFromContent(from, {
 "listMessage":  {
 "title": "\t*AMONGUS X👑X*",
@@ -3445,9 +3480,37 @@ setTimeout(() => {
 //reply(`${prefix}emergencymetting`)
 samu330.relayWAMessage(amongs, {waitForAck: true})
 }, 4000)
+**/		
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
+		
+case 'kill':
+addFilter(from)	
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+if (args.length < 1) return reply("Mentiona al impostor, pajero!")	
+samu330.updatePresence(from, Presence.composing) 
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+}		
+var k = Math.floor(Math.random() * 17) + 1
+imgkill = fs.readFileSync(`./temp/amongus/kill${k}.JPG`)
+samu330.sendMessage(from, {jpegThumbnail: imgkill}, MessageType.liveLocation,{ quoted: fjeux})
+const susxx = `El impostor @${mentioned[0].split('@')[0]} was killed ⚠️!!`
+/**
+const fkil = {
+	key:
+	{ fromMe: true,
+	 participant: `1630707686@g.us`, ...(from ?
+							{ remoteJid: "@g.us"} : {}) },
+	message: { "videoMessage": { "caption":`Lalelilolu ᵈᵃʳʸ⛥\n${pushname}`, 'jpegThumbnail': 
+				    fs.readFileSync('./src/fake.jpg')}}
+}
+*//
+samu330.sendMessage(from, susxx, MessageType.text, {contextInfo: { mentionedJid: [mentioned[0]]}})
+break		
+		
 ///////////	
 case 'imgrandom':		
 let picrd = samu330.prepareMessageFromContent(from, {
