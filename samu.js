@@ -1414,10 +1414,15 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 					sus = `⚠️!! @${member[2].split('@')[0]} was killed!!`
 					k = Math.floor(Math.random() * 17) + 1
 					imgkill = fs.readFileSync(`./temp/amongus/kill${k}.JPG`)
+					
+					samu330.sendMessage(from, {jpegThumbnail: imgkill}, MessageType.liveLocation,{ quoted: fjeux})
+					samu330.sendMessage(from, sus, MessageType.text, {contextInfo: { mentionedJid: [member[2]]}})
+					/**
 					samu330.sendMessage(from, imgkill, MessageType.image, {
 					quoted: fjeux, 
 					caption: `${sus}`, 
 					contextInfo: { mentionedJid: [member[2]]}})
+					**/
 					addFilter(from)
 			}
 			}
