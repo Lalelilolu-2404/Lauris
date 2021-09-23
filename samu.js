@@ -1537,6 +1537,36 @@ reply(`${_0x4dab[8]}${test[_0x4dab[7]](_0x4dab[4])}${_0x4dab[9]}${orlist[_0x4dab
     
 //Zona de Comandos🛵
 switch (command) {
+		
+case 'menu18':
+samu330.updatePresence(from, Presence.composing)
+uptime = process.uptime()
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(mess.nsfw)
+
+const menuxxx = `_*NORPO... Y GIFS*_	
+${bodyM} ${prefix}lesbian		${bodyM} ${prefix}pussyg 
+${bodyM} ${prefix}tetas			 ${bodyM} ${prefix}boobsg
+${bodyM} ${prefix}ass			 ${bodyM} ${prefix}analg
+${bodyM} ${prefix}pussy
+_*HENTAI :3*_
+${bodyM} ${prefix}xwaifu		   ${bodyM} ${prefix}xneko
+${bodyM} ${prefix}trap			   ${bodyM} ${prefix}blow
+${bodyM} ${prefix}hentai		   ${bodyM} ${prefix}ahegao
+${bodyM} ${prefix}xboobs		 ${bodyM} ${prefix}xass
+${bodyM} ${prefix}muslos		 ${bodyM} ${prefix}patas
+${bodyM} ${prefix}futa			   ${bodyM} ${prefix}sidebobs
+${bodyM} ${prefix}blowjob		 ${bodyM} ${prefix}armpits
+${bodyM} ${prefix}femdom		${bodyM} ${prefix}pussyimg
+\{bodyM} ${prefix}oppai			 ${bodyM} ${prefix}cumimg`
+
+addFilter(from)
+addLevelingXp(sender, 20)		
+//samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${Menu18}`, thumbnail: samuPn, contextInfo: { mentionedJid: [sender]}})              
+sendButLocation(from, ` *Hola : ${pushname}*\n\n${menuxxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, {jpegThumbnail: fs.readFileSync('./src/+18.jpg')}, [{buttonId: 'test11', buttonText: {displayText: `Rico :3`}, type: 1}, {buttonId: 'test22', buttonText: {displayText: `Re Turbio`}, type: 1}])		
+break	
+		
 case 'help':
 case 'menu':
 case 'comandos':
