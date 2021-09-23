@@ -3218,18 +3218,11 @@ if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }
 random = Math.floor(Math.random() * 30)				
-const uffrico = `⊱ @${mentioned[0].split('@')[0]} se la come ➥${random} cm de nepe :v`
-samu330.sendMessage(from, ftgay, MessageType.image, {
-quoted: fnsfw, 
-caption: `${hasil}`, 
-contextInfo: {
-mentionedJid: [sender, mentioned[0]],
-},
-})		
+const uffrico = `⊱ @${mentioned[0].split('@')[0]} se la come ➥${random} cm de nepe :v`		
 samu330.sendMessage(from, `${uffrico}`, MessageType.text, {
 	//quoted : fjeux, 
 	contextInfo: {
-	mentionedJid: [sender, mentioned[0]],
+	mentionedJid: [mentioned[0]],
 	externalAdReply :{
 	title: `「 ${mdata.subject} 」\n✪ ➥ ↴`,
 	//body: '',
@@ -3507,8 +3500,11 @@ const fkil = {
 	message: { "videoMessage": { "caption":`Lalelilolu ᵈᵃʳʸ⛥\n${pushname}`, 'jpegThumbnail': 
 				    fs.readFileSync('./src/fake.jpg')}}
 }
-*//
+*/
+		
+setTimeout(() => {
 samu330.sendMessage(from, susxx, MessageType.text, {contextInfo: { mentionedJid: [mentioned[0]]}})
+}, 2000)
 break		
 		
 ///////////	
