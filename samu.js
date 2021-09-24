@@ -3922,6 +3922,7 @@ break
 			break	
 		
 			case 'ecchi':
+			if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 					buffer = await getBuffer('http://api.lolhuman.xyz/api/random/nsfw/ecchi?apikey=847de7716f17a51eeba4235c')
 					samu330.sendMessage(from, buffer, image, { caption : '💎 _*Wow 🥵*_ 💠', quoted: fimg})
 			.catch(err => {
@@ -3930,6 +3931,18 @@ break
 			addFilter(from)
 			addLevelingXp(sender, 20)
 			break	
+		
+			case 'neko':
+			if (!isGroup) return reply(mess.only.group)
+			nek = await axios.get('https://nekos.life/api/v2/img/neko')
+			buffer = await getBuffer(nek.data.url)
+			samu330.sendMessage(from, buffer, image, {quoted: fimg})
+			.catch(err => {
+			return('Pwrdon... T_T')
+			})
+			addFilter(from)
+			addLevelingXp(sender, 20)
+			break
 		
 			
 case 'pussyg':
@@ -4026,19 +4039,7 @@ break
 						})
 						addFilter(from)
 					addLevelingXp(sender, 20)
-						break
-					case 'neko':
-							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							nek = await axios.get('https://nekos.life/api/v2/img/neko')
-							buffer = await getBuffer(nek.data.url)
-							samu330.sendMessage(from, buffer, image, {quoted: fimg})
-						.catch(err => {
-						return('Pwrdon... T_T')
-						})
-					addFilter(from)
-					addLevelingXp(sender, 20)
-						break
-	
+						break	
 	
 					case 'xpussy':
 						try {
