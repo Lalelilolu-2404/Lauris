@@ -1567,7 +1567,7 @@ ${bodyM} ${prefix}oppai			   ${bodyM} ${prefix}cumimg`
 bahmh = fs.readFileSync(`./src/+18.jpg`)
 samu330.sendMessage(from, {jpegThumbnail: bahmh}, MessageType.liveLocation,{ quoted: fnsfw})
 setTimeout(() => {
-reply(` *Hola : ${pushname}*\n\n${menuxxx}`
+reply(` *Hola : ${pushname}*\n\n${menuxxx}`)
 }, 1000)	
 
 addFilter(from)
