@@ -846,7 +846,7 @@ const isUser2 = checkRegisteredUser2(sender)
 		const sendLoct = async (id, text1, desc1, gam1, options = {}) => {
                 kma = gam1
                 mhan = await samu330.prepareMessage(from, kma, location)
-                samu330.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
+                samu330.sendMessage(id, MessageType.location, options)
                 }
 	
 		const sendButImage = async(id, text1, desc1, gam1, but = [], options = {}) => {
