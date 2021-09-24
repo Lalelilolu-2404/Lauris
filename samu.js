@@ -843,6 +843,12 @@ const isUser2 = checkRegisteredUser2(sender)
                 samu330.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
                 }
 	
+		const sendLoct = async (id, text1, desc1, gam1, options = {}) => {
+                kma = gam1
+                mhan = await samu330.prepareMessage(from, kma, location)
+                samu330.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
+                }
+	
 		const sendButImage = async(id, text1, desc1, gam1, but = [], options = {}) => {
 		kma = gam1
 		mhan = await samu330.prepareMessage(from, kma, image)
@@ -1547,31 +1553,33 @@ if (!isNsfw) return reply(mess.nsfw)
 
 const menuxxx = `_*NORPO... Y GIFS*_
 
-${bodyM} ${prefix}lesbian		${bodyM} ${prefix}pussyg 
-${bodyM} ${prefix}tetas			 ${bodyM} ${prefix}boobsg
-${bodyM} ${prefix}ass			 ${bodyM} ${prefix}analg
+${bodyM} ${prefix}lesbian		 ${bodyM} ${prefix}pussyg 
+${bodyM} ${prefix}tetas			   ${bodyM} ${prefix}boobsg
+${bodyM} ${prefix}ass			   ${bodyM} ${prefix}analg
 ${bodyM} ${prefix}pussy
 
 _*HENTAI :3*_
 
-${bodyM} ${prefix}xwaifu		   ${bodyM} ${prefix}xneko
-${bodyM} ${prefix}trap			   ${bodyM} ${prefix}blow
-${bodyM} ${prefix}hentai		   ${bodyM} ${prefix}ahegao
-${bodyM} ${prefix}xboobs		 ${bodyM} ${prefix}xass
-${bodyM} ${prefix}muslos		 ${bodyM} ${prefix}patas
-${bodyM} ${prefix}futa			   ${bodyM} ${prefix}sidebobs
-${bodyM} ${prefix}blowjob		 ${bodyM} ${prefix}armpits
+${bodyM} ${prefix}xwaifu		     ${bodyM} ${prefix}xneko
+${bodyM} ${prefix}trap			     ${bodyM} ${prefix}blow
+${bodyM} ${prefix}hentai		     ${bodyM} ${prefix}ahegao
+${bodyM} ${prefix}xboobs		  ${bodyM} ${prefix}xass
+${bodyM} ${prefix}muslos		   ${bodyM} ${prefix}patas
+${bodyM} ${prefix}futa			    ${bodyM} ${prefix}sidebobs
+${bodyM} ${prefix}blowjob		  ${bodyM} ${prefix}armpits
 ${bodyM} ${prefix}femdom		${bodyM} ${prefix}pussyimg
-${bodyM} ${prefix}oppai			 ${bodyM} ${prefix}cumimg`
+${bodyM} ${prefix}oppai			  ${bodyM} ${prefix}cumimg`
 
-addFilter(from)
-addLevelingXp(sender, 20)
-		
+/**		
 bahmh = fs.readFileSync(`./src/+18.jpg`)
 samu330.sendMessage(from, {jpegThumbnail: bahmh}, MessageType.liveLocation,{ quoted: fnsfw})
 setTimeout(() => {
 samu330.sendMessage(from, ` *Hola : ${pushname}*\n\n${menuxxx}`, MessageType.text)
-}, 1000)		
+}, 1000)	
+**/
+sendLoct(from, ` *Hola : ${pushname}*\n\n${menuxxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, {jpegThumbnail: fs.readFileSync('./src/+18.jpg')})	
+addFilter(from)
+addLevelingXp(sender, 20)
 break	
 		
 case 'help':
