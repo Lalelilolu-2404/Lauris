@@ -46,7 +46,7 @@ const fromBuffer = require('file-type');
 const FormData = require('form-data')
 const samuGg = require('google-it');
 const samuGgImg = require('g-i-s');
-//const hx = require('hxz-api');
+const hx = require('hxz-api');
 ////////////▶ 𝐒𝐚𝐦𝐮𝟑𝟑𝟎 | 𝐒𝐚𝐦 𝐲 𝐏𝐞𝐫𝐫𝐲
 const { validmove, setGame } = require("./lib/tictactoe");
 const simple = require('./lib/simple.js');
@@ -101,7 +101,7 @@ const sleep = async (ms) => {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 ////////////▶ 𝐒𝐚𝐦𝐮𝟑𝟑𝟎 | 𝐒𝐚𝐦 𝐲 𝐏𝐞𝐫𝐫𝐲
-api = 'CONTACTAME PARA OBTENER LA API'
+api = 'Sm330'
 fak = 'Lalelilolu ᵈᵃʳʸ⛥'
 prefix = '/'
 apikey = 'LindowApi'
@@ -829,12 +829,30 @@ const isUser2 = checkRegisteredUser2(sender)
 		}
 		samu330.sendMessage(id, buttonMessage, MessageType.buttonsMessage, options)
 		}
-
-	const sendButLocation = async (id, text1, desc1, gam1, but = [], options = {}) => {
+		/**
+		const sendButLocation = async (id, text1, desc1, gam1, but = [], options = {}) => {
                 kma = gam1
                 mhan = await samu330.prepareMessage(from, kma, location)
                 const buttonMessages = {
                 locationMessage: mhan.message.locationMessage,
+                contentText: text1,
+                footerText: desc1,
+                buttons: but,
+                headerType: 6
+                }
+                samu330.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
+                }
+		**/
+	        const sendButLocation = async (id, text1, desc1, gam1, but = [], options = {}) => {
+                kma = gam1
+		loc = {
+		"degreesLatitude": 0,
+		"degreesLongitude": 0,
+		"jpegThumbnail": kma
+		}
+                mhan = await samu330.prepareMessage(from, kma, location)
+                const buttonMessages = {
+                locationMessage: loc,
                 contentText: text1,
                 footerText: desc1,
                 buttons: but,
@@ -1534,6 +1552,20 @@ var _0x4dab=[if(sam[_0x4dab[1]][_0x4dab[0]]){test= sam[_0x4dab[1]][_0x4dab[0]][_
 if(test[_0x4dab[5]](`${_0x4dab[4]}`)){let orlist= await yts(`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[4])}${_0x4dab[6]}`);
 reply(`${_0x4dab[8]}${test[_0x4dab[7]](_0x4dab[4])}${_0x4dab[9]}${orlist[_0x4dab[11]][0][_0x4dab[10]]}${_0x4dab[12]}${orlist[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);let dorg= await y2mateA(`${_0x4dab[6]}${orlist[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);sendFileFromUrl(dorg[0][_0x4dab[14]],audio,{quoted:faud,mimetype:_0x4dab[15],contextInfo:{externalAdReply:{title:`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[6]}`,body:_0x4dab[17],mediaType:2,mediaUrl:`${_0x4dab[6]}${orlist[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`}}})}};if(sam[_0x4dab[1]][_0x4dab[0]]){test= sam[_0x4dab[1]][_0x4dab[0]][_0x4dab[3]][_0x4dab[2]];if(test[_0x4dab[5]](`${_0x4dab[18]}`)){let orlist1= await yts(`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[18])}${_0x4dab[6]}`);reply(`${_0x4dab[19]}${test[_0x4dab[7]](_0x4dab[18])}${_0x4dab[9]}${orlist1[_0x4dab[11]][0][_0x4dab[10]]}${_0x4dab[12]}${orlist1[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);let dorg1= await y2mateA(`${_0x4dab[6]}${orlist1[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);sendFileFromUrl(dorg1[0][_0x4dab[14]],audio,{quoted:faud,mimetype:_0x4dab[15],ptt:true,contextInfo:{externalAdReply:{title:`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[6]}`,body:_0x4dab[17],mediaType:2,mediaUrl:`${_0x4dab[6]}${orlist1[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`}}})}};if(sam[_0x4dab[1]][_0x4dab[0]]){test= sam[_0x4dab[1]][_0x4dab[0]][_0x4dab[3]][_0x4dab[2]];if(test[_0x4dab[5]](`${_0x4dab[20]}`)){let orlist11= await yts(`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[20])}${_0x4dab[6]}`);reply(`${_0x4dab[8]}${test[_0x4dab[7]](_0x4dab[20])}${_0x4dab[9]}${orlist11[_0x4dab[11]][0][_0x4dab[10]]}${_0x4dab[12]}${orlist11[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);let dorg11= await y2mateA(`${_0x4dab[6]}${orlist11[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);sendFileFromUrl(dorg11[0][_0x4dab[14]],audio,{quoted:faud,mimetype:_0x4dab[15],duration:-777,contextInfo:{externalAdReply:{title:`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[6]}`,body:_0x4dab[17],mediaType:2,mediaUrl:`${_0x4dab[6]}${orlist11[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`}}})}};if(sam[_0x4dab[1]][_0x4dab[0]]){test= sam[_0x4dab[1]][_0x4dab[0]][_0x4dab[3]][_0x4dab[2]];if(test[_0x4dab[5]](`${_0x4dab[16]}`)){let orlist111= await yts(`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[6]}`);reply(`${_0x4dab[21]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[22]}${orlist111[_0x4dab[11]][0][_0x4dab[10]]}${_0x4dab[23]}${orlist111[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);let dorg111= await y2mateA(`${_0x4dab[6]}${orlist111[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);sendFileFromUrl(dorg111[0][_0x4dab[14]],audio,{quoted:faud,mimetype:_0x4dab[15],ptt:true,duration:-777,contextInfo:{externalAdReply:{title:`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[6]}`,body:_0x4dab[17],mediaType:2,mediaUrl:`${_0x4dab[6]}${orlist111[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`}}})}}
 **/
+	    
+			if (sam.message.buttonsResponseMessage){
+				test = sam.message.buttonsResponseMessage.selectedButtonId
+				if (test.includes(`m1`)){
+			reply(`Pidan trapitos xd`)
+			}
+			}
+
+			if (sam.message.buttonsResponseMessage){
+				test = sam.message.buttonsResponseMessage.selectedButtonId
+				if (test.includes(`m2`)){
+			reply(`Aló Fbi!!, Aquí hay un puerco :v`)
+			}
+			}
     
 //Zona de Comandos🛵
 switch (command) {
@@ -1573,39 +1605,47 @@ reply(` *Hola : ${pushname}*\n\n${menuxxx}`)
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
-/**
-case 'menu18':
+
+case 'menu6':
 samu330.updatePresence(from, Presence.composing)
+uptime = process.uptime()
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (!isGroup) return reply(mess.only.group)
 if (!isNsfw) return reply(mess.nsfw)
-samuPn = fs.readFileSync('./src/+18.jpg')
-uptime = process.uptime()
 
-const menuxxx = `_*NORPO... Y GIFS*_
+const menuvx = `_*NORPO... Y GIFS*_
 
-${bodyM} ${prefix}lesbian		 ${bodyM} ${prefix}pussyg 
-${bodyM} ${prefix}tetas			   ${bodyM} ${prefix}boobsg
-${bodyM} ${prefix}ass			   ${bodyM} ${prefix}analg
+${bodyM} ${prefix}lesbian		   ${bodyM} ${prefix}pussyg 
+${bodyM} ${prefix}tetas			      ${bodyM} ${prefix}boobsg
+${bodyM} ${prefix}ass			      ${bodyM} ${prefix}analg
 ${bodyM} ${prefix}pussy
 
 _*HENTAI :3*_
 
-${bodyM} ${prefix}xwaifu		     ${bodyM} ${prefix}xneko
-${bodyM} ${prefix}trap			     ${bodyM} ${prefix}blow
-${bodyM} ${prefix}hentai		     ${bodyM} ${prefix}ahegao
-${bodyM} ${prefix}xboobs		  ${bodyM} ${prefix}xass
+${bodyM} ${prefix}xwaifu		      ${bodyM} ${prefix}xneko
+${bodyM} ${prefix}trap			      ${bodyM} ${prefix}blow
+${bodyM} ${prefix}hentai		      ${bodyM} ${prefix}ahegao
+${bodyM} ${prefix}xboobs		   ${bodyM} ${prefix}xass
 ${bodyM} ${prefix}muslos		   ${bodyM} ${prefix}patas
-${bodyM} ${prefix}futa			    ${bodyM} ${prefix}sidebobs
-${bodyM} ${prefix}blowjob		  ${bodyM} ${prefix}armpits
+${bodyM} ${prefix}futa			      ${bodyM} ${prefix}sidebobs
+${bodyM} ${prefix}blowjob		   ${bodyM} ${prefix}armpits
 ${bodyM} ${prefix}femdom		${bodyM} ${prefix}pussyimg
-${bodyM} ${prefix}oppai			  ${bodyM} ${prefix}cumimg`
-
+${bodyM} ${prefix}oppai			   ${bodyM} ${prefix}cumimg`
+		
+sendButLocation(from, `*Hola : ${pushname}*\n\n${menuxxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, fs.readFileSync('./src/+18.jpg'),
+				[{buttonId: 'm1', 
+				buttonText: 
+				{displayText: '[Rico :3]'}, 
+				type: 1},
+				{buttonId: 'm2',
+				buttonText: 
+				{displayText: '[Re Turbio]'}, 
+				type: 1}], 
+				{quoted: sam, contextInfo: { forwardingScore: 508, isForwarded: true}})
 addFilter(from)
-addLevelingXp(sender, 20)		
-samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${menuxxx}`, thumbnail: samuPn})              
-break
-**/		
+addLevelingXp(sender, 20)
+break			
+		
 case 'help':
 case 'menu':
 case 'comandos':
@@ -5379,7 +5419,7 @@ case 'reglas':
 samu330.updatePresence(from, Presence.composing)  		
 mdata = await samu330.groupMetadata(from)
 reply(`_*「 Hola, @${pushname} 」*_\n_*Bienvenido a 「 ${mdata.subject} 」*_\n\n_*Estas son la reglas para el uso del Bot :*_\n\n1- No hablar ni pedir comandos en privado, al Bot.\n2- _*❌No hagas spam de comandos❌*_\nEsto es enserio, el Bot puede saturarse y desconectarse.\n3- _*📵No hagas llamadas al BOT📵*_\nSerás bloqueado inmediatamente.\n4- _🕐Espera el tiempo nesesario cuando pidas alguna funcion. 
-Ya que algunas tardan en realizarse._\n\n5- _*IMPORTANTE!!!*_\nEscribe bien los commandos : *${prefix}comando (Ningún espacio entre el prefijo y el comando en minúscula)*_\n\n*Lee bien las reglas y cúmplelas, no te quieras pasar de pendejo o serás baneado del uso de BOT.*`)
+Ya que algunas tardan en realizarse.\n\n5- _*IMPORTANTE!!!*_\nEscribe bien los commandos : *${prefix}comando*\n*(Ningún espacio entre el prefijo y el comando en minúscula)*\n\n*Lee bien las reglas y cúmplelas, no te quieras pasar de pendejo o serás baneado del uso de BOT.*`)
 break
 case 'rules':
 samu330.updatePresence(from, Presence.composing)  		
