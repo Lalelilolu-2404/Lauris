@@ -1562,9 +1562,13 @@ ${bodyM} ${prefix}femdom		${bodyM} ${prefix}pussyimg
 \{bodyM} ${prefix}oppai			 ${bodyM} ${prefix}cumimg`
 
 addFilter(from)
-addLevelingXp(sender, 20)		
-//samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${Menu18}`, thumbnail: samuPn, contextInfo: { mentionedJid: [sender]}})              
-sendButLocation(from, ` *Hola : ${pushname}*\n\n${menuxxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, {jpegThumbnail: fs.readFileSync('./src/+18.jpg')}, [{buttonId: 'test11', buttonText: {displayText: `Rico :3`}, type: 1}, {buttonId: 'test22', buttonText: {displayText: `Re Turbio`}, type: 1}])		
+addLevelingXp(sender, 20)
+		
+bahmh = fs.readFileSync(`./src/+18.jpg`)
+samu330.sendMessage(from, {jpegThumbnail: bahmh}, MessageType.liveLocation,{ quoted: fnsfw})
+setTimeout(() => {
+sendButMessage(from, ` *Hola : ${pushname}*\n\n${menuxxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, [{buttonId: 'test11', buttonText: {displayText: `Rico :3`}, type: 1}, {buttonId: 'test22', buttonText: {displayText: `Re Turbio`}, type: 1}])
+}, 2000)		
 break	
 		
 case 'help':
