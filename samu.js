@@ -1632,7 +1632,7 @@ ${bodyM} ${prefix}blowjob		   ${bodyM} ${prefix}armpits
 ${bodyM} ${prefix}femdom		${bodyM} ${prefix}pussyimg
 ${bodyM} ${prefix}oppai			   ${bodyM} ${prefix}cumimg`
 		
-sendButLocation(from, `*Hola : ${pushname}*\n\n${menuxxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, fs.readFileSync('./src/+18.jpg'),
+sendButLocation(from, `*Hola : ${pushname}*\n\n${menuvx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, fs.readFileSync('./src/+18.jpg'),
 				[{buttonId: 'm1', 
 				buttonText: 
 				{displayText: '[Rico :3]'}, 
