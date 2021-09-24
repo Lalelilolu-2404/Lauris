@@ -843,12 +843,6 @@ const isUser2 = checkRegisteredUser2(sender)
                 samu330.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
                 }
 	
-		const sendLoct = async (id, text1, desc1, gam1, options = {}) => {
-                kma = gam1
-                mhan = await samu330.prepareMessage(from, kma, location)
-                samu330.sendMessage(id, MessageType.location, options)
-                }
-	
 		const sendButImage = async(id, text1, desc1, gam1, but = [], options = {}) => {
 		kma = gam1
 		mhan = await samu330.prepareMessage(from, kma, image)
@@ -1543,7 +1537,7 @@ reply(`${_0x4dab[8]}${test[_0x4dab[7]](_0x4dab[4])}${_0x4dab[9]}${orlist[_0x4dab
     
 //Zona de Comandos🛵
 switch (command) {
-		
+/**		
 case 'menu18':
 samu330.updatePresence(from, Presence.composing)
 uptime = process.uptime()
@@ -1570,17 +1564,49 @@ ${bodyM} ${prefix}blowjob		  ${bodyM} ${prefix}armpits
 ${bodyM} ${prefix}femdom		${bodyM} ${prefix}pussyimg
 ${bodyM} ${prefix}oppai			  ${bodyM} ${prefix}cumimg`
 
-/**		
+		
 bahmh = fs.readFileSync(`./src/+18.jpg`)
 samu330.sendMessage(from, {jpegThumbnail: bahmh}, MessageType.liveLocation,{ quoted: fnsfw})
 setTimeout(() => {
 samu330.sendMessage(from, ` *Hola : ${pushname}*\n\n${menuxxx}`, MessageType.text)
 }, 1000)	
-**/
+
 sendLoct(from, ` *Hola : ${pushname}*\n\n${menuxxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, {jpegThumbnail: fs.readFileSync('./src/+18.jpg')})	
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
+**/
+case 'menu18':
+samu330.updatePresence(from, Presence.composing)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(mess.nsfw)
+samuPn = fs.readFileSync('./src/+18.jpg')
+uptime = process.uptime()
+
+const menuxxx = `_*NORPO... Y GIFS*_
+
+${bodyM} ${prefix}lesbian		 ${bodyM} ${prefix}pussyg 
+${bodyM} ${prefix}tetas			   ${bodyM} ${prefix}boobsg
+${bodyM} ${prefix}ass			   ${bodyM} ${prefix}analg
+${bodyM} ${prefix}pussy
+
+_*HENTAI :3*_
+
+${bodyM} ${prefix}xwaifu		     ${bodyM} ${prefix}xneko
+${bodyM} ${prefix}trap			     ${bodyM} ${prefix}blow
+${bodyM} ${prefix}hentai		     ${bodyM} ${prefix}ahegao
+${bodyM} ${prefix}xboobs		  ${bodyM} ${prefix}xass
+${bodyM} ${prefix}muslos		   ${bodyM} ${prefix}patas
+${bodyM} ${prefix}futa			    ${bodyM} ${prefix}sidebobs
+${bodyM} ${prefix}blowjob		  ${bodyM} ${prefix}armpits
+${bodyM} ${prefix}femdom		${bodyM} ${prefix}pussyimg
+${bodyM} ${prefix}oppai			  ${bodyM} ${prefix}cumimg`
+
+addFilter(from)
+addLevelingXp(sender, 20)		
+samu330.sendMessage(from, samuPn, image, { quoted: fnsfw, caption: `${menuxxx}`, thumbnail: samuPn})              
+break
 		
 case 'help':
 case 'menu':
