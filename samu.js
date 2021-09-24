@@ -1545,12 +1545,15 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
 if (!isGroup) return reply(mess.only.group)
 if (!isNsfw) return reply(mess.nsfw)
 
-const menuxxx = `_*NORPO... Y GIFS*_	
+const menuxxx = `_*NORPO... Y GIFS*_
+
 ${bodyM} ${prefix}lesbian		${bodyM} ${prefix}pussyg 
 ${bodyM} ${prefix}tetas			 ${bodyM} ${prefix}boobsg
 ${bodyM} ${prefix}ass			 ${bodyM} ${prefix}analg
 ${bodyM} ${prefix}pussy
+
 _*HENTAI :3*_
+
 ${bodyM} ${prefix}xwaifu		   ${bodyM} ${prefix}xneko
 ${bodyM} ${prefix}trap			   ${bodyM} ${prefix}blow
 ${bodyM} ${prefix}hentai		   ${bodyM} ${prefix}ahegao
@@ -1559,7 +1562,7 @@ ${bodyM} ${prefix}muslos		 ${bodyM} ${prefix}patas
 ${bodyM} ${prefix}futa			   ${bodyM} ${prefix}sidebobs
 ${bodyM} ${prefix}blowjob		 ${bodyM} ${prefix}armpits
 ${bodyM} ${prefix}femdom		${bodyM} ${prefix}pussyimg
-\{bodyM} ${prefix}oppai			 ${bodyM} ${prefix}cumimg`
+${bodyM} ${prefix}oppai			 ${bodyM} ${prefix}cumimg`
 
 addFilter(from)
 addLevelingXp(sender, 20)
@@ -1567,8 +1570,8 @@ addLevelingXp(sender, 20)
 bahmh = fs.readFileSync(`./src/+18.jpg`)
 samu330.sendMessage(from, {jpegThumbnail: bahmh}, MessageType.liveLocation,{ quoted: fnsfw})
 setTimeout(() => {
-sendButMessage(from, ` *Hola : ${pushname}*\n\n${menuxxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, [{buttonId: 'test11', buttonText: {displayText: `Rico :3`}, type: 1}, {buttonId: 'test22', buttonText: {displayText: `Re Turbio`}, type: 1}])
-}, 2000)		
+samu330.sendMessage(from, ` *Hola : ${pushname}*\n\n${menuxxx}`, MessageType.text)
+}, 1000)		
 break	
 		
 case 'help':
