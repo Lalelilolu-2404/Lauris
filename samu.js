@@ -2779,7 +2779,7 @@ addLevelingXp(sender, 20)
 break		
 		
 case 'apostar':
-const gpp = ['10','90','10','10','90','10','10','90','10','10']
+const gpp = ['10','90','10','10','90','10','90','10','90','10']
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 samu330.updatePresence(from, Presence.composing)  
@@ -2813,7 +2813,7 @@ addLevelingXp(sender, 20)
 break
 	
 case 'coinflip':
-const coin = ['0', '1', '0', '0', '1', '1', '0']
+const coin = ['0', '1', '0', '1', '0', '1', '0']
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 samu330.updatePresence(from, Presence.composing)  
