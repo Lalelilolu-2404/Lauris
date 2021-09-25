@@ -3968,7 +3968,6 @@ break
 		
 case 'yuri':
 case 'eroyuri':
-case 'cum':
 case 'solo':	
 case 'gasm':
 case 'nsfw_avatar':
@@ -3981,6 +3980,22 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
+/**
+case 'cum':
+if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
+      ranp = getRandom('.gif')
+      rano = getRandom('.webp')
+			anu = await axios.get('https://nekos.life/api/v2/img/pussy')
+			exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
+			  fs.unlinkSync(ranp)
+				if (err) return reply('error')
+				buffer = fs.readFileSync(rano)
+				samu330.sendMessage(from, buffer, MessageType.sticker)
+				fs.unlinkSync(rano)
+			})
+addFilter(from)
+addLevelingXp(sender, 20)
+break		
 	
 case 'xass2':
 if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
@@ -3992,7 +4007,7 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
-		
+**/		
 			case 'neko':
 			if (!isGroup) return reply(mess.only.group)
 			nek = await axios.get('https://nekos.life/api/v2/img/neko')
