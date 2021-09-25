@@ -3938,8 +3938,8 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 	try{
 	buffer = await getBuffer('http://api.lolhuman.xyz/api/random/nsfw/hentai?apikey=847de7716f17a51eeba4235c')
 	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Wow 🥵*_ 💠', quoted: fimg})
-	} catch {
-	return reply('Pwrdon... T_T')
+	}catch {
+	reply('Pwrdon... T_T')
 	}
 addFilter(from)
 addLevelingXp(sender, 20)
@@ -3950,8 +3950,8 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 	try{
 	buffer = await getBuffer('http://api.lolhuman.xyz/api/random/nsfw/hentai?apikey=NikolaTesla')
 	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Wow 🥵*_ 💠', quoted: fimg})
-	} catch {
-	return reply('Pwrdon... T_T')
+	}catch {
+	reply('Pwrdon... T_T')
 	}
 addFilter(from)
 addLevelingXp(sender, 20)
@@ -3963,7 +3963,7 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 	buffer = await getBuffer('http://api.lolhuman.xyz/api/random2/hentai?apikey=NikolaTesla')
 	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Uff si 🥵*_ 💠', quoted: fimg})
 	}catch {
-	return reply('Pwrdon... T_T')
+	reply('Pwrdon... T_T')
 	}
 addFilter(from)
 addLevelingXp(sender, 20)
@@ -3979,7 +3979,7 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 	buffer = await getBuffer(`http://api.lolhuman.xyz/api/random2/${command}?apikey=NikolaTesla`)
 	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Uff si 🥵*_ 💠', quoted: fimg})
 	}catch{
-	return reply('Pwrdon... T_T')
+	reply('Pwrdon... T_T')
 	}
 addFilter(from)
 addLevelingXp(sender, 20)
