@@ -1654,7 +1654,7 @@ var num = sam.participant
 foto = fs.readFileSync('./src/help.jpg')
 fakee = fs.readFileSync('./src/fake.jpg')
 assistant = fs.readFileSync('./src/assistant.jpg')
-const forder = { key : {fromMe: false,participant : "0@s.whatsapp.net", ...(from ? { remoteJid: "5214447000377-1624232428@g.us" } : {})},message: {orderMessage: {itemCount : 999999999,status: 1,surface : 1,message: `Lalelilolu ᵈᵃʳʸ⛥`,orderTitle: 'Samu330',sellerJid: `Lalelilolu ᵈᵃʳʸ⛥`,thumbnail: fs.readFileSync('./src/fake.jpg')}}}
+//const forder = { key : {fromMe: false,participant : "0@s.whatsapp.net", ...(from ? { remoteJid: "5214447000377-1624232428@g.us" } : {})},message: {orderMessage: {itemCount : 999999999,status: 1,surface : 1,message: `Lalelilolu ᵈᵃʳʸ⛥`,orderTitle: 'Samu330',sellerJid: `Lalelilolu ᵈᵃʳʸ⛥`,thumbnail: fs.readFileSync('./src/fake.jpg')}}}
 samu330.updatePresence(from, Presence.recording)
 uptime = process.uptime()
 		
@@ -2356,7 +2356,7 @@ break
 
 case 'forme':
 const morestickx = ["Abasho", "Lean las reglas", "Nel mijo", "Se la coge", "Soy inevitable", "Le mete el brazo", 
-		  "Fbi", "X el chikito", "Xd", "Comida de Anna", "Nel pastel", "Despreciox", "Se relaja", "Colitax", "Gansito"]		
+		  "Fbi", "X el chikito", "Xd", "Comida de Anna", "Nel pastel", "Despreciox", "Se relaja", "Colitax", "Gansito", "La penetra"]		
 const onlyme = ["69", "Ahohsi", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "Amistad", "Anna", "Amm", "Anni", "Así me gusta", "Asustado", "Ay caramba", "Ay me asusté", 
 		"Ban", "Báñate", "Besos", "Bien", "Bragas", "Buen culo", "Buenas noches", "Bye", "C rasca", "Cállate", "Cc", "Chelitas", "Chongo", "Colita", "Colitaxxx", 
 		"Contesta", "Contra el muro", "Ctm", "Cunni", "Dame", "Delito", "Depre", "Doncon", "Duren", "En fin", "Encuérate", "Eres bonita", "F el grupo", "F en el chat", 
@@ -8858,7 +8858,7 @@ if (!isAllaud) return
 }
 //////////////	
 const morestick = ["Abasho", "Lean las reglas", "Nel mijo", "Se la coge", "Soy inevitable", "Le mete el brazo", "Pum", "Semen", "No viste nada", 
-		   "Fbi", "X el chikito", "Nel pastel", "Desprecio1", "Desprecio2", "Desprecio3", "Se relaja", "Colitax"]		
+		   "Fbi", "X el chikito", "Nel pastel", "Desprecio1", "Desprecio2", "Desprecio3", "Se relaja", "Colitax", "La penetra"]		
 
 if (isLalelilolu){
 if (!isAllaud) return
@@ -8884,7 +8884,7 @@ MessageType[_0x5b64d5(0x73)],{'quoted':fnsfw,'contextInfo':{'externalAdReply':{'
 **/
 
 if (body.includes(`Xd`) && body.length == 2){
-	nkx = Math.floor(Math.random() * 11)
+	nkx = Math.floor(Math.random() * 13)
 	const none = fs.readFileSync(`./temp/Xd${nkx}.webp`)
 	samu330.sendMessage(from, none, MessageType.sticker, {
 		quoted : fvid, 
