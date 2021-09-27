@@ -6812,6 +6812,8 @@ break
 case 'sow':
 case 'stickerow':
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+if (isMedia && !sam.message.videoMessage || isQuotedImage) {
+const encmedia3 = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
 const media3 = await samu330.downloadAndSaveMediaMessage(encmedia3, `./sticker/${sender}`)
 const packname3 = '⛧⸸⁶Death⁹†حب♡ت'
 const author3 = 'Puto el q lo robe'
