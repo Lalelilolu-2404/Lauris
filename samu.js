@@ -6825,7 +6825,7 @@ console.log(`Started : ${cmd}`)
 })
 .on('error', function (err) {
 console.log(`Error : ${err}`)
-fs.unlinkSync(media)
+fs.unlinkSync(media2)
 reply('error')
 })
 .on('end', function () {
@@ -6857,7 +6857,7 @@ console.log(`Started : ${cmd}`)
 .on('error', function (err) {
 console.log(`Error : ${err}`)
 fs.unlinkSync(media2)
-tipe = media2.endsWith('.mp4') ? 'video' : 'gif'
+tipe = media.endsWith('.mp4') ? 'video' : 'gif'
 reply('*Intenta de nuevo*')
 })
 .on('end', function () {
