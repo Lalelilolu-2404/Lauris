@@ -8288,6 +8288,26 @@ reply('Manda la foto!');
 addFilter(from)
 addLevelingXp(sender, 40)
 break
+	
+case 'passed':
+addFilter(from)
+if (!isGroup) return reply(mess.only.group)
+var imgbb = require('imgbb-uploader')
+if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
+ger = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam;
+reply(mess.wait);
+owgi = await samu330.downloadAndSaveMediaMessage(ger);
+anu = await imgbb('3b8594f4cb11895f4084291bc655e510', owgi);
+teks = `${anu.display_url}`;
+anu1 = await getBuffer(`https://some-random-api.ml/canvas/passed?avatar=${teks}`);
+fs.writeFileSync('passed.jpg', anu1)
+samu330.sendMessage(from, fs.readFileSync('passed.jpg'), MessageType.image)
+} else {
+reply('Manda la foto!');
+}
+addFilter(from)
+addLevelingXp(sender, 40)
+break
 
 case 'wanted':
 var imgbb = require('imgbb-uploader')
