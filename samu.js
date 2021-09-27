@@ -6815,8 +6815,8 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
 if (isMedia && !sam.message.videoMessage || isQuotedImage) {
 const encmedia2 = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
 const media2 = await samu330.downloadAndSaveMediaMessage(encmedia2, `./sticker/${sender}`)
-const packname1 = '⛧⸸⁶Death⁹†حب♡ت'
-const author1 = 'Puto el q lo robe'
+const packname1 = `⛧⸸⁶Death⁹†حب♡ت`
+const author1 = `Puto el q lo robe`
 exif.create(packname1, author1, `stickwm_${sender}`)
 await ffmpeg(`${media2}`)
 .input(media2)
@@ -6845,8 +6845,8 @@ fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
 const encmedia2 = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.
 contextInfo : sam
 const media2 = await samu330.downloadAndSaveMediaMessage(encmedia2, `./sticker/${sender}`)
-const packname1 = '⛧⸸⁶Death⁹†حب♡ت'
-const author1 = 'Puto el q lo robe'
+const packname1 = `⛧⸸⁶Death⁹†حب♡ت`
+const author1 = `Puto el q lo robe`
 exif.create(packname1, author1, `stickwm_${sender}`)
 reply('*⌛EN PROCESO*')
 await ffmpeg(`${media2}`)
