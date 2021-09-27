@@ -6833,7 +6833,7 @@ reply('error')
 console.log('Finish')
 exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
 if (error) return reply('error')
-wa.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), fnsfw)
+wa.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), ftoko)
 fs.unlinkSync(media3)
 fs.unlinkSync(`./sticker/${sender}.webp`)
 fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
@@ -6857,7 +6857,7 @@ console.log(`Started : ${cmd}`)
 .on('error', function (err) {
 console.log(`Error : ${err}`)
 fs.unlinkSync(media3)
-tipe = media3.endsWith('.mp4') ? 'video' : 'gif'
+tipe = media.endsWith('.mp4') ? 'video' : 'gif'
 reply('error')
 })
 .on('end', function () {
