@@ -6813,52 +6813,19 @@ case 'sow':
 case 'stickerow':
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (isMedia && !sam.message.videoMessage || isQuotedImage) {
-const encmedia3 = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
-const media3 = await samu330.downloadAndSaveMediaMessage(encmedia3)
-const packname3 = '⛧⸸⁶Death⁹†حب♡ت'
-const author3 = 'Puto el q lo robe'
-exif.create(packname3, author3, `stickwm_${sender}`)
-reply('wait')
-ran = getRandom('.webp')
-await ffmpeg(`./${media}`)
-.input(media3)
+const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
+const media = await samu330.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
+const packname1 = '⛧⸸⁶Death⁹†حب♡ت'
+const author1 = 'Puto el q lo robe'
+exif.create(packname1, author1, `stickwm_${sender}`)
+await ffmpeg(`${media}`)
+.input(media)
 .on('start', function (cmd) {
 console.log(`Started : ${cmd}`)
 })
 .on('error', function (err) {
 console.log(`Error : ${err}`)
-fs.unlinkSync(media3)
-reply('error')
-})
-.on('end', function () {
-console.log('Finish')
-exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
-if (error) return reply('error')
-wa.sendSticker(from, fs.readFileSync(ran), ftoko)
-fs.unlinkSync(media3)
-fs.unlinkSync(ran)
-fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
-})
-})
-.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
-.toFormat('webp')
-.save(ran)
-} else if ((isMedia && sam.message.videoMessage.fileLength < 10000000 || isQuotedVideo && sam.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
-const encmedia3 = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
-const media3 = await samu330.downloadAndSaveMediaMessage(encmedia3, `./sticker/${sender}`)
-const packname3 = '⛧⸸⁶Death⁹†حب♡ت'
-const author3 = 'Puto el q lo robe'
-exif.create(packname3, author3, `stickwm_${sender}`)
-reply('wait')
-await ffmpeg(`${media3}`)
-.inputFormat(media3.split('.')[4])
-.on('start', function (cmd) {
-console.log(`Started : ${cmd}`)
-})
-.on('error', function (err) {
-console.log(`Error : ${err}`)
-fs.unlinkSync(media3)
-tipe = media.endsWith('.mp4') ? 'video' : 'gif'
+fs.unlinkSync(media)
 reply('error')
 })
 .on('end', function () {
@@ -6866,12 +6833,45 @@ console.log('Finish')
 exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
 if (error) return reply('error')
 wa.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), ftoko)
-fs.unlinkSync(media3)
+fs.unlinkSync(media)
 fs.unlinkSync(`./sticker/${sender}.webp`)
 fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
 })
 })
 .addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+.toFormat('webp')
+.save(`./sticker/${sender}.webp`)
+} else if ((isMedia && sam.message.videoMessage.fileLength < 10000000 || isQuotedVideo && sam.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
+if (!arg.includes('|')) return reply(`Envie o etiquete un video/gif con el comando: *${prefix}swm nombre|autor*`)
+const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
+const media = await samu330.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
+const packname1 = '⛧⸸⁶Death⁹†حب♡ت'
+const author1 = 'Puto el q lo robe'
+exif.create(packname1, author1, `stickwm_${sender}`)
+reply('*⌛EN PROCESO*')
+await ffmpeg(`${media2}`)
+.inputFormat(media2.split('.')[4])
+.on('start', function (cmd) {
+console.log(`Started : ${cmd}`)
+})
+.on('error', function (err) {
+console.log(`Error : ${err}`)
+fs.unlinkSync(media2)
+tipe = media.endsWith('.mp4') ? 'video' : 'gif'
+reply('*Intenta de nuevo*')
+})
+.on('end', function () {
+console.log('Finish')
+exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
+if (error) return reply('error')
+wa.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), ftoko)
+fs.unlinkSync(media2)
+fs.unlinkSync(`./sticker/${sender}.webp`)
+fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
+})
+})
+.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decre
+ase,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
 .toFormat('webp')
 .save(`./sticker/${sender}.webp`)
 } else {
