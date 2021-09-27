@@ -6813,13 +6813,13 @@ case 'sow':
 case 'stickerow':
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (isMedia && !sam.message.videoMessage || isQuotedImage) {
-const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
-const media = await samu330.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
+const encmedia2 = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
+const media2 = await samu330.downloadAndSaveMediaMessage(encmedia2, `./sticker/${sender}`)
 const packname1 = '⛧⸸⁶Death⁹†حب♡ت'
 const author1 = 'Puto el q lo robe'
 exif.create(packname1, author1, `stickwm_${sender}`)
-await ffmpeg(`${media}`)
-.input(media)
+await ffmpeg(`${media2}`)
+.input(media2)
 .on('start', function (cmd) {
 console.log(`Started : ${cmd}`)
 })
@@ -6833,7 +6833,7 @@ console.log('Finish')
 exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
 if (error) return reply('error')
 wa.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), ftoko)
-fs.unlinkSync(media)
+fs.unlinkSync(media2)
 fs.unlinkSync(`./sticker/${sender}.webp`)
 fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
 })
@@ -6842,9 +6842,9 @@ fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
 .toFormat('webp')
 .save(`./sticker/${sender}.webp`)
 } else if ((isMedia && sam.message.videoMessage.fileLength < 10000000 || isQuotedVideo && sam.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
-if (!arg.includes('|')) return reply(`Envie o etiquete un video/gif con el comando: *${prefix}swm nombre|autor*`)
-const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
-const media = await samu330.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
+const encmedia2 = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.
+contextInfo : sam
+const media2 = await samu330.downloadAndSaveMediaMessage(encmedia2, `./sticker/${sender}`)
 const packname1 = '⛧⸸⁶Death⁹†حب♡ت'
 const author1 = 'Puto el q lo robe'
 exif.create(packname1, author1, `stickwm_${sender}`)
@@ -6857,7 +6857,7 @@ console.log(`Started : ${cmd}`)
 .on('error', function (err) {
 console.log(`Error : ${err}`)
 fs.unlinkSync(media2)
-tipe = media.endsWith('.mp4') ? 'video' : 'gif'
+tipe = media2.endsWith('.mp4') ? 'video' : 'gif'
 reply('*Intenta de nuevo*')
 })
 .on('end', function () {
