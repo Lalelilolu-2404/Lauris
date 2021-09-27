@@ -8884,7 +8884,7 @@ MessageType[_0x5b64d5(0x73)],{'quoted':fnsfw,'contextInfo':{'externalAdReply':{'
 **/
 
 if (body.includes(`Xd`) && body.length == 2){
-	nkx = Math.floor(Math.random() * 13)
+	nkx = Math.floor(Math.random() * 14)
 	const none = fs.readFileSync(`./temp/Xd${nkx}.webp`)
 	samu330.sendMessage(from, none, MessageType.sticker, {
 		quoted : fvid, 
