@@ -6282,11 +6282,11 @@ if (!isRegister) return samu330.sendMessage(from, assistant, image, { quoted: no
 samu330.updatePresence(from, Presence.recording)
 if (!isQuotedVideo) return reply('Y el video?')
 reply('*Perame tatito!*')
-const encmedia3 = JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
-const media3 = await samu330.downloadAndSaveMediaMessage(encmedia3)
+const encmedia4 = JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
+const media4 = await samu330.downloadAndSaveMediaMessage(encmedia4)
 ran = getRandom('.mp3')
-exec(`ffmpeg -i ${media3} ${ran}`, (err) => {
-fs.unlinkSync(media3)
+exec(`ffmpeg -i ${media4} ${ran}`, (err) => {
+fs.unlinkSync(media4)
 if (err) return reply(mess.ferr)
 buffer = fs.readFileSync(ran)
 samu330.sendMessage(from, buffer, audio, { mimetype: 'audio/mp4', quoted: faud})
