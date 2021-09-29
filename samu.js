@@ -2355,8 +2355,9 @@ break
 ////////////Stickers me
 
 case 'forme':
-const morestickx = ["Abasho", "Lean las reglas", "Nel mijo", "Se la coge", "Soy inevitable", "Le mete el brazo", "Fbi", "X el chikito", "Xd", "Comida de Anna", "Nel pastel", 
-		    "Despreciox", "Se relaja", "Colitax", "Gansito", "La penetra", "Dejen momir"]		
+const morestickx = ["Abasho", "Lean las reglas", "Nel mijo", "Se la coge", "Soy inevitable", "Le mete el brazo", "Pum", "Semen", "No viste nada", "Fbi", "X el chikito", "Xd", 
+		    "Comida de Anna", "Nel pastel", "Despreciox", "Se relaja", "Colitax", "Gansito", "La penetra", "Dejen momir"]	
+
 const onlyme = ["69", "Ahohsi", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "Amistad", "Anna", "Amm", "Anni", "Así me gusta", "Asustado", "Ay caramba", "Ay me asusté", 
 		"Ban", "Báñate", "Besos", "Bien", "Bragas", "Buen culo", "Buenas noches", "Bye", "C rasca", "Cállate", "Cc", "Chelitas", "Chongo", "Colita", "Colitaxxx", 
 		"Contesta", "Contra el muro", "Ctm", "Cunni", "Dame", "Delito", "Depre", "Doncon", "Duren", "En fin", "Encuérate", "Eres bonita", "F el grupo", "F en el chat", 
@@ -2586,7 +2587,7 @@ ${bodyM} ${prefix}waifu
 ${bodyM} ${prefix}belle
 ${bodyM} ${prefix}gatitas
 =======================================
-╟╼╾┤STICKERS/IMG'S├╼╾
+╟╼╾┤STICKERS/IMGS├╼╾
 
 ${bodyM} ${prefix}attp + ⌜Texto⌟
 ${bodyM} ${prefix}sticker + ⌜Tag image⌟
@@ -2729,10 +2730,10 @@ const ecoxx = `⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫�
 ╟╼╾┤JUEGOS/XP Y OTAKOINS├╼╾
 
 ${bodyM} ${prefix}lucky (15 partidas free x día) 
-⩫> Ganas 2000 xp/6000 Otakoins 
-⩫> 💰💰💰 Ganas 6666 Xp/9999 Otakoins
+⩫> Ganas 6666 xp/11111 Otakoins 
+⩫> 💰💰💰 Ganas 9999 Xp/66666 Otakoins
 ${bodyM} ${prefix}dado # (Tirar dados) 
-⩫> Ganas 300 xp/300 Otakoins 
+⩫> Ganas 600 xp/666 Otakoins 
 
 ${brr} WORK Y APUESTAS
 
@@ -5412,11 +5413,11 @@ dadu = dadus[Math.floor(Math.random() * dadus.length)]
 //samu330.sendMessage(from, dador, sticker, {quoted: fjeux, sendEphemeral: true})
 rndd = `d${argz[0]}`
 if (dadu == rndd) {
-	addLevelingXp(sender, 300)
-	addKoinUser(sender, 300)
+	addLevelingXp(sender, 600)
+	addKoinUser(sender, 600)
 	dador = fs.readFileSync(`./temp/dados/${dadu}.webp`)
 	samu330.sendMessage(from, dador, sticker, {quoted: fjeux, sendEphemeral: true})
-	reply('Ganaste 300xp/300 Otakoins perro!!')
+	reply('Ganaste 600xp/600 Otakoins perro!!')
 } else {reply(`F bro, perdiste :v\n*Salió ${dadu}*`)}
 addFilter(from)
 addLevelingXp(sender, 15)
@@ -5485,7 +5486,7 @@ uang.sort((a, b) => (a.uang < b.uang) ? 1 : -1)
 let leaderboarduang = '-----[ *TABLA DE MILLONARIOS* ]----\n\n'
 let nommx = 0
 try {
-for (let i = 0; i < 3; i++) {
+for (let i = 0; i < 10; i++) {
 	nommx++
         leaderboarduang += `*[${nommx}]* @${uang[i].id.replace('@s.whatsapp.net', '')}\n┣⊱ *Dinero*: ${uang[i].uang}_\n`
         box.push(uang[i].id)
@@ -5500,8 +5501,8 @@ break
 case 'reglas':
 samu330.updatePresence(from, Presence.composing)  		
 mdata = await samu330.groupMetadata(from)
-reply(`_*「 Hola, @${pushname} 」*_\n_*Bienvenido a 「 ${mdata.subject} 」*_\n\n_*Estas son la reglas para el uso del Bot :*_\n\n1- No hablar ni pedir comandos en privado, al Bot.\n2- _*❌No hagas spam de comandos❌*_\nEsto es enserio, el Bot puede saturarse y desconectarse.\n3- _*📵No hagas llamadas al BOT📵*_\nSerás bloqueado inmediatamente.\n4- _🕐Espera el tiempo nesesario cuando pidas alguna funcion. 
-Ya que algunas tardan en realizarse.\n\n5- _*IMPORTANTE!!!*_\nEscribe bien los commandos : *${prefix}comando*\n*(Ningún espacio entre el prefijo y el comando en minúscula)*\n\n*Lee bien las reglas y cúmplelas, no te quieras pasar de pendejo o serás baneado del uso de BOT.*`)
+reply(`_*「 Hola, @${pushname} 」*_\n_*Bienvenido a 「 ${mdata.subject} 」*_\n\n_*Estas son la reglas para el uso del Bot :*_\n\n1- No hablar ni pedir comandos en privado, al Bot.\n2- No etiquetar ni desafiar al Bot en los juegos.\n3- _*❌No hagas spam de comandos❌*_\nEsto es enserio, el Bot puede saturarse y desconectarse.\n4- _*📵No hagas llamadas al BOT📵*_\nSerás bloqueado inmediatamente.\n5- _🕐Espera el tiempo nesesario cuando pidas alguna funcion. 
+Ya que algunas tardan en realizarse.\n\n6- _*IMPORTANTE!!!*_\nEscribe bien los commandos : *${prefix}comando*\n*(Ningún espacio entre el prefijo y el comando en minúscula)*\n\n*Lee bien las reglas y cúmplelas, no te quieras pasar de pendejo o serás baneado del uso de BOT.*`)
 break
 case 'rules':
 samu330.updatePresence(from, Presence.composing)  		
@@ -7035,22 +7036,22 @@ ${a}
 //reply(`${u}`)
 if (luck3 != f){
 if (luck3 == luck4 && luck3 == luck5 && luck4 == luck5) {
-addLevelingXp(sender, 2000)
-addKoinUser(sender, 6000)
+addLevelingXp(sender, 6666)
+addKoinUser(sender, 11111)
 glucky = `*★᭄ꦿ [ GANASTE ] 💸*\n
 ⛥ ${pushname}
-᭕- Recibes ༊ 2000 Xp ༊
-᭕- Recibes ༊ 6000 Otakoins ༊`
+᭕- Recibes ༊ 6666 Xp ༊
+᭕- Recibes ༊ 11111 Otakoins ༊`
 reply(`${glucky}`)
 }
 }
 if (luck3 == f && luck4 == f && luck5 == f) {
-addLevelingXp(sender, 6666)
-addKoinUser(sender, 9999)
+addLevelingXp(sender, 9999)
+addKoinUser(sender, 66666)
 gglucky = `*★᭄ꦿ [ GANASTE ] 💸*
 ⛥ ${pushname}
-᭕- Recibes ༊ 6666 Xp ༊
-᭕- Recibes ༊ 9999 Otakoins ༊`
+᭕- Recibes ༊ 9999 Xp ༊
+᭕- Recibes ༊ 66666 Otakoins ༊`
 reply(`${gglucky}`)
 }	
 samu330.sendMessage(from, `${u}`, MessageType.text, {quoted: fjeux})
