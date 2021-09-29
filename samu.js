@@ -1097,31 +1097,15 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
                         if (!isAdmin) { 
                         samu330.updatePresence(from, Presence.composing)
 			var kic = `${sender.split("@")[0]}@s.whatsapp.net`
-                        reply(`Lo siento ${sender.split("@")[0]}, pero aqui no se permiten las malas palabras, serás expulsado en 5 segundos`)
+                        reply(`Lo siento ${sender.split("@")[0]}, pero aqui no se permiten las malas palabras, serás expulsado`)
                         setTimeout( () => {
                                 samu330.groupRemove(from, [kic]).catch((e)=>{reply(`*ERR:* ${e}`)})
-                        }, 5000)
+                        }, 900)
                         setTimeout( () => {
                                 samu330.updatePresence(from, Presence.composing)
-                                reply("1 segundo")
-                        }, 4000)
-                        setTimeout( () => {
-                                samu330.updatePresence(from, Presence.composing)
-                                reply("2 segundos")
-                        }, 3000)
-                        setTimeout( () => {
-                                samu330.updatePresence(from, Presence.composing)
-                                reply("3 segundos")
-                        }, 2000)
-                        setTimeout( () => {
-                                samu330.updatePresence(from, Presence.composing)
-                                reply("4 segundos")
+                                reply("Valiste verga :v")
                         }, 1000)
-                        setTimeout( () => {
-                                samu330.updatePresence(from, Presence.composing)
-                                reply("5 segundos")
-                        }, 0)
-				}
+			}
 			}
 		}
 	    
