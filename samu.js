@@ -5472,8 +5472,8 @@ let nommx = 0
 try {
 for (let i = 0; i < 10; i++) {
 	nommx++
-        leaderboarduang += `*[${nommx}]* @${uang[i].id.replace('@s.whatsapp.net', '')}\n┣⊱ *Dinero*: ${uang[i].uang}_\n`
-        box.push(uang[i].id)
+        leaderboarduang += `*[${nommx}]* @${_uang[i].id.replace('@s.whatsapp.net', '')}\n┣⊱ *Dinero*: ${_uang[i].uang}_\n`
+        box.push(_uang[i].id)
 }
 await mentions(leaderboarduang, box, true)	
 } catch (err) {
