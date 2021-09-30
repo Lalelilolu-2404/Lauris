@@ -2870,6 +2870,30 @@ reply(`${ganadorxd}`)
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
+	
+case 'betall':
+const bet = ['0', '1', '0', '1', '0', '1', '0']
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+samu330.updatePresence(from, Presence.composing)  
+dineroapostado = checkATMuser(sender)
+if (dineroapostado <= 0) return reply(`Otakoins insuficientes.`)
+dinerogan = 2 * dineroapostado
+const betx = bet[Math.floor(Math.random() * bet.length)]
+piro = `*★᭄ꦿ [ CRUZ ]* 
+Pierdes : ${dineroapostado} Otakoins`
+ganadorxd = `*★᭄ꦿ [ CARA ]*
+Ganaste : ${dinerogan} Otakoins`
+if (betx == 0) {
+confirmATM(sender, dineroapostado)
+reply(piro)
+} else {
+addKoinUser(sender, dinerogan)
+reply(`${ganadorxd}`)
+}
+addFilter(from)
+addLevelingXp(sender, 20)
+break			
 		
 case 'limit':
 if (!isGroup) return reply(mess.only.group)
@@ -5466,7 +5490,7 @@ case 'economyboard':
 case 'ecb':
 samu330.updatePresence(from, Presence.composing)
 box = []
-uang.sort((a, b) => (a.uang < b.uang) ? 1 : -1)
+_uang.sort((a, b) => (a.uang < b.uang) ? 1 : -1)
 let leaderboarduang = '-----[ *TABLA DE MILLONARIOS* ]----\n\n'
 let nommx = 0
 try {
