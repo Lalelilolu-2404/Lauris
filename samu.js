@@ -129,6 +129,7 @@ const getRegisteredRandomId = () => {
         _registered.push(obj)
         fs.writeFileSync('./src/registered.json', JSON.stringify(_registered))
         }
+/**
 const addRegisteredUser2 = (userid, sender) => {
 	const objx = { id: userid, name: sender }
         _user2.push(objx)		
@@ -143,7 +144,7 @@ const addRegisteredUser2 = (userid, sender) => {
         })
             return status
         }
-	
+**/	
         const createSerial = (size) => {
         return crypto.randomBytes(size).toString('hex').slice(0, size)
         }
@@ -427,15 +428,16 @@ const groupId = isGroup ? groupMetadata.jid : ''
 	const isAntiLeg = isGroup ? legion.includes(from): false
 	const isWelkom = isGroup ? welkom.includes(from) : false
 	const isRegister = checkRegisteredUser(sender)
-const isUser2 = checkRegisteredUser2(sender)
+//const isUser2 = checkRegisteredUser2(sender)
+const isUser2 = _user2.includes(sender)
 	const totalchat = await samu330.chats.all()
         const isOwner = senderNumber == owner || senderNumber == botNumber || mods.includes(senderNumber)
 	const isBanChat = chatban.includes(from)
 	/////	
 	const laleliloluNumber = ["33749258491"]
 	const isLalelilolu = senderNumber == laleliloluNumber
-	const cherryNumber = ["527721618499"]
-	const isCherry = senderNumber == cherryNumber
+	const annaNumber = ["994400855630"]
+	const isAnna = senderNumber == annaNumber
 	//var messagebot = 'Anna se la come'
 	//var replybot = 'Se la come doblada 🥵'
 	/////
@@ -2792,7 +2794,8 @@ reply(`*「 TRANSFERENCIA EXITOSA 」*\n\nDe : @${sender.split("@")[0]}\nPara : 
 addFilter(from)
 addLevelingXp(sender, 20)
 break
-			
+
+case 'bal':
 case 'balance':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
@@ -2801,6 +2804,25 @@ kantong = checkATMuser(sender)
 hailhy = `*⌜${pushname}⌟*\n★᭄ꦿ Posees ${kantong} Otakoins`   
 samu330.sendMessage(from, hailhy, MessageType.text, {quoted: sam})
 //reply(ind.uangkau(pushname, sender, kantong))
+addLevelingXp(sender, 20)
+break	
+		
+case 'cartera':
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})	
+samu330.updatePresence(from, Presence.composing) 
+arg1 = q
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+kantong = checkATMuser(mentioned[0])
+hailhy = `*⌜${mentioned[0].split('@')[0]}@s.whatsapp.net⌟*\n★᭄ꦿ Posee ${kantong} Otakoins`
+samu330.sendMessage(from, hailhy, MessageType.text, {quoted: sam, contextInfo: {mentionedJid: [mentioned[0]]}})
+} else {
+kantong = checkATMuser(sender)
+hailhy = `*⌜${pushname}⌟*\n★᭄ꦿ Posees ${kantong} Otakoins`   
+samu330.sendMessage(from, hailhy, MessageType.text, {quoted: sam})
+}
+addFilter(from)
 addLevelingXp(sender, 20)
 break		
 		
@@ -2910,8 +2932,10 @@ if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (isUser2) return reply('Espera a mañana para volver a reclamar')
 samu330.updatePresence(from, Presence.composing)  
-const nameturn = `${pushname}`
-addRegisteredUser2(sender, nameturn)			
+//const nameturn = `${pushname}`
+//addRegisteredUser2(sender, nameturn)			
+_user2.push(sender)		
+fs.writeFileSync('./src/user2.json', JSON.stringify(_user2))
 bayarLimit(sender, 15)
 addLevelingXp(sender, 1111)
 const lauxx = await checkLimit(sender)
@@ -7791,6 +7815,7 @@ if (!botAdmin) return reply(mess.only.Badmin)
 		//await wa.FakeTokoForwarded(from, `Baaaiii...`, '')
 		if (mentionUser.length == 1)
 		if (mentioned[0].split('@')[0] == '33749258491') return samu330.sendMessage(from, noneyy, sticker)
+		if (mentioned[0].split('@')[0] == '994400855630') return samu330.sendMessage(from, noneyy, sticker)
 		samu330.groupRemove(from, mentionUser)
 		//samu330.groupRemove(from, mentioned)
 		
@@ -7800,6 +7825,7 @@ if (!botAdmin) return reply(mess.only.Badmin)
 		} else {
 	        //await wa.FakeTokoForwarded(from, `Baaaiii...`, '')
 		if (mentioned[0].split('@')[0] == '33749258491') return samu330.sendMessage(from, none, sticker)
+		if (mentioned[0].split('@')[0] == '994400855630') return samu330.sendMessage(from, noneyy, sticker)
 		samu330.groupRemove(from, mentioned)
 		}
 		break
@@ -8554,12 +8580,14 @@ mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 const none = fs.readFileSync(`./src/stickers/Haha no.webp`)
 if (mentioned.length !== 0){
 if (mentioned[0].split('@')[0] == '33749258491') return samu330.sendMessage(from, none, sticker)
+if (mentioned[0].split('@')[0] == '994400855630') return samu330.sendMessage(from, none, sticker)
 for (let i = 0; i < mentioned.length; i++){
 addBanned(mentioned[i], args[1], ban)
 }
 mentions(`@${mentioned[0].split('@')[0]} Usted a sido baneado, lo que significa que no podra usar el bot!`, mentioned, true)
 } else if (isQuotedMsg) {
 if (quotedMsg.sender.match('33749258491')) return reply('Nel perro :v')
+if (quotedMsg.sender.match('994400855630')) return reply('Nel perro :v')
 addBanned(quotedMsg.sender, args[1], ban)
 mentions(`@${mentioned[0].split('@')[0]} Usted a sido baneado, lo que significa que no podra usar el bot!`, mentioned, true)
 } else if (!isNaN(args[1])) {
@@ -8934,7 +8962,7 @@ function _0x5718(){var _0x1c4b44=['122885QdGzyn','sticker','137193xgROlL','12021
 MessageType[_0x5b64d5(0x73)],{'quoted':fnsfw,'contextInfo':{'externalAdReply':{'title':'Los\x20que\x20no\x20dejan\x20el\x20xd:\x20\x27POR\x20AHI\x20NO!!\x27',
 'body':_0x5b64d5(0x71),'sourceUrl':'https://chat.whatsapp.com/KFe9KLIHjPTIay4YjvCAXx','thumbnail':fs[_0x5b64d5(0x6e)](_0x5b64d5(0x6d))}}});		
 **/
-
+/**
 if (body.includes(`Xd`) && body.length == 2){
 	nkx = Math.floor(Math.random() * 16)
 	const none = fs.readFileSync(`./temp/Xd${nkx}.webp`)
@@ -8949,6 +8977,13 @@ if (body.includes(`Xd`) && body.length == 2){
 			thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
 		)
 }
+**/
+if (body.includes(`Xd`) && body.length == 2){
+	nkx = Math.floor(Math.random() * 16)
+	const none = fs.readFileSync(`./temp/Xd${nkx}.webp`)
+	samu330.sendMessage(from, none, MessageType.sticker)
+}		
+		
 /**		
 function _0x5718(){var _0x1c4b44=['122885QdGzyn','sticker','137193xgROlL','1202160qgSFsZ','2169990GBfMeG','sendMessage','476319hkaInB','1006lwFJpo','12cilEll',
 				  '447360sFDZtd','./src/assistant.jpg','readFileSync','16biMglh','397bnmaIc','[\x20★\x20]\x20山姆\x20330'];_0x5718=function(){return _0x1c4b44;};
