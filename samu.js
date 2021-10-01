@@ -2992,7 +2992,7 @@ samu330.updatePresence(from, Presence.composing)
 rndx = []
 random = args.join(' ')
 const rndy = groupMembers
-rndz = rndy[Math.floor(Math.random() * rndy.length)]
+const rndz = rndy[Math.floor(Math.random() * rndy.length)]
 rndx.push(rndz.jid)
 const randm = `@${rndz[0].split('@')[0]}\b${random}`		
 samu330.sendMessage(from, randm, MessageType.text, {
