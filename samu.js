@@ -5575,7 +5575,7 @@ let noxxx = 0
 try {
 for (let i = 0; i < 4; i++) {
 	noxxx++
-	mimido += `*[${nomm}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
+	mimido += `*[${noxxx}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
         box.push(_level[i].id)
 }
 await mentions(mimido, box, true)	
