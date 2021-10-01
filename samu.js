@@ -2642,7 +2642,7 @@ message: { "videoMessage": { "caption":`Lalelilolu ᵈᵃʳʸ⛥\n${pushname}`, 
 samu330.sendMessage(from, `${xmenux}`, MessageType.text, {
 	quoted : fmenu, 
 	contextInfo: {externalAdReply :{
-	title: `BIENVENIDO A :\n「 ${mdata.subject} 」`,
+	title: ` BIENVENIDO A :\n「 ${mdata.subject} 」`,
 	//body: '',
 	//sourceUrl : `${linkx}`, 
 	thumbnail : fs.readFileSync('./src/assistant.jpg')}}}
