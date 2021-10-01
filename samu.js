@@ -8893,7 +8893,7 @@ const Fer =  ["Me das admin", "Ban", "Funao", "Love", "Ya se durmieron", "Te me 
 		}
 	}
 **/		
-const sonsotak = ["A mimir", "A", "a", "Acm1pt", "Admin", "Ahhh", "Arrecha", "Ayy", "Baka", "Banx", "Besito", "Brr", "Brr2", "Bésame", "Concha", 
+const sonsotak = ["A mimir", "A", "Acm1pt", "Admin", "Ahhh", "Arrecha", "Ayy", "Baka", "Banx", "Besito", "Brr", "Brr2", "Bésame", "Concha", 
 	      "Ctm", "Daddy", "Feliz jueves", "Gambare", "Help", "Hentai", "Iluminati", "Imposible", "Jaa", "Japi", "La mimición", 
 	      "Las pelotas", "Lokita", "Me vengo", "Mi reina", "Mujer", "Nya", "Oh oh si", "Onichan", "Orto", "Pack", "Pasa pack", "Pero en fin", 
 	      "Petardo", "Pete", "Profe", "Sapee", "Setso", "Sexual", "Sparta", "Te quiero", "Umm", "Yamete kudasai", "Yamete", "Dime onichan", 
@@ -8908,6 +8908,10 @@ if (!isAllaud) return
 		}				
 	}
 		if (body.includes(`ª`) && body.length == 1){
+			const audiosxx = fs.readFileSync(`./anishan/A.mp3`)
+			samu330.sendMessage(from, audiosxx, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true})
+		}
+		if (body.includes(`a`) && body.length == 1){
 			const audiosxx = fs.readFileSync(`./anishan/A.mp3`)
 			samu330.sendMessage(from, audiosxx, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true})
 		}
