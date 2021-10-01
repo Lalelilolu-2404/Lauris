@@ -2993,8 +2993,8 @@ rndx = []
 random = args.join(' ')
 const rndy = groupMembers
 rndz = rndy[Math.floor(Math.random() * rndy.length)]
-const randm = `@${rndz.jid.split('@')[0]}\b${random}`
 rndx.push(rndz.jid)
+const randm = `@${rndz[0].split('@')[0]}\b${random}`		
 samu330.sendMessage(from, randm, MessageType.text, {
 quoted: fdreams,  
 contextInfo: { mentionedJid: [randx[0]]}})	
