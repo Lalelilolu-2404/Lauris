@@ -2990,14 +2990,21 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
 reply(mess.wait)
 samu330.updatePresence(from, Presence.composing) 		
 rndx = []
-random = args.join(' ')
+randmh = args.join(' ')
 const rndy = groupMembers
 const rndz = rndy[Math.floor(Math.random() * rndy.length)]
 rndx.push(rndz.jid)
-const randm = `@${rndz[0].split('@')[0]}\b${random}`		
+const randm = `@${rndz[0].split('@')[0]}\b${randmh}`	
 samu330.sendMessage(from, randm, MessageType.text, {
-quoted: fdreams,  
-contextInfo: { mentionedJid: [randx[0]]}})	
+	//quoted : fjeux, 
+	contextInfo: {
+	mentionedJid: [rndx[0]],
+	externalAdReply :{
+	title: `「 ${mdata.subject} 」\n\t✪ ➥ ↴`,
+	//body: '',
+	//sourceUrl : `${linkx}`, 
+	thumbnail : fs.readFileSync('./src/dreams.jpg')}}}
+	)	
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
