@@ -35,7 +35,7 @@ const request = require('request');
 const fs = require('fs');
 const { wait, h2k, generateMessageID, getGroupAdmins, banner, start, info, success, close } = require('./lib/functions')
 const { addBanned, unBanned, BannedExpired, cekBannedUser } = require('./lib/banned.js')
-const { getLevelingXp, getLevelingId, addLevelingXp, addLevelingLevel, addLevelingId, getLevelingLevel, getUserRank, addCooldown, leveltab } = require('./lib/leveling.js')
+const { getLevelingXp, getLevelingId, addLevelingXp, addLevelingLevel, addLevelingId, getLevelingLevel, getUserRank, ranklvl, addCooldown, leveltab } = require('./lib/leveling.js')
 const { addATM, addKoinUser, checkATMuser, checkLimit, addLimith, bayarLimit, confirmATM, limitAdd, atmCouldown } = require('./lib/limitatm.js')
 const { removeBackgroundFromImageFile } = require('remove.bg');
 const { exec } = require('child_process');
@@ -5559,6 +5559,26 @@ for (let i = 0; i < 12; i++) {
 //await reply(leaderboardlvl)
 await mentions(leaderboardlvl, bo, true)	
 ///await reply(leaderboarduang)
+} catch (err) {
+console.error(err)
+await reply(`Usuario mínimo para poder acceder a la base de datos`)
+}
+break
+		
+case 'mimi':
+samu330.updatePresence(from, Presence.composing)
+box = []
+//_level.sort((a, b) => (a.xp < b.xp) ? 1 : -1)
+await ranklvl(_level)
+let leaderboardlvl = '-----[ *NIVEL DE LIDERAZGO* ]----\n\n'
+let nomm = 0
+try {
+for (let i = 0; i < 4; i++) {
+	nomm++
+	leaderboardlvl += `*[${nomm}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
+        box.push(_level[i].id)
+}
+await mentions(leaderboardlvl, box, true)	
 } catch (err) {
 console.error(err)
 await reply(`Usuario mínimo para poder acceder a la base de datos`)
