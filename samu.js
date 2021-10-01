@@ -2984,18 +2984,19 @@ mensajeDesc = `Grupo ${groupx.subject}\n${groupx.id}`
 samu330.sendMessage(from, mensajeDesc, MessageType.text)		
 break		
 		
-case 'random':
+case 'azar':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+samu330.updatePresence(from, Presence.composing) 
+mdata = await samu330.groupMetadata(from)
 reply(mess.wait)
-samu330.updatePresence(from, Presence.composing) 		
 rndx = []
-randmh = args.join(' ')
+azar = args.join(' ')
 const rndy = groupMembers
 const rndz = rndy[Math.floor(Math.random() * rndy.length)]
 rndx.push(rndz.jid)
-const randm = `@${rndz[0].split('@')[0]}\b${randmh}`	
-samu330.sendMessage(from, randm, MessageType.text, {
+const azar2 = `@${rndz[0].split('@')[0]}\b${azar}`	
+samu330.sendMessage(from, `${azar2}`, MessageType.text, {
 	//quoted : fjeux, 
 	contextInfo: {
 	mentionedJid: [rndx[0]],
