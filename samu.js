@@ -4257,18 +4257,6 @@ break
 					addFilter(from)
 					addLevelingXp(sender, 20)
 						break
-	
-					case 'futa':	
-							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
-							futan = await axios.get('https://nekos.life//api/v2/img/futanari')
-							buffer = await getBuffer(futan.data.url)
-							samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: '_*Bro....*_'})
-						.catch(err => {
-						return('Pwrdon... T_T')
-						})
-					addFilter(from)
-					addLevelingXp(sender, 20)
-						break
 			
 					case 'femdom':	
 							if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
@@ -5113,7 +5101,7 @@ sendFileFromUrl(waifu.url, image, {quoted: fimg, caption: '💎 *Umm gatita 🥵
 addFilter(from)
 addLevelingXp(sender, 20)
 break
-		
+/**		
 case 'trap':
 if (!isGroup) return reply(mess.only.group)
 if (!isNsfw) return reply(mess.nsfw)
@@ -5123,6 +5111,31 @@ sendFileFromUrl(waifu.url, image, {quoted: fimg, caption: '💎 *Trapito :3 🥵
 addFilter(from)
 addLevelingXp(sender, 20)
 break
+		
+case 'futa':	
+if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
+futan = await axios.get('https://nekos.life//api/v2/img/futanari')
+buffer = await getBuffer(futan.data.url)
+samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: '_*Bro....*_'})
+.catch(err => {
+return('Pwrdon... T_T')
+})
+break
+**/
+case 'trap':
+if (!isGroup) return reply(mess.only.group)
+if (isBan) return reply('*Lo siento pero usted es un usuario baneado, no puede hacer uso del bot!*')
+reply('*Buscando una buena imagen...*')
+trapx = ["https://nekos.life//api/v2/img/trap", "https://api.waifu.pics/nsfw/trap", "https://nekos.life/api/v2/img/futanari"]
+trapf = trapx[Math.floor(Math.random() * trapx.length)]
+trapito = await getJson(`${trapf}`)
+sendFileFromUrl(trapito.url, image, {quoted: fimg, caption: '💎 *Trapitos 🥵* 💠', sendEphemeral: true})
+.catch(err => {
+return('Pwrdon... T_T')
+})
+addFilter(from)
+addLevelingXp(sender, 40)
+break		
 		
 case 'blow':
 if (!isGroup) return reply(mess.only.group)
