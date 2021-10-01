@@ -994,6 +994,15 @@ message: { "videoMessage": { "caption":"Lalelilolu ᵈᵃʳʸ⛥\n➫Jeux ♤◇
 }
 contextInfo: {
 mentionedJid: [sender]}
+const fdreams = {
+key:
+{ fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ?
+{ remoteJid: "status@broadcast" } : {}) },
+message: { "videoMessage": { "caption":"⛧⸸⁶Death⁹†\n➫ ♤◇♧♡", 'jpegThumbnail': fs.readFileSync('./src/dreams.jpg')}}
+}
+contextInfo: {
+mentionedJid: [sender]}
 const fgay = {
 key:
 { fromMe: false,
@@ -1556,7 +1565,7 @@ reply(`${_0x4dab[8]}${test[_0x4dab[7]](_0x4dab[4])}${_0x4dab[9]}${orlist[_0x4dab
 //Zona de Comandos🛵
 switch (command) {
 		
-case 'menu18':
+case 'menu6':
 samu330.updatePresence(from, Presence.composing)
 uptime = process.uptime()
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
@@ -1592,7 +1601,7 @@ addFilter(from)
 addLevelingXp(sender, 20)
 break	
 
-case 'menu6':
+case 'menu18':
 samu330.updatePresence(from, Presence.composing)
 uptime = process.uptime()
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
@@ -1631,7 +1640,7 @@ sendButLocation(from, `*Hola : ${pushname}*\n\n${menuvx}`, `© Creator\n⛧⸸�
 addFilter(from)
 addLevelingXp(sender, 20)
 break			
-		
+/**		
 case 'help':
 case 'menu':
 case 'comandos':
@@ -1722,6 +1731,7 @@ var _0x56da=['367342lxQRgg','relayWAMessage','52224EUhLvZ','readFileSync','31843
 samu330.sendMessage(from, fs.readFileSync('./src/assistant.jpg'), image, {quoted: ftoko, caption: Menu, thumbnail: fs.readFileSync('./src/assistant.jpg'), sendEphemeral: true})
 }
 break
+	
 case 'menu2':
 //if (!isRegister) return samu330.sendMessage(from, assistant, image, { quoted: noreg, caption: `😊Hola, ${timeFt}.\nAl parecer no estas registrado en _*F*_, Para registrarte usa el comando: *${prefix}reg*.`, thumbnail: assistant, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
@@ -1768,7 +1778,7 @@ stc = `╭⸻⃞✫꯭𝙈꯭𝙀꯭𝙉꯭𝙐꯭✫⃞⸻╮
 │ *${prefix}agif*
 │ _Stiker a gif_ 
 ╰──────────────╯`
-**/
+
 samu330.sendMessage(from, stc, MessageType.text, {quoted:
 { key: {
 fromMe: false,
@@ -1871,11 +1881,11 @@ samu330.updatePresence(from, Presence.composing)
 //if (!isRegister) return reply(mess.only.usrReg)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 uptime = process.uptime()
-/**		
+		
 🚧 *El siguiente comando es para crashear los grupos!! este comando es muy peligroso :) solo administradores pueden usarlo.* 🚧
 *${prefix}buggp*
 _Usalo bajo tu responsabilidad!_
-**/
+
 const Menug = {
 text: `🔐Hola *${pushname}*
 
@@ -2012,7 +2022,8 @@ samu330.sendMessage(from, Menuo, MessageType.text, {
 quoted: floc})
 addFilter(from)
 addLevelingXp(sender, 20)		
-break		
+break	
+**/		
 /////////			
 		
 case 'menulog':
@@ -2071,6 +2082,7 @@ quoted: fvid})
 addFilter(from)
 addLevelingXp(sender, 20)		
 break
+/**		
 case 'menu8':
 samu330.updatePresence(from, Presence.composing)
 if (!isOwner) return reply('No eres mi dueño UnU')
@@ -2175,7 +2187,6 @@ addFilter(from)
 addLevelingXp(sender, 20)		
 break
 
-/**
 case 'menu9':
 if (!isRegister) return reply(mess.only.usrReg)
 reply('*Gathering information...*')
@@ -2444,8 +2455,11 @@ samu330.sendMessage(from, { address : ``, sequenceNumber: '99999',
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
-**/		
-case 'menuofc':
+**/	
+		
+case 'help':
+case 'menu':
+case 'comandos':
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 uptime = process.uptime()
 samu330.updatePresence(from, Presence.composing)  		
@@ -2662,7 +2676,7 @@ ${bodyM} ${prefix}top5 + ⌜Texto⌟
 ${bodyM} ${prefix}calumnia + ⌜@tag⌟ | Text | Reply
 ${bodyM} ${prefix}kill + ⌜@tag⌟ (Matar un impostor)
 ${bodyM} ${prefix}golosa + ⌜@tag⌟ (Cuanto se la come xd)
-
+${bodyM} ${prefix}random + ⌜Descripción⌟ (Miembro al azar)
 
 ${brr} INTERACCION CON EL BOT
 
@@ -2794,7 +2808,7 @@ reply(`*「 TRANSFERENCIA EXITOSA 」*\n\nDe : @${sender.split("@")[0]}\nPara : 
 addFilter(from)
 addLevelingXp(sender, 20)
 break
-
+/**
 case 'bal':
 case 'balance':
 if (!isGroup) return reply(mess.only.group)
@@ -2806,8 +2820,9 @@ samu330.sendMessage(from, hailhy, MessageType.text, {quoted: sam})
 //reply(ind.uangkau(pushname, sender, kantong))
 addLevelingXp(sender, 20)
 break	
-		
-case 'cartera':
+**/
+case 'bal':
+case 'balance':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})	
 samu330.updatePresence(from, Presence.composing) 
@@ -2815,8 +2830,8 @@ arg1 = q
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 kantong = checkATMuser(mentioned[0])
-hailhy = `*⌜@${mentioned[0].split('@')[0]}⌟*\n★᭄ꦿ Posee ${kantong} Otakoins`
-samu330.sendMessage(from, hailhy, MessageType.text, {quoted: sam, contextInfo: {mentionedJid: [mentioned[0]]}})
+const hailhz = `*⌜@${mentioned[0].split('@')[0]}⌟*\n★᭄ꦿ Posee ${kantong} Otakoins`
+samu330.sendMessage(from, hailhz, MessageType.text, {quoted: sam, contextInfo: {mentionedJid: [mentioned[0]]}})
 } else {
 kantong = checkATMuser(sender)
 hailhy = `*⌜${pushname}⌟*\n★᭄ꦿ Posees ${kantong} Otakoins`   
@@ -2968,6 +2983,25 @@ groupx = await samu330.groupMetadata(from)
 mensajeDesc = `Grupo ${groupx.subject}\n${groupx.id}`
 samu330.sendMessage(from, mensajeDesc, MessageType.text)		
 break		
+		
+case 'random':
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+reply(mess.wait)
+samu330.updatePresence(from, Presence.composing) 		
+rndx = []
+random = args.join(' ')
+const rndy = groupMembers
+rndz = rndy[Math.floor(Math.random() * rndy.length)]
+const randm = `@${rndz.jid.split('@')[0]}\b${random}`
+rndx.push(rndz.jid)
+samu330.sendMessage(from, randm, MessageType.text, {
+quoted: fdreams,  
+contextInfo: { mentionedJid: [randx[0]]}})	
+addFilter(from)
+addLevelingXp(sender, 20)
+break	
+		
 /**
 case 'pussyimage':
 if (!isNsfw) return reply(mess.nsfwoff)
