@@ -2815,7 +2815,7 @@ arg1 = q
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 kantong = checkATMuser(mentioned[0])
-hailhy = `*⌜${mentioned[0].split('@')[0]}⌟*\n★᭄ꦿ Posee ${kantong} Otakoins`
+hailhy = `*⌜@${mentioned[0].split('@')[0]}⌟*\n★᭄ꦿ Posee ${kantong} Otakoins`
 samu330.sendMessage(from, hailhy, MessageType.text, {quoted: sam, contextInfo: {mentionedJid: [mentioned[0]]}})
 } else {
 kantong = checkATMuser(sender)
