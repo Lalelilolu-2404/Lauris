@@ -5570,15 +5570,15 @@ samu330.updatePresence(from, Presence.composing)
 box = []
 //_level.sort((a, b) => (a.xp < b.xp) ? 1 : -1)
 await ranklvl(_level)
-let leaderboardlvl = '-----[ *NIVEL DE LIDERAZGO* ]----\n\n'
-let nomm = 0
+let mimido = '-----[ *NIVEL DE LIDERAZGO* ]----\n\n'
+let noxxx = 0
 try {
 for (let i = 0; i < 4; i++) {
-	nomm++
-	leaderboardlvl += `*[${nomm}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
+	noxxx++
+	mimido += `*[${nomm}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
         box.push(_level[i].id)
 }
-await mentions(leaderboardlvl, box, true)	
+await mentions(mimido, box, true)	
 } catch (err) {
 console.error(err)
 await reply(`Usuario mínimo para poder acceder a la base de datos`)
