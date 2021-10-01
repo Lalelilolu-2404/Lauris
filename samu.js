@@ -2989,17 +2989,16 @@ if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 samu330.updatePresence(from, Presence.composing) 
 mdata = await samu330.groupMetadata(from)
-reply(mess.wait)
-rndx = []
+azrn = []
 azar = args.join(' ')
-const rndy = groupMembers
-const rndz = rndy[Math.floor(Math.random() * rndy.length)]
-rndx.push(rndz.jid)
-const azar2 = `@${rndz[0].split('@')[0]}\b${azar}`	
-samu330.sendMessage(from, `${azar2}`, MessageType.text, {
+const az1 = groupMembers
+const az = az1[Math.floor(Math.random() * az1.length)]
+azrn.push(az.jid)
+const az2 = `@${azrn[0].split('@')[0]} ${azar}`	
+samu330.sendMessage(from, `${az2}`, MessageType.text, {
 	//quoted : fjeux, 
 	contextInfo: {
-	mentionedJid: [rndx[0]],
+	mentionedJid: [azrn[0]],
 	externalAdReply :{
 	title: `「 ${mdata.subject} 」\n\t✪ ➥ ↴`,
 	//body: '',
@@ -3371,7 +3370,7 @@ samu330.sendMessage(from, `${uffrico}`, MessageType.text, {
 	contextInfo: {
 	mentionedJid: [mentioned[0]],
 	externalAdReply :{
-	title: `「 ${mdata.subject} 」\n✪ ➥ ↴`,
+	title: `「 ${mdata.subject} 」\n\t✪ ➥ ↴`,
 	//body: '',
 	//sourceUrl : `${linkx}`, 
 	thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
