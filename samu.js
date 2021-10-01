@@ -2815,7 +2815,7 @@ arg1 = q
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 kantong = checkATMuser(mentioned[0])
-hailhy = `*⌜${mentioned[0].split('@')[0]}@s.whatsapp.net⌟*\n★᭄ꦿ Posee ${kantong} Otakoins`
+hailhy = `*⌜${mentioned[0].split('@')[0]}⌟*\n★᭄ꦿ Posee ${kantong} Otakoins`
 samu330.sendMessage(from, hailhy, MessageType.text, {quoted: sam, contextInfo: {mentionedJid: [mentioned[0]]}})
 } else {
 kantong = checkATMuser(sender)
@@ -5124,6 +5124,7 @@ break
 **/
 case 'trap':
 if (!isGroup) return reply(mess.only.group)
+if (!isNsfw) return reply(mess.nsfw)
 if (isBan) return reply('*Lo siento pero usted es un usuario baneado, no puede hacer uso del bot!*')
 reply('*Buscando una buena imagen...*')
 trapx = ["https://nekos.life//api/v2/img/trap", "https://api.waifu.pics/nsfw/trap", "https://nekos.life/api/v2/img/futanari"]
