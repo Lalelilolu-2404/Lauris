@@ -8939,12 +8939,19 @@ if (isAllaud) {
 		samu330.sendMessage(from, none2, sticker, {quoted: sam})
 	} 
 	if (body.includes(`Gansito`) && body.length == 7){
-		randc = Math.floor(Math.random() * 5)
-		none2 = fs.readFileSync(`./src/stickers2/Gansito${randc}.webp`)
-		samu330.sendMessage(from, none2, sticker)
+		randcd = Math.floor(Math.random() * 9)
+		none2d = fs.readFileSync(`./src/stickers2/Gansito${randcd}.webp`)
+		samu330.sendMessage(from, none2d, sticker)
 	} 
+	if (body.includes(`Gansitoxxx`) && body.length == 10){
+		for (let i = 0; i < 9; i++){
+		none2d = fs.readFileSync(`./src/stickers2/Gansito${i}.webp`)
+		samu330.sendMessage(from, none2d, sticker)
+		}
+	} 
+	
 }
-if (!isOwner && !isCherry){	
+if (!isOwner){	
 if (!isAllaud) return
 const Fer =  ["Me das admin", "Ban", "Funao", "Love", "Ya se durmieron", "Te me calmas", "Ta fuerte", "Takeself", "Hahaha", "Hola", "Faptality", "F el grupo", "Ctm", "Shh", "Nani", 
 	      "Lolxd", "F", "Amm", "Pichula", "Si xd", "Haha no", "Paja2", "Perro", "Ufff", "Colita"]		
@@ -8979,16 +8986,16 @@ if (isAllaud) {
 	for (let i = 0; i < sonsotak.length; i++){
 		if (body.includes(`${sonsotak[i]}`) && body.length == sonsotak[i].length){
 			const audiosxx = fs.readFileSync(`./anishan/${sonsotak[i]}.mp3`)
-			samu330.sendMessage(from, audiosxx, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true})
+			samu330.sendMessage(from, audiosxx, MessageType.audio, {mimetype: 'audio/mp4', ptt:true})
 		}				
 	}
 		if (body.includes(`ª`) && body.length == 1){
 			const audiosxx = fs.readFileSync(`./anishan/A.mp3`)
-			samu330.sendMessage(from, audiosxx, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true})
+			samu330.sendMessage(from, audiosxx, MessageType.audio, {mimetype: 'audio/mp4', ptt:true})
 		}
 		if (body.includes(`a`) && body.length == 1){
 			const audiosxx = fs.readFileSync(`./anishan/A.mp3`)
-			samu330.sendMessage(from, audiosxx, MessageType.audio, {quoted: faud, mimetype: 'audio/mp4', ptt:true})
+			samu330.sendMessage(from, audiosxx, MessageType.audio, {mimetype: 'audio/mp4', ptt:true})
 		}
 	
 }
@@ -9006,7 +9013,7 @@ const stickme = ["69", "Ahohsi", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok
 		"Toma tu galleta", "Tqm1", "Tqm2", "Triste", "Tu culito", "Turbio", "Tuyyo", "Ufff", "Uhm", "Umm", "Uwu", "Vamos a culear", "Vas a llorar", "Volví", "Wow", 
 		"Wtf", "Xdxd", "Y mis nudes", "Ya antojaron", "Ya es hora", "Ya sabes", "Ya se durmieron", "Ya se enojó", "Ya veo", "Yop", "Youme"]	
 
-if (isOwner || isCherry){
+if (isOwner){
 if (!isAllaud) return
 	for (let i = 0; i < stickme.length; i++){
 		if (body.includes(`${stickme[i]}`) && body.length == stickme[i].length){
@@ -9058,7 +9065,7 @@ if (body.includes(`Xd`) && body.length == 2){
 }
 **/
 if (body.includes(`Xd`) && body.length == 2){
-	nkx = Math.floor(Math.random() * 16)
+	nkx = Math.floor(Math.random() * 17)
 	const none = fs.readFileSync(`./temp/Xd${nkx}.webp`)
 	samu330.sendMessage(from, none, MessageType.sticker)
 }		
