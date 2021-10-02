@@ -8943,13 +8943,14 @@ if (isAllaud) {
 		none2d = fs.readFileSync(`./src/stickers2/Gansito${randcd}.webp`)
 		samu330.sendMessage(from, none2d, sticker)
 	} 
+	/**
 	if (body.includes(`Gansitoxxx`) && body.length == 10){
 		for (let i = 0; i < 9; i++){
 		none2d = fs.readFileSync(`./src/stickers2/Gansito${i}.webp`)
 		samu330.sendMessage(from, none2d, sticker)
 		}
 	} 
-	
+	**/
 }
 if (!isOwner){	
 if (!isAllaud) return
