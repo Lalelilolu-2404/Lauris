@@ -5587,8 +5587,8 @@ try {
 for (let i = 0; i < 4; i++) {
 	noxxx++
 	var lauris = _level[i].id
-	var xppp = ${getLevelingXp(lauris)}
-	var lvlpp = ${getLevelingLevel(lauris)}
+	var xppp = getLevelingXp(lauris)
+	var lvlpp = getLevelingLevel(lauris)
 	mimido += `*[${noxxx}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${xppp}  *Level*: ${lvlpp}\n`
         box.push(_level[i].id)
 }
