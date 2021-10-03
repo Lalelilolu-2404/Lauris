@@ -5586,7 +5586,9 @@ let noxxx = 0
 try {
 for (let i = 0; i < 4; i++) {
 	noxxx++
-	mimido += `*[${noxxx}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: getLevelingXp(${_level[i].id})  *Level*: getLevelingLevel{${_level[i].id}}\n`
+	var xpp = getLevelingXp(${_level[i].id})
+	var lvlpp = getLevelingLevel(${_level[i].id})
+	mimido += `*[${noxxx}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${xpp}  *Level*: ${lvlpp}\n`
         box.push(_level[i].id)
 }
 await mentions(mimido, box, true)	
