@@ -2743,6 +2743,7 @@ ${bodyM} ${prefix}givemoney + ⌜Tag @⌟ (Dar dinero a alguien)
 ${bodyM} ${prefix}apostar + ⌜Dinero a apostar⌟
 ${bodyM} ${prefix}coinflip (Tirar la moneda) 
 ⩫> *Ganas el doble/pierdes la apuesta* 
+${bodyM} ${prefix}betall (Apuesta todo tu dinero) 
 
 ${brr} LIMIT
 
@@ -2942,6 +2943,17 @@ samu330.sendMessage(from, hailx, MessageType.text, {quoted: sam})
 addLevelingXp(sender, 20)
 break	
 	
+case 'reset':
+if (!isLalelilolu) return
+if (!isGroup) return reply(mess.only.group)		
+for (let mhxxx of _user2) {
+_user2.splice(mhxxx.jid)
+fs.writeFileSync('./src/user2.json', JSON.stringify(_user2))
+}
+hailhx = `*⌜Hecho ⛥⌟*`   
+samu330.sendMessage(from, hailhx, MessageType.text, {quoted: fnsfw}) 
+break	
+		
 case 'claim':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
@@ -3492,7 +3504,23 @@ samu330.sendMessage(from, hailhx, MessageType.text, {quoted: fnsfw})
 const gifxp = argz[1] * 1
 addLevelingXp(mentioned[0], gifxp)
 break
-		
+
+case 'giftmoney':
+if (!isLalelilolu) return
+if (args.length < 1) return reply("Mentiona a alguien, pajero!")
+arg1 = q
+argz = arg1.split("|")
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+}
+if (!argz) return
+if (isNaN(argz[1])) return
+hailhx = `*⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
+samu330.sendMessage(from, hailhx, MessageType.text, {quoted: fnsfw})
+const gifmoney = argz[1] * 1
+addKoinUser(mentioned[0], gifmoney)
+break		
+
 case 'getmoney':
 if (!isLalelilolu) return
 arg1 = q
@@ -3879,7 +3907,7 @@ addLevelingXp(sender, 20)
 break	
 		
 case 'fbixd':
-if (!isOwner) return reply('No eres mi dueño UnU')				
+if (!isLalelilolu) return reply('No eres mi dueño UnU')				
 reply('*Espera porfavor...*')
 samu330.sendMessage(from, fs.readFileSync('./media/Detente.mp4'), video, {quoted: fnsfw, mimetype: 'video/gif', caption: '*FBI, détengase perro*', sendEphemeral: true, duration: -6666666})		
 addFilter(from)
@@ -5562,9 +5590,12 @@ let nomm = 0
 try {
 for (let i = 0; i < 12; i++) {
 	nomm++
+	var laurisxx = _level[i].id
+	var xpp1 = getLevelingXp(laurisxx)
+	var lvlpp1 = getLevelingLevel(laurisxx)
         //leaderboardlvl += `*[${nomm}]* wa.me/${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
         //leaderboarduang += `*[${nomm}]* wa.me/${uang[i].id.replace('@s.whatsapp.net', '')}\n┣⊱ *Dinero*: _Rp${uang[i].uang}_\n`
-	leaderboardlvl += `*[${nomm}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
+	leaderboardlvl += `*[${nomm}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${xpp1} *Level*: ${lvlpp1}\n`
         bo.push(_level[i].id)
 }
 //await reply(leaderboardlvl)
@@ -5609,7 +5640,9 @@ let nommx = 0
 try {
 for (let i = 0; i < 10; i++) {
 	nommx++
-        leaderboarduang += `*[${nommx}]* @${_uang[i].id.replace('@s.whatsapp.net', '')}\n┣⊱ *Dinero*: ${_uang[i].uang}_\n`
+	var kevqs = _uang[i].id
+	var argent = checkATMuser(kevqs)
+        leaderboarduang += `*[${nommx}]* @${_uang[i].id.replace('@s.whatsapp.net', '')}\n┣⊱ *Dinero*: ${argent}_\n`
         box.push(_uang[i].id)
 }
 await mentions(leaderboarduang, box, true)	
