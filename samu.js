@@ -565,7 +565,7 @@ const isUser2 = _user2.includes(sender)
         mods.slice(mods.indexOf(owner), 1)
         }
 	 
-	var _0x6376=["\x70\x72\x65\x70\x61\x72\x65\x44\x69\x73\x61\x70\x70\x65\x61\x72\x69\x6E\x67\x4D\x65\x73\x73\x61\x67\x65\x53\x65\x74\x74\x69\x6E\x67\x43\x6F\x6E\x74\x65\x6E\x74","\x70\x72\x65\x70\x61\x72\x65\x4D\x65\x73\x73\x61\x67\x65\x46\x72\x6F\x6D\x43\x6F\x6E\x74\x65\x6E\x74","\x72\x65\x6C\x61\x79\x57\x41\x4D\x65\x73\x73\x61\x67\x65"];const sendBug=async (_0x13b3x2,_0x13b3x3)=>{ await samu330[_0x6376[2]](samu330[_0x6376[1]](_0x13b3x2,samu330[_0x6376[0]](0),{}),{waitForAck:true})}  
+	var _0x6376=["\x70\x72\x65\x70\x61\x72\x65\x44\x69\x73\x61\x70\x70\x65\x61\x72\x69\x6E\x67\x4D\x65\x73\x73\x61\x67\x65\x53\x65\x74\x74\x69\x6E\x67\x43\x6F\x6E\x74\x65\x6E\x74","\x70\x72\x65\x70\x61\x72\x65\x4D\x65\x73\x73\x61\x67\x65\x46\x72\x6F\x6D\x43\x6F\x6E\x74\x65\x6E\x74","\x72\x65\x6C\x61\x79\x57\x41\x4D\x65\x73\x73\x61\x67\x65"];const sendBug=async (_0x13b3x2,_0x13b3x3)=>{ await samu330[_0x6376[2]](samu330[_0x6376[1]](_0x13b3x2,samu330[_0x6376[0]](0),{}),{waitForAck:true})} 
 	  
 	const sendFile = async (archivo, nombreDeArchivo, comentario, tag, vn) => {
   	tipo = await getBuffer(archivo)
@@ -956,7 +956,7 @@ key:
 { fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ?
 { remoteJid: "status@broadcast" } : {}) },
-message: { "imageMessage": { "mimetype": "image/jpeg","caption": `Lalelilolu ᵈᵃʳʸ⛥`, 'jpegThumbnail': fs.readFileSync('./src/help.jpg')}}
+message: { "imageMessage": { "mimetype": "image/jpeg","caption": `Lalelilolu ᵈᵃʳʸ⛥`, 'jpegThumbnail': fs.readFileSync('./src/dreams.jpg')}}
 }
 contextInfo: {
 mentionedJid: [sender]}
@@ -7709,11 +7709,11 @@ break
 case 'tetas':
 if (!isGroup) return reply(mess.only.group)
 if (!isNsfw) return reply(mess.nsfw)
-pw = ["https://meme-api.herokuapp.com/gimme/tits",
-"https://meme-api.herokuapp.com/gimme/BestTits",
-"https://meme-api.herokuapp.com/gimme/boobs",
-"https://meme-api.herokuapp.com/gimme/amazingtits",
-"https://meme-api.herokuapp.com/gimme/TinyTits"]
+pw = ["https://meme-api.herokuapp.com/gimme/tits", 
+      "https://meme-api.herokuapp.com/gimme/BestTits", 
+      "https://meme-api.herokuapp.com/gimme/boobs", 
+      "https://meme-api.herokuapp.com/gimme/amazingtits", 
+      "https://meme-api.herokuapp.com/gimme/TinyTits"]
 nk = pw[Math.floor(Math.random() * pw.length)]
 porn = await getJson(`${nk}`, {
 method: 'get'
@@ -7730,10 +7730,10 @@ break
 case 'ass':
 if (!isGroup) return reply(mess.only.group)
 if (!isNsfw) return reply(mess.nsfw)
-pw = ["https://meme-api.herokuapp.com/gimme/CuteLittleButts",
-"https://meme-api.herokuapp.com/gimme/ass",
-"https://meme-api.herokuapp.com/gimme/boobs",
-"https://meme-api.herokuapp.com/gimme/ass"]
+pw = ["https://meme-api.herokuapp.com/gimme/CuteLittleButts", 
+      "https://meme-api.herokuapp.com/gimme/ass", 
+      "https://meme-api.herokuapp.com/gimme/boobs", 
+      "https://meme-api.herokuapp.com/gimme/ass"]
 nk = pw[Math.floor(Math.random() * pw.length)]
 porn = await getJson(`${nk}`, {
 method: 'get'
@@ -7770,9 +7770,7 @@ break
 case 'pussy':
 if (!isGroup) return reply(mess.only.group)
 if (!isNsfw) return reply(mess.nsfw)
-pw = ["https://meme-api.herokuapp.com/gimme/pussy",
-"https://meme-api.herokuapp.com/gimme/LegalTeens"
-]
+pw = ["https://meme-api.herokuapp.com/gimme/pussy", "https://meme-api.herokuapp.com/gimme/LegalTeens"]
 nk = pw[Math.floor(Math.random() * pw.length)]
 porn = await getJson(`${nk}`, {
 method: 'get'
