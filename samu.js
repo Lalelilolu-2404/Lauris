@@ -36,7 +36,7 @@ const fs = require('fs');
 const { wait, h2k, generateMessageID, getGroupAdmins, banner, start, info, success, close } = require('./lib/functions')
 const { addBanned, unBanned, BannedExpired, cekBannedUser } = require('./lib/banned.js')
 const { getLevelingXp, getLevelingId, addLevelingXp, addLevelingLevel, addLevelingId, getLevelingLevel, getUserRank, ranklvl, addCooldown, leveltab } = require('./lib/leveling.js')
-const { addATM, addKoinUser, checkATMuser, checkLimit, addLimith, bayarLimit, confirmATM, limitAdd, atmCouldown } = require('./lib/limitatm.js')
+const { addATM, addKoinUser, checkATMuser, checkLimit, addLimith, bayarLimit, confirmATM, limitAdd, atmCouldown, rankdin } = require('./lib/limitatm.js')
 const { removeBackgroundFromImageFile } = require('remove.bg');
 const { exec } = require('child_process');
 const ffmpeg = require('fluent-ffmpeg');
@@ -5648,7 +5648,8 @@ case 'economyboard':
 case 'ecb':
 samu330.updatePresence(from, Presence.composing)
 box = []
-_uang.sort((a, b) => (a.uang < b.uang) ? 1 : -1)
+await rankdin(_uang)
+//_uang.sort((a, b) => (a.uang < b.uang) ? 1 : -1)
 let leaderboarduang = '-----[ *TABLA DE MILLONARIOS* ]----\n\n'
 let nommx = 0
 try {
