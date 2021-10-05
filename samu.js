@@ -158,6 +158,19 @@ const addRegisteredUser2 = (userid, sender) => {
         })
             return status
         }
+	
+	const getNamexx = (sender) => {
+            let position = false
+            Object.keys(_registered).forEach((i) => {
+                if (_registered[i].id === sender) {
+                    position = i
+                }
+            })
+            if (position !== false) {
+                return _registered[position].sender
+            }
+        }
+	
 samu330.on('CB:action,,call', async json => {
 const callerId = json[2][0][1].from;
 console.log("Llamada recibida de "+ callerId)
@@ -3392,7 +3405,7 @@ samu330.sendMessage(from, teks, MessageType.text, {
 	quoted: {
 		key: {
                         fromMe: false,
-                        participant: `0@s.whatsapp.net`, ...(from ? { remoteJid : `1630035714@g.us` } : {})
+                        participant: `0@s.whatsapp.net`, ...(from ? { remoteJid : `5491165204676-1630035714@g.us` } : {})
                     },
                     message: {
                         "imageMessage": {
@@ -3452,18 +3465,17 @@ samu330.updatePresence(from, Presence.composing)
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }
+const Namexxx = await getNamexx(mentioned[0]]
 stpan = fs.readFileSync(`./src/stickers2/Se la coge.webp`)				
-const txtcoger = `${pushname} se cogió a @${mentioned[0].split('@')[0]}`		
-samu330.sendMessage(from, stpan, sticker, {
-	//quoted : fjeux, 
-	contextInfo: {
-	mentionedJid: [mentioned[0]],
-	externalAdReply :{
-	title: `${txtcoger}`,
-	//body: '',
-	//sourceUrl : `${linkx}`, 
-	thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
-	)	
+const txtcoger = `${pushname} se cogió a @${Namexxx}`		
+samu330.sendMessage(from, stpan, sticker, {quoted:
+{ key: {
+fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+},
+message: {
+"documentMessage": { "title": `${txtcoger}`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
+}})	
 addFilter(from)
 addLevelingXp(sender, 20)
 break			
