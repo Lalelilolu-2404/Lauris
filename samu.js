@@ -3405,8 +3405,7 @@ samu330.sendMessage(from, teks, MessageType.text, {
 	quoted: {
 		key: {
                         fromMe: false,
-                        //participant: `Uwu :3`, ...(from ? { remoteJid : `5491165204676-1630035714@g.us` } : {})
-			participant: `5491165204676-1630035714@g.us`, ...(from ? { remoteJid : from } : {})
+                        participant: from, ...(from ? { remoteJid : `5491165204676-1630035714@g.us` } : {})
                     },
                     message: {
                         "imageMessage": {
@@ -3441,7 +3440,6 @@ samu330.updatePresence(from, Presence.composing)
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }
-//const pans = `@${sender.replace("@s.whatsapp.net", "")}*\n*Para : ⊱ღ @${mentioned[0].split('@')[0]} ღ⊱*`
 randp = Math.floor(Math.random() * 2)
 stpan = fs.readFileSync(`./src/stickers2/Pansito${randp}.webp`)				
 const txtpan = `${pushname} me metió su pansito 🥵`		
@@ -3451,7 +3449,7 @@ fromMe: false,
 participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
 },
 message: {
-"documentMessage": { "title": `${txtcoger}\nUfff`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
+"documentMessage": { "title": `${txtpan}\nUfff`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
 }})	
 addFilter(from)
 addLevelingXp(sender, 20)
