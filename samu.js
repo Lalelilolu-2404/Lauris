@@ -3416,7 +3416,6 @@ samu330.sendMessage(from, teks, MessageType.text, {
                     }
                 }
             })	
-}
 addFilter(from)
 addLevelingXp(sender, 20)
 break			
