@@ -167,7 +167,7 @@ const addRegisteredUser2 = (userid, sender) => {
                 }
             })
             if (position !== false) {
-                return _registered[position].sender
+                return _registered[position].name
             }
         }
 	
@@ -3467,14 +3467,14 @@ mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }
 const Namexxx = await getNamexx(mentioned[0])
 stpan = fs.readFileSync(`./src/stickers2/Se la coge.webp`)				
-const txtcoger = `${pushname} se cogió a @${Namexxx}`		
+const txtcoger = `${Namexxx} me cogió duro 🥵`		
 samu330.sendMessage(from, stpan, sticker, {quoted:
 { key: {
 fromMe: false,
-participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
 },
 message: {
-"documentMessage": { "title": `${txtcoger}`, "description": "Anna aprieta rico xd", 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
+"documentMessage": { "title": `${txtcoger}\nAnna aprieta rico :3`, "description": "Brr", 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
 }})	
 addFilter(from)
 addLevelingXp(sender, 20)
