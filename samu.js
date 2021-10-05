@@ -3465,7 +3465,7 @@ samu330.updatePresence(from, Presence.composing)
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }
-const Namexxx = await getNamexx(mentioned[0]]
+const Namexxx = await getNamexx(mentioned[0])
 stpan = fs.readFileSync(`./src/stickers2/Se la coge.webp`)				
 const txtcoger = `${pushname} se cogió a @${Namexxx}`		
 samu330.sendMessage(from, stpan, sticker, {quoted:
