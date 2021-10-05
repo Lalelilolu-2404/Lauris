@@ -3474,7 +3474,7 @@ fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
 },
 message: {
-"documentMessage": { "title": `${txtcoger}`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
+"documentMessage": { "title": `${txtcoger}`, "description": "Anna aprieta rico xd", 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
 }})	
 addFilter(from)
 addLevelingXp(sender, 20)
