@@ -3392,7 +3392,7 @@ samu330.sendMessage(from, teks, MessageType.text, {
 	quoted: {
 		key: {
                         fromMe: false,
-                        participant: `0@s.whatsapp.net`, ...(from ? { remoteJid : `17792492278@g.us` } : {})
+                        participant: `0@s.whatsapp.net`, ...(from ? { remoteJid : `1630035714@g.us` } : {})
                     },
                     message: {
                         "imageMessage": {
