@@ -3412,7 +3412,7 @@ samu330.sendMessage(from, teks, MessageType.text, {
                         }
                     },
                     contextInfo: {
-                      [mentioned[0]]
+                         "forwardingScore": 999, "isForwarded": true
                     }
                 }
             })	
