@@ -3405,7 +3405,8 @@ samu330.sendMessage(from, teks, MessageType.text, {
 	quoted: {
 		key: {
                         fromMe: false,
-                        participant: `0@s.whatsapp.net`, ...(from ? { remoteJid : `5491165204676-1630035714@g.us` } : {})
+                        //participant: `Uwu :3`, ...(from ? { remoteJid : `5491165204676-1630035714@g.us` } : {})
+			participant: `5491165204676-1630035714@g.us`, ...(from ? { remoteJid : from } : {})
                     },
                     message: {
                         "imageMessage": {
@@ -3443,17 +3444,15 @@ mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 //const pans = `@${sender.replace("@s.whatsapp.net", "")}*\n*Para : ⊱ღ @${mentioned[0].split('@')[0]} ღ⊱*`
 randp = Math.floor(Math.random() * 2)
 stpan = fs.readFileSync(`./src/stickers2/Pansito${randp}.webp`)				
-const txtpan = `${pushname} le da pansito a @${mentioned[0].split('@')[0]}`		
-samu330.sendMessage(from, stpan, sticker, {
-	//quoted : fjeux, 
-	contextInfo: {
-	mentionedJid: [mentioned[0]],
-	externalAdReply :{
-	title: `${txtpan}`,
-	//body: '',
-	//sourceUrl : `${linkx}`, 
-	thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
-	)	
+const txtpan = `${pushname} me metió su pansito 🥵`		
+samu330.sendMessage(from, stpan, sticker, {quoted:
+{ key: {
+fromMe: false,
+participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
+},
+message: {
+"documentMessage": { "title": `${txtcoger}\nUfff`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
+}})	
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
@@ -3467,14 +3466,14 @@ mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }
 const Namexxx = await getNamexx(mentioned[0])
 stpan = fs.readFileSync(`./src/stickers2/Se la coge.webp`)				
-const txtcoger = `${Namexxx} me cogió duro 🥵`		
+const txtcoger = `${pushname} me cogió duro 🥵`		
 samu330.sendMessage(from, stpan, sticker, {quoted:
 { key: {
 fromMe: false,
 participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
 },
 message: {
-"documentMessage": { "title": `${txtcoger}\nAnna aprieta rico :3`, "description": "Brr", 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
+"documentMessage": { "title": `${txtcoger}\nMe dejó abierta :3`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
 }})	
 addFilter(from)
 addLevelingXp(sender, 20)
