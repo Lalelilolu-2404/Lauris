@@ -3026,7 +3026,7 @@ samu330.sendMessage(from, `${az2}`, MessageType.text, {
 	contextInfo: {
 	mentionedJid: [azrn[0]],
 	externalAdReply :{
-	title: `「 ${mdata.subject} 」\n\t✪ ➥ ↴`,
+	title: `「 ${mdata.subject} 」\n ✪ ➥ ↴`,
 	//body: '',
 	//sourceUrl : `${linkx}`, 
 	thumbnail : fs.readFileSync('./src/dreams.jpg')}}}
@@ -3379,6 +3379,96 @@ addFilter(from)
 addLevelingXp(sender, 20)
 break
 		
+case 'lauris':
+samu330.updatePresence(from, Presence.composing)  
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+}		
+teks = `╔═══════════════════
+╠≽️ *Número* : ${mentioned[0].split('@')[0]}
+╚═══════════════════`
+samu330.sendMessage(from, teks, MessageType.text, {
+	quoted: {
+		key: {
+                        fromMe: false,
+                        participant: `0@s.whatsapp.net`, ...(from ? { remoteJid : `17792492278@g.us` } : {})
+                    },
+                    message: {
+                        "imageMessage": {
+                            "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc",
+                            "mimetype": "image/jpeg",
+			    "caption": `「 *Holi cosita ^-^* 」\n ⊱ღ *${pushname}* ღ⊱`,					
+                            "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=",
+                            "fileLength": "28777",
+                            "height": 1200,
+                            "width": 1199,
+                            "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=",
+                            "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=",
+                            "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69",
+                            "mediaKeyTimestamp": "1610993486",
+                            "jpegThumbnail": fs.readFileSync('./src/dreams.jpg'),
+                            "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="
+                        }
+                    },
+                    contextInfo: {
+                      [mentioned[0]]
+                    }
+                }
+            })	
+}
+addFilter(from)
+addLevelingXp(sender, 20)
+break			
+
+case 'pansito':
+if (!isGroup) return reply(mess.only.group)
+if (args.length < 1) return reply("Meniona a alguien, pajero!")	
+samu330.updatePresence(from, Presence.composing) 
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+}
+//const pans = `@${sender.replace("@s.whatsapp.net", "")}*\n*Para : ⊱ღ @${mentioned[0].split('@')[0]} ღ⊱*`
+randp = Math.floor(Math.random() * 2)
+stpan = fs.readFileSync(`./src/stickers2/Pansito${randp}.webp`)				
+const txtpan = `${pushname} le da pansito a @${mentioned[0].split('@')[0]}`		
+samu330.sendMessage(from, stpan, sticker, {
+	//quoted : fjeux, 
+	contextInfo: {
+	mentionedJid: [mentioned[0]],
+	externalAdReply :{
+	title: `${txtpan}`,
+	//body: '',
+	//sourceUrl : `${linkx}`, 
+	thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
+	)	
+addFilter(from)
+addLevelingXp(sender, 20)
+break	
+
+case 'coger':		
+if (!isGroup) return reply(mess.only.group)
+if (args.length < 1) return reply("Meniona a alguien, pajero!")	
+samu330.updatePresence(from, Presence.composing) 
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+}
+stpan = fs.readFileSync(`./src/stickers2/Se la coge.webp`)				
+const txtcoger = `${pushname} se cogió a @${mentioned[0].split('@')[0]}`		
+samu330.sendMessage(from, stpan, sticker, {
+	//quoted : fjeux, 
+	contextInfo: {
+	mentionedJid: [mentioned[0]],
+	externalAdReply :{
+	title: `${txtcoger}`,
+	//body: '',
+	//sourceUrl : `${linkx}`, 
+	thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
+	)	
+addFilter(from)
+addLevelingXp(sender, 20)
+break			
+		
 case 'golosa':
 addFilter(from)	
 if (!isGroup) return reply(mess.only.group)
@@ -3396,7 +3486,7 @@ samu330.sendMessage(from, `${uffrico}`, MessageType.text, {
 	contextInfo: {
 	mentionedJid: [mentioned[0]],
 	externalAdReply :{
-	title: `「 ${mdata.subject} 」\n\t✪ ➥ ↴`,
+	title: `「 ${mdata.subject} 」\n ✪ ➥ ↴`,
 	//body: '',
 	//sourceUrl : `${linkx}`, 
 	thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
