@@ -8820,15 +8820,17 @@ const nick = await getNamexx(mentioned[0])
 const teksxx =`Bienvenido a : 〘 ${mdata.subject} 〙
 
 ╔═══════════════════
-╠≽️ *Número* : @${mentioned[0].split('@')[0]}
-╠≽️ *Nick* : ${nick}
-╠≽️ *Info* : ${thu.status}
+╠≽️ Nick : @${mentioned[0].split('@')[0]}
+╠≽️ Número : ${mentioned[0].split('@')[0]}
+╠≽️ Info : ${thu.status}
+╠≽️ Legal : Si hay pelito no hay delito
 ╚═══════════════════
-${bodyM} _Reglas del BOT_: ${prefix}reglas
-${bodyM} _Reglas del Grupo_: ${prefix}rules`
+
+_Reglas del BOT_: ${prefix}reglas
+_Reglas del Grupo_: ${prefix}rules`
 let buff = await getBuffer(ppimg)
 if (mentioned.length !== 0){
-sendButLocation(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
+sendButLocation(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\nPansito para Cherry\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
 				[{buttonId: 'xx1', 
 				buttonText: 
 				{displayText: 'Uwu :3'}, 
@@ -8839,7 +8841,7 @@ sendButLocation(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\nᴱ�
 				type: 1}], 
 				{contextInfo: {"mentionedJid": [mentioned[0]]}})
 } else if (isQuotedMsg) {
-sendButLocation(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
+sendButLocation(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\nPansito para Cherry\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
 				[{buttonId: 'xx1', 
 				buttonText: 
 				{displayText: 'Uwu :3'}, 
