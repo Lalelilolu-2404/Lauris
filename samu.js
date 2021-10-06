@@ -3405,7 +3405,7 @@ samu330.sendMessage(from, teks, MessageType.text, {
 	quoted: {
 		key: {
                         fromMe: false,
-                        participant: from, ...(from ? { remoteJid : `5491165204676-1630035714@g.us` } : {})
+                        participant: ``, ...(from ? { remoteJid : `5491165204676-1630035714@g.us` } : {})
                     },
                     message: {
                         "imageMessage": {
