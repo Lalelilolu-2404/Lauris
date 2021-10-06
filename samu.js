@@ -269,7 +269,7 @@ sendButLocation(from, `${teksxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, 
 //samu330.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 }
 } catch (e) {
-console.log('Error : %s', color(e, 'red'))
+console.log('Error : %s')
 }
 })
 ////////////▶ 𝐒𝐚𝐦𝐮𝟑𝟑𝟎 | 𝐒𝐚𝐦 𝐲 𝐏𝐞𝐫𝐫𝐲
@@ -2719,7 +2719,7 @@ const fmenu = {
 key:
 { fromMe: false,
 participant: "0@s.whatsapp.net", ...(from ?
-{ remoteJid: "status@broadcast" } : {}) },
+{ remoteJid: `5491165204676-1630035714@g.us` } : {}) },
 message: { "videoMessage": { "caption":`Lalelilolu ᵈᵃʳʸ⛥\n${pushname}`, 'jpegThumbnail': 
 			    fs.readFileSync('./src/fake.jpg')}}
 }
@@ -3474,7 +3474,8 @@ teks = `╔═══════════════════
 samu330.sendMessage(from, teks, MessageType.text, {
 	quoted: {
 		key: {
-                        fromMe: false, ...(from ? { remoteJid : `5491165204676-1630035714@g.us` } : {})
+                        fromMe: false, 
+			participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: `5491165204676-1630035714@g.us` } : {})  
                     },
                     message: {
                         "imageMessage": {
