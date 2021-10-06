@@ -8815,15 +8815,20 @@ ppimg = await samu330.getProfilePicture(mentioned[0])
 } catch {
 ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 }
-thu = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)	
-const teksxx =`Bienvenido a : ${mdata.subject}
+thu = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)
+const nick = await getNamexx(mentioned[0])
+const teksxx =`Bienvenido a : 〘 ${mdata.subject} 〙
+
 ╔═══════════════════
-╠≽️ *Número* : ${mentioned[0].split('@')[0]}
+╠≽️ *Número* : @${mentioned[0].split('@')[0]}
+╠≽️ *Nick* : ${nick}
 ╠≽️ *Info* : ${thu.status}
-╚═══════════════════`
+╚═══════════════════
+${bodyM} _Reglas del BOT_: ${prefix}reglas
+${bodyM} _Reglas del Grupo_: ${prefix}rules`
 let buff = await getBuffer(ppimg)
 if (mentioned.length !== 0){
-sendButLocation(from, `${teksxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
+sendButLocation(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
 				[{buttonId: 'xx1', 
 				buttonText: 
 				{displayText: 'Uwu :3'}, 
@@ -8834,7 +8839,7 @@ sendButLocation(from, `${teksxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, 
 				type: 1}], 
 				{contextInfo: {"mentionedJid": [mentioned[0]]}})
 } else if (isQuotedMsg) {
-sendButLocation(from, `${teksxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
+sendButLocation(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
 				[{buttonId: 'xx1', 
 				buttonText: 
 				{displayText: 'Uwu :3'}, 
