@@ -234,7 +234,7 @@ console.log(chalk.greenBright("├"), chalk.keyword("yellow")("[ DESCRIPCION CAM
 })
 
 ////////////
-
+/**
 samu330.on('group-participants-update', async (lau) => {
 if (!allaud.includes(lau.jid)) return
 try {
@@ -272,9 +272,10 @@ sendButLocation(from, `${teksxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, 
 console.log('Error : %s')
 }
 })
+**/
 ////////////▶ 𝐒𝐚𝐦𝐮𝟑𝟑𝟎 | 𝐒𝐚𝐦 𝐲 𝐏𝐞𝐫𝐫𝐲
 samu330.on('group-participants-update', async (anu) => {
-/**	
+	
 const mdata = await samu330.groupMetadata(anu.jid)
 console.log(anu)
 if (anu.action == 'add') {               
@@ -303,7 +304,7 @@ sendButLocation(from, `${teksxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, 
 				type: 1}], 
 				{contextInfo: {"mentionedJid": [num]}})
 }		
-**/
+
 if (!welkom.includes(anu.jid)) return
 try {
 const mdata = await samu330.groupMetadata(anu.jid)
@@ -2794,7 +2795,7 @@ setTimeout(() => {
 samu330.sendMessage(from, `${menuplay}`, MessageType.text, {
 	//quoted : fjeux, 
 	contextInfo: {externalAdReply :{
-	title: `「 JUEGOS Y MAS AQUI 」\n${pushname}↴`,
+	title: `「 JUEGOS Y MAS AQUI 」\n ${pushname}↴`,
 	//body: '',
 	//sourceUrl : `${linkx}`, 
 	thumbnail : fs.readFileSync('./src/jeux.jpg')}}}
@@ -2841,7 +2842,7 @@ setTimeout(() => {
 samu330.sendMessage(from, `${ecoxx}`, MessageType.text, {
 	//quoted : fjeux, 
 	contextInfo: {externalAdReply :{
-	title: `「 ${mdata.subject} 」\n${pushname}↴`,
+	title: `「 ${mdata.subject} 」\n ${pushname}↴`,
 	//body: '',
 	//sourceUrl : `${linkx}`, 
 	thumbnail : fs.readFileSync('./src/jeux.jpg')}}}
@@ -3564,7 +3565,7 @@ samu330.sendMessage(from, `${uffrico}`, MessageType.text, {
 	contextInfo: {
 	mentionedJid: [mentioned[0]],
 	externalAdReply :{
-	title: `「 ${mdata.subject} 」\n ✪ ➥ ↴`,
+	title: `「 ${mdata.subject} 」\n✪ ➥ ↴`,
 	//body: '',
 	//sourceUrl : `${linkx}`, 
 	thumbnail : fs.readFileSync('./src/nsfw.jpg')}}}
