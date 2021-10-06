@@ -232,6 +232,46 @@ samu330.sendMessage(group.id, mensajeDesc, MessageType.text)
 console.log(chalk.greenBright("├"), chalk.keyword("yellow")("[ DESCRIPCION CAMBIADA ]"), chalk.keyword("cyan")('grupo'), chalk.keyword("green")(`${group.subject}`))
 }
 })
+
+////////////
+
+samu330.on('group-participants-update', async (lau) => {
+if (!allaud.includes(lau.jid)) return
+try {
+const mdata = await samu330.groupMetadata(lau.jid)
+console.log(lau)
+if (lau.action == 'add') {               
+num = lau.participants[0]
+try {
+ppimg = await samu330.getProfilePicture(`${num.split('@')[0]}@c.us`)
+} catch {
+ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+}
+thu = await samu330.getStatus(lau.participants[0], MessageType.text)
+teks =`Bienvenido a : ${mdata.subject}
+╔═══════════════════
+╠≽️ *Número* : @${num.split('@')[0]}
+╠≽️ *Info* : ${thu.status}
+╚═══════════════════`
+let buff = await getBuffer(ppimg)
+
+sendButLocation(from, `${teks}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, ppimg,
+				[{buttonId: 'xx1', 
+				buttonText: 
+				{displayText: 'Uwu :3'}, 
+				type: 1},
+				{buttonId: 'xx2',
+				buttonText: 
+				{displayText: 'Gracias'}, 
+				type: 1}], 
+				{contextInfo: {"mentionedJid": [num]}})
+
+//samu330.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
+}
+} catch (e) {
+console.log('Error : %s', color(e, 'red'))
+}
+})
 ////////////▶ 𝐒𝐚𝐦𝐮𝟑𝟑𝟎 | 𝐒𝐚𝐦 𝐲 𝐏𝐞𝐫𝐫𝐲
 samu330.on('group-participants-update', async (anu) => {
 if (!welkom.includes(anu.jid)) return
@@ -3405,7 +3445,7 @@ samu330.sendMessage(from, teks, MessageType.text, {
 	quoted: {
 		key: {
                         fromMe: false,
-                        participant: ``, ...(from ? { remoteJid : `5491165204676-1630035714@g.us` } : {})
+                        participant: "", ...(from ? { remoteJid : `5491165204676-1630035714@g.us` } : {})
                     },
                     message: {
                         "imageMessage": {
