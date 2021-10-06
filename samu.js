@@ -232,79 +232,8 @@ samu330.sendMessage(group.id, mensajeDesc, MessageType.text)
 console.log(chalk.greenBright("├"), chalk.keyword("yellow")("[ DESCRIPCION CAMBIADA ]"), chalk.keyword("cyan")('grupo'), chalk.keyword("green")(`${group.subject}`))
 }
 })
-
-////////////
-/**
-samu330.on('group-participants-update', async (lau) => {
-if (!allaud.includes(lau.jid)) return
-try {
-const mdata = await samu330.groupMetadata(lau.jid)
-console.log(lau)
-if (lau.action == 'add') {               
-num = lau.participants[0]
-try {
-ppimg = await samu330.getProfilePicture(`${num.split('@')[0]}@c.us`)
-} catch {
-ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
-}
-thu = await samu330.getStatus(lau.participants[0], MessageType.text)
-const teksxx =`Bienvenido a : ${mdata.subject}
-╔═══════════════════
-╠≽️ *Número* : @${num.split('@')[0]}
-╠≽️ *Info* : ${thu.status}
-╚═══════════════════`
-let buff = await getBuffer(ppimg)
-
-sendButLocation(from, `${teksxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
-				[{buttonId: 'xx1', 
-				buttonText: 
-				{displayText: 'Uwu :3'}, 
-				type: 1},
-				{buttonId: 'xx2',
-				buttonText: 
-				{displayText: 'Gracias'}, 
-				type: 1}], 
-				{contextInfo: {"mentionedJid": [num]}})
-
-//samu330.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
-}
-} catch (e) {
-console.log('Error : %s')
-}
-})
-**/
 ////////////▶ 𝐒𝐚𝐦𝐮𝟑𝟑𝟎 | 𝐒𝐚𝐦 𝐲 𝐏𝐞𝐫𝐫𝐲
 samu330.on('group-participants-update', async (anu) => {
-	
-const mdata = await samu330.groupMetadata(anu.jid)
-console.log(anu)
-if (anu.action == 'add') {               
-num = anu.participants[0]
-try {
-ppimg = await samu330.getProfilePicture(`${num.split('@')[0]}@c.us`)
-} catch {
-ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
-}
-thu = await samu330.getStatus(anu.participants[0], MessageType.text)
-const teksxx =`Bienvenido a : ${mdata.subject}
-╔═══════════════════
-╠≽️ *Número* : @${num.split('@')[0]}
-╠≽️ *Info* : ${thu.status}
-╚═══════════════════`
-let buff = await getBuffer(ppimg)
-samu330.sendMessage(mdata.id, teksxx, MessageType.text)
-sendButLocation(mdata.id, `${teksxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
-				[{buttonId: 'xx1', 
-				buttonText: 
-				{displayText: 'Uwu :3'}, 
-				type: 1},
-				{buttonId: 'xx2',
-				buttonText: 
-				{displayText: 'Gracias'}, 
-				type: 1}], 
-				{contextInfo: {"mentionedJid": [num]}})
-}		
-
 if (!welkom.includes(anu.jid)) return
 try {
 const mdata = await samu330.groupMetadata(anu.jid)
@@ -8875,6 +8804,49 @@ reply('*♻Este chat a dejado de ser baneado*')
 reply(`Porfavor escriba bien el comando: ${prefix}banchat *0/1*`)
 }
 break
+
+case 'wlc':
+if (!isGroup) return reply(mess.only.group)
+if (!itsMe && !isOwner) return reply(mess.only.ownerB)
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+mdata = await samu330.groupMetadata(from)
+try {
+ppimg = await samu330.getProfilePicture(mentioned[0])
+} catch {
+ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+}
+thu = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)	
+const teksxx =`Bienvenido a : ${mdata.subject}
+╔═══════════════════
+╠≽️ *Número* : ${mentioned[0].split('@')[0]}
+╠≽️ *Info* : ${thu.status}
+╚═══════════════════`
+let buff = await getBuffer(ppimg)
+if (mentioned.length !== 0){
+sendButLocation(from, `${teksxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
+				[{buttonId: 'xx1', 
+				buttonText: 
+				{displayText: 'Uwu :3'}, 
+				type: 1},
+				{buttonId: 'xx2',
+				buttonText: 
+				{displayText: 'Gracias'}, 
+				type: 1}], 
+				{contextInfo: {"mentionedJid": [mentioned[0]]}})
+} else if (isQuotedMsg) {
+sendButLocation(from, `${teksxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
+				[{buttonId: 'xx1', 
+				buttonText: 
+				{displayText: 'Uwu :3'}, 
+				type: 1},
+				{buttonId: 'xx2',
+				buttonText: 
+				{displayText: 'Gracias'}, 
+				type: 1}], 
+				{contextInfo: {"mentionedJid": [mentioned[0]]}})
+} 
+break	
+		
 case 'ban':
 if (!itsMe && !isOwner) return reply(mess.only.ownerB)
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
