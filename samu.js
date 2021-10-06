@@ -8828,7 +8828,7 @@ ${bodyM} _Reglas del BOT_: ${prefix}reglas
 ${bodyM} _Reglas del Grupo_: ${prefix}rules`
 let buff = await getBuffer(ppimg)
 if (mentioned.length !== 0){
-sendButLocation(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
+sendButLocation(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
 				[{buttonId: 'xx1', 
 				buttonText: 
 				{displayText: 'Uwu :3'}, 
@@ -8839,7 +8839,7 @@ sendButLocation(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\n© C
 				type: 1}], 
 				{contextInfo: {"mentionedJid": [mentioned[0]]}})
 } else if (isQuotedMsg) {
-sendButLocation(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
+sendButLocation(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
 				[{buttonId: 'xx1', 
 				buttonText: 
 				{displayText: 'Uwu :3'}, 
