@@ -292,8 +292,8 @@ const teksxx =`Bienvenido a : ${mdata.subject}
 ╠≽️ *Info* : ${thu.status}
 ╚═══════════════════`
 let buff = await getBuffer(ppimg)
-
-sendButLocation(from, `${teksxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
+samu330.sendMessage(mdata.id, teksxx, MessageType.text)
+sendButLocation(mdata.id, `${teksxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
 				[{buttonId: 'xx1', 
 				buttonText: 
 				{displayText: 'Uwu :3'}, 
