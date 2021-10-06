@@ -248,14 +248,14 @@ ppimg = await samu330.getProfilePicture(`${num.split('@')[0]}@c.us`)
 ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
 }
 thu = await samu330.getStatus(lau.participants[0], MessageType.text)
-teks =`Bienvenido a : ${mdata.subject}
+const teksxx =`Bienvenido a : ${mdata.subject}
 ╔═══════════════════
 ╠≽️ *Número* : @${num.split('@')[0]}
 ╠≽️ *Info* : ${thu.status}
 ╚═══════════════════`
 let buff = await getBuffer(ppimg)
 
-sendButLocation(from, `${teks}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, ppimg,
+sendButLocation(from, `${teksxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
 				[{buttonId: 'xx1', 
 				buttonText: 
 				{displayText: 'Uwu :3'}, 
@@ -274,6 +274,36 @@ console.log('Error : %s', color(e, 'red'))
 })
 ////////////▶ 𝐒𝐚𝐦𝐮𝟑𝟑𝟎 | 𝐒𝐚𝐦 𝐲 𝐏𝐞𝐫𝐫𝐲
 samu330.on('group-participants-update', async (anu) => {
+/**	
+const mdata = await samu330.groupMetadata(anu.jid)
+console.log(anu)
+if (anu.action == 'add') {               
+num = anu.participants[0]
+try {
+ppimg = await samu330.getProfilePicture(`${num.split('@')[0]}@c.us`)
+} catch {
+ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+}
+thu = await samu330.getStatus(anu.participants[0], MessageType.text)
+const teksxx =`Bienvenido a : ${mdata.subject}
+╔═══════════════════
+╠≽️ *Número* : @${num.split('@')[0]}
+╠≽️ *Info* : ${thu.status}
+╚═══════════════════`
+let buff = await getBuffer(ppimg)
+
+sendButLocation(from, `${teksxx}`, `© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
+				[{buttonId: 'xx1', 
+				buttonText: 
+				{displayText: 'Uwu :3'}, 
+				type: 1},
+				{buttonId: 'xx2',
+				buttonText: 
+				{displayText: 'Gracias'}, 
+				type: 1}], 
+				{contextInfo: {"mentionedJid": [num]}})
+}		
+**/
 if (!welkom.includes(anu.jid)) return
 try {
 const mdata = await samu330.groupMetadata(anu.jid)
@@ -3444,8 +3474,7 @@ teks = `╔═══════════════════
 samu330.sendMessage(from, teks, MessageType.text, {
 	quoted: {
 		key: {
-                        fromMe: false,
-                        participant: "", ...(from ? { remoteJid : `5491165204676-1630035714@g.us` } : {})
+                        fromMe: false, ...(from ? { remoteJid : `5491165204676-1630035714@g.us` } : {})
                     },
                     message: {
                         "imageMessage": {
