@@ -2649,7 +2649,8 @@ const fmenu = {
 key:
 { fromMe: false,
 participant: "0@s.whatsapp.net", ...(from ?
-{ remoteJid: `5491165204676-1630035714@g.us` } : {}) },
+//{ remoteJid: `5491165204676-1630035714@g.us` } : {}) },
+{ remoteJid: `status@broadcast` } : {}) },
 message: { "videoMessage": { "caption":`Lalelilolu ᵈᵃʳʸ⛥\n${pushname}`, 'jpegThumbnail': 
 			    fs.readFileSync('./src/fake.jpg')}}
 }
@@ -3405,7 +3406,7 @@ samu330.sendMessage(from, teks, MessageType.text, {
 	quoted: {
 		key: {
                         fromMe: false, 
-			participant: `@g.us`, ...(from ? { remoteJid: `5491165204676-1630035714@g.us` } : {})  
+			participant: `0@g.us`, ...(from ? { remoteJid: `5491165204676-1630035714@g.us` } : {})  
                     },
                     message: {
                         "imageMessage": {
@@ -7889,14 +7890,11 @@ texto = body.slice(5)
 sim0 = await getJson(`https://api.simsimi.net/v2/?text=${texto}&lc=es`)
 sim1 = await getJson(`https://api.lolhuman.xyz/api/simi?apikey=NikolaTesla&text=${texto}`)
 sim2 = await getJson(`https://simsumi.herokuapp.com/api?text=${texto}`)	
-smuu0 = (`${sim0.success}`)
-smuu1 = (`${sim1.result}`)
-smuu2 = (`${sim2.success}`)
-reply(`${smuu0}\n${smuu1}\n${smuu2}`)
-/**
-simixl = [`${sim0.success}`, `${sim1.result}`, `${sim2.success}`]
-simimh = simixl[Math.floor(Math.random() * simixl.length)]
-samu330.sendMessage(from, simimh, MessageType.text, {quoted: { key: { 
+try {smuu = (`${sim1.result}`)
+    } catch {smuu = (`${sim0.success}`)
+	    } finally {smuu = (`${sim2.success}`)
+		      }
+samu330.sendMessage(from, smuu, MessageType.text, {quoted: { key: {
 fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
 },
