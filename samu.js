@@ -3405,7 +3405,7 @@ samu330.sendMessage(from, teks, MessageType.text, {
 	quoted: {
 		key: {
                         fromMe: false, 
-			participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: `5491165204676-1630035714@g.us` } : {})  
+			participant: `@g.us`, ...(from ? { remoteJid: `5491165204676-1630035714@g.us` } : {})  
                     },
                     message: {
                         "imageMessage": {
@@ -7892,10 +7892,9 @@ sim2 = await getJson(`https://simsumi.herokuapp.com/api?text=${texto}`)
 smuu0 = (`${sim0.success}`)
 smuu1 = (`${sim1.result}`)
 smuu2 = (`${sim2.success}`)
-nkx = Math.floor(Math.random() * 3)
-simimh = `smuu${nkx}`
-reply(`${simimh}`)
-samu330.sendMessage(from, `${simimh}`, MessageType.text, {quoted: { key: {
+const simix = [`${sim0.success}`, `${sim1.result}`, `${sim2.success}`]
+simimh = simix(Math.floor(Math.random() * simix.length)
+samu330.sendMessage(from, simimh, MessageType.text, {quoted: { key: { 
 fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
 },
