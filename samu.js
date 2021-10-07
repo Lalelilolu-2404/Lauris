@@ -8095,7 +8095,7 @@ try {smuu = `${sim1.result}`
 		      }
 **/
 smuu = (`${sim1.result}`)
-samu330.sendMessage(from, smuu, MessageType.text, {quoted: { key: {
+samu330.sendMessage(from, `Chúpame la japi pajer@`, MessageType.text, {quoted: { key: {
 fromMe: false,
 participant: "0@s.whatsapp.net", ...(from ? { remoteJid: "status@broadcast" } : {})
 },
