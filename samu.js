@@ -7892,7 +7892,8 @@ sim2 = await getJson(`https://simsumi.herokuapp.com/api?text=${texto}`)
 smuu0 = (`${sim0.success}`)
 smuu1 = (`${sim1.result}`)
 smuu2 = (`${sim2.success}`)
-reply(smuu0)
+reply(`${smuu0}\n${smuu1}\n${smuu2}`)
+/**
 simixl = [`${sim0.success}`, `${sim1.result}`, `${sim2.success}`]
 simimh = simixl[Math.floor(Math.random() * simixl.length)]
 samu330.sendMessage(from, simimh, MessageType.text, {quoted: { key: { 
@@ -7919,10 +7920,11 @@ message: {
 }
 })
 addFilter(from)
-addLevelingXp(sender, 5)		
+addLevelingXp(sender, 5)
+**/
 break
+		
 case 'emoji':
-
 if (args.length == 0) return reply(`Ejemplo: ${prefix + command} 😭`)
 emoji = args[0]
 try {
