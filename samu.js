@@ -3485,8 +3485,7 @@ samu330.updatePresence(from, Presence.composing)
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }
-Namexxx = await getNamexx(mentioned[0])
-stpan = fs.readFileSync(`./src/stickers2/Se la coge.webp`)				
+Namexxx = await getNamexx(mentioned[0])				
 const patxx = `${pushname} me dió mimitos :3`	
 ranp = getRandom('.gif')
 rano = getRandom('.webp')
@@ -3495,7 +3494,7 @@ exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filt
 fs.unlinkSync(ranp)
 if (err) return reply('Error')
 buffer = fs.readFileSync(rano)
-samu330.sendMessage(from, buffer, sticker, {quoted:
+samu330.sendMessage(from, buffer, MessageType.sticker, {quoted:
 { key: {
 fromMe: false,
 participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
@@ -3516,8 +3515,7 @@ samu330.updatePresence(from, Presence.composing)
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }
-Namexxx = await getNamexx(mentioned[0])
-stpan = fs.readFileSync(`./src/stickers2/Se la coge.webp`)				
+Namexxx = await getNamexx(mentioned[0])				
 const slapxx = `${pushname} me abofeteó :'c`	
 ranp = getRandom('.gif')
 rano = getRandom('.webp')
@@ -3526,7 +3524,7 @@ exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filt
 fs.unlinkSync(ranp)
 if (err) return reply('Error')
 buffer = fs.readFileSync(rano)
-samu330.sendMessage(from, buffer, sticker, {quoted:
+samu330.sendMessage(from, buffer, MessageType.sticker, {quoted:
 { key: {
 fromMe: false,
 participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
@@ -3547,8 +3545,7 @@ samu330.updatePresence(from, Presence.composing)
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }
-Namexxx = await getNamexx(mentioned[0])
-stpan = fs.readFileSync(`./src/stickers2/Se la coge.webp`)				
+Namexxx = await getNamexx(mentioned[0])				
 const spankxx = `Ahah si ${pushname} nalguéame más 🥵`	
 ranp = getRandom('.gif')
 rano = getRandom('.webp')
@@ -3557,7 +3554,7 @@ exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filt
 fs.unlinkSync(ranp)
 if (err) return reply('Error')
 buffer = fs.readFileSync(rano)
-samu330.sendMessage(from, buffer, sticker, {quoted:
+samu330.sendMessage(from, buffer, MessageType.sticker, {quoted:
 { key: {
 fromMe: false,
 participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
@@ -3578,8 +3575,7 @@ samu330.updatePresence(from, Presence.composing)
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }
-Namexxx = await getNamexx(mentioned[0])
-stpan = fs.readFileSync(`./src/stickers2/Se la coge.webp`)				
+Namexxx = await getNamexx(mentioned[0])			
 const lamerxx = `${pushname} lame rico, uff 🥵`	
 ranp = getRandom('.gif')
 rano = getRandom('.webp')
@@ -3588,7 +3584,7 @@ exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filt
 fs.unlinkSync(ranp)
 if (err) return reply('Error')
 buffer = fs.readFileSync(rano)
-samu330.sendMessage(from, buffer, sticker, {quoted:
+samu330.sendMessage(from, buffer, MessageType.sticker, {quoted:
 { key: {
 fromMe: false,
 participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
@@ -3609,8 +3605,7 @@ samu330.updatePresence(from, Presence.composing)
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }
-Namexxx = await getNamexx(mentioned[0])
-stpan = fs.readFileSync(`./src/stickers2/Se la coge.webp`)				
+Namexxx = await getNamexx(mentioned[0])				
 const besarxx = `${pushname} le dió un beso a ${Namexxx}`	
 ranp = getRandom('.gif')
 rano = getRandom('.webp')
@@ -3619,7 +3614,7 @@ exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filt
 fs.unlinkSync(ranp)
 if (err) return reply('Error')
 buffer = fs.readFileSync(rano)
-samu330.sendMessage(from, buffer, sticker, {quoted:
+samu330.sendMessage(from, buffer, MessageType.sticker, {quoted:
 { key: {
 fromMe: false,
 //participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
@@ -3641,8 +3636,7 @@ samu330.updatePresence(from, Presence.composing)
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }
-Namexxx = await getNamexx(mentioned[0])
-stpan = fs.readFileSync(`./src/stickers2/Se la coge.webp`)				
+Namexxx = await getNamexx(mentioned[0])				
 const abrazarxx = `${pushname} le dió un abrazo a ${Namexxx}`	
 ranp = getRandom('.gif')
 rano = getRandom('.webp')
@@ -3651,7 +3645,7 @@ exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filt
 fs.unlinkSync(ranp)
 if (err) return reply('Error')
 buffer = fs.readFileSync(rano)
-samu330.sendMessage(from, buffer, sticker, {quoted:
+samu330.sendMessage(from, buffer, MessageType.sticker, {quoted:
 { key: {
 fromMe: false,
 //participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
@@ -8062,9 +8056,9 @@ texto = body.slice(5)
 sim0 = await getJson(`https://api.simsimi.net/v2/?text=${texto}&lc=es`)
 sim1 = await getJson(`https://api.lolhuman.xyz/api/simi?apikey=NikolaTesla&text=${texto}`)
 sim2 = await getJson(`https://simsumi.herokuapp.com/api?text=${texto}`)	
-try {smuu = (`${sim1.result}`)
-    } catch {smuu = (`${sim0.success}`)
-	    } finally {smuu = (`${sim2.success}`)
+try {smuu = `${sim1.result}`
+    } catch {smuu = `${sim0.success}`
+	    } finally {smuu = `${sim2.success}`
 		      }
 samu330.sendMessage(from, smuu, MessageType.text, {quoted: { key: {
 fromMe: false,
