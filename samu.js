@@ -3478,7 +3478,7 @@ addFilter(from)
 addLevelingXp(sender, 20)
 break			
 		
-case  'mimar':
+case 'mimar':
 if (!isGroup) return reply(mess.only.group)		  
       ranp = getRandom('.gif')
       rano = getRandom('.webp')
@@ -3494,7 +3494,7 @@ addFilter(from)
 addLevelingXp(sender, 20)
 break	
 		
-case  'chapar':
+case 'chapar':
 if (!isGroup) return reply(mess.only.group)		  
       ranp = getRandom('.gif')
       rano = getRandom('.webp')
@@ -8094,10 +8094,10 @@ try {smuu = `${sim1.result}`
 	    } finally {smuu = `${sim2.success}`
 		      }
 **/
-smuu = `${sim0.success}`
+smuu = (`${sim1.result}`)
 samu330.sendMessage(from, smuu, MessageType.text, {quoted: { key: {
 fromMe: false,
-participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+participant: "0@s.whatsapp.net", ...(from ? { remoteJid: "status@broadcast" } : {})
 },
 message: {
 "productMessage": {
