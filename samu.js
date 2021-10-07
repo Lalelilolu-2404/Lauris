@@ -7892,10 +7892,10 @@ sim2 = await getJson(`https://simsumi.herokuapp.com/api?text=${texto}`)
 smuu0 = (`${sim0.success}`)
 smuu1 = (`${sim1.result}`)
 smuu2 = (`${sim2.success}`)
-const smxxx = [smuu0, smuu1, smuu2]
-simimh = smxxx[Math.floor(Math.random() * smxxx.length)]
-reply(simimh)
-samu330.sendMessage(from, simimh, MessageType.text, {quoted: { key: {
+nkx = Math.floor(Math.random() * 3)
+simimh = `smuu${nkx}`
+reply(`${simimh}`)
+samu330.sendMessage(from, `${simimh}`, MessageType.text, {quoted: { key: {
 fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
 },
@@ -8815,7 +8815,7 @@ mdata = await samu330.groupMetadata(from)
 try {
 ppimg = await samu330.getProfilePicture(mentioned[0])
 } catch {
-ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
+ppimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 }
 thu = await samu330.getStatus(`${mentioned[0]}`, MessageType.text)
 const nick = await getNamexx(mentioned[0])
