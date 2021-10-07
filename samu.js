@@ -7889,11 +7889,12 @@ texto = body.slice(5)
 sim0 = await getJson(`https://api.simsimi.net/v2/?text=${texto}&lc=es`)
 sim1 = await getJson(`https://api.lolhuman.xyz/api/simi?apikey=NikolaTesla&text=${texto}`)
 sim2 = await getJson(`https://simsumi.herokuapp.com/api?text=${texto}`)	
-smuu0 = `${sim1.result}`
-smuu1 = `${sim0.success}`
+smuu0 = `${sim0.success}`
+smuu1 = `${sim1.result}`
 smuu2 = `${sim2.success}`
 nkx = Math.floor(Math.random() * 3)
-samu330.sendMessage(from, `smuu${nkx}`, MessageType.text, {quoted: { key: {
+simimh = `smuu${nkx}`
+samu330.sendMessage(from, simimh, MessageType.text, {quoted: { key: {
 fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
 },
