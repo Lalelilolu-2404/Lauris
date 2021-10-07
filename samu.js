@@ -3478,6 +3478,194 @@ addFilter(from)
 addLevelingXp(sender, 20)
 break			
 		
+case 'pat':		
+if (!isGroup) return reply(mess.only.group)
+if (args.length < 1) return reply("Meniona a alguien, pajero!")	
+samu330.updatePresence(from, Presence.composing) 
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+}
+Namexxx = await getNamexx(mentioned[0])
+stpan = fs.readFileSync(`./src/stickers2/Se la coge.webp`)				
+const patxx = `${pushname} me dió mimitos :3`	
+ranp = getRandom('.gif')
+rano = getRandom('.webp')
+anu = await axios.get('https://nekos.life/api/v2/img/pat')
+exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
+fs.unlinkSync(ranp)
+if (err) return reply('Error')
+buffer = fs.readFileSync(rano)
+samu330.sendMessage(from, buffer, sticker, {quoted:
+{ key: {
+fromMe: false,
+participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
+},
+message: {
+"documentMessage": { "title": `${patxx}\nNya`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
+}})	
+fs.unlinkSync(rano)
+})
+addFilter(from)
+addLevelingXp(sender, 20)
+break	
+		
+case 'slap':		
+if (!isGroup) return reply(mess.only.group)
+if (args.length < 1) return reply("Meniona a alguien, pajero!")	
+samu330.updatePresence(from, Presence.composing) 
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+}
+Namexxx = await getNamexx(mentioned[0])
+stpan = fs.readFileSync(`./src/stickers2/Se la coge.webp`)				
+const slapxx = `${pushname} me abofeteó :'c`	
+ranp = getRandom('.gif')
+rano = getRandom('.webp')
+anu = await axios.get('https://nekos.life/api/v2/img/slap')
+exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
+fs.unlinkSync(ranp)
+if (err) return reply('Error')
+buffer = fs.readFileSync(rano)
+samu330.sendMessage(from, buffer, sticker, {quoted:
+{ key: {
+fromMe: false,
+participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
+},
+message: {
+"documentMessage": { "title": `${slapxx}`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
+}})	
+fs.unlinkSync(rano)
+})
+addFilter(from)
+addLevelingXp(sender, 20)
+break	
+		
+case 'nalguear':		
+if (!isGroup) return reply(mess.only.group)
+if (args.length < 1) return reply("Meniona a alguien, pajero!")	
+samu330.updatePresence(from, Presence.composing) 
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+}
+Namexxx = await getNamexx(mentioned[0])
+stpan = fs.readFileSync(`./src/stickers2/Se la coge.webp`)				
+const spankxx = `Ahah si ${pushname} nalguéame más 🥵`	
+ranp = getRandom('.gif')
+rano = getRandom('.webp')
+anu = await axios.get('https://nekos.life/api/v2/img/slap')
+exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
+fs.unlinkSync(ranp)
+if (err) return reply('Error')
+buffer = fs.readFileSync(rano)
+samu330.sendMessage(from, buffer, sticker, {quoted:
+{ key: {
+fromMe: false,
+participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
+},
+message: {
+"documentMessage": { "title": `${spankxx}`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
+}})	
+fs.unlinkSync(rano)
+})
+addFilter(from)
+addLevelingXp(sender, 20)
+break	
+		
+case 'lamer':		
+if (!isGroup) return reply(mess.only.group)
+if (args.length < 1) return reply("Meniona a alguien, pajero!")	
+samu330.updatePresence(from, Presence.composing) 
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+}
+Namexxx = await getNamexx(mentioned[0])
+stpan = fs.readFileSync(`./src/stickers2/Se la coge.webp`)				
+const lamerxx = `${pushname} lame rico, uff 🥵`	
+ranp = getRandom('.gif')
+rano = getRandom('.webp')
+anu = await axios.get('https://nekos.life/api/v2/img/kuni')
+exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
+fs.unlinkSync(ranp)
+if (err) return reply('Error')
+buffer = fs.readFileSync(rano)
+samu330.sendMessage(from, buffer, sticker, {quoted:
+{ key: {
+fromMe: false,
+participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
+},
+message: {
+"documentMessage": { "title": `${lamerxx}`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
+}})	
+fs.unlinkSync(rano)
+})
+addFilter(from)
+addLevelingXp(sender, 20)
+break	
+		
+case 'besar':		
+if (!isGroup) return reply(mess.only.group)
+if (args.length < 1) return reply("Meniona a alguien, pajero!")	
+samu330.updatePresence(from, Presence.composing) 
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+}
+Namexxx = await getNamexx(mentioned[0])
+stpan = fs.readFileSync(`./src/stickers2/Se la coge.webp`)				
+const besarxx = `${pushname} le dió un beso a ${Namexxx}`	
+ranp = getRandom('.gif')
+rano = getRandom('.webp')
+anu = await axios.get('https://nekos.life/api/v2/img/kiss')
+exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
+fs.unlinkSync(ranp)
+if (err) return reply('Error')
+buffer = fs.readFileSync(rano)
+samu330.sendMessage(from, buffer, sticker, {quoted:
+{ key: {
+fromMe: false,
+//participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
+participant: "0@s.whatsapp.net", ...(from ? { remoteJid: "status@broadcast" } : {})
+},
+message: {
+"documentMessage": { "title": `${besarxx}`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
+}})	
+fs.unlinkSync(rano)
+})
+addFilter(from)
+addLevelingXp(sender, 20)
+break	
+	
+case 'abrazar':		
+if (!isGroup) return reply(mess.only.group)
+if (args.length < 1) return reply("Meniona a alguien, pajero!")	
+samu330.updatePresence(from, Presence.composing) 
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+}
+Namexxx = await getNamexx(mentioned[0])
+stpan = fs.readFileSync(`./src/stickers2/Se la coge.webp`)				
+const abrazarxx = `${pushname} le dió un abrazo a ${Namexxx}`	
+ranp = getRandom('.gif')
+rano = getRandom('.webp')
+anu = await axios.get('https://nekos.life/api/v2/img/cuddle')
+exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
+fs.unlinkSync(ranp)
+if (err) return reply('Error')
+buffer = fs.readFileSync(rano)
+samu330.sendMessage(from, buffer, sticker, {quoted:
+{ key: {
+fromMe: false,
+//participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
+participant: "0@s.whatsapp.net", ...(from ? { remoteJid: "status@broadcast" } : {})
+},
+message: {
+"documentMessage": { "title": `${abrazarxx}`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
+}})	
+fs.unlinkSync(rano)
+})
+addFilter(from)
+addLevelingXp(sender, 20)
+break	
+		
 case 'golosa':
 addFilter(from)	
 if (!isGroup) return reply(mess.only.group)
@@ -3660,7 +3848,7 @@ samu330.sendMessage(from, amgp, MessageType.text, {quoted: fjeux})
 addFilter(from)
 addLevelingXp(sender, 20)
 break
-		
+
 case 'amongus':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
@@ -4062,22 +4250,6 @@ samu330.sendMessage(from, mify, video, {
 	message: { "videoMessage": { "caption":"「 *Uwu cosita ^-^* 」\n ⊱ღ *Mimitos for you ♡* ღ⊱", 'jpegThumbnail': mimit}}
 	},	
 	mimetype: 'video/gif', caption: `${hast}`, contextInfo: {mentionedJid: [sender, mentioned[0]]}, duration: -6666666})
-addFilter(from)
-addLevelingXp(sender, 20)
-break
-
-case  'pat':
-if (!isGroup) return reply(mess.only.group)		  
-      ranp = getRandom('.gif')
-      rano = getRandom('.webp')
-anu = await axios.get('https://nekos.life/api/v2/img/pat')
-exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
-fs.unlinkSync(ranp)
-if (err) return reply('Error')
-	buffer = fs.readFileSync(rano)
-	samu330.sendMessage(from, buffer, MessageType.sticker, {quoted: sam})
-	fs.unlinkSync(rano)
-})
 addFilter(from)
 addLevelingXp(sender, 20)
 break
@@ -7919,7 +8091,6 @@ message: {
 })
 addFilter(from)
 addLevelingXp(sender, 5)
-**/
 break
 		
 case 'emoji':
