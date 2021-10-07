@@ -3478,6 +3478,38 @@ addFilter(from)
 addLevelingXp(sender, 20)
 break			
 		
+case  'mimar':
+if (!isGroup) return reply(mess.only.group)		  
+      ranp = getRandom('.gif')
+      rano = getRandom('.webp')
+anu = await axios.get('https://nekos.life/api/v2/img/pat')
+exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
+fs.unlinkSync(ranp)
+if (err) return reply('Error')
+	buffer = fs.readFileSync(rano)
+	samu330.sendMessage(from, buffer, MessageType.sticker, {quoted: sam})
+	fs.unlinkSync(rano)
+})
+addFilter(from)
+addLevelingXp(sender, 20)
+break	
+		
+case  'chapar':
+if (!isGroup) return reply(mess.only.group)		  
+      ranp = getRandom('.gif')
+      rano = getRandom('.webp')
+anu = await axios.get('https://nekos.life/api/v2/img/kiss')
+exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=15 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${rano}`, (err) => {
+fs.unlinkSync(ranp)
+if (err) return reply('Error')
+	buffer = fs.readFileSync(rano)
+	samu330.sendMessage(from, buffer, MessageType.sticker, {quoted: sam})
+	fs.unlinkSync(rano)
+})
+addFilter(from)
+addLevelingXp(sender, 20)
+break			
+		
 case 'pat':		
 if (!isGroup) return reply(mess.only.group)
 if (args.length < 1) return reply("Meniona a alguien, pajero!")	
@@ -8056,10 +8088,13 @@ texto = body.slice(5)
 sim0 = await getJson(`https://api.simsimi.net/v2/?text=${texto}&lc=es`)
 sim1 = await getJson(`https://api.lolhuman.xyz/api/simi?apikey=NikolaTesla&text=${texto}`)
 sim2 = await getJson(`https://simsumi.herokuapp.com/api?text=${texto}`)	
+/**
 try {smuu = `${sim1.result}`
     } catch {smuu = `${sim0.success}`
 	    } finally {smuu = `${sim2.success}`
 		      }
+**/
+smuu = `${sim0.success}`
 samu330.sendMessage(from, smuu, MessageType.text, {quoted: { key: {
 fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
