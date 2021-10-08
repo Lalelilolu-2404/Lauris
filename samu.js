@@ -3518,7 +3518,6 @@ if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }
 Namexxx = await getNamexx(mentioned[0])				
-const patxx = `${pushname} me dió mimitos :3`	
 ranp = getRandom('.gif')
 rano = getRandom('.webp')
 anu = await axios.get('https://nekos.life/api/v2/img/pat')
@@ -3526,6 +3525,7 @@ exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filt
 fs.unlinkSync(ranp)
 if (err) return reply('Error')
 buffer = fs.readFileSync(rano)
+const patxx = `${pushname} me dió mimitos :3`	
 samu330.sendMessage(from, buffer, MessageType.sticker, {quoted:
 { key: {
 fromMe: false,
@@ -8126,10 +8126,10 @@ break
 case 'simi':
 samu330.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(mess.only.group)
-texto = body.slice(5)
-sim0 = await getJson(`https://api.simsimi.net/v2/?text=${texto}&lc=es`)
-sim1 = await getJson(`https://api.lolhuman.xyz/api/simi?apikey=NikolaTesla&text=${texto}`)
-sim2 = await getJson(`https://simsumi.herokuapp.com/api?text=${texto}`)	
+if (!q) return 
+sim0 = await getJson(`https://api.simsimi.net/v2/?text=${q}&lc=es`)
+sim1 = await getJson(`https://api.lolhuman.xyz/api/simi?apikey=NikolaTesla&text=${q}`)
+sim2 = await getJson(`https://simsumi.herokuapp.com/api?text=${q}`)	
 
 try {smuu = `${sim1.result}`
     } catch {smuu = `${sim0.success}`
@@ -8139,10 +8139,10 @@ try {smuu = `${sim1.result}`
 samu330.sendMessage(from, smuu, MessageType.text, {quoted:
 { key: {
 fromMe: false,
-participant: `0@whatsapp.net`, ...(from ? { remoteJid: from } : {})
+participant: `0@whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
 },
 message: {
-"documentMessage": { "title": `➫𝐒𝐢𝐦𝐢 |⌜UwU \◔,◡◔,/ ت♡⌟\n⛥: ${texto}`, 'jpegThumbnail': fs.readFileSync('./src/simi.jpg')}}
+"documentMessage": { "title": `➫𝐒𝐢𝐦𝐢 |⌜UwU \◔,◡◔,/ ت♡⌟\n⛥: ${q}`, 'jpegThumbnail': fs.readFileSync('./src/simi.jpg')}}
 }})		
 addFilter(from)
 addLevelingXp(sender, 5)
