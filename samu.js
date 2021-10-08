@@ -9070,7 +9070,7 @@ ppimg = await samu330.getProfilePicture(mentioned[0])
 } catch {
 ppimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 }
-const teksxx =`〘 ${mdata.subject} 〙
+const teksyy =`〘 ${mdata.subject} 〙
 ╔═══════════════════
 ╠≽️ Nick : @${mentioned[0].split('@')[0]}
 ╠≽️ Legal : Si hay pelito no hay delito
@@ -9078,7 +9078,7 @@ const teksxx =`〘 ${mdata.subject} 〙
 `
 let buff = await getBuffer(ppimg)
 if (mentioned.length !== 0){
-sendButImage(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\nPansito para Cherry\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
+sendButImage(from, `${teksyy}`, `Denle una paloma a Anna o los folla xd\nPansito para Cherry\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
 				[{buttonId: 'lau1', 
 				buttonText: 
 				{displayText: 'Dar comida a Anna'}, 
@@ -9089,7 +9089,7 @@ sendButImage(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\nPansito
 				type: 2}], 
 				{contextInfo: {"mentionedJid": [mentioned[0]]}})
 } else if (isQuotedMsg) {
-sendButImage(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\nPansito para Cherry\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
+sendButImage(from, `${teksyy}`, `Denle una paloma a Anna o los folla xd\nPansito para Cherry\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
 				[{buttonId: 'lau1', 
 				buttonText: 
 				{displayText: 'Dar comida a Anna'}, 
