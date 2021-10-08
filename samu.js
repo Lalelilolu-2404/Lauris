@@ -9082,22 +9082,22 @@ sendButImage(from, `${teksyy}`, `Denle una paloma a Anna o los folla xd\nPansito
 				[{buttonId: 'lau1', 
 				buttonText: 
 				{displayText: 'Dar comida a Anna'}, 
-				type: 2},
+				type: 1},
 				{buttonId: 'lau2',
 				buttonText: 
 				{displayText: 'Dar pansito a Cherry'}, 
-				type: 2}], 
+				type: 1}], 
 				{contextInfo: {"mentionedJid": [mentioned[0]]}})
 } else if (isQuotedMsg) {
 sendButImage(from, `${teksyy}`, `Denle una paloma a Anna o los folla xd\nPansito para Cherry\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buffxy,
 				[{buttonId: 'lau1', 
 				buttonText: 
 				{displayText: 'Dar comida a Anna'}, 
-				type: 2},
+				type: 1},
 				{buttonId: 'lau2',
 				buttonText: 
 				{displayText: 'Dar pansito a Cherry'}, 
-				type: 2}], 
+				type: 1}], 
 				{contextInfo: {"mentionedJid": [mentioned[0]]}})
 } 
 break			
