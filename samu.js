@@ -814,6 +814,20 @@ const isUser2 = _user2.includes(sender)
        		})
 		}
 	
+	const simimh = async(teks) => {
+                await samu330.sendMessage(from, teks, MessageType.text, { quoted: { key: {                
+		fromMe: false,
+                participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+                },
+                message: {
+                "imageMessage": {
+                "mimetype": "image/jpeg",
+                "caption": `➫𝐒𝐢𝐦𝐢 |⌜UwU ت♡⌟\n⛥: ${q}`,
+                'jpegThumbnail': fs.readFileSync('./src/simi.jpg')}}
+		}
+       		})
+		}
+	
 	/*const fileIO = async buffer => {
   		const { ext } = await fromBuffer(buffer) || {}
   		const form = new FormData
@@ -3526,7 +3540,8 @@ samu330.updatePresence(from, Presence.composing)
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }
-Namexxx = await getNamexx(mentioned[0])				
+Namexxx = await getNamexx(mentioned[0])	
+const patxx = `${pushname} me dió mimitos :3`	
 ranp = getRandom('.gif')
 rano = getRandom('.webp')
 anu = await axios.get('https://nekos.life/api/v2/img/pat')
@@ -3534,15 +3549,7 @@ exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filt
 fs.unlinkSync(ranp)
 if (err) return reply('Error')
 buffer = fs.readFileSync(rano)
-const patxx = `${pushname} me dió mimitos :3`	
-samu330.sendMessage(from, buffer, MessageType.sticker, {quoted:
-{ key: {
-fromMe: false,
-participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
-},
-message: {
-"documentMessage": { "title": `${patxx}\nNya`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
-}})	
+samu330.sendMessage(from, buffer, MessageType.sticker, {quoted: fgif})
 fs.unlinkSync(rano)
 })
 addFilter(from)
@@ -3565,14 +3572,7 @@ exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filt
 fs.unlinkSync(ranp)
 if (err) return reply('Error')
 buffer = fs.readFileSync(rano)
-samu330.sendMessage(from, buffer, MessageType.sticker, {quoted:
-{ key: {
-fromMe: false,
-participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
-},
-message: {
-"documentMessage": { "title": `${slapxx}`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
-}})	
+samu330.sendMessage(from, buffer, MessageType.sticker, {quoted: fgif})
 fs.unlinkSync(rano)
 })
 addFilter(from)
@@ -3595,14 +3595,7 @@ exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filt
 fs.unlinkSync(ranp)
 if (err) return reply('Error')
 buffer = fs.readFileSync(rano)
-samu330.sendMessage(from, buffer, MessageType.sticker, {quoted:
-{ key: {
-fromMe: false,
-participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
-},
-message: {
-"documentMessage": { "title": `${spankxx}`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
-}})	
+samu330.sendMessage(from, buffer, MessageType.sticker, {quoted: fgif})
 fs.unlinkSync(rano)
 })
 addFilter(from)
@@ -3625,14 +3618,7 @@ exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filt
 fs.unlinkSync(ranp)
 if (err) return reply('Error')
 buffer = fs.readFileSync(rano)
-samu330.sendMessage(from, buffer, MessageType.sticker, {quoted:
-{ key: {
-fromMe: false,
-participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
-},
-message: {
-"documentMessage": { "title": `${lamerxx}`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
-}})	
+samu330.sendMessage(from, buffer, MessageType.sticker, {quoted: fgif})	
 fs.unlinkSync(rano)
 })
 addFilter(from)
@@ -3655,15 +3641,7 @@ exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filt
 fs.unlinkSync(ranp)
 if (err) return reply('Error')
 buffer = fs.readFileSync(rano)
-samu330.sendMessage(from, buffer, MessageType.sticker, {quoted:
-{ key: {
-fromMe: false,
-//participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
-participant: "0@s.whatsapp.net", ...(from ? { remoteJid: "status@broadcast" } : {})
-},
-message: {
-"documentMessage": { "title": `${besarxx}`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
-}})	
+samu330.sendMessage(from, buffer, MessageType.sticker, {quoted: fgif})	
 fs.unlinkSync(rano)
 })
 addFilter(from)
@@ -3686,15 +3664,7 @@ exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filt
 fs.unlinkSync(ranp)
 if (err) return reply('Error')
 buffer = fs.readFileSync(rano)
-samu330.sendMessage(from, buffer, MessageType.sticker, {quoted:
-{ key: {
-fromMe: false,
-//participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
-participant: "0@s.whatsapp.net", ...(from ? { remoteJid: "status@broadcast" } : {})
-},
-message: {
-"documentMessage": { "title": `${abrazarxx}`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
-}})	
+samu330.sendMessage(from, buffer, MessageType.sticker, {quoted: fgif})	
 fs.unlinkSync(rano)
 })
 addFilter(from)
@@ -8144,15 +8114,7 @@ try {smuu = (`${sim1.result}`)
     } catch {smuu = (`${sim0.success}`)
 	    } finally {smuu = (`${sim2.success}`)
 		      }
-	
-samu330.sendMessage(from, smuu, MessageType.text, {quoted:
-{ key: {
-fromMe: false,
-participant: `0@whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
-},
-message: {
-"documentMessage": { "title": `➫𝐒𝐢𝐦𝐢 |⌜UwU \◔,◡◔,/ ت♡⌟\n⛥: ${q}`, 'jpegThumbnail': fs.readFileSync('./src/simi.jpg')}}
-}})		
+simimh(`${sim0.success}`)	
 addFilter(from)
 addLevelingXp(sender, 5)
 break	
