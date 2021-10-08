@@ -3503,7 +3503,7 @@ exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filt
 fs.unlinkSync(ranp)
 if (err) return reply('Error')
 	buffer = fs.readFileSync(rano)
-	samu330.sendMessage(from, buffer, MessageType.sticker, {quoted: sam})
+	samu330.sendMessage(from, buffer, MessageType.sticker, {quoted: fnsfw)
 	fs.unlinkSync(rano)
 })
 addFilter(from)
@@ -8080,7 +8080,7 @@ quoted: fimg
 addFilter(from)
 addLevelingXp(sender, 20)
 break
-
+/**
 case 'simi':
 samu330.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(mess.only.group)
@@ -8088,12 +8088,12 @@ texto = body.slice(5)
 sim0 = await getJson(`https://api.simsimi.net/v2/?text=${texto}&lc=es`)
 sim1 = await getJson(`https://api.lolhuman.xyz/api/simi?apikey=NikolaTesla&text=${texto}`)
 sim2 = await getJson(`https://simsumi.herokuapp.com/api?text=${texto}`)	
-/**
+
 try {smuu = `${sim1.result}`
     } catch {smuu = `${sim0.success}`
 	    } finally {smuu = `${sim2.success}`
 		      }
-**/
+
 smuu = (`${sim1.result}`)
 samu330.sendMessage(from, `Chúpame la japi pajer@`, MessageType.text, {quoted: { key: {
 fromMe: false,
@@ -8121,6 +8121,32 @@ message: {
 addFilter(from)
 addLevelingXp(sender, 5)
 break
+**/	
+		
+case 'simi':
+samu330.updatePresence(from, Presence.composing)
+if (!isGroup) return reply(mess.only.group)
+texto = body.slice(5)
+sim0 = await getJson(`https://api.simsimi.net/v2/?text=${texto}&lc=es`)
+sim1 = await getJson(`https://api.lolhuman.xyz/api/simi?apikey=NikolaTesla&text=${texto}`)
+sim2 = await getJson(`https://simsumi.herokuapp.com/api?text=${texto}`)	
+
+try {smuu = `${sim1.result}`
+    } catch {smuu = `${sim0.success}`
+	    } finally {smuu = `${sim2.success}`
+		      }
+	
+samu330.sendMessage(from, smuu, MessageType.text, {quoted:
+{ key: {
+fromMe: false,
+participant: `0@whatsapp.net`, ...(from ? { remoteJid: from } : {})
+},
+message: {
+"documentMessage": { "title": `➫𝐒𝐢𝐦𝐢 |⌜UwU \◔,◡◔,/ ت♡⌟\n⛥: ${texto}`, 'jpegThumbnail': fs.readFileSync('./src/simi.jpg')}}
+}})		
+addFilter(from)
+addLevelingXp(sender, 5)
+break	
 		
 case 'emoji':
 if (args.length == 0) return reply(`Ejemplo: ${prefix + command} 😭`)
