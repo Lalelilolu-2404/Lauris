@@ -3503,7 +3503,7 @@ exec(`wget ${anu.data.url} -O ${ranp} && ffmpeg -i ${ranp} -vcodec libwebp -filt
 fs.unlinkSync(ranp)
 if (err) return reply('Error')
 	buffer = fs.readFileSync(rano)
-	samu330.sendMessage(from, buffer, MessageType.sticker, {quoted: fnsfw)
+	samu330.sendMessage(from, buffer, MessageType.sticker, {quoted: fnsfw})
 	fs.unlinkSync(rano)
 })
 addFilter(from)
