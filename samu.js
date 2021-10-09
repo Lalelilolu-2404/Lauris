@@ -3180,9 +3180,19 @@ if (!isQuotedImage) return reply('Responde una imagen')
 	svst = body.slice(8)
 	if (!svst) return reply('Nombre de la imagen')
 	jars = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo : sam
-	wors = await samu330.downloadAndSaveMediaMessage(jars)
+	wors = await samu330.downloadMediaMessage(jars)
 	_waifus.push(`${svst}`)
 	fs.writeFileSync(`./temp/foto/${svst}.jpeg`, wors)
+	fs.writeFileSync('./temp/waifus.json', JSON.stringify(_waifus))
+	samu330.sendMessage(from, `${prefix}listimg para ver las waifus`, MessageType.text, { quoted: fimg})
+addFilter(from)
+break
+		
+case 'delimg':		  
+	svst = body.slice(8)
+	if (!svst) return reply('Nombre de la imagen')
+	_waifus.splice(`${svst}`)
+	fs.writeFileSync(`./temp/foto/${svst}.jpeg`)
 	fs.writeFileSync('./temp/waifus.json', JSON.stringify(_waifus))
 	samu330.sendMessage(from, `${prefix}listimg para ver las waifus`, MessageType.text, { quoted: fimg})
 addFilter(from)
@@ -3199,7 +3209,7 @@ case 'getimg':
 break
 
 case 'listimg':		  
-let limg = `Lista de BAD WORD\nTotal : ${_waifus.length}\n`
+let limg = `Lista de Waifus\nTotal : ${_waifus.length}\n`
 for (let i of _waifus) {
 	limg += `◦ ${i.replace(_waifus)}\n`
 }
