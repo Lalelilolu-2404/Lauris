@@ -9139,7 +9139,7 @@ sendButLocation(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\nPans
 				{buttonId: 'xx2',
 				buttonText: 
 				{displayText: 'Gracias'}, 
-				type: 1}], 
+				type: 1}, 
 				{buttonId: 'xx3',
 				buttonText: 
 				{displayText: 'Hola'}, 
@@ -9154,7 +9154,7 @@ sendButLocation(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\nPans
 				{buttonId: 'xx2',
 				buttonText: 
 				{displayText: 'Gracias'}, 
-				type: 1}], 
+				type: 1}, 
 				{buttonId: 'xx3',
 				buttonText: 
 				{displayText: 'Hola'}, 
