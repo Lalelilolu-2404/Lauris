@@ -112,6 +112,7 @@ const _uang = JSON.parse(fs.readFileSync('./src/uang.json'))
 const _limit = JSON.parse(fs.readFileSync('./src/limit.json'))
 const _registered = JSON.parse(fs.readFileSync('./src/registered.json'))
 const _user2 = JSON.parse(fs.readFileSync('./src/user2.json'))
+const _waifus = JSON.parse(fs.readFileSync('./temp/waifus.json'))
 const daily = JSON.parse(fs.readFileSync('./src/diario.json'));
 const dailiy = JSON.parse(fs.readFileSync('./src/limitem.json'));
 const X = "❌"
@@ -3158,7 +3159,66 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
 addFilter(from)
 addLevelingXp(sender, 20)
 break
-		
+/**	
+case 'rollwaifu':
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg}) 			  
+	buffer = await getBuffer(`https://bx-hunter.herokuapp.com/api/sfw/neko?apikey=Ikyy69`)
+	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Nekos :3*_ 💠', quoted: fimg})
+	.catch(err => {
+	return('Pwrdon... T_T')
+	})
+event.push(buffer)
+fs.writeFileSync('./database/event.json', JSON.stringify(event))
+fs.writeFileSync(``, JSON.stringify(event))
+samu330.sendMessage(from, `Para obtener la waifu debes etiquetarla y escribir ${prefix}claim`, MessageType.text)            
+addFilter(from)
+break		
+**/
+case 'addimg':		  
+if (!isQuotedImage) return reply('Responde una imagen')
+	svst = body.slice(8)
+	if (!svst) return reply('Nombre de la imagen')
+	jars = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo : sam
+	wors = await samu330.downloadAndSaveMediaMessage(jars)
+	_waifus.push(`${svst}`)
+	fs.writeFileSync(`./temp/foto/${svst}.jpeg`, wors)
+	fs.writeFileSync('./temp/waifus.json', JSON.stringify(_waifus))
+	samu330.sendMessage(from, `${prefix}listimg para ver las waifus`, MessageType.text, { quoted: fimg})
+addFilter(from)
+break
+
+case 'getimg':			  
+	namastc = body.slice(8)
+	try {
+	buffer = fs.readFileSync(`./temp/foto/${namastc}.jpeg`)
+	samu330.sendMessage(from, buffer, MessageType.image, { quoted: fimg, caption: `Result From Database : ${namastc}.jpeg`})
+	} catch {
+			  reply('Paquete no registrado')
+	}
+addFilter(from)
+break
+
+case 'listimg':		  
+	teks = '*Image list :*\n\n'
+	for (let awokwkwk of _waifus) {
+	teks += `- ${awokwkwk}\n`
+	}
+	teks += `\n*Total : ${_waifus.length}*`
+	samu330.sendMessage(from, teks.trim(), MessageType.Text, { quoted: fimg, contextInfo: { "mentionedJid": _waifus } })
+break		
+/**		
+case 'claimw':
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg}) 
+
+				event.splice(from, 1)
+						fs.writeFileSync('./database/event.json', JSON.stringify(event))			
+ ucapanp = `As obtenido a tu waifu felicidades!`
+cnf.sendMessage(from, ucapanp, text, {quoted: mek})
+addFilter(from)
+break
+**/		
 /**
 case 'megu':
 addFilter(from)	
