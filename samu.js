@@ -9360,7 +9360,7 @@ break
 					//if (bad[i] == dbw) return i
 					//}
                                         //bad.splice(dbw)
-					reply(bad[0])
+					//reply(bad[0])
 					reply(posibad)
 					bad.splice(posibad, 1)
                                         fs.writeFileSync('./src/bad.json', JSON.stringify(bad))
