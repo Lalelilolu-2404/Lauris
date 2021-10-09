@@ -9385,13 +9385,13 @@ break
 					if (args[0] === '1') {
 						if (isAntigp) return reply('Ya esta activo')
 						antigp.push(from)
-						fs.writeFileSync('./src/antilink.json', JSON.stringify(antigp))
+						fs.writeFileSync('./src/antigp.json', JSON.stringify(antigp))
 						reply('*Anti-link de grupos activado ✔️*')
 						samu330.sendMessage(from,`Los miembros que manden un link de otro grupo serán eliminados`, text)
 					} else if ((args[0]) === '0') {
 						var ini = antigp.indexOf(from)
 						antigp.splice(ini, 1)
-						fs.writeFileSync('./src/antilink.json', JSON.stringify(antigp))
+						fs.writeFileSync('./src/antigp.json', JSON.stringify(antigp))
 						reply('Anti-link de grupos desactivado ✔️')
 					} else {
 						reply('*1 para activar, 0 para desactivar*')
@@ -9479,13 +9479,13 @@ if (isAllaud) {
 		samu330.sendMessage(from, none2, sticker, {quoted: sam})
 	} 
 	if (body.includes(`Gansito`) && body.length == 7){
-		randcd = Math.floor(Math.random() * 9)
+		randcd = Math.floor(Math.random() * 11)
 		none2d = fs.readFileSync(`./src/stickers2/Gansito${randcd}.webp`)
 		samu330.sendMessage(from, none2d, sticker)
 	} 
 	/**
 	if (body.includes(`Gansitoxxx`) && body.length == 10){
-		for (let i = 0; i < 9; i++){
+		for (let i = 0; i < 11; i++){
 		none2d = fs.readFileSync(`./src/stickers2/Gansito${i}.webp`)
 		samu330.sendMessage(from, none2d, sticker)
 		}
@@ -9564,7 +9564,7 @@ if (!isAllaud) return
 	}
 }
 //////////////	
-const morestick = ["Abasho", "Lean las reglas", "Nel mijo", "Se la coge", "Soy inevitable", "Le mete el brazo", "Pum", "Semen", "No viste nada", "Si.", "No.", "Sexo off", 
+const morestick = ["Abasho", "Lean las reglas", "Nel mijo", "Se la coge", "Soy inevitable", "Le mete el brazo", "Pum", "Semen", "No viste nada", "Si.", "No.", "Sexo off", "Sexo on", 
 		   "Fbi", "X el chikito", "Nel pastel", "Desprecio1", "Desprecio2", "Desprecio3", "Se relaja", "Colitax", "La penetra", "Dejen momir"]		
 
 if (isOwner){
