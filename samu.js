@@ -1619,15 +1619,7 @@ reply(`${_0x4dab[8]}${test[_0x4dab[7]](_0x4dab[4])}${_0x4dab[9]}${orlist[_0x4dab
 			stpan = fs.readFileSync(`./src/stickers2/Pansito${randp}.webp`)				
 			samu330.sendMessage(from, stpan, sticker)
 			}
-			}	    
-	    
-	    		if (sam.message.buttonsResponseMessage){
-				test = sam.message.buttonsResponseMessage.selectedButtonId
-				if (test.includes(`xx3`)){
-			none2 = fs.readFileSync(`./src/stickers/Hola.webp`)
-			samu330.sendMessage(from, none2, sticker)
-			}
-			}	
+			}	    	
     
 //Zona de Comandos🛵
 switch (command) {
@@ -9138,10 +9130,6 @@ sendButLocation(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\nPans
 				type: 1},
 				{buttonId: 'xx2',
 				buttonText: 
-				{displayText: 'Gracias'}, 
-				type: 1}, 
-				{buttonId: 'xx3',
-				buttonText: 
 				{displayText: 'Hola'}, 
 				type: 1}], 
 				{contextInfo: {"mentionedJid": [mentioned[0]]}})
@@ -9152,10 +9140,6 @@ sendButLocation(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\nPans
 				{displayText: 'Uwu :3'}, 
 				type: 1},
 				{buttonId: 'xx2',
-				buttonText: 
-				{displayText: 'Gracias'}, 
-				type: 1}, 
-				{buttonId: 'xx3',
 				buttonText: 
 				{displayText: 'Hola'}, 
 				type: 1}], 
@@ -9361,16 +9345,14 @@ break
                                         if (args.length < 1) return reply( `Escribe ${prefix}delbad [palabra]. Ejemplo: ${prefix}delbad bego`)
                                         let dbw = q
 					for(let i = 0; i <=  bad.length; i++){
-					if (bad[i] == dbw){
-					let j = i
-					}else { reply('La palabra no está en la lista')}
-					}
+					if (bad[i] == dbw) return i
+					}					}
                                         //bad.splice(dbw)
-					bad.splice(j, 1)
+					bad.splice(i, 1)
                                         fs.writeFileSync('./src/bad.json', JSON.stringify(bad))
                                         reply('Se quito con exito')
 				
-                                        break 
+				break 
                                 case 'listbad':
                                 
                                         let lbw = `Lista de BAD WORD\nTotal : ${bad.length}\n`
@@ -9378,7 +9360,8 @@ break
                                                 lbw += `◦ ${i.replace(bad)}\n`
                                         }
                                         await reply(lbw)
-                                        break
+                                break
+		
 					case 'antilink':
                                 	if (!isGroup) return reply(mess.only.group)
 					if (!isAdmin) return reply(mess.only.admin)
