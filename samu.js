@@ -9360,10 +9360,11 @@ break
 					//if (bad[i] == dbw) return i
 					//}
                                         //bad.splice(dbw)
-					reply(bad.0\nbad[0]\nposibad)
+					reply(bad[0])
+					reply(posibad)
 					bad.splice(posibad, 1)
                                         fs.writeFileSync('./src/bad.json', JSON.stringify(bad))
-                                        reply('Se quito con exito')
+                                        reply('Se quitó con exito')
 				break 
 	    
                                 case 'listbad':
