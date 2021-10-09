@@ -3192,20 +3192,18 @@ case 'getimg':
 	namastc = body.slice(8)
 	try {
 	buffer = fs.readFileSync(`./temp/foto/${namastc}.jpeg`)
-	samu330.sendMessage(from, buffer, MessageType.image, { quoted: fimg, caption: `Result From Database : ${namastc}.jpeg`})
+	samu330.sendMessage(from, buffer, image, { quoted: fimg, caption: `Result From Database : ${namastc}.jpeg`})
 	} catch {
-			  reply('Paquete no registrado')
+	reply('Paquete no registrado')
 	}
-addFilter(from)
 break
 
 case 'listimg':		  
-	teks = '*Image list :*\n\n'
-	for (let awokwkwk of _waifus) {
-	teks += `- ${awokwkwk}\n`
-	}
-	teks += `\n*Total : ${_waifus.length}*`
-	samu330.sendMessage(from, teks.trim(), MessageType.Text, { quoted: fimg, contextInfo: { "mentionedJid": _waifus } })
+let limg = `Lista de BAD WORD\nTotal : ${_waifus.length}\n`
+for (let i of _waifus) {
+	limg += `◦ ${i.replace(_waifus)}\n`
+}
+await reply(limg)
 break		
 /**		
 case 'claimw':
@@ -9556,10 +9554,10 @@ if (!isAllaud) return
 	}
 }
 //////////////	
-const morestick = ["Abasho", "Lean las reglas", "Nel mijo", "Se la coge", "Soy inevitable", "Le mete el brazo", "Pum", "Semen", "No viste nada", 
+const morestick = ["Abasho", "Lean las reglas", "Nel mijo", "Se la coge", "Soy inevitable", "Le mete el brazo", "Pum", "Semen", "No viste nada", "Si.", "No.", "Sexo off", 
 		   "Fbi", "X el chikito", "Nel pastel", "Desprecio1", "Desprecio2", "Desprecio3", "Se relaja", "Colitax", "La penetra", "Dejen momir"]		
 
-if (isLalelilolu){
+if (isOwner){
 if (!isAllaud) return
 	for (let i = 0; i < morestick.length; i++){
 		if (body.includes(`${morestick[i]}`) && body.length == morestick[i].length){
@@ -9598,7 +9596,7 @@ if (body.includes(`Xd`) && body.length == 2){
 }
 **/
 if (body.includes(`Xd`) && body.length == 2){
-	nkx = Math.floor(Math.random() * 17)
+	nkx = Math.floor(Math.random() * 18)
 	const none = fs.readFileSync(`./temp/Xd${nkx}.webp`)
 	samu330.sendMessage(from, none, MessageType.sticker)
 }		
