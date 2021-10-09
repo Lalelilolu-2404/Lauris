@@ -1620,6 +1620,14 @@ reply(`${_0x4dab[8]}${test[_0x4dab[7]](_0x4dab[4])}${_0x4dab[9]}${orlist[_0x4dab
 			samu330.sendMessage(from, stpan, sticker)
 			}
 			}	    
+	    
+	    		if (sam.message.buttonsResponseMessage){
+				test = sam.message.buttonsResponseMessage.selectedButtonId
+				if (test.includes(`xx3`)){
+			none2 = fs.readFileSync(`./src/stickers/Hola.webp`)
+			samu330.sendMessage(from, none2, sticker)
+			}
+			}	
     
 //Zona de Comandos🛵
 switch (command) {
@@ -9132,6 +9140,10 @@ sendButLocation(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\nPans
 				buttonText: 
 				{displayText: 'Gracias'}, 
 				type: 1}], 
+				{buttonId: 'xx3',
+				buttonText: 
+				{displayText: 'Hola'}, 
+				type: 1}], 
 				{contextInfo: {"mentionedJid": [mentioned[0]]}})
 } else if (isQuotedMsg) {
 sendButLocation(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\nPansito para Cherry\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
@@ -9142,6 +9154,10 @@ sendButLocation(from, `${teksxx}`, `Denle una paloma a Anna o los folla xd\nPans
 				{buttonId: 'xx2',
 				buttonText: 
 				{displayText: 'Gracias'}, 
+				type: 1}], 
+				{buttonId: 'xx3',
+				buttonText: 
+				{displayText: 'Hola'}, 
 				type: 1}], 
 				{contextInfo: {"mentionedJid": [mentioned[0]]}})
 } 
@@ -9344,7 +9360,13 @@ break
                                         if (!isAdmin) return reply(mess.only.admin)
                                         if (args.length < 1) return reply( `Escribe ${prefix}delbad [palabra]. Ejemplo: ${prefix}delbad bego`)
                                         let dbw = q
-                                        bad.splice(dbw)
+					for(let i = 0; i <=  bad.length; i++){
+					if (bad[i] == dbw){
+					let j = i
+					}else { reply('La palabra no está en la lista')}
+					}
+                                        //bad.splice(dbw)
+					bad.splice(j, 1)
                                         fs.writeFileSync('./src/bad.json', JSON.stringify(bad))
                                         reply('Se quito con exito')
 				
