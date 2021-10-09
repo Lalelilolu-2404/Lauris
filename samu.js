@@ -3184,7 +3184,7 @@ if (!isQuotedImage) return reply('Responde una imagen')
 	_waifus.push(`${svst}`)
 	fs.writeFileSync(`./temp/foto/${svst}.jpeg`, wors)
 	fs.writeFileSync('./temp/waifus.json', JSON.stringify(_waifus))
-	samu330.sendMessage(from, `${prefix}listimg para ver las waifus`, MessageType.text, { quoted: fimg})
+	samu330.sendMessage(from, `Usa ${prefix}listimg para ver las waifus`, MessageType.text, { quoted: fimg})
 addFilter(from)
 break
 		
@@ -3194,8 +3194,7 @@ case 'delimg':
 	_waifus.splice(`${svst}`)
 	fs.writeFileSync(`./temp/foto/${svst}.jpeg`)
 	fs.writeFileSync('./temp/waifus.json', JSON.stringify(_waifus))
-	samu330.sendMessage(from, `${prefix}listimg para ver las waifus`, MessageType.text, { quoted: fimg})
-addFilter(from)
+	samu330.sendMessage(from, `Usa ${prefix}listimg para ver las waifus`, MessageType.text, { quoted: fimg})
 break
 
 case 'getimg':			  
