@@ -3566,6 +3566,7 @@ addFilter(from)
 addLevelingXp(sender, 20)
 break	
 
+case 'culear':
 case 'coger':		
 if (!isGroup) return reply(mess.only.group)
 if (args.length < 1) return reply("Meniona a alguien, pajero!")	
