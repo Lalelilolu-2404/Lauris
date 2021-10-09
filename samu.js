@@ -3657,6 +3657,25 @@ fs.unlinkSync(rano)
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
+	
+case 'patear':		
+if (!isGroup) return reply(mess.only.group)
+if (args.length < 1) return reply("Meniona a alguien, pajero!")	
+samu330.updatePresence(from, Presence.composing) 
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+}
+const victim = await getNamexx(mentioned[0])
+const patada = ['pat1','pat2','pat3','pat4','pat5']
+const pate = patada[Math.floor(Math.random() * patada.length)]				
+result = fs.readFileSync(`./media/patadas/${pate}.mp4`)
+const textpat = ['pateó a','le metió un vergazo a','le dió un vergazo en el ojete a','se lo recogió a','le metió el pie en el ojete a', 'dió una patada redura 🥵 a' ]		
+const txtpatear = textpat[Math.floor(Math.random() * textpat.length)]	
+const txtvictim = `${pushname} ${txtpatear} ${victim} :v`	
+samu330.sendMessage(from, result, video, {quoted: fnsfw, mimetype: 'video/gif', caption: `${txtvictim}`, sendEphemeral: true})
+addFilter(from)
+addLevelingXp(sender, 20)
+break			
 		
 case 'golosa':
 addFilter(from)	
