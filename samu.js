@@ -1619,7 +1619,15 @@ reply(`${_0x4dab[8]}${test[_0x4dab[7]](_0x4dab[4])}${_0x4dab[9]}${orlist[_0x4dab
 			stpan = fs.readFileSync(`./src/stickers2/Pansito${randp}.webp`)				
 			samu330.sendMessage(from, stpan, sticker)
 			}
-			}	    	
+			}	    
+	    
+	    		if (sam.message.buttonsResponseMessage){
+				test = sam.message.buttonsResponseMessage.selectedButtonId
+				if (test.includes(`xx2`)){
+			stpan = fs.readFileSync(`./src/stickers/Hola.webp`)				
+			samu330.sendMessage(from, stpan, sticker)
+			}
+			}	
     
 //Zona de Comandos🛵
 switch (command) {
@@ -9344,11 +9352,13 @@ break
                                         if (!isAdmin) return reply(mess.only.admin)
                                         if (args.length < 1) return reply( `Escribe ${prefix}delbad [palabra]. Ejemplo: ${prefix}delbad bego`)
                                         let dbw = q
-					for(let i = 0; i <  bad.length; i++){
-					if (bad[i] == dbw) return i
-					}
+					let posibad = bad.lastIndexOf(dbw) + 1
+					//for(let i = 0; i <  bad.length; i++){
+					//if (bad[i] == dbw) return i
+					//}
                                         //bad.splice(dbw)
-					bad.splice(i, 1)
+					reply(`bad[0]\nposibad`)
+					bad.splice(posibad, 1)
                                         fs.writeFileSync('./src/bad.json', JSON.stringify(bad))
                                         reply('Se quito con exito')
 				break 
