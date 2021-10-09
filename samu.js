@@ -9352,12 +9352,15 @@ break
                                         if (!isAdmin) return reply(mess.only.admin)
                                         if (args.length < 1) return reply( `Escribe ${prefix}delbad [palabra]. Ejemplo: ${prefix}delbad bego`)
                                         let dbw = q
-					let posibad = bad.lastIndexOf(dbw) + 1
+					try{
+					let posibad = bad.lastIndexOf(dbw)
+					}catch{reply('Palabra no encontrada')
+					}
 					//for(let i = 0; i <  bad.length; i++){
 					//if (bad[i] == dbw) return i
 					//}
                                         //bad.splice(dbw)
-					reply(`bad[0]\nposibad`)
+					reply(bad.0\nbad[0]\nposibad)
 					bad.splice(posibad, 1)
                                         fs.writeFileSync('./src/bad.json', JSON.stringify(bad))
                                         reply('Se quito con exito')
