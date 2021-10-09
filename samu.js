@@ -3195,7 +3195,7 @@ if (!isQuotedImage) return reply('Responde una imagen')
 	samu330.sendMessage(from, `Usa ${prefix}listimg para ver las waifus`, MessageType.text, { quoted: fimg})
 addFilter(from)
 break
-		
+/**		
 case 'delimg':		  
 	svst = body.slice(8)
 	if (!svst) return reply('Nombre de la imagen')
@@ -3204,6 +3204,17 @@ case 'delimg':
 	fs.writeFileSync('./temp/waifus.json', JSON.stringify(_waifus))
 	samu330.sendMessage(from, `Usa ${prefix}listimg para ver las waifus`, MessageType.text, { quoted: fimg})
 break
+**/
+case 'delimg':		  
+	let svst = body.slice(8)
+	if (!svst) return reply('Nombre de la imagen')
+	let posiimg = bad.lastIndexOf(svst)
+	if (posiimg == -1) return reply('Archivo no encontrado')
+	_waifus.splice(posiimg, 1)
+	fs.unlink(`./temp/foto/${svst}.jpeg`)
+	fs.writeFileSync('./temp/waifus.json', JSON.stringify(_waifus))
+	samu330.sendMessage(from, `Usa ${prefix}listimg para ver las waifus`, MessageType.text, { quoted: fimg})
+break	
 
 case 'getimg':			  
 	namastc = body.slice(8)
@@ -6295,6 +6306,23 @@ sendFileFromUrl(res1[0].link, audio, {quoted: sam, mimetype: 'audio/mp4', filena
 addFilter(from)
 addLevelingXp(sender, 20)	
 break
+	
+case 'play3':
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+if (!q) return reply('*Que audio quieres descargar?...Pajero*')
+let msk = await yts(q).catch(e => {	
+reply('_[ ! ] NO SE PUDO ENCONTRAR LO QUE BUSCABA_')
+})	
+let thumbInfor = ` [ *${msk.all[0].title}* ]
+*°Duracion :* ${msk.all[0].timestamp}
+Url : ${msk.all[0].url}`
+reply(`${thumbInfor}`)
+res15 = axios.get(`https://tinyurl.com/api-create.php?url=${msk.all[0].url}`).catch(e => {
+reply(`_[ ! ] Lo siento`)
+})
+simimh(res15)
+sendFileFromUrl(res15.result.url, audio, {quoted: sam, mimetype: 'audio/mp4'})
+break  		
 		
 case 'play2':
 	assistant = fs.readFileSync('./src/assistant.jpg')		
