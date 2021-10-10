@@ -3185,12 +3185,12 @@ break
 **/
 case 'addimg':		  
 if (!isQuotedImage) return reply('Responde una imagen')
-	svst = body.slice(8)
-	if (!svst) return reply('Nombre de la imagen')
+if (args.length < 1) return reply('Nombre de la imagen')
+const nbimg = q
 	jars = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo : sam
-	wors = await samu330.downloadAndSaveMediaMessage(jars)
-	_waifus.push(svst)
-	fs.writeFileSync(`./temp/foto/${svst}.jpeg`, wors)
+	wors = await samu330.downloadMediaMessage(jars)
+	_waifus.push(nbimg)
+	fs.writeFileSync(`./temp/foto/${nbimg}.jpeg`, wors)
 	fs.writeFileSync('./temp/waifus.json', JSON.stringify(_waifus))
 setTimeout(() => {
 samu330.sendMessage(from, `Usa ${prefix}listimg para ver las waifus`, MessageType.text, { quoted: fimg})
