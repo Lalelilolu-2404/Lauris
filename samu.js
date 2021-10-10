@@ -4426,23 +4426,27 @@ break
 			break
 		
 			case 'nezuko':
+				try{
 				nezuk = await axios.get('https://kagchi-api.glitch.me//waifu/nezuko')
 					buffer = await getBuffer(nezuk.data.url)
 						samu330.sendMessage(from, buffer, image, { caption : '💎 _*Nezuko chan :3*_ 💠', quoted: fimg})
-			.catch(err => {
-				return('Pwrdon... T_T')
-			})
+				} catch (e) {
+				console.log(`Error :`, color(e,'red'))
+				reply('Pwrdon... T_T')
+				}
 			addFilter(from)
 			addLevelingXp(sender, 20)
 			break	
 		
 case 'ecchi':
 if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
+	try{
 	buffer = await getBuffer('http://api.lolhuman.xyz/api/random/nsfw/ecchi?apikey=847de7716f17a51eeba4235c')
 	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Wow 🥵*_ 💠', quoted: fimg})
-	.catch(err => {
-	return('Pwrdon... T_T')
-	})
+	} catch (e) {
+	console.log(`Error :`, color(e,'red'))
+	reply('Pwrdon... T_T')
+	}
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
@@ -4452,7 +4456,8 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 	try{
 	buffer = await getBuffer('http://api.lolhuman.xyz/api/random/nsfw/hentai?apikey=847de7716f17a51eeba4235c')
 	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Wow 🥵*_ 💠', quoted: fimg})
-	}catch {
+	} catch (e) {
+	console.log(`Error :`, color(e,'red'))
 	reply('Pwrdon... T_T')
 	}
 addFilter(from)
@@ -4464,7 +4469,8 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 	try{
 	buffer = await getBuffer('http://api.lolhuman.xyz/api/random/nsfw/hentai?apikey=NikolaTesla')
 	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Wow 🥵*_ 💠', quoted: fimg})
-	}catch {
+	} catch (e) {
+	console.log(`Error :`, color(e,'red'))
 	reply('Pwrdon... T_T')
 	}
 addFilter(from)
@@ -4476,7 +4482,8 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 	try{
 	buffer = await getBuffer('http://api.lolhuman.xyz/api/random2/hentai?apikey=NikolaTesla')
 	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Uff si 🥵*_ 💠', quoted: fimg})
-	}catch {
+	} catch (e) {
+	console.log(`Error :`, color(e,'red'))
 	reply('Pwrdon... T_T')
 	}
 addFilter(from)
@@ -4492,7 +4499,8 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 	try{
 	buffer = await getBuffer(`http://api.lolhuman.xyz/api/random2/${command}?apikey=NikolaTesla`)
 	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Uff si 🥵*_ 💠', quoted: fimg})
-	}catch{
+	} catch (e) {
+	console.log(`Error :`, color(e,'red'))
 	reply('Pwrdon... T_T')
 	}
 addFilter(from)
