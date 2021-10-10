@@ -3208,7 +3208,7 @@ break
 case 'delimg':		  
 	let svst = body.slice(8)
 	if (!svst) return reply('Nombre de la imagen')
-	let posiimg = bad.lastIndexOf(svst)
+	let posiimg = _waifus.lastIndexOf(svst)
 	if (posiimg == -1) return reply('Archivo no encontrado')
 	_waifus.splice(posiimg, 1)
 	fs.unlink(`./temp/foto/${svst}.jpeg`)
