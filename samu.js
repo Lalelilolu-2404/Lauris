@@ -3208,10 +3208,10 @@ break
 case 'delimg':		  
 	let svst = body.slice(8)
 	if (!svst) return reply('Nombre de la imagen')
-	let posiimg = _waifus.lastIndexOf(svst)
-	if (posiimg == -1) return reply('Archivo no encontrado')
-	_waifus.splice(posiimg, 1)
-	fs.unlink(`./temp/foto/${svst}.jpeg`)
+	let posimg = _waifus.lastIndexOf(svst)
+	if (posimg == -1) return reply('Archivo no encontrado')
+	_waifus.splice(posimg, 1)
+	fs.unlinkSync(`./temp/foto/${svst}.jpeg`)
 	fs.writeFileSync('./temp/waifus.json', JSON.stringify(_waifus))
 setTimeout(() => {
 samu330.sendMessage(from, `Usa ${prefix}listimg para ver las waifus`, MessageType.text, { quoted: fimg})
@@ -3567,11 +3567,12 @@ break
 
 case 'pansito':
 if (!isGroup) return reply(mess.only.group)
-if (args.length < 1) return reply("Meniona a alguien, pajero!")	
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+//if (args.length < 1) return reply("Meniona a alguien, pajero!")	
 samu330.updatePresence(from, Presence.composing) 
-if (sam.message.extendedTextMessage != undefined){
+//if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-}
+//}
 randp = Math.floor(Math.random() * 2)
 stpan = fs.readFileSync(`./src/stickers2/Pansito${randp}.webp`)				
 const txtpan = `${pushname} me metió su pansito 🥵`
@@ -3601,11 +3602,12 @@ break
 case 'culear':
 case 'coger':		
 if (!isGroup) return reply(mess.only.group)
-if (args.length < 1) return reply("Meniona a alguien, pajero!")	
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+//if (args.length < 1) return reply("Meniona a alguien, pajero!")	
 samu330.updatePresence(from, Presence.composing) 
-if (sam.message.extendedTextMessage != undefined){
+//if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-}
+//}
 const Namexxx = await getNamexx(mentioned[0])
 stpan = fs.readFileSync(`./src/stickers2/Se la coge.webp`)				
 const txtcoger = `${pushname} me cogió duro 🥵`	
