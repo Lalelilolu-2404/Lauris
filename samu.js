@@ -3775,7 +3775,6 @@ break
 	
 case 'patear':		
 if (!isGroup) return reply(mess.only.group)
-if (args.length < 1) return reply("Meniona a alguien, pajero!")	
 samu330.updatePresence(from, Presence.composing) 
 //if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
