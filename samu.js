@@ -3213,7 +3213,9 @@ case 'delimg':
 	_waifus.splice(posiimg, 1)
 	fs.unlink(`./temp/foto/${svst}.jpeg`)
 	fs.writeFileSync('./temp/waifus.json', JSON.stringify(_waifus))
-	samu330.sendMessage(from, `Usa ${prefix}listimg para ver las waifus`, MessageType.text, { quoted: fimg})
+setTimeout(() => {
+samu330.sendMessage(from, `Usa ${prefix}listimg para ver las waifus`, MessageType.text, { quoted: fimg})
+}, 1000)	
 break	
 
 case 'getimg':			  
@@ -3572,7 +3574,8 @@ mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }
 randp = Math.floor(Math.random() * 2)
 stpan = fs.readFileSync(`./src/stickers2/Pansito${randp}.webp`)				
-const txtpan = `${pushname} me metió su pansito 🥵`		
+const txtpan = `${pushname} me metió su pansito 🥵`
+if (mentioned.length !== 0){
 samu330.sendMessage(from, stpan, sticker, {quoted:
 { key: {
 fromMe: false,
@@ -3581,6 +3584,16 @@ participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
 message: {
 "documentMessage": { "title": `${txtpan}\nUfff`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
 }})	
+} else if (isQuotedMsg) {
+samu330.sendMessage(from, stpan, sticker, {quoted:
+{ key: {
+fromMe: false,
+participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
+},
+message: {
+"documentMessage": { "title": `${txtpan}\nUfff`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
+}})	
+} 
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
@@ -3595,7 +3608,8 @@ mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }
 const Namexxx = await getNamexx(mentioned[0])
 stpan = fs.readFileSync(`./src/stickers2/Se la coge.webp`)				
-const txtcoger = `${pushname} me cogió duro 🥵`		
+const txtcoger = `${pushname} me cogió duro 🥵`	
+if (mentioned.length !== 0){
 samu330.sendMessage(from, stpan, sticker, {quoted:
 { key: {
 fromMe: false,
@@ -3604,6 +3618,16 @@ participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
 message: {
 "documentMessage": { "title": `${txtcoger}\nMe dejó abierta :3`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
 }})	
+} else if (isQuotedMsg) {
+samu330.sendMessage(from, stpan, sticker, {quoted:
+{ key: {
+fromMe: false,
+participant: `${mentioned[0]}`, ...(from ? { remoteJid: from } : {})
+},
+message: {
+"documentMessage": { "title": `${txtcoger}\nMe dejó abierta :3`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
+}})	
+} 	
 addFilter(from)
 addLevelingXp(sender, 20)
 break			
@@ -9371,7 +9395,7 @@ break
                                         const bw = q
                                         bad.push(bw)
                                         fs.writeFileSync('./src/bad.json', JSON.stringify(bad))
-                                        reply('Se añadio con exito')
+                                        reply('Se añadió con exito')
 				
                                         break
                                 case 'delbad':
