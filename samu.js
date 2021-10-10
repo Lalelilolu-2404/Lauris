@@ -3188,7 +3188,7 @@ if (!isQuotedImage) return reply('Responde una imagen')
 	svst = body.slice(8)
 	if (!svst) return reply('Nombre de la imagen')
 	jars = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo : sam
-	wors = await samu330.downloadMediaMessage(jars)
+	wors = await samu330.downloadAndSaveMediaMessage(jars)
 	_waifus.push(`${svst}`)
 	fs.writeFileSync(`./temp/foto/${svst}.jpeg`, wors)
 	fs.writeFileSync('./temp/waifus.json', JSON.stringify(_waifus))
