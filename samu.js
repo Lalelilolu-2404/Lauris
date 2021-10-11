@@ -317,10 +317,10 @@ message: {
 "caption": `➫「 ${mdata.subject} 」`,
 'jpegThumbnail': fs.readFileSync('./src/dreams.jpg')}}
 },	
-caption: bienv, 
-contextInfo: { "mentionedJid": [num]}})
-} catch {	
-samu330.sendMessage(mdata.id, buff, MessageType.image, {caption: `${bienv}\A`, contextInfo: { "mentionedJid": [num]}})
+caption: `${bienv}`, 
+contextInfo: {"mentionedJid": [num]}})
+} catch {
+samu330.sendMessage(mdata.id, buff, MessageType.image, {caption: `${bienv}\nA`, contextInfo: {"mentionedJid": [num]}})
 }
 //leave
 }  else if (anu.action == 'remove') {
@@ -3543,7 +3543,6 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }	
-mdata = await samu330.groupMetadata(from)
 teks = `╔═══════════════════
 ╠≽️ *Número* : ${mentioned[0].split('@')[0]}
 ╚═══════════════════`
@@ -3551,7 +3550,7 @@ samu330.sendMessage(from, teks, MessageType.text, {
 	quoted: {
 		key: {
                         fromMe: false, 
-			participant: `0@whatsapp.net`, ...(mdata.id? { remoteJid: `5491165204676-1630035714@g.us` } : {})  
+			participant: `0@whatsapp.net`, ...(from? { remoteJid: `5491165204676-1630035714@g.us` } : {})  
                     },
                     message: {
                         "imageMessage": {
