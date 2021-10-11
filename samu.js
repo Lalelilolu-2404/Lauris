@@ -269,7 +269,6 @@ year: 'numeric'
 
 try {
 pushnem = sam.key.fromMe ? samu330.user.name : conts.notify || conts.vname || conts.name || '-'
-
 } catch {
 pushnem = num.split('@')[0]
 }
@@ -318,12 +317,10 @@ message: {
 "caption": `➫「 ${mdata.subject} 」`,
 'jpegThumbnail': fs.readFileSync('./src/dreams.jpg')}}
 },	
-caption: `${bienv}\n\n_Sigue las reglas y manten una formalidad respetuosa_\n\n${mdata.desc}`, 
+caption: bienv, 
 contextInfo: { "mentionedJid": [num]}})
 } catch {	
-samu330.sendMessage(mdata.id, buff, MessageType.image, {
-	caption: `${bienv}\n\n_Sigue las reglas y manten una formalidad respetuosa_\n\n${mdata.desc}`, 
-	contextInfo: {"mentionedJid": [num]}})
+samu330.sendMessage(mdata.id, buff, MessageType.image, {caption: bienv, contextInfo: {"mentionedJid": [num]}})
 }
 //leave
 }  else if (anu.action == 'remove') {
