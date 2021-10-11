@@ -5257,6 +5257,25 @@ case 'baka':
                samu330.relayWAMessage(prep)
 break
 
+case 'dream':
+buttons1 = [{buttonId:`RulesB`,buttonText:{displayText: 'Reglas/Bot'},type:1}, 
+	    {buttonId:`FichaB`,buttonText:{displayText:'Ficha de presentación'},type:1}]
+buff = fs.readFileSync(`./src/dreams.jpg`)
+	
+//imageMsg = (await samu330.prepareMessageMedia(fs.readFileSync(`./src/dreams.jpg`), 'imageMessage', {thumbnail: fs.readFileSync(`./src/dreams.jpg`)})).imageMessage	
+//imageMsg = (await samu330.prepareMessageMedia(buff, 'imageMessage', {thumbnail: buff})).imageMessage
+	
+buttonsMessage = {
+contentText: bienv,
+footerText: `Denle una paloma a Anna o los folla xd\nPansito para Cherry\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, imageMessage: buff,
+buttons: buttons1,
+headerType: 4
+}
+	
+prep = await samu330.prepareMessageFromContent(from, {buttonsMessage})
+samu330.relayWAMessage(prep)	
+break
+		
 case 'idioto':
 let amgs = samu330.prepareMessageFromContent(from, {
 buttonMessage:  {
