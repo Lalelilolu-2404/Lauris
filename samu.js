@@ -5258,6 +5258,7 @@ case 'baka':
 break
 
 case 'dream':
+bienv =`Hola ${pushname}\nAnna se la come doblada\Uff rico`	
 buttons1 = [{buttonId:`RulesB`,buttonText:{displayText: 'Reglas/Bot'},type:1}, 
 	    {buttonId:`FichaB`,buttonText:{displayText:'Ficha de presentación'},type:1}]
 buff = fs.readFileSync(`./src/dreams.jpg`)
