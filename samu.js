@@ -5267,13 +5267,13 @@ buttons1 = [{buttonId:`RulesB`,buttonText:{displayText:'Reglas/Bot'},type:1},
 imageMsg = (await samu330.prepareMessageMedia(fs.readFileSync(`./src/dreams.jpg`), 'imageMessage', {thumbnail: fs.readFileSync(`./src/dreams.jpg`)})).imageMessage
 	
 buttonsMessage = {
-contentText: `${joder}`,
+contentText: joder,
 footerText: `Denle una paloma a Anna o los folla xd\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, imageMessage: imageMsg,
 buttons: buttons1,
 headerType: 4
 }
 	
-prep = await samu330.prepareMessageFromContent(from, {buttonsMessage})
+prep = await samu330.prepareMessageFromContent(from, {buttonsMessage}, {quoted: ftoko})
 samu330.relayWAMessage(prep)	
 break
 		
