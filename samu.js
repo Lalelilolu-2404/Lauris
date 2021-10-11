@@ -310,9 +310,8 @@ buttons: buttons1,
 headerType: 6
 }
 		
-samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {contextInfo: {"mentionedJid": [num]}})
+samu330.sendMessage(mdata.id, buttonsMessage, MessageType.buttonsMessage, {contextInfo: {"mentionedJid": [num]}})
 
-	
 /**
 samu330.sendMessage(mdata.id, buff, MessageType.imagen, {quoted: { 
 key: {                
@@ -329,7 +328,7 @@ caption: `${bienv}`,
 contextInfo: {"mentionedJid": [num]}})
 **/	
 } catch {
-samu330.sendMessage(mdata.id, buff, MessageType.image, {caption: `${bienv}`, contextInfo: {"mentionedJid": [num]}})
+reply('Hola perro xd')//samu330.sendMessage(mdata.id, buff, MessageType.image, {caption: `${bienv}`, contextInfo: {"mentionedJid": [num]}})
 }
 //leave
 }  else if (anu.action == 'remove') {
