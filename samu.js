@@ -8425,6 +8425,21 @@ if (!botAdmin) return reply(mess.only.Badmin)
 		}
 		break
 
+case 'okick':
+if (!isLalelilolu) return reply('Nel perro :v')
+if (!isGroup) return reply(mess.only.group)
+if (!isAdmin) return reply(mess.only.admin)
+if (!botAdmin) return reply(mess.only.Badmin)
+                if (sam.message.extendedTextMessage != undefined){
+                mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+		}
+		if (mentionUser.length == 1)
+		samu330.groupRemove(from, mentionUser)
+		} else {
+		samu330.groupRemove(from, mentioned)
+		}
+break		
+		
 case 'wpsearch':
 if (!isGroup) return reply(mess.only.group)
 if (args.length == 0) return reply(`Example: ${prefix + command} gatos`)
