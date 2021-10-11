@@ -5259,16 +5259,16 @@ break
 
 case 'dream':
 bienv =`Hola ${pushname}\nAnna se la come doblada\Uff rico`	
-buttons1 = [{buttonId:`RulesB`,buttonText:{displayText: 'Reglas/Bot'},type:1}, 
+buttons1 = [{buttonId:`RulesB`,buttonText:{displayText:'Reglas/Bot'},type:1}, 
 	    {buttonId:`FichaB`,buttonText:{displayText:'Ficha de presentación'},type:1}]
-buff = fs.readFileSync(`./src/dreams.jpg`)
+let buffzz = fs.readFileSync(`./src/dreams.jpg`)
 	
 //imageMsg = (await samu330.prepareMessageMedia(fs.readFileSync(`./src/dreams.jpg`), 'imageMessage', {thumbnail: fs.readFileSync(`./src/dreams.jpg`)})).imageMessage	
-imageMsg = (await samu330.prepareMessageMedia(buff, 'imageMessage', {thumbnail: buff})).imageMessage
+imageMsg = (await samu330.prepareMessageMedia(buffzz, 'imageMessage', {thumbnail: buffzz})).imageMessage
 	
 buttonsMessage = {
-contentText: bienv,
-footerText: `Denle una paloma a Anna o los folla xd\nPansito para Cherry\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, imageMessage: imageMsg,
+contentText: `${bienv}`,
+footerText: `Denle una paloma a Anna o los folla xd\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, imageMessage: imageMsg,
 buttons: buttons1,
 headerType: 4
 }
