@@ -348,9 +348,8 @@ teks = `_Weno ps.... amm...  @${num.split('@')[0]} se nos fué, ni llorar es bue
 _*Ojalá y le vaya bien, y más después..... que lo atropelle un tren!!*_
 *No se awiten gente, esten seguros que nadie lo extrañará:D*`
 //samu330.sendMessage(mdata.id, teks, MessageType.text,{ contextInfo: {"mentionedJid": [num]}})
-const none2 = fs.readFileSync(`./src/stickers2/Abandonar.webp`)
-samu330.sendMessage(mdata.id, none2, MessageType.sticker)	
-	
+//const none2 = fs.readFileSync(`./src/stickers2/Abandonar.webp`)
+//samu330.sendMessage(mdata.id, none2, MessageType.sticker)		
 } else if (anu.action == 'promote') {
 num = anu.participants[0]
 try {
@@ -5278,7 +5277,8 @@ samu330.relayWAMessage(prep)
 break
 		
 case 'coño':
-joder = `╠≽️ Legal : Si hay pelito no hay delito`
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+joder = `╠≽️ Nick : @${mentioned[0].split('@')[0]}\n╠≽️ Legal : Si hay pelito no hay delito`
 buttons1 = [{buttonId:`RulesB`,buttonText:{displayText:'Reglas/Bot'},type:1}, 
 	    {buttonId:`FichaB`,buttonText:{displayText:'Ficha de presentación'},type:1}]
 buffzz = fs.readFileSync(`./src/simi.jpg`)
@@ -5294,7 +5294,13 @@ buttons: buttons1,
 headerType: 4
 }
 
-samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage)
+samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {
+	contextInfo: {
+	mentionedJid: [mentioned[0]],
+	externalAdReply :{
+	title: `「 Un Gansito xd 」`, 
+	thumbnail : fs.readFileSync('./src/assistant.jpg')}}}
+		   )
 	
 //prep = await samu330.prepareMessageFromContent(from, {buttonsMessage}, {quoted: ftoko})
 //samu330.relayWAMessage(prep)	
