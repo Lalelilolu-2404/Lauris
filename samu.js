@@ -5369,18 +5369,14 @@ footerText: `Denle una paloma a Anna o los folla xd\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠ
 buttons: buttons1,
 headerType: 1
 }
-samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {quoted: 
-{key:
-{ fromMe: false, participant: "0@s.whatsapp.net", ...(from ?{ remoteJid: "status@broadcast" } : {}) },
-message: { "videoMessage": { "caption": "Anna se la come\n➫ ♤◇♧♡\nCherry no más pansito :v", 'jpegThumbnail': fs.readFileSync('./src/dreams.jpg')}},
+samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {quoted:
+{ key: {
+fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
 },
-	contextInfo: {
-	mentionedJid: [mentioned[0]],
-	externalAdReply :{
-	title: `「 Un Gansito xd 」`, 
-	body: 'Présentate o ban :v',
-	thumbnail : tofoxx}}}
-		   )
+message: {
+"documentMessage": { "title": "Anna se la come doblada\nNo más pansito para Cherry\nJulian joto", 'jpegThumbnail': tofoxx)}}
+}})
 break	
 		
 key:
