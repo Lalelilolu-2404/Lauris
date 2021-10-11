@@ -302,10 +302,12 @@ message: {
 "caption": `➫「 ${mdata.subject} 」`,
 'jpegThumbnail': fs.readFileSync('./src/dreams.jpg')}}
 },	
-caption: `Hola, @${num.split('@')[0]},\n${bienv}\n\n_Sigue las reglas y manten una formalidad respetuosa_`, 
-contextInfo: { mentionedJid: [num]}})
+caption: `Hola, @${num.split('@')[0]},\n${bienv}\n\n_Sigue las reglas y manten una formalidad respetuosa_\n\n${mdata.desc}`, 
+contextInfo: { "mentionedJid": [num]}})
 } catch {	
-samu330.sendMessage(mdata.id, buff, MessageType.image, {caption: `Hola, @${num.split('@')[0]},\n${bienv}\n\n_Sigue las reglas y manten una formalidad respetuosa_\n\n${mdata.desc}`, contextInfo: {"mentionedJid": [num]}})
+samu330.sendMessage(mdata.id, buff, MessageType.image, {
+	caption: `Hola, @${num.split('@')[0]},\n${bienv}\n\n_Sigue las reglas y manten una formalidad respetuosa_\n\n${mdata.desc}`, 
+	contextInfo: {"mentionedJid": [num]}})
 }
 //leave
 }  else if (anu.action == 'remove') {
