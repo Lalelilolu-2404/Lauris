@@ -309,7 +309,7 @@ try {
 samu330.sendMessage(mdata.id, buff, MessageType.imagen, {quoted: { 
 key: {                
 fromMe: false,
-participant: `0@s.whatsapp.net`, ...(mdata.id ? { remoteJid: "status@broadcast" } : {})
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
 },
 message: {
 "imageMessage": {
@@ -320,7 +320,7 @@ message: {
 caption: bienv, 
 contextInfo: { "mentionedJid": [num]}})
 } catch {	
-samu330.sendMessage(mdata.id, buff, MessageType.image, {caption: bienv, contextInfo: {"mentionedJid": [num]}})
+samu330.sendMessage(mdata.id, buff, MessageType.image, {caption: `${bienv}\A`, contextInfo: { "mentionedJid": [num]}})
 }
 //leave
 }  else if (anu.action == 'remove') {
@@ -3411,7 +3411,6 @@ case 'ospam':
                 }
 break
 			
-
 case 'spamstick':
                 if (!isOwner) return reply('No eres mi dueño UnU')
                 if (!arg) return reply(`${prefix}spam Text|#`)
@@ -3543,7 +3542,8 @@ samu330.updatePresence(from, Presence.composing)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-}		
+}	
+mdata = await samu330.groupMetadata(from)
 teks = `╔═══════════════════
 ╠≽️ *Número* : ${mentioned[0].split('@')[0]}
 ╚═══════════════════`
@@ -3551,7 +3551,7 @@ samu330.sendMessage(from, teks, MessageType.text, {
 	quoted: {
 		key: {
                         fromMe: false, 
-			participant: `0@whatsapp.net`, ...(from ? { remoteJid: `5491165204676-1630035714@g.us` } : {})  
+			participant: `0@whatsapp.net`, ...(mdata.id? { remoteJid: `5491165204676-1630035714@g.us` } : {})  
                     },
                     message: {
                         "imageMessage": {
