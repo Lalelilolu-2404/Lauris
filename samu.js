@@ -288,13 +288,29 @@ bienv =`Bienvenido a : 〘 ${mdata.subject} 〙
 ╠≽️ Legal : Si hay pelito no hay delito
 ╚═══════════════════
 _Reglas del BOT_: ${prefix}reglas
-_Reglas del Grupo_: ${prefix}rules`
+
+Sigue las reglas y manten una formalidad respetuosa.
+
+${mdata.desc}`
+/**
+buttons1 = [{buttonId:`RulesB`, buttonText:{displayText: 'Reglas/Bot'},type:1}, 
+	    {buttonId:`FichaB`,buttonText:{displayText:'Ficha de presentación'},type:1}]
+imageMsg = (await samu330.prepareMessageMedia(buff, 'imageMessage', {thumbnail: buff})).imageMessage
+buttonsMessage = {
+contentText: `${bienv}`,
+footerText: `Denle una paloma a Anna o los folla xd\nPansito para Cherry\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, imageMessage: imageMsg,
+buttons: buttons1,
+headerType: 4
+}
+prep = await samu330.prepareMessageFromContent(from,{buttonsMessage})
+samu330.relayWAMessage(prep)
+**/
 try {
 //exec(`magick './src/wel.jpg' -gravity west -fill '#00FFFF' -font './src/font-gue.ttf' -size 1280x710 -pointsize 75 -interline-spacing 7.5 -annotate +460-45 '${pushnem}' -pointsize 35 -annotate +460+83 '${jm} ${calender}' -pointsize 50 -annotate +460+200 'Bienvenido a ${mdata.subject}' '${ppimg}' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'hamsil.jpg'`)
 samu330.sendMessage(mdata.id, buff, MessageType.imagen, {quoted: { 
 key: {                
 fromMe: false,
-participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+participant: `0@s.whatsapp.net`, ...(mdata.id ? { remoteJid: "status@broadcast" } : {})
 },
 message: {
 "imageMessage": {
@@ -302,11 +318,11 @@ message: {
 "caption": `➫「 ${mdata.subject} 」`,
 'jpegThumbnail': fs.readFileSync('./src/dreams.jpg')}}
 },	
-caption: `Hola, @${num.split('@')[0]},\n${bienv}\n\n_Sigue las reglas y manten una formalidad respetuosa_\n\n${mdata.desc}`, 
+caption: `${bienv}\n\n_Sigue las reglas y manten una formalidad respetuosa_\n\n${mdata.desc}`, 
 contextInfo: { "mentionedJid": [num]}})
 } catch {	
 samu330.sendMessage(mdata.id, buff, MessageType.image, {
-	caption: `Hola, @${num.split('@')[0]},\n${bienv}\n\n_Sigue las reglas y manten una formalidad respetuosa_\n\n${mdata.desc}`, 
+	caption: `${bienv}\n\n_Sigue las reglas y manten una formalidad respetuosa_\n\n${mdata.desc}`, 
 	contextInfo: {"mentionedJid": [num]}})
 }
 //leave
