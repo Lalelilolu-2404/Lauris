@@ -5360,8 +5360,8 @@ ppimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 }
 tofoxx = await getBuffer(ppimg)
 joder = `╠≽️ Nick : @${mentioned[0].split('@')[0]}\n╠≽️ Legal : Si hay pelito no hay delito`
-buttons1 = [{buttonId:`RulesB`,buttonText:{displayText:'Reglas'},type:1}, 
-	    {buttonId:`FichaB`,buttonText:{displayText:'Ficha'},type:1}]
+buttons1 = [{buttonId:`RulesB`,buttonText:{displayText:`ᴿᵉᵍˡᵃˢ\nᵈᵉˡ ᴮᵒᵗ`},type:1}, 
+	    {buttonId:`FichaB`,buttonText:{displayText:`ᶠᶦᶜʰᵃ ᵈᵉ\nᵖʳᵉˢᵉⁿᵗᵃᶜᶦᵒⁿ`},type:1}]
 		
 buttonsMessage = {
 contentText: joder,
@@ -5369,7 +5369,12 @@ footerText: `Denle una paloma a Anna o los folla xd\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠ
 buttons: buttons1,
 headerType: 1
 }
-samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {quoted: fdreams,
+samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {quoted: 
+{key:
+{ fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ?{ remoteJid: "status@broadcast" } : {}) },
+message: { "videoMessage": { "caption":"Anna se la come\n➫ ♤◇♧♡\nCherry no más pansito :v", 'jpegThumbnail': fs.readFileSync('./src/dreams.jpg')}}
+},
 	contextInfo: {
 	mentionedJid: [mentioned[0]],
 	externalAdReply :{
@@ -5377,7 +5382,14 @@ samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {quoted: f
 	body: 'Présentate o ban :v',
 	thumbnail : tofoxx}}}
 		   )
-break		
+break	
+		
+key:
+{ fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ?
+{ remoteJid: "status@broadcast" } : {}) },
+message: { "videoMessage": { "caption":"⛧⸸⁶Death⁹†\n➫ ♤◇♧♡", 'jpegThumbnail': fs.readFileSync('./src/dreams.jpg')}}
+	
 		
 case 'idioto':
 let amgs = samu330.prepareMessageFromContent(from, {
