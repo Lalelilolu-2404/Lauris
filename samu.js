@@ -286,42 +286,32 @@ bienv =`Bienvenido a : 〘 ${mdata.subject} 〙
 ╠≽️ Info : ${thu.status}
 ╠≽️ Legal : Si hay pelito no hay delito
 ╚═══════════════════
-_Reglas del BOT_: ${prefix}reglas
 
 Sigue las reglas y manten una formalidad respetuosa.
 
 ${mdata.desc}`
-/**
-buttons1 = [{buttonId:`RulesB`, buttonText:{displayText: 'Reglas/Bot'},type:1}, 
-	    {buttonId:`FichaB`,buttonText:{displayText:'Ficha de presentación'},type:1}]
-imageMsg = (await samu330.prepareMessageMedia(buff, 'imageMessage', {thumbnail: buff})).imageMessage
-buttonsMessage = {
-contentText: `${bienv}`,
-footerText: `Denle una paloma a Anna o los folla xd\nPansito para Cherry\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, imageMessage: imageMsg,
-buttons: buttons1,
-headerType: 4
-}
-prep = await samu330.prepareMessageFromContent(from,{buttonsMessage})
-samu330.relayWAMessage(prep)
-**/
+
 try {
 //exec(`magick './src/wel.jpg' -gravity west -fill '#00FFFF' -font './src/font-gue.ttf' -size 1280x710 -pointsize 75 -interline-spacing 7.5 -annotate +460-45 '${pushnem}' -pointsize 35 -annotate +460+83 '${jm} ${calender}' -pointsize 50 -annotate +460+200 'Bienvenido a ${mdata.subject}' '${ppimg}' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'hamsil.jpg'`)
 
-buttons1 = [{buttonId:`RulesB`,buttonText:{displayText: 'Reglas/Bot'},type:1}, 
-	    {buttonId:`FichaB`,buttonText:{displayText:'Ficha de presentación'},type:1}]
-	
-imageMsg = (await samu330.prepareMessageMedia(fs.readFileSync(`./src/dreams.jpg`), 'imageMessage', {thumbnail: fs.readFileSync(`./src/dreams.jpg`)})).imageMessage	
-//imageMsg = (await samu330.prepareMessageMedia(buff, 'imageMessage', {thumbnail: buff})).imageMessage
-	
+buttons1 = [{buttonId:`RulesBot`,buttonText:{displayText:'Reglas/Bot'},type:1}, 
+	    {buttonId:`FichaBot`,buttonText:{displayText:'Ficha de presentación'},type:1}]
+	loc = {
+		"degreesLatitude": 0,
+		"degreesLongitude": 0,
+		"jpegThumbnail": buff
+		}
+mhan = await samu330.prepareMessage(from, buff, location)	
 buttonsMessage = {
+locationMessage: loc,
 contentText: bienv,
-footerText: `Denle una paloma a Anna o los folla xd\nPansito para Cherry\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, imageMessage: imageMsg,
+footerText: `Denle una paloma a Anna o los folla xd\nNo más pansito para Cherry\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`,
 buttons: buttons1,
-headerType: 4
+headerType: 6
 }
-	
-prep = await samu330.prepareMessageFromContent(from, {buttonsMessage})
-samu330.relayWAMessage(prep)
+		
+samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {contextInfo: {"mentionedJid": [num]}})
+
 	
 /**
 samu330.sendMessage(mdata.id, buff, MessageType.imagen, {quoted: { 
@@ -1658,7 +1648,42 @@ reply(`${_0x4dab[8]}${test[_0x4dab[7]](_0x4dab[4])}${_0x4dab[9]}${orlist[_0x4dab
 			samu330.sendMessage(from, stpan, sticker)
 			}
 			}	
+	    
+//////
     
+
+			if (sam.message.buttonsResponseMessage){
+				test = sam.message.buttonsResponseMessage.selectedButtonId
+				if (test.includes(`RulesBot`)){
+			mdata = await samu330.groupMetadata(from)
+			reply(`_*「 Hola, @${pushname} 」*_\n\n${mdata.desc}`)
+			}
+			}	    
+	    
+	    		if (sam.message.buttonsResponseMessage){
+				test = sam.message.buttonsResponseMessage.selectedButtonId
+				if (test.includes(`FichaBot`)){
+				Fichapres = `︻︼︻︼︻ ︻︼︻︼︻︻︼︻︼︻ ︻︼︻︼
+             ɮエモղレモղエの@Ֆ ¡! 🏮⃟ᭁ
+───────⊱◈◈◈⊰────────
+➣ɳσɱɓɾε : 
+
+➢ε∂α∂ : 
+
+➣ραเร : 
+
+➢รεאσ : 
+
+➣σɾเεɳƭαcเσ́ɳ รεאµὰℓ : 
+━━━━━━ƒσƭσ (σρcเσɳαℓ)━━━━━━
+
+╔════❖•ೋ° °ೋ•❖════╗
+𝖕𝖆𝖗𝖆 𝖊𝖓𝖙𝖗𝖆𝖗 𝖆𝖑 𝖌𝖗𝖚𝖕𝖔 𝕺𝕱𝕮 𝖈𝖔𝖓𝖘𝖚𝖑𝖙𝖆𝖗 𝖈𝖔𝖓 𝖑𝖔𝖘 𝖆𝖉𝖒𝖎𝖓'𝖘 
+╚════❖•ೋ° °ೋ•❖════╝`
+			reply(Fichapres)
+			}
+			}		    
+	    
 //Zona de Comandos🛵
 switch (command) {
 		
