@@ -307,7 +307,7 @@ samu330.relayWAMessage(prep)
 try {
 //exec(`magick './src/wel.jpg' -gravity west -fill '#00FFFF' -font './src/font-gue.ttf' -size 1280x710 -pointsize 75 -interline-spacing 7.5 -annotate +460-45 '${pushnem}' -pointsize 35 -annotate +460+83 '${jm} ${calender}' -pointsize 50 -annotate +460+200 'Bienvenido a ${mdata.subject}' '${ppimg}' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'hamsil.jpg'`)
 
-buttons1 = [{buttonId:`RulesB`, buttonText:{displayText: 'Reglas/Bot'},type:1}, 
+buttons1 = [{buttonId:`RulesB`,buttonText:{displayText: 'Reglas/Bot'},type:1}, 
 	    {buttonId:`FichaB`,buttonText:{displayText:'Ficha de presentación'},type:1}]
 	
 imageMsg = (await samu330.prepareMessageMedia(fs.readFileSync(`./src/dreams.jpg`), 'imageMessage', {thumbnail: fs.readFileSync(`./src/dreams.jpg`)})).imageMessage	
@@ -320,7 +320,7 @@ buttons: buttons1,
 headerType: 4
 }
 	
-prep = await samu330.prepareMessageFromContent(mdata.id, {buttonsMessage})
+prep = await samu330.prepareMessageFromContent(from, {buttonsMessage})
 samu330.relayWAMessage(prep)
 	
 /**
