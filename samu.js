@@ -5294,7 +5294,7 @@ buttons: buttons1,
 headerType: 4
 }
 
-samu330.sendMessage(from, buttonMessages, MessageType.buttonsMessage)
+samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage)
 	
 //prep = await samu330.prepareMessageFromContent(from, {buttonsMessage}, {quoted: ftoko})
 //samu330.relayWAMessage(prep)	
