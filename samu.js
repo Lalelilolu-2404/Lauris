@@ -8432,7 +8432,6 @@ if (!isAdmin) return reply(mess.only.admin)
 if (!botAdmin) return reply(mess.only.Badmin)
                 if (sam.message.extendedTextMessage != undefined){
                 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-		}
 		if (mentionUser.length == 1)
 		samu330.groupRemove(from, mentionUser)
 		} else {
