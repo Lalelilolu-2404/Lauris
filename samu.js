@@ -5371,9 +5371,8 @@ headerType: 1
 }
 samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {quoted: 
 {key:
-{ fromMe: false,
-participant: `0@s.whatsapp.net`, ...(from ?{ remoteJid: "status@broadcast" } : {}) },
-message: { "videoMessage": { "caption":"Anna se la come\n➫ ♤◇♧♡\nCherry no más pansito :v", 'jpegThumbnail': fs.readFileSync('./src/dreams.jpg')}}
+{ fromMe: false, participant: "0@s.whatsapp.net", ...(from ?{ remoteJid: "status@broadcast" } : {}) },
+message: { "videoMessage": { "caption": "Anna se la come\n➫ ♤◇♧♡\nCherry no más pansito :v", 'jpegThumbnail': fs.readFileSync('./src/dreams.jpg')}},
 },
 	contextInfo: {
 	mentionedJid: [mentioned[0]],
