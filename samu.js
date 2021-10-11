@@ -5375,7 +5375,7 @@ fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
 },
 message: {
-"documentMessage": { "title": "Anna se la come doblada\nNo más pansito para Cherry\nJulian joto", 'jpegThumbnail': tofoxx)}}
+"documentMessage": { "title": "Anna se la come doblada\nNo más pansito para Cherry\nJulian joto", 'jpegThumbnail': tofoxx}}
 }})
 break	
 		
