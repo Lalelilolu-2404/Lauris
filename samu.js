@@ -5368,24 +5368,17 @@ contentText: joder,
 footerText: `Denle una paloma a Anna o los folla xd\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`,
 buttons: buttons1,
 headerType: 1
-}
+}	
 samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {quoted:
 { key: {
 fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
 },
 message: {
-"documentMessage": { "title": "Anna se la come doblada\nNo más pansito para Cherry\nJulian joto", 'jpegThumbnail': tofoxx}}
+"documentMessage": { "title": "Anna se la come doblada\nNo más pansito para Cherry\nJulian joto", 'jpegThumbnail': fs.readFileSync('./src/dreams.jpg')}}
 }})
 break	
-		
-key:
-{ fromMe: false,
-participant: `0@s.whatsapp.net`, ...(from ?
-{ remoteJid: "status@broadcast" } : {}) },
-message: { "videoMessage": { "caption":"⛧⸸⁶Death⁹†\n➫ ♤◇♧♡", 'jpegThumbnail': fs.readFileSync('./src/dreams.jpg')}}
-	
-		
+				
 case 'idioto':
 let amgs = samu330.prepareMessageFromContent(from, {
 buttonMessage:  {
@@ -9742,14 +9735,14 @@ if (isAllaud) {
 		none2d = fs.readFileSync(`./src/stickers2/Gansito${randcd}.webp`)
 		samu330.sendMessage(from, none2d, sticker)
 	} 
-	/**
+	
 	if (body.includes(`Gansitoxxx`) && body.length == 10){
 		for (let i = 0; i < 11; i++){
 		none2d = fs.readFileSync(`./src/stickers2/Gansito${i}.webp`)
 		samu330.sendMessage(from, none2d, sticker)
 		}
 	} 
-	**/
+	
 }
 if (!isOwner){	
 if (!isAllaud) return
