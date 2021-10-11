@@ -280,7 +280,7 @@ ppimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 }
 let buff = await getBuffer(ppimg)
 thu = await samu330.getStatus(anu.participants[0], MessageType.text)
-const bienv =`Bienvenido a : 〘 ${mdata.subject} 〙
+bienv =`Bienvenido a : 〘 ${mdata.subject} 〙
 ╔═══════════════════
 ╠≽️ Nick : @${num.split('@')[0]}
 ╠≽️ Número : ${num.split('@')[0]}
@@ -291,26 +291,19 @@ _Reglas del BOT_: ${prefix}reglas
 _Reglas del Grupo_: ${prefix}rules`
 try {
 //exec(`magick './src/wel.jpg' -gravity west -fill '#00FFFF' -font './src/font-gue.ttf' -size 1280x710 -pointsize 75 -interline-spacing 7.5 -annotate +460-45 '${pushnem}' -pointsize 35 -annotate +460+83 '${jm} ${calender}' -pointsize 50 -annotate +460+200 'Bienvenido a ${mdata.subject}' '${ppimg}' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'hamsil.jpg'`)
-samu330.sendMessage(mdata.id, buff, MessageType.imagen, {quoted: {key: {
+samu330.sendMessage(mdata.id, buff, MessageType.imagen, {quoted: { 
+key: {                
 fromMe: false,
-participant: `0@s.whatsapp.net`          
-},                               
-message: {                         
-"productMessage": {
-"product": {
-"productImage":{          
-"mimetype": "image/jpeg",             
-"jpegThumbnail": fs.readFileSync(`./src/fake.jpg`)           
-},                                
-"title": `*「 ${mdata.subject} 」*`,
-"description": "",                
-"currencyCode": "SYP",                  
-"priceAmount1000": "999999999999999999",
-"retailerId": "",
-"productImageCount": 999
-},                          
-"businessOwnerJid": `0@s.whatsapp.net`
-}}}, caption: `Hola, @${num.split('@')[0]},\n${bienv}\n\n_Sigue las reglas y manten una formalidad respetuosa_`, contextInfo: { mentionedJid: [num] }})
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+},
+message: {
+"imageMessage": {
+"mimetype": "image/jpeg",
+"caption": `➫「 ${mdata.subject} 」`,
+'jpegThumbnail': fs.readFileSync('./src/dreams.jpg')}}
+},	
+caption: `Hola, @${num.split('@')[0]},\n${bienv}\n\n_Sigue las reglas y manten una formalidad respetuosa_`, 
+contextInfo: { mentionedJid: [num]}})
 } catch {	
 samu330.sendMessage(mdata.id, buff, MessageType.image, {caption: `Hola, @${num.split('@')[0]},\n${bienv}\n\n_Sigue las reglas y manten una formalidad respetuosa_\n\n${mdata.desc}`, contextInfo: {"mentionedJid": [num]}})
 }
@@ -8858,7 +8851,8 @@ if (!botAdmin) return reply(mess.only.Badmin)
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid		
 try {
 if (isQuotedMsg) {
-samu330.groupAdd(from, Mentioned[0])
+num = `${mentioned[0]}`
+samu330.groupAdd(from, [num])
 } else {
 num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
 samu330.groupAdd(from, [num])
