@@ -5263,7 +5263,7 @@ buttons1 = [{buttonId:`RulesB`,buttonText:{displayText: 'Reglas/Bot'},type:1},
 buff = fs.readFileSync(`./src/dreams.jpg`)
 	
 //imageMsg = (await samu330.prepareMessageMedia(fs.readFileSync(`./src/dreams.jpg`), 'imageMessage', {thumbnail: fs.readFileSync(`./src/dreams.jpg`)})).imageMessage	
-//imageMsg = (await samu330.prepareMessageMedia(buff, 'imageMessage', {thumbnail: buff})).imageMessage
+imageMsg = (await samu330.prepareMessageMedia(buff, 'imageMessage', {thumbnail: buff})).imageMessage
 	
 buttonsMessage = {
 contentText: bienv,
