@@ -5264,7 +5264,7 @@ buttons1 = [{buttonId:`RulesB`,buttonText:{displayText:'Reglas/Bot'},type:1},
 //let buffzz = fs.readFileSync(`./src/dreams.jpg`)
 	
 //imageMsg = (await samu330.prepareMessageMedia(fs.readFileSync(`./src/dreams.jpg`), 'imageMessage', {thumbnail: fs.readFileSync(`./src/dreams.jpg`)})).imageMessage	
-imageMsg = (await samu330.prepareMessageMedia(fs.readFileSync(`./src/dreams.jpg`), 'imageMessage', {thumbnail: fs.readFileSync(`./src/dreams.jpg`)})).imageMessage
+imageMsg = (await samu330.prepareMessageMedia(fs.readFileSync(`./src/dreams.jpg`), 'imageMessage', {thumbnail: fs.readFileSync(`./src/simi.jpg`)})).imageMessage
 	
 buttonsMessage = {
 contentText: joder,
