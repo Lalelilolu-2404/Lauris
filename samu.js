@@ -5277,6 +5277,48 @@ prep = await samu330.prepareMessageFromContent(from, {buttonsMessage}, {quoted: 
 samu330.relayWAMessage(prep)	
 break
 		
+case 'coño':
+joder = `╠≽️ Legal : Si hay pelito no hay delito`
+buttons1 = [{buttonId:`RulesB`,buttonText:{displayText:'Reglas/Bot'},type:1}, 
+	    {buttonId:`FichaB`,buttonText:{displayText:'Ficha de presentación'},type:1}]
+buffzz = fs.readFileSync(`./src/simi.jpg`)
+	
+//imageMsg = (await samu330.prepareMessageMedia(fs.readFileSync(`./src/dreams.jpg`), 'imageMessage', {thumbnail: fs.readFileSync(`./src/dreams.jpg`)})).imageMessage	
+imageMsg = (await samu330.prepareMessage(from, buffzz, image))
+	
+buttonsMessage = {
+imageMessage: imageMsg.message.imageMessage,
+contentText: joder,
+footerText: `Denle una paloma a Anna o los folla xd\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`,
+buttons: buttons1,
+headerType: 4
+}
+
+samu330.sendMessage(from, buttonMessages, MessageType.buttonsMessage)
+	
+//prep = await samu330.prepareMessageFromContent(from, {buttonsMessage}, {quoted: ftoko})
+//samu330.relayWAMessage(prep)	
+break		
+/**		
+const teksyy =`╠≽️ Legal : Si hay pelito no hay delito`
+let buffxy = fs.readFileSync(`./src/dreams.jpg`)
+sendButImage(from, `${teksyy}`, `ᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buffxy,
+[{buttonId: 'lau1', buttonText: {displayText: 'Dar comida a Anna'}, type: 1},
+{buttonId: 'lau2', buttonText: {displayText: 'Dar pansito a Cherry'}, type: 1}], {contextInfo: {"mentionedJid": [mentioned[0]]}})		
+		
+		const sendButImage = async(id, text1, desc1, gam1, but = [], options = {}) => {
+		kma = gam1
+		mhan = await samu330.prepareMessage(from, kma, image)
+		const buttonMessages = {
+		imageMessage: mhan.message.imageMessage,
+		contentText: text1,
+		footerText: desc1,
+		buttons: but,
+		headerType: 4
+		}
+		samu330.sendMessage(id, buttonMessages, MessageType.buttonsMessage, options)
+		}		
+**/		
 case 'idioto':
 let amgs = samu330.prepareMessageFromContent(from, {
 buttonMessage:  {
