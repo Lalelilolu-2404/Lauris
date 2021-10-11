@@ -309,7 +309,7 @@ try {
 samu330.sendMessage(mdata.id, buff, MessageType.imagen, {quoted: { 
 key: {                
 fromMe: false,
-participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+participant: `0@s.whatsapp.net`
 },
 message: {
 "imageMessage": {
