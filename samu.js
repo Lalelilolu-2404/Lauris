@@ -5332,8 +5332,7 @@ buffzz = fs.readFileSync(`./src/nsfw.jpg`)
 		"degreesLongitude": 0,
 		"jpegThumbnail": buffzz
 		}
-mhan = await samu330.prepareMessage(from, buffzz, location)
-	
+mhan = await samu330.prepareMessage(from, buffzz, location)	
 buttonsMessage = {
 locationMessage: loc,
 contentText: joder,
@@ -5342,6 +5341,8 @@ buttons: buttons1,
 headerType: 6
 }
 
+samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {quoted: ftoko})		
+/**		
 samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {
 	contextInfo: {
 	mentionedJid: [mentioned[0]],
@@ -5350,7 +5351,36 @@ samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {
 	body: 'Présentate o ban :v',
 	thumbnail : tofoxx}}}
 		   )
-break						
+**/
+break	
+		
+case 'jotito':
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+try {
+ppimg = await samu330.getProfilePicture(mentioned[0])
+} catch {
+ppimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
+}
+tofoxx = await getBuffer(ppimg)
+joder = `╠≽️ Nick : @${mentioned[0].split('@')[0]}\n╠≽️ Legal : Si hay pelito no hay delito`
+buttons1 = [{buttonId:`RulesB`,buttonText:{displayText:'Reglas/Bot'},type:1}, 
+	    {buttonId:`FichaB`,buttonText:{displayText:'Ficha de presentación'},type:1}]
+		
+buttonsMessage = {
+contentText: joder,
+footerText: `Denle una paloma a Anna o los folla xd\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`,
+buttons: buttons1,
+headerType: 1
+}
+samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {
+	contextInfo: {
+	mentionedJid: [mentioned[0]],
+	externalAdReply :{
+	title: `「 Un Gansito xd 」`, 
+	body: 'Présentate o ban :v',
+	thumbnail : tofoxx}}}
+		   )
+break		
 		
 case 'idioto':
 let amgs = samu330.prepareMessageFromContent(from, {
