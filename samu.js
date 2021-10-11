@@ -5340,9 +5340,7 @@ footerText: `Denle una paloma a Anna o los folla xd\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠ
 buttons: buttons1,
 headerType: 6
 }
-
-samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {quoted: ftoko})		
-/**		
+		
 samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {
 	contextInfo: {
 	mentionedJid: [mentioned[0]],
@@ -5351,7 +5349,6 @@ samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {
 	body: 'Présentate o ban :v',
 	thumbnail : tofoxx}}}
 		   )
-**/
 break	
 		
 case 'jotito':
@@ -5363,8 +5360,8 @@ ppimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 }
 tofoxx = await getBuffer(ppimg)
 joder = `╠≽️ Nick : @${mentioned[0].split('@')[0]}\n╠≽️ Legal : Si hay pelito no hay delito`
-buttons1 = [{buttonId:`RulesB`,buttonText:{displayText:'Reglas/Bot'},type:1}, 
-	    {buttonId:`FichaB`,buttonText:{displayText:'Ficha de presentación'},type:1}]
+buttons1 = [{buttonId:`RulesB`,buttonText:{displayText:'Reglas'},type:1}, 
+	    {buttonId:`FichaB`,buttonText:{displayText:'Ficha'},type:1}]
 		
 buttonsMessage = {
 contentText: joder,
@@ -5372,7 +5369,7 @@ footerText: `Denle una paloma a Anna o los folla xd\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠ
 buttons: buttons1,
 headerType: 1
 }
-samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {
+samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {quoted: fdreams,
 	contextInfo: {
 	mentionedJid: [mentioned[0]],
 	externalAdReply :{
