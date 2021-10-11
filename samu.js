@@ -5360,8 +5360,8 @@ ppimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 }
 tofoxx = await getBuffer(ppimg)
 joder = `╠≽️ Nick : @${mentioned[0].split('@')[0]}\n╠≽️ Legal : Si hay pelito no hay delito`
-buttons1 = [{buttonId:`RulesB`,buttonText:{displayText:`ᴿᵉᵍˡᵃˢ\nᵈᵉˡ ᴮᵒᵗ`},type:1}, 
-	    {buttonId:`FichaB`,buttonText:{displayText:`ᶠᶦᶜʰᵃ ᵈᵉ\nᵖʳᵉˢᵉⁿᵗᵃᶜᶦᵒⁿ`},type:1}]
+buttons1 = [{buttonId:`RulesB`,buttonText:{displayText:`ᴿᵉᵍˡᵃˢ ᵈᵉˡ ᴮᵒᵗ`},type:1}, 
+	    {buttonId:`FichaB`,buttonText:{displayText:`ᶠᶦᶜʰᵃ ᵈᵉ ᵖʳᵉˢᵉⁿᵗᵃᶜᶦᵒⁿ`},type:1}]
 		
 buttonsMessage = {
 contentText: joder,
@@ -5369,14 +5369,14 @@ footerText: `Denle una paloma a Anna o los folla xd\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠ
 buttons: buttons1,
 headerType: 1
 }	
-samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {quoted:
-{ key: {
-fromMe: false,
-participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
-},
-message: {
-"documentMessage": { "title": "Anna se la come doblada\nNo más pansito para Cherry\nJulian joto", 'jpegThumbnail': fs.readFileSync('./src/dreams.jpg')}}
-}})
+samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {
+	contextInfo: {
+	mentionedJid: [mentioned[0]],
+	externalAdReply :{
+	title: `「 Un Gansito xd 」`, 
+	body: 'Présentate o ban :v',
+	thumbnail : fs.readFileSync(`./src/nsfw.jpg`)}}}
+		   )
 break	
 				
 case 'idioto':
@@ -9735,14 +9735,14 @@ if (isAllaud) {
 		none2d = fs.readFileSync(`./src/stickers2/Gansito${randcd}.webp`)
 		samu330.sendMessage(from, none2d, sticker)
 	} 
-	
+	/**
 	if (body.includes(`Gansitoxxx`) && body.length == 10){
 		for (let i = 0; i < 11; i++){
 		none2d = fs.readFileSync(`./src/stickers2/Gansito${i}.webp`)
 		samu330.sendMessage(from, none2d, sticker)
 		}
 	} 
-	
+	**/
 }
 if (!isOwner){	
 if (!isAllaud) return
