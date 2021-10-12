@@ -3672,20 +3672,20 @@ samu330.updatePresence(from, Presence.composing)
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 stpan = fs.readFileSync(`./src/stickers2/Cumear.webp`)	
 var Cumxxx = await getNamexx(mentioned[0])
-const txtpan = `${pushname} cumea a ${Cumxxx} 🥵`
+const txtcum = `${pushname} cumea a ${Cumxxx} 🥵`
 if (mentioned.length !== 0){
 samu330.sendMessage(from, stpan, sticker, {quoted:
 { key: {					   
 fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) },
-message: { "videoMessage": { "caption": `${txtpan}\nUfff`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}	
+message: { "videoMessage": { "caption": `${txtcum}\nUfff`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}	
 }})
 } else if (isQuotedMsg) {
 samu330.sendMessage(from, stpan, sticker, {quoted:
 { key: {					   
 fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) },
-message: { "videoMessage": { "caption": `${txtpan}\nUfff`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}	
+message: { "videoMessage": { "caption": `${txtcum}\nUfff`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}	
 }})	
 } 
 addFilter(from)
@@ -3701,20 +3701,20 @@ mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 randp = Math.floor(Math.random() * 7)
 stpan = fs.readFileSync(`./src/stickers2/Follar${randp}.webp`)		
 var Cumxxx = await getNamexx(mentioned[0])
-const txtpan = `${pushname} se está follando a ${Cumxxx} 🥵`
+const txtfoll = `${pushname} se está follando a ${Cumxxx} 🥵`
 if (mentioned.length !== 0){
 samu330.sendMessage(from, stpan, sticker, {quoted:
 { key: {					   
 fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) },
-message: { "videoMessage": { "caption": `${txtpan}\nUfff`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}	
+message: { "videoMessage": { "caption": `${txtfoll}\nUfff`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}	
 }})
 } else if (isQuotedMsg) {
 samu330.sendMessage(from, stpan, sticker, {quoted:
 { key: {					   
 fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) },
-message: { "videoMessage": { "caption": `${txtpan}\nUfff`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}	
+message: { "videoMessage": { "caption": `${txtfoll}\nUfff`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}	
 }})	
 } 
 addFilter(from)
@@ -3730,20 +3730,20 @@ mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 randp = Math.floor(Math.random() * 9)
 stpan = fs.readFileSync(`./src/stickers2/Lepega${randp}.webp`)		
 var Cumxxx = await getNamexx(mentioned[0])
-const txtpan = `${pushname} le dió un putazo a ${Cumxxx}`
+const txtpegar = `${pushname} le dió un putazo a ${Cumxxx}`
 if (mentioned.length !== 0){
 samu330.sendMessage(from, stpan, sticker, {quoted:
 { key: {					   
 fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) },
-message: { "videoMessage": { "caption": `${txtpan}\nUfff`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}	
+message: { "videoMessage": { "caption": `${txtpegar}\nXd`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}	
 }})
 } else if (isQuotedMsg) {
 samu330.sendMessage(from, stpan, sticker, {quoted:
 { key: {					   
 fromMe: false,
 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) },
-message: { "videoMessage": { "caption": `${txtpan}\nUfff`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}	
+message: { "videoMessage": { "caption": `${txtpegar}\nXd`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}	
 }})	
 } 
 addFilter(from)
