@@ -3597,7 +3597,7 @@ samu330.sendMessage(from, teks, MessageType.text, {
 	quoted: {
 		key: {
 			remoteJid: `5491165204676-1630035714@g.us`,
-                        fromMe: true, 
+                        fromMe: false, 
                     },
                     message: {
                         "imageMessage": {
@@ -5376,8 +5376,8 @@ break
 		
 case 'dream':
 joder =`Hola ${pushname}\nAnna se la come doblada\Uff rico`	
-buttons1 = [{buttonId:`${prefix}testbut`,buttonText:{displayText:'Oui'},type:1}, 
-	    {buttonId:`${prefix}failbut`,buttonText:{displayText:'Nou'},type:1}]
+buttons1 = [{buttonId:`RulesB`,buttonText:{displayText:'R-Bot'},type:1}, 
+	    {buttonId:`FichaB`,buttonText:{displayText:'Ficha-P'},type:1}]
 //let buffzz = fs.readFileSync(`./src/dreams.jpg`)
 	
 //imageMsg = (await samu330.prepareMessageMedia(fs.readFileSync(`./src/dreams.jpg`), 'imageMessage', {thumbnail: fs.readFileSync(`./src/dreams.jpg`)})).imageMessage	
@@ -5393,15 +5393,7 @@ headerType: 4
 prep = await samu330.prepareMessageFromContent(from, {buttonsMessage}, {quoted: ftoko})
 samu330.relayWAMessage(prep)	
 break
-	
-case 'testbut':
-reply('Si funciona perro :3')
-break
-		
-case 'failbut':
-reply(`No funciona perro :'c`)
-break
-		
+			
 case 'coño':
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 try {
@@ -5411,10 +5403,10 @@ ppimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 }
 tofoxx = await getBuffer(ppimg)
 
-
 joder = `╠≽️ Nick : @${mentioned[0].split('@')[0]}\n╠≽️ Legal : Si hay pelito no hay delito`
-buttons1 = [{buttonId:`RulesB`,buttonText:{displayText:'R-Bot'},type:1}, 
-	    {buttonId:`FichaB`,buttonText:{displayText:'Ficha-P'},type:1}]
+buttons1 = [{buttonId:`${prefix}testbut`,buttonText:{displayText:'Oui'},type:1}, 
+	    {buttonId:`${prefix}failbut`,buttonText:{displayText:'Nou'},type:1}]
+
 buffzz = fs.readFileSync(`./src/simi.jpg`)
 	
 //imageMsg = (await samu330.prepareMessageMedia(fs.readFileSync(`./src/dreams.jpg`), 'imageMessage', {thumbnail: fs.readFileSync(`./src/dreams.jpg`)})).imageMessage	
@@ -5440,6 +5432,14 @@ samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {
 //prep = await samu330.prepareMessageFromContent(from, {buttonsMessage}, {quoted: ftoko})
 //samu330.relayWAMessage(prep)	
 break	
+		
+case 'testbut':
+reply('Si funciona perro :3')
+break
+		
+case 'failbut':
+reply(`No funciona perro :'c`)
+break
 		
 case 'kevxxx':
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
