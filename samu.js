@@ -5369,6 +5369,10 @@ case 'baka':
                prep = await samu330.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftoko})
                samu330.relayWAMessage(prep)
 break
+		
+case 'fakeimg':
+samu330.sendMessage(from, fs.readFileSync('./src/nsfw.jpg'), image, {thumbnail: fs.readFileSync('./src/dreams.jpg'), quoted: fimg,caption:`Uhm, estofado :v` })
+break
 	
 case 'testbut':
 reply('Si funciona perro :3')
