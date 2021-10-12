@@ -290,8 +290,7 @@ bienv =`Bienvenido a : 〘 ${mdata.subject} 〙
 _Reglas del Grupo_: ${prefix}rules
 _*Saluda con un Hola, o serás funado xd*_
 
-Sigue las reglas y manten una formalidad respetuosa.
-`
+Sigue las reglas y manten una formalidad respetuosa.`
 
 try {
 //exec(`magick './src/wel.jpg' -gravity west -fill '#00FFFF' -font './src/font-gue.ttf' -size 1280x710 -pointsize 75 -interline-spacing 7.5 -annotate +460-45 '${pushnem}' -pointsize 35 -annotate +460+83 '${jm} ${calender}' -pointsize 50 -annotate +460+200 'Bienvenido a ${mdata.subject}' '${ppimg}' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'hamsil.jpg'`)
@@ -3280,8 +3279,8 @@ case 'rollwaifu':
 if (!isLalelilolu) return reply('Nel perro :v')
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg}) 			  
-	k = Math.floor(Math.random() * _waifus.length)
-	namastc = `${k.replace(_waifus)}`
+	let k = Math.floor(Math.random() * _waifus.length)
+	namastc = `${_waifus[0]}`
 	try {
 	buffer = fs.readFileSync(`./temp/foto/${namastc}.jpeg`)
 	samu330.sendMessage(from, buffer, image, { quoted: fimg, caption: `💎 _*${namastc}*_ 💠`})
