@@ -5446,8 +5446,7 @@ tofoxx = await getBuffer(ppimg)
 joder = `╠≽️ Nick : @${mentioned[0].split('@')[0]}\n╠≽️ Legal : Si hay pelito no hay delito`
 buttons1 = [{buttonId:`RulesBot`,buttonText:{displayText:'R-Bot'},type:1}, 
 	    {buttonId:`GDesc`,buttonText:{displayText:'G-Desc'},type:1},
-	    {buttonId:`FichaBot`,buttonText:{displayText:'Ficha-P'},type:1},
-	    {buttonId:`xx2`,buttonText:{displayText:'Hola'},type:1}]
+	    {buttonId:`FichaBot`,buttonText:{displayText:'Ficha-P'},type:1}]
 buffzz = fs.readFileSync(`./src/nsfw.jpg`)
 	loc = {
 		"degreesLatitude": 0,
@@ -5463,14 +5462,7 @@ buttons: buttons1,
 headerType: 6
 }
 		
-samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {
-	contextInfo: {
-	mentionedJid: [mentioned[0]],
-	externalAdReply :{
-	title: `「 Un Gansito xd 」`, 
-	body: 'Présentate o ban :v',
-	thumbnail : tofoxx}}}
-		   )
+samu330.sendMessage(from, buttonsMessage, MessageType.buttonsMessage, {contextInfo: {mentionedJid: [mentioned[0]]}})
 break	
 		
 case 'jotito':
