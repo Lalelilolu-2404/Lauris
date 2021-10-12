@@ -301,7 +301,7 @@ buttons1 = [{buttonId:`RulesBot`,buttonText:{displayText:'Reglas/Bot'},type:1},
 		"degreesLongitude": 0,
 		"jpegThumbnail": buff
 		}
-mhan = await samu330.prepareMessage(from, buff, location)	
+mhan = await samu330.prepareMessage(mdata.id, buff, location)	
 buttonsMessage = {
 locationMessage: loc,
 contentText: bienv,
