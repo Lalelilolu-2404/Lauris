@@ -287,15 +287,17 @@ bienv =`Bienvenido a : 〘 ${mdata.subject} 〙
 ╠≽️ Legal : Si hay pelito no hay delito
 ╚═══════════════════
 
-Sigue las reglas y manten una formalidad respetuosa.
+_Reglas del Grupo_: ${prefix}rules
+_*Saluda con un Hola, o serás funado xd*_
 
-${mdata.desc}`
+Sigue las reglas y manten una formalidad respetuosa.
+`
 
 try {
 //exec(`magick './src/wel.jpg' -gravity west -fill '#00FFFF' -font './src/font-gue.ttf' -size 1280x710 -pointsize 75 -interline-spacing 7.5 -annotate +460-45 '${pushnem}' -pointsize 35 -annotate +460+83 '${jm} ${calender}' -pointsize 50 -annotate +460+200 'Bienvenido a ${mdata.subject}' '${ppimg}' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'hamsil.jpg'`)
 
-buttons1 = [{buttonId:`RulesBot`,buttonText:{displayText:`ᴿᵉᵍˡᵃˢ ᵈᵉˡ ᴮᵒᵗ`},type:1}, 
-	    {buttonId:`FichaBot`,buttonText:{displayText:`ᶠᶦᶜʰᵃ ᵈᵉ ᵖʳᵉˢᵉⁿᵗᵃᶜᶦᵒⁿ`},type:1}]
+buttons1 = [{buttonId:`RulesBot`,buttonText:{displayText:`ᴿ'ᴮᵒᵗ`},type:1}, 
+	    {buttonId:`FichaBot`,buttonText:{displayText:`ᶠᶦᶜʰᵃ'ᵖ`},type:1}]
 	loc = {
 		"degreesLatitude": 0,
 		"degreesLongitude": 0,
@@ -1659,13 +1661,6 @@ Ya que algunas tardan en realizarse.\n\n6- _*IMPORTANTE!!!*_\nEscribe bien los c
 			}
 			}	    
 	    
-			if (sam.message.buttonsResponseMessage){
-				test = sam.message.buttonsResponseMessage.selectedButtonId
-				if (test.includes(`GDesc`)){
-			mdata = await samu330.groupMetadata(from)
-reply(`_*Bienvenido a 「 ${mdata.subject} 」*_\n\n${mdata.desc}`)
-			}
-			}
 	    		if (sam.message.buttonsResponseMessage){
 				test = sam.message.buttonsResponseMessage.selectedButtonId
 				if (test.includes(`FichaBot`)){
@@ -5444,9 +5439,8 @@ ppimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 }
 tofoxx = await getBuffer(ppimg)
 joder = `╠≽️ Nick : @${mentioned[0].split('@')[0]}\n╠≽️ Legal : Si hay pelito no hay delito`
-buttons1 = [{buttonId:`RulesBot`,buttonText:{displayText:'R-Bot'},type:1}, 
-	    {buttonId:`GDesc`,buttonText:{displayText:'G-Desc'},type:1},
-	    {buttonId:`FichaBot`,buttonText:{displayText:'Ficha-P'},type:1}]
+buttons1 = [{buttonId:`RulesB`,buttonText:{displayText:'R-Bot'},type:1}, 
+	    {buttonId:`FichaB`,buttonText:{displayText:'Ficha-P'},type:1}]
 buffzz = fs.readFileSync(`./src/nsfw.jpg`)
 	loc = {
 		"degreesLatitude": 0,
