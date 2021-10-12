@@ -8961,21 +8961,22 @@ file = await samu330.downloadAndSaveMediaMessage(mediatag, filename = getRandom(
 value = args.join(" ")
 var groupxx = await samu330.groupMetadata(from)
 var member = groupxx['participants']
-var mem = []
+var memx = []
 member.map(async adm => {
-mem.push(adm.id.replace('c.us', 's.whatsapp.net'))
+memx.push(adm.id.replace('c.us', 's.whatsapp.net'))
 })
-var options = {
-contextInfo: { mentionedJid: mem },
+var optionsx = {
+contextInfo: { mentionedJid: memx },
 quoted: fimg
 }
 ini_buffer = fs.readFileSync(file)
 //samu330.sendMessage(from, ini_buffer, image, options)
 		
-sendButImage(from, `Rico? Turbio?\nMejor leer las sagradas escrituras xd`, `No hay Gansitos :'c\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, ini_buffer,
+sendButImage(from, `Rico? Turbio?\nMejor leer las sagradas escrituras xd`, 
+	     `No hay Gansitos :'c\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, ini_buffer,
 				[{buttonId: 'tagimgxx', buttonText: {displayText: 'Rico :3'}, type: 1},
 				{buttonId: 'tagimgyy', buttonText: {displayText: 'Turbio :x'}, type: 1}], 
-				options)			
+				optionsx)			
 fs.unlinkSync(file)
 break		
 		
