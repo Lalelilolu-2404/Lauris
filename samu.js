@@ -3235,7 +3235,7 @@ const nbimg = q
 	fs.writeFileSync(`./temp/foto/${nbimg}.jpeg`, wors)
 	fs.writeFileSync('./temp/waifus.json', JSON.stringify(_waifus))
 setTimeout(() => {
-samu330.sendMessage(from, `Usa ${prefix}listimg para ver las waifus`, MessageType.text, { quoted: fimg})
+samu330.sendMessage(from, `*⌜Hecho ⛥⌟*`, MessageType.text, { quoted: fimg})
 }, 1000)
 addFilter(from)
 break
@@ -3259,7 +3259,7 @@ if (!isLalelilolu) return reply('Nel perro :v')
 	fs.unlinkSync(`./temp/foto/${svst}.jpeg`)
 	fs.writeFileSync('./temp/waifus.json', JSON.stringify(_waifus))
 setTimeout(() => {
-samu330.sendMessage(from, `Usa ${prefix}listimg para ver las waifus`, MessageType.text, { quoted: fimg})
+samu330.sendMessage(from, `*⌜Hecho ⛥⌟*`, MessageType.text, { quoted: fimg})
 }, 1000)	
 break	
 
