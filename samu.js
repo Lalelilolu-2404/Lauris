@@ -294,8 +294,8 @@ ${mdata.desc}`
 try {
 //exec(`magick './src/wel.jpg' -gravity west -fill '#00FFFF' -font './src/font-gue.ttf' -size 1280x710 -pointsize 75 -interline-spacing 7.5 -annotate +460-45 '${pushnem}' -pointsize 35 -annotate +460+83 '${jm} ${calender}' -pointsize 50 -annotate +460+200 'Bienvenido a ${mdata.subject}' '${ppimg}' -resize %[fx:t?u.w*0.2:u.w]x%[fx:?u.h*0.2:u.h] -gravity center -geometry -430+70 -composite 'hamsil.jpg'`)
 
-buttons1 = [{buttonId:`RulesBot`,buttonText:{displayText:'Reglas/Bot'},type:1}, 
-	    {buttonId:`FichaBot`,buttonText:{displayText:'Ficha de presentación'},type:1}]
+buttons1 = [{buttonId:`RulesBot`,buttonText:{displayText:`ᴿᵉᵍˡᵃˢ ᵈᵉˡ ᴮᵒᵗ`},type:1}, 
+	    {buttonId:`FichaBot`,buttonText:{displayText:`ᶠᶦᶜʰᵃ ᵈᵉ ᵖʳᵉˢᵉⁿᵗᵃᶜᶦᵒⁿ`},type:1}]
 	loc = {
 		"degreesLatitude": 0,
 		"degreesLongitude": 0,
@@ -1655,7 +1655,8 @@ reply(`${_0x4dab[8]}${test[_0x4dab[7]](_0x4dab[4])}${_0x4dab[9]}${orlist[_0x4dab
 				test = sam.message.buttonsResponseMessage.selectedButtonId
 				if (test.includes(`RulesBot`)){
 			mdata = await samu330.groupMetadata(from)
-			reply(`_*「 Hola, @${pushname} 」*_\n\n${mdata.desc}`)
+reply(`_*Bienvenido a 「 ${mdata.subject} 」*_\n\n_*Estas son la reglas para el uso del Bot :*_\n\n1- No hablar ni pedir comandos en privado, al Bot.\n2- No etiquetar ni desafiar al Bot en los juegos.\n3- _*❌No hagas spam de comandos❌*_\nEsto es enserio, el Bot puede saturarse y desconectarse.\n4- _*📵No hagas llamadas al BOT📵*_\nSerás bloqueado inmediatamente.\n5- _🕐Espera el tiempo nesesario cuando pidas alguna funcion. 
+Ya que algunas tardan en realizarse.\n\n6- _*IMPORTANTE!!!*_\nEscribe bien los commandos : *${prefix}comando*\n*(Ningún espacio entre el prefijo y el comando en minúscula)*\n\n*Lee bien las reglas y cúmplelas, no te quieras pasar de pendejo o serás baneado del uso de BOT.*`)
 			}
 			}	    
 	    
