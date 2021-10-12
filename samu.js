@@ -1650,7 +1650,6 @@ reply(`${_0x4dab[8]}${test[_0x4dab[7]](_0x4dab[4])}${_0x4dab[9]}${orlist[_0x4dab
 	    
 //////
     
-
 			if (sam.message.buttonsResponseMessage){
 				test = sam.message.buttonsResponseMessage.selectedButtonId
 				if (test.includes(`RulesBot`)){
@@ -1660,6 +1659,13 @@ Ya que algunas tardan en realizarse.\n\n6- _*IMPORTANTE!!!*_\nEscribe bien los c
 			}
 			}	    
 	    
+			if (sam.message.buttonsResponseMessage){
+				test = sam.message.buttonsResponseMessage.selectedButtonId
+				if (test.includes(`GDesc`)){
+			mdata = await samu330.groupMetadata(from)
+reply(`_*Bienvenido a 「 ${mdata.subject} 」*_\n\n${mdata.desc}`)
+			}
+			}
 	    		if (sam.message.buttonsResponseMessage){
 				test = sam.message.buttonsResponseMessage.selectedButtonId
 				if (test.includes(`FichaBot`)){
@@ -2475,7 +2481,8 @@ break
 
 case 'forme':
 const morestickx = ["Abasho", "Lean las reglas", "Nel mijo", "Se la coge", "Soy inevitable", "Le mete el brazo", "Pum", "Semen", "No viste nada", "Fbi", "X el chikito", "Xd", 
-		    "Comida de Anna", "Nel pastel", "Despreciox", "Se relaja", "Colitax", "Gansito", "La penetra", "Dejen momir"]	
+		    "Comida de Anna", "Nel pastel", "Despreciox", "Se relaja", "Colitax", "Gansito", "La penetra", "Dejen momir", "Bienvenido", "No tengo sueño", 
+		    "Angry", "Sexosexo", "Fuera ctmr"]	
 
 const onlyme = ["69", "Ahohsi", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "Amistad", "Anna", "Amm", "Anni", "Así me gusta", "Asustado", "Ay caramba", "Ay me asusté", 
 		"Ban", "Báñate", "Besos", "Bien", "Bragas", "Buen culo", "Buenas noches", "Bye", "C rasca", "Cállate", "Cc", "Chelitas", "Chongo", "Colita", "Colitaxxx", 
@@ -3221,24 +3228,10 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
 	})
 addFilter(from)
 addLevelingXp(sender, 20)
-break
-/**	
-case 'rollwaifu':
-if (!isGroup) return reply(mess.only.group)
-if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg}) 			  
-	buffer = await getBuffer(`https://bx-hunter.herokuapp.com/api/sfw/neko?apikey=Ikyy69`)
-	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Nekos :3*_ 💠', quoted: fimg})
-	.catch(err => {
-	return('Pwrdon... T_T')
-	})
-event.push(buffer)
-fs.writeFileSync('./database/event.json', JSON.stringify(event))
-fs.writeFileSync(``, JSON.stringify(event))
-samu330.sendMessage(from, `Para obtener la waifu debes etiquetarla y escribir ${prefix}claim`, MessageType.text)            
-addFilter(from)
-break		
-**/
-case 'addimg':		  
+break	
+
+case 'addimg':	
+if (!isLalelilolu) return reply('Nel perro :v')
 if (!isQuotedImage) return reply('Responde una imagen')
 if (args.length < 1) return reply('Nombre de la imagen')
 const nbimg = q
@@ -3262,7 +3255,8 @@ case 'delimg':
 	samu330.sendMessage(from, `Usa ${prefix}listimg para ver las waifus`, MessageType.text, { quoted: fimg})
 break
 **/
-case 'delimg':		  
+case 'delimg':	
+if (!isLalelilolu) return reply('Nel perro :v')
 	let svst = body.slice(8)
 	if (!svst) return reply('Nombre de la imagen')
 	let posimg = _waifus.lastIndexOf(svst)
@@ -3275,7 +3269,8 @@ samu330.sendMessage(from, `Usa ${prefix}listimg para ver las waifus`, MessageTyp
 }, 1000)	
 break	
 
-case 'getimg':			  
+case 'getimg':	
+if (!isLalelilolu) return reply('Nel perro :v')
 	namastc = body.slice(8)
 	try {
 	buffer = fs.readFileSync(`./temp/foto/${namastc}.jpeg`)
@@ -3284,6 +3279,21 @@ case 'getimg':
 	reply('Paquete no registrado')
 	}
 break
+		
+case 'rw':		
+case 'rollwaifu':
+if (!isLalelilolu) return reply('Nel perro :v')
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg}) 			  
+	k = Math.floor(Math.random() * _waifus.length)
+	namastc = `${k.replace(_waifus)}`
+	try {
+	buffer = fs.readFileSync(`./temp/foto/${namastc}.jpeg`)
+	samu330.sendMessage(from, buffer, image, { quoted: fimg, caption: `💎 _*${namastc}*_ 💠`})
+	} catch {
+	reply('Pwrdon... T_T')
+	}		          
+break	
 
 case 'listimg':		  
 let limg = `Lista de Waifus\nTotal : ${_waifus.length}\n`
@@ -3655,6 +3665,91 @@ addFilter(from)
 addLevelingXp(sender, 20)
 break	
 
+case 'cumear':
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})	
+samu330.updatePresence(from, Presence.composing) 
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+stpan = fs.readFileSync(`./src/stickers2/Cumear.webp`)	
+var Cumxxx = await getNamexx(mentioned[0])
+const txtpan = `${pushname} cumea a ${Cumxxx} 🥵`
+if (mentioned.length !== 0){
+samu330.sendMessage(from, stpan, sticker, {quoted:
+{ key: {					   
+fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) },
+message: { "videoMessage": { "caption": `${txtpan}\nUfff`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}	
+}})
+} else if (isQuotedMsg) {
+samu330.sendMessage(from, stpan, sticker, {quoted:
+{ key: {					   
+fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) },
+message: { "videoMessage": { "caption": `${txtpan}\nUfff`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}	
+}})	
+} 
+addFilter(from)
+addLevelingXp(sender, 20)
+break			
+	
+case 'follar':
+if (!isOwner) return 
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})	
+samu330.updatePresence(from, Presence.composing) 
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+randp = Math.floor(Math.random() * 7)
+stpan = fs.readFileSync(`./src/stickers2/Follar${randp}.webp`)		
+var Cumxxx = await getNamexx(mentioned[0])
+const txtpan = `${pushname} se está follando a ${Cumxxx} 🥵`
+if (mentioned.length !== 0){
+samu330.sendMessage(from, stpan, sticker, {quoted:
+{ key: {					   
+fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) },
+message: { "videoMessage": { "caption": `${txtpan}\nUfff`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}	
+}})
+} else if (isQuotedMsg) {
+samu330.sendMessage(from, stpan, sticker, {quoted:
+{ key: {					   
+fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) },
+message: { "videoMessage": { "caption": `${txtpan}\nUfff`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}	
+}})	
+} 
+addFilter(from)
+addLevelingXp(sender, 20)
+break	
+
+case 'pegar':
+case 'golpear':
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})	
+samu330.updatePresence(from, Presence.composing) 
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+randp = Math.floor(Math.random() * 9)
+stpan = fs.readFileSync(`./src/stickers2/Lepega${randp}.webp`)		
+var Cumxxx = await getNamexx(mentioned[0])
+const txtpan = `${pushname} le dió un putazo a ${Cumxxx}`
+if (mentioned.length !== 0){
+samu330.sendMessage(from, stpan, sticker, {quoted:
+{ key: {					   
+fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) },
+message: { "videoMessage": { "caption": `${txtpan}\nUfff`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}	
+}})
+} else if (isQuotedMsg) {
+samu330.sendMessage(from, stpan, sticker, {quoted:
+{ key: {					   
+fromMe: false,
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {}) },
+message: { "videoMessage": { "caption": `${txtpan}\nUfff`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}	
+}})	
+} 
+addFilter(from)
+addLevelingXp(sender, 20)
+break	
+		
 case 'culear':
 case 'coger':		
 if (!isGroup) return reply(mess.only.group)
@@ -5312,8 +5407,8 @@ tofoxx = await getBuffer(ppimg)
 
 
 joder = `╠≽️ Nick : @${mentioned[0].split('@')[0]}\n╠≽️ Legal : Si hay pelito no hay delito`
-buttons1 = [{buttonId:`RulesB`,buttonText:{displayText:'Reglas/Bot'},type:1}, 
-	    {buttonId:`FichaB`,buttonText:{displayText:'Ficha de presentación'},type:1}]
+buttons1 = [{buttonId:`RulesB`,buttonText:{displayText:'R-Bot'},type:1}, 
+	    {buttonId:`FichaB`,buttonText:{displayText:'Ficha-P'},type:1}]
 buffzz = fs.readFileSync(`./src/simi.jpg`)
 	
 //imageMsg = (await samu330.prepareMessageMedia(fs.readFileSync(`./src/dreams.jpg`), 'imageMessage', {thumbnail: fs.readFileSync(`./src/dreams.jpg`)})).imageMessage	
@@ -5349,8 +5444,10 @@ ppimg = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
 }
 tofoxx = await getBuffer(ppimg)
 joder = `╠≽️ Nick : @${mentioned[0].split('@')[0]}\n╠≽️ Legal : Si hay pelito no hay delito`
-buttons1 = [{buttonId:`RulesB`,buttonText:{displayText:'Reglas/Bot'},type:1}, 
-	    {buttonId:`FichaB`,buttonText:{displayText:'Ficha de presentación'},type:1}]
+buttons1 = [{buttonId:`RulesBot`,buttonText:{displayText:'R-Bot'},type:1}, 
+	    {buttonId:`GDesc`,buttonText:{displayText:'G-Desc'},type:1},
+	    {buttonId:`FichaBot`,buttonText:{displayText:'Ficha-P'},type:1},
+	    {buttonId:`xx2`,buttonText:{displayText:'Hola'},type:1}]
 buffzz = fs.readFileSync(`./src/nsfw.jpg`)
 	loc = {
 		"degreesLatitude": 0,
@@ -5361,7 +5458,7 @@ mhan = await samu330.prepareMessage(from, buffzz, location)
 buttonsMessage = {
 locationMessage: loc,
 contentText: joder,
-footerText: `Denle una paloma a Anna o los folla xd\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`,
+footerText: `Denle una paloma a Anna o los folla xd\nNo más pansito para Cherry\nᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`,
 buttons: buttons1,
 headerType: 6
 }
@@ -9842,7 +9939,8 @@ if (!isAllaud) return
 }
 //////////////	
 const morestick = ["Abasho", "Lean las reglas", "Nel mijo", "Se la coge", "Soy inevitable", "Le mete el brazo", "Pum", "Semen", "No viste nada", "Si.", "No.", "Sexo off", "Sexo on", 
-		   "Fbi", "X el chikito", "Nel pastel", "Desprecio1", "Desprecio2", "Desprecio3", "Se relaja", "Colitax", "La penetra", "Dejen momir", "Bienvenido"]		
+		   "Fbi", "X el chikito", "Nel pastel", "Desprecio1", "Desprecio2", "Desprecio3", "Se relaja", "Colitax", "La penetra", "Dejen momir", "Bienvenido", 
+		   "No tengo sueño", "Angry", "Sexosexo", "Fuera ctmr"]		
 
 if (isOwner){
 if (!isAllaud) return
@@ -9883,7 +9981,7 @@ if (body.includes(`Xd`) && body.length == 2){
 }
 **/
 if (body.includes(`Xd`) && body.length == 2){
-	nkx = Math.floor(Math.random() * 18)
+	nkx = Math.floor(Math.random() * 19)
 	const none = fs.readFileSync(`./temp/Xd${nkx}.webp`)
 	samu330.sendMessage(from, none, MessageType.sticker)
 }		
