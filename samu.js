@@ -3279,8 +3279,8 @@ case 'rollwaifu':
 if (!isLalelilolu) return reply('Nel perro :v')
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg}) 			  
-	let k = Math.floor(Math.random() * _waifus.length)
-	namastc = `${_waifus[0]}`
+	let rwl = Math.floor(Math.random() * _waifus.length)
+	namastc = `${_waifus[rwl]}`
 	try {
 	buffer = fs.readFileSync(`./temp/foto/${namastc}.jpeg`)
 	samu330.sendMessage(from, buffer, image, { quoted: fimg, caption: `💎 _*${namastc}*_ 💠`})
