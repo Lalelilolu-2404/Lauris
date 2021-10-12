@@ -8958,7 +8958,8 @@ if (!isAdmin && !isOwner && !itsMe) return reply(mess.only.admin)
 if (!isQuotedImage && !isImage) return reply(`Lalala... la imagen pedazo de nada? >:/`)
 mediatag = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
 file = await samu330.downloadAndSaveMediaMessage(mediatag, filename = getRandom())
-value = args.join(" ")
+let txttagimg = args.join(" ")
+if (!txttagimg) {txttagimg = `Uwu :3`}
 var groupxx = await samu330.groupMetadata(from)
 var member = groupxx['participants']
 var memx = []
@@ -8972,7 +8973,7 @@ quoted: fimg
 ini_buffer = fs.readFileSync(file)
 //samu330.sendMessage(from, ini_buffer, image, options)
 		
-sendButImage(from, `Rico? Turbio?\nMejor leer las sagradas escrituras xd`, 
+sendButImage(from, `Rico? Turbio?\nMejor leer las sagradas escrituras xd\n${txttagimg}`, 
 	     `No hay Gansitos :'c\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, ini_buffer,
 				[{buttonId: 'tagimgxx', buttonText: {displayText: 'Rico :3'}, type: 1},
 				{buttonId: 'tagimgyy', buttonText: {displayText: 'Turbio :x'}, type: 1}], 
