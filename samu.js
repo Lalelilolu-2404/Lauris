@@ -8951,6 +8951,34 @@ buffer = await samu330.downloadMediaMessage(media)
 await wa.hideTagSticker(from, buffer)
 break
 
+case 'rot':
+case 'ricooturbio':
+if (!isGroup) return await reply(mess.only.group)
+if (!isAdmin && !isOwner && !itsMe) return reply(mess.only.admin)
+if (!isQuotedImage && !isImage) return reply(`Lalala... la imagen pedazo de nada? >:/`)
+mediatag = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
+file = await samu330.downloadAndSaveMediaMessage(mediatag, filename = getRandom())
+value = args.join(" ")
+var groupxx = await samu330.groupMetadata(from)
+var member = groupxx['participants']
+var mem = []
+member.map(async adm => {
+mem.push(adm.id.replace('c.us', 's.whatsapp.net'))
+})
+var options = {
+contextInfo: { mentionedJid: mem },
+quoted: fimg
+}
+ini_buffer = fs.readFileSync(file)
+//samu330.sendMessage(from, ini_buffer, image, options)
+		
+sendButImage(from, `Rico? Turbio?\nMejor leer las sagradas escrituras xd`, `No hay Gansitos :'c\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, ini_buffer,
+				[{buttonId: 'tagimgxx', buttonText: {displayText: 'Rico :3'}, type: 1},
+				{buttonId: 'tagimgyy', buttonText: {displayText: 'Turbio :x'}, type: 1}], 
+				options)			
+fs.unlinkSync(file)
+break		
+		
 case 'totag':
 if (!isGroup) return reply(mess.only.group)
 if ((isMedia && !sam.message.videoMessage || isQuotedSticker) && args.length == 0) {
