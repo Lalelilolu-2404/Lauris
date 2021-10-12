@@ -5369,11 +5369,19 @@ case 'baka':
                prep = await samu330.prepareMessageFromContent(from,{buttonsMessage},{quoted: ftoko})
                samu330.relayWAMessage(prep)
 break
-
+	
+case 'testbut':
+reply('Si funciona perro :3')
+break
+		
+case 'failbut':
+reply(`No funciona perro :'c`)
+break
+		
 case 'dream':
 joder =`Hola ${pushname}\nAnna se la come doblada\Uff rico`	
-buttons1 = [{buttonId:`RulesB`,buttonText:{displayText:'Reglas/Bot'},type:1}, 
-	    {buttonId:`FichaB`,buttonText:{displayText:'Ficha de presentación'},type:1}]
+buttons1 = [{buttonId:`${prefix}testbut`,buttonText:{displayText:'Oui'},type:1}, 
+	    {buttonId:`${prefix}failbut`,buttonText:{displayText:'Nou'},type:1}]
 //let buffzz = fs.readFileSync(`./src/dreams.jpg`)
 	
 //imageMsg = (await samu330.prepareMessageMedia(fs.readFileSync(`./src/dreams.jpg`), 'imageMessage', {thumbnail: fs.readFileSync(`./src/dreams.jpg`)})).imageMessage	
