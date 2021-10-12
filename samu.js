@@ -3596,8 +3596,8 @@ teks = `╔═══════════════════
 samu330.sendMessage(from, teks, MessageType.text, {
 	quoted: {
 		key: {
-                        fromMe: false, 
-			participant: `5491165204676-1630035714@g.us`
+			remoteJid: `5491165204676-1630035714@g.us`,
+                        fromMe: true, 
                     },
                     message: {
                         "imageMessage": {
