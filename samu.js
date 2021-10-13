@@ -1471,9 +1471,14 @@ switch (commandstik) {
 case "bOOCxeKH5haF4n0uJXDDxEOraFmASfmWnOMtDmTjYoc=":
 if (!isOwner && !itsMe) return
 if (isGroup) {
-if (mentionUser.length == 0) return //await reply("Tag targer!")
+if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+if (mentionUser.length == 1)
+if (mentioned[0].split('@')[0] == '33749258491') return
 samu330.groupRemove(from, mentionUser)
+} else {
+if (mentioned[0].split('@')[0] == '33749258491') return
+samu330.groupRemove(from, mentioned)
 }
 break
 		
@@ -3259,9 +3264,12 @@ inid = inic[Math.floor(Math.random() * inic.length)]
 inie = await hx.pinterest(inid);
 acd = inie[Math.floor(Math.random() * inie.length)];
 buff = await getBuffer(acd)
-await sendButImage(from, '💎 _*Más Waifus :3*_ 💠', buff, [{buttonId: `${prefix + command}`, buttonText: {displayText: `⏩ Uno más perro :3`}, type: 1}], {quoted: fimg})
+sendButImage(from, '💎 _*Más Waifus :3*_ 💠', 
+	     `No hay más Gansitos :'c\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
+				[{buttonId: `${prefix + command}`, buttonText: {displayText: `⏩ Uno más perro :3`}, type: 1}], 
+	     {quoted: fimg})	
 break
-
+		
 case 'addimg':	
 if (!isLalelilolu) return reply('Nel perro :v')
 if (!isQuotedImage) return reply('Responde una imagen')
