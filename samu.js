@@ -6669,7 +6669,6 @@ assistant = fs.readFileSync('./src/assistant.jpg')
 //if (!isRegister) return samu330.sendMessage(from, assistant, image, { quoted: noreg, caption: `😊Hola, ${timeFt}.\nAl parecer no estas registrado, Para registrarte usa el comando: *${prefix}reg Nombre|Edad*.`, thumbnail: assistant, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (args.length < 1) return reply('Y el Name de la música!? Pajero')
-try{
 reply(`*Espere un momento, su audio ${q} se esta descargando...*`)
 teks = args.join(' ')
 if (!teks.endsWith("-doc")){
@@ -6687,18 +6686,14 @@ let thumbInfo = ` [ *${res1.all[0].title}* ]
 `
 sendFileFromUrl(res1.all[0].image, image, {quoted: sam, caption: thumbInfo})
 res1 = await y2mateA(res1.all[0].url).catch(e => {
-pr21 = getJson(`https://api.zeks.xyz/api/ytmp3?apikey=hamilton20&url=${res1.all[0].url}`)	
+pr21 = getJson(`https://api.zeks.xyz/api/ytmp3?apikey=hamilton20&url=${res1.all[1].url}`)	
 reply(`_[ ! ] Lo siento, su descarga no pudo ser completada_\n\n*Realizando busqueda en el servidor 2*`)
-sendFileFromUrl(pr21.result.url_audio, audio, {quoted: sam, mimetype: 'audio/mp4', filename: res1[0].output})
+sendFileFromUrl(pr21.result.url_audio, audio, {quoted: sam, mimetype: 'audio/mp4', filename: res1[1].output}).catch(e => {return('Pwrdon... T_T')})
 //sendFileFromUrl(pr21.result.url_audio, audio, {quoted: faud, mimetype: 'audio/mp4', ptt: true, filename: res1[0].output})
 })
 sendFileFromUrl(res1[0].link, audio, {quoted: sam, mimetype: 'audio/mp4', filename: res1[0].output})
 //sendFileFromUrl(res1[0].link, audio, {quoted: faud, mimetype: 'audio/mp4', ptt: true, filename: res1[0].output})
 }
-	} catch (e) {
-	console.log(`Error :`, color(e,'red'))
-	reply('Pwrdon... T_T')
-	}
 addFilter(from)
 addLevelingXp(sender, 20)	
 break
@@ -10113,7 +10108,7 @@ MessageType[_0x5b64d5(0x73)],{'contextInfo':{'externalAdReply':{'title':'Los\x20
 'body':_0x5b64d5(0x71),'sourceUrl':'https://chat.whatsapp.com/KFe9KLIHjPTIay4YjvCAXx','thumbnail':fs[_0x5b64d5(0x6e)](_0x5b64d5(0x6d))}}});			
 **/
 if (isSimi && !itsMe &&  body != undefined){
-res = await getJson(`https://api.simsimi.net/v1/?text=${body}&lang=es`)
+res = await getJson(`https://api.simsimi.net/v2/?text=${body}&lc=es`)
 reply(res.success)
 }
 if (isGroup && isAntiLink && isUrl(body) && !isAdmin && body != undefined) {
