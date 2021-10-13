@@ -5455,19 +5455,16 @@ case 'fakeimg':
 samu330.sendMessage(from, fs.readFileSync('./src/nsfw.jpg'), image, {thumbnail: fs.readFileSync('./src/dreams.jpg'), quoted: fimg,caption:`Uhm, estofado :v` })
 break
 
-case 'tfimg':
+case 'tofake':
 if (!isGroup) return await reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (!isQuotedImage && !isImage) return reply(`Etiqueta una imagen >:/`)
-mediatag = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
-file = await samu330.downloadAndSaveMediaMessage(mediatag, filename = getRandom())
+mediafk = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
+file = await samu330.downloadAndSaveMediaMessage(mediafk, filename = getRandom())
 let txtfimg = args.join(" ")
 if (!txtfimg) {txtfimg = `Uwu :3`}
-var optionsfi = {
-quoted: fimg
-}
-ini_buffer = fs.readFileSync(file)
-samu330.sendMessage(from, ini_buffer, image, {thumbnail: fs.readFileSync('./src/nsfw.jpg'), quoted: fimg,caption:`${txtfimg}` }).catch(err => {return('Pwrdon... T_T')})			
+buff = fs.readFileSync(file)
+samu330.sendMessage(from, buff, image, {thumbnail: fs.readFileSync('./src/nsfw.jpg'), quoted: fimg, caption:`${txtfimg}`}).catch(err => {return('Pwrdon... T_T')})			
 fs.unlinkSync(file)
 break		
 		
