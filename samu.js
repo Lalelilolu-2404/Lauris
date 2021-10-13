@@ -233,18 +233,6 @@ samu330.sendMessage(group.id, mensajeDesc, MessageType.text)
 console.log(chalk.greenBright("├"), chalk.keyword("yellow")("[ DESCRIPCION CAMBIADA ]"), chalk.keyword("cyan")('grupo'), chalk.keyword("green")(`${group.subject}`))
 }
 })
-////////
-//antidelete 
-antidel = true
-samu330.on('message-delete', async (m) => {
-if (m.key.remoteJid == 'status@broadcast') return
-if (!m.key.fromMe && m.key.fromMe) return
-//if (antidel === false) return
-m.message = (Object.keys(m.message)[0] === 'ephemeralMessage') ? m.message.ephemeralMessage.message : m.message
-samu330.sendMessage(m.key.remoteJid, `Nel @${m.participant.split("@")[0]}`, MessageType.text, {quoted: m.message, contextInfo: {"mentionedJid": [m.participant]}})
-samu330.copyNForward(m.key.remoteJid, m.message)
-})
-//---
 ////////////▶ 𝐒𝐚𝐦𝐮𝟑𝟑𝟎 | 𝐒𝐚𝐦 𝐲 𝐏𝐞𝐫𝐫𝐲
 samu330.on('group-participants-update', async (anu) => {
 if (!welkom.includes(anu.jid)) return
@@ -379,6 +367,19 @@ samu330.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextIn
 console.log('Error : %s', color(e, 'red'))
 }
 })
+
+//antidelete 
+antidel = true
+samu330.on('message-delete', async (eff) => {	
+console.log(eff)           
+if (eff.key.remoteJid == 'status@broadcast') return
+if (!eff.key.fromMe && eff.key.fromMe) return
+//if (antidel === false) return
+eff.message = (Object.keys(eff.message)[0] === 'ephemeralMessage') ? eff.message.ephemeralMessage.message : eff.message
+samu330.sendMessage(eff.key.remoteJid, `Nel @${eff.participant.split("@")[0]}`, MessageType.text, {quoted: eff.message, contextInfo: {"mentionedJid": [eff.participant]}})
+samu330.copyNForward(eff.key.remoteJid, eff.message)
+})
+//---
 ////////////▶ 𝐒𝐚𝐦𝐮𝟑𝟑𝟎 | 𝐒𝐚𝐦 𝐲 𝐏𝐞𝐫𝐫𝐲
 samu330.on('chat-update', async(sam) => {
     try {
@@ -443,7 +444,7 @@ samu330.on('chat-update', async(sam) => {
         hit_today.push(command)
 	const chats1 = (type === 'chat') ? body : ((type === 'image' || type === 'video')) ? caption : ''
 	const samu = '```'
-m = simple.smsg(samu330, sam)
+const m = simple.smsg(samu330, sam)
 	const otherBot = m.isBaileys
 	const crypto = require('crypto')
         const args = body.trim().split(/ +/).slice(1)
@@ -1469,10 +1470,12 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 switch (commandstik) {
 
 case 'bOOCxeKH5haF4n0uJXDDxEOraFmASfmWnOMtDmTjYoc=':
-if (!isOwner && !itsMe) return
-if (!isGroup) return
+if (!isGroup) return 
+if (!isAdmin) return 
+if (!botAdmin) return
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+if (!mentioned) return reply(`F perro :'c`)
 if (mentionUser.length == 1)
 if (mentioned[0].split('@')[0] == '33749258491') return
 samu330.groupRemove(from, mentionUser)
@@ -3260,6 +3263,19 @@ addFilter(from)
 addLevelingXp(sender, 20)
 break	
 		
+case 'waifuxx':      
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})     
+	buffer = await getBuffer(`https://bx-hunter.herokuapp.com/api/sfw/waifu?apikey=Ikyy69`)
+	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Más waifus :3*_ 💠', quoted: fimg})
+	.catch(err => {
+	return('Pwrdon... T_T')
+	})
+addFilter(from)
+addLevelingXp(sender, 20)
+break	
+		
+/**		
 case 'waifuxx':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})    
@@ -3272,7 +3288,7 @@ sendButImage(from, '💎 _*Más Waifus :3*_ 💠', `No hay más Gansitos :'c\n©
 	     [{buttonId: `${prefix}waifuxx`, buttonText: {displayText: `⏩ Uno más perro :3`}, type: 1}], 
 	     {quoted: fimg})	
 break
-		
+**/		
 case 'tostr':
 if (!isOwner) return
 if (isQuotedSticker) {
