@@ -1485,17 +1485,15 @@ samu330.groupRemove(from, mentioned)
 break
 **/
 case 'bOOCxeKH5haF4n0uJXDDxEOraFmASfmWnOMtDmTjYoc=':
-mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-if (!mentioned) return reply(`F perro :'c`)
+reply('Creo q no vale :c')
 if (!isQuotedMsg) return reply('Tag xd')
-if (mentioned.length !== 0){
-if (mentioned[0].split('@')[0] == '33749258491') return reply(`Nel perro :v`)
-samu330.groupRemove(from, mentioned[0])
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid	
+if (mentionUser.length == 1)
+samu330.groupRemove(from, mentionUser)
 } else if (isQuotedMsg) {
-if (quotedMsg.sender.match('33749258491')) return reply('Nel perro :v')
 samu330.groupRemove(from, quotedMsg.sender)
 } else {
-if (mentioned[0].split('@')[0] == '33749258491') return
 samu330.groupRemove(from, mentioned)
 }
 break
