@@ -8788,7 +8788,7 @@ if (!botAdmin) return reply(mess.only.Badmin)
 		//const none = fs.readFileSync(`./src/stickers2/Funao.webp`)
 		//samu330.sendMessage(from, none, sticker)	
 			
-		} else {
+		} else if(mentioned.length == 1){
 	        //await wa.FakeTokoForwarded(from, `Baaaiii...`, '')
 		if (mentioned[0].split('@')[0] == '33749258491') return samu330.sendMessage(from, none, sticker)
 		if (mentioned[0].split('@')[0] == '994400855630') return samu330.sendMessage(from, noneyy, sticker)
