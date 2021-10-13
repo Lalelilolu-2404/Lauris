@@ -1468,7 +1468,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 ///////////////
 switch (commandstik) {
 
-case "bOOCxeKH5haF4n0uJXDDxEOraFmASfmWnOMtDmTjYoc=":
+case 'bOOCxeKH5haF4n0uJXDDxEOraFmASfmWnOMtDmTjYoc=':
 if (!isOwner && !itsMe) return
 if (!isGroup) return
 if (sam.message.extendedTextMessage != undefined){
@@ -1482,8 +1482,12 @@ samu330.groupRemove(from, mentioned)
 }
 break
 		
+case 'zbJVGnQ0UEQp9JDLQyZkbty3EoVs1X6z0+6MJ5baWDA=':
+reply('Jálame')
+break		
+				
 }
-    
+
 ///////			
 	   		/**
 			if (sam.message.listResponseMessage){
