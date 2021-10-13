@@ -10123,7 +10123,6 @@ samu330.groupRemove(from, [sial])
 }
 } catch (e) {
 const emror = String(e)
-reject(e)
 if (emror.includes('convert')){ 
 return
 }
