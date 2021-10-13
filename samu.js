@@ -367,17 +367,16 @@ samu330.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextIn
 console.log('Error : %s', color(e, 'red'))
 }
 })
-
 //antidelete 
 antidel = true
-samu330.on('message-delete', async (eff) => {	
-console.log(eff)           
-if (eff.key.remoteJid == 'status@broadcast') return
-if (!eff.key.fromMe && eff.key.fromMe) return
+samu330.on('message-delete', async (m) => {	
+console.log(m)           
+if (m.key.remoteJid == 'status@broadcast') return
+if (!m.key.fromMe && m.key.fromMe) return
 //if (antidel === false) return
-eff.message = (Object.keys(eff.message)[0] === 'ephemeralMessage') ? eff.message.ephemeralMessage.message : eff.message
-samu330.sendMessage(eff.key.remoteJid, `Nel @${eff.participant.split("@")[0]}`, MessageType.text, {quoted: eff.message, contextInfo: {"mentionedJid": [eff.participant]}})
-samu330.copyNForward(eff.key.remoteJid, eff.message)
+m.message = (Object.keys(m.message)[0] === 'ephemeralMessage') ? m.message.ephemeralMessage.message : m.message
+samu330.sendMessage(m.key.remoteJid, `Nel @${m.participant.split("@")[0]}`, MessageType.text, {quoted: m.message, contextInfo: {"mentionedJid": [m.participant]}})
+samu330.copyNForward(m.key.remoteJid, m.message)
 })
 //---
 ////////////▶ 𝐒𝐚𝐦𝐮𝟑𝟑𝟎 | 𝐒𝐚𝐦 𝐲 𝐏𝐞𝐫𝐫𝐲
@@ -444,7 +443,7 @@ samu330.on('chat-update', async(sam) => {
         hit_today.push(command)
 	const chats1 = (type === 'chat') ? body : ((type === 'image' || type === 'video')) ? caption : ''
 	const samu = '```'
-const m = simple.smsg(samu330, sam)
+m = simple.smsg(samu330, sam)
 	const otherBot = m.isBaileys
 	const crypto = require('crypto')
         const args = body.trim().split(/ +/).slice(1)
@@ -1468,7 +1467,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 
 ///////////////
 switch (commandstik) {
-
+/**
 case 'bOOCxeKH5haF4n0uJXDDxEOraFmASfmWnOMtDmTjYoc=':
 if (!isGroup) return 
 if (!isAdmin) return 
@@ -1479,6 +1478,21 @@ if (!mentioned) return reply(`F perro :'c`)
 if (mentionUser.length == 1)
 if (mentioned[0].split('@')[0] == '33749258491') return
 samu330.groupRemove(from, mentionUser)
+} else {
+if (mentioned[0].split('@')[0] == '33749258491') return
+samu330.groupRemove(from, mentioned)
+}
+break
+**/
+case 'bOOCxeKH5haF4n0uJXDDxEOraFmASfmWnOMtDmTjYoc=':
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+if (!mentioned) return reply(`F perro :'c`)
+if (mentioned.length !== 0){
+if (mentioned[0].split('@')[0] == '33749258491') return reply(`Nel perro :v`)
+samu330.groupRemove(from, mentioned[0])
+} else if (isQuotedMsg) {
+if (quotedMsg.sender.match('33749258491')) return reply('Nel perro :v')
+samu330.groupRemove(from, quotedMsg.sender)
 } else {
 if (mentioned[0].split('@')[0] == '33749258491') return
 samu330.groupRemove(from, mentioned)
