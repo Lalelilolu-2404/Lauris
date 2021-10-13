@@ -3264,10 +3264,18 @@ inid = inic[Math.floor(Math.random() * inic.length)]
 inie = await hx.pinterest(inid);
 acd = inie[Math.floor(Math.random() * inie.length)];
 buff = await getBuffer(acd)
-sendButImage(from, '💎 _*Más Waifus :3*_ 💠', 
-	     `No hay más Gansitos :'c\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff,
-				[{buttonId: `${prefix + command}`, buttonText: {displayText: `⏩ Uno más perro :3`}, type: 1}], 
+sendButImage(from, '💎 _*Más Waifus :3*_ 💠', `No hay más Gansitos :'c\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, buff, 
+	     [{buttonId: `${prefix}waifuxx`, buttonText: {displayText: `⏩ Uno más perro :3`}, type: 1}], 
 	     {quoted: fimg})	
+break
+		
+case 'tostr':
+if (!isOwner) return
+if (isQuotedSticker) {
+if (!q) return reply(`✳️ Responde a un sticker`)
+var kodenya = sam.message.extendedTextMessage.contextInfo.quotedMessage.stickerMessage.fileSha256.toString('base64')
+reply(`${kodenya}`)
+}
 break
 		
 case 'addimg':	
