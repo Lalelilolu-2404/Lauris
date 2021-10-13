@@ -1470,7 +1470,7 @@ switch (commandstik) {
 
 case "bOOCxeKH5haF4n0uJXDDxEOraFmASfmWnOMtDmTjYoc=":
 if (!isOwner && !itsMe) return
-if (isGroup) {
+if (!isGroup) return
 if (sam.message.extendedTextMessage != undefined){
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 if (mentionUser.length == 1)
