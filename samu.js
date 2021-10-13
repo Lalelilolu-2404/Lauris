@@ -1487,8 +1487,7 @@ break
 case 'bOOCxeKH5haF4n0uJXDDxEOraFmASfmWnOMtDmTjYoc=':
 if (sam.message.extendedTextMessage != undefined)
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid	
-if (!isQuotedMsg) return reply('Tag xd')
-if (!mentionUser) return reply('No mention')
+reply(`${mentionUser.length}`)
 if (mentionUser.length == 0) return
 samu330.groupRemove(from, mentionUser)
 break
