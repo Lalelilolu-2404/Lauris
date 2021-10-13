@@ -5454,6 +5454,22 @@ break
 case 'fakeimg':
 samu330.sendMessage(from, fs.readFileSync('./src/nsfw.jpg'), image, {thumbnail: fs.readFileSync('./src/dreams.jpg'), quoted: fimg,caption:`Uhm, estofado :v` })
 break
+
+case 'tfimg':
+if (!isGroup) return await reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+if (!isQuotedImage && !isImage) return reply(`Etiqueta una imagen >:/`)
+mediatag = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
+file = await samu330.downloadAndSaveMediaMessage(mediatag, filename = getRandom())
+let txtfimg = args.join(" ")
+if (!txtfimg) {txtfimg = `Uwu :3`}
+var optionsfi = {
+quoted: fimg
+}
+ini_buffer = fs.readFileSync(file)
+samu330.sendMessage(from, ini_buffer, image, {thumbnail: fs.readFileSync('./src/nsfw.jpg'), quoted: fimg,caption:`${txtfimg}` }).catch(err => {return('Pwrdon... T_T')})			
+fs.unlinkSync(file)
+break		
 		
 case 'dream':
 joder =`Hola ${pushname}\nAnna se la come doblada\Uff rico`	
@@ -9074,7 +9090,7 @@ sendButImage(from, `Rico? Turbio?\nMejor leer las sagradas escrituras xd\n${txtt
 	     `No hay Gansitos :'c\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`, ini_buffer,
 				[{buttonId: 'tagimgxx', buttonText: {displayText: 'Rico :3'}, type: 1},
 				{buttonId: 'tagimgyy', buttonText: {displayText: 'Turbio :x'}, type: 1}], 
-				optionsx)			
+				optionsx).catch(err => {return('Pwrdon... T_T')})		
 fs.unlinkSync(file)
 break		
 		
@@ -9391,7 +9407,7 @@ if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 
 passed = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam;
 reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
 owgip = await samu330.downloadMediaMessage(passed)
-await fs.writeFileSync(`./stickgay.jpeg`, owgip)
+await fs.writeFileSync(`./stickpassed.jpeg`, owgip)
 var imgbb2p = require('imgbb-uploader')
 anug = await imgbb2p("3b8594f4cb11895f4084291bc655e510", './stickpassed.jpeg')
 txtp = `${anug.display_url}`
