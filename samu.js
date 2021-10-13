@@ -3250,6 +3250,18 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
+		
+case 'waifuxx':
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})    
+reply(wait()) 
+const inic = ["anime waifu","loli","neko","waifu"]
+inid = inic[Math.floor(Math.random() * inic.length)]
+inie = await hx.pinterest(inid);
+acd = inie[Math.floor(Math.random() * inie.length)];
+buff = await getBuffer(acd)
+await sendButImage(from, '💎 _*Más Waifus :3*_ 💠', buff, [{buttonId: `${prefix + command}`, buttonText: {displayText: `⏩ Uno más perro :3`}, type: 1}], {quoted: fimg})
+break
 
 case 'addimg':	
 if (!isLalelilolu) return reply('Nel perro :v')
