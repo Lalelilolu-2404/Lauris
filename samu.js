@@ -1471,7 +1471,7 @@ switch (commandstik) {
 case "bOOCxeKH5haF4n0uJXDDxEOraFmASfmWnOMtDmTjYoc=":
 if (!isOwner && !itsMe) return
 if (isGroup) {
-if (mentionUser.length == 1) //return await reply("Tag targer!")
+if (mentionUser.length == 0) return //await reply("Tag targer!")
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 samu330.groupRemove(from, mentionUser)
 }
@@ -3254,7 +3254,6 @@ break
 case 'waifuxx':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})    
-reply(wait()) 
 const inic = ["anime waifu","loli","neko","waifu"]
 inid = inic[Math.floor(Math.random() * inic.length)]
 inie = await hx.pinterest(inid);
@@ -8739,7 +8738,7 @@ if (!botAdmin) return reply(mess.only.Badmin)
 		break
 
 case 'okick':
-if (!isLalelilolu || !isAnna) return reply('Nel perro :v')
+if (!isLalelilolu && !isAnna) return reply('Nel perro :v')
 if (!isGroup) return reply(mess.only.group)
 if (!botAdmin) return reply(mess.only.Badmin)
                 if (sam.message.extendedTextMessage != undefined){
