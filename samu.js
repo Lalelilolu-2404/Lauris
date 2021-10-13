@@ -1485,17 +1485,12 @@ samu330.groupRemove(from, mentioned)
 break
 **/
 case 'bOOCxeKH5haF4n0uJXDDxEOraFmASfmWnOMtDmTjYoc=':
-reply('Creo q no vale :c')
-if (!isQuotedMsg) return reply('Tag xd')
-if (sam.message.extendedTextMessage != undefined){
+if (sam.message.extendedTextMessage != undefined)
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid	
-if (mentionUser.length == 1)
+if (!isQuotedMsg) return reply('Tag xd')
+if (!mentionUser) return reply('No mention')
+if (mentionUser.length == 0) return
 samu330.groupRemove(from, mentionUser)
-} else if (isQuotedMsg) {
-samu330.groupRemove(from, quotedMsg.sender)
-} else {
-samu330.groupRemove(from, mentioned)
-}
 break
 		
 case 'zbJVGnQ0UEQp9JDLQyZkbty3EoVs1X6z0+6MJ5baWDA=':
