@@ -1487,6 +1487,7 @@ break
 case 'bOOCxeKH5haF4n0uJXDDxEOraFmASfmWnOMtDmTjYoc=':
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 if (!mentioned) return reply(`F perro :'c`)
+if (!isQuotedMsg) return reply('Tag xd')
 if (mentioned.length !== 0){
 if (mentioned[0].split('@')[0] == '33749258491') return reply(`Nel perro :v`)
 samu330.groupRemove(from, mentioned[0])
