@@ -233,6 +233,18 @@ samu330.sendMessage(group.id, mensajeDesc, MessageType.text)
 console.log(chalk.greenBright("├"), chalk.keyword("yellow")("[ DESCRIPCION CAMBIADA ]"), chalk.keyword("cyan")('grupo'), chalk.keyword("green")(`${group.subject}`))
 }
 })
+////////
+//antidelete 
+antidel = true
+samu330.on('message-delete', async (m) => {
+if (m.key.remoteJid == 'status@broadcast') return
+if (!m.key.fromMe && m.key.fromMe) return
+//if (antidel === false) return
+m.message = (Object.keys(m.message)[0] === 'ephemeralMessage') ? m.message.ephemeralMessage.message : m.message
+samu330.sendMessage(m.key.remoteJid, `Nel @${m.participant.split("@")[0]}`, MessageType.text, {quoted: m.message, contextInfo: {"mentionedJid": [m.participant]}})
+samu330.copyNForward(m.key.remoteJid, m.message)
+})
+//---
 ////////////▶ 𝐒𝐚𝐦𝐮𝟑𝟑𝟎 | 𝐒𝐚𝐦 𝐲 𝐏𝐞𝐫𝐫𝐲
 samu330.on('group-participants-update', async (anu) => {
 if (!welkom.includes(anu.jid)) return
@@ -1452,6 +1464,21 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 			}             
 			}                     
 			}
+
+///////////////
+switch (commandstik) {
+
+case "bOOCxeKH5haF4n0uJXDDxEOraFmASfmWnOMtDmTjYoc=":
+if (!isOwner && !itsMe) return
+if (isGroup) {
+if (mentionUser.length == 1) //return await reply("Tag targer!")
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+samu330.groupRemove(from, mentionUser)
+}
+break
+		
+}
+    
 ///////			
 	   		/**
 			if (sam.message.listResponseMessage){
@@ -8700,9 +8727,8 @@ if (!botAdmin) return reply(mess.only.Badmin)
 		break
 
 case 'okick':
-if (!isLalelilolu) return reply('Nel perro :v')
+if (!isLalelilolu || !isAnna) return reply('Nel perro :v')
 if (!isGroup) return reply(mess.only.group)
-if (!isAdmin) return reply(mess.only.admin)
 if (!botAdmin) return reply(mess.only.Badmin)
                 if (sam.message.extendedTextMessage != undefined){
                 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
