@@ -5839,7 +5839,7 @@ reply(mess.wait)
 let pin = await hx.pinterest(q);
 let ac = pin[Math.floor(Math.random() * pin.length)];
 let di = await getBuffer(ac);
-await samu330.sendMessage(from, di, image, { quoted: fimg, caption: `✅ Pinterest : *${q}*` });
+await samu330.sendMessage(from, di, image, { quoted: fimg, caption: `✅ Pinterest : *${q}*` }).catch(err => {return('Pwrdon... T_T')})
 break		
 		
 case 'imagen':
@@ -5855,7 +5855,7 @@ if (error){ return reply('_[ ! ] *Intentalo de nuevo*_')}
 else {
 var gugIm = result
 var random =  gugIm[Math.floor(Math.random() * gugIm.length)].url
-sendFileFromUrl(random, image, {quoted: fimg, caption: `*🔍Busqueda de* _*「 ${ggimg} 」*_\n*Realizada por Lalelilolu ᵈᵃʳʸ⛥*`})
+sendFileFromUrl(random, image, {quoted: fimg, caption: `*🔍Busqueda de* _*「 ${ggimg} 」*_\n*Realizada por Lalelilolu ᵈᵃʳʸ⛥*`}).catch(error => {return('Pwrdon... T_T')})
 }
 }
 addFilter(from)
