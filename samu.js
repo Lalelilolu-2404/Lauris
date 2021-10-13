@@ -6663,7 +6663,7 @@ reply(result)
 sendFileFromUrl(resm[0].link, document, {mimetype: resm[0].mime, filename: resm[0].nombre, quoted: fdoc})
 addFilter(from)
 break
-
+/**
 case 'play':
 assistant = fs.readFileSync('./src/assistant.jpg')		
 //if (!isRegister) return samu330.sendMessage(from, assistant, image, { quoted: noreg, caption: `😊Hola, ${timeFt}.\nAl parecer no estas registrado, Para registrarte usa el comando: *${prefix}reg Nombre|Edad*.`, thumbnail: assistant, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
@@ -6801,7 +6801,56 @@ sendFileFromUrl(anu[0].link, video, {mimetype: 'video/mp4', filename: `${anu[0].
 addFilter(from)
 addLevelingXp(sender, 20)		
 break
-		
+
+case 'ytmp3':
+//if (!isRegister) return samu330.sendMessage(from, assistant, image, { quoted: noreg, caption: `😊Hola, ${timeFt}.\n\nAl parecer no estas registrado, Para registrarte usa el comando: *${prefix}reg*.`, thumbnail: assistant, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+if (args.length < 1) return reply('Y el link?')
+if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link de YouTube we, *De YouTube!!*')
+music = args.join(' ')
+reply('*Espere un momento...*')
+resyt = await y2mateA(music).catch(e => {
+reply('_[ ! ] Error del servidor_')
+})
+result = `「 Lalelilolu ᵈᵃʳʸ⛥ 」
+*°Titulo :* ${resyt[0].judul}
+*°Tamaño :* ${resyt[0].size}
+*°Calidad :* ${resyt[0].quality}kbps
+*°Nombre del archivo :* ${resyt[0].output}
+*°Salida :* ${resyt[0].tipe}
+_*El archivo se esta enviando.....*_
+`
+sendFileFromUrl(resyt[0].thumb, image, {caption: result, quoted: sam})
+sendFileFromUrl(resyt[0].link, audio, {quoted: faud, duration :-99999999, mimetype: 'audio/mp3'})
+//sendFileFromUrl(resyt[0].link, audio, {quoted: faud, mimetype: 'audio/mp3', ptt: true, duration: 99999999})
+addFilter(from)
+addLevelingXp(sender, 20)	
+break
+
+case 'ytmp4':
+//if (!isRegister) return samu330.sendMessage(from, assistant, image, { quoted: noreg, caption: `😊Hola, ${timeFt}.\n\nAl parecer no estas registrado, Para registrarte usa el comando: *${prefix}reg*.`, thumbnail: assistant, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+if (args.length < 1) return reply('Y el link?')
+if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link de YouTube we, *De YouTube!!*')
+vidx = args.join(' ')
+reply(mess.wait)
+resyv = await y2mateV(vidx).catch(e => {
+reply('_[ ! ] Error del servidor_')
+})
+result = `「 Lalelilolu ᵈᵃʳʸ⛥ 」
+*°Titulo :* ${resyv[0].judul}
+*°Tamaño :* ${resyv[0].size}
+*°Calidad :* ${resyv[0].quality}p
+*°Nombre :* ${resyv[0].output}
+*°Output :* ${resyv[0].tipe}
+_*El archivo se esta enviando.....*_
+`
+sendFileFromUrl(resyv[0].thumb, image, {caption: result, quoted: sam})
+sendFileFromUrl(resyv[0].link, video, {quoted: fvid, mimetype:'video/mp4', duration: 9999999999})
+addFilter(from)
+addLevelingXp(sender, 20)		
+break
+**/		
 case 'twit':
 //if (!isRegister) return reply(mess.only.usrReg)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
@@ -7174,53 +7223,6 @@ contextInfo: { mentionedJid: members }}})
 }
 addFilter(from)
 addLevelingXp(sender, 20)
-break
-case 'ytmp3':
-//if (!isRegister) return samu330.sendMessage(from, assistant, image, { quoted: noreg, caption: `😊Hola, ${timeFt}.\n\nAl parecer no estas registrado, Para registrarte usa el comando: *${prefix}reg*.`, thumbnail: assistant, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
-if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
-if (args.length < 1) return reply('Y el link?')
-if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link de YouTube we, *De YouTube!!*')
-music = args.join(' ')
-reply('*Espere un momento...*')
-resyt = await y2mateA(music).catch(e => {
-reply('_[ ! ] Error del servidor_')
-})
-result = `「 Lalelilolu ᵈᵃʳʸ⛥ 」
-*°Titulo :* ${resyt[0].judul}
-*°Tamaño :* ${resyt[0].size}
-*°Calidad :* ${resyt[0].quality}kbps
-*°Nombre del archivo :* ${resyt[0].output}
-*°Salida :* ${resyt[0].tipe}
-_*El archivo se esta enviando.....*_
-`
-sendFileFromUrl(resyt[0].thumb, image, {caption: result, quoted: sam})
-sendFileFromUrl(resyt[0].link, audio, {quoted: faud, duration :-99999999, mimetype: 'audio/mp3'})
-//sendFileFromUrl(resyt[0].link, audio, {quoted: faud, mimetype: 'audio/mp3', ptt: true, duration: 99999999})
-addFilter(from)
-addLevelingXp(sender, 20)	
-break
-case 'ytmp4':
-//if (!isRegister) return samu330.sendMessage(from, assistant, image, { quoted: noreg, caption: `😊Hola, ${timeFt}.\n\nAl parecer no estas registrado, Para registrarte usa el comando: *${prefix}reg*.`, thumbnail: assistant, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
-if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
-if (args.length < 1) return reply('Y el link?')
-if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link de YouTube we, *De YouTube!!*')
-vidx = args.join(' ')
-reply(mess.wait)
-resyv = await y2mateV(vidx).catch(e => {
-reply('_[ ! ] Error del servidor_')
-})
-result = `「 Lalelilolu ᵈᵃʳʸ⛥ 」
-*°Titulo :* ${resyv[0].judul}
-*°Tamaño :* ${resyv[0].size}
-*°Calidad :* ${resyv[0].quality}p
-*°Nombre :* ${resyv[0].output}
-*°Output :* ${resyv[0].tipe}
-_*El archivo se esta enviando.....*_
-`
-sendFileFromUrl(resyv[0].thumb, image, {caption: result, quoted: sam})
-sendFileFromUrl(resyv[0].link, video, {quoted: fvid, mimetype:'video/mp4', duration: 9999999999})
-addFilter(from)
-addLevelingXp(sender, 20)		
 break
 
 case 'tomp3':
@@ -8340,7 +8342,7 @@ addLevelingXp(sender, 10)
 break 
 		
 case 'notificar':
-
+case 'notif':
 if (!isAdmin) return reply(mess.only.admin)
 samu330.updatePresence(from, Presence.composing)
 if (!isRegister) return reply(mess.only.usrReg)
@@ -8359,9 +8361,10 @@ mentionedJid: jids, "forwardingScore": 9999, "isForwarded": true
 },
 quoted: faud
 }
-addFilter(from)
-addLevelingXp(sender, 20)
-await samu330.sendMessage(from, options, MessageType.text)
+await samu330.sendMessage(from, options, MessageType.text).catch(e => {
+	  reply('_[ ! ] Error al descargar el archivo_')
+	  console.log(e)
+	})
 break
 		
 case 'leermas':
