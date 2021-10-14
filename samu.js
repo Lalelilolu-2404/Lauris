@@ -3282,6 +3282,18 @@ addFilter(from)
 addLevelingXp(sender, 20)
 break	
 		
+case 'hentaixx':      
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})     
+	buffer = await getBuffer(`https://bx-hunter.herokuapp.com/api/nsfw/hentai?apikey=Ikyy69`)
+	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Pasen Hentai :3*_ 💠', quoted: fimg})
+	.catch(err => {
+	return('Pwrdon... T_T')
+	})
+addFilter(from)
+addLevelingXp(sender, 20)
+break	
+		
 case 'trapxx':      
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})     
