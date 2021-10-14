@@ -3282,6 +3282,30 @@ addFilter(from)
 addLevelingXp(sender, 20)
 break	
 		
+case 'trapxx':      
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})     
+	buffer = await getBuffer(`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=trap&apikey=hardianto`)
+	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Más trapitos :3*_ 💠', quoted: fimg})
+	.catch(err => {
+	return('Pwrdon... T_T')
+	})
+addFilter(from)
+addLevelingXp(sender, 20)
+break		
+		
+case 'futaxx':      
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})     
+	buffer = await getBuffer(`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=futanari&apikey=hardianto`)
+	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Xdd*_ 💠', quoted: fimg})
+	.catch(err => {
+	return('Pwrdon... T_T')
+	})
+addFilter(from)
+addLevelingXp(sender, 20)
+break	
+		
 /**		
 case 'waifuxx':
 if (!isGroup) return reply(mess.only.group)
