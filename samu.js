@@ -2975,7 +2975,7 @@ participant: `33749258491@s.whatsapp.net`,
 	'message': {'orderMessage': 
 		  {'itemCount': 6969, 
 		   'status': 1, 
-		   'surface'': 1, 
+		   'surface': 1, 
 		   'message': `Gansito_Revenge`, 
 		   'orderTitle': 'Fx', 
 		   'thumbnail': fs.readFileSync('./src/nsfw.jpg'),
