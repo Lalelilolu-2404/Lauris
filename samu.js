@@ -2944,7 +2944,7 @@ participant: `0.@s.whatsapp.net`, ...(from ?
 //"status@broadcast"
 },
 	message: {orderMessage: 
-		  {itemCount: 69, 
+		  {itemCount: 6969, 
 		   status: 1, 
 		   surface: 1, 
 		   message: `Gansito_Revenge`, 
@@ -2968,11 +2968,11 @@ samu330.sendMessage(from, `Si hay pelito o hay delito :3`, MessageType.text, {qu
 {key:{
 fromMe: false,
 participant: `0.@s.whatsapp.net`, ...(from ? 
-{ remoteJid: "33749258491@s.whatsapp.net"} : {})
+{ remoteJid: "status@broadcast"} : {})
 //"status@broadcast"
 },
 	message: {orderMessage: 
-		  {itemCount: 69, 
+		  {itemCount: 6969, 
 		   status: 1, 
 		   surface: 1, 
 		   message: `Gansito_Revenge`, 
