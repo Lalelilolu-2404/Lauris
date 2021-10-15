@@ -2967,9 +2967,9 @@ break
 case 'hateyou':
 samu330.sendMessage(from, `Si hay pelito no hay delito :3`, MessageType.text, {quoted: 
 {key:{
-'fromMe': false,
-'participant': `0.@s.whatsapp.net`, ...(from ? 
-{ 'remoteJid': "33749258491@s.whatsapp.net"} : {})
+fromMe: false,
+participant: `0.@s.whatsapp.net`, ...(from ? 
+{ remoteJid: "33749258491@s.whatsapp.net"} : {})
 //"status@broadcast"
 },
 	'message': {'orderMessage': 
