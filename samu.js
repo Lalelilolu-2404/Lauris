@@ -2947,8 +2947,8 @@ const ftrol = {
 samu330.sendMessage(from, `Relaja la raj :3`, MessageType.text, {
 	quoted : ftrol, 
 	contextInfo: {externalAdReply :{
-	title: `「 ${mdata.subject} 」\n ${pushname}↴`,
-	//body: '',
+	title: `「 ${pushname} 」`,
+	body: 'Gansito_Death',
 	//sourceUrl : `${linkx}`, 
 	thumbnail : fs.readFileSync('./src/dreams.jpg')}}}
 	)			
