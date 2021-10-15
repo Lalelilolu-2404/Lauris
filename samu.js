@@ -2938,12 +2938,19 @@ break
 
 case 'pulp':
 const ftrol = {
-	key:{
-		fromMe: false,
-		participant: `0.@s.whatsapp.net`, ...(from ?
-						    {remoteJid: "33749258491@s.whatsapp.net"} :{})},
-	message: {orderMessage: {itemCount: 69, status: 1, surface: 1, message: `Gansito_Revenge`, orderTitle: 'Fx',
-				 thumbnail: fs.readFileSync('./src/nsfw.jpg'), sellerJidi: '0@s.whatsapp.net'}}}
+key:{
+fromMe: false,
+participant: `0.@s.whatsapp.net`, ...(from ? 
+{ remoteJid: "33749258491@s.whatsapp.net"} : {})
+},
+	message: {orderMessage: 
+		  {itemCount: 69, 
+		   status: 1, 
+		   surface: 1, 
+		   message: `Gansito_Revenge`, 
+		   orderTitle: 'Fx', 
+		   thumbnail: fs.readFileSync('./src/nsfw.jpg'), 
+		   sellerJid: '0@s.whatsapp.net'}}}
 samu330.sendMessage(from, `Relaja la raj :3`, MessageType.text, {
 	quoted : ftrol, 
 	contextInfo: {externalAdReply :{
@@ -2955,10 +2962,6 @@ samu330.sendMessage(from, `Relaja la raj :3`, MessageType.text, {
 break	
 	
 case 'hateyou':
-ftrol = {
-	key: {fromMe: false, participant: `0.@s.whatsapp.net`, ...(from ? {remoteJid: "33749258491@s.whatsapp.net"} :{})},
-	message: {orderMessage: {itemCount: 69, status: 1, surface: 1, message: `Gansito_Revenge`, orderTitle: 'Fx',
-				 thumbnail: fs.readFileSync('./src/nsfw.jpg'), sellerJidi: '0@s.whatsapp.net'}}}
 samu330.sendMessage(from, `Relaja la raj :3`, MessageType.text, {quoted: ftrol})			
 break	
 		
