@@ -2935,13 +2935,13 @@ samu330.sendMessage(from, `${ecoxx}`, MessageType.text, {
 addFilter(from)
 addLevelingXp(sender, 20)		
 break
-
-case 'pulp':
+		
 const ftrol = {
 key:{
 fromMe: false,
 participant: `0.@s.whatsapp.net`, ...(from ? 
-{ remoteJid: "33749258491@s.whatsapp.net"} : {})
+{ remoteJid: "status@broadcast"} : {})
+//"status@broadcast"
 },
 	message: {orderMessage: 
 		  {itemCount: 69, 
@@ -2951,6 +2951,8 @@ participant: `0.@s.whatsapp.net`, ...(from ?
 		   orderTitle: 'Fx', 
 		   thumbnail: fs.readFileSync('./src/nsfw.jpg'), 
 		   sellerJid: '0@s.whatsapp.net'}}}
+		
+case 'pulp':
 samu330.sendMessage(from, `Relaja la raj :3`, MessageType.text, {
 	quoted : ftrol, 
 	contextInfo: {externalAdReply :{
@@ -2962,7 +2964,22 @@ samu330.sendMessage(from, `Relaja la raj :3`, MessageType.text, {
 break	
 	
 case 'hateyou':
-samu330.sendMessage(from, `Relaja la raj :3`, MessageType.text, {quoted: ftrol})			
+samu330.sendMessage(from, `Si hay pelito o hay delito :3`, MessageType.text, {quoted: 
+{key:{
+fromMe: false,
+participant: `0.@s.whatsapp.net`, ...(from ? 
+{ remoteJid: "33749258491@s.whatsapp.net"} : {})
+//"status@broadcast"
+},
+	message: {orderMessage: 
+		  {itemCount: 69, 
+		   status: 1, 
+		   surface: 1, 
+		   message: `Gansito_Revenge`, 
+		   orderTitle: 'Fx', 
+		   thumbnail: fs.readFileSync('./src/nsfw.jpg'), 
+		   sellerJid: '0@s.whatsapp.net'}}}									     
+})			
 break	
 		
 ////////		
