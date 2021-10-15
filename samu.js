@@ -6712,6 +6712,72 @@ reply(result)
 sendFileFromUrl(resm[0].link, document, {mimetype: resm[0].mime, filename: resm[0].nombre, quoted: fdoc})
 addFilter(from)
 break
+//////Confu		
+case 'ytmp3':
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+if (args.length < 1) return reply('Y el link?')
+if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link de YouTube we, *De YouTube!!*')
+music = args.join(' ')		
+try {
+reply('*Espera un momento...*')
+yta(music)
+.then((res) => {
+const { dl_link, thumb, title, filesizeF, filesize } = res
+axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
+.then((a) => {
+result = `  「  Lalelilolu ᵈᵃʳʸ⛥  」
+⬣ *Título* : ${title}
+⬣ *Extensión* : MP3
+*Peso* : ${filesizeF}
+*Link* : ${a.data}
+
+_Lo sentimos, la duración supera el límite máximo_`
+	
+if (Number(filesize) >= 80000) return samu330.sendMessage(from, thumb, image, {quoted: fimg, caption: result})
+sendFileFromUrl(dl_link, audio, {mimetype: 'audio/mp3', filename: `${title}.mp3`, quoted: sam}).catch((err) => reply('Lo siento xd'))
+})
+})
+} catch (err) {
+reply(`Lo siento xd`)
+}
+break
+
+case 'play':	
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+if (args.length < 1) return reply('*Ingrese el título*')
+play = args.join(' ')
+reply(mess.wait)
+anu = await getJson(`https://api.zeks.xyz/api/ytplaymp3?q=${play}&apikey=oCHDwj8ggZGBGjU5WIaK5Rctu6c`)
+if (anu.err) return reply(anu.err)
+infomp3 = `❒═════❬ *𝐏𝐋𝐀𝐘* ❭═════╾❒
+├‣ *Nombre* : ${anu.result.title}
+├‣ *Fuente* : ${anu.result.source}
+├‣ *Tamaño* : ${anu.result.size}
+├‣ *Link*   : ${anu.result.url_audio}
+❒═════════════════╾❒`
+buffer = await getBuffer(anu.result.thumbnail)
+lagu = await getBuffer(anu.result.url_audio)
+samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: infomp3 })
+samu330.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${anu.result.title}.mp3`, quoted: sam})
+break
+
+case 'play2':
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+if (args.length < 1) return reply('*Ingrese el título*')
+vidx = args.join(' ')
+anu = await getJson(`https://api.zeks.xyz/api/ytplaymp4?q=${vidx}&apikey=oCHDwj8ggZGBGjU5WIaK5Rctu6c`)
+if (anu.err) return reply(anu.err)
+infomp3 = `❒════❬ *𝐏𝐋𝐀𝐘𝟐* ❭═════╾❒
+├‣ *Nombre* : ${anu.result.title}
+├‣ *Fuente* : ${anu.result.source}
+├‣ *Tamaño* : ${anu.result.size}
+❒═════════════════╾❒`			
+buffer = await getBuffer(anu.result.thumbnail)
+buffer1 = await getBuffer(anu.result.url_video)
+samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: infomp3})
+samu330.sendMessage(from, buffer1, video, {mimetype: 'video/mp4', filename: `${anu.result.video}.mp4`, quoted: sam, caption: 'Aqui tienes 💕🦈'})				
+break 		
+
 /**
 case 'play':
 assistant = fs.readFileSync('./src/assistant.jpg')		
