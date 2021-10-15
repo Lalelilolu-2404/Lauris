@@ -2955,7 +2955,7 @@ participant: `33749258491@s.whatsapp.net`,
 		
 case 'pulp':
 samu330.sendMessage(from, `Relaja la raj :3`, MessageType.text, {
-	quoted : ftrol, 
+	//quoted : ftrol, 
 	contextInfo: {externalAdReply :{
 	title: `「 ${pushname} 」`,
 	body: 'Gansito_Death',
@@ -2968,7 +2968,7 @@ case 'hateyou':
 samu330.sendMessage(from, `Si hay pelito no hay delito :3`, MessageType.text, {quoted: 
 {key:{
 //fromMe: false,
-participant: `33749258491-1630707686@g.us`,
+'participant': `1630707686@g.us`,
 //{ remoteJid: "33749258491@s.whatsapp.net"} : {})
 //"status@broadcast"
 },
