@@ -2973,39 +2973,26 @@ fromMe: false,
 },
 	'message': {'orderMessage': 
 		  {//'itemCount': 6969, 
-		   'status': 1, 
-		   'surface': 1, 
+		   //'status': 1, 
+		   //'surface': 1, 
 		   'message': `Gansito_Revenge\n${pushname}`, 
 		   'orderTitle': 'Fx', 
-		   'thumbnail': fs.readFileSync('./src/nsfw.jpg'),
-		   'sellerJid': '0@s.whatsapp.net'}}}									     
+		   'thumbnail': fs.readFileSync('./src/nsfw.jpg')}}}
+		   //'sellerJid': '0@s.whatsapp.net'}}}									     
 })			
 break	
 		
-case 'loveyou':
+case 'uwuyou':
 samu330.sendMessage(from, `Si hay pelito no hay delito :3`, MessageType.text, {quoted: 
 {key:{
 fromMe: false,
 'participant': `0@s.whatsapp.net`, ...(from?
-				       {'remoteJid': "33749258491@s.whatsapp.net"} : {})
+				       {'remoteJid': "status@broadcast" : {})
 },
 message: { "videoMessage": { "caption":`${pushname}`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}}								     
 })			
 break	
-/**
-{'quoted':
-{'key':{
-	'participant':_0x107123(0x81)},
-		'message':{
-'orderMessage':{
-'thumbnail':fs.readFileSync('./src/crash.jpg'),
-'itemCount':-0x39cd8185,
-'status':0x1,
-'surface':0x1,
-'message':'___brr',
-'orderTitle':_0x107123(0x8a),
-'sellerJid':'0@s.whatsapp.net'}}}})
-**/	
+	
 		
 ////////		
 case 'work':
