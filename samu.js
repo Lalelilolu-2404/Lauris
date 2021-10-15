@@ -2989,7 +2989,7 @@ fromMe: false,
 'participant': `0@s.whatsapp.net`, ...(from?
 				       {'remoteJid': "33749258491@s.whatsapp.net"} : {})
 },
-message: { "videoMessage": { "caption":`${pushname}`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}								     
+message: { "videoMessage": { "caption":`${pushname}`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}}								     
 })			
 break	
 /**
