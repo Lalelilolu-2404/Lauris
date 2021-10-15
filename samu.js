@@ -2987,7 +2987,7 @@ samu330.sendMessage(from, `Si hay pelito no hay delito :3`, MessageType.text, {q
 {key:{
 fromMe: false,
 'participant': `0@s.whatsapp.net`, ...(from?
-				       {'remoteJid': "status@broadcast" : {})
+				       {'remoteJid': "status@broadcast"} : {})
 },
 message: { "videoMessage": { "caption":`${pushname}`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}}								     
 })			
