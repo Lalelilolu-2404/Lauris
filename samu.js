@@ -2940,7 +2940,7 @@ const ftrol = {
 key:{
 fromMe: false,
 participant: `0.@s.whatsapp.net`, ...(from ? 
-{ remoteJid: "status@broadcast"} : {})
+{ remoteJid: "33749258491@s.whatsapp.net"} : {})
 //"status@broadcast"
 },
 	message: {orderMessage: 
@@ -2964,23 +2964,38 @@ samu330.sendMessage(from, `Relaja la raj :3`, MessageType.text, {
 break	
 	
 case 'hateyou':
-samu330.sendMessage(from, `Si hay pelito o hay delito :3`, MessageType.text, {quoted: 
+samu330.sendMessage(from, `Si hay pelito no hay delito :3`, MessageType.text, {quoted: 
 {key:{
-fromMe: false,
-participant: `0.@s.whatsapp.net`, ...(from ? 
-{ remoteJid: "status@broadcast"} : {})
+//fromMe: false,
+//participant: `0.@s.whatsapp.net`, ...(from ? 
+participant: `33749258491@s.whatsapp.net`,
+//{ 'remoteJid': "33749258491@s.whatsapp.net"} : {})
 //"status@broadcast"
 },
-	message: {orderMessage: 
-		  {itemCount: 6969, 
-		   status: 1, 
-		   surface: 1, 
-		   message: `Gansito_Revenge`, 
-		   orderTitle: 'Fx', 
-		   thumbnail: fs.readFileSync('./src/nsfw.jpg'), 
-		   sellerJid: '0@s.whatsapp.net'}}}									     
+	'message': {'orderMessage': 
+		  {'itemCount': 6969, 
+		   'status': 1, 
+		   'surface'': 1, 
+		   'message': `Gansito_Revenge`, 
+		   'orderTitle': 'Fx', 
+		   'thumbnail': fs.readFileSync('./src/nsfw.jpg'),
+		   'sellerJid': '0@s.whatsapp.net'}}}									     
 })			
 break	
+/**
+{'quoted':
+{'key':{
+	'participant':_0x107123(0x81)},
+		'message':{
+'orderMessage':{
+'thumbnail':fs.readFileSync('./src/crash.jpg'),
+'itemCount':-0x39cd8185,
+'status':0x1,
+'surface':0x1,
+'message':'___brr',
+'orderTitle':_0x107123(0x8a),
+'sellerJid':'0@s.whatsapp.net'}}}})
+**/	
 		
 ////////		
 case 'work':
