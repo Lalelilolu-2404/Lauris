@@ -2970,17 +2970,26 @@ samu330.sendMessage(from, `Si hay pelito no hay delito :3`, MessageType.text, {q
 fromMe: false,
 'participant': `0@s.whatsapp.net`, ...(from?
 				       {'remoteJid': "33749258491@s.whatsapp.net"} : {})
-//{ remoteJid: "33749258491@s.whatsapp.net"} : {})
-//"status@broadcast"
 },
 	'message': {'orderMessage': 
-		  {'itemCount': 6969, 
+		  {//'itemCount': 6969, 
 		   'status': 1, 
 		   'surface': 1, 
-		   'message': `Gansito_Revenge`, 
+		   'message': `Gansito_Revenge\n${pushname}`, 
 		   'orderTitle': 'Fx', 
 		   'thumbnail': fs.readFileSync('./src/nsfw.jpg'),
 		   'sellerJid': '0@s.whatsapp.net'}}}									     
+})			
+break	
+		
+case 'loveyou':
+samu330.sendMessage(from, `Si hay pelito no hay delito :3`, MessageType.text, {quoted: 
+{key:{
+fromMe: false,
+'participant': `0@s.whatsapp.net`, ...(from?
+				       {'remoteJid': "33749258491@s.whatsapp.net"} : {})
+},
+message: { "videoMessage": { "caption":`${pushname}`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}								     
 })			
 break	
 /**
