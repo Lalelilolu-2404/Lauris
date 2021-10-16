@@ -68,7 +68,6 @@ const exif = new Exif();
 const { recognize } = require('./lib/ocr');
 const help = require("./lib/help")
 const yts = require('yt-search')
-const { yta, ytv, igdl, upload, formatDate } = require("./lib/ytdl");
 const postBuffer = help.postBuffer
 const getBuffer = help.getBuffer
 const getRandom = help.getRandomExt
@@ -6775,7 +6774,7 @@ if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply('Link de YouTube 
 music = args.join(' ')		
 try {
 reply('*Espera un momento...*')
-yta(music)
+y2mateA(music)
 .then((res) => {
 const { dl_link, thumb, title, filesizeF, filesize } = res
 axios.get(`https://tinyurl.com/api-create.php?url=${dl_link}`)
