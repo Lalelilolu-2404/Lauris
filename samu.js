@@ -9880,10 +9880,10 @@ if (!isGroup) return reply(mess.only.group)
 if (!isOwner) return
 teks = ` ≡ *Lista de baneados xd*\n\n*Total* : ${ban.length}\n┌───⊷ *LISTA* ⊶\n`
 	    for (let baned of ban) {
-	    teks += `├╼ @${baned.split('@')[0]}\n`
-					}
+	    teks += `├╼ @${baned.id.split('@')[0]}\n${baned.expired}`
+		}
 	    teks += `└──────────────`
-samu330.sendMessage(from, teks.trim(), extendedText, {quoted: sam, contextInfo: {"mentionedJid": ban}})
+samu330.sendMessage(from, teks.trim(), MessageType.text, {quoted: fdreams, contextInfo: {"mentionedJid": ban}})
 break
 		
 case '+18':                
