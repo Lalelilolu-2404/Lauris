@@ -4353,7 +4353,7 @@ samu330.sendMessage(from, imgus, MessageType.image, {
 quoted: fjeux, 
 caption: `${sus}`, 
 contextInfo: { mentionedJid: [tripamg[0], tripamg[1]]}})
-/**
+
 let amongs = samu330.prepareMessageFromContent(from, {
 "listMessage":  {
 "title": "\t*AMONGUS X👑X*",
@@ -4388,7 +4388,7 @@ setTimeout(() => {
 //reply(`${prefix}emergencymetting`)
 samu330.relayWAMessage(amongs, {waitForAck: true})
 }, 4000)
-**/		
+		
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
@@ -4404,7 +4404,8 @@ mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }		
 var k = Math.floor(Math.random() * 17) + 1
 imgkill = fs.readFileSync(`./temp/amongus/kill${k}.JPG`)
-samu330.sendMessage(from, {jpegThumbnail: imgkill}, MessageType.liveLocation,{ quoted: fjeux})
+samu330.sendMessage(from, {jpegThumbnail: imgkill, contentText: `You died`, footerText: `ᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`}, 
+		    MessageType.liveLocation,{ quoted: fjeux})
 const susxx = `El impostor @${mentioned[0].split('@')[0]} was killed ⚠️!!`
 /**
 const fkil = {
@@ -8981,11 +8982,24 @@ if (!botAdmin) return reply(mess.only.Badmin)
 		if (mentionUser.length == 1)
 		if (mentioned[0].split('@')[0] == '33749258491') return
 		samu330.groupRemove(from, mentionUser)
-		} else {
+		} else if(mentioned.length == 1){
 		if (mentioned[0].split('@')[0] == '33749258491') return
 		samu330.groupRemove(from, mentioned)
 		}
-break		
+break	
+		
+case 'desgarrar':
+if (!isLalelilolu && !isAnna) return reply('Nel perro :v')
+if (!isGroup) return reply(mess.only.group)
+if (!botAdmin) return reply(mess.only.Badmin)
+                if (sam.message.extendedTextMessage != undefined){
+                mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+		if (mentionUser.length == 1)
+		reply(`${mentionUser.lenght}`)
+		} else if(mentioned.length == 1){
+		reply(`${mentioned.lenght}`)
+		}
+break	
 		
 case 'wpsearch':
 if (!isGroup) return reply(mess.only.group)
@@ -9172,7 +9186,7 @@ case 'hidetag':
 //if (!isOwner && !itsMe) return await reply('Este comando solo puede ser usado por *Samu330* ⚙')
 if (!isAdmin && !isOwner && !itsMe) return await reply(mess.only.admin)
 await wa.hideTag(from, args.join(" "))
-addLevelingXp(sender, 40)
+addLevelingXp(sender, 40).catch(err => {return('Pwrdon... T_T')})	
 break
 case 'imagetag':
 if (!isGroup) return await reply(mess.only.group)
@@ -9180,7 +9194,7 @@ if (!isAdmin && !isOwner && !itsMe) return await reply(mess.only.admin)
 if (!isQuotedImage && !isImage) return await reply(`Lalala... *cancion feliz*\nY la imagen pedazo de nada? >:/`)
 mediatag = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
 buffer = await samu330.downloadMediaMessage(mediatag)
-await wa.hideTagImage(from, buffer)
+await wa.hideTagImage(from, buffer).catch(err => {return('Pwrdon... T_T')})	
 break
 case 'toimg':
 case 'aimg':
@@ -9234,7 +9248,7 @@ if (!isAdmin && !isOwner && !itsMe) return await reply('This command only for ad
 if (!isQuotedSticker && !isSticker) return await reply('Etiqueta un stiker')
 media = isQuotedSticker ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
 buffer = await samu330.downloadMediaMessage(media)
-await wa.hideTagSticker(from, buffer)
+await wa.hideTagSticker(from, buffer).catch(err => {return('Pwrdon... T_T')})	
 break
 
 case 'rot':
