@@ -9400,11 +9400,11 @@ await wa.sendFakeStatus(from, link, "El link de este grupo es")
 break
 
 case 'revoke':
-case 'dellink': 
+case 'resetlink': 
 if (!isAdmin) return reply(mess.only.admin)
 if (!botAdmin) return await reply(mess.only.Badmin)
 samu330.query({ json: ['action', 'inviteReset', from], expect200: true })
-linkgp = await samu330.groupInviteCode(from)
+linkgp = await wa.getGroupInvitationCode(from)
 fgxd = `✅ Enlace del grupo anulado\n${linkgp}`
 samu330.sendMessage(from, fgxd, text, {quoted: fdreams})
 break		
