@@ -1496,14 +1496,14 @@ break
 }
 
 ///////			
-	   		/**
+	   		
 			if (sam.message.listResponseMessage){
 				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
 				if (test.includes(`${prefix}banearlo`)){
 					if (!isGroup) return reply(mess.only.group)
 					addBanned(tripamg[0], args[1], ban)
-					amgf = fs.readFileSync(`./src/stickers2/Funao.webp`)
-					samu330.sendMessage(from, amgf, sticker, {sendEphemeral: true})
+					//amgf = fs.readFileSync(`./src/stickers2/Funao.webp`)
+					//samu330.sendMessage(from, amgf, sticker, {sendEphemeral: true})
 					mentions(`@${tripamg[0].split('@')[0]} Usted a sido baneado, lo que significa que no podra usar el bot!`, mentioned, true)
 					addFilter(from)
 			}
@@ -1542,7 +1542,7 @@ break
 				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
 				if (test.includes(`${prefix}killed`)){
 					if (!isGroup) return reply(mess.only.group)
-					if (!botAdmin) return reply(mess.only.Badmin)
+					if (!botAdmin) return 
 					//if (member[1].split('@')[0] != owner && member[1].split('@')[0] != botNumber){
 					//samu330.groupRemove(from, member[1])
 					//mentionUser = member[1]
@@ -1557,7 +1557,7 @@ break
 					addFilter(from)
 			}
 			}
-			**/
+			
 /////
 	    const repic = ["art", "wallnime", "megumin", "neko", "loli", "waifu", "sagiri", "shinobu"]
 	    		if (sam.message.listResponseMessage){
@@ -4355,12 +4355,12 @@ caption: `${sus}`,
 contextInfo: { mentionedJid: [tripamg[0], tripamg[1]]}})
 
 const txtamgpla =`${bodyM} Participantes : ${groupMembers.length}
-${bodyM} Impostores    : 2`
+\t${bodyM} Impostores    : 2`
 
 let amongs = samu330.prepareMessageFromContent(from, {
 "listMessage":  {
 "title": "\t*AMONGUS X👑X*",
-"description": `\tUwu ${pushname}\n\t${txtamgpla}\n\tUn impostor aún sigue en la nave!!\n\tSelecciona que hacer con él ↴`,
+"description": `\t*${txtamgpla}*\n\n\t*Un impostor aún sigue en la nave!!*\n\t*Selecciona que hacer con él ↴*`,
 "buttonText": "[Emergency Metting!!]",
 "listType": "SINGLE_SELECT",
 "sections": [
@@ -8999,8 +8999,10 @@ if (!botAdmin) return reply(mess.only.Badmin)
                 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 		if (mentionUser.length == 1)
 		reply(`${mentionUser.length}`)
+		samu330.groupRemove(from, mentionUser)
 		} else if(mentioned.length == 1){
 		reply(`${mentioned.length}`)
+		samu330.groupRemove(from, mentioned)
 		}
 break	
 		
