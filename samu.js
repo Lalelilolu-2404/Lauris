@@ -2801,16 +2801,16 @@ key:
 { fromMe: false,
 participant: "0@s.whatsapp.net", ...(from ?
 //{ remoteJid: `5491165204676-1630035714@g.us` } : {}) },
-{ remoteJid: `status@broadcast` } : {}) },
-message: { "videoMessage": { "caption":`Lalelilolu ᵈᵃʳʸ⛥\n${pushname}`, 'jpegThumbnail': 
-			    fs.readFileSync('./src/fake.jpg')}}
+{ remoteJid: `33749258491@s.whatsapp.net` } : {}) },
+message: { "videoMessage": { "caption":`⌜⛧⸸⁶Gansito_Revenge⁹†♡ت⌟\n${pushname}`, 'jpegThumbnail': 
+			    fs.readFileSync('./src/dreams.jpg')}}
 }
 
 samu330.sendMessage(from, `${xmenux}`, MessageType.text, {
 	quoted : fmenu, 
 	contextInfo: {externalAdReply :{
-	title: ` BIENVENIDO A :\n「 ${mdata.subject} 」`,
-	//body: '',
+	title: ` BIENVENIDO`,
+	body: `「 ${mdata.subject} 」`,
 	//sourceUrl : `${linkx}`, 
 	thumbnail : fs.readFileSync('./src/assistant.jpg')}}}
 	)
