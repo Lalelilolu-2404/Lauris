@@ -4756,7 +4756,10 @@ case 'ecchi':
 if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 	try{
 	buffer = await getBuffer('http://api.lolhuman.xyz/api/random/nsfw/ecchi?apikey=847de7716f17a51eeba4235c')
-	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Wow 🥵*_ 💠', quoted: fimg})
+	samu330.sendMessage(from, buffer, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), caption : '💎 _*Wow 🥵*_ 💠', quoted: fimg})
+	.catch(err => {
+	return('Pwrdon... T_T')
+	})
 	} catch (e) {
 	console.log(`Error :`, color(e,'red'))
 	reply('Pwrdon... T_T')
@@ -4769,7 +4772,10 @@ case 'hentai2':
 if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 	try{
 	buffer = await getBuffer('http://api.lolhuman.xyz/api/random/nsfw/hentai?apikey=847de7716f17a51eeba4235c')
-	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Wow 🥵*_ 💠', quoted: fimg})
+	samu330.sendMessage(from, buffer, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), caption : '💎 _*Wow 🥵*_ 💠', quoted: fimg})
+	.catch(err => {
+	return('Pwrdon... T_T')
+	})
 	} catch (e) {
 	console.log(`Error :`, color(e,'red'))
 	reply('Pwrdon... T_T')
@@ -4782,7 +4788,10 @@ case 'hentai4':
 if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 	try{
 	buffer = await getBuffer('http://api.lolhuman.xyz/api/random/nsfw/hentai?apikey=NikolaTesla')
-	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Wow 🥵*_ 💠', quoted: fimg})
+	samu330.sendMessage(from, buffer, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), caption : '💎 _*Wow 🥵*_ 💠', quoted: fimg})
+	.catch(err => {
+	return('Pwrdon... T_T')
+	})
 	} catch (e) {
 	console.log(`Error :`, color(e,'red'))
 	reply('Pwrdon... T_T')
@@ -4795,7 +4804,10 @@ case 'hentai3':
 if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 	try{
 	buffer = await getBuffer('http://api.lolhuman.xyz/api/random2/hentai?apikey=NikolaTesla')
-	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Uff si 🥵*_ 💠', quoted: fimg})
+	samu330.sendMessage(from, buffer, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), caption : '💎 _*Wow 🥵*_ 💠', quoted: fimg})
+	.catch(err => {
+	return('Pwrdon... T_T')
+	})
 	} catch (e) {
 	console.log(`Error :`, color(e,'red'))
 	reply('Pwrdon... T_T')
@@ -4812,7 +4824,10 @@ case 'nsfw_avatar':
 if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 	try{
 	buffer = await getBuffer(`http://api.lolhuman.xyz/api/random2/${command}?apikey=NikolaTesla`)
-	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Uff si 🥵*_ 💠', quoted: fimg})
+	samu330.sendMessage(from, buffer, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), caption : '💎 _*Uff sii 🥵*_ 💠', quoted: fimg})
+	.catch(err => {
+	return('Pwrdon... T_T')
+	})
 	} catch (e) {
 	console.log(`Error :`, color(e,'red'))
 	reply('Pwrdon... T_T')
@@ -4852,10 +4867,7 @@ break
 			if (!isGroup) return reply(mess.only.group)
 			nek = await axios.get('https://nekos.life/api/v2/img/neko')
 			buffer = await getBuffer(nek.data.url)
-			samu330.sendMessage(from, buffer, image, {quoted: fimg})
-			.catch(err => {
-			return('Pwrdon... T_T')
-			})
+			samu330.sendMessage(from, buffer, image, {quoted: fimg}).catch(err => {return('Pwrdon... T_T')})
 			addFilter(from)
 			addLevelingXp(sender, 20)
 			break
@@ -9404,9 +9416,6 @@ case 'resetlink':
 if (!isAdmin) return reply(mess.only.admin)
 if (!botAdmin) return await reply(mess.only.Badmin)
 samu330.query({ json: ['action', 'inviteReset', from], expect200: true })
-linkgp = await wa.getGroupInvitationCode(from)
-fgxd = `✅ Enlace del grupo anulado\n${linkgp}`
-samu330.sendMessage(from, fgxd, text, {quoted: fdreams})
 break		
 		
 case 'grupo':
