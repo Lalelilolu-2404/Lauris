@@ -4291,9 +4291,6 @@ quoted: fjeux,
 caption: `${sus}`, 
 contextInfo: { mentionedJid: [tripamg[0], tripamg[1]]}})
 
-const txtamgpla =`*${bodyM} Participantes : ${groupMembers.length}
-\t${bodyM} Impostores    : 2*`
-
 let amongs = samu330.prepareMessageFromContent(from, {
 "listMessage":  {
 "title": "\t*AMONGUS X👑X*",
@@ -4350,7 +4347,8 @@ setTimeout(() => {
 samu330.sendMessage(from, susxx, MessageType.text, {contextInfo: { mentionedJid: [mentioned[0]]}})
 }, 2000)
 break	
-//////////		
+//////////
+/**
 case 'banearlo':	
 if (!isGroup) return reply(mess.only.group)
 if (!sam.message.listResponseMessage) return
@@ -4387,7 +4385,7 @@ setTimeout(() => {
 samu330.sendMessage(from, susp, MessageType.text, {quoted: fjeux, contextInfo: { mentionedJid: [tripamg[1]]}})
 }, 800)
 break									
-		
+**/		
 ///////////	
 case 'imgrandom':		
 let picrd = samu330.prepareMessageFromContent(from, {
@@ -8955,19 +8953,10 @@ if (!botAdmin) return reply(mess.only.Badmin)
 		}
 break	
 		
-case 'desgarrar':
-if (!isLalelilolu && !isAnna) return reply('Nel perro :v')
+case 'suicide':
 if (!isGroup) return reply(mess.only.group)
 if (!botAdmin) return reply(mess.only.Badmin)
-                if (sam.message.extendedTextMessage != undefined){
-                mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-		if (mentionUser.length == 1)
-		reply(`${mentionUser.length}`)
-		samu330.groupRemove(from, mentionUser)
-		} else if(mentioned.length == 1){
-		reply(`${mentioned.length}`)
-		samu330.groupRemove(from, mentioned)
-		}
+samu330.groupRemove(from, sender)
 break	
 		
 case 'wpsearch':
@@ -9884,6 +9873,17 @@ mentions(`@${mentioned[0].split('@')[0]} Usted a sido desbaneado, ahora podra us
 unBanned(args[0] + '@s.whatsapp.net', ban)
 mentions(`@${mentioned[0].split('@')[0]} Usted a sido desbaneado, ahora podra usar el bot!!`, mentioned, true)
 }
+break
+		
+case 'banlist':
+if (!isGroup) return reply(mess.only.group)
+if (!isOwner) return
+teks = ` ≡ *Lista de baneados xd*\n\n*Total* : ${ban.length}\n┌───⊷ *LISTA* ⊶\n`
+	    for (let baned of ban) {
+	    teks += `├╼ @${baned.split('@')[0]}\n`
+					}
+	    teks += `└──────────────`
+samu330.sendMessage(from, teks.trim(), extendedText, {quoted: sam, contextInfo: {"mentionedJid": ban}})
 break
 		
 case '+18':                
