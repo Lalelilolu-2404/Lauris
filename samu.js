@@ -1499,7 +1499,7 @@ break
 	   		
 			if (sam.message.listResponseMessage){
 				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
-				if (test.includes(`${prefix}banearlo`)){
+				if (test.includes(`Allbanearlo`)){
 					if (!isGroup) return reply(mess.only.group)
 					addBanned(tripamg[0], args[1], ban)
 					//amgf = fs.readFileSync(`./src/stickers2/Funao.webp`)
@@ -1510,7 +1510,7 @@ break
 			}
 	    		if (sam.message.listResponseMessage){
 				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
-				if (test.includes(`${prefix}selacome`)){
+				if (test.includes(`Allselacome`)){
 					if (!isGroup) return reply(mess.only.group)
 					selc = `*➥@${tripamg[3].split('@')[0]} se la come doblada :v*`	
 					samu330.sendMessage(from, selc, MessageType.text, {
@@ -1521,7 +1521,7 @@ break
 			}
 			if (sam.message.listResponseMessage){
 				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
-				if (test.includes(`${prefix}matartrip`)){
+				if (test.includes(`Allmatartrip`)){
 					if (!isGroup) return reply(mess.only.group)
 					susd = `⚠️!! @${tripamg[2].split('@')[0]} was killed!!`
 					var k = Math.floor(Math.random() * 17) + 1
@@ -1533,14 +1533,14 @@ break
 					samu330.sendMessage(from, imgkill, MessageType.image, {
 					quoted: fjeux, 
 					caption: `${sus}`, 
-					contextInfo: { mentionedJid: [member[2]]}})
+					contextInfo: { mentionedJid: [tripamg[2]]}})
 					
 					addFilter(from)
 			}
 			}
 			if (sam.message.listResponseMessage){
 				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
-				if (test.includes(`${prefix}killed`)){
+				if (test.includes(`Allkilled`)){
 					if (!isGroup) return reply(mess.only.group)
 					if (!botAdmin) return 
 					//if (member[1].split('@')[0] != owner && member[1].split('@')[0] != botNumber){
@@ -4354,13 +4354,13 @@ quoted: fjeux,
 caption: `${sus}`, 
 contextInfo: { mentionedJid: [tripamg[0], tripamg[1]]}})
 
-const txtamgpla =`${bodyM} Participantes : ${groupMembers.length}
-\t${bodyM} Impostores    : 2`
+const txtamgpla =`*${bodyM} Participantes : ${groupMembers.length}
+\t${bodyM} Impostores    : 2*`
 
 let amongs = samu330.prepareMessageFromContent(from, {
 "listMessage":  {
 "title": "\t*AMONGUS X👑X*",
-"description": `\t*${txtamgpla}*\n\n\t*Un impostor aún sigue en la nave!!*\n\t*Selecciona que hacer con él ↴*`,
+"description": `\t*${bodyM} Participantes : ${groupMembers.length}*\n\t*${bodyM} Impostores    : 2*\n\n\t*Un impostor aún sigue en la nave!!*\n\t*Selecciona que hacer con él ↴*`,
 "buttonText": "[Emergency Metting!!]",
 "listType": "SINGLE_SELECT",
 "sections": [
