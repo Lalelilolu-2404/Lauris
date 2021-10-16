@@ -68,6 +68,7 @@ const exif = new Exif();
 const { recognize } = require('./lib/ocr');
 const help = require("./lib/help")
 const yts = require('yt-search')
+const { yta, ytv, igdl, upload, formatDate } = require("./lib/ytdl");
 const postBuffer = help.postBuffer
 const getBuffer = help.getBuffer
 const getRandom = help.getRandomExt
