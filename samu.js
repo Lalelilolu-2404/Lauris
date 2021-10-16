@@ -1066,11 +1066,8 @@ message: { "videoMessage": { "caption":"Lalelilolu ᵈᵃʳʸ⛥\n➫Jeux ♤◇
 contextInfo: {
 mentionedJid: [sender]}
 const fdreams = {
-key:
-{ fromMe: false,
-participant: `0@s.whatsapp.net`, ...(from ?
-{ remoteJid: "status@broadcast" } : {}) },
-message: { "videoMessage": { "caption":"⛧⸸⁶Death⁹†\n➫ ♤◇♧♡", 'jpegThumbnail': fs.readFileSync('./src/dreams.jpg')}}
+key:{ fromMe: false, 'participant': `0@s.whatsapp.net`, ...(from?{'remoteJid': "33749258491@s.whatsapp.net"} : {})},
+message: { "videoMessage": { "caption": "⛧⸸⁶Death⁹†\n➫ ♤◇♧♡", 'jpegThumbnail': fs.readFileSync('./src/dreams.jpg')}},
 }
 contextInfo: {
 mentionedJid: [sender]}
@@ -9396,10 +9393,21 @@ await wa.sendFakeStatus(from, textt, "LIST ADMIN", groupAdmins)
 break
 case 'link':
 if (!isAdmin) return reply(mess.only.admin)
-addFilter(from)
+if (!botAdmin) return await reply(mess.only.Badmin)
 var link = await wa.getGroupInvitationCode(from)
 await wa.sendFakeStatus(from, link, "El link de este grupo es")
 break
+
+case 'revoke':
+case 'dellink': 
+if (!isAdmin) return reply(mess.only.admin)
+if (!botAdmin) return await reply(mess.only.Badmin)
+samu330.query({ json: ['action', 'inviteReset', from], expect200: true })
+linkgp = await samu330.groupInviteCode(from)
+fgxd = `✅ Enlace del grupo anulado\n${linkgp}`
+samu330.sendMessage(from, fgxd, text, {quoted: fdreams})
+break		
+		
 case 'grupo':
 addFilter(from)
 if (!isGroup) return await reply(mess.only.group)
