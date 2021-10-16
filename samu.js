@@ -2975,7 +2975,7 @@ fromMe: false,
 		   'surface': 1, 
 		   'message': `Gansito_Revenge`, 
 		   'orderTitle': 'Fx', 
-		   'thumbnail': fs.readFileSync('./src/nsfw.jpg')}}}
+		   'thumbnail': fs.readFileSync('./src/nsfw.jpg'),
 		   'sellerJid': '0@s.whatsapp.net'}}}									     
 })			
 break	
@@ -2984,9 +2984,9 @@ case 'uwuyou':
 samu330.sendMessage(from, fs.readFileSync('./src/assistant.jpg'), image, {thumbnail: fs.readFileSync('./src/dreams.jpg'), quoted: 
 {
 key:{ fromMe: false, 'participant': `0@s.whatsapp.net`, ...(from?{'remoteJid': "33749258491@s.whatsapp.net"} : {})},
-message: { "videoMessage": { "caption":`${pushname}`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
+message: { "videoMessage": { "caption":`${pushname}`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}},
 },
-caption:`Uhm, estofado :v` })			
+caption:`Uhm, estofado :v`})			
 break	
 	
 		
