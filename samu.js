@@ -4368,19 +4368,19 @@ let amongs = samu330.prepareMessageFromContent(from, {
 "rows": [
 {
 "title": "Banear 1er impostor !!",
-"rowId": `${prefix}banearlo`
+"rowId": `Allbanearlo`
 },
 {
 "title": "Kill 2nd impostor 🔪(kick ⚠️)!!",
-"rowId": `${prefix}killed`
+"rowId": `Allkilled`
 },
 {
 "title": "Kill tripulante (azar) 🔪!!",
-"rowId": `${prefix}matartrip`
+"rowId": `Allmatartrip`
 },
 {
 "title": "El admin se la come doblada xd",
-"rowId": `${prefix}selacome`
+"rowId": `Allselacome`
 },
 ]
 }
