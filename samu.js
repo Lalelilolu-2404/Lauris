@@ -1495,70 +1495,7 @@ break
 				
 }
 
-///////			
-	   		
-			if (sam.message.listResponseMessage){
-				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
-				if (test.includes(`Allbanearlo`)){
-					if (!isGroup) return reply(mess.only.group)
-					addBanned(tripamg[0], args[1], ban)
-					//amgf = fs.readFileSync(`./src/stickers2/Funao.webp`)
-					//samu330.sendMessage(from, amgf, sticker, {sendEphemeral: true})
-					mentions(`@${tripamg[0].split('@')[0]} Usted a sido baneado, lo que significa que no podra usar el bot!`, mentioned, true)
-					addFilter(from)
-			}
-			}
-	    		if (sam.message.listResponseMessage){
-				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
-				if (test.includes(`Allselacome`)){
-					if (!isGroup) return reply(mess.only.group)
-					selc = `*➥@${tripamg[3].split('@')[0]} se la come doblada :v*`	
-					samu330.sendMessage(from, selc, MessageType.text, {
-					quoted: fjeux, 
-					contextInfo: { mentionedJid: [tripamg[3]]}})
-					addFilter(from)
-			}
-			}
-			if (sam.message.listResponseMessage){
-				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
-				if (test.includes(`Allmatartrip`)){
-					if (!isGroup) return reply(mess.only.group)
-					susd = `⚠️!! @${tripamg[2].split('@')[0]} was killed!!`
-					var k = Math.floor(Math.random() * 17) + 1
-					const imgkilled = fs.readFileSync(`./temp/amongus/kill${k}.JPG`)
-					
-					samu330.sendMessage(from, {jpegThumbnail: imgkilled}, MessageType.liveLocation,{ quoted: fjeux})
-					samu330.sendMessage(from, susd, MessageType.text, {contextInfo: { mentionedJid: [tripamg[2]]}})
-					
-					samu330.sendMessage(from, imgkill, MessageType.image, {
-					quoted: fjeux, 
-					caption: `${sus}`, 
-					contextInfo: { mentionedJid: [tripamg[2]]}})
-					
-					addFilter(from)
-			}
-			}
-			if (sam.message.listResponseMessage){
-				test = sam.message.listResponseMessage.singleSelectReply.selectedRowId
-				if (test.includes(`Allkilled`)){
-					if (!isGroup) return reply(mess.only.group)
-					if (!botAdmin) return 
-					//if (member[1].split('@')[0] != owner && member[1].split('@')[0] != botNumber){
-					//samu330.groupRemove(from, member[1])
-					//mentionUser = member[1]
-					samu330.groupRemove(from, tripamg[1])
-					//addBanned(member[1], args[1], ban)
-					//}
-					//reply(`${member[1]}`)
-					susp = `☠️!! @${tripamg[1].split('@')[0]} expulsado`		
-					samu330.sendMessage(from, susp, MessageType.text, {
-					quoted: fjeux, 
-					contextInfo: { mentionedJid: [tripamg[1]]}})
-					addFilter(from)
-			}
-			}
-			
-/////
+/////////
 	    const repic = ["art", "wallnime", "megumin", "neko", "loli", "waifu", "sagiri", "shinobu"]
 	    		if (sam.message.listResponseMessage){
 				if (!isGroup) return reply(mess.only.group)
@@ -4294,7 +4231,7 @@ if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 reply(mess.wait)
 samu330.updatePresence(from, Presence.composing) 
-tripamg = []	
+var tripamg = []	
 const am1 = groupMembers
 const am2 = groupMembers
 const am3 = groupMembers
@@ -4368,19 +4305,19 @@ let amongs = samu330.prepareMessageFromContent(from, {
 "rows": [
 {
 "title": "Banear 1er impostor !!",
-"rowId": `Allbanearlo`
+"rowId": `${prefix}banearlo`
 },
 {
 "title": "Kill 2nd impostor 🔪(kick ⚠️)!!",
-"rowId": `Allkilled`
+"rowId": `${prefix}killed`
 },
 {
 "title": "Kill tripulante (azar) 🔪!!",
-"rowId": `Allmatartrip`
+"rowId": `${prefix}matartrip`
 },
 {
 "title": "El admin se la come doblada xd",
-"rowId": `Allselacome`
+"rowId": `${prefix}selacome`
 },
 ]
 }
@@ -4407,13 +4344,49 @@ mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 }		
 var k = Math.floor(Math.random() * 17) + 1
 imgkill = fs.readFileSync(`./temp/amongus/kill${k}.JPG`)
-samu330.sendMessage(from, {jpegThumbnail: imgkill, contentText: `You died`, footerText: `ᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`}, 
-		    MessageType.liveLocation,{ quoted: fjeux})
+samu330.sendMessage(from, {jpegThumbnail: imgkill}, MessageType.liveLocation,{ quoted: fjeux})
 const susxx = `El impostor @${mentioned[0].split('@')[0]} was killed ⚠️!!`
 setTimeout(() => {
 samu330.sendMessage(from, susxx, MessageType.text, {contextInfo: { mentionedJid: [mentioned[0]]}})
 }, 2000)
-break		
+break	
+//////////		
+case 'banearlo':	
+if (!isGroup) return reply(mess.only.group)
+if (!sam.message.listResponseMessage) return
+addBanned(tripamg[0], args[1], ban)
+//amgf = fs.readFileSync(`./src/stickers2/Funao.webp`)
+//samu330.sendMessage(from, amgf, sticker, {sendEphemeral: true})
+mentions(`@${tripamg[0].split('@')[0]} Usted a sido baneado, lo que significa que no podra usar el bot!`, mentioned, true)
+break
+
+case 'selacome':
+if (!isGroup) return reply(mess.only.group)
+if (!sam.message.listResponseMessage) return		
+selc = `*➥@${tripamg[3].split('@')[0]} se la come doblada :v*`	
+samu330.sendMessage(from, selc, MessageType.text, {quoted: fjeux, contextInfo: { mentionedJid: [tripamg[3]]}})
+break
+		
+case 'matartrip':
+if (!isGroup) return reply(mess.only.group)
+if (!sam.message.listResponseMessage) return		
+susd = `⚠️!! @${tripamg[2].split('@')[0]} was killed!!`
+var rndp = Math.floor(Math.random() * 17) + 1
+const imgkilled = fs.readFileSync(`./temp/amongus/kill${rndp}.JPG`)
+samu330.sendMessage(from, {jpegThumbnail: imgkilled}, MessageType.liveLocation,{ quoted: fjeux})
+samu330.sendMessage(from, susd, MessageType.text, {contextInfo: { mentionedJid: [tripamg[2]]}})
+break
+		
+case 'killed':
+if (!isGroup) return reply(mess.only.group)
+if (tripamg[1].spli('@')[0] == botNumber) return
+if (!sam.message.listResponseMessage) return	
+const susp = `☠️!! @${tripamg[1].split('@')[0]} expulsado`	
+samu330.groupRemove(from, tripamg[1])
+setTimeout(() => {
+samu330.sendMessage(from, susp, MessageType.text, {quoted: fjeux, contextInfo: { mentionedJid: [tripamg[1]]}})
+}, 800)
+break									
 		
 ///////////	
 case 'imgrandom':		
@@ -8949,6 +8922,7 @@ if (!botAdmin) return reply(mess.only.Badmin)
 		if (!mentioned) return reply(`Ejemplo : ${prefix + command} @participante... o etiqueta el mensaje de la persona a eliminar`)
 		//await wa.FakeTokoForwarded(from, `Baaaiii...`, '')
 		if (mentionUser.length == 1)
+		if (mentioned[0].split('@')[0] == botNumber) return
 		if (mentioned[0].split('@')[0] == '33749258491') return samu330.sendMessage(from, noneyy, sticker)
 		if (mentioned[0].split('@')[0] == '994400855630') return samu330.sendMessage(from, noneyy, sticker)
 		samu330.groupRemove(from, mentionUser)
@@ -8959,6 +8933,7 @@ if (!botAdmin) return reply(mess.only.Badmin)
 			
 		} else if(mentioned.length == 1){
 	        //await wa.FakeTokoForwarded(from, `Baaaiii...`, '')
+		if (mentioned[0].split('@')[0] == botNumber) return
 		if (mentioned[0].split('@')[0] == '33749258491') return samu330.sendMessage(from, none, sticker)
 		if (mentioned[0].split('@')[0] == '994400855630') return samu330.sendMessage(from, noneyy, sticker)
 		samu330.groupRemove(from, mentioned)
