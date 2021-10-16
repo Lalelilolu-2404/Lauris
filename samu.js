@@ -2975,15 +2975,15 @@ fromMe: false,
 		  {//'itemCount': 6969, 
 		   //'status': 1, 
 		   //'surface': 1, 
-		   'message': `Gansito_Revenge\n${pushname}`, 
-		   'orderTitle': 'Fx', 
+		   'message': `Gansito_Revenge`, 
+		   //'orderTitle': 'Fx', 
 		   'thumbnail': fs.readFileSync('./src/nsfw.jpg')}}}
 		   //'sellerJid': '0@s.whatsapp.net'}}}									     
 })			
 break	
 		
 case 'uwuyou':
-samu330.sendMessage(from, `Si hay pelito no hay delito :3`, MessageType.text, {quoted: 
+samu330.sendMessage(from, `Si hay pelito no hay delito :3, Anna se la come doblada`, MessageType.text, {quoted: 
 {key:{
 fromMe: false,
 'participant': `0@s.whatsapp.net`, ...(from?
@@ -3291,7 +3291,7 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
              imageToBase64(pjr)
             .then((response) => {
             media =  Buffer.from(response, 'base64');
-            samu330.sendMessage(from, media, MessageType.image,{quoted: sam,caption:'༊ Uwu ࿑'})
+            samu330.sendMessage(from, media, MessageType.image,{ thumbnail: fs.readFileSync('./src/dreams.jpg'), quoted: sam,caption:'༊ Uwu ࿑'})
             }
             )
     .catch((error) => {
@@ -3308,7 +3308,7 @@ if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})  			 
 	anux = await axios.get('https://bx-hunter.herokuapp.com/api/randomloli?apikey=Ikyy69')
 	buffer = await getBuffer(anux.data.link)
-	samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: '_*Lolis?...@FBI*_'})
+	samu330.sendMessage(from, buffer, image, { thumbnail: fs.readFileSync('./src/dreams.jpg'), quoted: fimg, caption: '_*Lolis?...@FBI*_'})
 	.catch(err => {
 	return('Pwrdon... T_T')
 })
@@ -3320,7 +3320,7 @@ case 'nekoxx':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})     
 	buffer = await getBuffer(`https://bx-hunter.herokuapp.com/api/sfw/neko?apikey=Ikyy69`)
-	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Nekos :3*_ 💠', quoted: fimg})
+	samu330.sendMessage(from, buffer, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), caption : '💎 _*Nekos :3*_ 💠', quoted: fimg})
 	.catch(err => {
 	return('Pwrdon... T_T')
 	})
@@ -3332,7 +3332,7 @@ case 'waifuxx':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})     
 	buffer = await getBuffer(`https://bx-hunter.herokuapp.com/api/sfw/waifu?apikey=Ikyy69`)
-	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Más waifus :3*_ 💠', quoted: fimg})
+	samu330.sendMessage(from, buffer, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), caption : '💎 _*Más waifus :3*_ 💠', quoted: fimg})
 	.catch(err => {
 	return('Pwrdon... T_T')
 	})
@@ -3344,7 +3344,7 @@ case 'hentaixx':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})     
 	buffer = await getBuffer(`https://bx-hunter.herokuapp.com/api/nsfw/hentai?apikey=Ikyy69`)
-	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Pasen Hentai :3*_ 💠', quoted: fimg})
+	samu330.sendMessage(from, buffer, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), caption : '💎 _*Pasen Hentai :3*_ 💠', quoted: fimg})
 	.catch(err => {
 	return('Pwrdon... T_T')
 	})
@@ -3356,7 +3356,7 @@ case 'trapxx':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})     
 	buffer = await getBuffer(`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=trap&apikey=hardianto`)
-	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Más trapitos :3*_ 💠', quoted: fimg})
+	samu330.sendMessage(from, buffer, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), caption : '💎 _*Más trapitos :3*_ 💠', quoted: fimg})
 	.catch(err => {
 	return('Pwrdon... T_T')
 	})
@@ -3368,7 +3368,7 @@ case 'futaxx':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})     
 	buffer = await getBuffer(`https://hardianto-chan.herokuapp.com/api/anime/random?nsfw=futanari&apikey=hardianto`)
-	samu330.sendMessage(from, buffer, image, { caption : '💎 _*Xdd*_ 💠', quoted: fimg})
+	samu330.sendMessage(from, buffer, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), caption : '💎 _*Xdd*_ 💠', quoted: fimg})
 	.catch(err => {
 	return('Pwrdon... T_T')
 	})
