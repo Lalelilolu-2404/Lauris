@@ -1394,7 +1394,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 	    	if (messagesC.includes("chat.whatsapp")){
 		        if (!isGroup) return
 		        if (!isAntigp) return
-		        if (isAdmin) return reply('Tienes suerte, eres admin y no te sacaré')
+		        if (isAdmin) return //reply('Tienes suerte, eres admin y no te sacaré')
 			//reply(`Link detectado ${sender.split("@")[0]} serás expulsado de este grupo`)
 			samu330.groupRemove(from, [sender])
 		}
@@ -6763,7 +6763,8 @@ reply(result)
 sendFileFromUrl(resm[0].link, document, {mimetype: resm[0].mime, filename: resm[0].nombre, quoted: fdoc})
 addFilter(from)
 break
-//////Confu		
+//////Confu	
+/**
 case 'ytmp3':
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (args.length < 1) return reply('Y el link?')
@@ -6792,7 +6793,7 @@ sendFileFromUrl(dl_link, audio, {mimetype: 'audio/mp3', filename: `${title}.mp3`
 reply(`Lo siento xd`)
 }
 break
-
+**/
 case 'play':	
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (args.length < 1) return reply('*Ingrese el título*')
