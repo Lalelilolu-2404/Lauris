@@ -2938,11 +2938,9 @@ break
 		
 const ftrol = {
 key:{
-//fromMe: false,
-//participant: `0.@s.whatsapp.net`, ...(from ? 
-participant: `33749258491@s.whatsapp.net`,
-//{ 'remoteJid': "33749258491@s.whatsapp.net"} : {})
-//"status@broadcast"
+fromMe: false,
+'participant': `0.@s.whatsapp.net`, ...(from ? 
+{'remoteJid': "33749258491@s.whatsapp.net"} : {})
 },
 	'message': {'orderMessage': 
 		  {'itemCount': 6969, 
@@ -2955,7 +2953,7 @@ participant: `33749258491@s.whatsapp.net`,
 		
 case 'pulp':
 samu330.sendMessage(from, `Relaja la raj :3`, MessageType.text, {
-	//quoted : ftrol, 
+	quoted : ftrol, 
 	contextInfo: {externalAdReply :{
 	title: `「 ${pushname} 」`,
 	body: '   Gansito_Death',
@@ -2972,25 +2970,23 @@ fromMe: false,
 				       {'remoteJid': "33749258491@s.whatsapp.net"} : {})
 },
 	'message': {'orderMessage': 
-		  {//'itemCount': 6969, 
-		   //'status': 1, 
-		   //'surface': 1, 
+		  {'itemCount': 6969696969, 
+		   'status': 1, 
+		   'surface': 1, 
 		   'message': `Gansito_Revenge`, 
-		   //'orderTitle': 'Fx', 
+		   'orderTitle': 'Fx', 
 		   'thumbnail': fs.readFileSync('./src/nsfw.jpg')}}}
-		   //'sellerJid': '0@s.whatsapp.net'}}}									     
+		   'sellerJid': '0@s.whatsapp.net'}}}									     
 })			
 break	
 		
 case 'uwuyou':
-samu330.sendMessage(from, `Si hay pelito no hay delito :3, Anna se la come doblada`, MessageType.text, {quoted: 
-{key:{
-fromMe: false,
-'participant': `0@s.whatsapp.net`, ...(from?
-				       {'remoteJid': "status@broadcast"} : {})
+samu330.sendMessage(from, fs.readFileSync('./src/assistant.jpg'), image, {thumbnail: fs.readFileSync('./src/dreams.jpg'), quoted: 
+{
+key:{ fromMe: false, 'participant': `0@s.whatsapp.net`, ...(from?{'remoteJid': "33749258491@s.whatsapp.net"} : {})},
+message: { "videoMessage": { "caption":`${pushname}`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}
 },
-message: { "videoMessage": { "caption":`${pushname}`, 'jpegThumbnail': fs.readFileSync('./src/nsfw.jpg')}}}								     
-})			
+caption:`Uhm, estofado :v` })			
 break	
 	
 		
