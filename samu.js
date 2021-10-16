@@ -6788,7 +6788,7 @@ result = `  「  Lalelilolu ᵈᵃʳʸ⛥  」
 
 _Lo sentimos, la duración supera el límite máximo_`
 	
-if (Number(filesize) >= 80000) return samu330.sendMessage(from, thumb, image, {quoted: fimg, caption: result})
+if (Number(filesize) >= 30000) return samu330.sendMessage(from, thumb, image, {quoted: fimg, caption: result})
 sendFileFromUrl(dl_link, audio, {mimetype: 'audio/mp3', filename: `${title}.mp3`, quoted: sam}).catch((err) => reply('Lo siento xd'))
 })
 })
@@ -8531,9 +8531,8 @@ mentionedJid: jids, "forwardingScore": 9999, "isForwarded": true
 },
 quoted: faud
 }
-await samu330.sendMessage(from, options, MessageType.text).catch(e => {
+await samu330.sendMessage(from, options, MessageType.text).catch(err => {
 	  reply('_[ ! ] Error al descargar el archivo_')
-	  console.log(e)
 	})
 break
 		
@@ -8650,8 +8649,9 @@ method: 'get'
 })
 reply(mess.wait)
 buffer = await getBuffer(`${porn.url}`)
-samu330.sendMessage(from, buffer, image, {
-fimg})
+samu330.sendMessage(from, buffer, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), quoted: fimg}).catch(err => {
+	return('Pwrdon... T_T')
+	})
 addFilter(from)
 addLevelingXp(sender, 20)
 break
@@ -8670,9 +8670,9 @@ method: 'get'
 })
 reply(mess.wait)
 buffer = await getBuffer(`${porn.url}`)
-samu330.sendMessage(from, buffer, image, {
-quoted: fimg
-})
+samu330.sendMessage(from, buffer, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), quoted: fimg}).catch(err => {
+	return('Pwrdon... T_T')
+	})
 addFilter(from)
 addLevelingXp(sender, 20)
 break
@@ -8690,9 +8690,9 @@ method: 'get'
 })
 reply(mess.wait)
 buffer = await getBuffer(`${porn.url}`)
-samu330.sendMessage(from, buffer, image, {
-quoted: fimg
-})
+samu330.sendMessage(from, buffer, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), quoted: fimg}).catch(err => {
+	return('Pwrdon... T_T')
+	})
 addFilter(from)
 addLevelingXp(sender, 20)
 break
@@ -8727,9 +8727,9 @@ method: 'get'
 })
 reply(mess.wait)
 buffer = await getBuffer(`${porn.url}`)
-samu330.sendMessage(from, buffer, image, {
-quoted: fimg
-})
+samu330.sendMessage(from, buffer, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), quoted: fimg}).catch(err => {
+	return('Pwrdon... T_T')
+	})
 addFilter(from)
 addLevelingXp(sender, 20)
 break
@@ -8891,6 +8891,16 @@ if (!isQuotedImage) return reply(`Envia una imagen con el comando: *${prefix}set
 var media1 = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
 var media2 = await samu330.downloadMediaMessage(media1)
 fs.writeFileSync('./src/nsfw.jpg', media2)  
+reply('*Hecho mi amo 7~7*')
+break
+	
+case 'setdreams':
+if (!isOwner) return reply('Este comando solo puede ser usado por *Lalelilolu ᵈᵃʳʸ⛥*')
+samu330.updatePresence(from, Presence.composing)
+if (!isQuotedImage) return reply(`Envia una imagen con el comando: *${prefix}setdreams*`)
+var media1 = JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo
+var media2 = await samu330.downloadMediaMessage(media1)
+fs.writeFileSync('./src/dreams.jpg', media2)  
 reply('*Hecho mi amo 7~7*')
 break
 		
