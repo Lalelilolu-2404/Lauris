@@ -9874,13 +9874,14 @@ unBanned(args[0] + '@s.whatsapp.net', ban)
 mentions(`@${mentioned[0].split('@')[0]} Usted a sido desbaneado, ahora podra usar el bot!!`, mentioned, true)
 }
 break
-		
+
+case 'listban':
 case 'banlist':
 if (!isGroup) return reply(mess.only.group)
 if (!isOwner) return
 teks = ` ≡ *Lista de baneados xd*\n\n*Total* : ${ban.length}\n┌───⊷ *LISTA* ⊶\n`
 	    for (let baned of ban) {
-	    teks += `├╼ @${baned.id.split('@')[0]}\n${baned.expired}`
+	    teks += `├╼ @${baned.split('@')[0]}\n`
 		}
 	    teks += `└──────────────`
 samu330.sendMessage(from, teks.trim(), MessageType.text, {quoted: fdreams, contextInfo: {"mentionedJid": ban}})
