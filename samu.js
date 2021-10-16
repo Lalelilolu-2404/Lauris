@@ -4410,17 +4410,6 @@ imgkill = fs.readFileSync(`./temp/amongus/kill${k}.JPG`)
 samu330.sendMessage(from, {jpegThumbnail: imgkill, contentText: `You died`, footerText: `ᴱⁿᵗʳᵃⁿᵈᵒ ᶠᵃᵛᵒʳ ᵈᵉ ᵉⁿᵛᶦᵃʳ ᶜᵉᵖᵉᶜᶦᵗᵒ ᵒ ˢᵉʳᵃⁿ ᵉˡᶦᵐᶦⁿᵃᵈᵒˢ ˣᵈ\n© Creator\n⛧⸸⁶Death⁹†حب♡ت`}, 
 		    MessageType.liveLocation,{ quoted: fjeux})
 const susxx = `El impostor @${mentioned[0].split('@')[0]} was killed ⚠️!!`
-/**
-const fkil = {
-	key:
-	{ fromMe: true,
-	 participant: `1630707686@g.us`, ...(from ?
-							{ remoteJid: "@g.us"} : {}) },
-	message: { "videoMessage": { "caption":`Lalelilolu ᵈᵃʳʸ⛥\n${pushname}`, 'jpegThumbnail': 
-				    fs.readFileSync('./src/fake.jpg')}}
-}
-*/
-		
 setTimeout(() => {
 samu330.sendMessage(from, susxx, MessageType.text, {contextInfo: { mentionedJid: [mentioned[0]]}})
 }, 2000)
