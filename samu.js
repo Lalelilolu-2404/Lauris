@@ -6806,7 +6806,7 @@ reply(`Lo siento xd`)
 }
 break
 **/
-case 'play':	
+case 'dlplay':	
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (args.length < 1) return reply('*Ingrese el título*')
 play = args.join(' ')
@@ -6825,7 +6825,7 @@ samu330.sendMessage(from, buffer, image, {quoted: fimg, caption: infomp3 })
 samu330.sendMessage(from, lagu, audio, {mimetype: 'audio/mp4', filename: `${anu.result.title}.mp3`, quoted: sam})
 break
 
-case 'play2':
+case 'dlvid':
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (args.length < 1) return reply('*Ingrese el título*')
 vidx = args.join(' ')
