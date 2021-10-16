@@ -4354,10 +4354,13 @@ quoted: fjeux,
 caption: `${sus}`, 
 contextInfo: { mentionedJid: [tripamg[0], tripamg[1]]}})
 
+const txtamgpla =`${bodyM} Participantes : ${groupMembers.length}
+${bodyM} Impostores    : 2`
+
 let amongs = samu330.prepareMessageFromContent(from, {
 "listMessage":  {
 "title": "\t*AMONGUS X👑X*",
-"description": `\t*Uwu ${pushname}*\n\t*Un impostor aún sigue en la nave!!*\n\t*Selecciona que hacer con él ↴*`,
+"description": `\tUwu ${pushname}\n\t${txtamgpla}\n\tUn impostor aún sigue en la nave!!\n\tSelecciona que hacer con él ↴`,
 "buttonText": "[Emergency Metting!!]",
 "listType": "SINGLE_SELECT",
 "sections": [
@@ -8995,9 +8998,9 @@ if (!botAdmin) return reply(mess.only.Badmin)
                 if (sam.message.extendedTextMessage != undefined){
                 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 		if (mentionUser.length == 1)
-		reply(`${mentionUser.lenght}`)
+		reply(`${mentionUser.length}`)
 		} else if(mentioned.length == 1){
-		reply(`${mentioned.lenght}`)
+		reply(`${mentioned.length}`)
 		}
 break	
 		
