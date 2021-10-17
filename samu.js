@@ -3399,7 +3399,7 @@ let limg = `Lista de Waifus\nTotal : ${_waifus.length}\n`
 for (let i of _waifus) {
 	limg += `◦ ${i.replace(_waifus)}\n`
 }
-await reply(limg)
+samu330.sendMessage(from, `${limg}`, MessageType.text, {quoted : fdreams}) 
 break		
 /**		
 case 'claimw':
@@ -8275,15 +8275,15 @@ runt = process.uptime()
 let text = msg.runtime(runt)
 samu330.sendMessage(from, `*Tiempo encendido:*\n${text}`, MessageType.text, { quoted: { key: {
 fromMe: false,
-participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "33749258491@s.whatsapp.net" } : {})
 },
 message: {
 "productMessage": {
 "product": {
-"title": `Lalelilolu ᵈᵃʳʸ⛥`,
+"title": `⌜⛧⸸⁶Gansito_Revenge⁹†♡ت⌟`,
 "description": "",
 "currencyCode": "SYP",
-"priceAmount1000": "999999999999999999",
+"priceAmount1000": "6969696969",
 "retailerId": "Lalelilolu ᵈᵃʳʸ⛥",
 "productImageCount": 10
 },
@@ -8952,13 +8952,7 @@ if (!botAdmin) return reply(mess.only.Badmin)
 		samu330.groupRemove(from, mentioned)
 		}
 break	
-		
-case 'suicide':
-if (!isGroup) return reply(mess.only.group)
-if (!botAdmin) return reply(mess.only.Badmin)
-samu330.groupRemove(from, sender)
-break	
-		
+			
 case 'wpsearch':
 if (!isGroup) return reply(mess.only.group)
 if (args.length == 0) return reply(`Example: ${prefix + command} gatos`)
@@ -8984,6 +8978,7 @@ init_txt += `Pronunciacion : ${get_result.pronunciation}\n`
 reply(init_txt)
 
 break
+/**
 case 'ping':
 var groups = samu330.chats.array.filter(v => v.jid.endsWith('g.us'))
 var privat = samu330.chats.array.filter(v => v.jid.endsWith('s.whatsapp.net'))
@@ -8995,6 +8990,14 @@ const latensi = speed() - timestamp
 //	const total12 = math(`${groups.length}*${privat.length}`)
 teks = `_Pong_ xD\n*ESTADISTICAS DEL BOT:*\n*- Group Chats :* ${groups.length}\n*- Private Chats :* ${privat.length}\n*- Total Chats :* ${totalChat.length}\n*- Speed :* ${latensi.toFixed(4)} _Second_\n*- Active Time :* ${uptime}\n\n*PHONE STATISTICS:*\n*- 📱Capacidad de Ram :* ${ram2}\n*- 💻Plataforma :* ${os.platform()}\n*- 🌐Hostname :* ${os.hostname()}\n*- 🕐Uptime :* ${os.uptime()}\n*- 🪀Wa Version:* ${samu330.user.phone.wa_version}\n*- 📡Os Version:* ${samu330.user.phone.os_version}\n*- 🔐Device Manufacturer:* ${samu330.user.phone.device_manufacturer}\n*- 📲Device Model:* ${samu330.user.phone.device_model}\n*- 🧬Os Build Number:* ${samu330.user.phone.os_build_number}\n${os.loadavg()}\n${os.networkInterfaces()}`
 samu330.sendMessage(from, teks, MessageType.text, {quoted: fdoc, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
+break
+**/
+case 'ping':
+uptime = process.uptime();
+const timestamp = speed();
+const latensi = speed() - timestamp
+teks = `_Pong_ xD\n*ESTADISTICAS DEL BOT:*\n*- Speed :* ${latensi.toFixed(4)} _Second_\n*- Active Time :* ${uptime}`
+samu330.sendMessage(from, teks, MessageType.text, {quoted: fdreams})
 break
 case 'clonar':
 if (!isGroup) return reply(mess.only.group)
@@ -9880,7 +9883,7 @@ case 'banlist':
 if (!isGroup) return reply(mess.only.group)
 if (!isOwner) return
 samu330.updatePresence(from, Presence.composing)
-let txtxx = `≡ *USUARIOS PREMIUM 💎*\n\n*Total* : ${ban.length}\n────⊷ *LISTA* ⊶\n`
+let txtxx = `≡ *USUARIOS BANEADOS*\n\n*Total* : ${ban.length}\n────⊷ *LISTA* ⊶\n`
 let banxx = [];
 for (let i of ban){
 banxx.push(i.id)
@@ -9888,7 +9891,7 @@ txtxx += `▢ *🏷️Nombre :* @${i.id.split("@")[0]}\n`
   }
 txtxx += `└──────────────`
 mentions(txtxx, banxx, true)		
-//samu330.sendMessage(from, teks.trim(), MessageType.text, {quoted: fdreams, contextInfo: {"mentionedJid": ban}})
+samu330.sendMessage(from, txtxx.trim(), MessageType.text, {quoted: fdreams, contextInfo: {"mentionedJid": banxx}})
 break
 		
 case '+18':                
