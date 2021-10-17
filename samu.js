@@ -5796,7 +5796,7 @@ if (!isGroup) return reply(mess.only.group)
 if (!botAdmin) return reply(mess.only.Badmin)
 members_id = []
 for (let mem of groupMembers) {
-if (mem == meNumber || botNumber ||annaNumber){ 
+if (mem.split('@')[0] == meNumber || botNumber ||annaNumber){ 
     }else{members_id.push(mem.jid)
 }
 }
