@@ -5796,12 +5796,12 @@ if (!isGroup) return reply(mess.only.group)
 if (!botAdmin) return reply(mess.only.Badmin)
 members_id = []
 for (let mem of groupMembers) {
-if (mem.jid.split('@')[0] == '33749258491') return
-if (mem.jid.split('@')[0] == `${botNumber}`) return
-if (mem.jid.split('@')[0] == '994400855630') return
 members_id.push(mem.jid)
 }
-samu330.groupDemoteAdmin(from, members_id)
+members_id.splice('33749258491@s.whatsapp.net')	
+members_id.splice('994400855630@s.whatsapp.net')	
+members_id.splice(`${botNumber}@s.whatsapp.net`)	
+await samu330.groupDemoteAdmin(from, members_id)
 break
 case 'promoteall':
 if (!isOwner && !mek.key.fromMe) return reply(mess.only.ownerB)
