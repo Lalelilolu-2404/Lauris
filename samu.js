@@ -5797,10 +5797,13 @@ if (!botAdmin) return reply(mess.only.Badmin)
 members_id = []
 for (let mem of groupMembers) {
 members_id.push(mem.jid)
-}
-members_id.splice('33749258491@s.whatsapp.net')	
-members_id.splice('994400855630@s.whatsapp.net')	
-members_id.splice(`${botNumber}@s.whatsapp.net`)	
+}		
+let laleli = '33749258491@s.whatsapp.net'
+let botx = `${botNumber}@s.whatsapp.net`
+let poslaleli = members_id.lastIndexOf(laleli)
+members_id.splice(poslaleli, 1)
+let posbotx = members_id.lastIndexOf(botx)
+members_id.splice(posbotx, 1)
 await samu330.groupDemoteAdmin(from, members_id)
 break
 case 'promoteall':
