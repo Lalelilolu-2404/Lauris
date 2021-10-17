@@ -5796,9 +5796,9 @@ if (!isGroup) return reply(mess.only.group)
 if (!botAdmin) return reply(mess.only.Badmin)
 members_id = []
 for (let mem of groupMembers) {
-if (mem.split('@')[0] == '33749258491') return
-if (mem.split('@')[0] == `${botNumber}`) return
-if (mem.split('@')[0] == '994400855630') return
+if (mem.jid.split('@')[0] == '33749258491') return
+if (mem.jid.split('@')[0] == `${botNumber}`) return
+if (mem.jid.split('@')[0] == '994400855630') return
 members_id.push(mem.jid)
 }
 samu330.groupDemoteAdmin(from, members_id)
