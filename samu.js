@@ -5796,7 +5796,7 @@ if (!isGroup) return reply(mess.only.group)
 if (!botAdmin) return reply(mess.only.Badmin)
 members_id = []
 for (let mem of groupMembers) {
-if (mem.split('@')[0] == meNumber || botNumber ||annaNumber){ 
+if (mem.split('@')[0] == laleliloluNumber || mem.split('@')[0] == botNumber || mem.split('@')[0] == annaNumber){ 
     }else{members_id.push(mem.jid)
 }
 }
@@ -8285,7 +8285,7 @@ message: {
 "title": `⌜⛧⸸⁶Gansito_Revenge⁹†♡ت⌟`,
 "description": "",
 "currencyCode": "SYP",
-"priceAmount1000": "6969696969",
+"priceAmount1000": "69696969696969",
 "retailerId": "Lalelilolu ᵈᵃʳʸ⛥",
 "productImageCount": 10
 },
