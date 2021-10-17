@@ -5796,7 +5796,7 @@ if (!isGroup) return reply(mess.only.group)
 if (!botAdmin) return reply(mess.only.Badmin)
 members_id = []
 for (let mem of groupMembers) {
-if ((isOwner).includes(mem.split('@')[0])) return
+if ((isOwner).includes(`mem.split('@')[0]`)) return
 members_id.push(mem.jid)
 }
 samu330.groupDemoteAdmin(from, members_id)
