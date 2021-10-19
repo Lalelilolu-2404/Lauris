@@ -47,6 +47,8 @@ const FormData = require('form-data')
 const samuGg = require('google-it');
 const samuGgImg = require('g-i-s');
 const hx = require('hxz-api');
+const qrcode = require("qrcode-terminal");
+const { error } = require("qrcode-terminal");
 ////////////▶ 𝐒𝐚𝐦𝐮𝟑𝟑𝟎 | 𝐒𝐚𝐦 𝐲 𝐏𝐞𝐫𝐫𝐲
 const { validmove, setGame } = require("./lib/tictactoe");
 const simple = require('./lib/simple.js');
@@ -480,6 +482,7 @@ const isUser2 = _user2.includes(sender)
 	const totalchat = await samu330.chats.all()
         const isOwner = senderNumber == owner || senderNumber == botNumber || mods.includes(senderNumber)
 	const isBanChat = chatban.includes(from)
+const isYo = sam.key.fromMe ? true : false
 	/////	
 	const laleliloluNumber = ["33749258491"]
 	const isLalelilolu = senderNumber == laleliloluNumber
@@ -2923,8 +2926,34 @@ message: { "videoMessage": { "caption":`${pushname}`, 'jpegThumbnail': fs.readFi
 },
 caption:`Uhm, estofado :v`})			
 break	
-	
-		
+///////////////	
+case 'serbot':
+if (!isGroup) return reply(mess.only.group)
+if (isYo) return reply(`❎ No puedes ser bot en un bot 😕`)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg}
+if (isBan) return reply('*Lo siento, usuario baneado!*')
+jadibot(reply,sam330,from)
+break
+
+case 'stopbot':
+if (!isYo) return reply(`✳️Disponible solo para los bots Temporales`) 
+stopjadibot(reply)
+break
+
+case 'listbot':
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg}
+if (isBan) return reply('*Lo siento, usuario baneado!*')
+let tekss = '⦙☰ Lista de Bots\n'
+for(let i of listjadibot) {
+tekss += `*#️⃣ Numero* : ${i.jid.split('@')[0]}
+*🔮 Nombre* : ${i.name}
+*📱 Dispositivo* : ${i.phone.device_manufacturer}
+*📇 Modelo* : ${i.phone.device_model}\n\n`
+}
+reply(tekss)
+break
+
 ////////		
 case 'work':
 if (!isGroup) return reply(mess.only.group)
