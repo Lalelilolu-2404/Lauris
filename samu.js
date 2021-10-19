@@ -10169,7 +10169,11 @@ if (isAllaud) {
 	if (body.includes(`Gansito`) && body.length == 7){
 		randcd = Math.floor(Math.random() * 20)
 		none2d = fs.readFileSync(`./src/stickers2/Gansito${randcd}.webp`)
-		samu330.sendMessage(from, none2d, sticker)
+		samu330.sendMessage(from, none2d, sticker, {quoted: fdreams})
+	} 
+	if (body.includes(`FG`) && body.length == 2){
+		const none2 = fs.readFileSync(`./src/stickers2/Gansito19.webp`)
+		samu330.sendMessage(from, none2, sticker)	
 	} 
 	/**
 	if (body.includes(`Gansitoxxx`) && body.length == 10){
