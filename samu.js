@@ -67,6 +67,7 @@ const Exif = require('./lib/exif');
 const exif = new Exif();
 const { recognize } = require('./lib/ocr');
 const help = require("./lib/help")
+const { jadibot, stopjadibot, listjadibot } = require("./lib/jadibot");
 const yts = require('yt-search')
 const postBuffer = help.postBuffer
 const getBuffer = help.getBuffer
@@ -1488,11 +1489,11 @@ reply(`${mentionUser.length}`)
 if (mentionUser.length == 0) return
 samu330.groupRemove(from, mentionUser)
 break
-		
+/**		
 case 'zbJVGnQ0UEQp9JDLQyZkbty3EoVs1X6z0+6MJ5baWDA=':
 reply('Jálame')
 break		
-				
+**/				
 }
 
 /////////
