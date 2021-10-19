@@ -2942,7 +2942,7 @@ break
 
 case 'listbot':
 if (!isGroup) return reply(mess.only.group)
-if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg}
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (isBan) return reply('*Lo siento, usuario baneado!*')
 let tekss = '⦙☰ Lista de Bots\n'
 for(let i of listjadibot) {
