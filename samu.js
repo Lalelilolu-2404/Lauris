@@ -2456,7 +2456,7 @@ break
 case 'forme':
 const morestickx = ["Abasho", "Lean las reglas", "Nel mijo", "Se la coge", "Soy inevitable", "Le mete el brazo", "Pum", "Semen", "No viste nada", "Fbi", "X el chikito", "Xd", 
 		    "Comida de Anna", "Nel pastel", "Despreciox", "Se relaja", "Colitax", "Gansito", "La penetra", "Dejen momir", "Bienvenido", "No tengo sueño", 
-		    "Angry", "Sexosexo", "Fuera ctmr"]	
+		    "Angry", "Sexosexo", "Fuera ctmr", "Gaaa", "Discúlpate", "Pasen porno"]	
 
 const onlyme = ["69", "Ahohsi", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "Amistad", "Anna", "Amm", "Anni", "Así me gusta", "Asustado", "Ay caramba", "Ay me asusté", 
 		"Ban", "Báñate", "Besos", "Bien", "Bragas", "Buen culo", "Buenas noches", "Bye", "C rasca", "Cállate", "Cc", "Chelitas", "Chongo", "Colita", "Colitaxxx", 
@@ -10143,6 +10143,14 @@ if (isAllaud) {
 		const none2 = fs.readFileSync(`./src/stickers/No entender.webp`)
 		samu330.sendMessage(from, none2, sticker)	
 	} 
+	if (body.includes(`Gaaa`) && body.length == 4){
+		const none2 = fs.readFileSync(`./src/stickers2/Gaaa.webp`)
+		samu330.sendMessage(from, none2, sticker)	
+	} 
+	if (body.includes(`Pasen porno`) && body.length == 11){
+		const none2 = fs.readFileSync(`./src/stickers2/Pasen porno.webp`)
+		samu330.sendMessage(from, none2, sticker)	
+	} 
 	if (body.includes(`:3`) && body.length == 2){
 		const none2 = fs.readFileSync(`./src/stickers/Sonrisita.webp`)
 		samu330.sendMessage(from, none2, sticker)	
@@ -10159,13 +10167,13 @@ if (isAllaud) {
 		samu330.sendMessage(from, none2, sticker, {quoted: sam})
 	} 
 	if (body.includes(`Gansito`) && body.length == 7){
-		randcd = Math.floor(Math.random() * 11)
+		randcd = Math.floor(Math.random() * 20)
 		none2d = fs.readFileSync(`./src/stickers2/Gansito${randcd}.webp`)
 		samu330.sendMessage(from, none2d, sticker)
 	} 
 	/**
 	if (body.includes(`Gansitoxxx`) && body.length == 10){
-		for (let i = 0; i < 11; i++){
+		for (let i = 0; i < 20; i++){
 		none2d = fs.readFileSync(`./src/stickers2/Gansito${i}.webp`)
 		samu330.sendMessage(from, none2d, sticker)
 		}
@@ -10246,7 +10254,7 @@ if (!isAllaud) return
 //////////////	
 const morestick = ["Abasho", "Lean las reglas", "Nel mijo", "Se la coge", "Soy inevitable", "Le mete el brazo", "Pum", "Semen", "No viste nada", "Si.", "No.", "Sexo off", "Sexo on", 
 		   "Fbi", "X el chikito", "Nel pastel", "Desprecio1", "Desprecio2", "Desprecio3", "Se relaja", "Colitax", "La penetra", "Dejen momir", "Bienvenido", 
-		   "No tengo sueño", "Angry", "Sexosexo", "Fuera ctmr"]		
+		   "No tengo sueño", "Angry", "Sexosexo", "Fuera ctmr", "Discúlpate"]		
 
 if (isOwner){
 if (!isAllaud) return
@@ -10287,7 +10295,7 @@ if (body.includes(`Xd`) && body.length == 2){
 }
 **/
 if (body.includes(`Xd`) && body.length == 2){
-	nkx = Math.floor(Math.random() * 19)
+	nkx = Math.floor(Math.random() * 26)
 	const none = fs.readFileSync(`./temp/Xd${nkx}.webp`)
 	samu330.sendMessage(from, none, MessageType.sticker)
 }		
