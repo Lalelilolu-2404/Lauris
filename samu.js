@@ -9454,7 +9454,7 @@ var teks = encodeURIComponent(args.join(' '))
 const ttp = await getBuffer(`https://api.xteam.xyz/ttp?file&text=${teks}`)
 samu330.sendMessage(from, ttp, sticker, {quoted: ftoko, contextInfo: {"forwardingScore": 999, "isForwarded": true}})
 break
-
+/**
 case 'unkick':
 if (!isLalelilolu) return reply('Nel perro :v')
 if (!isGroup) return reply(mess.only.group)
@@ -9472,8 +9472,7 @@ console.log('Error :', e)
 return reply('Modo privado dice :v')
 }
 break	
-		
-/**
+	
 case 'añadir':
 if (!isGroup) return reply(mess.only.group)
 if (!botAdmin) return reply(mess.only.Badmin)
