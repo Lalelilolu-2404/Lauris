@@ -3418,7 +3418,7 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
 	namastc = `${_waifus[rwl]}`
 	try {
 	buffer = fs.readFileSync(`./temp/foto/${namastc}.jpeg`)
-	samu330.sendMessage(from, buffer, image, { quoted: fimg, caption: `💎 _*${namastc}*_ 💠`})
+	samu330.sendMessage(from, buffer, image, { quoted: fdreams, caption: `💎 _*${namastc}*_ 💠`})
 	} catch {
 	reply('Pwrdon... T_T')
 	}		          
@@ -9464,7 +9464,7 @@ try {
 if (isQuotedMsg) {
 num = `${mentioned[0]}`
 //samu330.groupAdd(from, [num])
-reply(quotedMsg.sender)
+reply(`${quotedMsg.sender}\n${mentioned[0]}`)
 } else {
 num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
 samu330.groupAdd(from, [num])
