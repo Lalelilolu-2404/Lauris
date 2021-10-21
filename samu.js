@@ -9459,12 +9459,10 @@ case 'unkick':
 if (!isLalelilolu) return reply('Nel perro :v')
 if (!isGroup) return reply(mess.only.group)
 if (!botAdmin) return reply(mess.only.Badmin)
-mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid		
-try {
-if (isQuotedMsg) {
-//num = `${mentioned[0]}`
-//samu330.groupAdd(from, [num])
-reply(`${quotedMsg.sender}\n${mentioned[0]}`)
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+try{
+if(mentioned.length == 1){
+samu330.groupAdd(from, mentioned)
 } else {
 num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
 samu330.groupAdd(from, [num])
@@ -9473,16 +9471,6 @@ samu330.groupAdd(from, [num])
 console.log('Error :', e)
 return reply('Modo privado dice :v')
 }
-break
-
-case 'ounkick':
-if (!isLalelilolu) return reply('Nel perro :v')
-if (!isGroup) return reply(mess.only.group)
-if (!botAdmin) return reply(mess.only.Badmin)
-                if (sam.message.extendedTextMessage != undefined){
-                mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-		samu330.groupRemove(from, mentioned, MessageType.text)
-		}
 break	
 		
 /**
