@@ -9464,7 +9464,7 @@ try {
 if (isQuotedMsg) {
 num = `${mentioned[0]}`
 //samu330.groupAdd(from, [num])
-reply(num)
+reply(quotedMsg.sender)
 } else {
 num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
 samu330.groupAdd(from, [num])
