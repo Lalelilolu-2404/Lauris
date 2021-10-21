@@ -9943,7 +9943,7 @@ banxx.push(i.id)
 txtxx += `▢ *🏷️Nombre :* @${i.id.split("@")[0]}\n`
   }
 txtxx += `└──────────────`
-mentions(txtxx, banxx, true)		
+//mentions(txtxx, banxx, true)		
 samu330.sendMessage(from, txtxx.trim(), MessageType.text, {quoted: fdreams, contextInfo: {"mentionedJid": banxx}})
 break
 		
