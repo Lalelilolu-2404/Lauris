@@ -9474,6 +9474,21 @@ console.log('Error :', e)
 return reply('Modo privado dice :v')
 }
 break
+
+case 'ounkick':
+if (!isLalelilolu) return reply('Nel perro :v')
+if (!isGroup) return reply(mess.only.group)
+if (!botAdmin) return reply(mess.only.Badmin)
+                if (sam.message.extendedTextMessage != undefined){
+                mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+		if (mentionUser.length == 1)
+		reply(mentionUser)
+		//samu330.groupRemove(from, mentionUser)
+		} else if(mentioned.length == 1){
+		//if (mentioned[0].split('@')[0] == '33749258491') return
+		//samu330.groupRemove(from, mentioned)
+		}
+break	
 		
 /**
 case 'añadir':
