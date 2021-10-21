@@ -9463,7 +9463,8 @@ mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 try {
 if (isQuotedMsg) {
 num = `${mentioned[0]}`
-samu330.groupAdd(from, [num])
+//samu330.groupAdd(from, [num])
+reply(num)
 } else {
 num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
 samu330.groupAdd(from, [num])
@@ -9473,6 +9474,22 @@ console.log('Error :', e)
 return reply('Modo privado dice :v')
 }
 break
+		
+/**
+case 'añadir':
+if (!isGroup) return reply(mess.only.group)
+if (!botAdmin) return reply(mess.only.Badmin)
+if (args.length < 1) return reply('Y el numero?')
+if (args[0].startsWith('99')) return reply('Utiliza el codigo de pais')
+try {
+num = `${args[0].replace(/ /g, '')}@s.whatsapp.net`
+samu330.groupAdd(from, [num])
+} catch (e) {
+console.log('Error :', e)
+return samu330.sendMessage(from, 'Modo privado dice:v', MessageType.text)
+}
+break
+**/
 
 case 'antileg':
 if (!isGroup) return reply('Este comando es solo para grupos')
