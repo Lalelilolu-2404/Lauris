@@ -9462,7 +9462,7 @@ if (!botAdmin) return reply(mess.only.Badmin)
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid		
 try {
 if (isQuotedMsg) {
-num = `${mentioned[0]}`
+//num = `${mentioned[0]}`
 //samu330.groupAdd(from, [num])
 reply(`${quotedMsg.sender}\n${mentioned[0]}`)
 } else {
