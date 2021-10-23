@@ -8995,7 +8995,7 @@ if (!isGroup) return reply(mess.only.group)
 if (!botAdmin) return reply(mess.only.Badmin)
                 if (sam.message.extendedTextMessage != undefined){
                 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-		if (mentionUser.length == 1){
+		if (mentionUser.length == 1)
 		if (mentioned[0].split('@')[0] == '33749258491') return reply('Nel')
 		reply(`${mentionUser}`)
 			//samu330.groupRemove(from, mentionUser[0])
