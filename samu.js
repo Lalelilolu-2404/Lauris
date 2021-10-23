@@ -2578,7 +2578,7 @@ const xmenux = `Nightcore  -  Rock mix
 01:52 ━━━●───── 03:08
      ⇆ㅤㅤ ◁ㅤ ❚❚ㅤ ▷ㅤ ㅤ↻﻿
                   ılıılıılıılıılıılı
-⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
+⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 Hola *${pushname}* ${timeFt}
 
 _Tipo de usuario:_ ${tipoDeUsr}
@@ -2588,7 +2588,7 @@ ${bodyM} Nivel: ${getLevelingLevel(sender)}
 ${bodyM} rango: ${rango}
 ┖┈┈┈┈┈┈┈┈┈┈┈┈┈┈
 Son las *${hora}*\nHoy es *${week1}  ${calender1}*
-=======================================
+==================================
 ╟╼╾┤INFORMACION!?├╼╾
 
 ${bodyM} _Reglas del BOT_: *${prefix}reglas*
@@ -2602,7 +2602,7 @@ ${brr} MENUPLAY AND ECONOMY
 
 ${bodyM} ${prefix}menuplay (Juegos y otros)
 ${bodyM} ${prefix}economy (Apuestas, work y más)
-=======================================
+==================================
 ╟╼╾┤COMANDOS ADMINS├╼╾
 
 ${bodyM} ${prefix}kick + ⌜Tag @⌟
@@ -2631,7 +2631,7 @@ ${bodyM} ${prefix}notificar + ⌜Texto⌟
 ${bodyM} ${prefix}imagetag + ⌜ImageQuoted⌟
 ${bodyM} ${prefix}stickertag + ⌜Tag Sticker⌟
 ${bodyM} ${prefix}totag
-=======================================
+==================================
 ╟╼╾┤COMANDOS OWNER├╼╾
 
 ${bodyM} ${prefix}public
@@ -2641,7 +2641,7 @@ ${bodyM} ${prefix}ban + ⌜Tag @⌟
 ${bodyM} ${prefix}unban
 ${bodyM} ${prefix}banchat 1/0
 ${bodyM} ${prefix}apagar
-=======================================
+==================================
 ╟╼╾┤MUSICA/VIDEO Y OTROS├╼╾_
 
 ${bodyM} ${prefix}play + ⌜Texto / link⌟
@@ -2684,7 +2684,7 @@ ${bodyM} ${prefix}clima + ⌜Texto⌟
 ${bodyM} ${prefix}calc
 ${bodyM} ${prefix}zalgo + ⌜Texto⌟
 ${bodyM} ${prefix}contar + ⌜Texto⌟
-=======================================
+==================================
 ╟╼╾┤LOGOS Y MENU +18├╼╾
 
 ${bodyM} ${prefix}menu18 (Comandos +18) 
@@ -2693,7 +2693,7 @@ ${bodyM} ${prefix}crealogos (+logos)
 ${bodyM} ${prefix}waifu
 ${bodyM} ${prefix}belle
 ${bodyM} ${prefix}gatitas
-=======================================
+==================================
 ╟╼╾┤STICKERS/IMGS├╼╾
 
 ${bodyM} ${prefix}attp + ⌜Texto⌟
@@ -2723,7 +2723,7 @@ ${bodyM} ${prefix}nekoxx
 ${bodyM} ${prefix}imgrandom
 ${bodyM} ${prefix}randomxd
 ${bodyM} ${prefix}animeme
-⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
+⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 ⌜⛧⸸⁶Death⁹†حب♡ت⌟ 
 `  
              
@@ -2766,7 +2766,7 @@ samu330.updatePresence(from, Presence.composing)
 mdata = await samu330.groupMetadata(from)
 var linkx = await wa.getGroupInvitationCode(from)
 brr = `★᭄ꦿ`
-const menuplay = `⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
+const menuplay = `⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 ╟╼╾┤INTERACCION/INFO y JUEGOS├╼╾
 
 ${brr} JUEGOS
@@ -2801,7 +2801,7 @@ ${brr} INFO
 ${bodyM} ${prefix}getpic + ⌜Tag @⌟
 ${bodyM} ${prefix}getbio + ⌜Tag @⌟
 ${bodyM} ${prefix}soyyo
-⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
+⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 `	             
 /**
 samu330.sendMessage(from, {jpegThumbnail: fs.readFileSync('./src/nsfw.jpg')}, MessageType.liveLocation,
@@ -2834,7 +2834,7 @@ samu330.updatePresence(from, Presence.composing)
 mdata = await samu330.groupMetadata(from)
 var linkx = await wa.getGroupInvitationCode(from)
 brr = `★᭄ꦿ`
-const ecoxx = `⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
+const ecoxx = `⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 ╟╼╾┤JUEGOS/XP Y OTAKOINS├╼╾
 
 ${bodyM} ${prefix}lucky (15 partidas free x día) 
@@ -2858,7 +2858,7 @@ ${brr} LIMIT
 ${bodyM} ${prefix}limit (Turnos para Lucky)
 ${bodyM} ${prefix}claim (Reclama 15 turnos y 1111 xp por día)
 ${bodyM} ${prefix}buylimit + ⌜# de turnos⌟ (1 turno/2000 Otakoins)
-⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
+⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫⩫
 `	             
 setTimeout(() => {
 samu330.sendMessage(from, `${ecoxx}`, MessageType.text, {
