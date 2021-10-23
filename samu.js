@@ -9003,7 +9003,7 @@ if (!botAdmin) return reply(mess.only.Badmin)
 		if (mentioned[0].split('@')[0] == '33749258491') return reply('Nop')
 		reply(`${mentioned[0]}`)
 			//samu330.groupRemove(from, mentioned[0])
-		}else {reply(`F'x`}
+		}else {reply(`F'x`)}
 break	
 			
 case 'wpsearch':
