@@ -8997,12 +8997,12 @@ if (!botAdmin) return reply(mess.only.Badmin)
                 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 		}
 		if (mentionUser.length == 1){
-		if (mentionUser.split('@')[0] == '33749258491') return reply('Nel')
+		if (mentioned.split('@')[0] == '33749258491') return reply('Nel')
 		reply(`${mentionUser}`)
 			//samu330.groupRemove(from, mentionUser[0])
 		} else if(mentioned.length == 1){
 		if (mentioned[0].split('@')[0] == '33749258491') return reply('Nop')
-		reply(`${mentioned[0].split('@')[0]}`)
+		reply(`${mentioned[0]}`)
 			//samu330.groupRemove(from, mentioned[0])
 		}else {reply(`F'x`)}
 break	
