@@ -8995,14 +8995,13 @@ if (!isGroup) return reply(mess.only.group)
 if (!botAdmin) return reply(mess.only.Badmin)
                 if (sam.message.extendedTextMessage != undefined){
                 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-		}
 		if (mentionUser.length == 1){
-		if (mentioned.split('@')[0] == '33749258491') return reply('Nel')
+		if (mentioned[0].split('@')[0] == '33749258491') return reply('Nel')
 		reply(`${mentionUser}`)
 			//samu330.groupRemove(from, mentionUser[0])
 		} else if(mentioned.length == 1){
 		if (mentioned[0].split('@')[0] == '33749258491') return reply('Nop')
-		reply(`${mentioned[0]}`)
+		reply(`${mentioned}`)
 			//samu330.groupRemove(from, mentioned[0])
 		}else {reply(`F'x`)}
 break	
