@@ -9001,7 +9001,7 @@ if (!botAdmin) return reply(mess.only.Badmin)
 			//samu330.groupRemove(from, mentionUser[0])
 		} else if(mentioned.length == 1){
 		if (mentioned[0].split('@')[0] == '33749258491') return
-		reply(`${mentioned.length}`)
+		reply(`${mentioned[0]}\n${mentioned[1]}\n${mentioned[2]}`)
 			//samu330.groupRemove(from, mentioned[0])
 		}
 break	
