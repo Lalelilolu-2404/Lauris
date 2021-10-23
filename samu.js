@@ -8959,7 +8959,7 @@ if (!botAdmin) return reply(mess.only.Badmin)
 		if (mentioned[0].split('@')[0] == botNumber) return
 		if (mentioned[0].split('@')[0] == '33749258491') return samu330.sendMessage(from, noneyy, sticker)
 		if (mentioned[0].split('@')[0] == '994400855630') return samu330.sendMessage(from, noneyy, sticker)
-		samu330.groupRemove(from, mentionUser)
+		samu330.groupRemove(from, mentionUser[0])
 		//samu330.groupRemove(from, mentioned)
 		
 		//const none = fs.readFileSync(`./src/stickers2/Funao.webp`)
@@ -8982,7 +8982,7 @@ if (!botAdmin) return reply(mess.only.Badmin)
                 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 		if (mentionUser.length == 1)
 		if (mentioned[0].split('@')[0] == '33749258491') return
-		samu330.groupRemove(from, mentionUser)
+		samu330.groupRemove(from, mentionUser[0])
 		} else if(mentioned.length == 1){
 		if (mentioned[0].split('@')[0] == '33749258491') return
 		samu330.groupRemove(from, mentioned[0])
