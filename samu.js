@@ -4242,6 +4242,35 @@ const xmoneyx = argz[0] * 1
 addKoinUser(sender, xmoneyx)
 break
 		
+case 'getlimit':
+if (!isLalelilolu) return
+arg1 = q
+if (!arg1) return
+argz = arg1.split("|")
+if (!argz) return
+if (isNaN(argz[0])) return
+hailhx = `*⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
+samu330.sendMessage(from, hailhx, MessageType.text, {quoted: fnsfw})
+const xlimitx = argz[0] * 1
+bayarLimit(sender, xlimitx)
+break
+
+case 'giflimit':
+if (!isLalelilolu) return
+if (args.length < 1) return reply("Mentiona a alguien, pajero!")
+arg1 = q
+argz = arg1.split("|")
+if (sam.message.extendedTextMessage != undefined){
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+}
+if (!argz) return
+if (isNaN(argz[1])) return
+hailhx = `*⌜Lalelilolu ᵈᵃʳʸ⛥⌟*`   
+samu330.sendMessage(from, hailhx, MessageType.text, {quoted: fnsfw})
+const giflimit = argz[1] * 1
+bayarLimit(mentioned[0], giflimit)
+break
+		
 case 'amgplay':
 samu330.updatePresence(from, Presence.composing) 
 amgp = `Hola *${pushname}* 
