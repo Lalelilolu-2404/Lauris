@@ -8955,7 +8955,7 @@ if (!botAdmin) return reply(mess.only.Badmin)
 		const noneyy = fs.readFileSync(`./src/stickers2/Nel pastel.webp`)
 		if (!mentioned) return reply(`Ejemplo : ${prefix + command} @participante... o etiqueta el mensaje de la persona a eliminar`)
 		//await wa.FakeTokoForwarded(from, `Baaaiii...`, '')
-		if (mentionUser.length >= 1) return reply('Error')
+		if (mentionUser.length == 1)
 		if (mentioned[0].split('@')[0] == botNumber) return
 		if (mentioned[0].split('@')[0] == '33749258491') return samu330.sendMessage(from, noneyy, sticker)
 		if (mentioned[0].split('@')[0] == '994400855630') return samu330.sendMessage(from, noneyy, sticker)
@@ -8978,7 +8978,7 @@ if (!isGroup) return reply(mess.only.group)
 if (!botAdmin) return reply(mess.only.Badmin)
                 if (sam.message.extendedTextMessage != undefined){
                 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-		if (mentionUser.length >= 1) return reply('Error')
+		if (mentionUser.length == 1)
 		if (mentioned[0].split('@')[0] == '33749258491') return
 		samu330.groupRemove(from, mentionUser)
 		} else if(mentioned.length <= 1){
@@ -8993,7 +8993,7 @@ if (!isGroup) return reply(mess.only.group)
 if (!botAdmin) return reply(mess.only.Badmin)
                 if (sam.message.extendedTextMessage != undefined){
                 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-		if (mentionUser.length >= 1) return reply('Error')
+		if (mentionUser.length == 1)
 		if (mentioned[0].split('@')[0] == '33749258491') return reply('Nel')
 		reply(`${mentionUser}`)
 		} else if(mentioned.length <= 1){
