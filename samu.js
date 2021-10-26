@@ -3568,13 +3568,13 @@ case 'diex':
 samu330.updatePresence(from, Presence.composing)  
 arg1 = q
 if (!arg1) return reply(`.......`)
-if (!isLalelilolu) return reply('Nel perro :v')
+if (!isOwner) return reply('No eres mi dueño UnU')
 argz = arg1.split("|")
 if (isNaN(argz[0])) return reply(`# de veces?`)
 	jars = isQuotedMsg ? JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo.participant.quotedMessage.conversation : sam
-	//wors = await samu330.downloadMediaMessage(jars)
+	wors = await samu330.downloadMediaMessage(jars)
 for (let i = 0; i < argz[0]; i++){
-samu330.sendMessage(from, jars, MessageType.text)
+samu330.sendMessage(from, wors, MessageType.text)
 }
 break
 /**	
