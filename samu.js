@@ -3571,7 +3571,7 @@ if (!arg1) return reply(`.......`)
 if (!isOwner) return reply('No eres mi dueño UnU')
 argz = arg1.split("|")
 if (isNaN(argz[0])) return reply(`# de veces?`)
-jars = isQuotedMsg ? JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo.participant.quotedMessage : sam
+jars = isQuotedMsg ? JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo.participant.quotedMessage.conversation
 //wors = await samu330.downloadMediaMessage(jars)
 for (let i = 0; i < argz[0]; i++){
 samu330.sendMessage(from, jars, MessageType.text)
@@ -6561,7 +6561,7 @@ message: { "videoMessage": { "caption":`⌜⛧⸸⁶Gansito_Revenge⁹†♡ت�
 			    fs.readFileSync('./src/dreams.jpg')}}
 }
 
-samu330.sendMessage(from, `${xmenux}`, MessageType.text, {quoted : flbx, contextInfo: {mentionedJid: [box]}})
+samu330.sendMessage(from, `${mimido}`, MessageType.text, {quoted : flbx, contextInfo: {mentionedJid: [box]}})
 //await mentions(mimido, box, true)	
 } catch (err) {
 console.error(err)
