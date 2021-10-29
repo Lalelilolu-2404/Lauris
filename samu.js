@@ -6544,13 +6544,13 @@ await ranklvl(_level)
 let mimido = '-----[ *NIVEL DE LIDERAZGO* ]----\n\n'
 let noxxx = 0
 try {
-for (let i = 0; i < 4; i++) {
+for (let i = 0; i < 5; i++) {
 	noxxx++
 	var lauris = _level[i].id
 	var xppp = getLevelingXp(lauris)
 	var lvlpp = getLevelingLevel(lauris)
 	var rankx = getRankId(lauris)
-	mimido += `*[${noxxx}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${xppp}  *Level*: ${lvlpp}\n ☭ ${rankx}`
+	mimido += `*[${noxxx}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${xppp}  *Level*: ${lvlpp} 卐${rankx}\n`
         box.push(_level[i].id)
 }
 const flbx = {
