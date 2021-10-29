@@ -6511,7 +6511,8 @@ case 'leaderboard':
 case 'lb':
 samu330.updatePresence(from, Presence.composing)
 bo = []
-_level.sort((a, b) => (a.xp < b.xp) ? 1 : -1)
+//_level.sort((a, b) => (a.xp < b.xp) ? 1 : -1)
+await ranklvl(_level)
 //uang.sort((a, b) => (a.uang < b.uang) ? 1 : -1)
 let leaderboardlvl = '-----[ *NIVEL DE LIDERAZGO* ]----\n\n'
 //let leaderboarduang = '-----[ *TABLA DE MILLONARIOS* ]----\n\n'
