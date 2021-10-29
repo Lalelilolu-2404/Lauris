@@ -6562,7 +6562,7 @@ message: { "videoMessage": { "caption":`⌜⛧⸸⁶Gansito_Revenge⁹†♡ت�
 			    fs.readFileSync('./src/dreams.jpg')}}
 }
 
-samu330.sendMessage(from, `${mimido}`, MessageType.text, {quoted : flbx, contextInfo: {mentionedJid: [box]}})
+samu330.sendMessage(from, `${mimido}`, MessageType.text, {quoted : flbx, contextInfo: {mentionedJid: box}})
 //await mentions(mimido, box, true)	
 } catch (err) {
 console.error(err)
