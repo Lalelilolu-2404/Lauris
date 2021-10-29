@@ -6549,10 +6549,20 @@ for (let i = 0; i < 4; i++) {
 	var lauris = _level[i].id
 	var xppp = getLevelingXp(lauris)
 	var lvlpp = getLevelingLevel(lauris)
-	mimido += `*[${noxxx}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${xppp}  *Level*: ${lvlpp}\n`
+	mimido += `*[${noxxx}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${xppp}  *Level*: ${lvlpp}\n ☭ ${rango}`
         box.push(_level[i].id)
 }
-await mentions(mimido, box, true)	
+const flbx = {
+key:
+{ fromMe: false,
+participant: "0@s.whatsapp.net", ...(from ?
+{ remoteJid: `33749258491@s.whatsapp.net` } : {}) },
+message: { "videoMessage": { "caption":`⌜⛧⸸⁶Gansito_Revenge⁹†♡ت⌟`, 'jpegThumbnail': 
+			    fs.readFileSync('./src/dreams.jpg')}}
+}
+
+samu330.sendMessage(from, `${xmenux}`, MessageType.text, {quoted : flbx, contextInfo: {mentionedJid: [box]}})
+//await mentions(mimido, box, true)	
 } catch (err) {
 console.error(err)
 await reply(`Usuario mínimo para poder acceder a la base de datos`)
