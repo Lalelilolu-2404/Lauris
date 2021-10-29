@@ -35,7 +35,7 @@ const request = require('request');
 const fs = require('fs');
 const { wait, h2k, generateMessageID, getGroupAdmins, banner, start, info, success, close } = require('./lib/functions')
 const { addBanned, unBanned, BannedExpired, cekBannedUser } = require('./lib/banned.js')
-const { getLevelingXp, getLevelingId, addLevelingXp, addLevelingLevel, addLevelingId, getLevelingLevel, getUserRank, ranklvl, addCooldown, leveltab } = require('./lib/leveling.js')
+const { getLevelingXp, getLevelingId, addLevelingXp, addLevelingLevel, addLevelingId, getLevelingLevel, getRankId, getUserRank, ranklvl, addCooldown, leveltab } = require('./lib/leveling.js')
 const { addATM, addKoinUser, checkATMuser, checkLimit, addLimith, bayarLimit, confirmATM, limitAdd, atmCouldown, rankdin } = require('./lib/limitatm.js')
 const { removeBackgroundFromImageFile } = require('remove.bg');
 const { exec } = require('child_process');
@@ -6549,7 +6549,8 @@ for (let i = 0; i < 4; i++) {
 	var lauris = _level[i].id
 	var xppp = getLevelingXp(lauris)
 	var lvlpp = getLevelingLevel(lauris)
-	mimido += `*[${noxxx}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${xppp}  *Level*: ${lvlpp}\n ☭ ${rango}`
+	var rankx = getRankId(lauris)
+	mimido += `*[${noxxx}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${xppp}  *Level*: ${lvlpp}\n ☭ ${rankx}`
         box.push(_level[i].id)
 }
 const flbx = {
