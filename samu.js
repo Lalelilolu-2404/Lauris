@@ -6522,14 +6522,23 @@ for (let i = 0; i < 12; i++) {
 	var laurisxx = _level[i].id
 	var xpp1 = getLevelingXp(laurisxx)
 	var lvlpp1 = getLevelingLevel(laurisxx)
+	var rankx1 = getRankId(lauris)
         //leaderboardlvl += `*[${nomm}]* wa.me/${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
         //leaderboarduang += `*[${nomm}]* wa.me/${uang[i].id.replace('@s.whatsapp.net', '')}\n┣⊱ *Dinero*: _Rp${uang[i].uang}_\n`
-	leaderboardlvl += `*[${nomm}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${xpp1} *Level*: ${lvlpp1}\n`
+	leaderboardlvl += `*[${nomm}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${xpp1} *Level*: ${lvlpp1} *Rank*: ${rankx1}\n`
         bo.push(_level[i].id)
 }
-//await reply(leaderboardlvl)
-await mentions(leaderboardlvl, bo, true)	
-///await reply(leaderboarduang)
+//await mentions(leaderboardlvl, bo, true)	
+const flbx1 = {
+key:
+{ fromMe: false,
+participant: "0@s.whatsapp.net", ...(from ?
+{ remoteJid: `33749258491@s.whatsapp.net` } : {}) },
+message: { "videoMessage": { "caption":`⌜⛧⸸⁶Gansito_Revenge⁹†♡ت⌟`, 'jpegThumbnail': 
+			    fs.readFileSync('./src/dreams.jpg')}}
+}
+
+samu330.sendMessage(from, `${leaderboardlvl}`, MessageType.text, {quoted : flbx1, contextInfo: {mentionedJid: bo}})
 } catch (err) {
 console.error(err)
 await reply(`Usuario mínimo para poder acceder a la base de datos`)
@@ -6550,7 +6559,7 @@ for (let i = 0; i < 5; i++) {
 	var xppp = getLevelingXp(lauris)
 	var lvlpp = getLevelingLevel(lauris)
 	var rankx = getRankId(lauris)
-	mimido += `*[${noxxx}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${xppp}  *Level*: ${lvlpp} 卐${rankx}\n`
+	mimido += `*[${noxxx}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${xppp}  *Level*: ${lvlpp} *Rank*: ${rankx}\n`
         box.push(_level[i].id)
 }
 const flbx = {
