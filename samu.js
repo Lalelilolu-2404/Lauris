@@ -2946,7 +2946,7 @@ if (!isGroup) return reply(mess.only.group)
 if (isYo) return reply(`❎ No puedes ser bot en un bot 😕`)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (isBan) return reply('*Lo siento, usuario baneado!*')
-jadibot(reply,sam330,from)
+jadibot(reply,samu330,from)
 break
 
 case 'stopbot':
