@@ -872,7 +872,7 @@ const isYo = sam.key.fromMe ? true : false
                 message: {
                 "imageMessage": {
                 "mimetype": "image/jpeg",
-                "caption": `➫𝐒𝐢𝐦𝐢 - es |⌜UwU ت♡⌟\n⛥: ${q}`,
+                "caption": `➫𝐒𝐢𝐦𝐢 |⌜UwU ت♡⌟\n⛥: ${q}`,
                 'jpegThumbnail': fs.readFileSync('./src/similau.jpg')}}
 		}
        		})
@@ -8845,9 +8845,9 @@ case 'cherry':
 samu330.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(mess.only.group)
 if (!q) return 
-sim0 = await getJson(`https://api.simsimi.net/v2/?text=${q}&lc=es`)
-smuu = `${sim0.success}`	
-similau(smuu)	
+sim = await getJson(`https://api.simsimi.net/v2/?text=${q}&lc=es`)
+smuu = `${sim.success}`	
+simimh(smuu)	
 addFilter(from)
 addLevelingXp(sender, 20)
 break
@@ -8856,9 +8856,9 @@ case 'lauris':
 samu330.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(mess.only.group)
 if (!q) return 
-sim0 = await getJson(`https://api.simsimi.net/v2/?text=${q}&lc=en`)
-smuu = `${sim0.success}`	
-similau(smuu)	
+sim = await getJson(`https://api.simsimi.net/v2/?text=${q}&lc=en`)
+smuu = `${sim.success}`	
+simimh(smuu)	
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
@@ -8867,8 +8867,8 @@ case 'cherie':
 samu330.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(mess.only.group)
 if (!q) return 
-sim0 = await getJson(`https://api.simsimi.net/v2/?text=${q}&lc=fr`)
-smuu = `${sim0.success}`	
+sim = await getJson(`https://api.simsimi.net/v2/?text=${q}&lc=fr`)
+smuu = `${sim.success}`	
 similau(smuu)	
 addFilter(from)
 addLevelingXp(sender, 20)
@@ -10382,11 +10382,12 @@ if (body.includes(`Xd`) && body.length == 2){
 	const none = fs.readFileSync(`./temp/Xd${nkx}.webp`)
 	samu330.sendMessage(from, none, MessageType.sticker)
 }		
-	
+/**	
 if (isSimi && !itsMe &&  body != undefined){
 res = await getJson(`https://api.simsimi.net/v2/?text=${body}&lc=es`)
 reply(res.success)
 }
+**/
 if (isGroup && isAntiLink && isUrl(body) && !isAdmin && body != undefined) {
 var sial = sender.split('@')[0] + "@s.whatsapp.net"
 samu330.groupRemove(from, [sial])
