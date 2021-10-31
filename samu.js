@@ -8894,8 +8894,8 @@ try {smuu = (`${sim1.result}`)
 	    } finally {smuu = (`${sim2.success}`)
 		      }
 **/
-smuu = (`${sim0.success}`)	
-simies(smuu)	
+smuuxx = (`${sim0.success}`)	
+simies(smuuxx)	
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
