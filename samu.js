@@ -864,7 +864,7 @@ const isYo = sam.key.fromMe ? true : false
        		})
 		}
 	
-	const simies = async(teks) => {
+	const similau = async(teks) => {
                 await samu330.sendMessage(from, teks, MessageType.text, { quoted: { key: {                
 		fromMe: false,
                 participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: `33749258491@s.whatsapp.net` } : {})
@@ -873,7 +873,7 @@ const isYo = sam.key.fromMe ? true : false
                 "imageMessage": {
                 "mimetype": "image/jpeg",
                 "caption": `➫𝐒𝐢𝐦𝐢 - es |⌜UwU ت♡⌟\n⛥: ${q}`,
-                'jpegThumbnail': fs.readFileSync('./src/Simi-es.jpg')}}
+                'jpegThumbnail': fs.readFileSync('./src/similau.jpg')}}
 		}
        		})
 		}	
@@ -8882,20 +8882,13 @@ addFilter(from)
 addLevelingXp(sender, 20)
 break	
 
-case 'cherry':
+case 'lauris':
 samu330.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(mess.only.group)
 if (!q) return 
 sim0 = await getJson(`https://api.simsimi.net/v2/?text=${q}&lc=es`)
-//sim2 = await getJson(`https://simsumi.herokuapp.com/api?text=${q}`)
-/**
-try {smuu = (`${sim1.result}`)
-    } catch {smuu = (`${sim0.success}`)
-	    } finally {smuu = (`${sim2.success}`)
-		      }
-**/
 smuuxx = (`${sim0.success}`)	
-simies(smuuxx)	
+similau(smuuxx)	
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
