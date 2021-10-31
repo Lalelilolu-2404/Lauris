@@ -3745,48 +3745,7 @@ samu330.sendMessage(from, noneg, MessageType.audio, {quoted: faud, mimetype: 'au
 fs.unlinkSync('./pictgay.jpeg')
 addFilter(from)
 addLevelingXp(sender, 20)
-break
-		
-case 'lauris':
-samu330.updatePresence(from, Presence.composing)  
-if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
-if (sam.message.extendedTextMessage != undefined){
-mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-}	
-teks = `╔═══════════════════
-╠≽️ *Número* : ${mentioned[0].split('@')[0]}
-╚═══════════════════`
-samu330.sendMessage(from, teks, MessageType.text, {
-	quoted: {
-		key: {
-			remoteJid: `5491165204676-1630035714@g.us`,
-                        fromMe: false, 
-                    },
-                    message: {
-                        "imageMessage": {
-                            "url": "https://mmg.whatsapp.net/d/f/At0x7ZdIvuicfjlf9oWS6A3AR9XPh0P-hZIVPLsI70nM.enc",
-                            "mimetype": "image/jpeg",
-			    "caption": `「 *Holi cosita ^-^* 」\n ⊱ღ *${pushname}* ღ⊱`,					
-                            "fileSha256": "+Ia+Dwib70Y1CWRMAP9QLJKjIJt54fKycOfB2OEZbTU=",
-                            "fileLength": "28777",
-                            "height": 1200,
-                            "width": 1199,
-                            "mediaKey": "vXmRR7ZUeDWjXy5iQk17TrowBzuwRya0errAFnXxbGc=",
-                            "fileEncSha256": "sR9D2RS5JSifw49HeBADguI23fWDz1aZu4faWG/CyRY=",
-                            "directPath": "/v/t62.7118-24/21427642_840952686474581_572788076332761430_n.enc?oh=3f57c1ba2fcab95f2c0bb475d72720ba&oe=602F3D69",
-                            "mediaKeyTimestamp": "1610993486",
-                            "jpegThumbnail": fs.readFileSync('./src/dreams.jpg'),
-                            "scansSidecar": "1W0XhfaAcDwc7xh1R8lca6Qg/1bB4naFCSngM2LKO2NoP5RI7K+zLw=="
-                        }
-                    },
-                    contextInfo: {
-                         "forwardingScore": 999, "isForwarded": true
-                    }
-                }
-            })	
-addFilter(from)
-addLevelingXp(sender, 20)
-break			
+break		
 
 case 'pansito':
 if (!isGroup) return reply(mess.only.group)
