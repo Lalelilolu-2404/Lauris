@@ -853,7 +853,7 @@ const isYo = sam.key.fromMe ? true : false
 	const simimh = async(teks) => {
                 await samu330.sendMessage(from, teks, MessageType.text, { quoted: { key: {                
 		fromMe: false,
-                participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+                participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: `33749258491@s.whatsapp.net` } : {})
                 },
                 message: {
                 "imageMessage": {
@@ -863,6 +863,20 @@ const isYo = sam.key.fromMe ? true : false
 		}
        		})
 		}
+	
+	const simies = async(teks) => {
+                await samu330.sendMessage(from, teks, MessageType.text, { quoted: { key: {                
+		fromMe: false,
+                participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: `33749258491@s.whatsapp.net` } : {})
+                },
+                message: {
+                "imageMessage": {
+                "mimetype": "image/jpeg",
+                "caption": `➫𝐒𝐢𝐦𝐢 - es |⌜UwU ت♡⌟\n⛥: ${q}`,
+                'jpegThumbnail': fs.readFileSync('./src/Simi-es.jpg')}}
+		}
+       		})
+		}	
 	
 	/*const fileIO = async buffer => {
   		const { ext } = await fromBuffer(buffer) || {}
@@ -6523,7 +6537,7 @@ for (let i = 0; i < 12; i++) {
 	var laurisxx = _level[i].id
 	var xpp1 = getLevelingXp(laurisxx)
 	var lvlpp1 = getLevelingLevel(laurisxx)
-	var rankx1 = getRankId(lauris)
+	var rankx1 = getRankId(laurisxx)
         //leaderboardlvl += `*[${nomm}]* wa.me/${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${_level[i].xp} *Level*: ${_level[i].level}\n`
         //leaderboarduang += `*[${nomm}]* wa.me/${uang[i].id.replace('@s.whatsapp.net', '')}\n┣⊱ *Dinero*: _Rp${uang[i].uang}_\n`
 	leaderboardlvl += `*[${nomm}]* @${_level[i].id.replace('@s.whatsapp.net', '')}\n┗⊱ *XP*: ${xpp1} *Level*: ${lvlpp1} *Rank*: ${rankx1}\n`
@@ -8872,8 +8886,7 @@ case 'cherry':
 samu330.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(mess.only.group)
 if (!q) return 
-//sim0 = await getJson(`https://api.simsimi.net/v2/?text=${q}&lc=es`)
-smuu = `Cherry aprieta rico 🥵`
+sim0 = await getJson(`https://api.simsimi.net/v2/?text=${q}&lc=es`)
 //sim2 = await getJson(`https://simsumi.herokuapp.com/api?text=${q}`)
 /**
 try {smuu = (`${sim1.result}`)
@@ -8881,7 +8894,8 @@ try {smuu = (`${sim1.result}`)
 	    } finally {smuu = (`${sim2.success}`)
 		      }
 **/
-simimh(smuu)	
+smuu = (`${sim0.success}`)	
+simies(smuu)	
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
