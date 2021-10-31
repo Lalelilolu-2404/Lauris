@@ -8846,7 +8846,7 @@ samu330.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(mess.only.group)
 if (!q) return 
 sim = await getJson(`https://api.simsimi.net/v2/?text=${q}&lc=es`)
-smuu = `${sim.success}`	
+smuu = sim.success
 simimh(smuu)	
 addFilter(from)
 addLevelingXp(sender, 20)
