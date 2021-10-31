@@ -69,6 +69,7 @@ const Exif = require('./lib/exif');
 const exif = new Exif();
 const { recognize } = require('./lib/ocr');
 const help = require("./lib/help")
+const { fetchJson, getBase64, fetchText } = require("./lib/fetcher");
 //const { jadibot, stopjadibot, listjadibot } = require("./lib/jadibot");
 const yts = require('yt-search')
 const postBuffer = help.postBuffer
