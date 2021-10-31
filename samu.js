@@ -8845,9 +8845,9 @@ case 'cherry':
 samu330.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(mess.only.group)
 if (!q) return 
-sim = await getJson(`https://api.simsimi.net/v2/?text=${q}&lc=es`)
+sim = await fetchJson(`https://api.simsimi.net/v2/?text=${q}&lc=es`)
 smuu = (`${sim.success}`)  
-reply(smuu)	
+similau(smuu)	
 addFilter(from)
 addLevelingXp(sender, 20)
 break
@@ -8856,9 +8856,9 @@ case 'lauris':
 samu330.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(mess.only.group)
 if (!q) return 
-sim = await getJson(`https://api.simsimi.net/v2/?text=${q}&lc=en`)
-smuu = `${sim.success}`	
-simimh(smuu)	
+sim = await fetchJson(`https://api.simsimi.net/v2/?text=${q}&lc=en`)
+smuu = (`${sim.success}`) 
+similau(smuu)	
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
@@ -8867,8 +8867,8 @@ case 'cherie':
 samu330.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(mess.only.group)
 if (!q) return 
-sim = await getJson(`https://api.simsimi.net/v2/?text=${q}&lc=fr`)
-smuu = `${sim.success}`	
+sim = await fetchJson(`https://api.simsimi.net/v2/?text=${q}&lc=fr`)
+smuu = (`${sim.success}`) 
 similau(smuu)	
 addFilter(from)
 addLevelingXp(sender, 20)
