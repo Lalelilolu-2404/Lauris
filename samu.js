@@ -8841,13 +8841,35 @@ addFilter(from)
 addLevelingXp(sender, 20)
 break	
 
-case 'lauris':
+case 'cherry':
 samu330.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(mess.only.group)
 if (!q) return 
 sim0 = await getJson(`https://api.simsimi.net/v2/?text=${q}&lc=es`)
-smuuxx = (`${sim0.success}`)	
-similau(smuuxx)	
+smuu = `${sim0.success}`	
+similau(smuu)	
+addFilter(from)
+addLevelingXp(sender, 20)
+break
+		
+case 'lauris':
+samu330.updatePresence(from, Presence.composing)
+if (!isGroup) return reply(mess.only.group)
+if (!q) return 
+sim0 = await getJson(`https://api.simsimi.net/v2/?text=${q}&lc=en`)
+smuu = `${sim0.success}`	
+similau(smuu)	
+addFilter(from)
+addLevelingXp(sender, 20)
+break	
+		
+case 'cherie':
+samu330.updatePresence(from, Presence.composing)
+if (!isGroup) return reply(mess.only.group)
+if (!q) return 
+sim0 = await getJson(`https://api.simsimi.net/v2/?text=${q}&lc=fr`)
+smuu = `${sim0.success}`	
+similau(smuu)	
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
