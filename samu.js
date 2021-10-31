@@ -97,6 +97,7 @@ const owner = config.owner
 const mods = config.mods
 const fake = 'Lalelilolu ᵈᵃʳʸ⛥'
 var public = config.public
+const client = new WAConnection()
 ////////////▶ 𝐒𝐚𝐦𝐮𝟑𝟑𝟎 | 𝐒𝐚𝐦 𝐲 𝐏𝐞𝐫𝐫𝐲
 conn.connect()
 const samu330 = conn.samu330
@@ -2949,7 +2950,58 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
 if (isBan) return reply('*Lo siento, usuario baneado!*')
 jadibot(reply,samu330,from)
 break
-
+**/
+case 'serbot':
+if (!isGroup) return reply(mess.only.group)
+if (isYo) return reply(`❎ No puedes ser bot en un bot 😕`)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+if (isBan) return reply('*Lo siento, usuario baneado!*')
+client.version = [2, 2119, 6]
+client.browserDescription = ['Lauris69','Desktop','3.0']
+if (args[0] && args[0].length > 200) {
+	let json = Buffer.from(args[0], 'base64').toString('utf-8')
+    let obj = JSON.parse(json)
+    await client.loadAuthInfo(obj)
+}
+try {
+client.on('qr' ,async qr => {
+qrbot = await qrkode.toDataURL(qr, { scale: 8 })
+buffqr = await Buffer.from(qrbot.split('data:image/png;base64,')[1], 'base64')
+await fs.writeFileSync(`./jadibot@${sender}.jpg`, buffqr)
+let scen = await samu330.sendMessage(from, fs.readFileSync(`./jadibot@${sender}.jpg`), MessageType.image, {quoted : fdreams,caption: '¡Escanea este QR para convertirte en un bot temporal!\n1. Haga clic en los tres puntos en la esquina superior derecha.\n2. Toca WhatsApp Web\n3. Escanea este QR \n\nEl QR caduca en 20 segundos'})    
+setTimeout(() => {
+       samu330.deleteMessage(from, scen.key)
+  }, 30000);
+})  
+client.on ('open', async () => {
+  console.log ('credentials update')
+  const authInfo = client.base64EncodedAuthInfo()
+  fs.writeFileSync(`./${sender}.json`, JSON.stringify(authInfo  ,null, '\t'))
+  await client.sendMessage('0@s.whatsapp.net', `Puede iniciar sesión sin qr con el siguiente mensaje`, MessageType.extendedText)
+  client.sendMessage('0@s.whatsapp.net', `${prefix}${command} ${Buffer.from(JSON.stringify(authInfo)).toString('base64')}`, MessageType.extendedText)
+})
+client.on('chat-update', async (chat) => {
+	require('./lau.js')(client, chat)
+})    
+await client.connect().then(async ({user}) => {
+reply('Conectado exitosamente con WhatsApp.*\n' + JSON.stringify(user, null, 2))
+})
+} catch {
+reply('¡Error! solo 1 persona puede acceder a la función Jadibot')
+}
+break
+case 'stopjadibot':
+if (!isOwner && !sam.key.fromMe) return reply('Solo ownerB')
+try {
+reply('Okay')
+fs.unlinkSync(`./${sender}.json`)
+client.close()
+} catch {
+reply('Listo')
+client.close()
+}
+break
+/**
 case 'stopbot':
 if (!isYo) return reply(`✳️Disponible solo para los bots Temporales`) 
 stopjadibot(reply)
