@@ -70,7 +70,7 @@ const exif = new Exif();
 const { recognize } = require('./lib/ocr');
 const help = require("./lib/help")
 const { fetchJson, getBase64, fetchText } = require("./lib/fetcher");
-const { jadibot, stopjadibot, listjadibot } = require("./lib/jadibot");
+//const { jadibot, stopjadibot, listjadibot } = require("./lib/jadibot");
 const yts = require('yt-search')
 const postBuffer = help.postBuffer
 const getBuffer = help.getBuffer
@@ -2941,6 +2941,7 @@ message: { "videoMessage": { "caption":`${pushname}`, 'jpegThumbnail': fs.readFi
 caption:`Uhm, estofado :v`})			
 break	
 ///////////////	
+/**
 case 'serbot':
 if (!isGroup) return reply(mess.only.group)
 if (isYo) return reply(`❎ No puedes ser bot en un bot 😕`)
@@ -2967,7 +2968,7 @@ tekss += `*#️⃣ Numero* : ${i.jid.split('@')[0]}
 }
 reply(tekss)
 break
-
+**/
 ////////		
 case 'work':
 if (!isGroup) return reply(mess.only.group)
