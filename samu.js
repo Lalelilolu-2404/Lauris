@@ -8842,34 +8842,34 @@ addLevelingXp(sender, 20)
 break	
 
 case 'cherry':
-samu330.updatePresence(from, Presence.composing)
+//samu330.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(mess.only.group)
 if (!q) return 
-sim = await fetchJson(`https://api.simsimi.net/v2/?text=${q}&lc=es`)
-smuu = (`${sim.success}`)  
-similau(smuu)	
+var alaux = await fetchJson(`https://api.simsimi.net/v2/?text=${q}&lc=es`)
+laues = (`${alaux.success}`)  
+similau(laues)	
 addFilter(from)
 addLevelingXp(sender, 20)
 break
 		
 case 'lauris':
-samu330.updatePresence(from, Presence.composing)
+//samu330.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(mess.only.group)
 if (!q) return 
-sim = await fetchJson(`https://api.simsimi.net/v2/?text=${q}&lc=en`)
-smuu = (`${sim.success}`) 
-similau(smuu)	
+var alauy = await fetchJson(`https://api.simsimi.net/v2/?text=${q}&lc=en`)
+lauen = (`${alauy.success}`) 
+similau(lauen)	
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
 		
 case 'cherie':
-samu330.updatePresence(from, Presence.composing)
+//samu330.updatePresence(from, Presence.composing)
 if (!isGroup) return reply(mess.only.group)
 if (!q) return 
-sim = await fetchJson(`https://api.simsimi.net/v2/?text=${q}&lc=fr`)
-smuu = (`${sim.success}`) 
-similau(smuu)	
+var alauz = await fetchJson(`https://api.simsimi.net/v2/?text=${q}&lc=fr`)
+laufr = (`${alauz.success}`) 
+similau(laufr)	
 addFilter(from)
 addLevelingXp(sender, 20)
 break	
