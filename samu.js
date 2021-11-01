@@ -9612,17 +9612,22 @@ addLevelingXp(sender, 40)
 break	
 //////////////////
 case 'lisa':
-teks = body.slice(6)
-buff = await getBuffer(`http://brizas-api.herokuapp.com/imgeffect/lisapresentation?apikey=brizaloka&text=${teks}`)
+if (!isGroup) return reply(mess.only.group)
+reply(mess.wait)
+if (!q) return reply('Y el texto?')
+buff = await getBuffer(`http://brizas-api.herokuapp.com/imgeffect/lisapresentation?apikey=brizaloka&text=${q}`)
 samu330.sendMessage(from, buff, MessageType.image, {quoted: fdreams})
 break	
 
 case 'xmeme':
+if (!isGroup) return reply(mess.only.group)
+reply(mess.wait)
 meme = await fetchJson('https://kagchi-api.glitch.me/meme/memes')
 buffer = await getBuffer(`https://imgur.com/${meme.hash}.jpg`)
 samu330.sendMessage(from, buffer, MessageType.image, {quoted: fdreams})
 break
 //////////////////
+/**
 case 'trash':
 case 'tatto':
 case 'rip':
@@ -9632,7 +9637,6 @@ case 'dobross':
 case 'beatiful':
 case 'affect':
 case 'ad':
-addFilter(from)	
 if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
 invert = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam;
 reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
@@ -9650,8 +9654,69 @@ reply('Se nesecita una foto!');
 addFilter(from)
 addLevelingXp(sender, 20)
 break				
+**/	
+case 'trash':
+case 'tatto':
+case 'rip':
+case 'hitler':
+case 'delete':
+case 'dobross':
+case 'beatiful':
+case 'affect':
+case 'ad':
+try{
+if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
+invert = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam;
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
+owgir = await samu330.downloadMediaMessage(invert)
+await fs.writeFileSync(`./stickinvert.jpeg`, owgir)
+var imgbb2in = require('imgbb-uploader')
+anur = await imgbb2in("20a14861e4f7591f3dc52649cb07ae02", './stickinvert.jpeg')
+txtinv = `${anur.display_url}`
+sinvert = await getBuffer(`http://brizas-api.herokuapp.com/montage/${command}?apikey=brizaloka&img=${txtinv}`)
+samu330.sendMessage(from, sinvert, MessageType.image, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickinvert.jpeg')
+} else {
+reply('Se nesecita una foto!');
+}
+addFilter(from)
+addLevelingXp(sender, 20)
+} else if(args[0] == 'me') {
+try {
+ppimg = await samu330.getProfilePicture(sender)
+} catch {
+ppimg = 'https://i.imgur.com/hRDp5D2.png'
+}
+owgir = await getBuffer(ppimg)
+await fs.writeFileSync(`./stickinvert.jpeg`, owgir)
+var imgbb2in = require('imgbb-uploader')
+anur = await imgbb2in("20a14861e4f7591f3dc52649cb07ae02", './stickinvert.jpeg')
+txtinv = `${anur.display_url}`
+sinvert = await getBuffer(`http://brizas-api.herokuapp.com/montage/${command}?apikey=brizaloka&img=${txtinv}`)
+samu330.sendMessage(from, sinvert, MessageType.image, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickinvert.jpeg')
+} else if(sam.message.extendedTextMessage.contextInfo.mentionedJid) {
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+try {
+ppimg = await samu330.getProfilePicture(mentioned[0])
+} catch {
+ppimg = 'https://i.imgur.com/hRDp5D2.png'
+}
+owgir = await getBuffer(ppimg)
+await fs.writeFileSync(`./stickinvert.jpeg`, owgir)
+var imgbb2in = require('imgbb-uploader')
+anur = await imgbb2in("20a14861e4f7591f3dc52649cb07ae02", './stickinvert.jpeg')
+txtinv = `${anur.display_url}`
+sinvert = await getBuffer(`http://brizas-api.herokuapp.com/montage/${command}?apikey=brizaloka&img=${txtinv}`)
+samu330.sendMessage(from, sinvert, MessageType.image, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickinvert.jpeg')
+} else return reply('*Solo tofos*')
+} catch {
+reply('Valió, F :/')
+}
+break
 		
-case 'blur':
+//case 'blur':
 case 'invert':
 addFilter(from)	
 if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
