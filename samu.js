@@ -9615,8 +9615,11 @@ case 'lisa':
 if (!isGroup) return reply(mess.only.group)
 reply(mess.wait)
 if (!q) return reply('Y el texto?')
-buff = await getBuffer(`http://brizas-api.herokuapp.com/imgeffect/lisapresentation?apikey=brizaloka&text=${q}`)
-samu330.sendMessage(from, buff, MessageType.image, {quoted: fdreams})
+buffer = await getBuffer(`http://brizas-api.herokuapp.com/imgeffect/lisapresentation?apikey=brizaloka&text=${q}`)
+samu330.sendMessage(from, buffer, image, { thumbnail: fs.readFileSync('./src/dreams.jpg'), quoted: fimg})
+.catch(err => {
+return('Pwrdon... T_T')
+})
 break	
 
 case 'xmeme':
@@ -9664,6 +9667,7 @@ case 'dobross':
 case 'beatiful':
 case 'affect':
 case 'ad':
+case 'poutine':		
 try{
 if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
 invert = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam;
@@ -9679,6 +9683,7 @@ fs.unlinkSync('./stickinvert.jpeg')
 addFilter(from)
 addLevelingXp(sender, 20)
 } else if(args[0] == 'me') {
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
 try {
 ppimg = await samu330.getProfilePicture(sender)
 } catch {
@@ -9693,6 +9698,7 @@ sinvert = await getBuffer(`http://brizas-api.herokuapp.com/montage/${command}?ap
 samu330.sendMessage(from, sinvert, MessageType.image, {quoted: floc, sendEphemeral: true})
 fs.unlinkSync('./stickinvert.jpeg')
 } else if(sam.message.extendedTextMessage.contextInfo.mentionedJid) {
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 try {
 ppimg = await samu330.getProfilePicture(mentioned[0])
@@ -9776,24 +9782,84 @@ reply('Manda la foto!');
 addFilter(from)
 addLevelingXp(sender, 40)
 break
-
-case 'wanted':
-var imgbb = require('imgbb-uploader')
-if ((isMedia && !sam.message.videoMessage || isQuotedImage)) {
-  ted = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo: sam
-if (args.length < 1) return reply(`Digite algum texto para isso`)
-  wtext = body.slice(7)
-  reply('*Espera un momento...*')
-  owgi = await samu330.downloadAndSaveMediaMessage(ted)
-  anu = await imgbb("0c419be2e8bfc27eff00147b0c763418", owgi)
-  anu1 = await getBuffer(`https://videfikri.com/api/textmaker/wanted/?urlgbr=${anu.display_url}&text1=${wtext}&text2=10000`)
-  fs.writeFileSync('wanted.jpg', anu1)	
-  samu330.sendMessage(from, fs.readFileSync('wanted.jpg'), MessageType.image, {quoted: fimg})
-} else {
-  reply('Precisa una uma imagem')
+		
+case 'owanted':
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
+arg1 = q
+if (!arg1) return reply(`.......`)
+argz = arg1.split("|")
+if (isNaN(argz[0])) return reply(`La recompensa?`)
+try {
+ppimg = await samu330.getProfilePicture(sender)
+} catch {
+ppimg = 'https://i.imgur.com/hRDp5D2.png'
 }
+owgir = await getBuffer(ppimg)
+await fs.writeFileSync(`./stickwanted.jpeg`, owgir)
+var imgbb2in = require('imgbb-uploader')
+anur = await imgbb2in("20a14861e4f7591f3dc52649cb07ae02", './stickwanted.jpeg')
+txtinv = `${anur.display_url}`
+anux = await axios.get(`http://brizas-api.herokuapp.com/photooxy/v2/wanted?apikey=brizaloka&text=${pushname}&text2=R£${argz[0]}&img=${txtinv}`)
+swanted = await getBuffer(anux.data.resultado)
+samu330.sendMessage(from, swanted, MessageType.image, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickwanted.jpeg')
 break
-
+//http://brizas-api.herokuapp.com/photomod/rank?apikey=brizaloka&name=brizaloka&atualxp=500&maxxp=1000&desc=2020&colorbar=0061FF&colortext=FF2E00&background=https://i.imgur.com/tVKFNFk.png&profileimg=https://avatars.githubusercontent.com/u/57237342&rank=5&level=1
+case 'wanted':		
+try{
+if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
+invert = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam;
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
+owgir = await samu330.downloadMediaMessage(invert)
+await fs.writeFileSync(`./stickwanted.jpeg`, owgir)
+var imgbb2in = require('imgbb-uploader')
+anur = await imgbb2in("20a14861e4f7591f3dc52649cb07ae02", './stickwanted.jpeg')
+txtinv = `${anur.display_url}`
+anux = await axios.get(`http://brizas-api.herokuapp.com/photooxy/v2/wanted?apikey=brizaloka&text=Procurado&text2=R$999999,00&img=${txtinv}`)
+swanted = await getBuffer(anux.data.resultado)
+samu330.sendMessage(from, swanted, MessageType.image, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickwanted.jpeg')
+addFilter(from)
+addLevelingXp(sender, 20)
+} else if(args[0] == 'me') {
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
+try {
+ppimg = await samu330.getProfilePicture(sender)
+} catch {
+ppimg = 'https://i.imgur.com/hRDp5D2.png'
+}
+owgir = await getBuffer(ppimg)
+await fs.writeFileSync(`./stickwanted.jpeg`, owgir)
+var imgbb2in = require('imgbb-uploader')
+anur = await imgbb2in("20a14861e4f7591f3dc52649cb07ae02", './stickwanted.jpeg')
+txtinv = `${anur.display_url}`
+anux = await axios.get(`http://brizas-api.herokuapp.com/photooxy/v2/wanted?apikey=brizaloka&text=Procurado&text2=R$999999,00&img=${txtinv}`)
+swanted = await getBuffer(anux.data.resultado)
+samu330.sendMessage(from, swanted, MessageType.image, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickwanted.jpeg')
+} else if(sam.message.extendedTextMessage.contextInfo.mentionedJid) {
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+try {
+ppimg = await samu330.getProfilePicture(mentioned[0])
+} catch {
+ppimg = 'https://i.imgur.com/hRDp5D2.png'
+}
+owgir = await getBuffer(ppimg)
+await fs.writeFileSync(`./stickwanted.jpeg`, owgir)
+var imgbb2in = require('imgbb-uploader')
+anur = await imgbb2in("20a14861e4f7591f3dc52649cb07ae02", './stickwanted.jpeg')
+txtinv = `${anur.display_url}`
+anux = await axios.get(`http://brizas-api.herokuapp.com/photooxy/v2/wanted?apikey=brizaloka&text=Procurado&text2=R$999999,00&img=${txtinv}`)
+swanted = await getBuffer(anux.data.resultado)
+samu330.sendMessage(from, swanted, MessageType.image, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickwanted.jpeg')
+} else return reply('*Solo tofos*')
+} catch {
+reply('Valió, F :/')
+}
+break		
+		
 case 'sgay':
 addFilter(from)	
 if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
