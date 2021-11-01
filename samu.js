@@ -6450,7 +6450,7 @@ addFilter(from)
 addLevelingXp(sender, 15)
 break
 		
-case 'delete':
+case 'dlt':
 case 'del':
 	if (!isOwner) return reply('Nel perro :v')
 	if (!isGroup) return await reply(mess.only.group)
@@ -9609,28 +9609,69 @@ reply('Manda la foto!');
 }
 addFilter(from)
 addLevelingXp(sender, 40)
-break		
-/**	
-case 'invert':
-addFilter(from)
-if (!isGroup) return reply(mess.only.group)
+break	
+//////////////////
+case 'lisa':
+teks = body.slice(6)
+buff = await getBuffer(`http://brizas-api.herokuapp.com/imgeffect/lisapresentation?apikey=brizaloka&text=${teks}`)
+samu330.sendMessage(from, buff, MessageType.image, {quoted: fdreams})
+break	
+
+case 'xmeme':
+meme = await fetchJson('https://kagchi-api.glitch.me/meme/memes')
+buffer = await getBuffer(`https://imgur.com/${meme.hash}.jpg`)
+samu330.sendMessage(from, buffer, MessageType.image, {quoted: fdreams})
+break
+//////////////////
+case 'trash':
+case 'tatto':
+case 'rip':
+case 'hitler':
+case 'delete':
+case 'dobross':
+case 'beatiful':
+case 'affect':
+case 'ad':
+addFilter(from)	
 if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
 invert = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam;
-reply(mess.wait);
-owgi = await samu330.downloadAndSaveMediaMessage(invert);
-await fs.writeFileSync(`./invert.jpeg`, owgi)
-var imgbb2p = require('imgbb-uploader')
-anug = await imgbb2p("3b8594f4cb11895f4084291bc655e510", './invert.jpeg')
-invxxx = `${anug.display_url}`		
-buff = await getBuffer(`http://brizas-api.herokuapp.com/imgeffect/invert?apikey=brizaloka&img=${invxxx}`)
-samu330.sendMessage(from, buff, MessageType.image)
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
+owgir = await samu330.downloadMediaMessage(invert)
+await fs.writeFileSync(`./stickinvert.jpeg`, owgir)
+var imgbb2in = require('imgbb-uploader')
+anur = await imgbb2in("20a14861e4f7591f3dc52649cb07ae02", './stickinvert.jpeg')
+txtinv = `${anur.display_url}`
+sinvert = await getBuffer(`http://brizas-api.herokuapp.com/montage/${command}?apikey=brizaloka&img=${txtinv}`)
+samu330.sendMessage(from, sinvert, MessageType.image, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickinvert.jpeg')
 } else {
-reply('Manda la foto!');
+reply('Se nesecita una foto!');
 }
 addFilter(from)
-addLevelingXp(sender, 40)
+addLevelingXp(sender, 20)
+break				
+		
+case 'blur':
+case 'invert':
+addFilter(from)	
+if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
+invert = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam;
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
+owgir = await samu330.downloadMediaMessage(invert)
+await fs.writeFileSync(`./stickinvert.jpeg`, owgir)
+var imgbb2in = require('imgbb-uploader')
+anur = await imgbb2in("20a14861e4f7591f3dc52649cb07ae02", './stickinvert.jpeg')
+txtinv = `${anur.display_url}`
+sinvert = await getBuffer(`http://brizas-api.herokuapp.com/imgeffect/${command}?apikey=brizaloka&img=${txtinv}`)
+samu330.sendMessage(from, sinvert, MessageType.image, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickinvert.jpeg')
+} else {
+reply('Se nesecita una foto!');
+}
+addFilter(from)
+addLevelingXp(sender, 20)
 break
-**/		
+		
 case 'sinvert':
 addFilter(from)	
 if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
@@ -9643,7 +9684,7 @@ anur = await imgbb2in("20a14861e4f7591f3dc52649cb07ae02", './stickinvert.jpeg')
 txtinv = `${anur.display_url}`
 sinvert = await getBuffer(`http://brizas-api.herokuapp.com/imgeffect/invert?apikey=brizaloka&img=${txtinv}`)
 const bas642in = `data:image/jpeg;base64,${sinvert.toString('base64')}`
-var mantap2in = await convertSticker(bas642in, `⚰ 安息吧！ = ${sender[0].split('@')[0]}`, `Lalelilolu ᵈᵃʳʸ⛥`)
+var mantap2in = await convertSticker(bas642in, `安息吧！ = ${sender[0].split('@')[0]}`, `⛧⸸⁶Death⁹†حب♡ت`)
 var imageBuffer2in = new Buffer.from(mantap2in, 'base64');
 samu330.sendMessage(from, imageBuffer2in, sticker, {quoted: floc, sendEphemeral: true})
 fs.unlinkSync('./stickinvert.jpeg')
