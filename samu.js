@@ -9796,8 +9796,8 @@ ppimg = 'https://i.imgur.com/hRDp5D2.png'
 }
 owgir = await getBuffer(ppimg)
 await fs.writeFileSync(`./stickwanted.jpeg`, owgir)
-var imgbb2in = require('imgbb-uploader')
-anur = await imgbb2in("20a14861e4f7591f3dc52649cb07ae02", './stickwanted.jpeg')
+var imgbb2wa = require('imgbb-uploader')
+anur = await imgbb2wa("20a14861e4f7591f3dc52649cb07ae02", './stickwanted.jpeg')
 txtinv = `${anur.display_url}`
 anux = await axios.get(`http://brizas-api.herokuapp.com/photooxy/v2/wanted?apikey=brizaloka&text=${pushname}&text2=R£${argz[0]}&img=${txtinv}`)
 swanted = await getBuffer(anux.data.resultado)
@@ -9812,8 +9812,8 @@ invert = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm'))
 reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
 owgir = await samu330.downloadMediaMessage(invert)
 await fs.writeFileSync(`./stickwanted.jpeg`, owgir)
-var imgbb2in = require('imgbb-uploader')
-anur = await imgbb2in("20a14861e4f7591f3dc52649cb07ae02", './stickwanted.jpeg')
+var imgbb2wa = require('imgbb-uploader')
+anur = await imgbb2wa("20a14861e4f7591f3dc52649cb07ae02", './stickwanted.jpeg')
 txtinv = `${anur.display_url}`
 anux = await axios.get(`http://brizas-api.herokuapp.com/photooxy/v2/wanted?apikey=brizaloka&text=Procurado&text2=R$999999,00&img=${txtinv}`)
 swanted = await getBuffer(anux.data.resultado)
@@ -9830,8 +9830,8 @@ ppimg = 'https://i.imgur.com/hRDp5D2.png'
 }
 owgir = await getBuffer(ppimg)
 await fs.writeFileSync(`./stickwanted.jpeg`, owgir)
-var imgbb2in = require('imgbb-uploader')
-anur = await imgbb2in("20a14861e4f7591f3dc52649cb07ae02", './stickwanted.jpeg')
+var imgbb2wa = require('imgbb-uploader')
+anur = await imgbb2wa("20a14861e4f7591f3dc52649cb07ae02", './stickwanted.jpeg')
 txtinv = `${anur.display_url}`
 anux = await axios.get(`http://brizas-api.herokuapp.com/photooxy/v2/wanted?apikey=brizaloka&text=Procurado&text2=R$999999,00&img=${txtinv}`)
 swanted = await getBuffer(anux.data.resultado)
@@ -9847,8 +9847,8 @@ ppimg = 'https://i.imgur.com/hRDp5D2.png'
 }
 owgir = await getBuffer(ppimg)
 await fs.writeFileSync(`./stickwanted.jpeg`, owgir)
-var imgbb2in = require('imgbb-uploader')
-anur = await imgbb2in("20a14861e4f7591f3dc52649cb07ae02", './stickwanted.jpeg')
+var imgbb2wa = require('imgbb-uploader')
+anur = await imgbb2wa("20a14861e4f7591f3dc52649cb07ae02", './stickwanted.jpeg')
 txtinv = `${anur.display_url}`
 anux = await axios.get(`http://brizas-api.herokuapp.com/photooxy/v2/wanted?apikey=brizaloka&text=Procurado&text2=R$999999,00&img=${txtinv}`)
 swanted = await getBuffer(anux.data.resultado)
