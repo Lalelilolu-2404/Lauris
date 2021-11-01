@@ -9610,7 +9610,7 @@ reply('Manda la foto!');
 addFilter(from)
 addLevelingXp(sender, 40)
 break		
-	
+/**	
 case 'invert':
 addFilter(from)
 if (!isGroup) return reply(mess.only.group)
@@ -9630,6 +9630,29 @@ reply('Manda la foto!');
 addFilter(from)
 addLevelingXp(sender, 40)
 break
+**/		
+case 'sinvert':
+addFilter(from)	
+if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
+invert = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam;
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
+owgir = await samu330.downloadMediaMessage(invert)
+await fs.writeFileSync(`./stickinvert.jpeg`, owgir)
+var imgbb2in = require('imgbb-uploader')
+anur = await imgbb2in("20a14861e4f7591f3dc52649cb07ae02", './stickinvert.jpeg')
+txtinv = `${anur.display_url}`
+sinvert = await getBuffer(`http://brizas-api.herokuapp.com/imgeffect/invert?apikey=brizaloka&img=${txtinv}`)
+const bas642in = `data:image/jpeg;base64,${sinvert.toString('base64')}`
+var mantap2in = await convertSticker(bas642in, `⚰ 安息吧！ = ${sender[0].split('@')[0]}`, `Lalelilolu ᵈᵃʳʸ⛥`)
+var imageBuffer2in = new Buffer.from(mantap2in, 'base64');
+samu330.sendMessage(from, imageBuffer2in, sticker, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickinvert.jpeg')
+} else {
+reply('Se nesecita una foto para hacer su sticker!');
+}
+addFilter(from)
+addLevelingXp(sender, 20)
+break		
 	
 case 'passed':
 addFilter(from)
