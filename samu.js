@@ -9620,7 +9620,7 @@ reply(mess.wait);
 owgi = await samu330.downloadAndSaveMediaMessage(invert);
 ran = getRandom('.'+owgi.split('.')[1])
 const upload = await uploadimg(owgi, ran)
-buff = await getBuffer(`http://brizas-api.herokuapp.com/imgeffect/invert?apikey=SUAKEY&img=${upload.resultado.link}`)
+buff = await getBuffer(`http://brizas-api.herokuapp.com/imgeffect/invert?apikey=brizaloka&img=${upload.resultado.link}`)
 samu330.sendMessage(from, buff, MessageType.image)
 } else {
 reply('Manda la foto!');
