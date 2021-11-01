@@ -9799,7 +9799,7 @@ await fs.writeFileSync(`./stickwanted.jpeg`, owgir)
 var imgbb2wa = require('imgbb-uploader')
 anur = await imgbb2wa("20a14861e4f7591f3dc52649cb07ae02", './stickwanted.jpeg')
 txtinv = `${anur.display_url}`
-anux = await axios.get(`http://brizas-api.herokuapp.com/photooxy/v2/wanted?apikey=brizaloka&text=${pushname}&text2=R£${argz[0]}&img=${txtinv}`)
+anux = await getJson(`http://brizas-api.herokuapp.com/photooxy/v2/wanted?apikey=brizaloka&text=${pushname}&text2=R£${argz[0]}&img=${txtinv}`)
 swanted = await getBuffer(anux.data.resultado)
 samu330.sendMessage(from, swanted, MessageType.image, {quoted: floc, sendEphemeral: true})
 fs.unlinkSync('./stickwanted.jpeg')
