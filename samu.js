@@ -9618,9 +9618,10 @@ if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 
 invert = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam;
 reply(mess.wait);
 owgi = await samu330.downloadAndSaveMediaMessage(invert);
-datainv = await imageToBase64(JSON.stringify(owgi).replace(/\"/gi, ''))
-fs.writeFileSync('invert.jpeg', datainv, 'base64')
-invxxx = await uploadImages('invert.jpeg')	
+await fs.writeFileSync(`./invert.jpeg`, owgi)
+var imgbb2p = require('imgbb-uploader')
+anug = await imgbb2p("3b8594f4cb11895f4084291bc655e510", './invert.jpeg')
+invxxx = `${anug.display_url}`		
 buff = await getBuffer(`http://brizas-api.herokuapp.com/imgeffect/invert?apikey=brizaloka&img=${invxxx}`)
 samu330.sendMessage(from, buff, MessageType.image)
 } else {
