@@ -9609,6 +9609,24 @@ reply('Manda la foto!');
 }
 addFilter(from)
 addLevelingXp(sender, 40)
+break		
+
+case 'invert':
+addFilter(from)
+if (!isGroup) return reply(mess.only.group)
+if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
+invert = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam;
+reply(mess.wait);
+owgi = await samu330.downloadAndSaveMediaMessage(invert);
+ran = getRandom('.'+owgi.split('.')[1])
+const upload = await uploadimg(owgi, ran)
+buff = await getBuffer(`http://brizas-api.herokuapp.com/imgeffect/invert?apikey=SUAKEY&img=${upload.resultado.link}`)
+samu330.sendMessage(from, buff, MessageType.image)
+} else {
+reply('Manda la foto!');
+}
+addFilter(from)
+addLevelingXp(sender, 40)
 break
 	
 case 'passed':
