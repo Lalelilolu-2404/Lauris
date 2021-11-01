@@ -9610,7 +9610,7 @@ reply('Manda la foto!');
 addFilter(from)
 addLevelingXp(sender, 40)
 break		
-
+	
 case 'invert':
 addFilter(from)
 if (!isGroup) return reply(mess.only.group)
@@ -9618,9 +9618,10 @@ if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 
 invert = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam;
 reply(mess.wait);
 owgi = await samu330.downloadAndSaveMediaMessage(invert);
-ran = getRandom('.'+owgi.split('.')[1])
-const upload = await uploadimg(owgi, ran)
-buff = await getBuffer(`http://brizas-api.herokuapp.com/imgeffect/invert?apikey=brizaloka&img=${upload.resultado.link}`)
+datainv = await imageToBase64(JSON.stringify(owgi).replace(/\"/gi, ''))
+fs.writeFileSync('invert.jpeg', datainv, 'base64')
+invxxx = await uploadImages('invert.jpeg')	
+buff = await getBuffer(`http://brizas-api.herokuapp.com/imgeffect/invert?apikey=brizaloka&img=${invxxx}`)
 samu330.sendMessage(from, buff, MessageType.image)
 } else {
 reply('Manda la foto!');
