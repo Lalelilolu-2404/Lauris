@@ -9799,12 +9799,12 @@ await fs.writeFileSync(`./stickwanted.jpeg`, owgir)
 var imgbb2wa = require('imgbb-uploader')
 anur = await imgbb2wa("20a14861e4f7591f3dc52649cb07ae02", './stickwanted.jpeg')
 txtinv = `${anur.display_url}`
-anux = await fetchJson(`http://brizas-api.herokuapp.com/photooxy/v2/wanted?apikey=brizaloka&text=${pushname}&text2=R£${argz[0]}&img=${txtinv}`)
-swanted = await getBuffer(`${anux.resultado}`)
+swanted = await getBuffer(`https://pecundang.herokuapp.com/api/wanted?url=${txtinv}`)
 samu330.sendMessage(from, swanted, MessageType.image, {quoted: floc, sendEphemeral: true})
 fs.unlinkSync('./stickwanted.jpeg')
 break
 //http://brizas-api.herokuapp.com/photomod/rank?apikey=brizaloka&name=brizaloka&atualxp=500&maxxp=1000&desc=2020&colorbar=0061FF&colortext=FF2E00&background=https://i.imgur.com/tVKFNFk.png&profileimg=https://avatars.githubusercontent.com/u/57237342&rank=5&level=1
+/**
 case 'wanted':		
 try{
 if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
@@ -9859,7 +9859,7 @@ fs.unlinkSync('./stickwanted.jpeg')
 reply('Valió, F :/')
 }
 break		
-		
+**/		
 case 'sgay':
 addFilter(from)	
 if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
