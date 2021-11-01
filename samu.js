@@ -9676,9 +9676,6 @@ txtinv = `${anur.display_url}`
 sinvert = await getBuffer(`http://brizas-api.herokuapp.com/montage/${command}?apikey=brizaloka&img=${txtinv}`)
 samu330.sendMessage(from, sinvert, MessageType.image, {quoted: floc, sendEphemeral: true})
 fs.unlinkSync('./stickinvert.jpeg')
-} else {
-reply('Se nesecita una foto!');
-}
 addFilter(from)
 addLevelingXp(sender, 20)
 } else if(args[0] == 'me') {
