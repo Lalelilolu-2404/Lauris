@@ -482,7 +482,7 @@ const isUser2 = _user2.includes(sender)
 	const totalchat = await samu330.chats.all()
         const isOwner = senderNumber == owner || senderNumber == botNumber || mods.includes(senderNumber)
 	const isBanChat = chatban.includes(from)
-const isYo = sam.key.fromMe ? true : false
+//const isYo = sam.key.fromMe ? true : false
 	/////	
 	const laleliloluNumber = ["33749258491"]
 	const isLalelilolu = senderNumber == laleliloluNumber
@@ -1482,23 +1482,6 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 
 ///////////////
 switch (commandstik) {
-/**
-case 'bOOCxeKH5haF4n0uJXDDxEOraFmASfmWnOMtDmTjYoc=':
-if (!isGroup) return 
-if (!isAdmin) return 
-if (!botAdmin) return
-if (sam.message.extendedTextMessage != undefined){
-mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
-if (!mentioned) return reply(`F perro :'c`)
-if (mentionUser.length == 1)
-if (mentioned[0].split('@')[0] == '33749258491') return
-samu330.groupRemove(from, mentionUser)
-} else {
-if (mentioned[0].split('@')[0] == '33749258491') return
-samu330.groupRemove(from, mentioned)
-}
-break
-**/
 case 'bOOCxeKH5haF4n0uJXDDxEOraFmASfmWnOMtDmTjYoc=':
 if (sam.message.extendedTextMessage != undefined)
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid	
@@ -1598,12 +1581,6 @@ break
 	}
 **/	
 ////
-/**	    
-	    "rowId": `${plist.all[0].title}@list`
-var _0x4dab=[if(sam[_0x4dab[1]][_0x4dab[0]]){test= sam[_0x4dab[1]][_0x4dab[0]][_0x4dab[3]][_0x4dab[2]];
-if(test[_0x4dab[5]](`${_0x4dab[4]}`)){let orlist= await yts(`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[4])}${_0x4dab[6]}`);
-reply(`${_0x4dab[8]}${test[_0x4dab[7]](_0x4dab[4])}${_0x4dab[9]}${orlist[_0x4dab[11]][0][_0x4dab[10]]}${_0x4dab[12]}${orlist[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);let dorg= await y2mateA(`${_0x4dab[6]}${orlist[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);sendFileFromUrl(dorg[0][_0x4dab[14]],audio,{quoted:faud,mimetype:_0x4dab[15],contextInfo:{externalAdReply:{title:`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[6]}`,body:_0x4dab[17],mediaType:2,mediaUrl:`${_0x4dab[6]}${orlist[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`}}})}};if(sam[_0x4dab[1]][_0x4dab[0]]){test= sam[_0x4dab[1]][_0x4dab[0]][_0x4dab[3]][_0x4dab[2]];if(test[_0x4dab[5]](`${_0x4dab[18]}`)){let orlist1= await yts(`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[18])}${_0x4dab[6]}`);reply(`${_0x4dab[19]}${test[_0x4dab[7]](_0x4dab[18])}${_0x4dab[9]}${orlist1[_0x4dab[11]][0][_0x4dab[10]]}${_0x4dab[12]}${orlist1[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);let dorg1= await y2mateA(`${_0x4dab[6]}${orlist1[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);sendFileFromUrl(dorg1[0][_0x4dab[14]],audio,{quoted:faud,mimetype:_0x4dab[15],ptt:true,contextInfo:{externalAdReply:{title:`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[6]}`,body:_0x4dab[17],mediaType:2,mediaUrl:`${_0x4dab[6]}${orlist1[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`}}})}};if(sam[_0x4dab[1]][_0x4dab[0]]){test= sam[_0x4dab[1]][_0x4dab[0]][_0x4dab[3]][_0x4dab[2]];if(test[_0x4dab[5]](`${_0x4dab[20]}`)){let orlist11= await yts(`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[20])}${_0x4dab[6]}`);reply(`${_0x4dab[8]}${test[_0x4dab[7]](_0x4dab[20])}${_0x4dab[9]}${orlist11[_0x4dab[11]][0][_0x4dab[10]]}${_0x4dab[12]}${orlist11[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);let dorg11= await y2mateA(`${_0x4dab[6]}${orlist11[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);sendFileFromUrl(dorg11[0][_0x4dab[14]],audio,{quoted:faud,mimetype:_0x4dab[15],duration:-777,contextInfo:{externalAdReply:{title:`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[6]}`,body:_0x4dab[17],mediaType:2,mediaUrl:`${_0x4dab[6]}${orlist11[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`}}})}};if(sam[_0x4dab[1]][_0x4dab[0]]){test= sam[_0x4dab[1]][_0x4dab[0]][_0x4dab[3]][_0x4dab[2]];if(test[_0x4dab[5]](`${_0x4dab[16]}`)){let orlist111= await yts(`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[6]}`);reply(`${_0x4dab[21]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[22]}${orlist111[_0x4dab[11]][0][_0x4dab[10]]}${_0x4dab[23]}${orlist111[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);let dorg111= await y2mateA(`${_0x4dab[6]}${orlist111[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`);sendFileFromUrl(dorg111[0][_0x4dab[14]],audio,{quoted:faud,mimetype:_0x4dab[15],ptt:true,duration:-777,contextInfo:{externalAdReply:{title:`${_0x4dab[6]}${test[_0x4dab[7]](_0x4dab[16])}${_0x4dab[6]}`,body:_0x4dab[17],mediaType:2,mediaUrl:`${_0x4dab[6]}${orlist111[_0x4dab[11]][0][_0x4dab[13]]}${_0x4dab[6]}`}}})}}
-**/
 	    
 			if (sam.message.buttonsResponseMessage){
 				test = sam.message.buttonsResponseMessage.selectedButtonId
@@ -2941,6 +2918,7 @@ message: { "videoMessage": { "caption":`${pushname}`, 'jpegThumbnail': fs.readFi
 caption:`Uhm, estofado :v`})			
 break	
 ///////////////	
+/**
 case 'serbot':
 if (!isGroup) return reply(mess.only.group)
 if (isYo) return reply(`❎ No puedes ser bot en un bot 😕`)
@@ -2967,7 +2945,7 @@ tekss += `*#️⃣ Numero* : ${i.jid.split('@')[0]}
 }
 reply(tekss)
 break
-
+**/
 ////////		
 case 'work':
 if (!isGroup) return reply(mess.only.group)
@@ -3011,19 +2989,7 @@ reply(`*「 TRANSFERENCIA EXITOSA 」*\n\nDe : @${sender.split("@")[0]}\nPara : 
 addFilter(from)
 addLevelingXp(sender, 20)
 break
-/**
-case 'bal':
-case 'balance':
-if (!isGroup) return reply(mess.only.group)
-if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
-samu330.updatePresence(from, Presence.composing)  
-kantong = checkATMuser(sender)
-hailhy = `*⌜${pushname}⌟*\n★᭄ꦿ Posees ${kantong} Otakoins`   
-samu330.sendMessage(from, hailhy, MessageType.text, {quoted: sam})
-//reply(ind.uangkau(pushname, sender, kantong))
-addLevelingXp(sender, 20)
-break	
-**/
+
 case 'bal':
 case 'balance':
 if (!isGroup) return reply(mess.only.group)
