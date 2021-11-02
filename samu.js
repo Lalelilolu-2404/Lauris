@@ -9770,6 +9770,9 @@ samu330.sendMessage(from, swanted, MessageType.image, {quoted: floc, sendEphemer
 fs.unlinkSync('./stickwanted.jpeg')
 break
 //http://brizas-api.herokuapp.com/photomod/rank?apikey=brizaloka&name=brizaloka&atualxp=500&maxxp=1000&desc=2020&colorbar=0061FF&colortext=FF2E00&background=https://i.imgur.com/tVKFNFk.png&profileimg=https://avatars.githubusercontent.com/u/57237342&rank=5&level=1
+//https://servant-of-evil.herokuapp.com/api/komunis?image=https://cdn.shopify.com/s/files/1/0078/6563/0831/products/TogaPrint_1200x1200.png?v=1552807118&apikey=GFL
+//https://servant-of-evil.herokuapp.com/api/nsfw/panties?apikey=GFL
+//https://servant-of-evil.herokuapp.com/api/nsfw/thighs?apikey=GFL
 /**
 case 'wanted':		
 try{
