@@ -9596,16 +9596,96 @@ buffer = await getBuffer(`https://imgur.com/${meme.hash}.jpg`)
 samu330.sendMessage(from, buffer, MessageType.image, {quoted: fdreams})
 break
 //////////////////
-/**
-case 'trash':
-case 'tatto':
-case 'rip':
-case 'hitler':
-case 'delete':
-case 'dobross':
-case 'beatiful':
-case 'affect':
-case 'ad':
+case 'tweet':
+arg1 = q
+if (!arg1) return 
+argz = arg1.split("|")
+try{
+if(argz[0] == 'me') {
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
+try {
+ppimg = await samu330.getProfilePicture(sender)
+} catch {
+ppimg = 'https://i.imgur.com/hRDp5D2.png'
+}
+owgir = await getBuffer(ppimg)
+await fs.writeFileSync(`./stickinvert.jpeg`, owgir)
+var imgbb2tw = require('imgbb-uploader')
+anur = await imgbb2tw("20a14861e4f7591f3dc52649cb07ae02", './stickinvert.jpeg')
+txtinv = `${anur.display_url}`
+sinvert = await getBuffer(`https://some-random-api.ml/canvas/${command}?username=Ganzito&displayname=${pushname}&comment=${argz[1]}&avatar=${txtinv}`)
+samu330.sendMessage(from, sinvert, MessageType.image, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickinvert.jpeg')
+} else if(sam.message.extendedTextMessage.contextInfo.mentionedJid) {
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+try {
+ppimg = await samu330.getProfilePicture(mentioned[0])
+} catch {
+ppimg = 'https://i.imgur.com/hRDp5D2.png'
+}
+owgir = await getBuffer(ppimg)	
+var texna = await getNamexx(mentioned[0])
+await fs.writeFileSync(`./stickinvert.jpeg`, owgir)
+var imgbb2in = require('imgbb-uploader')
+anur = await imgbb2in("20a14861e4f7591f3dc52649cb07ae02", './stickinvert.jpeg')
+txtinv = `${anur.display_url}`
+sinvert = await getBuffer(`https://some-random-api.ml/canvas/${command}?username=Ganzito&displayname=${texna}&comment=${argz[1]}&avatar=${txtinv}`)
+samu330.sendMessage(from, sinvert, MessageType.image, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickinvert.jpeg')
+} else return reply('*Solo tofos*')
+} catch {
+reply('Valió, F :/')
+}
+break	
+		
+case 'ytcom':
+arg1 = q
+if (!arg1) return 
+argz = arg1.split("|")
+try{
+if(argz[0] == 'me') {
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
+try {
+ppimg = await samu330.getProfilePicture(sender)
+} catch {
+ppimg = 'https://i.imgur.com/hRDp5D2.png'
+}
+owgir = await getBuffer(ppimg)
+await fs.writeFileSync(`./stickinvert.jpeg`, owgir)
+var imgbb2yt = require('imgbb-uploader')
+anur = await imgbb2yt("20a14861e4f7591f3dc52649cb07ae02", './stickinvert.jpeg')
+txtinv = `${anur.display_url}`
+sinvert = await getBuffer(`https://some-random-api.ml/canvas/youtube-comment?username=${pushname}&comment=${argz[1]}&avatar=${txtinv}`)
+samu330.sendMessage(from, sinvert, MessageType.image, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickinvert.jpeg')
+} else if(sam.message.extendedTextMessage.contextInfo.mentionedJid) {
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+try {
+ppimg = await samu330.getProfilePicture(mentioned[0])
+} catch {
+ppimg = 'https://i.imgur.com/hRDp5D2.png'
+}
+owgir = await getBuffer(ppimg)	
+var texyt = await getNamexx(mentioned[0])
+await fs.writeFileSync(`./stickinvert.jpeg`, owgir)
+var imgbb2in = require('imgbb-uploader')
+anur = await imgbb2in("20a14861e4f7591f3dc52649cb07ae02", './stickinvert.jpeg')
+txtinv = `${anur.display_url}`
+sinvert = await getBuffer(`https://some-random-api.ml/canvas/youtube-comment?username=${texyt}&comment=${argz[1]}&avatar=${txtinv}`)
+samu330.sendMessage(from, sinvert, MessageType.image, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickinvert.jpeg')
+} else return reply('*Solo tofos*')
+} catch {
+reply('Valió, F :/')
+}
+break		
+////////////		
+case 'horny':
+case 'simpcard':
+case 'lolice':
+try{
 if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
 invert = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam;
 reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
@@ -9614,16 +9694,48 @@ await fs.writeFileSync(`./stickinvert.jpeg`, owgir)
 var imgbb2in = require('imgbb-uploader')
 anur = await imgbb2in("20a14861e4f7591f3dc52649cb07ae02", './stickinvert.jpeg')
 txtinv = `${anur.display_url}`
-sinvert = await getBuffer(`http://brizas-api.herokuapp.com/montage/${command}?apikey=brizaloka&img=${txtinv}`)
+sinvert = await getBuffer(`https://some-random-api.ml/canvas/${command}?avatar=${txtinv}`)
 samu330.sendMessage(from, sinvert, MessageType.image, {quoted: floc, sendEphemeral: true})
 fs.unlinkSync('./stickinvert.jpeg')
-} else {
-reply('Se nesecita una foto!');
-}
 addFilter(from)
 addLevelingXp(sender, 20)
-break				
-**/	
+} else if(args[0] == 'me') {
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
+try {
+ppimg = await samu330.getProfilePicture(sender)
+} catch {
+ppimg = 'https://i.imgur.com/hRDp5D2.png'
+}
+owgir = await getBuffer(ppimg)
+await fs.writeFileSync(`./stickinvert.jpeg`, owgir)
+var imgbb2in = require('imgbb-uploader')
+anur = await imgbb2in("20a14861e4f7591f3dc52649cb07ae02", './stickinvert.jpeg')
+txtinv = `${anur.display_url}`
+sinvert = await getBuffer(`https://some-random-api.ml/canvas/${command}?avatar=${txtinv}`)
+samu330.sendMessage(from, sinvert, MessageType.image, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickinvert.jpeg')
+} else if(sam.message.extendedTextMessage.contextInfo.mentionedJid) {
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+try {
+ppimg = await samu330.getProfilePicture(mentioned[0])
+} catch {
+ppimg = 'https://i.imgur.com/hRDp5D2.png'
+}
+owgir = await getBuffer(ppimg)
+await fs.writeFileSync(`./stickinvert.jpeg`, owgir)
+var imgbb2in = require('imgbb-uploader')
+anur = await imgbb2in("20a14861e4f7591f3dc52649cb07ae02", './stickinvert.jpeg')
+txtinv = `${anur.display_url}`
+sinvert = await getBuffer(`https://some-random-api.ml/canvas/${command}?avatar=${txtinv}`)
+samu330.sendMessage(from, sinvert, MessageType.image, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickinvert.jpeg')
+} else return reply('*Solo tofos*')
+} catch {
+reply('Valió, F :/')
+}
+break
+///////////////
 case 'trash':
 case 'tatto':
 case 'rip':
@@ -9749,31 +9861,66 @@ addFilter(from)
 addLevelingXp(sender, 40)
 break
 		
-case 'owanted':
+case 'comunist':		
+try{
+if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
+comrade = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam;
 reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
-arg1 = q
-if (!arg1) return reply(`.......`)
-argz = arg1.split("|")
-if (isNaN(argz[0])) return reply(`La recompensa?`)
+owgir = await samu330.downloadMediaMessage(comrade)
+await fs.writeFileSync(`./stickcomr.jpeg`, owgir)
+var imgbb2co = require('imgbb-uploader')
+anur = await imgbb2co("20a14861e4f7591f3dc52649cb07ae02", './stickcomr.jpeg')
+txtinv = `${anur.display_url}`
+scomun = await getBuffer(`https://some-random-api.ml/canvas/comrade?avatar=${txtinv}`)
+samu330.sendMessage(from, scomun, MessageType.image, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickcomr.jpeg')
+addFilter(from)
+addLevelingXp(sender, 20)
+} else if(args[0] == 'me') {
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
 try {
 ppimg = await samu330.getProfilePicture(sender)
 } catch {
 ppimg = 'https://i.imgur.com/hRDp5D2.png'
 }
 owgir = await getBuffer(ppimg)
-await fs.writeFileSync(`./stickwanted.jpeg`, owgir)
-var imgbb2wa = require('imgbb-uploader')
-anur = await imgbb2wa("20a14861e4f7591f3dc52649cb07ae02", './stickwanted.jpeg')
+await fs.writeFileSync(`./stickcomr.jpeg`, owgir)
+var imgbb2co = require('imgbb-uploader')
+anur = await imgbb2co("20a14861e4f7591f3dc52649cb07ae02", './stickcomr.jpeg')
 txtinv = `${anur.display_url}`
-swanted = await getBuffer(`https://pecundang.herokuapp.com/api/wanted?url=${txtinv}`)
-samu330.sendMessage(from, swanted, MessageType.image, {quoted: floc, sendEphemeral: true})
-fs.unlinkSync('./stickwanted.jpeg')
+scomun = await getBuffer(`https://some-random-api.ml/canvas/comrade?avatar=${txtinv}`)
+samu330.sendMessage(from, scomun, MessageType.image, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickcomr.jpeg')
+addFilter(from)
+addLevelingXp(sender, 20)
+} else if(sam.message.extendedTextMessage.contextInfo.mentionedJid) {
+reply(mess.wait,{contextInfo: {"forwardingScore": 999, "isForwarded": true}, sendEphemeral: true})
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+try {
+ppimg = await samu330.getProfilePicture(mentioned[0])
+} catch {
+ppimg = 'https://i.imgur.com/hRDp5D2.png'
+}
+owgir = await getBuffer(ppimg)
+await fs.writeFileSync(`./stickcomr.jpeg`, owgir)
+var imgbb2co = require('imgbb-uploader')
+anur = await imgbb2co("20a14861e4f7591f3dc52649cb07ae02", './stickcomr.jpeg')
+txtinv = `${anur.display_url}`
+scomun = await getBuffer(`https://some-random-api.ml/canvas/comrade?avatar=${txtinv}`)
+samu330.sendMessage(from, scomun, MessageType.image, {quoted: floc, sendEphemeral: true})
+fs.unlinkSync('./stickcomr.jpeg')
+addFilter(from)
+addLevelingXp(sender, 20)
+} else return reply('*Solo tofos*')
+} catch {
+reply('Valió, F :/')
+}
 break
 //http://brizas-api.herokuapp.com/photomod/rank?apikey=brizaloka&name=brizaloka&atualxp=500&maxxp=1000&desc=2020&colorbar=0061FF&colortext=FF2E00&background=https://i.imgur.com/tVKFNFk.png&profileimg=https://avatars.githubusercontent.com/u/57237342&rank=5&level=1
 //https://servant-of-evil.herokuapp.com/api/komunis?image=https://cdn.shopify.com/s/files/1/0078/6563/0831/products/TogaPrint_1200x1200.png?v=1552807118&apikey=GFL
 //https://servant-of-evil.herokuapp.com/api/nsfw/panties?apikey=GFL
 //https://servant-of-evil.herokuapp.com/api/nsfw/thighs?apikey=GFL
-/**
+
 case 'wanted':		
 try{
 if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
@@ -9784,8 +9931,7 @@ await fs.writeFileSync(`./stickwanted.jpeg`, owgir)
 var imgbb2wa = require('imgbb-uploader')
 anur = await imgbb2wa("20a14861e4f7591f3dc52649cb07ae02", './stickwanted.jpeg')
 txtinv = `${anur.display_url}`
-anux = await axios.get(`http://brizas-api.herokuapp.com/photooxy/v2/wanted?apikey=brizaloka&text=Procurado&text2=R$999999,00&img=${txtinv}`)
-swanted = await getBuffer(anux.data.resultado)
+swanted = await getBuffer(`https://pecundang.herokuapp.com/api/wanted?url=${txtinv}`)
 samu330.sendMessage(from, swanted, MessageType.image, {quoted: floc, sendEphemeral: true})
 fs.unlinkSync('./stickwanted.jpeg')
 addFilter(from)
@@ -9802,8 +9948,7 @@ await fs.writeFileSync(`./stickwanted.jpeg`, owgir)
 var imgbb2wa = require('imgbb-uploader')
 anur = await imgbb2wa("20a14861e4f7591f3dc52649cb07ae02", './stickwanted.jpeg')
 txtinv = `${anur.display_url}`
-anux = await axios.get(`http://brizas-api.herokuapp.com/photooxy/v2/wanted?apikey=brizaloka&text=Procurado&text2=R$999999,00&img=${txtinv}`)
-swanted = await getBuffer(anux.data.resultado)
+swanted = await getBuffer(`https://pecundang.herokuapp.com/api/wanted?url=${txtinv}`)
 samu330.sendMessage(from, swanted, MessageType.image, {quoted: floc, sendEphemeral: true})
 fs.unlinkSync('./stickwanted.jpeg')
 } else if(sam.message.extendedTextMessage.contextInfo.mentionedJid) {
@@ -9819,8 +9964,7 @@ await fs.writeFileSync(`./stickwanted.jpeg`, owgir)
 var imgbb2wa = require('imgbb-uploader')
 anur = await imgbb2wa("20a14861e4f7591f3dc52649cb07ae02", './stickwanted.jpeg')
 txtinv = `${anur.display_url}`
-anux = await axios.get(`http://brizas-api.herokuapp.com/photooxy/v2/wanted?apikey=brizaloka&text=Procurado&text2=R$999999,00&img=${txtinv}`)
-swanted = await getBuffer(anux.data.resultado)
+swanted = await getBuffer(`https://pecundang.herokuapp.com/api/wanted?url=${txtinv}`)
 samu330.sendMessage(from, swanted, MessageType.image, {quoted: floc, sendEphemeral: true})
 fs.unlinkSync('./stickwanted.jpeg')
 } else return reply('*Solo tofos*')
@@ -9828,7 +9972,7 @@ fs.unlinkSync('./stickwanted.jpeg')
 reply('Valió, F :/')
 }
 break		
-**/		
+		
 case 'sgay':
 addFilter(from)	
 if (((isMedia && !sam.message.videoMessage) || isQuotedImage) && args.length == 0) {
