@@ -117,15 +117,14 @@ echo -e '\033[0m\033[1;31m
  |_| |_| |_|  \__|  \___| |_|    |_|    \__,_| /___| (_) (_) (_)
                                                                 
 \033[0m'
-mv Samu.wav $HOME
-mv Samu.png $HOME
+mv assistant.jpg $HOME
 cd
 cd ..
 cd usr
 cd etc
 rm -r bash.bashrc
 cd
-cd NyanBot
+cd Lauris
 mv bash.bashrc $HOME/../usr/etc
 echo -e '\033[0m\033[1;33m
    ____                         _                                        
