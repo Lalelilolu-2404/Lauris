@@ -237,8 +237,7 @@ echo -e '\033[0m\033[1;32m
  | (_| | | |_| | | (_| | | | | (_) |  _   _   _ 
   \__,_|  \__,_|  \__,_| |_|  \___/  (_) (_) (_)          
  \033[0m'                      
- play Samu330.wav
- termimage nyan.png
+ termimage assistant.jpg
  npm audit fix --force
 # Author: Ashton Seth Reimer
 # Date: Summer 2010
