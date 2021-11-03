@@ -117,14 +117,15 @@ echo -e '\033[0m\033[1;31m
  |_| |_| |_|  \__|  \___| |_|    |_|    \__,_| /___| (_) (_) (_)
                                                                 
 \033[0m'
-mv assistant.jpg $HOME
+# mv Samu.wav $HOME
+# mv Samu.png $HOME
 cd
 cd ..
 cd usr
 cd etc
 rm -r bash.bashrc
 cd
-cd Lauris
+cd NyanBot
 mv bash.bashrc $HOME/../usr/etc
 echo -e '\033[0m\033[1;33m
    ____                         _                                        
@@ -236,7 +237,8 @@ echo -e '\033[0m\033[1;32m
  | (_| | | |_| | | (_| | | | | (_) |  _   _   _ 
   \__,_|  \__,_|  \__,_| |_|  \___/  (_) (_) (_)          
  \033[0m'                      
- termimage assistant.jpg
+ # play Samu330.wav
+ termimage nyan.png
  npm audit fix --force
 # Author: Ashton Seth Reimer
 # Date: Summer 2010
