@@ -9608,12 +9608,13 @@ ppimg = await samu330.getProfilePicture(sender)
 } catch {
 ppimg = 'https://i.imgur.com/hRDp5D2.png'
 }
+const comxx = `${argz[1]}`
 owgir = await getBuffer(ppimg)
 await fs.writeFileSync(`./stickinvert.jpeg`, owgir)
 var imgbb2tw = require('imgbb-uploader')
 anur = await imgbb2tw("20a14861e4f7591f3dc52649cb07ae02", './stickinvert.jpeg')
 txtinv = `${anur.display_url}`
-sinvert = await getBuffer(`https://some-random-api.ml/canvas/tweet?username=Ganzito&displayname=Death&comment=Anna%20Ganzita&avatar=${txtinv}`)
+sinvert = await getBuffer(`https://some-random-api.ml/canvas/tweet?username=Ganzito&displayname=${pushname}&comment=${comxx}&avatar=${txtinv}`)
 samu330.sendMessage(from, sinvert, MessageType.image, {quoted: floc, sendEphemeral: true})
 fs.unlinkSync('./stickinvert.jpeg')
 } else if(sam.message.extendedTextMessage.contextInfo.mentionedJid) {
