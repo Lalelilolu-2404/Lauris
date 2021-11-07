@@ -3321,9 +3321,8 @@ break
 case 'pantis':      
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg}) 
-	anux = await axios.get('https://servant-of-evil.herokuapp.com/api/nsfw/panties?apikey=GFL')
-	buffer = await getBuffer(anux.data.url)
-	samu330.sendMessage(from, buffer, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), caption : '💎 _*Panties :3*_ 💠', quoted: fimg})
+	cat = await getJson(`https://servant-of-evil.herokuapp.com/api/nsfw/panties?apikey=GFL`)
+	sendFileFromUrl(cat.url, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), caption : '💎 _*Panties :3*_ 💠', quoted: fimg})
 	.catch(err => {
 	return('Pwrdon... T_T')
 	})
@@ -3335,9 +3334,8 @@ break
 case 'muslitos':      
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})     
-	anux = await axios.get('https://servant-of-evil.herokuapp.com/api/nsfw/thighs?apikey=GFL')
-	buffer = await getBuffer(anux.data.url)
-	samu330.sendMessage(from, buffer, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), caption : '💎 _*Xdd*_ 💠', quoted: fimg})
+	cat = await getJson(`https://servant-of-evil.herokuapp.com/api/nsfw/thighs?apikey=GFL`)
+	sendFileFromUrl(cat.url, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), caption : '💎 _*Xddd*_ 💠', quoted: fimg})
 	.catch(err => {
 	return('Pwrdon... T_T')
 	})
