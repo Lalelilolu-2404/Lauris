@@ -117,6 +117,8 @@ const _limit = JSON.parse(fs.readFileSync('./src/limit.json'))
 const _registered = JSON.parse(fs.readFileSync('./src/registered.json'))
 const _user2 = JSON.parse(fs.readFileSync('./src/user2.json'))
 const _waifus = JSON.parse(fs.readFileSync('./temp/waifus.json'))
+const _xaudios = JSON.parse(fs.readFileSync('./temp/audios.json'))
+const _word = JSON.parse(fs.readFileSync('./temp/word.json'))
 const daily = JSON.parse(fs.readFileSync('./src/diario.json'));
 const dailiy = JSON.parse(fs.readFileSync('./src/limitem.json'));
 const X = "❌"
@@ -3338,7 +3340,122 @@ var kodenya = sam.message.extendedTextMessage.contextInfo.quotedMessage.stickerM
 reply(`${kodenya}`)
 }
 break
+///////////Add Audio		
+case 'addaud':	
+if (!isLalelilolu) return reply('Nel perro :v')
+if (!isQuotedAudio) return reply('Responde un audio')
+if (args.length < 1) return reply('Nombre del audio')
+const nbaud = q
+	jars = isQuotedAudio ? JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo : sam
+	wors = await samu330.downloadMediaMessage(jars)
+	_xaudios.push(nbaud)
+	fs.writeFileSync(`./temp/audxxx/${nbaud}.mp3`, wors)
+	fs.writeFileSync('./temp/xaudios.json', JSON.stringify(_xaudios))
+setTimeout(() => {
+samu330.sendMessage(from, `*⌜Hecho ⛥⌟*`, MessageType.text, { quoted: fimg})
+}, 1000)
+addFilter(from)
+break
+
+case 'delaud':	
+if (!isLalelilolu) return reply('Nel perro :v')
+	let svst = body.slice(8)
+	if (!svst) return reply('Nombre del audio')
+	let posaud = _xaudios.lastIndexOf(svst)
+	if (posaud == -1) return reply('Archivo no encontrado')
+	_xaudios.splice(posaud, 1)
+	fs.unlinkSync(`./temp/audxxx/${svst}.mp3`)
+	fs.writeFileSync('./temp/xaudios.json', JSON.stringify(_xaudios))
+setTimeout(() => {
+samu330.sendMessage(from, `*⌜Hecho ⛥⌟*`, MessageType.text, { quoted: fimg})
+}, 1000)	
+break	
+
+case 'getaud':	
+if (!isLalelilolu) return reply('Nel perro :v')
+	namastc = body.slice(8)
+	try {
+	buffer = fs.readFileSync(`./temp/audxxx/${namastc}.mp3`)
+	samu330.sendMessage(from, buffer, MessageType.audio, {mimetype: 'audio/mp4', ptt:true})
+	} catch {
+	reply('Paquete no registrado')
+	}
+break
 		
+case 'listaud':		  
+let laud = `Lista de Audios\nTotal : ${_xaudios.length}\n`
+for (let i of _xaudios) {
+	laud += `◦ ${i.replace(_xaudios)}\n`
+}
+samu330.sendMessage(from, `${laud}`, MessageType.text, {quoted : fdreams}) 
+break	
+/////////////////
+const addRegisteredUser2 = (userid, sender) => {
+	const objx = { id: userid, name: sender }
+        _user2.push(objx)		
+        fs.writeFileSync('./src/user2.json', JSON.stringify(_user2))
+} 
+  	const checkRegisteredUser2 = (sender) => {
+        let status = false
+        Object.keys(_user2).forEach((i) => {
+        if (_user2[i].id === sender) {
+        status = true
+        }
+        })
+            return status
+        }
+
+case 'addword':	
+if (!isLalelilolu) return reply('Nel perro :v')
+arg1 = q
+if (!arg1) return reply(`Ejemplo ${prefix}addword Mensaje|Respuesta`)	
+argz = arg1.split("|")
+if (!argz) return reply(`Porfavor usa el simbolo "|" para dividir entre el mensaje y el numero de veces a enviar el mensaje`)
+const wordxxx = {msgx: argz[0].trim(), repx: argz[1].trim()}
+_word.push(wordxxx)
+fs.writeFileSync('./temp/word.json', JSON.stringify(_word))
+setTimeout(() => {
+samu330.sendMessage(from, `*⌜Hecho ⛥⌟*`, MessageType.text, { quoted: fimg})
+}, 1000)
+addFilter(from)
+break
+
+case 'delword':	
+if (!isLalelilolu) return reply('Nel perro :v')
+	let svst = body.slice(9)
+	if (!svst) return reply('Nombre del Mensaje')
+	let posword = _word.msgx.lastIndexOf(svst)
+	if (posword == -1) return reply('Archivo no encontrado')
+	_word.splice(posaud, 1)
+	fs.writeFileSync('./temp/word.json', JSON.stringify(_word))
+setTimeout(() => {
+samu330.sendMessage(from, `*⌜Hecho ⛥⌟*`, MessageType.text, { quoted: fimg})
+}, 1000)	
+break	
+
+case 'getword':	
+if (!isLalelilolu) return reply('Nel perro :v')
+	wdx = body.slice(9)
+	try {
+       	for (let i of _word) {
+        if (_word[i].msgx === wdx) {
+	let repxxx = _word[i].repx
+	}
+	}
+	samu330.sendMessage(from, `${repxxx}`, MessageType.Text)
+	} catch {
+	reply('Respuesta no registrado')
+	}
+break
+	
+case 'listword':		  
+let lword = `Lista de Palabras\nTotal : ${_word.length}\n`
+for (let i of _word) {
+	lword += `◦ ${i.msgx.replace(_word)}\n`
+}
+samu330.sendMessage(from, `${lword}`, MessageType.text, {quoted : fdreams}) 
+break	
+/////////////////
 case 'addimg':	
 if (!isLalelilolu) return reply('Nel perro :v')
 if (!isQuotedImage) return reply('Responde una imagen')
@@ -3354,16 +3471,7 @@ samu330.sendMessage(from, `*⌜Hecho ⛥⌟*`, MessageType.text, { quoted: fimg}
 }, 1000)
 addFilter(from)
 break
-/**		
-case 'delimg':		  
-	svst = body.slice(8)
-	if (!svst) return reply('Nombre de la imagen')
-	_waifus.splice(`${svst}`)
-	fs.writeFileSync(`./temp/foto/${svst}.jpeg`)
-	fs.writeFileSync('./temp/waifus.json', JSON.stringify(_waifus))
-	samu330.sendMessage(from, `Usa ${prefix}listimg para ver las waifus`, MessageType.text, { quoted: fimg})
-break
-**/
+
 case 'delimg':	
 if (!isLalelilolu) return reply('Nel perro :v')
 	let svst = body.slice(8)
