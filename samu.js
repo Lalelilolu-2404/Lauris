@@ -3349,7 +3349,7 @@ const nbaud = q
 	jars = isQuotedAudio ? JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo : sam
 	wors = await samu330.downloadMediaMessage(jars)
 	_xaudios.push(nbaud)
-	fs.writeFileSync(`./temp/audxxx/${nbaud}.mp3`, wors)
+	fs.writeFileSync(`./temp/audxxx/${nbaud}.mp4`, wors)
 	fs.writeFileSync('./temp/xaudios.json', JSON.stringify(_xaudios))
 setTimeout(() => {
 samu330.sendMessage(from, `*⌜Hecho ⛥⌟*`, MessageType.text, { quoted: fimg})
@@ -3422,9 +3422,9 @@ case 'getword':
 if (!isLalelilolu) return reply('Nel perro :v')
 	wdx = body.slice(9)
 	try {
-       	for (let i of _word) {
+       	for (let i = 0; i < _word.length; i++) {
         if (_word[i].msgx === wdx) {
-	let repxxx = _word[i].repx
+	repxxx = _word[i].repx
 	}
 	}
 	samu330.sendMessage(from, `${repxxx}`, MessageType.Text)
