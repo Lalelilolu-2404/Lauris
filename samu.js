@@ -3411,7 +3411,7 @@ if (!isLalelilolu) return reply('Nel perro :v')
 	if (!svyy) return reply('Nombre del Mensaje')
 	let posword = _word.msgx.lastIndexOf(svyy)
 	if (posword == -1) return reply('Archivo no encontrado')
-	_word.splice(posaud, 1)
+	_word.splice(posword, 1)
 	fs.writeFileSync('./temp/word.json', JSON.stringify(_word))
 setTimeout(() => {
 samu330.sendMessage(from, `*⌜Hecho ⛥⌟*`, MessageType.text, { quoted: fimg})
@@ -3422,9 +3422,9 @@ case 'getword':
 if (!isLalelilolu) return reply('Nel perro :v')
 	wdx = body.slice(9)
 	try {
-       	for (let i = 0; i < _word.length; i++) {
-        if (_word[i].msgx === wdx) {
-	repxxx = _word[i].repx
+       	for (let i of _word) {
+        if (i.msgx.replace(_word) === wdx) {
+	var repxxx = i.repx.replace(_word)
 	}
 	}
 	samu330.sendMessage(from, `${repxxx}`, MessageType.Text)
