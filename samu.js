@@ -3359,8 +3359,8 @@ break
 
 case 'delaud':	
 if (!isLalelilolu) return reply('Nel perro :v')
-	let svst = body.slice(8)
-	if (!svst) return reply('Nombre del audio')
+	let svxx = body.slice(8)
+	if (!svxx) return reply('Nombre del audio')
 	let posaud = _xaudios.lastIndexOf(svst)
 	if (posaud == -1) return reply('Archivo no encontrado')
 	_xaudios.splice(posaud, 1)
@@ -3390,21 +3390,6 @@ for (let i of _xaudios) {
 samu330.sendMessage(from, `${laud}`, MessageType.text, {quoted : fdreams}) 
 break	
 /////////////////
-const addRegisteredUser2 = (userid, sender) => {
-	const objx = { id: userid, name: sender }
-        _user2.push(objx)		
-        fs.writeFileSync('./src/user2.json', JSON.stringify(_user2))
-} 
-  	const checkRegisteredUser2 = (sender) => {
-        let status = false
-        Object.keys(_user2).forEach((i) => {
-        if (_user2[i].id === sender) {
-        status = true
-        }
-        })
-            return status
-        }
-
 case 'addword':	
 if (!isLalelilolu) return reply('Nel perro :v')
 arg1 = q
@@ -3422,8 +3407,8 @@ break
 
 case 'delword':	
 if (!isLalelilolu) return reply('Nel perro :v')
-	let svst = body.slice(9)
-	if (!svst) return reply('Nombre del Mensaje')
+	let svyy = body.slice(9)
+	if (!svyy) return reply('Nombre del Mensaje')
 	let posword = _word.msgx.lastIndexOf(svst)
 	if (posword == -1) return reply('Archivo no encontrado')
 	_word.splice(posaud, 1)
