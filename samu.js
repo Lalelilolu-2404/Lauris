@@ -3463,10 +3463,12 @@ if (!wdxxx) return reply('Nombre del Mensaje')
 	let nbrep = 0
 	for (let i = 0; i < _word.length; i++) {
         if (_word[i].msgx == `${wdxxx}`) {
-	nbrep = i*1
+	nbrep = i
 	}
 	}	
-	samu330.sendMessage(from, `${_word[nbrep].repx}`, MessageType.Text).catch(err => {return('Respuesta no registrada')})
+	samu330.sendMessage(from, `${_word[nbrep].repx}`, MessageType.Text).catch(err => {return reply('Respuesta no registrada')})
+samu330.sendMessage(from, `${_word[1].repx}`, MessageType.text, { quoted: fimg})
+}, 1000)
 break
 	
 case 'listword':		  
