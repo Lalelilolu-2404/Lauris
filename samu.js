@@ -3458,16 +3458,15 @@ break
 
 case 'w':	
 if (!isLalelilolu) return reply('Nel perro :v')
-if (!q) return 
-	let wdx = q
-	//let nbwd = 0
+let wdxxx = body.slice(3)
+if (!wdxxx) return reply('Nombre del Mensaje')
+	let nbrep = 0
 	for (let i = 0; i < _word.length; i++) {
-        if (_word[i].msgx == `${wdx}`) {
-	repxxx = _word[i].repx
+        if (_word[i].msgx == `${wdxxx}`) {
+	nbrep = i*1
 	}
 	}	
-	samu330.sendMessage(from, `${repxxx}`, MessageType.Text).catch(err => {return('Respuesta no registrada')
-	})
+	samu330.sendMessage(from, `${_word[nbrep].repx}`, MessageType.Text).catch(err => {return('Respuesta no registrada')})
 break
 	
 case 'listword':		  
