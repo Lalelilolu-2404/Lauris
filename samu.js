@@ -3448,15 +3448,18 @@ samu330.sendMessage(from, `*⌜Hecho ⛥⌟*`, MessageType.text, { quoted: fimg}
 }, 1000)	
 break	
 
-case 'getword':	
+case 'w':	
 if (!isLalelilolu) return reply('Nel perro :v')
-	wdx = body.slice(9)
+if (!q) return 
+	const wdx = q
+	let nbw = 0
 	try {
 	for (let i = 0; i < _word.lenght; i++) {
         if (_word[i].msgx == `${wdx}`) {
-	var repxxx = _word[i].repx
+	nbw = i
 	}
 	}
+	const repxxx = _word[nbw].repx	
 	samu330.sendMessage(from, `${repxxx}`, MessageType.Text)
 	} catch {
 	reply('Respuesta no registrado')
