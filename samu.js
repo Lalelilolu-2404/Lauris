@@ -3458,15 +3458,15 @@ if (!q) return
 	nbwd = i
 	}
 	}
-	repxxx = `${nbwd.repx.replace(_word)}`	
-	samu330.sendMessage(from, `${repxxx}`, MessageType.Text).catch(err => {return('Respuesta no registrada')
+	repxxx = `${_word[nbwd].repx}`	
+	samu330.sendMessage(from, repxxx, MessageType.Text).catch(err => {return('Respuesta no registrada')
 	})
 break
 	
 case 'listword':		  
 let lword = `Lista de Palabras\nTotal : ${_word.length}\n`
 for (let i of _word) {
-	lword += `◦ ${i.msgx.replace(_word)}\n`
+	lword += `◦ ${i.msgx.replace(_word)}\n★᭄${i.repx.replace(_word)}\n`
 }
 samu330.sendMessage(from, `${lword}`, MessageType.text, {quoted : fdreams}) 
 break	
