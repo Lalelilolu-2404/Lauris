@@ -3467,6 +3467,7 @@ if (!wdxxx) return reply('Nombre del Mensaje')
 	}
 	}	
 	samu330.sendMessage(from, `${_word[nbrep].repx}`, MessageType.Text).catch(err => {return reply('Respuesta no registrada')})
+setTimeout(() => {
 samu330.sendMessage(from, `${_word[1].repx}`, MessageType.text, { quoted: fimg})
 }, 1000)
 break
