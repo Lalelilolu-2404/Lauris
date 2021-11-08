@@ -3433,7 +3433,7 @@ case 'delword':
 if (!isLalelilolu) return reply('Nel perro :v')
 	let svyy = body.slice(9)
 	if (!svyy) return reply('Nombre del Mensaje')
-	let posword = _word.msgx.lastIndexOf(svyy)
+	let posword = _word.lastIndexOf(svyy)
 	if (posword == -1) return reply('Archivo no encontrado')
 	_word.splice(posword, 1)
 	fs.writeFileSync('./temp/word.json', JSON.stringify(_word))
@@ -3447,7 +3447,7 @@ if (!isLalelilolu) return reply('Nel perro :v')
 	wdx = body.slice(9)
 	try {
        	for (let i of _word) {
-        if (i.msgx.replace(_word) === wdx) {
+        if (i.msgx.replace(_word) === `${wdx}`) {
 	var repxxx = i.repx.replace(_word)
 	}
 	}
