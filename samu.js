@@ -3456,13 +3456,13 @@ if (!q) return
 	try {
 	for (let i = 0; i < _word.length; i++) {
         if (_word[i].msgx == `${wdx}`) {
-	nbw = i
+	nbwd = i
 	}
 	}
 	const repxxx = _word[nbwd].repx	
 	samu330.sendMessage(from, `${repxxx}`, MessageType.Text)
 	} catch {
-	reply('Respuesta no registrado')
+	reply('Respuesta no registrada')
 	}
 break
 	
