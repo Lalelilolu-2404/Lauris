@@ -3453,17 +3453,14 @@ if (!isLalelilolu) return reply('Nel perro :v')
 if (!q) return 
 	const wdx = q
 	let nbwd = 0
-	try {
 	for (let i = 0; i < _word.length; i++) {
         if (_word[i].msgx == `${wdx}`) {
 	nbwd = i
 	}
 	}
-	const repxxx = _word[nbwd].repx	
-	samu330.sendMessage(from, `${repxxx}`, MessageType.Text)
-	} catch {
-	reply('Respuesta no registrada')
-	}
+	repxxx = `${nbwd.repx.replace(_word)}`	
+	samu330.sendMessage(from, `${repxxx}`, MessageType.Text).catch(err => {return('Respuesta no registrada')
+	})
 break
 	
 case 'listword':		  
