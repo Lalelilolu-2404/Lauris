@@ -3460,15 +3460,15 @@ case 'w':
 if (!isLalelilolu) return reply('Nel perro :v')
 let wdxxx = body.slice(3)
 if (!wdxxx) return reply('Nombre del Mensaje')
-	let nbrep = 0
+	var nbrep = 0
 	for (let i = 0; i < _word.length; i++) {
         if (_word[i].msgx == `${wdxxx}`) {
 	nbrep = i
 	}
 	}	
-	samu330.sendMessage(from, `${_word[nbrep].repx}`, MessageType.Text).catch(err => {return reply('Respuesta no registrada')})
+	//samu330.sendMessage(from, `${_word[nbrep].repx}`, MessageType.Text).catch(err => {return reply('Respuesta no registrada')})
 setTimeout(() => {
-samu330.sendMessage(from, `${_word[1].repx}`, MessageType.text, { quoted: fimg})
+samu330.sendMessage(from, `${_word[nbrep].repx}`, MessageType.text, { quoted: fimg}).catch(err => {return reply('Respuesta no registrada')})
 }, 1000)
 break
 	
