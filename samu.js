@@ -3335,7 +3335,7 @@ case 'muslitos':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})     
 	cat = await getJson(`https://servant-of-evil.herokuapp.com/api/nsfw/thighs?apikey=GFL`)
-	sendFileFromUrl(cat.result.url, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), caption : '💎 _*Xddd*_ 💠', quoted: fimg})
+	sendFileFromUrl(cat.result.url, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), caption : '💎 _*Cherry xd*_ 💠', quoted: fimg})
 	.catch(err => {
 	return('Pwrdon... T_T')
 	})
@@ -3436,7 +3436,7 @@ if (!isLalelilolu) return reply('Nel perro :v')
 	//let posword = _word.lastIndexOf(svyy)
 	//if (posword == -1) return reply('Archivo no encontrado')
 	let nbw = 0
-	for (let i = 0; i < _word.lenght; i++) {
+	for (let i = 0; i < _word.length; i++) {
         if (_word[i].msgx == `${svyy}`) {
 	nbw = i
 	}
@@ -3454,7 +3454,7 @@ if (!q) return
 	const wdx = q
 	let nbwd = 0
 	try {
-	for (let i = 0; i < _word.lenght; i++) {
+	for (let i = 0; i < _word.length; i++) {
         if (_word[i].msgx == `${wdx}`) {
 	nbw = i
 	}
