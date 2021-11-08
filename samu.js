@@ -3468,8 +3468,8 @@ if (!wdxxx) return reply('Nombre del Mensaje')
 	}	
 	//samu330.sendMessage(from, `${_word[nbrep].repx}`, MessageType.Text).catch(err => {return reply('Respuesta no registrada')})
 setTimeout(() => {
-samu330.sendMessage(from, `${_word[nbrep].repx}`, MessageType.text, { quoted: fimg}).catch(err => {return reply('Respuesta no registrada')})
-}, 1000)
+samu330.sendMessage(from, `${_word[nbrep].repx}`, MessageType.text, { quoted: sam}).catch(err => {return reply('Respuesta no registrada')})
+}, 300)
 break
 	
 case 'listword':		  
