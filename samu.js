@@ -3452,14 +3452,14 @@ case 'w':
 if (!isLalelilolu) return reply('Nel perro :v')
 if (!q) return 
 	const wdx = q
-	let nbw = 0
+	let nbwd = 0
 	try {
 	for (let i = 0; i < _word.lenght; i++) {
         if (_word[i].msgx == `${wdx}`) {
 	nbw = i
 	}
 	}
-	const repxxx = _word[nbw].repx	
+	const repxxx = _word[nbwd].repx	
 	samu330.sendMessage(from, `${repxxx}`, MessageType.Text)
 	} catch {
 	reply('Respuesta no registrado')
