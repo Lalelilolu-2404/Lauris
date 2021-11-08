@@ -1192,7 +1192,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
   			})
 			}
 	    
-if (messagesC.includes("Ganzito") || messagesC.includes("ganzito") || messagesC.includes("Ganzitos") || messagesC.includes("ganzitos")){
+if (body.includes("Ganzito") || body.includes("ganzito") || body.includes("Ganzitos") || body.includes("ganzitos")){
 if (!isAllaud) return
 samu330.updatePresence(from, Presence.composing)
 const xganzito = fs.readFileSync(`./temp/audio/Ganzita.mp3`)
@@ -3459,15 +3459,14 @@ break
 case 'w':	
 if (!isLalelilolu) return reply('Nel perro :v')
 if (!q) return 
-	const wdx = q
-	let nbwd = 0
+	let wdx = q
+	//let nbwd = 0
 	for (let i = 0; i < _word.length; i++) {
         if (_word[i].msgx == `${wdx}`) {
-	nbwd = i
+	repxxx = _word[i].repx
 	}
-	}
-	repxxx = `${_word[nbwd].repx}`	
-	samu330.sendMessage(from, repxxx, MessageType.Text).catch(err => {return('Respuesta no registrada')
+	}	
+	samu330.sendMessage(from, `${repxxx}`, MessageType.Text).catch(err => {return('Respuesta no registrada')
 	})
 break
 	
