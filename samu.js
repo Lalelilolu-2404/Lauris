@@ -1191,6 +1191,14 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
 			quoted: fimg, "forwardingScore": 9999, "isForwarded": true
   			})
 			}
+	    
+if (messagesC.includes("Ganzito") || messagesC.includes("ganzito") || messagesC.includes("Ganzitos") || messagesC.includes("ganzitos")){
+if (!isAllaud) return
+samu330.updatePresence(from, Presence.composing)
+const xganzito = fs.readFileSync(`./temp/audio/Ganzita.mp3`)
+samu330.sendMessage(from, xganzito, MessageType.audio, {mimetype: 'audio/mp4', ptt:true})
+}
+			
 	    	if (isGroup && botAdmin && isBadWord) {
                         if (bad.includes(messagesC)) {
                         if (!isAdmin) { 
@@ -3373,7 +3381,7 @@ const nbaud = q
 	jars = isQuotedAudio ? JSON.parse(JSON.stringify(sam).replace('quotedM','m')).message.extendedTextMessage.contextInfo : sam
 	wors = await samu330.downloadMediaMessage(jars)
 	_xaudios.push(nbaud)
-	fs.writeFileSync(`./temp/audxxx/${nbaud}.mp4`, wors)
+	fs.writeFileSync(`./temp/audxxx/${nbaud}.ogg`, wors)
 	fs.writeFileSync('./temp/xaudios.json', JSON.stringify(_xaudios))
 setTimeout(() => {
 samu330.sendMessage(from, `*⌜Hecho ⛥⌟*`, MessageType.text, { quoted: fimg})
@@ -3388,7 +3396,7 @@ if (!isLalelilolu) return reply('Nel perro :v')
 	let posaud = _xaudios.lastIndexOf(svst)
 	if (posaud == -1) return reply('Archivo no encontrado')
 	_xaudios.splice(posaud, 1)
-	fs.unlinkSync(`./temp/audxxx/${svst}.mp3`)
+	fs.unlinkSync(`./temp/audxxx/${svst}.ogg`)
 	fs.writeFileSync('./temp/xaudios.json', JSON.stringify(_xaudios))
 setTimeout(() => {
 samu330.sendMessage(from, `*⌜Hecho ⛥⌟*`, MessageType.text, { quoted: fimg})
@@ -3399,7 +3407,7 @@ case 'getaud':
 if (!isLalelilolu) return reply('Nel perro :v')
 	namastc = body.slice(8)
 	try {
-	buffer = fs.readFileSync(`./temp/audxxx/${namastc}.mp3`)
+	buffer = fs.readFileSync(`./temp/audxxx/${namastc}.ogg`)
 	samu330.sendMessage(from, buffer, MessageType.audio, {mimetype: 'audio/mp4', ptt:true})
 	} catch {
 	reply('Paquete no registrado')
