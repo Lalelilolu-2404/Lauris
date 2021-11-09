@@ -3423,7 +3423,7 @@ samu330.sendMessage(from, `${laud}`, MessageType.text, {quoted : fdreams})
 break	
 /////////////////
 case 'addword':	
-if (!isLalelilolu) return reply('Nel perro :v')
+if (!isLalelilolu && !isAnna) return reply('Nel perro :v')
 arg1 = q
 if (!arg1) return reply(`Ejemplo ${prefix}addword Mensaje|Respuesta`)	
 argz = arg1.split("|")
@@ -3457,7 +3457,8 @@ samu330.sendMessage(from, `*⌜Hecho ⛥⌟*`, MessageType.text, { quoted: fimg}
 break	
 
 case 'w':	
-if (!isLalelilolu) return reply('Nel perro :v')
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg}) 	
 let wdxxx = body.slice(3)
 if (!wdxxx) return reply('Nombre del Mensaje')
 	var nbrep = 0
@@ -3472,7 +3473,9 @@ samu330.sendMessage(from, `${_word[nbrep].repx}`, MessageType.text, { quoted: sa
 }, 300)
 break
 	
-case 'listword':		  
+case 'listword':
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg}) 	
 let lword = `Lista de Palabras\nTotal : ${_word.length}\n`
 for (let i of _word) {
 	lword += `◦ ${i.msgx.replace(_word)}\n★᭄${i.repx.replace(_word)}\n`
