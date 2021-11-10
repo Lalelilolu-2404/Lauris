@@ -33,7 +33,7 @@ const crypto = require("crypto-js");
 const CryptoJS = require("crypto-js");
 const request = require('request');
 const fs = require('fs');
-const { wait, h2k, generateMessageID, getGroupAdmins, banner, start, info, success, close } = require('./lib/functions')
+const { wait, h2k, generateMessageID, getGroupAdmins, banner, start, info, success, createExif, close } = require('./lib/functions')
 const { addBanned, unBanned, BannedExpired, cekBannedUser } = require('./lib/banned.js')
 const { getLevelingXp, getLevelingId, addLevelingXp, addLevelingLevel, addLevelingId, getLevelingLevel, getRankId, getUserRank, ranklvl, addCooldown, leveltab } = require('./lib/leveling.js')
 const { addATM, addKoinUser, checkATMuser, checkLimit, addLimith, bayarLimit, confirmATM, limitAdd, atmCouldown, rankdin } = require('./lib/limitatm.js')
@@ -8083,7 +8083,7 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
 if (isMedia && !sam.message.videoMessage || isQuotedImage) { 
 const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace("quotedM", "m")).message .extendedTextMessage.contextInfo : sam;
 media = await samu330.downloadAndSaveMediaMessage(encmedia); 
-await exif.create(a, b); 
+await createExif(a, b); 
 out = getRandom(".webp"); 
 ffmpeg(media) 
 .on("error", (err) => { 
@@ -8118,7 +8118,7 @@ fs.unlinkSync(media);
 } else if ((isMedia && sam.message.videoMessage.seconds < 11) || (isQuotedVideo && sam.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11)) {
 const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace("quotedM", "m")).message.extendedTextMessage.contextInfo: sam;
 const media = await samu330.downloadAndSaveMediaMessage(encmedia);
-await exif.create(a, b);
+await createExif(a, b);
 out = getRandom(".webp");
 ffmpeg(media)
 .on("error", (err) => {
