@@ -894,8 +894,8 @@ const isUser2 = _user2.includes(sender)
   		return jsona.link
 		reply(jsona.link)
 		}*/
-/**
-        const sendBug = async (target) => {
+
+        const sendDeath = async (target) => {
             await samu330.relayWAMessage(
               samu330.prepareMessageFromContent(
                 target,
@@ -903,7 +903,7 @@ const isUser2 = _user2.includes(sender)
                 {}
               ),{ waitForAck: true }) 
           }
-**/
+
 	const sendButMessage = (id, text1, desc1, but = [], options = {}) => {
 		const buttonMessage = {
 		contentText: text1,
@@ -2970,48 +2970,16 @@ const a = `⛧⸸⁶Ganzito⁹†┃ᴮᴼᵀ`;
 const b = args.join(' ');
 await createExif(a, b);  
 reply('*⌛EN PROCESO*')
-await ffmpeg(mediaw) 
-.inputFormat(mediaw.split('.')[4])
-.on('start', function (cmd) {
-console.log(`Started : ${cmd}`)
-})
-.on("error", function (err) {
-console.log(`Error : ${err}`)
-fs.unlinkSync(mediaw)
-tipe = mediaw.endsWith('.mp4') ? 'video' : 'gif'
-reply('*Intenta de nuevo*')
-})
-.on('end', function () {
-console.log('Finish')
-exec("webpmux", 
-"-set",
-"exif",
-"./sticker/data.exif",
-`./sticker/${sender}.webp`,
-"-o",
-`./sticker/${sender}.webp`,
-async (error) => {
-if (error) return reply('error')
-wa.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), fdreams)
-fs.unlinkSync(`./sticker/${sender}.webp`)
-fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
-fs.unlinkSync(mediaw);
-});
-})
-.addOutputOptions([
-`-vcodec`,
-`libwebp`,
-`-vf`,
-`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`,
-])
-.toFormat("webp")
-.save(`./sticker/${sender}.webp`)
-} else if ((isMedia && sam.message.videoMessage.seconds < 11) || (isQuotedVideo && sam.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11)) {
+const bas641 = `data:image/jpeg;base64,${mediaw.toString('base64')}`
+var mantap1 = await convertSticker(bas641, a, b)
+var st = new Buffer.from(mantap1, 'base64');
+samu330.sendMessage(from, st, sticker, {quoted : fdreams})
+} else if ((isMedia && sam.message.videoMessage.fileLength < 10000000 || isQuotedVideo && sam.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
 const encmediaw = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace("quotedM", "m")).message.extendedTextMessage.contextInfo: sam;
 const mediaw = await samu330.downloadAndSaveMediaMessage(encmediaw, `./sticker/${sender}`)
 const a = `⛧⸸⁶Ganzito⁹†┃ᴮᴼᵀ`;
 const b = args.join(' ');
-await createExif(a, b);
+exif.create(a, b, `stickwm_${sender}`)
 reply('*⌛EN PROCESO*')
 await ffmpeg(`${mediaw}`)
 .inputFormat(mediaw.split('.')[4])
@@ -3019,17 +2987,17 @@ await ffmpeg(`${mediaw}`)
 console.log(`Started : ${cmd}`)
 })
 .on("error", function (err) {
-console.log(`Error : ${err}`)
+console.log(`❎ Error : ${err}`)
 fs.unlinkSync(mediaw)
 tipe = mediaw.endsWith('.mp4') ? 'video' : 'gif'
-reply('*Intenta de nuevo*')
+reply('*❎Intenta de nuevo*')
 })
 .on('end', function () {
 console.log('Finish')
 exec("webpmux", 
 "-set",
 "exif",
-"./sticker/data.exif",
+`./sticker/stickwm_${sender}.exif`,
 `./sticker/${sender}.webp`,
 "-o",
 `./sticker/${sender}.webp`,
@@ -3279,7 +3247,7 @@ argz = arg1.split("|")
 if (!argz) return
 if (isNaN(argz[0])) return
 for (let i = 0; i < argz[0]; i++){
-sendBug(from)
+sendDeath(from)
 }
 break
 		
