@@ -8105,6 +8105,7 @@ exec("webpmux", [
 `./sticker/${sender}.webp`,
 "-o",
 `./sticker/${sender}.webp`,
+]);
 async (error) => {
 if (error) return reply('error')
 samu330.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), sticker, { quoted: fdreams });
@@ -8146,6 +8147,7 @@ exec("webpmux", [
 `./sticker/${sender}.webp`,
 "-o",
 `./sticker/${sender}.webp`,
+]);
 async (error) => {
 if (error) return reply('error')	
 samu330.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), sticker, { quoted: fdreams });
