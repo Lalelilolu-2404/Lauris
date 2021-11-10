@@ -8115,7 +8115,7 @@ fs.unlinkSync(media);
 ])
 .toFormat("webp")
 .save(out);
-} else if ((isMedia && sam.message.videoMessage.seconds < 11) || (isQuotedVideo && sam.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11))) {
+} else if ((isMedia && sam.message.videoMessage.seconds < 11) || (isQuotedVideo && sam.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11)) {
 const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace("quotedM", "m")).message.extendedTextMessage.contextInfo: sam;
 const media = await samu330.downloadAndSaveMediaMessage(encmedia);
 await exif.create(a, b);
