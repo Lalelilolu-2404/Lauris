@@ -8083,7 +8083,7 @@ const media3 = await samu330.downloadAndSaveMediaMessage(encmedia3)
 const bas641 = `data:image/jpeg;base64,${media3.toString('base64')}`
 var mantap1 = await convertSticker(bas641, `⛧⸸⁶Death⁹†حب♡ت`, `Puto el q lo robe`)
 var st = new Buffer.from(mantap1, 'base64');
-samu330.sendMessage(from, st, sticker, {contextInfo: {quoted: fdreams})
+samu330.sendMessage(from, st, sticker,{quoted: fdreams})
 } else if ((isMedia && sam.message.videoMessage.fileLength < 10000000 || isQuotedVideo && sam.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
 const encmedia3 = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.
 contextInfo : sam
