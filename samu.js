@@ -842,7 +842,7 @@ const isUser2 = _user2.includes(sender)
 	const reply = async(teks) => {
                 await samu330.sendMessage(from, teks, MessageType.text, { quoted: { key: {                
 		fromMe: false,
-                participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+                participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: `33749258491@s.whatsapp.net`} : {})
                 },
                 message: {
                 "imageMessage": {
