@@ -117,7 +117,7 @@ echo -e '\033[0m\033[1;31m
  |_| |_| |_|  \__|  \___| |_|    |_|    \__,_| /___| (_) (_) (_)
                                                                 
 \033[0m'
-# mv Samu.wav $HOME
+mv Samu.wav $HOME
 # mv Samu.png $HOME
 cd
 cd ..
