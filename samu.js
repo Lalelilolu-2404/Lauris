@@ -8083,15 +8083,15 @@ reply(mess.wait)
 const encmedia3 = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
 const dlfile1 = await samu330.downloadMediaMessage(encmedia3)
 const bas641 = `data:image/jpeg;base64,${dlfile1.toString('base64')}`
-var mantap1 = await convertSticker(bas641, `⛧⸸⁶Death⁹†._`, `Gansito_Revenge┃ᴮᴼᵀ`)
+var mantap1 = await convertSticker(bas641, `⛧⸸⁶Death⁹†._`, `⛧⸸⁶Ganzito⁹†┃ᴮᴼᵀ┃ᴮᴼᵀ`)
 var st = new Buffer.from(mantap1, 'base64');
 samu330.sendMessage(from, st, sticker, {quoted: fdreams})
 } else if ((isMedia && sam.message.videoMessage.fileLength < 10000000 || isQuotedVideo && sam.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
 const encmedia3 = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
 const media3 = await samu330.downloadAndSaveMediaMessage(encmedia3, `./sticker/${sender}`)
-const Nombre3 = `Gansito_Revenge┃ᴮᴼᵀ`  //animados💎
+const Nombre101 = `⛧⸸⁶Ganzito⁹†┃ᴮᴼᵀ`  //animados💎
 const author101 = `⛧⸸⁶Death⁹†._`
-exif.create(Nombre3, author101, `stickwm_${sender}`)
+exif.create(Nombre101, author101, `stickwm_${sender}`)
 reply(mess.wait)
 await ffmpeg(`${media3}`)
 .inputFormat(media3.split('.')[4])
@@ -8100,7 +8100,7 @@ console.log(`Started : ${cmd}`)
 })
 .on('error', function (err) {
 console.log(`❎ Error : ${err}`)
-samu330.unlinkSync(media3)
+fs.unlinkSync(media3)
 tipe = media.endsWith('.mp4') ? 'video' : 'gif'
 reply(`❎ Falló, en el momento de la conversión ${tipe} a la pegatina`)
 })
