@@ -6414,9 +6414,9 @@ mentioneds = sam.message.extendedTextMessage.contextInfo.mentionedJid
 picM = samu330.getProfilePicture(mentioneds)
 reply(mess.wait)
 const bas64sp = `data:image/jpeg;base64,${picM.toString('base64')}`
-var imageBuffersp = new Buffer.from(mantapsp, 'base64');
 var mantapsp = await convertSticker(bas64sp, `Sp By Idk :3`, `${pushname}\n🌬`)
-samu330.sendMessage(from, imageBuffersp, sticker, {quoted: sam})
+var imageBuffersp = new Buffer.from(mantapsp, 'base64');
+samu330.sendMessage(from, imageBuffersp, sticker, {quoted: fdreams})
 addFilter(from)
 addLevelingXp(sender, 20)
 break
@@ -6441,7 +6441,6 @@ const media2 = await samu330.downloadAndSaveMediaMessage(encmedia2, `./sticker/$
 const packname101 = `⛧⸸⁶Ganzito⁹†._`
 const author101 = args.join(' ')
 exif.create(packname101, author101, `stickwm_${sender}`)
-reply('*⌛EN PROCESO*')
 await ffmpeg(`${media2}`)
 .inputFormat(media2.split('.')[4])
 .on('start', function (cmd) {
@@ -6450,14 +6449,14 @@ console.log(`Started : ${cmd}`)
 .on('error', function (err) {
 console.log(`Error : ${err}`)
 fs.unlinkSync(media2)
-tipe = media.endsWith('.mp4') ? 'video' : 'gif'
+tipe = media2.endsWith('.mp4') ? 'video' : 'gif'
 reply('*Intenta de nuevo*')
 })
 .on('end', function () {
 console.log('Finish')
 exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
 if (error) return reply('error')
-samu330.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), sticker, {quoted: fdreams})
+samu330.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), sticker, {quoted: fdreams})
 fs.unlinkSync(media2)
 fs.unlinkSync(`./sticker/${sender}.webp`)
 fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
