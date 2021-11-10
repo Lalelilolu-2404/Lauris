@@ -8089,9 +8089,9 @@ samu330.sendMessage(from, st, sticker, {quoted: fdreams})
 } else if ((isMedia && sam.message.videoMessage.fileLength < 10000000 || isQuotedVideo && sam.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
 const encmedia3 = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
 const media3 = await samu330.downloadAndSaveMediaMessage(encmedia3, `./sticker/${sender}`)
-const Nombre101 = `⛧⸸⁶Ganzito⁹†┃ᴮᴼᵀ`  //animados💎
-const author101 = `⛧⸸⁶Death⁹†._`
-exif.create(Nombre101, author101, `stickwm_${sender}`)
+const Nombre103 = `⛧⸸⁶Ganzito⁹†┃ᴮᴼᵀ`  //animados💎
+const author103 = `⛧⸸⁶Death⁹†._`
+exif.create(Nombre103, author103, `stickwm_${sender}`)
 reply(mess.wait)
 await ffmpeg(`${media3}`)
 .inputFormat(media3.split('.')[4])
@@ -8108,7 +8108,7 @@ reply(`❎ Falló, en el momento de la conversión ${tipe} a la pegatina`)
 console.log('✅ Listo')
 exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
 if (error) return reply('error')
-wa.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), fdreams)
+wa.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), sam)
 fs.unlinkSync(media3)
 fs.unlinkSync(`./sticker/${sender}.webp`)
 fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
