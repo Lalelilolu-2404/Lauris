@@ -8082,17 +8082,22 @@ let a = `⛧⸸⁶Ganzito⁹†┃ᴮᴼᵀ┃ᴮᴼᵀ`;
 let b = `⛧⸸⁶Death⁹†._`;
 if (isMedia && !sam.message.videoMessage || isQuotedImage) { 
 const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace("quotedM", "m")).message .extendedTextMessage.contextInfo : sam;
-const media = await samu330.downloadAndSaveMediaMessage(encmedia); 
+const media = await samu330.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
 await createExif(a, b);  
 reply('*⌛EN PROCESO*')
 await ffmpeg(media) 
+.inputFormat(media.split('.')[4])
+.on('start', function (cmd) {
+console.log(`Started : ${cmd}`)
+})
 .on("error", function (err) {
 console.log(`Error : ${err}`)
 fs.unlinkSync(media)
 tipe = media.endsWith('.mp4') ? 'video' : 'gif'
 reply('*Intenta de nuevo*')
 })
-.on("end", () => { 
+.on('end', function () {
+console.log('Finish')
 exec("webpmux", [
 "-set",
 "exif",
@@ -8100,7 +8105,8 @@ exec("webpmux", [
 `./sticker/${sender}.webp`,
 "-o",
 `./sticker/${sender}.webp`,
-]).on("exit", () => {
+async (error) => {
+if (error) return reply('error')
 samu330.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), sticker, { quoted: fdreams });
 fs.unlinkSync(`./sticker/${sender}.webp`)
 fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
@@ -8117,17 +8123,22 @@ fs.unlinkSync(media);
 .save(`./sticker/${sender}.webp`)
 } else if ((isMedia && sam.message.videoMessage.seconds < 11) || (isQuotedVideo && sam.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11)) {
 const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace("quotedM", "m")).message.extendedTextMessage.contextInfo: sam;
-const media = await samu330.downloadAndSaveMediaMessage(encmedia);
+const media = await samu330.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
 await createExif(a, b);
 reply('*⌛EN PROCESO*')
 await ffmpeg(media)
+.inputFormat(media.split('.')[4])
+.on('start', function (cmd) {
+console.log(`Started : ${cmd}`)
+})
 .on("error", function (err) {
 console.log(`Error : ${err}`)
 fs.unlinkSync(media)
 tipe = media.endsWith('.mp4') ? 'video' : 'gif'
 reply('*Intenta de nuevo*')
 })
-.on("end", () => {
+.on('end', function () {
+console.log('Finish')
 exec("webpmux", [
 "-set",
 "exif",
@@ -8135,7 +8146,8 @@ exec("webpmux", [
 `./sticker/${sender}.webp`,
 "-o",
 `./sticker/${sender}.webp`,
-]).on("exit", () => {
+async (error) => {
+if (error) return reply('error')	
 samu330.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), sticker, { quoted: fdreams });
 fs.unlinkSync(`./sticker/${sender}.webp`)
 fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
