@@ -3509,7 +3509,7 @@ if (!isLalelilolu) return reply('Nel perro :v')
 	//if (posword == -1) return reply('Archivo no encontrado')
 	let nbw = 0
 	for (let i = 0; i < _word.length; i++) {
-        if (_word[i].msgx == `${svyy}`) {
+        if (_word[i].msgx === `${svyy}`) {
 	nbw = i
 	}
 	}
@@ -3527,7 +3527,7 @@ let wdxxx = body.slice(3)
 if (!wdxxx) return reply('Nombre del Mensaje')
 	var nbrep = 0
 	for (let i = 0; i < _word.length; i++) {
-        if (_word[i].msgx == `${wdxxx}`) {
+        if (_word[i].msgx === `${wdxxx}`) {
 	nbrep = i
 	}
 	}	
