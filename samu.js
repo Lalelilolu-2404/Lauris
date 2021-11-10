@@ -8078,32 +8078,31 @@ break
 //`⛧⸸⁶Death⁹†._`, `⛧⸸⁶Ganzito⁹†┃ᴮᴼᵀ┃ᴮᴼᵀ`
 case 'sow':
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
-        a = `⛧⸸⁶Ganzito⁹†┃ᴮᴼᵀ┃ᴮᴼᵀ`;
-        b = `⛧⸸⁶Death⁹†._`;
+let a = `⛧⸸⁶Ganzito⁹†┃ᴮᴼᵀ┃ᴮᴼᵀ`;
+let b = `⛧⸸⁶Death⁹†._`;
 if (isMedia && !sam.message.videoMessage || isQuotedImage) { 
 const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace("quotedM", "m")).message .extendedTextMessage.contextInfo : sam;
-media = await samu330.downloadAndSaveMediaMessage(encmedia); 
-await createExif(a, b); 
-out = getRandom(".webp"); 
+const media = await samu330.downloadAndSaveMediaMessage(encmedia); 
+await createExif(a, b);  
 ffmpeg(media) 
-.on("error", (err) => { 
-console.log(err); 
-samu330.sendMessage(from, "⚠️ Error", "conversation", { quoted: sam }); 
-fs.unlinkSync(media); 
+.on("error", function (err) {
+console.log(`Error : ${err}`)
+fs.unlinkSync(media)
+tipe = media.endsWith('.mp4') ? 'video' : 'gif'
+reply('*Intenta de nuevo*')
 })
 .on("end", () => { 
-_out = getRandom(".webp"); 
 spawn("webpmux", [
 "-set",
 "exif",
 "./temp/data.exif",
-out,
+`./sticker/${sender}.webp`,
 "-o",
-_out,
+`./sticker/${sender}.webp`,
 ]).on("exit", () => {
-samu330.sendMessage(from, fs.readFileSync(_out), sticker, { quoted: fdreams });
-fs.unlinkSync(out);
-fs.unlinkSync(_out);
+samu330.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), sticker, { quoted: fdreams });
+fs.unlinkSync(`./sticker/${sender}.webp`)
+fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
 fs.unlinkSync(media);
 });
 })
@@ -8114,31 +8113,31 @@ fs.unlinkSync(media);
 `scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`,
 ])
 .toFormat("webp")
-.save(out);
+.save(`./sticker/${sender}.webp`)
 } else if ((isMedia && sam.message.videoMessage.seconds < 11) || (isQuotedVideo && sam.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11)) {
 const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace("quotedM", "m")).message.extendedTextMessage.contextInfo: sam;
 const media = await samu330.downloadAndSaveMediaMessage(encmedia);
 await createExif(a, b);
-out = getRandom(".webp");
+reply('*⌛EN PROCESO*')
 ffmpeg(media)
-.on("error", (err) => {
-console.log(err);
-samu330.sendMessage(from, "⚠️ Error", "conversation", {quoted: sam});
-fs.unlinkSync(media);
+.on("error", function (err) {
+console.log(`Error : ${err}`)
+fs.unlinkSync(media)
+tipe = media.endsWith('.mp4') ? 'video' : 'gif'
+reply('*Intenta de nuevo*')
 })
 .on("end", () => {
-_out = getRandom(".webp");
 spawn("webpmux", [
 "-set",
 "exif",
 "./temp/data.exif",
-out,
+`./sticker/${sender}.webp`,
 "-o",
-_out,
+`./sticker/${sender}.webp`,
 ]).on("exit", () => {
-samu330.sendMessage(from, fs.readFileSync(_out), sticker, { quoted: fdreams });
-fs.unlinkSync(out);
-fs.unlinkSync(_out);
+samu330.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), sticker, { quoted: fdreams });
+fs.unlinkSync(`./sticker/${sender}.webp`)
+fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
 fs.unlinkSync(media);
 });
 })
@@ -8149,7 +8148,7 @@ fs.unlinkSync(media);
 `scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`,
 ])
 .toFormat("webp")
-.save(out);
+.save(`./sticker/${sender}.webp`)
 } else {
 reply('F Ratita xd');
 }
