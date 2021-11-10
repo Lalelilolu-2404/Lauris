@@ -8098,14 +8098,13 @@ reply('*Intenta de nuevo*')
 })
 .on('end', function () {
 console.log('Finish')
-exec("webpmux", [
+exec("webpmux", 
 "-set",
 "exif",
 "./sticker/data.exif",
 `./sticker/${sender}.webp`,
 "-o",
 `./sticker/${sender}.webp`,
-]);
 async (error) => {
 if (error) return reply('error')
 samu330.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), sticker, { quoted: fdreams });
@@ -8140,14 +8139,13 @@ reply('*Intenta de nuevo*')
 })
 .on('end', function () {
 console.log('Finish')
-exec("webpmux", [
+exec("webpmux", 
 "-set",
 "exif",
 "./sticker/data.exif",
 `./sticker/${sender}.webp`,
 "-o",
 `./sticker/${sender}.webp`,
-]);
 async (error) => {
 if (error) return reply('error')	
 samu330.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), sticker, { quoted: fdreams });
