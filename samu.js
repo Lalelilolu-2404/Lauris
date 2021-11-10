@@ -8084,7 +8084,8 @@ if (isMedia && !sam.message.videoMessage || isQuotedImage) {
 const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace("quotedM", "m")).message .extendedTextMessage.contextInfo : sam;
 const media = await samu330.downloadAndSaveMediaMessage(encmedia); 
 await createExif(a, b);  
-ffmpeg(media) 
+reply('*⌛EN PROCESO*')
+await ffmpeg(media) 
 .on("error", function (err) {
 console.log(`Error : ${err}`)
 fs.unlinkSync(media)
@@ -8092,10 +8093,10 @@ tipe = media.endsWith('.mp4') ? 'video' : 'gif'
 reply('*Intenta de nuevo*')
 })
 .on("end", () => { 
-spawn("webpmux", [
+exec("webpmux", [
 "-set",
 "exif",
-"./temp/data.exif",
+"./sticker/data.exif",
 `./sticker/${sender}.webp`,
 "-o",
 `./sticker/${sender}.webp`,
@@ -8119,7 +8120,7 @@ const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace("quotedM
 const media = await samu330.downloadAndSaveMediaMessage(encmedia);
 await createExif(a, b);
 reply('*⌛EN PROCESO*')
-ffmpeg(media)
+await ffmpeg(media)
 .on("error", function (err) {
 console.log(`Error : ${err}`)
 fs.unlinkSync(media)
@@ -8127,10 +8128,10 @@ tipe = media.endsWith('.mp4') ? 'video' : 'gif'
 reply('*Intenta de nuevo*')
 })
 .on("end", () => {
-spawn("webpmux", [
+exec("webpmux", [
 "-set",
 "exif",
-"./temp/data.exif",
+"./sticker/data.exif",
 `./sticker/${sender}.webp`,
 "-o",
 `./sticker/${sender}.webp`,
