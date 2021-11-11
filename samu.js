@@ -6408,13 +6408,14 @@ const bas641 = `data:image/jpeg;base64,${dlfile1.toString('base64')}`
 var mantap1 = await convertSticker(bas641, `Rico o turbio xd?`, `⛧⸸⁶Ganzito⁹†._`)
 var st = new Buffer.from(mantap1, 'base64');
 samu330.sendMessage(from, st, sticker, {quoted: fdreams})
-} else if ((isMedia && sam.message.videoMessage.fileLength < 15000000 || isQuotedVideo && sam.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 15000000)) {
+} else if ((isMedia && sam.message.videoMessage.fileLength < 10000000 || isQuotedVideo && sam.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
 const encmedia2 = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.
 contextInfo : sam
 const media2 = await samu330.downloadAndSaveMediaMessage(encmedia2, `./sticker/${sender}`)
 const packname101 = `⛧⸸⁶Ganzito⁹†._`
 const author101 = args.join(' ')
 exif.create(packname101, author101, `stickwm_${sender}`)
+reply('*⌛EN PROCESO*')
 await ffmpeg(`${media2}`)
 .inputFormat(media2.split('.')[4])
 .on('start', function (cmd) {
@@ -6430,13 +6431,14 @@ reply('*Intenta de nuevo*')
 console.log('Finish')
 exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
 if (error) return reply('error')
-samu330.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), sticker, {quoted: fdreams})
+wa.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), fdreams)
 fs.unlinkSync(media2)
 fs.unlinkSync(`./sticker/${sender}.webp`)
 fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
 })
 })
-.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decre
+ase,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
 .toFormat('webp')
 .save(`./sticker/${sender}.webp`)
 } else {
