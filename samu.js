@@ -1193,7 +1193,7 @@ function _0xd037(_0x1fea26,_0x25290c){const _0x49fad6=_0x33d3();return _0xd037=f
   			})
 			}
 	    
-if (body.includes("Ganzito") || body.includes("ganzito") || body.includes("Ganzitos") || body.includes("ganzitos")){
+if (body.includes("Ganzito")){
 if (!isAllaud) return
 samu330.updatePresence(from, Presence.composing)
 const xganzito = fs.readFileSync(`./temp/audio/Ganzita.mp3`)
@@ -10383,7 +10383,7 @@ sendButImage(from, `${teksyy}`, `Denle una paloma a Anna o los folla xd\nPansito
 break			
 		
 case 'ban':
-if (!itsMe && !isLalelilolu) return reply(mess.only.ownerB)
+if (!itsMe && !isLalelilolu) return //reply(mess.only.ownerB)
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 const none = fs.readFileSync(`./src/stickers/Haha no.webp`)
 if (mentioned.length !== 0){
