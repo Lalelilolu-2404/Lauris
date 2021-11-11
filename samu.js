@@ -810,7 +810,7 @@ const isUser2 = _user2.includes(sender)
 	try {
 	if (currentLevel === undefined && checkId === undefined) addLevelingId(sender)
 	const amountXp = Math.floor(Math.random() * (15 - 25 + 1) + 15) //Math.floor(Math.random() * 10) + 500
-	const requiredXp = 5 * Math.pow(currentLevel, (4 / 2)) + 50 * currentLevel + 100 //5000 * (Math.pow(2, currentLevel) - 1)
+	const requiredXp = 5 * Math.pow(currentLevel, (3 / 2)) + 50 * currentLevel + 100 //5000 * (Math.pow(2, currentLevel) - 1)
 	const getLevel = getLevelingLevel(sender)
 	const namelv = checkId
 	addLevelingXp(sender, amountXp)
@@ -6414,20 +6414,23 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
 if (args.length < 1) return
 try{
 if(args[0] == 'me') {
+try{
 ppimg = await samu330.getProfilePicture(sender)
-if (!ppimg) return reply('Es un fantasma, F')
+} catch { return reply('Es un fantasma, F')}
 owgir = await getBuffer(ppimg)
 const bas64x = `data:image/jpeg;base64,${owgir.toString('base64')}`
-var mantapx = await convertSticker(bas641, `${pushname}`, `⛧⸸⁶Ganzito⁹†._`)
+var mantapx = await convertSticker(bas64x, `${pushname}`, `⛧⸸⁶Ganzito⁹†._`)
 var st = new Buffer.from(mantapx, 'base64');
 samu330.sendMessage(from, st, sticker, {quoted: fdreams})
 } else if(sam.message.extendedTextMessage.contextInfo.mentionedJid) {
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+try{
 ppimg = await samu330.getProfilePicture(mentioned[0])
+} catch { return reply('Es un fantasma, F')}
 if (!ppimg) return reply('Es un fantasma, F')
 owgir = await getBuffer(ppimg)
 const bas64x = `data:image/jpeg;base64,${owgir.toString('base64')}`
-var mantapx = await convertSticker(bas641, `Fantasmas xd`, `⛧⸸⁶Ganzito⁹†._`)
+var mantapx = await convertSticker(bas64x, `Fantasmas xd`, `⛧⸸⁶Ganzito⁹†._`)
 var st = new Buffer.from(mantapx, 'base64');
 samu330.sendMessage(from, st, sticker, {quoted: fdreams})
 } else return reply('*F, Ratita xd*')
