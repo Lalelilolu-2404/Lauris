@@ -62,6 +62,7 @@ const ban = JSON.parse(fs.readFileSync('./src/banned.json'))
 const crypt = fs.readFileSync('./crypt/imp.json')
 const zalgo = require('./lib/zalgo')
 const {convertSticker} = require("./lib/swm.js")
+const {convfg} = require("./lib/swfg.js")
 const conn = require("./lib/connect")
 const msg = require("./lib/message")
 const wa = require("./lib/wa")
@@ -2964,33 +2965,12 @@ case 'fg':
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (isMedia && !sam.message.videoMessage || isQuotedImage) { 
 const encmedia404 = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
-const media404 = await samu330.downloadAndSaveMediaMessage(encmedia404, `./sticker/${sender}`)
-const data404 = `⛧⸸⁶Ganzito⁹†┃ᴮᴼᵀ`
-const author404 = args.join(' ')
-await exif.create(data404, author404, `stickwm_${sender}`)
-ffmpeg(media404)
-.inputFormat(media404.split('.')[4])
-.on('start', function (cmd) {
-console.log(`Started : ${cmd}`)
-})
-.on('error', function (err) {
-console.log(`Error : ${err}`)        
-fs.unlinkSync(media404)                
-reply('*Intenta de nuevo*')
-})
-.on('end', function () {
-console.log('Finish')                         
-exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (err) => {                                               
-if (err) return reply('error')
-wa.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), sam)             
-fs.unlinkSync(media404)
-fs.unlinkSync(`./sticker/${sender}.webp`)
-fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
-});
-})
-.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p]paletteuse`])
-.toFormat('webp')
-.save(`./sticker/${sender}.webp`)
+const media404 = await samu330.downloadAndSaveMediaMessage(encmedia404)
+const bas644 = `data:image/jpeg;base64,${media404.toString('base64')}`
+//const author404 = args.join(' ')
+var mantap4 = await convfg(bas644, `Turbio 🥵`, `⛧⸸⁶Ganzito⁹†._`)
+var st = new Buffer.from(mantap4, 'base64');
+samu330.sendMessage(from, st, sticker, {quoted: fdreams})
 } else {
 reply('F Ratita xd');
 }
