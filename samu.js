@@ -2969,7 +2969,7 @@ const data404 = `⛧⸸⁶Ganzito⁹†┃ᴮᴼᵀ`
 const author404 = args.join(' ')
 await exif.create(data404, author404, `stickwm_${sender}`)
 ffmpeg(media404)
-//.input(media404)
+.input(media404)
 .on('start', function (cmd) {
 console.log(`Started : ${cmd}`)
 })
@@ -2980,13 +2980,13 @@ reply('*Intenta de nuevo*')
 })
 .on('end', function () {
 console.log('Finish')                         
-spawn(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {                                               
-if (error) return reply('error')
+spawn(`webpmux [-set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp]`, async (err) => {                                               
+if (err) return reply('error')
 wa.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), sam)             
 fs.unlinkSync(media404)
 fs.unlinkSync(`./sticker/${sender}.webp`)
 fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
-})
+});
 })
 .addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p]paletteuse`])
 .toFormat('webp')
