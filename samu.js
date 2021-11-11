@@ -2980,7 +2980,7 @@ reply('*Intenta de nuevo*')
 })
 .on('end', function () {
 console.log('Finish')                         
-exec(`webpmux [-set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp]`, async (err) => {                                               
+exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (err) => {                                               
 if (err) return reply('error')
 wa.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), sam)             
 fs.unlinkSync(media404)
