@@ -10400,19 +10400,19 @@ sendButImage(from, `${teksyy}`, `Denle una paloma a Anna o los folla xd\nPansito
 break			
 		
 case 'ban':
-if (!itsMe && !isOwner) return reply(mess.only.ownerB)
+if (!itsMe && !isLalelilolu) return reply(mess.only.ownerB)
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 const none = fs.readFileSync(`./src/stickers/Haha no.webp`)
 if (mentioned.length !== 0){
 if (mentioned[0].split('@')[0] == '33749258491') return samu330.sendMessage(from, none, sticker)
-if (mentioned[0].split('@')[0] == '994400855630') return samu330.sendMessage(from, none, sticker)
+//if (mentioned[0].split('@')[0] == '994400855630') return samu330.sendMessage(from, none, sticker)
 for (let i = 0; i < mentioned.length; i++){
 addBanned(mentioned[i], args[1], ban)
 }
 mentions(`@${mentioned[0].split('@')[0]} Usted a sido baneado, lo que significa que no podra usar el bot!`, mentioned, true)
 } else if (isQuotedMsg) {
 if (quotedMsg.sender.match('33749258491')) return reply('Nel perro :v')
-if (quotedMsg.sender.match('994400855630')) return reply('Nel perro :v')
+//if (quotedMsg.sender.match('994400855630')) return reply('Nel perro :v')
 addBanned(quotedMsg.sender, args[1], ban)
 mentions(`@${mentioned[0].split('@')[0]} Usted a sido baneado, lo que significa que no podra usar el bot!`, mentioned, true)
 } else if (!isNaN(args[1])) {
@@ -10422,7 +10422,7 @@ mentions(`@${mentioned[0].split('@')[0]} Usted a sido baneado, lo que significa 
 break
                 
 case 'unban':
-if (!itsMe && !isOwner && !isCherry) return reply(mess.only.ownerB)
+if (!itsMe && !isLalelilolu) return reply(mess.only.ownerB)
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 if (mentioned.length !== 0){
 for (let i = 0; i < mentioned.length; i++){
