@@ -2964,12 +2964,11 @@ break
 case 'fg':
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (isMedia && !sam.message.videoMessage || isQuotedImage) { 
-const encmedia404 = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
-const media404 = await samu330.downloadAndSaveMediaMessage(encmedia404)
-const bas644 = `data:image/jpeg;base64,${media404.toString('base64')}`
-//const author404 = args.join(' ')
-var mantap4 = await convfg(bas644, `Turbio 🥵`, `⛧⸸⁶Ganzito⁹†._`)
-var st = new Buffer.from(mantap4, 'base64');
+const encmediay = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
+const mediay = await samu330.downloadMediaMessage(encmediay)
+const bas64y = `data:image/jpeg;base64,${mediay.toString('base64')}`
+var mantapy = await convfg(bas64y, `Turbio 🥵`, `⛧⸸⁶Ganzito⁹†._`)
+var st = new Buffer.from(mantapy, 'base64');
 samu330.sendMessage(from, st, sticker, {quoted: fdreams})
 } else {
 reply('F Ratita xd');
