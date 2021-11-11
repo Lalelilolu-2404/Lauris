@@ -3480,11 +3480,11 @@ if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg}) 	
 let wdxxx = body.slice(3)
 if (!wdxxx) return reply('Nombre del Mensaje')
-	var nbrep = 0
+	var nbrep = 'xxx'
 	for (let i = 0; i < _word.length; i++) {
         if (_word[i].msgx === `${wdxxx}`) {
 	nbrep = i
-	} else nbrep = 'xxx'
+	} 
 	}
 if (nbrep == 'xxx') return reply('Respuesta no registrada')
 setTimeout(() => {
