@@ -3486,12 +3486,10 @@ if (!wdxxx) return reply('Nombre del Mensaje')
 	nbrep = i
 	} else nbrep = 'xxx'
 	}
-if (nbrep != 'xxx'){
-const 
+if (nbrep == 'xxx') return reply('Respuesta no registrada')
 setTimeout(() => {
 samu330.sendMessage(from, `${_word[nbrep].repx}`, MessageType.text, { quoted: sam}).catch(err => {return reply('Respuesta no registrada')})
 }, 300)
-} else { reply('Respuesta no registrada')}
 break
 	
 case 'listword':
