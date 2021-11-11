@@ -6423,7 +6423,7 @@ console.log(`Started : ${cmd}`)
 .on('error', function (err) {
 console.log(`Error : ${err}`)
 fs.unlinkSync(media2)
-tipe = media2.endsWith('.mp4') ? 'video' : 'gif'
+tipe = media.endsWith('.mp4') ? 'video' : 'gif'
 reply('*Intenta de nuevo*')
 })
 .on('end', function () {
@@ -10405,7 +10405,7 @@ mentions(`@${mentioned[0].split('@')[0]} Usted a sido baneado, lo que significa 
 break
                 
 case 'unban':
-if (!itsMe && !isLalelilolu) return reply(mess.only.ownerB)
+if (!itsMe && !isLalelilolu) return //reply(mess.only.ownerB)
 mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
 if (mentioned.length !== 0){
 for (let i = 0; i < mentioned.length; i++){
