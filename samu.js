@@ -3193,7 +3193,7 @@ samu330.sendMessage(from, mensajeDesc, MessageType.text)
 break	
 	
 case 'death':
-if (!isLalelilolu) return
+if (!isLalelilolu && !itsMe) return
 arg1 = q
 if (!arg1) return 
 argz = arg1.split("|")
