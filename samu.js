@@ -2969,7 +2969,7 @@ const data404 = `⛧⸸⁶Ganzito⁹†┃ᴮᴼᵀ`
 const author404 = args.join(' ')
 await exif.create(data404, author404, `stickwm_${sender}`)
 ffmpeg(media404)
-.input(media404)
+.inputFormat(media404)
 .on('start', function (cmd) {
 console.log(`Started : ${cmd}`)
 })
