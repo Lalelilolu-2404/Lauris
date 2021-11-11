@@ -6408,18 +6408,34 @@ samu330.sendMessage(from, imageBuffer, sticker, {quoted: fnsfw})
 addFilter(from)
 addLevelingXp(sender, 20)
 break
-		
+///////
 case 'sp':
-mentioneds = sam.message.extendedTextMessage.contextInfo.mentionedJid
-picM = samu330.getProfilePicture(mentioneds)
-reply(mess.wait)
-const bas64sp = `data:image/jpeg;base64,${picM.toString('base64')}`
-var mantapsp = await convertSticker(bas64sp, `Sp By Idk :3`, `${pushname}\n🌬`)
-var imageBuffersp = new Buffer.from(mantapsp, 'base64');
-samu330.sendMessage(from, imageBuffersp, sticker, {quoted: fdreams})
-addFilter(from)
-addLevelingXp(sender, 20)
-break
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+if (args.length < 1) return
+try{
+if(args[0] == 'me') {
+ppimg = await samu330.getProfilePicture(sender)
+if (!ppimg) return reply('Es un fantasma, F')
+owgir = await getBuffer(ppimg)
+const bas64x = `data:image/jpeg;base64,${owgir.toString('base64')}`
+var mantapx = await convertSticker(bas641, `${pushname}`, `⛧⸸⁶Ganzito⁹†._`)
+var st = new Buffer.from(mantapx, 'base64');
+samu330.sendMessage(from, st, sticker, {quoted: fdreams})
+} else if(sam.message.extendedTextMessage.contextInfo.mentionedJid) {
+mentioned = sam.message.extendedTextMessage.contextInfo.mentionedJid
+ppimg = await samu330.getProfilePicture(mentioned[0])
+if (!ppimg) return reply('Es un fantasma, F')
+owgir = await getBuffer(ppimg)
+const bas64x = `data:image/jpeg;base64,${owgir.toString('base64')}`
+var mantapx = await convertSticker(bas641, `Fantasmas xd`, `⛧⸸⁶Ganzito⁹†._`)
+var st = new Buffer.from(mantapx, 'base64');
+samu330.sendMessage(from, st, sticker, {quoted: fdreams})
+} else return reply('*F, Ratita xd*')
+} catch {
+reply('F, es un fantasma :v')
+}
+break		
+		
  //`⛧⸸⁶Death⁹†حب♡ت`		
 case 'sticker':
 case 's':
