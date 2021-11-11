@@ -2978,6 +2978,7 @@ break
 case 'work':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+if (isBan) return
 //if (isUser2) return reply('Espera a mañana')
 samu330.updatePresence(from, Presence.composing)  
 //const name = `${pushname}`
