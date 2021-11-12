@@ -5818,9 +5818,9 @@ reply('*Intenta de nuevo*')
 })
 .on('end', function () {
 console.log('Finish')
-spawn(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
+exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
 if (error) return reply('error')
-wa.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), fdreams)
+samu330.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), sticker, {quoted: fdreams})
 fs.unlinkSync(mediaz)
 fs.unlinkSync(`./sticker/${sender}.webp`)
 fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
