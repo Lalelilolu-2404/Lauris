@@ -16,6 +16,7 @@
     "dotenv": "^8.2.0",
     "axios": "^0.21.1",
     "cheerio": "^1.0.0-rc.5",
+    "child_process": "^1.0.2",
     "cfonts": "^2.9.0",
     "escape-string-regexp": "^1.0.5",
     "fake-useragent": "^1.0.1",
