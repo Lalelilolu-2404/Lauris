@@ -2496,22 +2496,6 @@ reply(tekss)
 break
 **/
 /////////
-//const packname13 = `⛧⸸⁶Death⁹†حب♡ت`
-//const author13 = `Puto el q lo robe`	
-//`⛧⸸⁶Death⁹†._`, `⛧⸸⁶Ganzito⁹†┃ᴮᴼᵀ┃ᴮᴼᵀ`
-case 'fg':
-if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
-if (isMedia && !sam.message.videoMessage || isQuotedImage) { 
-const encmediay = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
-const mediay = await samu330.downloadMediaMessage(encmediay)
-const bas64y = `data:image/jpeg;base64,${mediay.toString('base64')}`
-var mantapy = await convfg(bas64y, `Turbio 🥵`, `⛧⸸⁶Ganzito⁹†._`)
-var st = new Buffer.from(mantapy, 'base64');
-samu330.sendMessage(from, st, sticker, {quoted: fdreams})
-} else {
-reply('F Ratita xd');
-}
-break
 ////////		
 case 'work':
 if (!isGroup) return reply(mess.only.group)
@@ -5822,7 +5806,7 @@ const authorz = args.join(' ')
 exif.create(packnamez, authorz, `stickwm_${sender}`)
 reply('*⌛EN PROCESO*')
 await ffmpeg(`${mediaz}`)
-.inputFormat(mediaz.split('.')[4])
+.inputFormat(media.split('.')[4])
 .on('start', function (cmd) {
 console.log(`Started : ${cmd}`)
 })
@@ -5834,7 +5818,7 @@ reply('*Intenta de nuevo*')
 })
 .on('end', function () {
 console.log('Finish')
-exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
+spawn(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
 if (error) return reply('error')
 wa.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), fdreams)
 fs.unlinkSync(mediaz)
@@ -5853,6 +5837,22 @@ addFilter(from)
 addLevelingXp(sender, 20)
 break
 
+//const packname13 = `⛧⸸⁶Death⁹†حب♡ت`
+//const author13 = `Puto el q lo robe`	
+//`⛧⸸⁶Death⁹†._`, `⛧⸸⁶Ganzito⁹†┃ᴮᴼᵀ┃ᴮᴼᵀ`
+case 'fg':
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+if (isMedia && !sam.message.videoMessage || isQuotedImage) { 
+const encmediay = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
+const mediay = await samu330.downloadMediaMessage(encmediay)
+const bas64y = `data:image/jpeg;base64,${mediay.toString('base64')}`
+var mantapy = await convfg(bas64y, `Turbio 🥵`, `⛧⸸⁶Ganzito⁹†._`)
+var st = new Buffer.from(mantapy, 'base64');
+samu330.sendMessage(from, st, sticker, {quoted: fdreams})
+} else {
+reply('F Ratita xd');
+}
+break
 //encode y decode by Samu
 case 'code':
 texto = args.join(' ')
