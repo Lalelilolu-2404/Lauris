@@ -5806,7 +5806,7 @@ const authorz = args.join(' ')
 exif.create(packnamez, authorz, `stickwm_${sender}`)
 reply('*⌛EN PROCESO*')
 await ffmpeg(`${mediaz}`)
-.inputFormat(mediaz.split('.')[4])
+.inputFormat(mediaz.split('.')[1])
 .on('start', function (cmd) {
 console.log(`Started : ${cmd}`)
 })
@@ -5820,14 +5820,18 @@ reply('*Intenta de nuevo*')
 console.log('Finish')
 exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
 if (error) return reply('error')
-samu330.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), sticker, {quoted: fdreams})
+samu330.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), sticker)
 fs.unlinkSync(mediaz)
 fs.unlinkSync(`./sticker/${sender}.webp`)
 fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
 })
 })
-.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease, 
-fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+.addOutputOptions([
+`-vcodec`,
+`libwebp`, 
+`-vf`, 
+`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease, fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`
+])
 .toFormat('webp')
 .save(`./sticker/${sender}.webp`)
 } else {
