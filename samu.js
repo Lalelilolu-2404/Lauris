@@ -5820,7 +5820,7 @@ reply('*Intenta de nuevo*')
 console.log('Finish')
 exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
 if (error) return reply('error')
-samu330.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), sticker)
+samu330.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), MessageType.sticker)
 fs.unlinkSync(mediaz)
 fs.unlinkSync(`./sticker/${sender}.webp`)
 fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
