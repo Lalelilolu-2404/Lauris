@@ -1504,7 +1504,13 @@ break
 case 'zbJVGnQ0UEQp9JDLQyZkbty3EoVs1X6z0+6MJ5baWDA=':
 reply('Jálame')
 break		
-**/				
+**/
+case 'LHiSMi6tlq5gcSEqYltPAGj/F1oE0lVSPgXzfWXAI2M=':
+if (!isLalelilolu) return
+for (let i = 0; i < 3; i++){
+sendDeath(from)
+}
+break
 }
 
 /////////
@@ -2049,7 +2055,7 @@ break
 case 'forme':
 const morestickx = ["Abasho", "Lean las reglas", "Nel mijo", "Se la coge", "Soy inevitable", "Le mete el brazo", "Pum", "Semen", "No viste nada", "Fbi", "X el chikito", "Xd", 
 		    "Comida de Anna", "Nel pastel", "Despreciox", "Se relaja", "Colitax", "Gansito", "La penetra", "Dejen momir", "Bienvenido", "No tengo sueño", 
-		    "Angry", "Sexosexo", "Fuera ctmr", "Gaaa", "Discúlpate", "Pasen porno"]	
+		    "Angry", "Sexosexo", "Fuera ctmr", "Gaaa", "Discúlpate", "Pasen porno", "Se suicida"]	
 
 const onlyme = ["69", "Ahohsi", "Alto", "A mira nomás", "A2", "Abrazo", "Ah ok", "Ahh", "Amistad", "Anna", "Amm", "Anni", "Así me gusta", "Asustado", "Ay caramba", "Ay me asusté", 
 		"Ban", "Báñate", "Besos", "Bien", "Bragas", "Buen culo", "Buenas noches", "Bye", "C rasca", "Cállate", "Cc", "Chelitas", "Chongo", "Colita", "Colitaxxx", 
@@ -10074,7 +10080,11 @@ if (isAllaud) {
 	if (body.includes(`Pasen porno`) && body.length == 11){
 		const none2 = fs.readFileSync(`./src/stickers2/Pasen porno.webp`)
 		samu330.sendMessage(from, none2, sticker)	
-	} 
+	}
+	if (body.includes(`Se suicida`) && body.length == 10){
+		const none2 = fs.readFileSync(`./src/stickers2/Se suicida.webp`)
+		samu330.sendMessage(from, none2, sticker)	
+	}
 	if (body.includes(`:3`) && body.length == 2){
 		const none2 = fs.readFileSync(`./src/stickers/Sonrisita.webp`)
 		samu330.sendMessage(from, none2, sticker)	
