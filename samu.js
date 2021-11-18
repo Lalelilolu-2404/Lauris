@@ -5499,14 +5499,16 @@ reply(pin2.data.length)
 //await samu330.sendMessage(from, buffer, image, { quoted: fimg, caption: `✅ Pinterest : *${q}*` }).catch(err => {return('Pwrdon... T_T')})
 break			
 **/
+	
 case 'pin2':	
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (!q) return reply('Que imagen quieres buscar?')
             //reply(mess.wait)
-            let pin2 = fetch(`https://api.zeks.me/api/pinimg?apikey=apivinz&q={q}`)
-            reply(pin2.data.length)
-            let pinxxx = pin2.data[Math.floor(Math.random() * pin2.data.length)];
+            let pin2 = axios.get(`https://api.zeks.me/api/pinimg?apikey=apivinz&q={q}`)
+	    n = pin2.data
+            reply(n.length)
+            let pinxxx = n[Math.floor(Math.random() * n.length)];
 	//reply(`${pjr}`)
             media = await getBuffer(pinxxx)
             samu330.sendMessage(from, media, MessageType.image,{ thumbnail: fs.readFileSync('./src/dreams.jpg'), quoted: sam,caption:'༊ Uwu ࿑'})
