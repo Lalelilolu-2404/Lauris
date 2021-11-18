@@ -5505,9 +5505,9 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
 if (!q) return reply('Que imagen quieres buscar?')
             //reply(mess.wait)
             fetch(`https://api.zeks.me/api/pinimg?apikey=apivinz&q={q}`)
-            .then(res => res.data())
+            .then(data => data.text())
             .then(body => {
-            let pin2 = body.split(",");
+            let pin2 = .split(",");
             reply(pin2.length)
             let pinxxx = pin2[Math.floor(Math.random() * pin2.length)];
 	//reply(`${pjr}`)
