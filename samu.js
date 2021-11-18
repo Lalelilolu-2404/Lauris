@@ -5484,7 +5484,7 @@ let ac = pin[Math.floor(Math.random() * pin.length)];
 let di = await getBuffer(ac);
 await samu330.sendMessage(from, di, image, { quoted: fimg, caption: `✅ Pinterest : *${q}*` }).catch(err => {return('Pwrdon... T_T')})
 break		
-
+/**
 case 'pin2':
 if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
@@ -5498,7 +5498,33 @@ reply(pin2.data.length)
 //let di = await getBuffer(ac);
 //await samu330.sendMessage(from, buffer, image, { quoted: fimg, caption: `✅ Pinterest : *${q}*` }).catch(err => {return('Pwrdon... T_T')})
 break			
-
+**/
+case 'pin2':	
+if (!isGroup) return reply(mess.only.group)
+if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
+if (!q) return reply('Que imagen quieres buscar?')
+            //reply(mess.wait)
+            fetch(`https://api.zeks.me/api/pinimg?apikey=apivinz&q={q}`)
+            .then(data => data.text())
+            .then(body => {
+            let pin2 = body.split(",");
+            reply(pin2.length)
+            let pinxxx = pin2[Math.floor(Math.random() * pin2.length)];
+	//reply(`${pjr}`)
+             imageToBase64(pinxxx)
+            .then((response) => {
+            media =  Buffer.from(response, 'base64');
+            samu330.sendMessage(from, media, MessageType.image,{ thumbnail: fs.readFileSync('./src/dreams.jpg'), quoted: sam,caption:'༊ Uwu ࿑'})
+            }
+            )
+    .catch((error) => {
+            console.log(error); 
+            }
+            )
+            });
+addFilter(from)
+addLevelingXp(sender, 20)
+break
 case 'imagen':
 assistant = fs.readFileSync('./src/assistant.jpg')
 if (!isGroup) return reply(mess.only.group)
