@@ -5504,26 +5504,12 @@ if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (!q) return reply('Que imagen quieres buscar?')
             //reply(mess.wait)
-            fetch(`https://api.zeks.me/api/pinimg?apikey=apivinz&q={q}`)
-            .then(res => res.data)
-            .then(body => {
-            let pin2 = body;
-            reply(body.length)
-            let pinxxx = pin2[Math.floor(Math.random() * pin2.length)];
+            let pin2 = fetch(`https://api.zeks.me/api/pinimg?apikey=apivinz&q={q}`}
+            reply(pin2.data.length)
+            let pinxxx = pin2.data[Math.floor(Math.random() * pin2.data.length)];
 	//reply(`${pjr}`)
-             imageToBase64(pinxxx)
-            .then((response) => {
-            media =  Buffer.from(response, 'base64');
+            media = await getBuffer(pinxxx)
             samu330.sendMessage(from, media, MessageType.image,{ thumbnail: fs.readFileSync('./src/dreams.jpg'), quoted: sam,caption:'༊ Uwu ࿑'})
-            }
-            )
-    .catch((error) => {
-            console.log(error); 
-            }
-            )
-            });
-addFilter(from)
-addLevelingXp(sender, 20)
 break
 case 'imagen':
 assistant = fs.readFileSync('./src/assistant.jpg')
