@@ -5490,7 +5490,7 @@ if (!isGroup) return reply(mess.only.group)
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if (!q) return reply('Que imagen quieres buscar?')
 //reply(mess.wait)
-let pin2 = await fetchJson(`https://api.zeks.me/api/pinimg?apikey=apivinz&q={q}`)
+let pin2 = await axios.get(`https://api.zeks.me/api/pinimg?apikey=apivinz&q={q}`)
 reply(pin2.data.length)
 //buffer = await getBuffer(pin2.data[2])
 //let pin = await hx.pinterest(q);
