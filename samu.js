@@ -5492,11 +5492,11 @@ if (!q) return reply('Que imagen quieres buscar?')
 //reply(mess.wait)
 let pin2 = await getJson(`https://api.zeks.me/api/pinimg?apikey=apivinz&q={q}`)
 reply(pin2.data.length)
-buffer = await getBuffer(pin2.data[2])
+//buffer = await getBuffer(pin2.data[2])
 //let pin = await hx.pinterest(q);
 //let ac = pin[Math.floor(Math.random() * pin.length)];
 //let di = await getBuffer(ac);
-await samu330.sendMessage(from, buffer, image, { quoted: fimg, caption: `✅ Pinterest : *${q}*` }).catch(err => {return('Pwrdon... T_T')})
+//await samu330.sendMessage(from, buffer, image, { quoted: fimg, caption: `✅ Pinterest : *${q}*` }).catch(err => {return('Pwrdon... T_T')})
 break			
 
 case 'imagen':
