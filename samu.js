@@ -5507,8 +5507,8 @@ if (!q) return reply('Que imagen quieres buscar?')
             fetch(`https://api.zeks.me/api/pinimg?apikey=apivinz&q={q}`)
             .then(res => res.data)
             .then(body => {
-            let pin2 = body.split(",");
-            reply(pin2.length)
+            let pin2 = body;
+            reply(body.length)
             let pinxxx = pin2[Math.floor(Math.random() * pin2.length)];
 	//reply(`${pjr}`)
              imageToBase64(pinxxx)
