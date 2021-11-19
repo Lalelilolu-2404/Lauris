@@ -1538,7 +1538,8 @@ break
 					reply(mess.wait)
 					waifusd = await axios.get('https://waifu.pics/api/sfw/waifu')
 					nysd = await getBuffer(waifusd.data.url)
-					samu330.sendMessage(from, nysd, image, { caption: '💎 _*UwU*_ 💠', quoted: fimg })
+					samu330.sendMessage(from, nysd, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), caption: '💎 _*UwU*_ 💠', quoted: fimg })
+						.catch(err => {return(reply('Pwrdon... T_T'))})
 					addFilter(from)
 				}
 			}	
@@ -1553,7 +1554,7 @@ break
 					k = Math.floor(Math.random() * 2) + 1
 					kawaii = `kawai${k}`
 					kawx = await getBuffer(kawaii.data.url)
-					samu330.sendMessage(from, kawx, image, { caption: '💎 _*Kawaii :3*_ 💠', quoted: fimg })
+					samu330.sendMessage(from, kawx, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), caption: '💎 _*Kawaii :3*_ 💠', quoted: fimg })
 					addFilter(from)
 				}
 			}
@@ -4415,7 +4416,7 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 	buffer = await getBuffer('http://api.lolhuman.xyz/api/random/nsfw/ecchi?apikey=847de7716f17a51eeba4235c')
 	samu330.sendMessage(from, buffer, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), caption : '💎 _*Wow 🥵*_ 💠', quoted: fimg})
 	.catch(err => {
-	return('Pwrdon... T_T')
+	return(reply('Pwrdon... T_T'))
 	})
 	} catch (e) {
 	console.log(`Error :`, color(e,'red'))
@@ -4463,7 +4464,7 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 	buffer = await getBuffer('http://api.lolhuman.xyz/api/random2/hentai?apikey=NikolaTesla')
 	samu330.sendMessage(from, buffer, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), caption : '💎 _*Wow 🥵*_ 💠', quoted: fimg})
 	.catch(err => {
-	return('Pwrdon... T_T')
+	return(reply('Pwrdon... T_T'))
 	})
 	} catch (e) {
 	console.log(`Error :`, color(e,'red'))
@@ -4483,7 +4484,7 @@ if (!isNsfw) return reply('❌ *NSFW Desactivado* ❌')
 	buffer = await getBuffer(`http://api.lolhuman.xyz/api/random2/${command}?apikey=NikolaTesla`)
 	samu330.sendMessage(from, buffer, image, { thumbnail: fs.readFileSync('./src/nsfw.jpg'), caption : '💎 _*Uff sii 🥵*_ 💠', quoted: fimg})
 	.catch(err => {
-	return('Pwrdon... T_T')
+	return(reply('Pwrdon... T_T'))
 	})
 	} catch (e) {
 	console.log(`Error :`, color(e,'red'))
