@@ -5356,7 +5356,16 @@ resview = await samu330.prepareMessageFromContent(from,{
 }, {}) 
 samu330.relayWAMessage(resview)
 break	
-		
+
+case 'ver':
+if (m.mtype == 'viewOnceMessage'){
+  msg = {...sam}
+  msg.message = sam.message.viewOnceMessage.message
+  msg.message[Object.keys(msg.message)[0]].viewOnce = false
+  //m.reply('ViewOnce *Detectado*')
+  samu330.copyNForward(from, msg)
+} 
+break		
 case 'demoteall':
 if (!isOwner) return reply(mess.only.ownerB)
 if (!isGroup) return reply(mess.only.group)
