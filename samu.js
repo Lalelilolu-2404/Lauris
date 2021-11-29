@@ -5846,7 +5846,7 @@ samu330.sendMessage(from, st, sticker, {quoted: fdreams})
 const encmediaz = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
 const mediaz = await samu330.downloadAndSaveMediaMessage(encmediaz, `./sticker/${sender}`)
 const packnamez = `⛧⸸⁶Ganzito⁹†._`
-const authorz = args.join(' ')
+const authorz = `Rico o turbio xd?` //args.join(' ')
 exif.create(packnamez, authorz, `stickwm_${sender}`)
 reply('*⌛EN PROCESO*')
 await ffmpeg(`${mediaz}`)
@@ -5864,7 +5864,7 @@ reply('*Intenta de nuevo*')
 console.log('Finish')
 exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
 if (error) return reply('error')
-samu330.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), sticker)
+wa.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), fdreams)
 fs.unlinkSync(mediaz)
 fs.unlinkSync(`./sticker/${sender}.webp`)
 fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
