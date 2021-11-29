@@ -5850,21 +5850,21 @@ const authorz = args.join(' ')
 exif.create(packnamez, authorz, `stickwm_${sender}`)
 reply('*⌛EN PROCESO*')
 await ffmpeg(`${mediaz}`)
-//.inputFormat(mediaz.split('.')[1])
-//.on('start', function (cmd) {
-//console.log(`Started : ${cmd}`)
-//})
+.inputFormat(mediaz.split('.')[1])
+.on('start', function (cmd) {
+console.log(`Started : ${cmd}`)
+})
 .on('error', function (err) {
 console.log(`Error : ${err}`)
 fs.unlinkSync(mediaz)
-//tipe = mediaz.endsWith('.mp4') ? 'video' : 'gif'
+tipe = media.endsWith('.mp4') ? 'video' : 'gif'
 reply('*Intenta de nuevo*')
 })
 .on('end', function () {
 console.log('Finish')
 exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
 if (error) return reply('error')
-samu330.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), MessageType.sticker)
+samu330.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), sticker)
 fs.unlinkSync(mediaz)
 fs.unlinkSync(`./sticker/${sender}.webp`)
 fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
