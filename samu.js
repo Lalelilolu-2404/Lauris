@@ -5359,7 +5359,6 @@ break
 
 case 'ver':
 if (Object.keys(sam.message)[0] === 'viewOnceMessage'){
-  sam = {...sam}
   sam.message = sam.message.viewOnceMessage.message
   sam.message[Object.keys(sam.message)[0]].viewOnce = false
   //m.reply('ViewOnce *Detectado*')
