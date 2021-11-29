@@ -5850,7 +5850,7 @@ const authorz = args.join(' ')
 exif.create(packnamez, authorz, `stickwm_${sender}`)
 reply('*⌛EN PROCESO*')
 await ffmpeg(`${mediaz}`)
-.inputFormat(mediaz.split('.')[1])
+.inputFormat(mediaz.split('.')[4])
 .on('start', function (cmd) {
 console.log(`Started : ${cmd}`)
 })
