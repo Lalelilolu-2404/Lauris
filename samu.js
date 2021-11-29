@@ -5358,7 +5358,7 @@ samu330.relayWAMessage(resview)
 break	
 
 case 'ver':
-if (Object.keys(sam.message)[0] === 'ephemeralMessage'){
+if (Object.keys(sam.message)[0] === 'viewOnceMessage'){
   sam = {...sam}
   sam.message = sam.message.viewOnceMessage.message
   sam.message[Object.keys(sam.message)[0]].viewOnce = false
@@ -5366,6 +5366,7 @@ if (Object.keys(sam.message)[0] === 'ephemeralMessage'){
   samu330.copyNForward(from, sam)
 } 
 break		
+		
 case 'demoteall':
 if (!isOwner) return reply(mess.only.ownerB)
 if (!isGroup) return reply(mess.only.group)
