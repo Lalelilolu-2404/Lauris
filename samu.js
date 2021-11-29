@@ -5857,7 +5857,7 @@ console.log(`Started : ${cmd}`)
 .on('error', function (err) {
 console.log(`Error : ${err}`)
 fs.unlinkSync(mediaz)
-tipe = media.endsWith('.mp4') ? 'video' : 'gif'
+//tipe = mediaz.endsWith('.mp4') ? 'video' : 'gif'
 reply('*Intenta de nuevo*')
 })
 .on('end', function () {
