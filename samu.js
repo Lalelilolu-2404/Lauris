@@ -5358,12 +5358,12 @@ samu330.relayWAMessage(resview)
 break	
 
 case 'ver':
-if (m.mtype == 'viewOnceMessage'){
-  msg = {...sam}
-  msg.message = sam.message.viewOnceMessage.message
-  msg.message[Object.keys(msg.message)[0]].viewOnce = false
+if (Object.keys(sam.message)[0] === 'ephemeralMessage'){
+  sam = {...sam}
+  sam.message = sam.message.viewOnceMessage.message
+  sam.message[Object.keys(sam.message)[0]].viewOnce = false
   //m.reply('ViewOnce *Detectado*')
-  samu330.copyNForward(from, msg)
+  samu330.copyNForward(from, sam)
 } 
 break		
 case 'demoteall':
