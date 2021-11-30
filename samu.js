@@ -5848,7 +5848,7 @@ const mediaz = await samu330.downloadAndSaveMediaMessage(encmediaz, `./sticker/$
 const packnamez = `⛧⸸⁶Ganzito⁹†._`
 const authorz = `Rico o turbio xd?` //args.join(' ')
 exif.create(packnamez, authorz, `stickwm_${sender}`)
-reply('*⌛EN PROCESO*')
+//reply('*⌛EN PROCESO*')
 await ffmpeg(`${mediaz}`)
 .inputFormat(mediaz.split('.')[4])
 .on('start', function (cmd) {
@@ -5857,7 +5857,7 @@ console.log(`Started : ${cmd}`)
 .on('error', function (err) {
 console.log(`Error : ${err}`)
 fs.unlinkSync(mediaz)
-//tipe = mediaz.endsWith('.mp4') ? 'video' : 'gif'
+tipe = mediaz.endsWith('.mp4') ? 'video' : 'gif'
 reply('*Intenta de nuevo*')
 })
 .on('end', function () {
@@ -5889,7 +5889,7 @@ case 'sx':
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
 if ((isMedia && sam.message.videoMessage.fileLength < 10000000 || 
      isQuotedVideo && sam.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
-const encmediad = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
+const encmediad = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
 const dlfiled = await samu330.downloadMediaMessage(encmediad)
 const bas64d = `data:video/mp4;base64,${dlfiled.toString('base64')}`
 var mantapd = await convertSticker(bas64d, `Rico o turbio xd?`, `⛧⸸⁶Ganzito⁹†._`)
