@@ -5887,15 +5887,14 @@ break
 		
 case 'sx':
 if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { quoted: noreg})
-if ((isMedia && sam.message.videoMessage.fileLength < 10000000 || 
-     isQuotedVideo && sam.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
+if ((isMedia && sam.message.videoMessage.fileLength < 10000000 || isQuotedVideo && sam.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
 const encmediad = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
 const media = await client.downloadAndSaveMediaMessage(encmediad)
 ran = getRandom('.webp')
 const packnamez = `⛧⸸⁶Ganzito⁹†._`
 const authorz = `Rico o turbio xd?` //args.join(' ')
 exif.create(packnamez, authorz, `stickwm_${sender}`)
-await ffmpeg(`./${media}`)
+await ffmpeg(`${media}`)
 .inputFormat(media.split('.')[1])
 .on('start', function (cmd) {
 console.log(`Started : ${cmd}`)
