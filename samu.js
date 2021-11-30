@@ -5864,7 +5864,12 @@ reply('*Intenta de nuevo*')
 console.log('Finish')
 exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
 if (error) return reply('error')
-wa.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), fdreams)
+//wa.sendSticker(from, fs.readFileSync(`./sticker/${sender}.webp`), fdreams)	
+const dlfilez = fs.readFileSync(`./sticker/${sender}.webp`)
+const bas64z = `data:image/jpeg;base64,${dlfilez.toString('base64')}`
+var mantapz = await convertSticker(bas64z, `Rico o turbio xd?`, `⛧⸸⁶Ganzito⁹†._`)
+var imageBufferz = new Buffer.from(mantapz, 'base64');
+samu330.sendMessage(from, imageBuffer, sticker, {quoted: fdreams})		
 fs.unlinkSync(mediaz)
 fs.unlinkSync(`./sticker/${sender}.webp`)
 fs.unlinkSync(`./sticker/stickwm_${sender}.exif`)
