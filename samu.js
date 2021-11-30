@@ -5891,7 +5891,7 @@ if ((isMedia && sam.message.videoMessage.fileLength < 10000000 ||
      isQuotedVideo && sam.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
 const encmediad = isQuotedImage ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
 const dlfiled = await samu330.downloadMediaMessage(encmediad)
-const bas64d = `data:video/mp4/gif;base64,${dlfiled.toString('base64')}`
+const bas64d = `data:video/mp4;base64,${dlfiled.toString('base64')}`
 var mantapd = await convertSticker(bas64d, `Rico o turbio xd?`, `⛧⸸⁶Ganzito⁹†._`)
 var st = new Buffer.from(mantapd, 'base64');
 samu330.sendMessage(from, st, sticker, {quoted: fdreams})
