@@ -5890,11 +5890,37 @@ if (!isRegister) return samu330.sendMessage(from, notreg, MessageType.text, { qu
 if ((isMedia && sam.message.videoMessage.fileLength < 10000000 || 
      isQuotedVideo && sam.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
 const encmediad = isQuotedVideo ? JSON.parse(JSON.stringify(sam).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : sam
-const dlfiled = await samu330.downloadMediaMessage(encmediad)
-const bas64d = `data:video/mp4;base64,${dlfiled.toString('base64')}`
-var mantapd = await convertSticker(bas64d, `Rico o turbio xd?`, `⛧⸸⁶Ganzito⁹†._`)
-var st = new Buffer.from(mantapd, 'base64');
-samu330.sendMessage(from, st, sticker, {quoted: fdreams})
+const media = await client.downloadAndSaveMediaMessage(encmediad)
+ran = getRandom('.webp')
+const packnamez = `⛧⸸⁶Ganzito⁹†._`
+const authorz = `Rico o turbio xd?` //args.join(' ')
+exif.create(packnamez, authorz, `stickwm_${sender}`)
+await ffmpeg(`./${media}`)
+.inputFormat(media.split('.')[1])
+.on('start', function (cmd) {
+console.log(`Started : ${cmd}`)
+})
+.on('error', function (err) {
+console.log(`Error : ${err}`)
+fs.unlinkSync(media)
+tipe = media.endsWith('.mp4') ? 'video' : 'gif'
+reply(`[❗] Fallo, al momento de convertir la imagen a sticker`)
+})
+.on('end', function () {
+console.log('Finish')
+exec(`webpmux -set exif ./sticker/stickwm_${sender}.exif ${ran} -o ${ran}`, async (error) => {
+if (error) {
+fs.unlinkSync(media)	
+fs.unlinkSync(ran)
+}
+samu330.sendMessage(from, fs.readFileSync(ran), sticker, {quoted: fdreams})
+fs.unlinkSync(media)
+fs.unlinkSync(ran)
+})
+})
+.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+.toFormat('webp')
+.save(ran)
 }
 break
 
