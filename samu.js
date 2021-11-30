@@ -5895,6 +5895,7 @@ const bas64d = `data:video/mp4/gif;base64,${dlfiled.toString('base64')}`
 var mantapd = await convertSticker(bas64d, `Rico o turbio xd?`, `⛧⸸⁶Ganzito⁹†._`)
 var st = new Buffer.from(mantapd, 'base64');
 samu330.sendMessage(from, st, sticker, {quoted: fdreams})
+}
 break
 
 //const packname13 = `⛧⸸⁶Death⁹†حب♡ت`
